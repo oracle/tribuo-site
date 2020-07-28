@@ -1,0 +1,14 @@
+# Jekyll
+_site
+.sass-cache
+.jekyll-metadata
+
+# Intellij
+.idea
+*.iml
+
+# Vim backups
+*~
+
+# Mac
+.DS_Store
