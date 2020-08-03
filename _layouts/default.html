@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+{% include head.html %}
+<body class="d-flex flex-column min-vh-100">
+
+<div class="container mb-4">
+    {% include topbar.html %}
+    <div class="main-content-wrap js-main-content">
+        <div class="main-content">
+            {% unless page.url == "/" %}
+            {% if page.parent %}
+            <nav class="breadcrumb-nav">
+                <ol class="breadcrumb-nav-list">
+                    {% if page.grand_parent %}
+                    <li class="breadcrumb-nav-list-item"><a href="{{ first_level_url }}">{{ page.grand_parent }}</a></li>
+                    <li class="breadcrumb-nav-list-item"><a href="{{ second_level_url }}">{{ page.parent }}</a></li>
+                    {% else %}
+                    <li class="breadcrumb-nav-list-item"><a href="{{ first_level_url }}">{{ page.parent }}</a></li>
+                    {% endif %}
+                    <li class="breadcrumb-nav-list-item"><span>{{ page.title }}</span></li>
+                </ol>
+            </nav>
+            {% endif %}
+            {% endunless %}
+            <div id="main-content" class="page-content" role="main">
+                {{ content }}
+            </div>
+        </div>
+
+    </div>
+</div>
+{% include footer.html %}
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<script type="text/javascript" src="{{ "/assets/js/bootstrap.min.js" | relative_url }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/tribuo.js" | relative_url }}"></script>
+</body>
+</html>
+

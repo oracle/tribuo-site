@@ -1,0 +1,61 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if site.description %}
+    <meta name="Description" content="{{ site.description }}">
+    {% endif %}
+    <!--
+       The layout, graphical elements, and overall site design for tribuo.org
+       was developed by:
+
+       Simon Jeal
+       Alex Chan-Perryman.
+
+       Any mistakes should be blamed on the site implementors, not the designers!
+     -->
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ "assets/css/bootstrap.min.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "assets/css/tribuo.min.css" | relative_url }}">
+    {% if page.is_notebook %}
+    <!-- BEGIN Notebook Setup -->
+    <link rel="stylesheet" href="{{ "assets/css/notebook.min.css" | relative_url }}">
+    <!-- Loading mathjax macro -->
+    <!-- Load mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
+    <!-- MathJax configuration -->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+            processEnvironments: true
+        },
+        // Center justify equations in code and markdown cells. Elsewhere
+        // we use CSS to left justify single line equations in code cells.
+        displayAlign: 'center',
+        "HTML-CSS": {
+            styles: {'.MathJax_Display': {"margin": 0}},
+            linebreaks: { automatic: true }
+        }
+    });
+    </script>
+    <!-- End of mathjax configuration -->
+    <!-- END Notebook Setup -->
+    {% endif %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap');
+    </style>
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/img/favicon/apple-touch-icon.png" | relative_url }}">
+    <link rel="icon" sizes="32x32" href="{{ "/assets/img/favicon/favicon-32x32.png" | relative_url }}">
+    <link rel="icon" sizes="16x16" href="{{ "/assets/img/favicon/favicon-16x16.png" | relative_url }}">
+    <link rel=”manifest” href=”{{ "/assets/img/favicon/site.manifest" | relative_url }}”>
+
+    {% if site.search_enabled != nil %}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+    {% endif %}
+
+
+</head>

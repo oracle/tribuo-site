@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4f, 2020-05-01)"
+   sodipodi:docname="copy_to_clipboard.svg"
+   id="svg72"
+   version="1.1"
+   viewBox="0 0 18 23"
+   height="23px"
+   width="18px">
+  <metadata
+     id="metadata78">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Copy to clipboard</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs76" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg72"
+     inkscape:window-maximized="0"
+     inkscape:window-y="23"
+     inkscape:window-x="0"
+     inkscape:cy="13.12004"
+     inkscape:cx="8.2926587"
+     inkscape:zoom="26.983314"
+     showgrid="false"
+     id="namedview74"
+     inkscape:window-height="1106"
+     inkscape:window-width="1426"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <title
+     id="title63">Copy to clipboard</title>
+  <g
+     fill-rule="evenodd"
+     fill="none"
+     stroke-width="1"
+     stroke="none"
+     id="Welcome">
+    <g
+       fill="#FF1D25"
+       transform="translate(-956.000000, -1156.000000)"
+       id="Desktop---Homepage">
+      <g
+         transform="translate(0.000000, 960.000000)"
+         id="Git-links">
+        <g
+           transform="translate(435.000000, 48.000000)"
+           id="Container">
+          <g
+             transform="translate(14.000000, 134.000000)"
+             id="Code-block-">
+            <g
+               transform="translate(500.000000, 10.000000)"
+               id="baseline-file_copy-24px">
+              <path
+                 id="Copy-to-clipboard"
+                 d="M20.2631579,4.95833333 L8.89473684,4.95833333 C7.85263158,4.95833333 7,5.82083333 7,6.875 L7,20.2916667 L8.89473684,20.2916667 L8.89473684,6.875 L20.2631579,6.875 L20.2631579,4.95833333 Z M19.3157895,8.79166667 L25,14.5416667 L25,24.125 C25,25.1791667 24.1473684,26.0416667 23.1052632,26.0416667 L12.6747368,26.0416667 C11.6326316,26.0416667 10.7894737,25.1791667 10.7894737,24.125 L10.7989474,10.7083333 C10.7989474,9.65416667 11.6421053,8.79166667 12.6842105,8.79166667 L19.3157895,8.79166667 Z M18.3684211,15.5 L23.5789474,15.5 L18.3684211,10.2291667 L18.3684211,15.5 Z" />
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

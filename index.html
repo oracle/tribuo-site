@@ -1,20 +1,233 @@
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="Description" content="Machine learning in pure Java.">
-<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-</head>
-<body>
-<div class="container">
+---
+layout: default
+title: Home
+nav_order: 0
+permalink: /
+active: home
+---
+
 <div class="row">
     <p style="margin-top: 40px">&nbsp;</p>
 </div>
+<div class="row bgdots">
+    <div class="col-md-4 my-auto">
+        <h2 class="tribuo-head pb-3 tribuo-responsive-header">Machine learning library in Pure Java</h2>
+        <a href="/learn/{{ site.doc_version }}/docs" class="btn btn-outline-danger btn-lg mb-2">Read more</a>
+    </div>
+    <div class="d-none d-sm-flex col-md-8 mx-auto ">
+        <figure>
+        <img class="img-fluid hero-graphic" src="assets/img/HeroAnimation_V2.gif" >
+        </figure>
+    </div>
+    <div class="d-flex d-sm-none col-md-8 mx-auto my-4 justify-content-center">
+        <img class="align-self-center img-fluid" src="assets/img/hero_mobile.png" style="max-width: 260px; max-height: 260px">
+    </div>
+</div>
+<div class="row">
+    <p style="margin-top: 40px">&nbsp;</p>
+</div>
+<div class="row">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container my-auto mx-auto">
+
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <p><b><a href="#" data-toggle="tooltip" data-html="true" title="pronounced <em>trib-you-oh</em>; latin: <em>to assign, apportion</em>">Tribuo*</a></b>
+                        is a machine learning framework written in Java. It provides tools for classification, regression,
+                        clustering, model development, and <a href="/learn/{{ site.doc_version }}/docs">more</a>. It also provides a unified
+                        interface to many popular third-party ML libraries like <a href="https://xgboost.ai/" target="_blank">xgboost</a>
+                        and <a href="https://www.csie.ntu.edu.tw/~cjlin/liblinear/" target="_blank">liblinear</a>,
+                        along with the ability to deploy models trained by Python libraries like
+                        <a href="https://scikit-learn.org/stable/">scikit-learn</a> or <a href="https://pytorch.org/">pytorch</a>
+                        in a regular Java program.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-center mb-3">
+    <div class="col-8 d-flex justify-content-center">
+        <h2 class="tribuo-head">Get started</h2>
+    </div>
+</div>
 <div class="row justify-content-center">
-<img src="assets/img/tribuo-logo-color.svg" height="10%"/>
+    <ul class="nav nav-tabs mb-3 justify-content-center" id="gitTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link" id="source-tab" data-toggle="tab" href="#source" role="tab" aria-controls="source" aria-selected="false">Github</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" id="maven-tab" data-toggle="tab" href="#maven" role="tab" aria-controls="maven" aria-selected="true">Maven</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="gradle-tab" data-toggle="tab" href="#gradle" role="tab" aria-controls="gradle" aria-selected="false">Gradle</a>
+        </li>
+    </ul>
 </div>
-<div class="row justify-content-center mt-5">
-<h1>Coming Soon</h1>
+<div class="row justify-content-center source-links">
+    <div class="tab-content" id="gitTabContent">
+        <div class="tab-pane fade" id="source" role="tabpanel" aria-labelledby="home-tab">
+            <div class="d-flex alert alert-danger align-items-center bg-red-tribuo" role="alert">
+                <code id="clone-source" class="copy-url">git clone https://github.com/oracle/tribuo.git</code>
+                <button class="btn btn-sm float-right" data-clipboard-action="copy" data-clipboard-target="#clone-source">
+                    <img src="assets/img/copy_to_clipboard.svg" alt="Copy to clipboard" width="18"/>
+                </button>
+            </div>
+        </div>
+        <div class="tab-pane fade show active" id="maven" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="d-flex alert alert-danger align-items-center bg-red-tribuo" role="alert">
+                <code id="maven-coords" class="copy-url preformat">&lt;dependency&gt;
+    &lt;groupId&gt;org.tribuo&lt;/groupId&gt;
+    &lt;artifactId&gt;tribuo-all&lt;/artifactId&gt;
+    &lt;version&gt;{{ site.tribuo_version }}&lt;/version&gt;
+    &lt;type&gt;pom&lt;/type&gt;
+&lt;/dependency&gt;</code>
+                <button class="btn btn-sm float-right" data-clipboard-action="copy" data-clipboard-target="#maven-coords">
+                    <img src="assets/img/copy_to_clipboard.svg" alt="Copy to clipboard" width="18" />
+                </button>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="gradle" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="d-flex alert alert-danger align-items-center bg-red-tribuo" role="alert">
+                <code id="gradle-coords" class="copy-url preformat">implementation 'org.tribuo:tribuo-all:{{ site.tribuo_version }}@pom'</code>
+                <button class="btn btn-sm float-right" data-clipboard-action="copy" data-clipboard-target="#gradle-coords">
+                    <img src="assets/img/copy_to_clipboard.svg" alt="Copy to clipboard" width="18" />
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
+<div class="row">
+    <p style="margin-top: 10px">&nbsp;</p>
 </div>
-</body>
-</html>
+<div class="bg-light-tribuo pb-2">
+    <!--
+      Production Ready Section
+      -->
+
+    <div class="row pt-5 pb-3">
+        <div class="col-12">
+            <h2 class="tribuo-head text-center">Production Ready</h2>
+        </div>
+    </div>
+    <div class="row bg-white roundeder shadow ml-3 mr-3 mb-4">
+        <div class="col-md-7 p-4">
+            <div class="tribuo-subhead">Provenance</div>
+            <div class="tribuo-description">
+                Tribuo's Models, Datasets and Evaluations have <em>provenance</em>, they know exactly what parameters, transformations
+                and files were used to create them. This means each model can be rebuilt from scratch, and experiments are easy as
+                the evaluation tracks the models and datasets used.
+            </div>
+        </div>
+        <div class="d-flex col-md-5 p-4 align-content-center justify-content-center">
+            <img src="assets/img/provenance.svg" alt="Provenance Log Book"/>
+        </div>
+    </div>
+    <div class="row bg-white roundeder shadow ml-3 mr-3 mb-4">
+        <div class="col-md-7 p-4">
+            <div class="tribuo-subhead">Typesafe</div>
+            <div class="tribuo-description">
+                Tribuo is strongly typed (like Java). Each model knows what kind of output it produces, what inputs it expects
+                and the names of everything involved. No more confusion when loading something off disk, Tribuo knows what kind
+                of model it is and what labels it can predict.
+            </div>
+        </div>
+        <div class="d-flex col-md-5 p-4 align-content-center justify-content-center">
+            <img src="assets/img/typesafe.svg" alt="Interlocking types logo"/>
+        </div>
+    </div>
+    <div class="row bg-white roundeder shadow ml-3 mr-3 mb-4">
+        <div class="col-md-7 p-4">
+            <div class="tribuo-subhead">Interoperable</div>
+            <div class="tribuo-description">
+                Tribuo provides interfaces to popular ML libraries like
+                XGBoost and Tensorflow, along with support for the onnx
+                model exchange format. Our ONNX support (via onnx-runtime)
+                allows you to deploy models built in other packages and
+                other languages (such as Python's scikit-learn) alongside models trained with Tribuo.
+            </div>
+        </div>
+        <div class="d-flex col-md-5 p-4 align-content-center justify-content-center">
+            <img src="assets/img/checkmark.svg" alt="Checkmark"/>
+        </div>
+    </div>
+
+    <!--
+    Features Section
+    -->
+    <div class="row">
+        <p style="margin-top: 40px">&nbsp;</p>
+    </div>
+    <div class="row pb-4">
+        <div class="col-12">
+            <h2 class="tribuo-head text-center">Features</h2>
+        </div>
+    </div>
+    <div class="row pb-4">
+        <div class="col-8 offset-2">
+            <div class="tribuo-description text-center">
+                Tribuo is a general purpose Machine Learning package, with extensive support for NLP tasks built in.
+                It has algorithms for classification, regression, clustering, etc, and each uses a common interface
+                which can be implemented by new prediction techniques as they arrive.
+            </div>
+        </div>
+    </div>
+    <div class="row pb-1 justify-content-around pl-4 pr-4">
+        <div class="col-md-auto p-5 mb-2 roundeder shadow-sm bg-white">
+            <img src="assets/img/classification.png" alt="Classification Diagram"/>
+            <div class="tribuo-subhead text-center">
+                Classification
+            </div>
+        </div>
+        <div class="col-md-auto p-5 mb-2 roundeder shadow-sm bg-white">
+            <img src="assets/img/regression.png" alt="Regression Diagram"/>
+            <div class="tribuo-subhead text-center">
+                Regression
+            </div>
+        </div>
+        <div class="col-md-auto p-5 mb-2 roundeder shadow-sm bg-white">
+            <img src="assets/img/clustering.png" alt="Clustering Diagram"/>
+            <div class="tribuo-subhead text-center">
+                Clustering
+            </div>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col align-self-end text-right mr-5">
+            <a href="learn/{{ site.doc_version }}/docs/" class="learn-more">Learn More &gt;</a>
+        </div>
+    </div>
+</div> <!-- end light gray section -->
+<div class="bg-dark-tribuo pb-2">
+    <!--
+     Integrations section
+     -->
+    <div class="row pt-5">
+        <div class="col-8 offset-2">
+            <h2 class="tribuo-head text-white text-center">Integrations</h2>
+        </div>
+    </div>
+    <div class="row pt-4 justify-content-around pl-5 pr-5">
+        <div class="col-md-auto mb-2">
+            <a href="https://xgboost.ai"><img src="assets/img/integrations/xgboost-logo-white.svg" alt="XGBoost Logo"/></a>
+        </div>
+        <div class="col-md-auto mb-2">
+            <a href="https://microsoft.github.io/onnxruntime/"><img src="assets/img/integrations/onnx_main_logo.svg" alt="ONNX Runtime Logo"/></a>
+        </div>
+        <div class="col-md-auto mb-2">
+            <a href="https://www.tensorflow.org"><img src="assets/img/integrations/tf-logo_white.svg" alt="TensorFlow Logo"/></a>
+        </div>
+    </div>
+    <div class="row pt-5 pb-4 justify-content-around pl-5 pr-5 text-white tribuo-integration">
+        <div class="col-md-auto p-3 mb-2 roundeder border border-white">
+            <a href="https://liblinear.bwaldvogel.de">Liblinear</a>
+        </div>
+        <div class="col-md-auto p-3 mb-2 roundeder border border-white">
+            <a href="https://www.csie.ntu.edu.tw/~cjlin/libsvm/">Libsvm</a>
+        </div>
+
+    </div>
+</div> <!-- end dark gray section -->
+
+<div class="row">
+    <p style="margin-top: 40px">&nbsp;</p>
+</div>

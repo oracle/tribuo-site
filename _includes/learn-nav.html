@@ -1,0 +1,57 @@
+<ul class="nav-list">
+    {%- assign pages = site.html_pages | where:"learn_nav","true" | where:"version",page.version -%}
+    {%- assign sorted_pages = pages | sort:"nav_order" -%}
+    {%- for node in sorted_pages -%}
+    {%- if node.parent == nil and node.title -%}
+    <li class="nav-list-item{% if page.url == node.url or page.parent == node.title or page.grand_parent == node.title %} active{% endif %}">
+        {%- if page.parent == node.title or page.grand_parent == node.title -%}
+        {%- assign first_level_url = node.url | absolute_url -%}
+        {%- endif -%}
+        {%- if node.has_children -%}
+        <a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a>
+        {%- endif -%}
+        <a href="{{ node.url | relative_url }}" class="nav-list-link{% if page.url == node.url %} active{% endif %}">{{ node.title }}</a>
+        {%- if node.has_children -%}
+        {%- assign children_list = sorted_pages | where: "parent", node.title -%}
+        <ul class="nav-list ">
+            {%- for child in children_list -%}
+            {%- unless child.nav_exclude -%}
+            <li class="nav-list-item {% if page.url == child.url or page.parent == child.title %} active{% endif %}">
+                {%- if page.url == child.url or page.parent == child.title -%}
+                {%- assign second_level_url = child.url | absolute_url -%}
+                {%- endif -%}
+                {%- if child.has_children -%}
+                <a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a>
+                {%- endif -%}
+                <a href="{{ child.url | relative_url }}" class="nav-list-link{% if page.url == child.url %} active{% endif %}">{{ child.title }}</a>
+                {%- if child.has_children -%}
+                {%- assign grand_children_list = sorted_pages | where: "parent", child.title  -%}
+                <ul class="nav-list">
+                    {%- for grand_child in grand_children_list -%}
+                    <li class="nav-list-item {% if page.url == grand_child.url %} active{% endif %}">
+                        <a href="{{ grand_child.url | relative_url }}" class="nav-list-link{% if page.url == grand_child.url %} active{% endif %}">{{ grand_child.title }}</a>
+                    </li>
+                    {%- endfor -%}
+                </ul>
+                {%- endif -%}
+            </li>
+            {%- endunless -%}
+            {%- endfor -%}
+        </ul>
+        {%- endif -%}
+    </li>
+    {%- endif -%}
+    {%- endfor -%}
+</ul>
+{% if site.doc_versions.size > 1 %}
+<div class="dropdown mt-3">
+    <button class="btn btn-danger btn-sm dropdown-toggle bg-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Doc Versions
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        {%- for vers in site.doc_versions -%}
+        <a class="dropdown-item {% if page.version == vers %}font-weight-bold{% endif %}" href="/learn/{{ vers }}">{{ vers }}</a>
+        {%- endfor -%}
+    </div>
+</div>
+{% endif %}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+{% include head.html %}
+<body class="d-flex flex-column min-vh-100">
+<!-- learn template -->
+<div class="container mb-4">
+    {% include topbar.html %}
+    <div class="row">
+        <div class="col-md-2 pr-0 mt-4 sidebar">
+            {% include learn-nav.html %}
+        </div>
+        <div class="col-md-10">
+            {% if page.parent %}
+            <div class="row d-none d-md-flex">
+                <nav class="breadcrumb-nav">
+                    <ol class="breadcrumb-nav-list">
+                        {% if page.grand_parent %}
+                        <li class="breadcrumb-nav-list-item"><a href="{{ first_level_url }}">{{ page.grand_parent }}</a></li>
+                        <li class="breadcrumb-nav-list-item"><a href="{{ second_level_url }}">{{ page.parent }}</a></li>
+                        {% else %}
+                        <li class="breadcrumb-nav-list-item"><a href="{{ first_level_url }}">{{ page.parent }}</a></li>
+                        {% endif %}
+                        <li class="breadcrumb-nav-list-item"><span>{{ page.title }}</span></li>
+                    </ol>
+                </nav>
+            </div>
+            {% endif %}
+            {% if page.is_notebook and page.notebook_url %}
+            <div class="row mt-4">
+                <div class="col-12 col-md-10 offset-md-1">
+                    <div class="alert alert-secondary" role="alert">
+                        Note: The content of this tutorial is derived from a Jupyter notebook in the main Tribuo
+                        repository called <a href="{{ page.notebook_url }}">{{ page.notebook_url | split: '/' | last }}</a>.
+                        To run the notebook yourself, you will need <a href="https://jupyter.org/install">Jupyter</a>, the
+                        <a href="https://github.com/SpencerPark/IJava">IJava</a> kernel, and
+                        <a href="https://www.oracle.com/java/technologies/javase-downloads.html">Java</a> 10 or newer.
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            <div class="main-content-wrap js-main-content">
+                <div id="main-content" class="page-content mt-3" role="main">
+            {{ content }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% include footer.html %}
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+<script type="text/javascript" src="{{ "/assets/js/bootstrap.min.js" | relative_url }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/tribuo.js" | relative_url }}"></script>
+</body>
+</html>
+

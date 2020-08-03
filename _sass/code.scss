@@ -1,0 +1,53 @@
+//
+// Code and syntax highlighting
+//
+// stylelint-disable selector-no-qualifying-type, declaration-block-semicolon-newline-after,declaration-block-single-line-max-declarations, selector-no-type, selector-max-type
+
+code {
+  padding: 0.2em 0.15em;
+  font-weight: 400;
+  background-color: $code-background-color;
+  border: $border $border-color;
+  border-radius: $border-radius;
+}
+
+pre.highlight {
+  padding: $sp-3;
+  margin-bottom: 0;
+  -webkit-overflow-scrolling: touch;
+  background-color: $code-background-color;
+
+  code {
+    padding: 0;
+    border: 0;
+  }
+}
+
+.highlighter-rouge {
+  margin-bottom: $sp-3;
+  overflow: hidden;
+  border-radius: $border-radius;
+}
+
+//
+// Code examples (rendered)
+//
+
+.code-example {
+  padding: $sp-3;
+  margin-bottom: $sp-3;
+  overflow: auto;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+
+  + .highlighter-rouge,
+  + figure.highlight {
+    position: relative;
+    margin-top: -$sp-4;
+    border-right: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    border-left: 1px solid $border-color;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}

@@ -1,0 +1,126 @@
+---
+title: Docs
+nav_order: 102
+has_children: true
+learn_nav: true
+---
+<div class="row">
+    <div class="col-md-5">
+        <h1>Documentation</h1>
+        <div id="TOC"></div>
+    </div>
+    <div class="col-md-7 d-flex">
+        <img class="img-fluid align-self-center" src="{{ "/assets/img/learning.png" | relative_url }}"/>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+<p>
+Tribuo is a machine learning library in Java, providing
+multi-class classification, regression, clustering, anomaly detection and
+multi-label classification. It provides implementations of popular ML
+algorithms and also wraps other libraries, providing a common interface across
+implementations. Tribuo contains all the code necessary to load, featurise
+and transform data. Additionally, it includes evaluation classes for all
+supported prediction types. Development is led by <a href="https://labs.oracle.com">Oracle
+Labs</a> Machine Learning Research Group, and we welcome community contributions.
+</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+<h2>Getting Started</h2>
+<p>
+If you haven't used Tribuo before, the <a href="/learn/{{ site.doc_version }}/tutorials/irises-tribuo-v4.html">
+Classification Tutorial</a> will help walk you through the basics of training
+and testing a classifier, and saving and loading
+the model you train. Once you have the basics down, move on the through the
+rest of the <a href="/learn/{{ site.doc_version }}/tutorials">tutorials</a> to get
+a broader tour of some of the capabilities of Tribuo.
+</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+<h2>Overview</h2>
+<p>
+The <a href="/learn/{{ site.doc_version}}/docs/features.html">Features List</a> gives
+an overview of what you can do with Tribuo and the algorithms that it supports
+both natively and through interfaces to popular third-party libraries.
+
+The best way to understand Tribuo is to read through
+<a href="architecture.html">Tribuo's Architecture document</a>.
+This covers some basic definitions, data flow, the library structure, configuration
+(including options and provenance), data loading, transformations, details about
+examples, and obfuscation features available to help mask your input features.
+
+The <a href="packageoverview.html">Package Structure overview</a>
+describes how the packages in Tribuo are organized around the machine learning
+tasks that each one supports. These packages are grouped into modules so that
+users of Tribuo can depend only on the pieces they need in their implementations.
+
+Be sure to read up on the <a href="security.html">Security Considerations</a> around using
+Tribuo and what the expectations are for its users.
+
+For more odds and ends and general questions, the <a href="../faq.html">FAQ</a> is the place
+to look. For details on all the classes and packages, consult
+<a href="/learn/{{ site.doc_version }}/javadoc/">Tribuo's JavaDoc</a>.
+</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+
+<h2>Tutorials</h2>
+<p>
+We have tutorial notebooks for Classification, Clustering, Regression, Anomaly
+Detection and the configuration system in
+<a href="/learn/{{ site.doc_version }}/tutorials">tutorials</a>. These use the
+<a href="https://github.com/SpencerPark/IJava">IJava</a> Jupyter notebook kernel, and work
+with Java 10+. It should be straight-forwad to convert the code in the tutorials
+back to Java 8 code by replacing the <code>var</code> keyword with the appropriate types.
+</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+
+<h2>Configuration and Provenance</h2>
+<p>
+The trainers in Tribuo are fully configurable via the
+<a href="https://github.com/oracle/olcut">OLCUT</a> configuration system. This allows a
+user to define a trainer in an XML (or JSON or EDN) file once and repeatably
+build models with exactly the same parameters. There are example configurations
+for each of the supplied Trainers in the <code>config</code> folder of each package. Models
+are serializable using Java serialization, as are the datasets themselves, and
+the configuration used is stored with any model.
+
+All models and evaluations include a serializable provenance object which
+records when the model or evaluation was created, what data was used, any
+transformations applied to the data, the hyperparameters of the trainer, and
+for evaluations, what model was used. This information can be extracted out
+into JSON, or can be serialised directly using Java serialisation. For
+production deployments this provenance information can be redacted and replaced
+with a hash to provide model tracking through an external system.
+
+Read more about <a href="/learn/{{ site.doc_version }}/docs/architecture.html#configuration-options-and-provenance">Configuration, Options, and Provenance</a>
+</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+
+<h2>Platform Support & Requirements</h2>
+<p>
+Tribuo runs on Java 8+, and we test on LTS versions of Java, along with the
+latest release.  Tribuo itself is a pure Java library and supported on all Java
+platforms, however some of our interfaces require native code, and those are
+supported only where the native library is. We test on x86_64 architectures on
+Windows 10, macOS, and Linux (RHEL/OL/CentOS 7+), as these are supported
+platforms for the native libraries we interface with. If you're interested in
+another platform and wish to use one of the native library interfaces (ONNX
+Runtime, TensorFlow, and XGBoost) then we recommend reaching out to the
+developers of those libraries.
+</p>
+    </div>
+</div>

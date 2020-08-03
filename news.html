@@ -1,0 +1,29 @@
+---
+layout: default
+title: News
+author: all
+nav_order: 2
+permalink: /news/
+active: news
+---
+<ul>
+    {% for post in site.posts %}
+        {% if post.categories contains 'news' %}
+        <li>
+            <h2><a href="{{ post.url }}"> {{ post.title }}</a></h2>
+            <span class="fs-4">
+                {{ post.date | date_to_string }}
+                {% if post.categories contains 'major-release' %}
+                <span class="label label-red">MAJOR RELEASE</span>
+                {% elsif post.categories contains 'minor-release' %}
+                <span class="label label-yellow">MINOR RELEASE</span>
+                {% elsif post.categories contains 'patch-release' %}
+                <span class="label label-gray">PATCH RELEASE</span>
+                {% endif %}
+            </span>
+            <p>{{ post.excerpt }}</p>
+        </li>
+        {% endif %}
+    {% endfor %}
+</ul>
+

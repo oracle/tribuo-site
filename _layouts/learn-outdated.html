@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+{% include head.html %}
+<body class="d-flex flex-column min-vh-100">
+
+<div class="container mb-4">
+    {% include topbar.html %}
+    <div class="row">
+        <div class="col-md-2 pr-0 mt-4">
+            <!-- Sidebar -->
+            {% include learn-nav.html %}
+            <!-- End Sidebar -->
+        </div>
+        <div class="col-md-10">
+
+            {% if page.parent %}
+            <nav class="breadcrumb-nav">
+                <ol class="breadcrumb-nav-list">
+                    {% if page.grand_parent %}
+                    <li class="breadcrumb-nav-list-item"><a href="{{ first_level_url }}">{{ page.grand_parent }}</a></li>
+                    <li class="breadcrumb-nav-list-item"><a href="{{ second_level_url }}">{{ page.parent }}</a></li>
+                    {% else %}
+                    <li class="breadcrumb-nav-list-item"><a href="{{ first_level_url }}">{{ page.parent }}</a></li>
+                    {% endif %}
+                    <li class="breadcrumb-nav-list-item"><span>{{ page.title }}</span></li>
+                </ol>
+            </nav>
+            {% endif %}
+            <div class="row">
+                <div class="col">
+                    <div class="alert alert-danger ml-5 mr-5 mt-3 mb-4">This page describes version {{ page.version }}. A <a href="/learn/{{ site.doc_version }}">newer version</a> ({{site.doc_version}}) exists.</div>
+                </div>
+            </div>
+                {{ content }}
+        </div>
+    </div>
+
+</div>
+{% include footer.html %}
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<script type="text/javascript" src="{{ "/assets/js/bootstrap.min.js" | absolute_url }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/tribuo.js" | absolute_url }}"></script>
+</body>
+</html>
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="140px" viewBox="0 0 100 140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Providence graphic</title>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop---Homepage" transform="translate(-276.000000, -1510.000000)">
+            <g id="Products-Ready" transform="translate(0.000000, 1296.000000)">
+                <g id="Tall-card-1" transform="translate(120.000000, 108.000000)">
+                    <g id="Providence-graphic" transform="translate(156.000000, 106.000000)">
+                        <polygon id="Fill-1" fill="#FF1D25" points="24.6153846 90 24.6153846 140 74.6153846 90"></polygon>
+                        <polygon id="Fill-2" fill="#FF1D25" points="24.6153846 90 74.6153846 140 74.6153846 90"></polygon>
+                        <polygon id="Fill-3" fill="#741B18" points="0 81.5102443 49.6470053 100 99.2307692 80.8772302 99.2307692 0.00249709712 49.6470053 18.9492215 0 0"></polygon>
+                        <polygon id="Fill-4" fill="#591313" points="50 18.9461855 50 100 99.9924974 81.34224 100 0"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
