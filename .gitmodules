@@ -1,0 +1,3 @@
+[submodule "tribuo"]
+	path = tribuo
+	url = git@github.com:oracle/tribuo.git
