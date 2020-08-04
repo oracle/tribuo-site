@@ -94,21 +94,25 @@ Bootstrap 4 media breakpoints
 /* Small devices (landscape phones, 544px and up) */
 @media (min-width: 544px) {
     .tribuo-responsive-header {font-size:1.25rem;} /*1rem = 16px*/
+    #search-input{width: 13ch;}
 }
 
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
 @media (min-width: 768px) {
     .tribuo-responsive-header {font-size:1.5rem;} /*1rem = 16px*/
+    #search-input{width: 13ch;}
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     .tribuo-responsive-header {font-size:1.75rem;} /*1rem = 16px*/
+    #search-input{width: 19ch;}
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     .tribuo-responsive-header {font-size:2rem;} /*1rem = 16px*/
+    #search-input{width: 19ch;}
 }
 
 .tribuo-head {
@@ -323,7 +327,7 @@ Bootstrap 4 media breakpoints
 
 
 .sidebar {
-
+    padding-left: 0px;
 }
 
 /* Top Nav */
