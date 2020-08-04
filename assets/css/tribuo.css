@@ -1,6 +1,13 @@
 
 body {
     font-family: 'Libre Franklin',Helvetica,Arial,serif;
+    --tribuo-red: rgb(255, 29, 37);
+    --tribuo-secondary-red: rgb(229, 0, 0);
+    --tribuo-dark-red: rgb(126, 13, 17);
+    --tribuo-hover-background: rgb(255, 231, 230);
+    --tribuo-hover-text: rgb(145, 46, 48);
+    --tribuo-nav-text: rgba(0, 0, 0, 0.5);
+    --tribuo-grow-transition: all 0.2s ease-in-out;
 }
 
 @font-face {
@@ -35,8 +42,12 @@ body {
     font-style: normal;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: "SpaceGrotesk";
+}
+
+h4 {
+    font-size: 18px;
 }
 
 .main {
@@ -72,7 +83,7 @@ code {
 pre {
     background-color: rgba(255,232,231,1.0);
     border: 1px solid rgb(70, 70 70);
-    border-left: 3px solid rgb(247, 38, 33);
+    border-left: 3px solid var(--tribuo-red);
     padding-left: 8px;
 }
 
@@ -272,9 +283,89 @@ Bootstrap 4 media breakpoints
     content: "•";
 }
 
+.alert-note {
+    background-color: rgb(240, 240, 240);
+    border: 1px solid rgb(223, 223, 223);
+}
+
+.btn-outline-tribuo {
+    border: 2px solid var(--tribuo-red);
+    color: var(--tribuo-red);
+}
+
+.btn-outline-tribuo:hover {
+    color: rgb(255, 231, 232);
+    background-color: var(--tribuo-red);
+}
+
+.btn-outline-tribuo:active {
+    border: 2px solid var(--tribuo-secondary-red);
+    color: rgb(255, 231, 232);
+    background-color: var(--tribuo-secondary-red);
+}
+
+.btn-tribuo {
+    border: 2px solid var(--tribuo-red);
+    color: rgb(255, 231, 232);
+    background-color: var(--tribuo-red);
+}
+
+.btn-tribuo:hover {
+    border: 2px solid var(--tribuo-secondary-red);
+    background-color: var(--tribuo-secondary-red);
+}
+
+.btn-tribuo:active {
+    border: 2px solid var(--tribuo-dark-red);
+    color: rgb(255, 231, 232);
+    background-color: var(--tribuo-dark-red);
+}
+
+
 .sidebar {
 
 }
+
+/* Top Nav */
+
+.topnav .nav-link {
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+.topnav .nav-link:hover:not(.active):not(.active-learn) {
+    background-color: var(--tribuo-hover-background);
+    border-radius: 4px;
+    color: var(--tribuo-hover-text) !important;
+}
+
+
+.topnav .nav-link.active, .topnav .nav-link.active-learn {
+    position: relative;
+    display: inline-block;
+    color: var(--tribuo-red) !important;
+    font-weight: 500;
+}
+
+.topnav .nav-link.active:before {
+    content: '';
+    border-bottom: 2px solid var(--tribuo-red);
+    position: absolute;
+    width: 70%;
+    left: 15%;
+    bottom: 0;
+}
+
+.topnav .nav-link.active-learn:before {
+    content: '';
+    border-bottom: 2px solid var(--tribuo-red);
+    position: absolute;
+    width: 3ch;
+    left: 17%;
+    bottom: 0;
+}
+
+/* End top nav */
 
 /* Override bootstrap's tab style */
 .nav-tabs {
@@ -283,21 +374,60 @@ Bootstrap 4 media breakpoints
 
 .nav-tabs .nav-link {
     border: none;
-    color: rgb(50, 50, 50);
+    color: var(--tribuo-nav-text);
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+
+.nav-tabs .nav-link:hover:not(.active) {
+    background-color: var(--tribuo-hover-background);
+    border-radius: 4px;
+    color: var(--tribuo-hover-text) !important;
 }
 
 .nav-tabs .nav-link.active {
     font-weight: bold;
-    color: rgb(247, 38, 33);
-    border-bottom: 3px solid rgb(247, 38, 33);
+    color: var(--tribuo-red);
+    /*border-bottom: 3px solid rgb(247, 38, 33);*/
 }
+
+.nav-tabs .nav-link.active {
+    position: relative;
+    display: inline-block;
+    color: var(--tribuo-red) !important;
+    font-weight: 500;
+}
+
+.nav-tabs .nav-link.active:before {
+    content: '';
+    border-bottom: 2px solid var(--tribuo-red);
+    position: absolute;
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 50%;
+    left: 6%;
+    bottom: 0;
+}
+
 /* End tab style override */
 
 /* change dropdown click-activate color to red */
+a.dropdown-item {
+    color: var(--tribuo-nav-text) !important;
+}
 a.dropdown-item:active {
     background: rgb(247, 38, 33);
     color:#fff;
 }
+a.dropdown-item:hover {
+    background: var(--tribuo-hover-background);
+    color:#fff;
+    color: var(--tribuo-hover-text) !important;
+}
+
 
 .nav-list {
     padding: 0;
@@ -370,14 +500,29 @@ a.dropdown-item:active {
 
 /* Styles specific to each indent level, hard locked to each one */
 .sidebar > .nav-list > .nav-list-item {
-    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
     -webkit-font-smoothing: antialiased;
 }
 
 .sidebar > .nav-list > .nav-list-item > .nav-list > .nav-list-item  {
-    text-transform: none;
-
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 26px;
+    border-left: 2px solid rgb(227, 227, 227);
+    margin-left: 10px;
 }
+
+.sidebar > .nav-list > .nav-list-item > .nav-list > .nav-list-item.active  {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 26px;
+    border-left: 2px solid var(--tribuo-red);
+    margin-left: 10px;
+    color: var(--tribuo-red);
+}
+
+
 .sidebar button,
 .sidebar .dropdown,
 .sidebar .dropdown-item {

@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row topnav">
     <nav class="navbar navbar-expand-md navbar-light white container">
         <a class="navbar-brand" href="{{ site.url | relative_url }}"><img src="{{ site.logo | relative_url }}" width="112px" height="34px" alt="Tribuo Logo" class="v-align-middle"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -6,24 +6,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav container justify-content-around">
-                <div class="search">
+                <div class="search ml-lg-3">
                 <form class="form-inline">
                     <div class="form-group has-search js-search">
                         <span class="fa fa-search form-control-feedback"></span>
-                        <input type="text" class="form-control" placeholder="Search" id="search-input" size="13">
+                        <input type="text" class="form-control" placeholder="Search" id="search-input" size="19">
                         <div class="search-results" id="search-results"></div>
                     </div>
                 </form>
                 </div>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link {% if page.active == 'home' %}active{% endif %}" href="{{ "/" | relative_url }}">Home {% if page.active == 'home' %}<span class="sr-only">(current)</span>{% endif %}</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link {% if page.active == 'community' %}active{% endif %}" href="{{ "community" | relative_url }}">Community {% if page.active == 'community' %}<span class="sr-only">(current)</span>{% endif %}</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle {% if page.active == 'learn' %}active{% endif %}" id="navbarLearnDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+                        <a class="nav-link dropdown-toggle {% if page.active == 'learn' %}active-learn{% endif %}" id="navbarLearnDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
                             Learn {% if page.active == 'learn' %}<span class="sr-only">(current)</span>{% endif %}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarLearnDropdown">

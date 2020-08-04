@@ -12,7 +12,7 @@ active: home
 <div class="row bgdots">
     <div class="col-md-4 my-auto">
         <h2 class="tribuo-head pb-3 tribuo-responsive-header">Machine learning library in Pure Java</h2>
-        <a href="/learn/{{ site.doc_version }}/docs" class="btn btn-outline-danger btn-lg mb-2">Read more</a>
+        <a href="/learn/{{ site.doc_version }}/docs" class="btn btn-outline-tribuo btn-md mb-2 pl-5 pr-5">Read more</a>
     </div>
     <div class="d-none d-sm-flex col-md-8 mx-auto ">
         <figure>
@@ -26,25 +26,26 @@ active: home
 <div class="row">
     <p style="margin-top: 40px">&nbsp;</p>
 </div>
-<div class="row">
+</div></div></div></div></div>
+<div class="container-fluid px-0">
+<div class="row no-gutters">
     <div class="jumbotron jumbotron-fluid">
-        <div class="container my-auto mx-auto">
-
             <div class="row justify-content-center">
                 <div class="col-8">
                     <p><b><a href="#" data-toggle="tooltip" data-html="true" title="pronounced <em>trib-you-oh</em>; latin: <em>to assign, apportion</em>">Tribuo*</a></b>
-                        is a machine learning framework written in Java. It provides tools for classification, regression,
-                        clustering, model development, and <a href="/learn/{{ site.doc_version }}/docs">more</a>. It also provides a unified
+                        is a machine learning library written in Java. It provides tools for classification, regression,
+                        clustering, model development, and <a href="/learn/{{ site.doc_version }}/docs">more</a>. It provides a unified
                         interface to many popular third-party ML libraries like <a href="https://xgboost.ai/" target="_blank">xgboost</a>
-                        and <a href="https://www.csie.ntu.edu.tw/~cjlin/liblinear/" target="_blank">liblinear</a>,
-                        along with the ability to deploy models trained by Python libraries like
-                        <a href="https://scikit-learn.org/stable/">scikit-learn</a> or <a href="https://pytorch.org/">pytorch</a>
+                        and <a href="https://www.csie.ntu.edu.tw/~cjlin/liblinear/" target="_blank">liblinear</a>.
+                        With interfaces to native code, Tribuo also makes it possible to deploy models
+                        trained by Python libraries (e.g. <a href="https://scikit-learn.org/stable/">scikit-learn</a>, and <a href="https://pytorch.org/">pytorch</a>)
                         in a regular Java program.</p>
                 </div>
             </div>
-        </div>
     </div>
 </div>
+</div>
+    <div class="container">
 <div class="row justify-content-center mb-3">
     <div class="col-8 d-flex justify-content-center">
         <h2 class="tribuo-head">Get started</h2>
@@ -113,9 +114,11 @@ active: home
         <div class="col-md-7 p-4">
             <div class="tribuo-subhead">Provenance</div>
             <div class="tribuo-description">
-                Tribuo's Models, Datasets and Evaluations have <em>provenance</em>, they know exactly what parameters, transformations
-                and files were used to create them. This means each model can be rebuilt from scratch, and experiments are easy as
-                the evaluation tracks the models and datasets used.
+                Remove the uncertainty around exactly which artifacts you're loading from disk.
+                Tribuo's Models, Datasets, and Evaluations have <em>provenance</em>, meaning they
+                know exactly what parameters, transformations, and files were used to create them.
+                Provenance data allows each model to be rebuilt verbatim from scratch and for
+                evaluations to track the models and datasets used for each experiment.
             </div>
         </div>
         <div class="d-flex col-md-5 p-4 align-content-center justify-content-center">
@@ -126,9 +129,12 @@ active: home
         <div class="col-md-7 p-4">
             <div class="tribuo-subhead">Typesafe</div>
             <div class="tribuo-description">
-                Tribuo is strongly typed (like Java). Each model knows what kind of output it produces, what inputs it expects
-                and the names of everything involved. No more confusion when loading something off disk, Tribuo knows what kind
-                of model it is and what labels it can predict.
+                Prevent mistakes at compile time rather than discovering them in production.
+                Like Java itself, Tribuo is strongly typed. Each model knows what kind of output
+                it produces, what inputs it expects, and the names of the components involved.
+                Models loaded off disk are strongly typed as well, and cannot be misinterpreted
+                by Tribuo. Before you can use a model, Tribuo checks what kind of model was loaded
+                and what labels it can predict.
             </div>
         </div>
         <div class="d-flex col-md-5 p-4 align-content-center justify-content-center">
@@ -139,11 +145,12 @@ active: home
         <div class="col-md-7 p-4">
             <div class="tribuo-subhead">Interoperable</div>
             <div class="tribuo-description">
-                Tribuo provides interfaces to popular ML libraries like
-                XGBoost and Tensorflow, along with support for the onnx
-                model exchange format. Our ONNX support (via onnx-runtime)
+                Break down the barriers between Java and native ML solutions.
+                Tribuo provides interfaces to popular ML libraries such as
+                XGBoost and Tensorflow. It also supports the ONNX
+                model exchange format. Tribuo's ONNX support
                 allows you to deploy models built in other packages and
-                other languages (such as Python's scikit-learn) alongside models trained with Tribuo.
+                languages (such as Python's scikit-learn) alongside models trained with Tribuo.
             </div>
         </div>
         <div class="d-flex col-md-5 p-4 align-content-center justify-content-center">
@@ -165,26 +172,27 @@ active: home
     <div class="row pb-4">
         <div class="col-8 offset-2">
             <div class="tribuo-description text-center">
-                Tribuo is a general purpose Machine Learning package, with extensive support for NLP tasks built in.
-                It has algorithms for classification, regression, clustering, etc, and each uses a common interface
-                which can be implemented by new prediction techniques as they arrive.
+                Tribuo is a general purpose Machine Learning library, but also has extensive
+                support for NLP tasks built in. It has algorithms for classification, regression,
+                clustering, etc, and provides a common abstracted interface to each.
+                This makes it easy to integrate new prediction techniques as they arrive.
             </div>
         </div>
     </div>
     <div class="row pb-1 justify-content-around pl-4 pr-4">
-        <div class="col-md-auto p-5 mb-2 roundeder shadow-sm bg-white">
+        <div class="col-md-auto p-4 mb-2 roundeder shadow-sm bg-white">
             <img src="assets/img/classification.png" alt="Classification Diagram"/>
             <div class="tribuo-subhead text-center">
                 Classification
             </div>
         </div>
-        <div class="col-md-auto p-5 mb-2 roundeder shadow-sm bg-white">
+        <div class="col-md-auto p-4 mb-2 roundeder shadow-sm bg-white">
             <img src="assets/img/regression.png" alt="Regression Diagram"/>
             <div class="tribuo-subhead text-center">
                 Regression
             </div>
         </div>
-        <div class="col-md-auto p-5 mb-2 roundeder shadow-sm bg-white">
+        <div class="col-md-auto p-4 mb-2 roundeder shadow-sm bg-white">
             <img src="assets/img/clustering.png" alt="Clustering Diagram"/>
             <div class="tribuo-subhead text-center">
                 Clustering
