@@ -22,7 +22,12 @@ fi
 SITE_ROOT=$(git rev-parse --show-toplevel)
 DOC_VERSION=$(grep doc_version: $SITE_ROOT/_config.yml |awk -F: '{print $2}' |xargs)
 
-TUTORIALS=$(ls "$SITE_ROOT"/tribuo/tutorials/*.ipynb)
+TRIBUO_DIR="${SITE_ROOT}/tribuo"
+if [[ $# -eq 1 ]] ; then
+    TRIBUO_DIR=$1
+fi
+
+TUTORIALS=$(ls "${TRIBUO_DIR}"/tutorials/*.ipynb)
 
 
 UNORDERED=320
@@ -65,6 +70,7 @@ for tut in $TUTORIALS; do
     cat << EOF > $TARGET
 ---
 title: "$TITLE"
+og-title: "$TITLE Tutorial"
 learn_nav: true
 parent: Tutorials
 nav_order: $ORDER

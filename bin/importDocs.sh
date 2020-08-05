@@ -4,7 +4,13 @@
 SITE_ROOT=$(git rev-parse --show-toplevel)
 DOC_VERSION=$(grep doc_version: $SITE_ROOT/_config.yml |awk -F: '{print $2}' |xargs)
 DOC_DIR="$SITE_ROOT/learn/$DOC_VERSION/docs"
-TRIBUO_DOC_DIR="$SITE_ROOT/tribuo/docs/"
+
+TRIBUO_DIR="${SITE_ROOT}/tribuo"
+if [[ $# -eq 1 ]] ; then
+    TRIBUO_DIR=$1
+fi
+
+TRIBUO_DOC_DIR="${TRIBUO_DIR}/docs/"
 
 DOCS="Architecture.md PackageOverview.md Security.md"
 

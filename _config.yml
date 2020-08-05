@@ -13,11 +13,24 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Tribuo
+title: "Tribuo: Machine Learning in Pure Java"
 email: tribuo-devel@oracle.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Machine learning in pure Java.
+  Tribuo is a Java ML library for
+  multi-class classification, regression, clustering, anomaly detection and
+  multi-label classification.
 logo: "/assets/img/tribuo-logo-color.svg"
+og-logo: "/assets/img/tribuo-logo-color-1200.png"
+twitter-logo: "/assets/img/tribuo-logo-only-512.png"
+twitter-handle: "@oraclelabs"
+og-tags:
+  - java
+  - nlp
+  - machine-learning
+  - deep-learning
+  - clustering
+  - regression
+  - classification
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://tribuo.org"
 tribuo_version: 4.0.0 # Current version of Tribuo library.
@@ -41,6 +54,12 @@ defaults:
       layout: learn
       version: 4.0
       active: learn
+  -
+    scope:
+      path: "learn/*/tutorials/*"
+      type: pages
+    values:
+      description: "Learn how to use some of Tribuo's features with simple notebook-based tutorials."
 
 
 # Build settings
