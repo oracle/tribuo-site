@@ -3,36 +3,49 @@
 <html lang="en">
 {% include head.html %}
 <body class="d-flex flex-column min-vh-100">
-
-<div class="container mb-4">
+<div class="container-fluid px-0">
     {% include topbar.html %}
-    <div class="row">
-        <div class="col-md-2 pr-0 mt-4">
-            <!-- Sidebar -->
-            {% include learn-nav.html %}
-            <!-- End Sidebar -->
-        </div>
-        <div class="col-md-10">
-
-            {% if page.parent %}
-            <nav class="breadcrumb-nav">
-                <ol class="breadcrumb-nav-list">
-                    {% if page.grand_parent %}
-                    <li class="breadcrumb-nav-list-item"><a href="{{ first_level_url }}">{{ page.grand_parent }}</a></li>
-                    <li class="breadcrumb-nav-list-item"><a href="{{ second_level_url }}">{{ page.parent }}</a></li>
-                    {% else %}
-                    <li class="breadcrumb-nav-list-item"><a href="{{ first_level_url }}">{{ page.parent }}</a></li>
-                    {% endif %}
-                    <li class="breadcrumb-nav-list-item"><span>{{ page.title }}</span></li>
-                </ol>
-            </nav>
-            {% endif %}
-            <div class="row">
-                <div class="col">
-                    <div class="alert alert-danger ml-5 mr-5 mt-3 mb-4">This page describes version {{ page.version }}. A <a href="/learn/{{ site.doc_version }}">newer version</a> ({{site.doc_version}}) exists.</div>
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 pr-0 sidebar">
+                {% include learn-nav.html %}
             </div>
-                {{ content }}
+            <div class="col-md-10">
+
+                {% if page.parent %}
+                <nav class="breadcrumb-nav">
+                    <ol class="breadcrumb-nav-list">
+                    {% <i></i>f page.grand_parent %}
+                        <li class="breadcrumb-nav-list-item"><a href="{{ first_level_url }}">{{ page.grand_parent }}</a></li>
+                        <li class="breadcrumb-nav-list-item"><a href="{{ second_level_url }}">{{ page.parent }}</a></li>
+                        {% else %}
+                        <li class="breadcrumb-nav-list-item"><a href="{{ first_level_url }}">{{ page.parent }}</a></li>
+                        {% endif %}
+                        <li class="breadcrumb-nav-list-item"><span>{{ page.title }}</span></li>
+                    </ol>
+                </nav>
+                {% endif %}
+                {% if page.is_notebook and page.notebook_url %}
+                <div class="row mt-4">
+                    <div class="col-12 col-md-10 offset-md-1">
+                        <div class="alert alert-note" role="alert">
+                            Note: The content of this tutorial is derived from a Jupyter notebook in the main Tribuo
+                            repository called <a href="{{ page.notebook_url }}">{{ page.notebook_url | split: '/' | last }}</a>.
+                            To run the notebook yourself, you will need <a href="https://jupyter.org/install">Jupyter</a>, the
+                            <a href="https://github.com/SpencerPark/IJava">IJava</a> kernel, and
+                            <a href="https://www.oracle.com/java/technologies/javase-downloads.html">Java</a> 10 or newer.
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                <div class="row">
+                    <div class="col">
+                        <div class="alert alert-danger ml-5 mr-5 mt-3 mb-4">This page describes version {{ page.version }}. A <a href="/learn/{{ site.doc_version }}">newer version</a> ({{site.doc_version}}) exists.</div>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    {{ content }}
+                </div>
         </div>
     </div>
 

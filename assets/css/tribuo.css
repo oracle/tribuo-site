@@ -8,6 +8,7 @@ body {
     --tribuo-hover-text: rgb(145, 46, 48);
     --tribuo-nav-text: rgba(0, 0, 0, 0.5);
     --tribuo-grow-transition: all 0.2s ease-in-out;
+    padding-top: 60px;
 }
 
 @font-face {
@@ -174,6 +175,11 @@ Bootstrap 4 media breakpoints
     display: block;
 }
 
+.prod-card {
+    min-width: 30%;
+    max-width: 80%;
+}
+
 .bg-red-tribuo {
     background-color: rgba(255,232,231,1.0);
 }
@@ -193,6 +199,7 @@ Bootstrap 4 media breakpoints
     font-size: 12px;
     font-weight: normal;
     -webkit-font-smoothing: antialiased;
+    bottom: 0px;
 }
 
 .tribuo-footer a {
@@ -330,6 +337,9 @@ Bootstrap 4 media breakpoints
     padding-left: 0px;
 }
 
+.learn-nav {
+    top: 70px;
+}
 /* Top Nav */
 
 .topnav .nav-link {

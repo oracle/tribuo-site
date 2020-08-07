@@ -5,7 +5,7 @@ nav_order: 0
 permalink: /
 active: home
 ---
-
+<div class="container mb-4">
 <div class="row">
     <p style="margin-top: 40px">&nbsp;</p>
 </div>
@@ -26,26 +26,23 @@ active: home
 <div class="row">
     <p style="margin-top: 40px">&nbsp;</p>
 </div>
-</div></div></div></div></div>
-<div class="container-fluid px-0">
-<div class="row no-gutters">
-    <div class="jumbotron jumbotron-fluid">
-            <div class="row justify-content-center">
-                <div class="col-8">
-                    <p><b><a href="#" data-toggle="tooltip" data-html="true" title="pronounced <em>trib-you-oh</em>; latin: <em>to assign, apportion</em>">Tribuo*</a></b>
-                        is a machine learning library written in Java. It provides tools for classification, regression,
-                        clustering, model development, and <a href="/learn/{{ site.doc_version }}/docs">more</a>. It provides a unified
-                        interface to many popular third-party ML libraries like <a href="https://xgboost.ai/" target="_blank">xgboost</a>
-                        and <a href="https://www.csie.ntu.edu.tw/~cjlin/liblinear/" target="_blank">liblinear</a>.
-                        With interfaces to native code, Tribuo also makes it possible to deploy models
-                        trained by Python libraries (e.g. <a href="https://scikit-learn.org/stable/">scikit-learn</a>, and <a href="https://pytorch.org/">pytorch</a>)
-                        in a regular Java program.</p>
-                </div>
-            </div>
+
+</div>
+<!--<div class="container-fluid px-0">-->
+
+<div class="row justify-content-center jumbotron jumbotron-fluid">
+    <div class="col-8 col-lg-7">
+        <p><b><a href="#" data-toggle="tooltip" data-html="true" title="pronounced <em>trib-you-oh</em>; latin: <em>to assign, apportion</em>">Tribuo*</a></b>
+            is a machine learning library written in Java. It provides tools for classification, regression,
+            clustering, model development, and <a href="/learn/{{ site.doc_version }}/docs">more</a>. It provides a unified
+            interface to many popular third-party ML libraries like <a href="https://xgboost.ai/" target="_blank">xgboost</a>
+            and <a href="https://www.csie.ntu.edu.tw/~cjlin/liblinear/" target="_blank">liblinear</a>.
+            With interfaces to native code, Tribuo also makes it possible to deploy models
+            trained by Python libraries (e.g. <a href="https://scikit-learn.org/stable/">scikit-learn</a>, and <a href="https://pytorch.org/">pytorch</a>)
+            in a regular Java program.</p>
     </div>
 </div>
-</div>
-    <div class="container">
+
 <div class="row justify-content-center mb-3">
     <div class="col-8 d-flex justify-content-center">
         <h2 class="tribuo-head">Get started</h2>
@@ -64,10 +61,32 @@ active: home
         </li>
     </ul>
 </div>
+<!--
+<div class="row justify-content-center source-links">
+    <div class="col col-md-3">
+    <div class="tab-content" id="gitTabContent">
+        <div class="tab-pane fade" id="source" role="tabpanel" aria-labelledby="home-tab">
+            <pre id="clone-source" class="copy-url">git clone https://github.com/oracle/tribuo.git</pre>
+        </div>
+        <div class="tab-pane fade show active" id="maven" role="tabpanel" aria-labelledby="profile-tab">
+                <pre id="maven-coords" class="copy-url preformat">&lt;dependency&gt;
+    &lt;groupId&gt;org.tribuo&lt;/groupId&gt;
+    &lt;artifactId&gt;tribuo-all&lt;/artifactId&gt;
+    &lt;version&gt;{{ site.tribuo_version }}&lt;/version&gt;
+    &lt;type&gt;pom&lt;/type&gt;
+&lt;/dependency&gt;</pre>
+        </div>
+        <div class="tab-pane fade" id="gradle" role="tabpanel" aria-labelledby="profile-tab">
+                <pre id="gradle-coords" class="copy-url preformat">implementation 'org.tribuo:tribuo-all:{{ site.tribuo_version }}@pom'</pre>
+        </div>
+    </div>
+    </div>
+</div>
+-->
 <div class="row justify-content-center source-links">
     <div class="tab-content" id="gitTabContent">
         <div class="tab-pane fade" id="source" role="tabpanel" aria-labelledby="home-tab">
-            <div class="d-flex alert alert-danger align-items-center bg-red-tribuo" role="alert">
+            <div class="d-flex alert alert-danger align-items-center bg-red-tribuo">
                 <code id="clone-source" class="copy-url">git clone https://github.com/oracle/tribuo.git</code>
                 <button class="btn btn-sm float-right" data-clipboard-action="copy" data-clipboard-target="#clone-source">
                     <img src="assets/img/copy_to_clipboard.svg" alt="Copy to clipboard" width="18"/>
@@ -97,66 +116,86 @@ active: home
         </div>
     </div>
 </div>
+
 <div class="row">
     <p style="margin-top: 10px">&nbsp;</p>
 </div>
-<div class="bg-light-tribuo pb-2">
+</div> <!-- end normal container, start full-width -->
+<!-- start new container -->
+<div class="container-fluid">
+<div class="row bg-light-tribuo pb-2">
     <!--
       Production Ready Section
       -->
 
+    <div class="container px-0">
     <div class="row pt-5 pb-3">
         <div class="col-12">
             <h2 class="tribuo-head text-center">Production Ready</h2>
         </div>
     </div>
-    <div class="row bg-white roundeder shadow ml-3 mr-3 mb-4">
-        <div class="col-md-7 p-4">
-            <div class="tribuo-subhead">Provenance</div>
-            <div class="tribuo-description">
+    <div class="row justify-content-around">
+        <div class="col-12 col-lg-3 bg-white roundeder shadow mb-4 prod-card">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-1">
+                <div class="d-flex col p-4 align-content-center justify-content-center order-md-1 order-lg-0">
+                    <div class="align-self-center">
+                        <img src="assets/img/provenance.png" alt="Provenance Log Book"/>
+                    </div>
+                </div>
+                <div class="col p-4 order-md-0 order-lg-1">
+                    <div class="tribuo-subhead">Provenance</div>
+                    <div class="tribuo-description">
                 Remove the uncertainty around exactly which artifacts you're loading from disk.
                 Tribuo's Models, Datasets, and Evaluations have <em>provenance</em>, meaning they
                 know exactly what parameters, transformations, and files were used to create them.
                 Provenance data allows each model to be rebuilt verbatim from scratch and for
                 evaluations to track the models and datasets used for each experiment.
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="d-flex col-md-5 p-4 align-content-center justify-content-center">
-            <img src="assets/img/provenance.svg" alt="Provenance Log Book"/>
-        </div>
-    </div>
-    <div class="row bg-white roundeder shadow ml-3 mr-3 mb-4">
-        <div class="col-md-7 p-4">
-            <div class="tribuo-subhead">Typesafe</div>
-            <div class="tribuo-description">
+        <div class="col-12 col-lg-3 bg-white roundeder shadow mb-4 prod-card">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-1">
+                <div class="d-flex col p-4 align-content-center justify-content-center order-md-1 order-lg-0 ">
+                    <div class="align-self-center">
+                        <img src="assets/img/typesafe.png" alt="Interlocking types logo"/>
+                    </div>
+                </div>
+                <div class="col p-4 order-md-0 order-lg-1">
+                    <div class="tribuo-subhead">Typesafe</div>
+                    <div class="tribuo-description">
                 Prevent mistakes at compile time rather than discovering them in production.
                 Like Java itself, Tribuo is strongly typed. Each model knows what kind of output
                 it produces, what inputs it expects, and the names of the components involved.
                 Models loaded off disk are strongly typed as well, and cannot be misinterpreted
                 by Tribuo. Before you can use a model, Tribuo checks what kind of model was loaded
                 and what labels it can predict.
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="d-flex col-md-5 p-4 align-content-center justify-content-center">
-            <img src="assets/img/typesafe.svg" alt="Interlocking types logo"/>
-        </div>
-    </div>
-    <div class="row bg-white roundeder shadow ml-3 mr-3 mb-4">
-        <div class="col-md-7 p-4">
-            <div class="tribuo-subhead">Interoperable</div>
-            <div class="tribuo-description">
+        <div class="col-12 col-lg-3 bg-white roundeder shadow mb-4 prod-card">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-1">
+                <div class="d-flex col p-4 align-content-center justify-content-center order-md-1 order-lg-0 ">
+                    <div class="align-self-center">
+                        <img src="assets/img/interoperable.png" alt="Joined puzzle pieces"/>
+                    </div>
+                </div>
+                <div class="col p-4 order-md-0 order-lg-1">
+                    <div class="tribuo-subhead">Interoperable</div>
+                    <div class="tribuo-description">
                 Break down the barriers between Java and native ML solutions.
                 Tribuo provides interfaces to popular ML libraries such as
                 XGBoost and Tensorflow. It also supports the ONNX
                 model exchange format. Tribuo's ONNX support
                 allows you to deploy models built in other packages and
                 languages (such as Python's scikit-learn) alongside models trained with Tribuo.
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="d-flex col-md-5 p-4 align-content-center justify-content-center">
-            <img src="assets/img/checkmark.svg" alt="Checkmark"/>
-        </div>
     </div>
+
 
     <!--
     Features Section
@@ -179,23 +218,29 @@ active: home
             </div>
         </div>
     </div>
-    <div class="row pb-1 justify-content-around pl-4 pr-4">
-        <div class="col-md-auto p-4 mb-2 roundeder shadow-sm bg-white">
-            <img src="assets/img/classification.png" alt="Classification Diagram"/>
+    <div class="row row-cols-1 row-cols-lg-12 pb-1 justify-content-around pl-4 pr-4">
+        <div class="col col-lg-auto p-4 mb-2 d-inline-flex justify-content-center">
+            <div class="p-4 bg-white shadow-sm roundeder">
+            <img src="assets/img/classification.png" alt="Classification Diagram" class="mx-auto d-block"/>
             <div class="tribuo-subhead text-center">
                 Classification
             </div>
+            </div>
         </div>
-        <div class="col-md-auto p-4 mb-2 roundeder shadow-sm bg-white">
-            <img src="assets/img/regression.png" alt="Regression Diagram"/>
+        <div class="col col-lg-auto p-4 mb-2 d-inline-flex justify-content-center">
+            <div class="p-4 bg-white shadow-sm roundeder">
+            <img src="assets/img/regression.png" alt="Regression Diagram" class="mx-auto d-block"/>
             <div class="tribuo-subhead text-center">
                 Regression
             </div>
+            </div>
         </div>
-        <div class="col-md-auto p-4 mb-2 roundeder shadow-sm bg-white">
-            <img src="assets/img/clustering.png" alt="Clustering Diagram"/>
+        <div class="col col-lg-auto p-4 mb-2 d-inline-flex justify-content-center">
+            <div class="p-4 bg-white shadow-sm roundeder">
+            <img src="assets/img/clustering.png" alt="Clustering Diagram" class="mx-auto d-block"/>
             <div class="tribuo-subhead text-center">
                 Clustering
+            </div>
             </div>
         </div>
     </div>
@@ -204,11 +249,13 @@ active: home
             <a href="learn/{{ site.doc_version }}/docs/" class="learn-more">Learn More &gt;</a>
         </div>
     </div>
+</div>
 </div> <!-- end light gray section -->
-<div class="bg-dark-tribuo pb-2">
+<div class="row bg-dark-tribuo pb-2">
     <!--
      Integrations section
      -->
+    <div class="container px-0">
     <div class="row pt-5">
         <div class="col-8 offset-2">
             <h2 class="tribuo-head text-white text-center">Integrations</h2>
@@ -234,8 +281,10 @@ active: home
         </div>
 
     </div>
+    </div>
 </div> <!-- end dark gray section -->
 
 <div class="row">
     <p style="margin-top: 40px">&nbsp;</p>
+</div>
 </div>
