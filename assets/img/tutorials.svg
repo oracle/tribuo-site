@@ -1,0 +1,18 @@
+<svg width="500" height="168" viewBox="0 0 500 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="50.1642" cy="29.6053" rx="28.7829" ry="29.6053" fill="#F83843"/>
+<ellipse cx="449.836" cy="29.6053" rx="28.7829" ry="29.6053" fill="#F83843"/>
+<circle cx="250" cy="29.6053" r="29.6053" fill="#561416"/>
+<ellipse cx="150.493" cy="29.6053" rx="28.7829" ry="29.6053" fill="#741B18"/>
+<ellipse cx="349.507" cy="29.6053" rx="28.7829" ry="29.6053" fill="#F49797"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M199.75 130.593L249.555 149.142L299.297 129.958V48.8256L249.555 67.8327L199.75 48.8231V130.593Z" fill="#F83843"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M249.909 67.8297V149.142L300.061 130.425L300.069 48.8231L249.909 67.8297Z" fill="#F82031"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 130.593L49.8053 149.142L99.5471 129.958V48.8256L49.8053 67.8327L0 48.8231V130.593Z" fill="#F83843"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M50.1597 67.8297V149.142L100.312 130.425L100.319 48.8231L50.1597 67.8297Z" fill="#F82031"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M399.681 130.593L449.486 149.142L499.228 129.958V48.8256L449.486 67.8327L399.681 48.8231V130.593Z" fill="#F83843"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M449.841 67.8297V149.142L499.993 130.425L500 48.8231L449.841 67.8297Z" fill="#F82031"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M137.669 167.971V143.123H162.517V167.971L150.093 155.547L137.669 167.971Z" fill="#FF1D25"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M100.319 130.593L150.125 149.142L199.866 129.958V48.8256L150.125 67.8327L100.319 48.8231V130.593Z" fill="#741B18"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M150.479 67.8297V149.142L200.631 130.425L200.638 48.8231L150.479 67.8297Z" fill="#591313"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M299.362 130.593L349.168 149.142L398.909 129.958V48.8256L349.168 67.8327L299.362 48.8231V130.593Z" fill="#741B18"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M349.522 67.8297V149.142L399.674 130.425L399.681 48.8231L349.522 67.8297Z" fill="#591313"/>
+</svg>

@@ -31,7 +31,7 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if page.active == 'javadoc' %}active{% endif %}" target="_blank" href="{{ "/javadoc" | relative_url }}">JavaDoc {% if page.active == 'javadoc' %}<span class="sr-only">(current)</span>{% endif %}</a>
+                        <a class="nav-link {% if page.active == 'javadoc' %}active{% endif %}" target="_blank" href="/learn/{{ site.doc_version }}/javadoc">JavaDoc {% if page.active == 'javadoc' %}<span class="sr-only">(current)</span>{% endif %}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://github.com/oracle/tribuo">v{{ site.tribuo_version }}</a>

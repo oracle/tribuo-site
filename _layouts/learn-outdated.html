@@ -3,27 +3,28 @@
 <html lang="en">
 {% include head.html %}
 <body class="d-flex flex-column min-vh-100">
-<div class="container-fluid px-0">
+<div class="container-fluid">
     {% include topbar.html %}
     <div class="container">
         <div class="row">
             <div class="col-md-2 pr-0 sidebar">
                 {% include learn-nav.html %}
             </div>
-            <div class="col-md-10">
-
+            <div class="col-md-10 mt-3">
                 {% if page.parent %}
-                <nav class="breadcrumb-nav">
-                    <ol class="breadcrumb-nav-list">
-                    {% <i></i>f page.grand_parent %}
-                        <li class="breadcrumb-nav-list-item"><a href="{{ first_level_url }}">{{ page.grand_parent }}</a></li>
-                        <li class="breadcrumb-nav-list-item"><a href="{{ second_level_url }}">{{ page.parent }}</a></li>
-                        {% else %}
-                        <li class="breadcrumb-nav-list-item"><a href="{{ first_level_url }}">{{ page.parent }}</a></li>
-                        {% endif %}
-                        <li class="breadcrumb-nav-list-item"><span>{{ page.title }}</span></li>
-                    </ol>
-                </nav>
+                <div class="row d-none d-md-flex">
+                    <nav class="breadcrumb-nav">
+                        <ol class="breadcrumb-nav-list">
+                            {% if page.grand_parent %}
+                            <li class="breadcrumb-nav-list-item"><a href="{{ first_level_url }}">{{ page.grand_parent }}</a></li>
+                            <li class="breadcrumb-nav-list-item"><a href="{{ second_level_url }}">{{ page.parent }}</a></li>
+                            {% else %}
+                            <li class="breadcrumb-nav-list-item"><a href="{{ first_level_url }}">{{ page.parent }}</a></li>
+                            {% endif %}
+                            <li class="breadcrumb-nav-list-item"><span>{{ page.title }}</span></li>
+                        </ol>
+                    </nav>
+                </div>
                 {% endif %}
                 {% if page.is_notebook and page.notebook_url %}
                 <div class="row mt-4">
@@ -46,9 +47,9 @@
                 <div class="mt-3">
                     {{ content }}
                 </div>
+            </div>
         </div>
     </div>
-
 </div>
 {% include footer.html %}
 

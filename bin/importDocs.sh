@@ -83,6 +83,8 @@ head -1 $TRIBUO_DOC_DIR/FAQs.md >> $SITE_ROOT/learn/$DOC_VERSION/faq.md
 cat << EOF >> $SITE_ROOT/learn/$DOC_VERSION/faq.md
 {:.no_toc}
 
+![faq graphic](http://localhost:4000/assets/img/faq.svg)
+
 * TOC
 {:toc}
 EOF

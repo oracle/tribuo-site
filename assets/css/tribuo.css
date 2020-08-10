@@ -92,28 +92,61 @@ pre {
 :::::::::::::::::::::::::::::::::::::::::::::::::::
 Bootstrap 4 media breakpoints
 */
+
+/* extra small is undecorated in terms of min-width */
+/* for the FAQ image sizing, we don't control the markdown */
+img[alt="faq graphic"] {
+    max-width: 225px;
+    height: auto;
+}
+
+
 /* Small devices (landscape phones, 544px and up) */
 @media (min-width: 544px) {
     .tribuo-responsive-header {font-size:1.25rem;} /*1rem = 16px*/
     #search-input{width: 13ch;}
+
+    /* for the FAQ image sizing, we don't control the markdown */
+    img[alt="faq graphic"] {
+        max-width: 225px;
+        height: auto;
+    }
 }
 
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
 @media (min-width: 768px) {
     .tribuo-responsive-header {font-size:1.5rem;} /*1rem = 16px*/
     #search-input{width: 13ch;}
+
+    /* for the FAQ image sizing, we don't control the markdown */
+    img[alt="faq graphic"] {
+        max-width: 400px;
+        height: auto;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     .tribuo-responsive-header {font-size:1.75rem;} /*1rem = 16px*/
     #search-input{width: 19ch;}
+
+    /* for the FAQ image sizing, we don't control the markdown */
+    img[alt="faq graphic"] {
+        max-width: 425px;
+        height: auto;
+    }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     .tribuo-responsive-header {font-size:2rem;} /*1rem = 16px*/
     #search-input{width: 19ch;}
+
+    /* for the FAQ image sizing, we don't control the markdown */
+    img[alt="faq graphic"] {
+        max-width: 425px;
+        height: auto;
+    }
 }
 
 .tribuo-head {

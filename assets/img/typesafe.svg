@@ -1,18 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="105px" height="105px" viewBox="0 0 105 105" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Typeset 3</title>
-    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Desktop---Homepage" transform="translate(-668.000000, -1528.000000)">
-            <g id="Products-Ready" transform="translate(0.000000, 1296.000000)">
-                <g id="Tall-card-2" transform="translate(514.000000, 108.000000)">
-                    <g id="Typeset-3" transform="translate(154.000000, 124.000000)">
-                        <polygon id="Fill-1" fill="#741B18" points="78.4890141 26.050454 78.4890141 78.5030096 52.1948005 78.5476903 52.0930233 105 105 105 105 26.0465116"></polygon>
-                        <polygon id="Fill-2" fill="#FF1D25" points="26.0465116 0 26.0465116 26.3678934 52.3358339 26.3757982 52.3647797 78.9534884 78.6106833 78.9534884 78.6106833 26.3678934 78.681732 26.3678934 105 26.3678934 104.976317 0.119889992"></polygon>
-                        <polygon id="Fill-3" fill="#F99795" points="21.9767442 105 52.9069767 105 52.9069767 26.0465116 21.9767442 26.0465116"></polygon>
-                        <polygon id="Fill-4" fill="#F99795" points="0 105 26.0465116 105 26.0465116 0 0 0"></polygon>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
+<svg width="105" height="105" viewBox="0 0 105 105" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M78.4893 26.0505V78.503L52.195 78.5477L52.0933 105H105V26.0465L78.4893 26.0505Z" fill="#741B18"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M26.0464 0V26.3679L52.3357 26.3758L52.3647 78.9535H78.6106V26.3679H78.6816H105L104.976 0.11989L26.0464 0Z" fill="#FF1D25"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M21.9766 105H52.9068V26.0465H21.9766V105Z" fill="#F99795"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 105H26.0465V0H0V105Z" fill="#F99795"/>
 </svg>
