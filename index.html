@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Machine Learning in Pure Java"
+title: "Machine Learning in Java"
 nav_order: 0
 permalink: /
 active: home
@@ -11,7 +11,7 @@ active: home
 </div>
 <div class="row bgdots">
     <div class="col-md-4 my-auto">
-        <h2 class="tribuo-head pb-3 tribuo-responsive-header">Machine learning library in pure Java</h2>
+        <h2 class="tribuo-head pb-3 tribuo-responsive-header">Machine learning library in Java</h2>
         <a href="/learn/{{ site.doc_version }}/docs" class="btn btn-outline-tribuo btn-md mb-2 pl-5 pr-5">Read more</a>
     </div>
     <div class="d-none d-sm-flex col-md-8 mx-auto ">
@@ -61,40 +61,19 @@ active: home
         </li>
     </ul>
 </div>
-<!--
 <div class="row justify-content-center source-links">
-    <div class="col col-md-3">
-    <div class="tab-content" id="gitTabContent">
-        <div class="tab-pane fade" id="source" role="tabpanel" aria-labelledby="home-tab">
-            <pre id="clone-source" class="copy-url">git clone https://github.com/oracle/tribuo.git</pre>
-        </div>
-        <div class="tab-pane fade show active" id="maven" role="tabpanel" aria-labelledby="profile-tab">
-                <pre id="maven-coords" class="copy-url preformat">&lt;dependency&gt;
-    &lt;groupId&gt;org.tribuo&lt;/groupId&gt;
-    &lt;artifactId&gt;tribuo-all&lt;/artifactId&gt;
-    &lt;version&gt;{{ site.tribuo_version }}&lt;/version&gt;
-    &lt;type&gt;pom&lt;/type&gt;
-&lt;/dependency&gt;</pre>
-        </div>
-        <div class="tab-pane fade" id="gradle" role="tabpanel" aria-labelledby="profile-tab">
-                <pre id="gradle-coords" class="copy-url preformat">implementation 'org.tribuo:tribuo-all:{{ site.tribuo_version }}@pom'</pre>
-        </div>
-    </div>
-    </div>
-</div>
--->
-<div class="row justify-content-center source-links">
-    <div class="tab-content" id="gitTabContent">
-        <div class="tab-pane fade" id="source" role="tabpanel" aria-labelledby="home-tab">
-            <div class="d-flex alert alert-danger align-items-center bg-red-tribuo">
+    <div class="col col-auto">
+    <div class="tab-content justify-content-center" id="gitTabContent">
+        <div class="tab-pane fade justify-content-center" id="source" role="tabpanel" aria-labelledby="home-tab">
+            <div class="d-flex alert alert-danger align-items-center bg-red-tribuo overflow-source-links">
                 <code id="clone-source" class="copy-url">git clone https://github.com/oracle/tribuo.git</code>
                 <button class="btn btn-sm float-right" data-clipboard-action="copy" data-clipboard-target="#clone-source">
                     <img src="assets/img/copy_to_clipboard.svg" alt="Copy to clipboard" width="18"/>
                 </button>
             </div>
         </div>
-        <div class="tab-pane fade show active" id="maven" role="tabpanel" aria-labelledby="profile-tab">
-            <div class="d-flex alert alert-danger align-items-center bg-red-tribuo" role="alert">
+        <div class="tab-pane fade justify-content-center show active" id="maven" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="d-flex alert alert-danger align-items-center bg-red-tribuo overflow-source-links" role="alert">
                 <code id="maven-coords" class="copy-url preformat">&lt;dependency&gt;
     &lt;groupId&gt;org.tribuo&lt;/groupId&gt;
     &lt;artifactId&gt;tribuo-all&lt;/artifactId&gt;
@@ -106,14 +85,15 @@ active: home
                 </button>
             </div>
         </div>
-        <div class="tab-pane fade" id="gradle" role="tabpanel" aria-labelledby="profile-tab">
-            <div class="d-flex alert alert-danger align-items-center bg-red-tribuo" role="alert">
+        <div class="tab-pane fade justify-content-center" id="gradle" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="d-flex alert alert-danger align-items-center bg-red-tribuo overflow-source-links" role="alert">
                 <code id="gradle-coords" class="copy-url preformat">implementation 'org.tribuo:tribuo-all:{{ site.tribuo_version }}@pom'</code>
                 <button class="btn btn-sm float-right" data-clipboard-action="copy" data-clipboard-target="#gradle-coords">
                     <img src="assets/img/copy_to_clipboard.svg" alt="Copy to clipboard" width="18" />
                 </button>
             </div>
         </div>
+    </div>
     </div>
 </div>
 
@@ -128,7 +108,7 @@ active: home
       Production Ready Section
       -->
 
-    <div class="container px-0">
+    <div class="container">
     <div class="row pt-5 pb-3">
         <div class="col-12">
             <h2 class="tribuo-head text-center">Production Ready</h2>
@@ -255,28 +235,28 @@ active: home
     <!--
      Integrations section
      -->
-    <div class="container px-0">
+    <div class="container">
     <div class="row pt-5">
         <div class="col-8 offset-2">
             <h2 class="tribuo-head text-white text-center">Integrations</h2>
         </div>
     </div>
-    <div class="row pt-4 justify-content-around pl-5 pr-5">
-        <div class="col-md-auto mb-2">
+    <div class="row pt-4 justify-content-center justify-content-md-around pl-5 pr-5">
+        <div class="col col-12 col-md-auto mb-4 mb-md-2 text-center">
             <a href="https://xgboost.ai"><img src="assets/img/integrations/xgboost-logo-white.svg" alt="XGBoost Logo"/></a>
         </div>
-        <div class="col-md-auto mb-2">
+        <div class="col col-12 col-md-auto mb-4 mb-md-2 text-center">
             <a href="https://microsoft.github.io/onnxruntime/"><img src="assets/img/integrations/onnx_main_logo.svg" alt="ONNX Runtime Logo"/></a>
         </div>
-        <div class="col-md-auto mb-2">
+        <div class="col col-12 col-md-auto mb-4 mb-md-2 text-center">
             <a href="https://www.tensorflow.org"><img src="assets/img/integrations/tf-logo_white.svg" alt="TensorFlow Logo"/></a>
         </div>
     </div>
-    <div class="row pt-5 pb-4 justify-content-around pl-5 pr-5 text-white tribuo-integration">
-        <div class="col-md-auto p-3 mb-2 roundeder border border-white">
+    <div class="row pt-md-5 pb-4 justify-content-around pl-5 pr-5 text-white tribuo-integration">
+        <div class="col-md-auto p-3 mb-4 mb-md-2 roundeder border border-white text-center">
             <a href="https://liblinear.bwaldvogel.de">Liblinear</a>
         </div>
-        <div class="col-md-auto p-3 mb-2 roundeder border border-white">
+        <div class="col-md-auto p-3 mb-md-2 roundeder border border-white text-center">
             <a href="https://www.csie.ntu.edu.tw/~cjlin/libsvm/">Libsvm</a>
         </div>
 

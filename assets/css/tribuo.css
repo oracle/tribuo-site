@@ -69,6 +69,11 @@ a:hover {
     min-height: 11em;
 }
 
+.overflow-source-links {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
 code.copy-url  {
     color: rgb(50, 50, 50);
 }
@@ -410,6 +415,11 @@ img[alt="faq graphic"] {
     width: 3ch;
     left: 17%;
     bottom: 0;
+}
+
+/* top nav mobile */
+button.navbar-toggler[aria-expanded="true"] {
+    background-color: var(--tribuo-hover-background);
 }
 
 /* End top nav */

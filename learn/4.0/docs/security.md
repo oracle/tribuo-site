@@ -47,7 +47,7 @@ instance with the appropriate configuration.
 
 ## Native code
 Tribuo uses several native libraries via JNI interfaces. Native code has
-different considerations as compared to pure Java code because native code can
+different considerations as compared to Java code because native code can
 cause issues in the running JVM. We are active contributors to all the native
 ML libraries that Tribuo uses, and we fix issues upstream if we find them.
 Nevertheless, you should think carefully before running a model that requires

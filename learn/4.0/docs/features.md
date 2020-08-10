@@ -26,7 +26,7 @@ output it produces, what inputs it expects and the names of everything
 involved. No more confusion when loading something off disk, Tribuo 
 knows what kind of model it is and what labels it can predict.
 
-## Iteroperability
+## Interoperability
 
 Tribuo provides interfaces to popular ML libraries like XGBoost and 
 Tensorflow, along with support for the onnx model exchange format. Our 
@@ -50,7 +50,7 @@ Tribuo has several implementations which can be used for a variety prediction ta
 |Random Forest|Tribuo|Can use any Tribuo tree trainer as the base learner|
 |K-NN|Tribuo|Has several parallel backends, as well as a single threaded backend|
 |Neural Networks|TensorFlow|Via the TensorFlow interface. Models can be deployed using the ONNX interface or the TF interface|
-{: .table .table-sm}
+{: .table .table-sm .table-responsive}
 
 The ensembles and K-NN use a combination function to produce the output,
 those combiners are prediction task specific but the ensemble & K-NN implementations
@@ -71,7 +71,7 @@ Tribuo has implementations or interfaces for:
 |Regularised Linear Models|LibLinear||
 |SVM|LibSVM or LibLinear|LibLinear only supports linear SVMs|
 |Gradient Boosted Decision Trees|XGBoost||
-{: .table .table-sm}
+{: .table .table-sm .table-responsive}
 
 Tribuo also has a linear chain CRF for sequence classification tasks. This is also
 trained via SGD using any of Tribuo's gradient optimizers.
@@ -90,7 +90,7 @@ so they can produce a multidimensional output.
 |Regularised Linear Models|LibLinear||
 |SVM|LibSVM or LibLinear|LibLinear only supports linear SVMs|
 |Gradient Boosted Decision Trees|XGBoost||
-{: .table .table-sm}
+{: .table .table-sm .table-responsive}
 
 ### Clustering
 
@@ -99,7 +99,7 @@ Tribuo has infrastructure for clustering and a single algorithm. We expect to ad
 |Algorithm|Implementation|Notes|
 |---|---|---|
 |K-Means|Tribuo|Has both sequential and parallel backends|
-{: .table .table-sm}
+{: .table .table-sm .table-responsive}
 
 ### Anomaly Detection
 
@@ -109,7 +109,7 @@ We expect to add new implementations over time.
 |Algorithm|Implementation|Notes|
 |---|---|---|
 |One-class SVM|LibSVM||
-{: .table .table-sm}
+{: .table .table-sm .table-responsive}
 
 ### Interfaces
 
