@@ -1,0 +1,618 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<title>Source code</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<div class="sourceContainer">
+<pre><span class="sourceLineNo">001</span>/*<a name="line.1"></a>
+<span class="sourceLineNo">002</span> * Copyright (c) 2015-2020, Oracle and/or its affiliates. All rights reserved.<a name="line.2"></a>
+<span class="sourceLineNo">003</span> *<a name="line.3"></a>
+<span class="sourceLineNo">004</span> * Licensed under the Apache License, Version 2.0 (the "License");<a name="line.4"></a>
+<span class="sourceLineNo">005</span> * you may not use this file except in compliance with the License.<a name="line.5"></a>
+<span class="sourceLineNo">006</span> * You may obtain a copy of the License at<a name="line.6"></a>
+<span class="sourceLineNo">007</span> *<a name="line.7"></a>
+<span class="sourceLineNo">008</span> *     http://www.apache.org/licenses/LICENSE-2.0<a name="line.8"></a>
+<span class="sourceLineNo">009</span> *<a name="line.9"></a>
+<span class="sourceLineNo">010</span> * Unless required by applicable law or agreed to in writing, software<a name="line.10"></a>
+<span class="sourceLineNo">011</span> * distributed under the License is distributed on an "AS IS" BASIS,<a name="line.11"></a>
+<span class="sourceLineNo">012</span> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express implied.<a name="line.12"></a>
+<span class="sourceLineNo">013</span> * See the License for the specific language governing permissions and<a name="line.13"></a>
+<span class="sourceLineNo">014</span> * limitations under the License.<a name="line.14"></a>
+<span class="sourceLineNo">015</span> */<a name="line.15"></a>
+<span class="sourceLineNo">016</span><a name="line.16"></a>
+<span class="sourceLineNo">017</span>package org.tribuo.common.xgboost;<a name="line.17"></a>
+<span class="sourceLineNo">018</span><a name="line.18"></a>
+<span class="sourceLineNo">019</span>import com.oracle.labs.mlrg.olcut.config.Config;<a name="line.19"></a>
+<span class="sourceLineNo">020</span>import com.oracle.labs.mlrg.olcut.provenance.Provenance;<a name="line.20"></a>
+<span class="sourceLineNo">021</span>import org.tribuo.Dataset;<a name="line.21"></a>
+<span class="sourceLineNo">022</span>import org.tribuo.Example;<a name="line.22"></a>
+<span class="sourceLineNo">023</span>import org.tribuo.Feature;<a name="line.23"></a>
+<span class="sourceLineNo">024</span>import org.tribuo.ImmutableFeatureMap;<a name="line.24"></a>
+<span class="sourceLineNo">025</span>import org.tribuo.ImmutableOutputInfo;<a name="line.25"></a>
+<span class="sourceLineNo">026</span>import org.tribuo.Output;<a name="line.26"></a>
+<span class="sourceLineNo">027</span>import org.tribuo.Trainer;<a name="line.27"></a>
+<span class="sourceLineNo">028</span>import org.tribuo.WeightedExamples;<a name="line.28"></a>
+<span class="sourceLineNo">029</span>import org.tribuo.math.la.SparseVector;<a name="line.29"></a>
+<span class="sourceLineNo">030</span>import org.tribuo.math.la.VectorTuple;<a name="line.30"></a>
+<span class="sourceLineNo">031</span>import org.tribuo.provenance.ModelProvenance;<a name="line.31"></a>
+<span class="sourceLineNo">032</span>import org.tribuo.provenance.SkeletalTrainerProvenance;<a name="line.32"></a>
+<span class="sourceLineNo">033</span>import org.tribuo.util.Util;<a name="line.33"></a>
+<span class="sourceLineNo">034</span>import ml.dmlc.xgboost4j.java.Booster;<a name="line.34"></a>
+<span class="sourceLineNo">035</span>import ml.dmlc.xgboost4j.java.DMatrix;<a name="line.35"></a>
+<span class="sourceLineNo">036</span>import ml.dmlc.xgboost4j.java.XGBoostError;<a name="line.36"></a>
+<span class="sourceLineNo">037</span><a name="line.37"></a>
+<span class="sourceLineNo">038</span>import java.util.ArrayList;<a name="line.38"></a>
+<span class="sourceLineNo">039</span>import java.util.HashMap;<a name="line.39"></a>
+<span class="sourceLineNo">040</span>import java.util.List;<a name="line.40"></a>
+<span class="sourceLineNo">041</span>import java.util.Map;<a name="line.41"></a>
+<span class="sourceLineNo">042</span>import java.util.function.Function;<a name="line.42"></a>
+<span class="sourceLineNo">043</span>import java.util.logging.Logger;<a name="line.43"></a>
+<span class="sourceLineNo">044</span><a name="line.44"></a>
+<span class="sourceLineNo">045</span>/**<a name="line.45"></a>
+<span class="sourceLineNo">046</span> * A {@link Trainer} which wraps the XGBoost training procedure.<a name="line.46"></a>
+<span class="sourceLineNo">047</span> * &lt;p&gt;<a name="line.47"></a>
+<span class="sourceLineNo">048</span> * This only exposes a few of XGBoost's training parameters.<a name="line.48"></a>
+<span class="sourceLineNo">049</span> * &lt;p&gt;<a name="line.49"></a>
+<span class="sourceLineNo">050</span> * It uses pthreads outside of the JVM to parallelise the computation.<a name="line.50"></a>
+<span class="sourceLineNo">051</span> * &lt;p&gt;<a name="line.51"></a>
+<span class="sourceLineNo">052</span> * See:<a name="line.52"></a>
+<span class="sourceLineNo">053</span> * &lt;pre&gt;<a name="line.53"></a>
+<span class="sourceLineNo">054</span> * Chen T, Guestrin C.<a name="line.54"></a>
+<span class="sourceLineNo">055</span> * "XGBoost: A Scalable Tree Boosting System"<a name="line.55"></a>
+<span class="sourceLineNo">056</span> * Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, 2016.<a name="line.56"></a>
+<span class="sourceLineNo">057</span> * &lt;/pre&gt;<a name="line.57"></a>
+<span class="sourceLineNo">058</span> * and for the original algorithm:<a name="line.58"></a>
+<span class="sourceLineNo">059</span> * &lt;pre&gt;<a name="line.59"></a>
+<span class="sourceLineNo">060</span> * Friedman JH.<a name="line.60"></a>
+<span class="sourceLineNo">061</span> * "Greedy Function Approximation: a Gradient Boosting Machine"<a name="line.61"></a>
+<span class="sourceLineNo">062</span> * Annals of statistics, 2001.<a name="line.62"></a>
+<span class="sourceLineNo">063</span> * &lt;/pre&gt;<a name="line.63"></a>
+<span class="sourceLineNo">064</span> * N.B.: This uses a native C implementation of xgboost that links to various C libraries, including libgomp<a name="line.64"></a>
+<span class="sourceLineNo">065</span> * and glibc. If you're running on Alpine, which does not natively use glibc, you'll need to install glibc<a name="line.65"></a>
+<span class="sourceLineNo">066</span> * into the container.<a name="line.66"></a>
+<span class="sourceLineNo">067</span> */<a name="line.67"></a>
+<span class="sourceLineNo">068</span>public abstract class XGBoostTrainer&lt;T extends Output&lt;T&gt;&gt; implements Trainer&lt;T&gt;, WeightedExamples {<a name="line.68"></a>
+<span class="sourceLineNo">069</span>    /* Alpine install command<a name="line.69"></a>
+<span class="sourceLineNo">070</span>     * &lt;pre&gt;<a name="line.70"></a>
+<span class="sourceLineNo">071</span>     *    $ apk --no-cache add ca-certificates wget<a name="line.71"></a>
+<span class="sourceLineNo">072</span>     *    $ wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub<a name="line.72"></a>
+<span class="sourceLineNo">073</span>     *    $ wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.30-r0/glibc-2.30-r0.apk<a name="line.73"></a>
+<span class="sourceLineNo">074</span>     *    $ apk add glibc-2.30-r0.apk<a name="line.74"></a>
+<span class="sourceLineNo">075</span>     * &lt;/pre&gt;<a name="line.75"></a>
+<span class="sourceLineNo">076</span>     */<a name="line.76"></a>
+<span class="sourceLineNo">077</span><a name="line.77"></a>
+<span class="sourceLineNo">078</span>    private static final Logger logger = Logger.getLogger(XGBoostTrainer.class.getName());<a name="line.78"></a>
+<span class="sourceLineNo">079</span><a name="line.79"></a>
+<span class="sourceLineNo">080</span>    protected final Map&lt;String, Object&gt; parameters = new HashMap&lt;&gt;();<a name="line.80"></a>
+<span class="sourceLineNo">081</span><a name="line.81"></a>
+<span class="sourceLineNo">082</span>    /**<a name="line.82"></a>
+<span class="sourceLineNo">083</span>     * The type of XGBoost model.<a name="line.83"></a>
+<span class="sourceLineNo">084</span>     */<a name="line.84"></a>
+<span class="sourceLineNo">085</span>    public enum BoosterType {<a name="line.85"></a>
+<span class="sourceLineNo">086</span>        /**<a name="line.86"></a>
+<span class="sourceLineNo">087</span>         * A boosted linear model.<a name="line.87"></a>
+<span class="sourceLineNo">088</span>         */<a name="line.88"></a>
+<span class="sourceLineNo">089</span>        LINEAR("gblinear"),<a name="line.89"></a>
+<span class="sourceLineNo">090</span>        /**<a name="line.90"></a>
+<span class="sourceLineNo">091</span>         * A gradient boosted decision tree.<a name="line.91"></a>
+<span class="sourceLineNo">092</span>         */<a name="line.92"></a>
+<span class="sourceLineNo">093</span>        GBTREE("gbtree"),<a name="line.93"></a>
+<span class="sourceLineNo">094</span>        /**<a name="line.94"></a>
+<span class="sourceLineNo">095</span>         * A gradient boosted decision tree using dropout.<a name="line.95"></a>
+<span class="sourceLineNo">096</span>         */<a name="line.96"></a>
+<span class="sourceLineNo">097</span>        DART("dart");<a name="line.97"></a>
+<span class="sourceLineNo">098</span><a name="line.98"></a>
+<span class="sourceLineNo">099</span>        public final String paramName;<a name="line.99"></a>
+<span class="sourceLineNo">100</span><a name="line.100"></a>
+<span class="sourceLineNo">101</span>        BoosterType(String paramName) {<a name="line.101"></a>
+<span class="sourceLineNo">102</span>            this.paramName = paramName;<a name="line.102"></a>
+<span class="sourceLineNo">103</span>        }<a name="line.103"></a>
+<span class="sourceLineNo">104</span>    }<a name="line.104"></a>
+<span class="sourceLineNo">105</span><a name="line.105"></a>
+<span class="sourceLineNo">106</span>    @Config(mandatory = true,description="The number of trees to build.")<a name="line.106"></a>
+<span class="sourceLineNo">107</span>    protected int numTrees;<a name="line.107"></a>
+<span class="sourceLineNo">108</span><a name="line.108"></a>
+<span class="sourceLineNo">109</span>    @Config(description = "The learning rate, shrinks the new tree output to prevent overfitting.")<a name="line.109"></a>
+<span class="sourceLineNo">110</span>    private double eta = 0.3;<a name="line.110"></a>
+<span class="sourceLineNo">111</span><a name="line.111"></a>
+<span class="sourceLineNo">112</span>    @Config(description = "Minimum loss reduction needed to split a tree node.")<a name="line.112"></a>
+<span class="sourceLineNo">113</span>    private double gamma = 0.0;<a name="line.113"></a>
+<span class="sourceLineNo">114</span><a name="line.114"></a>
+<span class="sourceLineNo">115</span>    @Config(description="The maximum depth of any tree.")<a name="line.115"></a>
+<span class="sourceLineNo">116</span>    private int maxDepth = 6;<a name="line.116"></a>
+<span class="sourceLineNo">117</span><a name="line.117"></a>
+<span class="sourceLineNo">118</span>    @Config(description = "The minimum weight in each child node before a split is valid.")<a name="line.118"></a>
+<span class="sourceLineNo">119</span>    private double minChildWeight = 1.0;<a name="line.119"></a>
+<span class="sourceLineNo">120</span><a name="line.120"></a>
+<span class="sourceLineNo">121</span>    @Config(description="Independently subsample the examples for each tree.")<a name="line.121"></a>
+<span class="sourceLineNo">122</span>    private double subsample = 1.0;<a name="line.122"></a>
+<span class="sourceLineNo">123</span><a name="line.123"></a>
+<span class="sourceLineNo">124</span>    @Config(description="Independently subsample the features available for each node of each tree.")<a name="line.124"></a>
+<span class="sourceLineNo">125</span>    private double featureSubsample = 1.0;<a name="line.125"></a>
+<span class="sourceLineNo">126</span><a name="line.126"></a>
+<span class="sourceLineNo">127</span>    @Config(description="l2 regularisation term on the weights.")<a name="line.127"></a>
+<span class="sourceLineNo">128</span>    private double lambda = 1.0;<a name="line.128"></a>
+<span class="sourceLineNo">129</span><a name="line.129"></a>
+<span class="sourceLineNo">130</span>    @Config(description="l1 regularisation term on the weights.")<a name="line.130"></a>
+<span class="sourceLineNo">131</span>    private double alpha = 1.0;<a name="line.131"></a>
+<span class="sourceLineNo">132</span><a name="line.132"></a>
+<span class="sourceLineNo">133</span>    @Config(description="The number of threads to use at training time.")<a name="line.133"></a>
+<span class="sourceLineNo">134</span>    private int nThread = 4;<a name="line.134"></a>
+<span class="sourceLineNo">135</span><a name="line.135"></a>
+<span class="sourceLineNo">136</span>    @Config(description="Quiesce all the logging output from the XGBoost C library.")<a name="line.136"></a>
+<span class="sourceLineNo">137</span>    private int silent = 1;<a name="line.137"></a>
+<span class="sourceLineNo">138</span><a name="line.138"></a>
+<span class="sourceLineNo">139</span>    @Config(description="Type of the weak learner.")<a name="line.139"></a>
+<span class="sourceLineNo">140</span>    private BoosterType booster = BoosterType.GBTREE;<a name="line.140"></a>
+<span class="sourceLineNo">141</span><a name="line.141"></a>
+<span class="sourceLineNo">142</span>    @Config(description="The RNG seed.")<a name="line.142"></a>
+<span class="sourceLineNo">143</span>    private long seed = Trainer.DEFAULT_SEED;<a name="line.143"></a>
+<span class="sourceLineNo">144</span><a name="line.144"></a>
+<span class="sourceLineNo">145</span>    protected int trainInvocationCounter = 0;<a name="line.145"></a>
+<span class="sourceLineNo">146</span><a name="line.146"></a>
+<span class="sourceLineNo">147</span>    protected XGBoostTrainer(int numTrees) {<a name="line.147"></a>
+<span class="sourceLineNo">148</span>        this(numTrees, 0.3, 0, 6, 1, 1, 1, 1, 0, 4, true, Trainer.DEFAULT_SEED);<a name="line.148"></a>
+<span class="sourceLineNo">149</span>    }<a name="line.149"></a>
+<span class="sourceLineNo">150</span><a name="line.150"></a>
+<span class="sourceLineNo">151</span>    protected XGBoostTrainer(int numTrees, int numThreads, boolean silent) {<a name="line.151"></a>
+<span class="sourceLineNo">152</span>        this(numTrees, 0.3, 0, 6, 1, 1, 1, 1, 0, numThreads, silent, Trainer.DEFAULT_SEED);<a name="line.152"></a>
+<span class="sourceLineNo">153</span>    }<a name="line.153"></a>
+<span class="sourceLineNo">154</span><a name="line.154"></a>
+<span class="sourceLineNo">155</span>    /**<a name="line.155"></a>
+<span class="sourceLineNo">156</span>     * Create an XGBoost trainer.<a name="line.156"></a>
+<span class="sourceLineNo">157</span>     *<a name="line.157"></a>
+<span class="sourceLineNo">158</span>     * @param numTrees Number of trees to boost.<a name="line.158"></a>
+<span class="sourceLineNo">159</span>     * @param eta Step size shrinkage parameter (default 0.3, range [0,1]).<a name="line.159"></a>
+<span class="sourceLineNo">160</span>     * @param gamma Minimum loss reduction to make a split (default 0, range<a name="line.160"></a>
+<span class="sourceLineNo">161</span>     * [0,inf]).<a name="line.161"></a>
+<span class="sourceLineNo">162</span>     * @param maxDepth Maximum tree depth (default 6, range [1,inf]).<a name="line.162"></a>
+<span class="sourceLineNo">163</span>     * @param minChildWeight Minimum sum of instance weights needed in a leaf<a name="line.163"></a>
+<span class="sourceLineNo">164</span>     * (default 1, range [0, inf]).<a name="line.164"></a>
+<span class="sourceLineNo">165</span>     * @param subsample Subsample size for each tree (default 1, range (0,1]).<a name="line.165"></a>
+<span class="sourceLineNo">166</span>     * @param featureSubsample Subsample features for each tree (default 1,<a name="line.166"></a>
+<span class="sourceLineNo">167</span>     * range (0,1]).<a name="line.167"></a>
+<span class="sourceLineNo">168</span>     * @param lambda L2 regularization term on weights (default 1).<a name="line.168"></a>
+<span class="sourceLineNo">169</span>     * @param alpha L1 regularization term on weights (default 0).<a name="line.169"></a>
+<span class="sourceLineNo">170</span>     * @param nThread Number of threads to use (default 4).<a name="line.170"></a>
+<span class="sourceLineNo">171</span>     * @param silent Silence the training output text.<a name="line.171"></a>
+<span class="sourceLineNo">172</span>     * @param seed RNG seed.<a name="line.172"></a>
+<span class="sourceLineNo">173</span>     */<a name="line.173"></a>
+<span class="sourceLineNo">174</span>    protected XGBoostTrainer(int numTrees, double eta, double gamma, int maxDepth, double minChildWeight, double subsample, double featureSubsample, double lambda, double alpha, int nThread, boolean silent, long seed) {<a name="line.174"></a>
+<span class="sourceLineNo">175</span>        if (numTrees &lt; 1) {<a name="line.175"></a>
+<span class="sourceLineNo">176</span>            throw new IllegalArgumentException("Must supply a positive number of trees. Received " + numTrees);<a name="line.176"></a>
+<span class="sourceLineNo">177</span>        }<a name="line.177"></a>
+<span class="sourceLineNo">178</span>        this.numTrees = numTrees;<a name="line.178"></a>
+<span class="sourceLineNo">179</span>        this.eta = eta;<a name="line.179"></a>
+<span class="sourceLineNo">180</span>        this.gamma = gamma;<a name="line.180"></a>
+<span class="sourceLineNo">181</span>        this.maxDepth = maxDepth;<a name="line.181"></a>
+<span class="sourceLineNo">182</span>        this.minChildWeight = minChildWeight;<a name="line.182"></a>
+<span class="sourceLineNo">183</span>        this.subsample = subsample;<a name="line.183"></a>
+<span class="sourceLineNo">184</span>        this.featureSubsample = featureSubsample;<a name="line.184"></a>
+<span class="sourceLineNo">185</span>        this.lambda = lambda;<a name="line.185"></a>
+<span class="sourceLineNo">186</span>        this.alpha = alpha;<a name="line.186"></a>
+<span class="sourceLineNo">187</span>        this.nThread = nThread;<a name="line.187"></a>
+<span class="sourceLineNo">188</span>        this.silent = silent ? 1 : 0;<a name="line.188"></a>
+<span class="sourceLineNo">189</span>        this.seed = seed;<a name="line.189"></a>
+<span class="sourceLineNo">190</span>    }<a name="line.190"></a>
+<span class="sourceLineNo">191</span><a name="line.191"></a>
+<span class="sourceLineNo">192</span>    /**<a name="line.192"></a>
+<span class="sourceLineNo">193</span>     * This gives direct access to the XGBoost parameter map.<a name="line.193"></a>
+<span class="sourceLineNo">194</span>     * &lt;p&gt;<a name="line.194"></a>
+<span class="sourceLineNo">195</span>     * It lets you pick things that we haven't exposed like dropout trees, binary classification etc.<a name="line.195"></a>
+<span class="sourceLineNo">196</span>     * &lt;p&gt;<a name="line.196"></a>
+<span class="sourceLineNo">197</span>     * This sidesteps the validation that Tribuo provides for the hyperparameters, and so can produce unexpected results.<a name="line.197"></a>
+<span class="sourceLineNo">198</span>     * @param numTrees Number of trees to boost.<a name="line.198"></a>
+<span class="sourceLineNo">199</span>     * @param parameters A map from string to object, where object can be Number or String.<a name="line.199"></a>
+<span class="sourceLineNo">200</span>     */<a name="line.200"></a>
+<span class="sourceLineNo">201</span>    protected XGBoostTrainer(int numTrees, Map&lt;String,Object&gt; parameters) {<a name="line.201"></a>
+<span class="sourceLineNo">202</span>        if (numTrees &lt; 1) {<a name="line.202"></a>
+<span class="sourceLineNo">203</span>            throw new IllegalArgumentException("Must supply a positive number of trees. Received " + numTrees);<a name="line.203"></a>
+<span class="sourceLineNo">204</span>        }<a name="line.204"></a>
+<span class="sourceLineNo">205</span>        this.numTrees = numTrees;<a name="line.205"></a>
+<span class="sourceLineNo">206</span>        this.parameters.putAll(parameters);<a name="line.206"></a>
+<span class="sourceLineNo">207</span>    }<a name="line.207"></a>
+<span class="sourceLineNo">208</span><a name="line.208"></a>
+<span class="sourceLineNo">209</span>    /**<a name="line.209"></a>
+<span class="sourceLineNo">210</span>     * For olcut.<a name="line.210"></a>
+<span class="sourceLineNo">211</span>     */<a name="line.211"></a>
+<span class="sourceLineNo">212</span>    protected XGBoostTrainer() { }<a name="line.212"></a>
+<span class="sourceLineNo">213</span><a name="line.213"></a>
+<span class="sourceLineNo">214</span>    @Override<a name="line.214"></a>
+<span class="sourceLineNo">215</span>    public void postConfig() {<a name="line.215"></a>
+<span class="sourceLineNo">216</span>        parameters.put("eta", eta);<a name="line.216"></a>
+<span class="sourceLineNo">217</span>        parameters.put("gamma", gamma);<a name="line.217"></a>
+<span class="sourceLineNo">218</span>        parameters.put("max_depth", maxDepth);<a name="line.218"></a>
+<span class="sourceLineNo">219</span>        parameters.put("min_child_weight", minChildWeight);<a name="line.219"></a>
+<span class="sourceLineNo">220</span>        parameters.put("subsample", subsample);<a name="line.220"></a>
+<span class="sourceLineNo">221</span>        parameters.put("colsample_bytree", featureSubsample);<a name="line.221"></a>
+<span class="sourceLineNo">222</span>        parameters.put("lambda", lambda);<a name="line.222"></a>
+<span class="sourceLineNo">223</span>        parameters.put("alpha", alpha);<a name="line.223"></a>
+<span class="sourceLineNo">224</span>        parameters.put("nthread", nThread);<a name="line.224"></a>
+<span class="sourceLineNo">225</span>        parameters.put("seed", seed);<a name="line.225"></a>
+<span class="sourceLineNo">226</span>        parameters.put("silent", silent);<a name="line.226"></a>
+<span class="sourceLineNo">227</span>        parameters.put("booster", booster.paramName);<a name="line.227"></a>
+<span class="sourceLineNo">228</span>    }<a name="line.228"></a>
+<span class="sourceLineNo">229</span><a name="line.229"></a>
+<span class="sourceLineNo">230</span>    @Override<a name="line.230"></a>
+<span class="sourceLineNo">231</span>    public String toString() {<a name="line.231"></a>
+<span class="sourceLineNo">232</span>        StringBuilder buffer = new StringBuilder();<a name="line.232"></a>
+<span class="sourceLineNo">233</span><a name="line.233"></a>
+<span class="sourceLineNo">234</span>        buffer.append("XGBoostTrainer(numTrees=");<a name="line.234"></a>
+<span class="sourceLineNo">235</span>        buffer.append(numTrees);<a name="line.235"></a>
+<span class="sourceLineNo">236</span>        buffer.append(",parameters");<a name="line.236"></a>
+<span class="sourceLineNo">237</span>        buffer.append(parameters.toString());<a name="line.237"></a>
+<span class="sourceLineNo">238</span>        buffer.append(")");<a name="line.238"></a>
+<span class="sourceLineNo">239</span><a name="line.239"></a>
+<span class="sourceLineNo">240</span>        return buffer.toString();<a name="line.240"></a>
+<span class="sourceLineNo">241</span>    }<a name="line.241"></a>
+<span class="sourceLineNo">242</span><a name="line.242"></a>
+<span class="sourceLineNo">243</span>    protected XGBoostModel&lt;T&gt; createModel(String name, ModelProvenance provenance, ImmutableFeatureMap featureIDMap, ImmutableOutputInfo&lt;T&gt; outputIDInfo, List&lt;Booster&gt; models, XGBoostOutputConverter&lt;T&gt; converter) {<a name="line.243"></a>
+<span class="sourceLineNo">244</span>        return new XGBoostModel&lt;&gt;(name,provenance,featureIDMap,outputIDInfo,models,converter);<a name="line.244"></a>
+<span class="sourceLineNo">245</span>    }<a name="line.245"></a>
+<span class="sourceLineNo">246</span><a name="line.246"></a>
+<span class="sourceLineNo">247</span>    @Override<a name="line.247"></a>
+<span class="sourceLineNo">248</span>    public int getInvocationCount() {<a name="line.248"></a>
+<span class="sourceLineNo">249</span>        return trainInvocationCounter;<a name="line.249"></a>
+<span class="sourceLineNo">250</span>    }<a name="line.250"></a>
+<span class="sourceLineNo">251</span><a name="line.251"></a>
+<span class="sourceLineNo">252</span>    protected static &lt;T extends Output&lt;T&gt;&gt; DMatrixTuple&lt;T&gt; convertDataset(Dataset&lt;T&gt; examples, Function&lt;T,Float&gt; responseExtractor) throws XGBoostError {<a name="line.252"></a>
+<span class="sourceLineNo">253</span>        return convertExamples(examples.getData(), examples.getFeatureIDMap(), responseExtractor);<a name="line.253"></a>
+<span class="sourceLineNo">254</span>    }<a name="line.254"></a>
+<span class="sourceLineNo">255</span><a name="line.255"></a>
+<span class="sourceLineNo">256</span>    protected static &lt;T extends Output&lt;T&gt;&gt; DMatrixTuple&lt;T&gt; convertDataset(Dataset&lt;T&gt; examples) throws XGBoostError {<a name="line.256"></a>
+<span class="sourceLineNo">257</span>        return convertExamples(examples.getData(), examples.getFeatureIDMap(), null);<a name="line.257"></a>
+<span class="sourceLineNo">258</span>    }<a name="line.258"></a>
+<span class="sourceLineNo">259</span><a name="line.259"></a>
+<span class="sourceLineNo">260</span>    protected static &lt;T extends Output&lt;T&gt;&gt; DMatrixTuple&lt;T&gt; convertExamples(Iterable&lt;Example&lt;T&gt;&gt; examples, ImmutableFeatureMap featureMap) throws XGBoostError {<a name="line.260"></a>
+<span class="sourceLineNo">261</span>        return convertExamples(examples, featureMap, null);<a name="line.261"></a>
+<span class="sourceLineNo">262</span>    }<a name="line.262"></a>
+<span class="sourceLineNo">263</span><a name="line.263"></a>
+<span class="sourceLineNo">264</span>    /**<a name="line.264"></a>
+<span class="sourceLineNo">265</span>     * Converts an iterable of examples into a DMatrix.<a name="line.265"></a>
+<span class="sourceLineNo">266</span>     * @param examples The examples to convert.<a name="line.266"></a>
+<span class="sourceLineNo">267</span>     * @param featureMap The feature id map which supplies the indices.<a name="line.267"></a>
+<span class="sourceLineNo">268</span>     * @param responseExtractor The extraction function for the output.<a name="line.268"></a>
+<span class="sourceLineNo">269</span>     * @param &lt;T&gt; The type of the output.<a name="line.269"></a>
+<span class="sourceLineNo">270</span>     * @return A DMatrixTuple.<a name="line.270"></a>
+<span class="sourceLineNo">271</span>     * @throws XGBoostError If the native library failed to construct the DMatrix.<a name="line.271"></a>
+<span class="sourceLineNo">272</span>     */<a name="line.272"></a>
+<span class="sourceLineNo">273</span>    protected static &lt;T extends Output&lt;T&gt;&gt; DMatrixTuple&lt;T&gt; convertExamples(Iterable&lt;Example&lt;T&gt;&gt; examples, ImmutableFeatureMap featureMap, Function&lt;T,Float&gt; responseExtractor) throws XGBoostError {<a name="line.273"></a>
+<span class="sourceLineNo">274</span>        // headers = array of start points for a row<a name="line.274"></a>
+<span class="sourceLineNo">275</span>        // indices = array of feature indices for all data<a name="line.275"></a>
+<span class="sourceLineNo">276</span>        // data = array of feature values for all data<a name="line.276"></a>
+<span class="sourceLineNo">277</span>        // SparseType = DMatrix.SparseType.CSR<a name="line.277"></a>
+<span class="sourceLineNo">278</span>        //public DMatrix(long[] headers, int[] indices, float[] data, SparseType st) throws XGBoostError<a name="line.278"></a>
+<span class="sourceLineNo">279</span>        //<a name="line.279"></a>
+<span class="sourceLineNo">280</span>        // then call<a name="line.280"></a>
+<span class="sourceLineNo">281</span>        //public void setLabel(float[] labels) throws XGBoostError<a name="line.281"></a>
+<span class="sourceLineNo">282</span><a name="line.282"></a>
+<span class="sourceLineNo">283</span>        boolean labelled = responseExtractor != null;<a name="line.283"></a>
+<span class="sourceLineNo">284</span>        ArrayList&lt;Float&gt; labelsList = new ArrayList&lt;&gt;();<a name="line.284"></a>
+<span class="sourceLineNo">285</span>        ArrayList&lt;Float&gt; dataList = new ArrayList&lt;&gt;();<a name="line.285"></a>
+<span class="sourceLineNo">286</span>        ArrayList&lt;Long&gt; headersList = new ArrayList&lt;&gt;();<a name="line.286"></a>
+<span class="sourceLineNo">287</span>        ArrayList&lt;Integer&gt; indicesList = new ArrayList&lt;&gt;();<a name="line.287"></a>
+<span class="sourceLineNo">288</span>        ArrayList&lt;Float&gt; weightsList = new ArrayList&lt;&gt;();<a name="line.288"></a>
+<span class="sourceLineNo">289</span>        ArrayList&lt;Integer&gt; numValidFeatures = new ArrayList&lt;&gt;();<a name="line.289"></a>
+<span class="sourceLineNo">290</span>        ArrayList&lt;Example&lt;T&gt;&gt; examplesList = new ArrayList&lt;&gt;();<a name="line.290"></a>
+<span class="sourceLineNo">291</span><a name="line.291"></a>
+<span class="sourceLineNo">292</span>        long rowHeader = 0;<a name="line.292"></a>
+<span class="sourceLineNo">293</span>        headersList.add(rowHeader);<a name="line.293"></a>
+<span class="sourceLineNo">294</span>        for (Example&lt;T&gt; e : examples) {<a name="line.294"></a>
+<span class="sourceLineNo">295</span>            if (labelled) {<a name="line.295"></a>
+<span class="sourceLineNo">296</span>                labelsList.add(responseExtractor.apply(e.getOutput()));<a name="line.296"></a>
+<span class="sourceLineNo">297</span>                weightsList.add(e.getWeight());<a name="line.297"></a>
+<span class="sourceLineNo">298</span>            }<a name="line.298"></a>
+<span class="sourceLineNo">299</span>            examplesList.add(e);<a name="line.299"></a>
+<span class="sourceLineNo">300</span>            long newRowHeader = convertSingleExample(e,featureMap,dataList,indicesList,headersList,rowHeader);<a name="line.300"></a>
+<span class="sourceLineNo">301</span>            numValidFeatures.add((int) (newRowHeader-rowHeader));<a name="line.301"></a>
+<span class="sourceLineNo">302</span>            rowHeader = newRowHeader;<a name="line.302"></a>
+<span class="sourceLineNo">303</span>        }<a name="line.303"></a>
+<span class="sourceLineNo">304</span><a name="line.304"></a>
+<span class="sourceLineNo">305</span>        float[] data = Util.toPrimitiveFloat(dataList);<a name="line.305"></a>
+<span class="sourceLineNo">306</span>        int[] indices = Util.toPrimitiveInt(indicesList);<a name="line.306"></a>
+<span class="sourceLineNo">307</span>        long[] headers = Util.toPrimitiveLong(headersList);<a name="line.307"></a>
+<span class="sourceLineNo">308</span><a name="line.308"></a>
+<span class="sourceLineNo">309</span>        DMatrix dataMatrix = new DMatrix(headers, indices, data, DMatrix.SparseType.CSR,featureMap.size());<a name="line.309"></a>
+<span class="sourceLineNo">310</span>        if (labelled) {<a name="line.310"></a>
+<span class="sourceLineNo">311</span>            float[] labels = Util.toPrimitiveFloat(labelsList);<a name="line.311"></a>
+<span class="sourceLineNo">312</span>            dataMatrix.setLabel(labels);<a name="line.312"></a>
+<span class="sourceLineNo">313</span>            float[] weights = Util.toPrimitiveFloat(weightsList);<a name="line.313"></a>
+<span class="sourceLineNo">314</span>            dataMatrix.setWeight(weights);<a name="line.314"></a>
+<span class="sourceLineNo">315</span>        }<a name="line.315"></a>
+<span class="sourceLineNo">316</span>        @SuppressWarnings("unchecked") // Generic array creation<a name="line.316"></a>
+<span class="sourceLineNo">317</span>        Example&lt;T&gt;[] exampleArray = (Example&lt;T&gt;[])examplesList.toArray(new Example[0]);<a name="line.317"></a>
+<span class="sourceLineNo">318</span>        return new DMatrixTuple&lt;&gt;(dataMatrix,Util.toPrimitiveInt(numValidFeatures),exampleArray);<a name="line.318"></a>
+<span class="sourceLineNo">319</span>    }<a name="line.319"></a>
+<span class="sourceLineNo">320</span><a name="line.320"></a>
+<span class="sourceLineNo">321</span>    protected static &lt;T extends Output&lt;T&gt;&gt; DMatrixTuple&lt;T&gt; convertExample(Example&lt;T&gt; example, ImmutableFeatureMap featureMap) throws XGBoostError {<a name="line.321"></a>
+<span class="sourceLineNo">322</span>        return convertExample(example,featureMap,null);<a name="line.322"></a>
+<span class="sourceLineNo">323</span>    }<a name="line.323"></a>
+<span class="sourceLineNo">324</span><a name="line.324"></a>
+<span class="sourceLineNo">325</span>    /**<a name="line.325"></a>
+<span class="sourceLineNo">326</span>     * Converts an examples into a DMatrix.<a name="line.326"></a>
+<span class="sourceLineNo">327</span>     * @param example The example to convert.<a name="line.327"></a>
+<span class="sourceLineNo">328</span>     * @param featureMap The feature id map which supplies the indices.<a name="line.328"></a>
+<span class="sourceLineNo">329</span>     * @param responseExtractor The extraction function for the output.<a name="line.329"></a>
+<span class="sourceLineNo">330</span>     * @param &lt;T&gt; The type of the output.<a name="line.330"></a>
+<span class="sourceLineNo">331</span>     * @return A DMatrixTuple.<a name="line.331"></a>
+<span class="sourceLineNo">332</span>     * @throws XGBoostError If the native library failed to construct the DMatrix.<a name="line.332"></a>
+<span class="sourceLineNo">333</span>     */<a name="line.333"></a>
+<span class="sourceLineNo">334</span>    protected static &lt;T extends Output&lt;T&gt;&gt; DMatrixTuple&lt;T&gt; convertExample(Example&lt;T&gt; example, ImmutableFeatureMap featureMap, Function&lt;T,Float&gt; responseExtractor) throws XGBoostError {<a name="line.334"></a>
+<span class="sourceLineNo">335</span>        // headers = array of start points for a row<a name="line.335"></a>
+<span class="sourceLineNo">336</span>        // indices = array of feature indices for all data<a name="line.336"></a>
+<span class="sourceLineNo">337</span>        // data = array of feature values for all data<a name="line.337"></a>
+<span class="sourceLineNo">338</span>        // SparseType = DMatrix.SparseType.CSR<a name="line.338"></a>
+<span class="sourceLineNo">339</span>        //public DMatrix(long[] headers, int[] indices, float[] data, SparseType st) throws XGBoostError<a name="line.339"></a>
+<span class="sourceLineNo">340</span>        //<a name="line.340"></a>
+<span class="sourceLineNo">341</span>        // then call<a name="line.341"></a>
+<span class="sourceLineNo">342</span>        //public void setLabel(float[] labels) throws XGBoostError<a name="line.342"></a>
+<span class="sourceLineNo">343</span><a name="line.343"></a>
+<span class="sourceLineNo">344</span>        boolean labelled = responseExtractor != null;<a name="line.344"></a>
+<span class="sourceLineNo">345</span>        ArrayList&lt;Float&gt; dataList = new ArrayList&lt;&gt;();<a name="line.345"></a>
+<span class="sourceLineNo">346</span>        ArrayList&lt;Integer&gt; indicesList = new ArrayList&lt;&gt;();<a name="line.346"></a>
+<span class="sourceLineNo">347</span>        ArrayList&lt;Long&gt; headersList = new ArrayList&lt;&gt;();<a name="line.347"></a>
+<span class="sourceLineNo">348</span>        headersList.add(0L);<a name="line.348"></a>
+<span class="sourceLineNo">349</span><a name="line.349"></a>
+<span class="sourceLineNo">350</span>        long header = convertSingleExample(example,featureMap,dataList,indicesList,headersList,0);<a name="line.350"></a>
+<span class="sourceLineNo">351</span><a name="line.351"></a>
+<span class="sourceLineNo">352</span>        float[] data = Util.toPrimitiveFloat(dataList);<a name="line.352"></a>
+<span class="sourceLineNo">353</span>        int[] indices = Util.toPrimitiveInt(indicesList);<a name="line.353"></a>
+<span class="sourceLineNo">354</span>        long[] headers = Util.toPrimitiveLong(headersList);<a name="line.354"></a>
+<span class="sourceLineNo">355</span><a name="line.355"></a>
+<span class="sourceLineNo">356</span>        DMatrix dataMatrix = new DMatrix(headers, indices, data, DMatrix.SparseType.CSR,featureMap.size());<a name="line.356"></a>
+<span class="sourceLineNo">357</span>        if (labelled) {<a name="line.357"></a>
+<span class="sourceLineNo">358</span>            float[] labels = new float[1];<a name="line.358"></a>
+<span class="sourceLineNo">359</span>            labels[0] = responseExtractor.apply(example.getOutput());<a name="line.359"></a>
+<span class="sourceLineNo">360</span>            dataMatrix.setLabel(labels);<a name="line.360"></a>
+<span class="sourceLineNo">361</span>            float[] weights = new float[1];<a name="line.361"></a>
+<span class="sourceLineNo">362</span>            weights[0] = example.getWeight();<a name="line.362"></a>
+<span class="sourceLineNo">363</span>            dataMatrix.setWeight(weights);<a name="line.363"></a>
+<span class="sourceLineNo">364</span>        }<a name="line.364"></a>
+<span class="sourceLineNo">365</span>        @SuppressWarnings("unchecked") // Generic array creation<a name="line.365"></a>
+<span class="sourceLineNo">366</span>        Example&lt;T&gt;[] exampleArray = (Example&lt;T&gt;[])new Example[]{example};<a name="line.366"></a>
+<span class="sourceLineNo">367</span>        return new DMatrixTuple&lt;&gt;(dataMatrix,new int[]{(int)header},exampleArray);<a name="line.367"></a>
+<span class="sourceLineNo">368</span>    }<a name="line.368"></a>
+<span class="sourceLineNo">369</span><a name="line.369"></a>
+<span class="sourceLineNo">370</span>    /**<a name="line.370"></a>
+<span class="sourceLineNo">371</span>     * Writes out the features from an example into the three supplied {@link ArrayList}s.<a name="line.371"></a>
+<span class="sourceLineNo">372</span>     * &lt;p&gt;<a name="line.372"></a>
+<span class="sourceLineNo">373</span>     * This is used to transform examples into the right format for an XGBoost call.<a name="line.373"></a>
+<span class="sourceLineNo">374</span>     * It's used in both the Classification and Regression XGBoost backends.<a name="line.374"></a>
+<span class="sourceLineNo">375</span>     * The ArrayLists must be non-null, and can contain existing values (as this<a name="line.375"></a>
+<span class="sourceLineNo">376</span>     * method is called multiple times to build up an arraylist containing all the<a name="line.376"></a>
+<span class="sourceLineNo">377</span>     * feature values for a dataset).<a name="line.377"></a>
+<span class="sourceLineNo">378</span>     * &lt;p&gt;<a name="line.378"></a>
+<span class="sourceLineNo">379</span>     * Features with colliding feature ids are summed together.<a name="line.379"></a>
+<span class="sourceLineNo">380</span>     * &lt;p&gt;<a name="line.380"></a>
+<span class="sourceLineNo">381</span>     * Can throw IllegalArgumentException if the {@link Example} contains no features.<a name="line.381"></a>
+<span class="sourceLineNo">382</span>     * @param example The example to inspect.<a name="line.382"></a>
+<span class="sourceLineNo">383</span>     * @param featureMap The feature map of the model/dataset (used to preserve hash information).<a name="line.383"></a>
+<span class="sourceLineNo">384</span>     * @param dataList The output feature values.<a name="line.384"></a>
+<span class="sourceLineNo">385</span>     * @param indicesList The output indices.<a name="line.385"></a>
+<span class="sourceLineNo">386</span>     * @param headersList The output header position (an integer saying how long each sparse example is).<a name="line.386"></a>
+<span class="sourceLineNo">387</span>     * @param header The current header position.<a name="line.387"></a>
+<span class="sourceLineNo">388</span>     * @param &lt;T&gt; The type of the example.<a name="line.388"></a>
+<span class="sourceLineNo">389</span>     * @return The updated header position.<a name="line.389"></a>
+<span class="sourceLineNo">390</span>     */<a name="line.390"></a>
+<span class="sourceLineNo">391</span>    protected static &lt;T extends Output&lt;T&gt;&gt; long convertSingleExample(Example&lt;T&gt; example, ImmutableFeatureMap featureMap, ArrayList&lt;Float&gt; dataList, ArrayList&lt;Integer&gt; indicesList, ArrayList&lt;Long&gt; headersList, long header) {<a name="line.391"></a>
+<span class="sourceLineNo">392</span>        int numActiveFeatures = 0;<a name="line.392"></a>
+<span class="sourceLineNo">393</span>        int prevIdx = -1;<a name="line.393"></a>
+<span class="sourceLineNo">394</span>        int indicesSize = indicesList.size();<a name="line.394"></a>
+<span class="sourceLineNo">395</span>        for (Feature f : example) {<a name="line.395"></a>
+<span class="sourceLineNo">396</span>            int id = featureMap.getID(f.getName());<a name="line.396"></a>
+<span class="sourceLineNo">397</span>            if (id &gt; prevIdx){<a name="line.397"></a>
+<span class="sourceLineNo">398</span>                prevIdx = id;<a name="line.398"></a>
+<span class="sourceLineNo">399</span>                dataList.add((float) f.getValue());<a name="line.399"></a>
+<span class="sourceLineNo">400</span>                indicesList.add(id);<a name="line.400"></a>
+<span class="sourceLineNo">401</span>                numActiveFeatures++;<a name="line.401"></a>
+<span class="sourceLineNo">402</span>            } else if (id &gt; -1) {<a name="line.402"></a>
+<span class="sourceLineNo">403</span>                //<a name="line.403"></a>
+<span class="sourceLineNo">404</span>                // Collision, deal with it.<a name="line.404"></a>
+<span class="sourceLineNo">405</span>                int collisionIdx = Util.binarySearch(indicesList,id,indicesSize,numActiveFeatures+indicesSize);<a name="line.405"></a>
+<span class="sourceLineNo">406</span>                if (collisionIdx &lt; 0) {<a name="line.406"></a>
+<span class="sourceLineNo">407</span>                    //<a name="line.407"></a>
+<span class="sourceLineNo">408</span>                    // Collision but not present in tmpIndices<a name="line.408"></a>
+<span class="sourceLineNo">409</span>                    // move data and bump i<a name="line.409"></a>
+<span class="sourceLineNo">410</span>                    collisionIdx = - (collisionIdx + 1);<a name="line.410"></a>
+<span class="sourceLineNo">411</span>                    indicesList.add(collisionIdx,id);<a name="line.411"></a>
+<span class="sourceLineNo">412</span>                    dataList.add(collisionIdx,(float) f.getValue());<a name="line.412"></a>
+<span class="sourceLineNo">413</span>                    numActiveFeatures++;<a name="line.413"></a>
+<span class="sourceLineNo">414</span>                } else {<a name="line.414"></a>
+<span class="sourceLineNo">415</span>                    //<a name="line.415"></a>
+<span class="sourceLineNo">416</span>                    // Collision present in tmpIndices<a name="line.416"></a>
+<span class="sourceLineNo">417</span>                    // add the values.<a name="line.417"></a>
+<span class="sourceLineNo">418</span>                    dataList.set(collisionIdx, dataList.get(collisionIdx) + (float) f.getValue());<a name="line.418"></a>
+<span class="sourceLineNo">419</span>                }<a name="line.419"></a>
+<span class="sourceLineNo">420</span>            }<a name="line.420"></a>
+<span class="sourceLineNo">421</span>        }<a name="line.421"></a>
+<span class="sourceLineNo">422</span>        if (numActiveFeatures == 0) {<a name="line.422"></a>
+<span class="sourceLineNo">423</span>            throw new IllegalArgumentException("No features found in Example " + example.toString());<a name="line.423"></a>
+<span class="sourceLineNo">424</span>        }<a name="line.424"></a>
+<span class="sourceLineNo">425</span>        header += numActiveFeatures;<a name="line.425"></a>
+<span class="sourceLineNo">426</span>        headersList.add(header);<a name="line.426"></a>
+<span class="sourceLineNo">427</span>        return header;<a name="line.427"></a>
+<span class="sourceLineNo">428</span>    }<a name="line.428"></a>
+<span class="sourceLineNo">429</span><a name="line.429"></a>
+<span class="sourceLineNo">430</span>    /**<a name="line.430"></a>
+<span class="sourceLineNo">431</span>     * Writes out the features from a SparseVector into the three supplied {@link ArrayList}s.<a name="line.431"></a>
+<span class="sourceLineNo">432</span>     * &lt;p&gt;<a name="line.432"></a>
+<span class="sourceLineNo">433</span>     * This is used to transform examples into the right format for an XGBoost call.<a name="line.433"></a>
+<span class="sourceLineNo">434</span>     * It's used when predicting with an externally trained XGBoost model, as the<a name="line.434"></a>
+<span class="sourceLineNo">435</span>     * external training may not respect Tribuo's feature ordering constraints.<a name="line.435"></a>
+<span class="sourceLineNo">436</span>     * The ArrayLists must be non-null, and can contain existing values (as this<a name="line.436"></a>
+<span class="sourceLineNo">437</span>     * method is called multiple times to build up an arraylist containing all the<a name="line.437"></a>
+<span class="sourceLineNo">438</span>     * feature values for a dataset).<a name="line.438"></a>
+<span class="sourceLineNo">439</span>     * &lt;/p&gt;<a name="line.439"></a>
+<span class="sourceLineNo">440</span>     * &lt;p&gt;<a name="line.440"></a>
+<span class="sourceLineNo">441</span>     * This is much simpler than {@link XGBoostTrainer#convertSingleExample} as the validation<a name="line.441"></a>
+<span class="sourceLineNo">442</span>     * of feature indices is done in the {@link org.tribuo.interop.ExternalModel} class.<a name="line.442"></a>
+<span class="sourceLineNo">443</span>     * &lt;/p&gt;<a name="line.443"></a>
+<span class="sourceLineNo">444</span>     * @param vector The features to convert.<a name="line.444"></a>
+<span class="sourceLineNo">445</span>     * @param dataList The output feature values.<a name="line.445"></a>
+<span class="sourceLineNo">446</span>     * @param indicesList The output indices.<a name="line.446"></a>
+<span class="sourceLineNo">447</span>     * @param headersList The output header position (an integer saying how long each sparse example is).<a name="line.447"></a>
+<span class="sourceLineNo">448</span>     * @param header The current header position.<a name="line.448"></a>
+<span class="sourceLineNo">449</span>     * @return The updated header position.<a name="line.449"></a>
+<span class="sourceLineNo">450</span>     */<a name="line.450"></a>
+<span class="sourceLineNo">451</span>    static long convertSingleExample(SparseVector vector, ArrayList&lt;Float&gt; dataList, ArrayList&lt;Integer&gt; indicesList, ArrayList&lt;Long&gt; headersList, long header) {<a name="line.451"></a>
+<span class="sourceLineNo">452</span>        int numActiveFeatures = 0;<a name="line.452"></a>
+<span class="sourceLineNo">453</span>        for (VectorTuple v : vector) {<a name="line.453"></a>
+<span class="sourceLineNo">454</span>            dataList.add((float) v.value);<a name="line.454"></a>
+<span class="sourceLineNo">455</span>            indicesList.add(v.index);<a name="line.455"></a>
+<span class="sourceLineNo">456</span>            numActiveFeatures++;<a name="line.456"></a>
+<span class="sourceLineNo">457</span>        }<a name="line.457"></a>
+<span class="sourceLineNo">458</span>        header += numActiveFeatures;<a name="line.458"></a>
+<span class="sourceLineNo">459</span>        headersList.add(header);<a name="line.459"></a>
+<span class="sourceLineNo">460</span>        return header;<a name="line.460"></a>
+<span class="sourceLineNo">461</span>    }<a name="line.461"></a>
+<span class="sourceLineNo">462</span><a name="line.462"></a>
+<span class="sourceLineNo">463</span>    /**<a name="line.463"></a>
+<span class="sourceLineNo">464</span>     * Used when predicting with an externally trained XGBoost model.<a name="line.464"></a>
+<span class="sourceLineNo">465</span>     * @param vector The features to convert.<a name="line.465"></a>
+<span class="sourceLineNo">466</span>     * @return A DMatrix representing the features.<a name="line.466"></a>
+<span class="sourceLineNo">467</span>     * @throws XGBoostError If the native library returns an error state.<a name="line.467"></a>
+<span class="sourceLineNo">468</span>     */<a name="line.468"></a>
+<span class="sourceLineNo">469</span>    protected static DMatrix convertSparseVector(SparseVector vector) throws XGBoostError {<a name="line.469"></a>
+<span class="sourceLineNo">470</span>        // headers = array of start points for a row<a name="line.470"></a>
+<span class="sourceLineNo">471</span>        // indices = array of feature indices for all data<a name="line.471"></a>
+<span class="sourceLineNo">472</span>        // data = array of feature values for all data<a name="line.472"></a>
+<span class="sourceLineNo">473</span>        // SparseType = DMatrix.SparseType.CSR<a name="line.473"></a>
+<span class="sourceLineNo">474</span>        //public DMatrix(long[] headers, int[] indices, float[] data, SparseType st) throws XGBoostError<a name="line.474"></a>
+<span class="sourceLineNo">475</span>        ArrayList&lt;Float&gt; dataList = new ArrayList&lt;&gt;();<a name="line.475"></a>
+<span class="sourceLineNo">476</span>        ArrayList&lt;Long&gt; headersList = new ArrayList&lt;&gt;();<a name="line.476"></a>
+<span class="sourceLineNo">477</span>        ArrayList&lt;Integer&gt; indicesList = new ArrayList&lt;&gt;();<a name="line.477"></a>
+<span class="sourceLineNo">478</span><a name="line.478"></a>
+<span class="sourceLineNo">479</span>        long rowHeader = 0;<a name="line.479"></a>
+<span class="sourceLineNo">480</span>        headersList.add(rowHeader);<a name="line.480"></a>
+<span class="sourceLineNo">481</span>        convertSingleExample(vector,dataList,indicesList,headersList,rowHeader);<a name="line.481"></a>
+<span class="sourceLineNo">482</span><a name="line.482"></a>
+<span class="sourceLineNo">483</span>        float[] data = Util.toPrimitiveFloat(dataList);<a name="line.483"></a>
+<span class="sourceLineNo">484</span>        int[] indices = Util.toPrimitiveInt(indicesList);<a name="line.484"></a>
+<span class="sourceLineNo">485</span>        long[] headers = Util.toPrimitiveLong(headersList);<a name="line.485"></a>
+<span class="sourceLineNo">486</span><a name="line.486"></a>
+<span class="sourceLineNo">487</span>        return new DMatrix(headers, indices, data, DMatrix.SparseType.CSR,vector.size());<a name="line.487"></a>
+<span class="sourceLineNo">488</span>    }<a name="line.488"></a>
+<span class="sourceLineNo">489</span><a name="line.489"></a>
+<span class="sourceLineNo">490</span>    /**<a name="line.490"></a>
+<span class="sourceLineNo">491</span>     * Used when predicting with an externally trained XGBoost model.<a name="line.491"></a>
+<span class="sourceLineNo">492</span>     * &lt;p&gt;<a name="line.492"></a>
+<span class="sourceLineNo">493</span>     * It is assumed all vectors are the same size when passed into this function.<a name="line.493"></a>
+<span class="sourceLineNo">494</span>     * @param vectors The batch of features to convert.<a name="line.494"></a>
+<span class="sourceLineNo">495</span>     * @return A DMatrix representing the batch of features.<a name="line.495"></a>
+<span class="sourceLineNo">496</span>     * @throws XGBoostError If the native library returns an error state.<a name="line.496"></a>
+<span class="sourceLineNo">497</span>     */<a name="line.497"></a>
+<span class="sourceLineNo">498</span>    protected static DMatrix convertSparseVectors(List&lt;SparseVector&gt; vectors) throws XGBoostError {<a name="line.498"></a>
+<span class="sourceLineNo">499</span>        // headers = array of start points for a row<a name="line.499"></a>
+<span class="sourceLineNo">500</span>        // indices = array of feature indices for all data<a name="line.500"></a>
+<span class="sourceLineNo">501</span>        // data = array of feature values for all data<a name="line.501"></a>
+<span class="sourceLineNo">502</span>        // SparseType = DMatrix.SparseType.CSR<a name="line.502"></a>
+<span class="sourceLineNo">503</span>        //public DMatrix(long[] headers, int[] indices, float[] data, SparseType st) throws XGBoostError<a name="line.503"></a>
+<span class="sourceLineNo">504</span>        ArrayList&lt;Float&gt; dataList = new ArrayList&lt;&gt;();<a name="line.504"></a>
+<span class="sourceLineNo">505</span>        ArrayList&lt;Long&gt; headersList = new ArrayList&lt;&gt;();<a name="line.505"></a>
+<span class="sourceLineNo">506</span>        ArrayList&lt;Integer&gt; indicesList = new ArrayList&lt;&gt;();<a name="line.506"></a>
+<span class="sourceLineNo">507</span><a name="line.507"></a>
+<span class="sourceLineNo">508</span>        int numFeatures = 0;<a name="line.508"></a>
+<span class="sourceLineNo">509</span>        long rowHeader = 0;<a name="line.509"></a>
+<span class="sourceLineNo">510</span>        headersList.add(rowHeader);<a name="line.510"></a>
+<span class="sourceLineNo">511</span>        for (SparseVector e : vectors) {<a name="line.511"></a>
+<span class="sourceLineNo">512</span>            rowHeader = convertSingleExample(e,dataList,indicesList,headersList,rowHeader);<a name="line.512"></a>
+<span class="sourceLineNo">513</span>            numFeatures = e.size(); // All vectors are assumed to be the same size.<a name="line.513"></a>
+<span class="sourceLineNo">514</span>        }<a name="line.514"></a>
+<span class="sourceLineNo">515</span><a name="line.515"></a>
+<span class="sourceLineNo">516</span>        float[] data = Util.toPrimitiveFloat(dataList);<a name="line.516"></a>
+<span class="sourceLineNo">517</span>        int[] indices = Util.toPrimitiveInt(indicesList);<a name="line.517"></a>
+<span class="sourceLineNo">518</span>        long[] headers = Util.toPrimitiveLong(headersList);<a name="line.518"></a>
+<span class="sourceLineNo">519</span><a name="line.519"></a>
+<span class="sourceLineNo">520</span>        return new DMatrix(headers, indices, data, DMatrix.SparseType.CSR, numFeatures);<a name="line.520"></a>
+<span class="sourceLineNo">521</span>    }<a name="line.521"></a>
+<span class="sourceLineNo">522</span><a name="line.522"></a>
+<span class="sourceLineNo">523</span>    protected static class DMatrixTuple&lt;T extends Output&lt;T&gt;&gt; {<a name="line.523"></a>
+<span class="sourceLineNo">524</span>        public final DMatrix data;<a name="line.524"></a>
+<span class="sourceLineNo">525</span>        public final int[] numValidFeatures;<a name="line.525"></a>
+<span class="sourceLineNo">526</span>        public final Example&lt;T&gt;[] examples;<a name="line.526"></a>
+<span class="sourceLineNo">527</span><a name="line.527"></a>
+<span class="sourceLineNo">528</span>        public DMatrixTuple(DMatrix data, int[] numValidFeatures, Example&lt;T&gt;[] examples) {<a name="line.528"></a>
+<span class="sourceLineNo">529</span>            this.data = data;<a name="line.529"></a>
+<span class="sourceLineNo">530</span>            this.numValidFeatures = numValidFeatures;<a name="line.530"></a>
+<span class="sourceLineNo">531</span>            this.examples = examples;<a name="line.531"></a>
+<span class="sourceLineNo">532</span>        }<a name="line.532"></a>
+<span class="sourceLineNo">533</span>    }<a name="line.533"></a>
+<span class="sourceLineNo">534</span><a name="line.534"></a>
+<span class="sourceLineNo">535</span>    protected static class XGBoostTrainerProvenance extends SkeletalTrainerProvenance {<a name="line.535"></a>
+<span class="sourceLineNo">536</span>        private static final long serialVersionUID = 1L;<a name="line.536"></a>
+<span class="sourceLineNo">537</span><a name="line.537"></a>
+<span class="sourceLineNo">538</span>        protected &lt;T extends Output&lt;T&gt;&gt; XGBoostTrainerProvenance(XGBoostTrainer&lt;T&gt; host) {<a name="line.538"></a>
+<span class="sourceLineNo">539</span>            super(host);<a name="line.539"></a>
+<span class="sourceLineNo">540</span>        }<a name="line.540"></a>
+<span class="sourceLineNo">541</span><a name="line.541"></a>
+<span class="sourceLineNo">542</span>        protected XGBoostTrainerProvenance(Map&lt;String,Provenance&gt; map) {<a name="line.542"></a>
+<span class="sourceLineNo">543</span>            super(map);<a name="line.543"></a>
+<span class="sourceLineNo">544</span>        }<a name="line.544"></a>
+<span class="sourceLineNo">545</span>    }<a name="line.545"></a>
+<span class="sourceLineNo">546</span>}<a name="line.546"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</div>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<title>Source code</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<div class="sourceContainer">
+<pre><span class="sourceLineNo">001</span>/*<a name="line.1"></a>
+<span class="sourceLineNo">002</span> * Copyright (c) 2015-2020, Oracle and/or its affiliates. All rights reserved.<a name="line.2"></a>
+<span class="sourceLineNo">003</span> *<a name="line.3"></a>
+<span class="sourceLineNo">004</span> * Licensed under the Apache License, Version 2.0 (the "License");<a name="line.4"></a>
+<span class="sourceLineNo">005</span> * you may not use this file except in compliance with the License.<a name="line.5"></a>
+<span class="sourceLineNo">006</span> * You may obtain a copy of the License at<a name="line.6"></a>
+<span class="sourceLineNo">007</span> *<a name="line.7"></a>
+<span class="sourceLineNo">008</span> *     http://www.apache.org/licenses/LICENSE-2.0<a name="line.8"></a>
+<span class="sourceLineNo">009</span> *<a name="line.9"></a>
+<span class="sourceLineNo">010</span> * Unless required by applicable law or agreed to in writing, software<a name="line.10"></a>
+<span class="sourceLineNo">011</span> * distributed under the License is distributed on an "AS IS" BASIS,<a name="line.11"></a>
+<span class="sourceLineNo">012</span> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express implied.<a name="line.12"></a>
+<span class="sourceLineNo">013</span> * See the License for the specific language governing permissions and<a name="line.13"></a>
+<span class="sourceLineNo">014</span> * limitations under the License.<a name="line.14"></a>
+<span class="sourceLineNo">015</span> */<a name="line.15"></a>
+<span class="sourceLineNo">016</span><a name="line.16"></a>
+<span class="sourceLineNo">017</span>package org.tribuo.classification.mnb;<a name="line.17"></a>
+<span class="sourceLineNo">018</span><a name="line.18"></a>
+<span class="sourceLineNo">019</span>import com.oracle.labs.mlrg.olcut.util.Pair;<a name="line.19"></a>
+<span class="sourceLineNo">020</span>import org.tribuo.Example;<a name="line.20"></a>
+<span class="sourceLineNo">021</span>import org.tribuo.Excuse;<a name="line.21"></a>
+<span class="sourceLineNo">022</span>import org.tribuo.Feature;<a name="line.22"></a>
+<span class="sourceLineNo">023</span>import org.tribuo.ImmutableFeatureMap;<a name="line.23"></a>
+<span class="sourceLineNo">024</span>import org.tribuo.ImmutableOutputInfo;<a name="line.24"></a>
+<span class="sourceLineNo">025</span>import org.tribuo.Model;<a name="line.25"></a>
+<span class="sourceLineNo">026</span>import org.tribuo.Prediction;<a name="line.26"></a>
+<span class="sourceLineNo">027</span>import org.tribuo.classification.Label;<a name="line.27"></a>
+<span class="sourceLineNo">028</span>import org.tribuo.math.la.DenseSparseMatrix;<a name="line.28"></a>
+<span class="sourceLineNo">029</span>import org.tribuo.math.la.DenseVector;<a name="line.29"></a>
+<span class="sourceLineNo">030</span>import org.tribuo.math.la.SparseVector;<a name="line.30"></a>
+<span class="sourceLineNo">031</span>import org.tribuo.math.la.VectorTuple;<a name="line.31"></a>
+<span class="sourceLineNo">032</span>import org.tribuo.math.util.ExpNormalizer;<a name="line.32"></a>
+<span class="sourceLineNo">033</span>import org.tribuo.math.util.VectorNormalizer;<a name="line.33"></a>
+<span class="sourceLineNo">034</span>import org.tribuo.provenance.ModelProvenance;<a name="line.34"></a>
+<span class="sourceLineNo">035</span><a name="line.35"></a>
+<span class="sourceLineNo">036</span>import java.util.ArrayList;<a name="line.36"></a>
+<span class="sourceLineNo">037</span>import java.util.Comparator;<a name="line.37"></a>
+<span class="sourceLineNo">038</span>import java.util.HashMap;<a name="line.38"></a>
+<span class="sourceLineNo">039</span>import java.util.LinkedHashMap;<a name="line.39"></a>
+<span class="sourceLineNo">040</span>import java.util.List;<a name="line.40"></a>
+<span class="sourceLineNo">041</span>import java.util.Map;<a name="line.41"></a>
+<span class="sourceLineNo">042</span>import java.util.Optional;<a name="line.42"></a>
+<span class="sourceLineNo">043</span><a name="line.43"></a>
+<span class="sourceLineNo">044</span>/**<a name="line.44"></a>
+<span class="sourceLineNo">045</span> * A {@link Model} for multinomial Naive Bayes with Laplace smoothing.<a name="line.45"></a>
+<span class="sourceLineNo">046</span> * &lt;p&gt;<a name="line.46"></a>
+<span class="sourceLineNo">047</span> * All feature values must be non-negative, otherwise it will throw IllegalArgumentException.<a name="line.47"></a>
+<span class="sourceLineNo">048</span> * &lt;p&gt;<a name="line.48"></a>
+<span class="sourceLineNo">049</span> * See:<a name="line.49"></a>
+<span class="sourceLineNo">050</span> * &lt;pre&gt;<a name="line.50"></a>
+<span class="sourceLineNo">051</span> * Wang S, Manning CD.<a name="line.51"></a>
+<span class="sourceLineNo">052</span> * "Baselines and Bigrams: Simple, Good Sentiment and Topic Classification"<a name="line.52"></a>
+<span class="sourceLineNo">053</span> * Proceedings of the 50th Annual Meeting of the Association for Computational Linguistics, 2012.<a name="line.53"></a>
+<span class="sourceLineNo">054</span> * &lt;/pre&gt;<a name="line.54"></a>
+<span class="sourceLineNo">055</span> */<a name="line.55"></a>
+<span class="sourceLineNo">056</span>public class MultinomialNaiveBayesModel extends Model&lt;Label&gt; {<a name="line.56"></a>
+<span class="sourceLineNo">057</span>    private static final long serialVersionUID = 1L;<a name="line.57"></a>
+<span class="sourceLineNo">058</span><a name="line.58"></a>
+<span class="sourceLineNo">059</span>    private final DenseSparseMatrix labelWordProbs;<a name="line.59"></a>
+<span class="sourceLineNo">060</span>    private final double alpha;<a name="line.60"></a>
+<span class="sourceLineNo">061</span><a name="line.61"></a>
+<span class="sourceLineNo">062</span>    private static final VectorNormalizer normalizer = new ExpNormalizer();<a name="line.62"></a>
+<span class="sourceLineNo">063</span><a name="line.63"></a>
+<span class="sourceLineNo">064</span>    MultinomialNaiveBayesModel(String name, ModelProvenance description, ImmutableFeatureMap featureInfos, ImmutableOutputInfo&lt;Label&gt; labelInfos, DenseSparseMatrix labelWordProbs, double alpha) {<a name="line.64"></a>
+<span class="sourceLineNo">065</span>        super(name, description, featureInfos, labelInfos, true);<a name="line.65"></a>
+<span class="sourceLineNo">066</span>        this.labelWordProbs = labelWordProbs;<a name="line.66"></a>
+<span class="sourceLineNo">067</span>        this.alpha = alpha;<a name="line.67"></a>
+<span class="sourceLineNo">068</span>    }<a name="line.68"></a>
+<span class="sourceLineNo">069</span><a name="line.69"></a>
+<span class="sourceLineNo">070</span>    @Override<a name="line.70"></a>
+<span class="sourceLineNo">071</span>    public Prediction&lt;Label&gt; predict(Example&lt;Label&gt; example) {<a name="line.71"></a>
+<span class="sourceLineNo">072</span>        SparseVector exVector = SparseVector.createSparseVector(example, featureIDMap, false);<a name="line.72"></a>
+<span class="sourceLineNo">073</span><a name="line.73"></a>
+<span class="sourceLineNo">074</span>        if (exVector.minValue() &lt; 0.0) {<a name="line.74"></a>
+<span class="sourceLineNo">075</span>            throw new IllegalArgumentException("Example has negative feature values, example = " + example.toString());<a name="line.75"></a>
+<span class="sourceLineNo">076</span>        }<a name="line.76"></a>
+<span class="sourceLineNo">077</span>        if (exVector.numActiveElements() == 0) {<a name="line.77"></a>
+<span class="sourceLineNo">078</span>            throw new IllegalArgumentException("No features found in Example " + example.toString());<a name="line.78"></a>
+<span class="sourceLineNo">079</span>        }<a name="line.79"></a>
+<span class="sourceLineNo">080</span><a name="line.80"></a>
+<span class="sourceLineNo">081</span>        /* Since we keep the label by feature matrix sparse, we need to manually<a name="line.81"></a>
+<span class="sourceLineNo">082</span>         * add the weights contributed by smoothing unobserved features. We need to<a name="line.82"></a>
+<span class="sourceLineNo">083</span>         * add in the portion of the inner product for the indices that are active<a name="line.83"></a>
+<span class="sourceLineNo">084</span>         * in the example but are not active in the labelWordProbs matrix (but are<a name="line.84"></a>
+<span class="sourceLineNo">085</span>         * still non-zero due to smoothing).<a name="line.85"></a>
+<span class="sourceLineNo">086</span>         */<a name="line.86"></a>
+<span class="sourceLineNo">087</span>        double[] alphaOffsets = new double[outputIDInfo.size()];<a name="line.87"></a>
+<span class="sourceLineNo">088</span>        int vocabSize = labelWordProbs.getDimension2Size();<a name="line.88"></a>
+<span class="sourceLineNo">089</span>        if (alpha &gt; 0.0) {<a name="line.89"></a>
+<span class="sourceLineNo">090</span>            for (int i = 0; i &lt; outputIDInfo.size(); i++) {<a name="line.90"></a>
+<span class="sourceLineNo">091</span>                double unobservedProb = Math.log(alpha / (labelWordProbs.getRow(i).oneNorm() + (vocabSize * alpha)));<a name="line.91"></a>
+<span class="sourceLineNo">092</span>                int[] mismatchedIndices = exVector.difference(labelWordProbs.getRow(i));<a name="line.92"></a>
+<span class="sourceLineNo">093</span>                double inExampleFactor = 0.0;<a name="line.93"></a>
+<span class="sourceLineNo">094</span>                for (int idx = 0; idx &lt; mismatchedIndices.length; idx++) {<a name="line.94"></a>
+<span class="sourceLineNo">095</span>                    // TODO - exVector.get is slow as it does a binary search into the vector.<a name="line.95"></a>
+<span class="sourceLineNo">096</span>                    inExampleFactor += exVector.get(mismatchedIndices[idx]) * unobservedProb;<a name="line.96"></a>
+<span class="sourceLineNo">097</span>                }<a name="line.97"></a>
+<span class="sourceLineNo">098</span>                alphaOffsets[i] = inExampleFactor;<a name="line.98"></a>
+<span class="sourceLineNo">099</span>            }<a name="line.99"></a>
+<span class="sourceLineNo">100</span>        }<a name="line.100"></a>
+<span class="sourceLineNo">101</span><a name="line.101"></a>
+<span class="sourceLineNo">102</span>        DenseVector prediction = labelWordProbs.leftMultiply(exVector);<a name="line.102"></a>
+<span class="sourceLineNo">103</span>        prediction.intersectAndAddInPlace(DenseVector.createDenseVector(alphaOffsets));<a name="line.103"></a>
+<span class="sourceLineNo">104</span>        prediction.normalize(normalizer);<a name="line.104"></a>
+<span class="sourceLineNo">105</span>        Map&lt;String,Label&gt; distribution = new LinkedHashMap&lt;&gt;();<a name="line.105"></a>
+<span class="sourceLineNo">106</span>        Label maxLabel = null;<a name="line.106"></a>
+<span class="sourceLineNo">107</span>        double maxScore = Double.NEGATIVE_INFINITY;<a name="line.107"></a>
+<span class="sourceLineNo">108</span>        for(VectorTuple vt : prediction) {<a name="line.108"></a>
+<span class="sourceLineNo">109</span>            String name = outputIDInfo.getOutput(vt.index).getLabel();<a name="line.109"></a>
+<span class="sourceLineNo">110</span>            Label label = new Label(name, vt.value);<a name="line.110"></a>
+<span class="sourceLineNo">111</span>            if (vt.value &gt; maxScore) {<a name="line.111"></a>
+<span class="sourceLineNo">112</span>                maxScore = vt.value;<a name="line.112"></a>
+<span class="sourceLineNo">113</span>                maxLabel = label;<a name="line.113"></a>
+<span class="sourceLineNo">114</span>            }<a name="line.114"></a>
+<span class="sourceLineNo">115</span>            distribution.put(name,label);<a name="line.115"></a>
+<span class="sourceLineNo">116</span>        }<a name="line.116"></a>
+<span class="sourceLineNo">117</span>        Prediction&lt;Label&gt; p = new Prediction&lt;&gt;(maxLabel, distribution, exVector.numActiveElements(), example, true);<a name="line.117"></a>
+<span class="sourceLineNo">118</span>        return p;<a name="line.118"></a>
+<span class="sourceLineNo">119</span>    }<a name="line.119"></a>
+<span class="sourceLineNo">120</span><a name="line.120"></a>
+<span class="sourceLineNo">121</span>    @Override<a name="line.121"></a>
+<span class="sourceLineNo">122</span>    public Map&lt;String, List&lt;Pair&lt;String, Double&gt;&gt;&gt; getTopFeatures(int n) {<a name="line.122"></a>
+<span class="sourceLineNo">123</span>        int maxFeatures = n &lt; 0 ? featureIDMap.size() : n;<a name="line.123"></a>
+<span class="sourceLineNo">124</span>        Map&lt;String, List&lt;Pair&lt;String, Double&gt;&gt;&gt; topFeatures = new HashMap&lt;&gt;();<a name="line.124"></a>
+<span class="sourceLineNo">125</span><a name="line.125"></a>
+<span class="sourceLineNo">126</span>        for (Pair&lt;Integer,Label&gt; label : outputIDInfo) {<a name="line.126"></a>
+<span class="sourceLineNo">127</span>            List&lt;Pair&lt;String, Double&gt;&gt; features = new ArrayList&lt;&gt;(labelWordProbs.numActiveElements(label.getA()));<a name="line.127"></a>
+<span class="sourceLineNo">128</span>            for(VectorTuple vt : labelWordProbs.getRow(label.getA())) {<a name="line.128"></a>
+<span class="sourceLineNo">129</span>                features.add(new Pair&lt;&gt;(featureIDMap.get(vt.index).getName(), vt.value));<a name="line.129"></a>
+<span class="sourceLineNo">130</span>            }<a name="line.130"></a>
+<span class="sourceLineNo">131</span>            features.sort(Comparator.comparing(x -&gt; -x.getB()));<a name="line.131"></a>
+<span class="sourceLineNo">132</span>            if(maxFeatures &lt; featureIDMap.size()) {<a name="line.132"></a>
+<span class="sourceLineNo">133</span>                features = features.subList(0, maxFeatures);<a name="line.133"></a>
+<span class="sourceLineNo">134</span>            }<a name="line.134"></a>
+<span class="sourceLineNo">135</span>            topFeatures.put(label.getB().getLabel(), features);<a name="line.135"></a>
+<span class="sourceLineNo">136</span>        }<a name="line.136"></a>
+<span class="sourceLineNo">137</span>        return topFeatures;<a name="line.137"></a>
+<span class="sourceLineNo">138</span>    }<a name="line.138"></a>
+<span class="sourceLineNo">139</span><a name="line.139"></a>
+<span class="sourceLineNo">140</span>    @Override<a name="line.140"></a>
+<span class="sourceLineNo">141</span>    public Optional&lt;Excuse&lt;Label&gt;&gt; getExcuse(Example&lt;Label&gt; example) {<a name="line.141"></a>
+<span class="sourceLineNo">142</span>        Map&lt;String, List&lt;Pair&lt;String, Double&gt;&gt;&gt; explanation = new HashMap&lt;&gt;();<a name="line.142"></a>
+<span class="sourceLineNo">143</span>        for (Pair&lt;Integer,Label&gt; label : outputIDInfo) {<a name="line.143"></a>
+<span class="sourceLineNo">144</span>            List&lt;Pair&lt;String, Double&gt;&gt; scores = new ArrayList&lt;&gt;();<a name="line.144"></a>
+<span class="sourceLineNo">145</span>            for(Feature f : example) {<a name="line.145"></a>
+<span class="sourceLineNo">146</span>                int id = featureIDMap.getID(f.getName());<a name="line.146"></a>
+<span class="sourceLineNo">147</span>                if (id &gt; -1) {<a name="line.147"></a>
+<span class="sourceLineNo">148</span>                    scores.add(new Pair&lt;&gt;(f.getName(),labelWordProbs.getRow(label.getA()).get(id)));<a name="line.148"></a>
+<span class="sourceLineNo">149</span>                }<a name="line.149"></a>
+<span class="sourceLineNo">150</span>            }<a name="line.150"></a>
+<span class="sourceLineNo">151</span>            explanation.put(label.getB().getLabel(), scores);<a name="line.151"></a>
+<span class="sourceLineNo">152</span>        }<a name="line.152"></a>
+<span class="sourceLineNo">153</span>        return Optional.of(new Excuse&lt;&gt;(example, predict(example), explanation));<a name="line.153"></a>
+<span class="sourceLineNo">154</span>    }<a name="line.154"></a>
+<span class="sourceLineNo">155</span><a name="line.155"></a>
+<span class="sourceLineNo">156</span>    @Override<a name="line.156"></a>
+<span class="sourceLineNo">157</span>    protected MultinomialNaiveBayesModel copy(String newName, ModelProvenance newProvenance) {<a name="line.157"></a>
+<span class="sourceLineNo">158</span>        return new MultinomialNaiveBayesModel(newName,newProvenance,featureIDMap,outputIDInfo,new DenseSparseMatrix(labelWordProbs),alpha);<a name="line.158"></a>
+<span class="sourceLineNo">159</span>    }<a name="line.159"></a>
+<span class="sourceLineNo">160</span>}<a name="line.160"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</div>
+</body>
+</html>

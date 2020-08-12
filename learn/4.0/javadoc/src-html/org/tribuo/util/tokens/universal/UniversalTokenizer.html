@@ -1,0 +1,730 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<title>Source code</title>
+<link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<div class="sourceContainer">
+<pre><span class="sourceLineNo">001</span>/*<a name="line.1"></a>
+<span class="sourceLineNo">002</span> * Copyright (c) 2015-2020, Oracle and/or its affiliates. All rights reserved.<a name="line.2"></a>
+<span class="sourceLineNo">003</span> *<a name="line.3"></a>
+<span class="sourceLineNo">004</span> * Licensed under the Apache License, Version 2.0 (the "License");<a name="line.4"></a>
+<span class="sourceLineNo">005</span> * you may not use this file except in compliance with the License.<a name="line.5"></a>
+<span class="sourceLineNo">006</span> * You may obtain a copy of the License at<a name="line.6"></a>
+<span class="sourceLineNo">007</span> *<a name="line.7"></a>
+<span class="sourceLineNo">008</span> *     http://www.apache.org/licenses/LICENSE-2.0<a name="line.8"></a>
+<span class="sourceLineNo">009</span> *<a name="line.9"></a>
+<span class="sourceLineNo">010</span> * Unless required by applicable law or agreed to in writing, software<a name="line.10"></a>
+<span class="sourceLineNo">011</span> * distributed under the License is distributed on an "AS IS" BASIS,<a name="line.11"></a>
+<span class="sourceLineNo">012</span> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express implied.<a name="line.12"></a>
+<span class="sourceLineNo">013</span> * See the License for the specific language governing permissions and<a name="line.13"></a>
+<span class="sourceLineNo">014</span> * limitations under the License.<a name="line.14"></a>
+<span class="sourceLineNo">015</span> */<a name="line.15"></a>
+<span class="sourceLineNo">016</span><a name="line.16"></a>
+<span class="sourceLineNo">017</span>package org.tribuo.util.tokens.universal;<a name="line.17"></a>
+<span class="sourceLineNo">018</span><a name="line.18"></a>
+<span class="sourceLineNo">019</span>import com.oracle.labs.mlrg.olcut.config.Config;<a name="line.19"></a>
+<span class="sourceLineNo">020</span>import com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance;<a name="line.20"></a>
+<span class="sourceLineNo">021</span>import com.oracle.labs.mlrg.olcut.provenance.impl.ConfiguredObjectProvenanceImpl;<a name="line.21"></a>
+<span class="sourceLineNo">022</span>import org.tribuo.util.tokens.Token;<a name="line.22"></a>
+<span class="sourceLineNo">023</span>import org.tribuo.util.tokens.Tokenizer;<a name="line.23"></a>
+<span class="sourceLineNo">024</span><a name="line.24"></a>
+<span class="sourceLineNo">025</span>import java.util.Arrays;<a name="line.25"></a>
+<span class="sourceLineNo">026</span>import java.util.LinkedList;<a name="line.26"></a>
+<span class="sourceLineNo">027</span>import java.util.Queue;<a name="line.27"></a>
+<span class="sourceLineNo">028</span><a name="line.28"></a>
+<span class="sourceLineNo">029</span>/**<a name="line.29"></a>
+<span class="sourceLineNo">030</span> * This class was originally written for the purpose of document indexing in an<a name="line.30"></a>
+<span class="sourceLineNo">031</span> * information retrieval context (principally used in Sun Labs' Minion search<a name="line.31"></a>
+<span class="sourceLineNo">032</span> * engine). It was refactored here to implement the Tokenizer interface taking<a name="line.32"></a>
+<span class="sourceLineNo">033</span> * care that the the 'ngram' tokens had correct character offsets. This is<a name="line.33"></a>
+<span class="sourceLineNo">034</span> * typically not required in the document indexing context - but is essential<a name="line.34"></a>
+<span class="sourceLineNo">035</span> * in other kinds of text processing / NLP tasks.<a name="line.35"></a>
+<span class="sourceLineNo">036</span> * &lt;p&gt;<a name="line.36"></a>
+<span class="sourceLineNo">037</span> * This tokenizer has some specific behavior in how it handles "ngram"<a name="line.37"></a>
+<span class="sourceLineNo">038</span> * characters - i.e. those characters for which {@link #isNgram(char)} returns<a name="line.38"></a>
+<span class="sourceLineNo">039</span> * true (CJK characters and others). For these characters, it will generate<a name="line.39"></a>
+<span class="sourceLineNo">040</span> * tokens corresponding to character bigrams in addition to tokens corresponding<a name="line.40"></a>
+<span class="sourceLineNo">041</span> * to token unigrams. Most of the other tokenizers will generate tokens that<a name="line.41"></a>
+<span class="sourceLineNo">042</span> * have no overlapping spans but here the character bigram tokens will overlap<a name="line.42"></a>
+<span class="sourceLineNo">043</span> * with the character unigram tokens.<a name="line.43"></a>
+<span class="sourceLineNo">044</span> * &lt;p&gt;<a name="line.44"></a>
+<span class="sourceLineNo">045</span> * This tokenizer uses bigram tokenization whenever it encounters 'ngram'<a name="line.45"></a>
+<span class="sourceLineNo">046</span> * characters in the CJK range (among others see {@link #isNgram(char)}). It<a name="line.46"></a>
+<span class="sourceLineNo">047</span> * otherwise tokenizes using punctuation and whitespace separators to separate<a name="line.47"></a>
+<span class="sourceLineNo">048</span> * words. Within runs of 'ngram' characters the tokenizer will generate tokens<a name="line.48"></a>
+<span class="sourceLineNo">049</span> * corresponding to two adjacent characters in addition to tokens corresponding<a name="line.49"></a>
+<span class="sourceLineNo">050</span> * to each character. The tokens corresponding to character bigrams may overlap<a name="line.50"></a>
+<span class="sourceLineNo">051</span> * with the previous and next token. An end-of-line between two 'ngram'<a name="line.51"></a>
+<span class="sourceLineNo">052</span> * characters is ignored (i.e. a character bigram token will be created.)<a name="line.52"></a>
+<span class="sourceLineNo">053</span> * &lt;p&gt;<a name="line.53"></a>
+<span class="sourceLineNo">054</span> * For example, a sequence of three Chinese characters, 非常感, would tokenize as<a name="line.54"></a>
+<span class="sourceLineNo">055</span> * three WORD type tokens: 非, 常, and 感 and two NGRAM type tokens: 非常 and 常感.<a name="line.55"></a>
+<span class="sourceLineNo">056</span> * Here these tokens will have character offsets that correspond to the<a name="line.56"></a>
+<span class="sourceLineNo">057</span> * character offsets into the text. Here are the tokens listed with their<a name="line.57"></a>
+<span class="sourceLineNo">058</span> * character offsets:<a name="line.58"></a>
+<span class="sourceLineNo">059</span> * &lt;ul&gt;<a name="line.59"></a>
+<span class="sourceLineNo">060</span> * &lt;li&gt;非[0,1]&lt;/li&gt;<a name="line.60"></a>
+<span class="sourceLineNo">061</span> * &lt;li&gt;非常[0,2]&lt;/li&gt;<a name="line.61"></a>
+<span class="sourceLineNo">062</span> * &lt;li&gt;常[1,2]&lt;/li&gt;<a name="line.62"></a>
+<span class="sourceLineNo">063</span> * &lt;li&gt;常感[1,3]&lt;/li&gt;<a name="line.63"></a>
+<span class="sourceLineNo">064</span> * &lt;li&gt;感[2,3]&lt;/li&gt;<a name="line.64"></a>
+<span class="sourceLineNo">065</span> * &lt;/ul&gt;<a name="line.65"></a>
+<span class="sourceLineNo">066</span> */<a name="line.66"></a>
+<span class="sourceLineNo">067</span>public class UniversalTokenizer implements Tokenizer {<a name="line.67"></a>
+<span class="sourceLineNo">068</span><a name="line.68"></a>
+<span class="sourceLineNo">069</span>    /**<a name="line.69"></a>
+<span class="sourceLineNo">070</span>     * The length of the longest token that we will generate.<a name="line.70"></a>
+<span class="sourceLineNo">071</span>     */<a name="line.71"></a>
+<span class="sourceLineNo">072</span>    protected int maxTokenLength = 256;<a name="line.72"></a>
+<span class="sourceLineNo">073</span>    private boolean eofReached = false;<a name="line.73"></a>
+<span class="sourceLineNo">074</span><a name="line.74"></a>
+<span class="sourceLineNo">075</span>    /**<a name="line.75"></a>
+<span class="sourceLineNo">076</span>     * The character position in the character sequence that we're tokenizing.<a name="line.76"></a>
+<span class="sourceLineNo">077</span>     */<a name="line.77"></a>
+<span class="sourceLineNo">078</span>    private int pos;<a name="line.78"></a>
+<span class="sourceLineNo">079</span><a name="line.79"></a>
+<span class="sourceLineNo">080</span>    /**<a name="line.80"></a>
+<span class="sourceLineNo">081</span>     * The starting offset of the current buffer in the token stream.<a name="line.81"></a>
+<span class="sourceLineNo">082</span>     */<a name="line.82"></a>
+<span class="sourceLineNo">083</span>    private int start;<a name="line.83"></a>
+<span class="sourceLineNo">084</span><a name="line.84"></a>
+<span class="sourceLineNo">085</span>    /**<a name="line.85"></a>
+<span class="sourceLineNo">086</span>     * If &lt;code&gt;true&lt;/code&gt; then unigrams will be generated for each n-gram<a name="line.86"></a>
+<span class="sourceLineNo">087</span>     * character.<a name="line.87"></a>
+<span class="sourceLineNo">088</span>     */<a name="line.88"></a>
+<span class="sourceLineNo">089</span>    private boolean generateUnigrams = true;<a name="line.89"></a>
+<span class="sourceLineNo">090</span><a name="line.90"></a>
+<span class="sourceLineNo">091</span>    /**<a name="line.91"></a>
+<span class="sourceLineNo">092</span>     * If &lt;code&gt;true&lt;/code&gt; then character bigrams will be generated for each n-gram<a name="line.92"></a>
+<span class="sourceLineNo">093</span>     * character as defined by {@link #isNgram(char)}.<a name="line.93"></a>
+<span class="sourceLineNo">094</span>     */<a name="line.94"></a>
+<span class="sourceLineNo">095</span>    private boolean generateNgrams = true;<a name="line.95"></a>
+<span class="sourceLineNo">096</span>    /**<a name="line.96"></a>
+<span class="sourceLineNo">097</span>     * The state of the tokenizer determined by previous history.<a name="line.97"></a>
+<span class="sourceLineNo">098</span>     */<a name="line.98"></a>
+<span class="sourceLineNo">099</span>    private State state;<a name="line.99"></a>
+<span class="sourceLineNo">100</span>    /**<a name="line.100"></a>
+<span class="sourceLineNo">101</span>     * The character sequence that we're currently processing.<a name="line.101"></a>
+<span class="sourceLineNo">102</span>     */<a name="line.102"></a>
+<span class="sourceLineNo">103</span>    private CharSequence cs;<a name="line.103"></a>
+<span class="sourceLineNo">104</span>    /**<a name="line.104"></a>
+<span class="sourceLineNo">105</span>     * The token that we're building.<a name="line.105"></a>
+<span class="sourceLineNo">106</span>     */<a name="line.106"></a>
+<span class="sourceLineNo">107</span>    private char[] buffer;<a name="line.107"></a>
+<span class="sourceLineNo">108</span>    /**<a name="line.108"></a>
+<span class="sourceLineNo">109</span>     * A string representation of the current token.<a name="line.109"></a>
+<span class="sourceLineNo">110</span>     */<a name="line.110"></a>
+<span class="sourceLineNo">111</span>    private String currToken;<a name="line.111"></a>
+<span class="sourceLineNo">112</span>    /**<a name="line.112"></a>
+<span class="sourceLineNo">113</span>     * The current type of the token.<a name="line.113"></a>
+<span class="sourceLineNo">114</span>     */<a name="line.114"></a>
+<span class="sourceLineNo">115</span>    private Token.TokenType currType;<a name="line.115"></a>
+<span class="sourceLineNo">116</span>    /**<a name="line.116"></a>
+<span class="sourceLineNo">117</span>     * The current word position of the token.<a name="line.117"></a>
+<span class="sourceLineNo">118</span>     */<a name="line.118"></a>
+<span class="sourceLineNo">119</span>    private int currPos;<a name="line.119"></a>
+<span class="sourceLineNo">120</span>    /**<a name="line.120"></a>
+<span class="sourceLineNo">121</span>     * The starting offset of the current token.<a name="line.121"></a>
+<span class="sourceLineNo">122</span>     */<a name="line.122"></a>
+<span class="sourceLineNo">123</span>    private int startOffset;<a name="line.123"></a>
+<span class="sourceLineNo">124</span>    /**<a name="line.124"></a>
+<span class="sourceLineNo">125</span>     * The ending offset of the current token.<a name="line.125"></a>
+<span class="sourceLineNo">126</span>     */<a name="line.126"></a>
+<span class="sourceLineNo">127</span>    private int endOffset;<a name="line.127"></a>
+<span class="sourceLineNo">128</span>    /**<a name="line.128"></a>
+<span class="sourceLineNo">129</span>     * The length of the current token we're building.<a name="line.129"></a>
+<span class="sourceLineNo">130</span>     */<a name="line.130"></a>
+<span class="sourceLineNo">131</span>    private int tokenLength;<a name="line.131"></a>
+<span class="sourceLineNo">132</span>    /**<a name="line.132"></a>
+<span class="sourceLineNo">133</span>     * Whether this is the first token.<a name="line.133"></a>
+<span class="sourceLineNo">134</span>     */<a name="line.134"></a>
+<span class="sourceLineNo">135</span>    private boolean firstToken;<a name="line.135"></a>
+<span class="sourceLineNo">136</span>    /**<a name="line.136"></a>
+<span class="sourceLineNo">137</span>     * Is the tokenizer ready?<a name="line.137"></a>
+<span class="sourceLineNo">138</span>     */<a name="line.138"></a>
+<span class="sourceLineNo">139</span>    private boolean ready;<a name="line.139"></a>
+<span class="sourceLineNo">140</span>    @Config<a name="line.140"></a>
+<span class="sourceLineNo">141</span>    private boolean sendPunct = false;<a name="line.141"></a>
+<span class="sourceLineNo">142</span>    /**<a name="line.142"></a>
+<span class="sourceLineNo">143</span>     * A set of tokens that were generated and need to be returned.<a name="line.143"></a>
+<span class="sourceLineNo">144</span>     */<a name="line.144"></a>
+<span class="sourceLineNo">145</span>    private Queue&lt;Range&gt; queuedTokens;<a name="line.145"></a>
+<span class="sourceLineNo">146</span>    private Queue&lt;Range&gt; pool;<a name="line.146"></a>
+<span class="sourceLineNo">147</span>    /**<a name="line.147"></a>
+<span class="sourceLineNo">148</span>     * The current character that we're processing.<a name="line.148"></a>
+<span class="sourceLineNo">149</span>     */<a name="line.149"></a>
+<span class="sourceLineNo">150</span>    private char c;<a name="line.150"></a>
+<span class="sourceLineNo">151</span><a name="line.151"></a>
+<span class="sourceLineNo">152</span>    /**<a name="line.152"></a>
+<span class="sourceLineNo">153</span>     * @param sendPunct if sendPunct is true, then the tokenizer will generate punctuation tokens.<a name="line.153"></a>
+<span class="sourceLineNo">154</span>     */<a name="line.154"></a>
+<span class="sourceLineNo">155</span>    public UniversalTokenizer(boolean sendPunct) {<a name="line.155"></a>
+<span class="sourceLineNo">156</span>        super();<a name="line.156"></a>
+<span class="sourceLineNo">157</span>        this.sendPunct = sendPunct;<a name="line.157"></a>
+<span class="sourceLineNo">158</span>        this.buffer = new char[maxTokenLength];<a name="line.158"></a>
+<span class="sourceLineNo">159</span>        this.tokenLength = 0;<a name="line.159"></a>
+<span class="sourceLineNo">160</span>        this.state = State.SKIPPING;<a name="line.160"></a>
+<span class="sourceLineNo">161</span>        this.queuedTokens = new LinkedList&lt;&gt;();<a name="line.161"></a>
+<span class="sourceLineNo">162</span>        this.pool = new LinkedList&lt;&gt;();<a name="line.162"></a>
+<span class="sourceLineNo">163</span>    }<a name="line.163"></a>
+<span class="sourceLineNo">164</span><a name="line.164"></a>
+<span class="sourceLineNo">165</span>    /**<a name="line.165"></a>
+<span class="sourceLineNo">166</span>     * Constructs a universal tokenizer which doesn't send punctuation.<a name="line.166"></a>
+<span class="sourceLineNo">167</span>     */<a name="line.167"></a>
+<span class="sourceLineNo">168</span>    public UniversalTokenizer() {<a name="line.168"></a>
+<span class="sourceLineNo">169</span>        this(false);<a name="line.169"></a>
+<span class="sourceLineNo">170</span>    }<a name="line.170"></a>
+<span class="sourceLineNo">171</span><a name="line.171"></a>
+<span class="sourceLineNo">172</span>    /**<a name="line.172"></a>
+<span class="sourceLineNo">173</span>     * A quick check for whether a character should be kept in a word or should<a name="line.173"></a>
+<span class="sourceLineNo">174</span>     * be removed from the word if it occurs at one of the ends. An<a name="line.174"></a>
+<span class="sourceLineNo">175</span>     * approximation of Character.isLetterOrDigit, but is faster and more<a name="line.175"></a>
+<span class="sourceLineNo">176</span>     * correct, since it doesn't count the smart quotes as letters.<a name="line.176"></a>
+<span class="sourceLineNo">177</span>     *<a name="line.177"></a>
+<span class="sourceLineNo">178</span>     * @param c The character to check.<a name="line.178"></a>
+<span class="sourceLineNo">179</span>     * @return True if the input is a letter or digit.<a name="line.179"></a>
+<span class="sourceLineNo">180</span>     */<a name="line.180"></a>
+<span class="sourceLineNo">181</span>    public static boolean isLetterOrDigit(char c) {<a name="line.181"></a>
+<span class="sourceLineNo">182</span>        if ((c &lt;= 122 &amp;&amp; c &gt;= 97)<a name="line.182"></a>
+<span class="sourceLineNo">183</span>                || // most frequent: lowercase a...z<a name="line.183"></a>
+<span class="sourceLineNo">184</span>                (c &lt;= 90 &amp;&amp; c &gt;= 65)<a name="line.184"></a>
+<span class="sourceLineNo">185</span>                || // frequent: uppercase A...Z<a name="line.185"></a>
+<span class="sourceLineNo">186</span>                (c &lt;= 57 &amp;&amp; c &gt;= 48) // frequent: numbers 0...9<a name="line.186"></a>
+<span class="sourceLineNo">187</span>        ) {<a name="line.187"></a>
+<span class="sourceLineNo">188</span>            return true;<a name="line.188"></a>
+<span class="sourceLineNo">189</span>        } else if ((c &lt;= 96)<a name="line.189"></a>
+<span class="sourceLineNo">190</span>                || // includes whitespace<a name="line.190"></a>
+<span class="sourceLineNo">191</span>                (c == 210 || c == 211)<a name="line.191"></a>
+<span class="sourceLineNo">192</span>                || // (smart quotes)<a name="line.192"></a>
+<span class="sourceLineNo">193</span>                (c &gt;= 123 &amp;&amp; c &lt;= 127) // {|}~DEL<a name="line.193"></a>
+<span class="sourceLineNo">194</span>        ) {<a name="line.194"></a>
+<span class="sourceLineNo">195</span>            return false;<a name="line.195"></a>
+<span class="sourceLineNo">196</span>        } else if ((c &gt;= 3021 &amp;&amp; c &lt;= 3029)<a name="line.196"></a>
+<span class="sourceLineNo">197</span>                || // Hangzhou-style numerals<a name="line.197"></a>
+<span class="sourceLineNo">198</span>                (c &gt;= 65 &amp;&amp; c &lt;= 90)<a name="line.198"></a>
+<span class="sourceLineNo">199</span>                || // frequent: uppercase A...Z<a name="line.199"></a>
+<span class="sourceLineNo">200</span>                (c &gt;= 48 &amp;&amp; c &lt;= 57) // frequent: numbers 0...9<a name="line.200"></a>
+<span class="sourceLineNo">201</span>        ) {<a name="line.201"></a>
+<span class="sourceLineNo">202</span>            return true;<a name="line.202"></a>
+<span class="sourceLineNo">203</span>        } else {<a name="line.203"></a>
+<span class="sourceLineNo">204</span>            return Character.isLetterOrDigit(c);<a name="line.204"></a>
+<span class="sourceLineNo">205</span>        }<a name="line.205"></a>
+<span class="sourceLineNo">206</span>    }<a name="line.206"></a>
+<span class="sourceLineNo">207</span><a name="line.207"></a>
+<span class="sourceLineNo">208</span>    /**<a name="line.208"></a>
+<span class="sourceLineNo">209</span>     * A quick check for whether a character is a digit.<a name="line.209"></a>
+<span class="sourceLineNo">210</span>     *<a name="line.210"></a>
+<span class="sourceLineNo">211</span>     * @param c The character to check<a name="line.211"></a>
+<span class="sourceLineNo">212</span>     * @return True if the input is a digit.<a name="line.212"></a>
+<span class="sourceLineNo">213</span>     */<a name="line.213"></a>
+<span class="sourceLineNo">214</span>    public static boolean isDigit(char c) {<a name="line.214"></a>
+<span class="sourceLineNo">215</span>        if ((c &lt;= 57 &amp;&amp; c &gt;= 48) // most frequent: ASCII numbers 0...9<a name="line.215"></a>
+<span class="sourceLineNo">216</span>        ) {<a name="line.216"></a>
+<span class="sourceLineNo">217</span>            return true;<a name="line.217"></a>
+<span class="sourceLineNo">218</span>        } else if (c &lt;= 255) {<a name="line.218"></a>
+<span class="sourceLineNo">219</span>            return false;<a name="line.219"></a>
+<span class="sourceLineNo">220</span>        } else {<a name="line.220"></a>
+<span class="sourceLineNo">221</span>            return Character.isDigit(c);<a name="line.221"></a>
+<span class="sourceLineNo">222</span>        }<a name="line.222"></a>
+<span class="sourceLineNo">223</span>    }<a name="line.223"></a>
+<span class="sourceLineNo">224</span><a name="line.224"></a>
+<span class="sourceLineNo">225</span>    /**<a name="line.225"></a>
+<span class="sourceLineNo">226</span>     * A quick check for whether a character is whitespace.<a name="line.226"></a>
+<span class="sourceLineNo">227</span>     *<a name="line.227"></a>
+<span class="sourceLineNo">228</span>     * @param c The character to check<a name="line.228"></a>
+<span class="sourceLineNo">229</span>     * @return True if the input is a whitespace character.<a name="line.229"></a>
+<span class="sourceLineNo">230</span>     */<a name="line.230"></a>
+<span class="sourceLineNo">231</span>    public static boolean isWhitespace(char c) {<a name="line.231"></a>
+<span class="sourceLineNo">232</span>        //test for white space<a name="line.232"></a>
+<span class="sourceLineNo">233</span>        if ((c == 32)<a name="line.233"></a>
+<span class="sourceLineNo">234</span>                || // Space<a name="line.234"></a>
+<span class="sourceLineNo">235</span>                (c &lt;= 13 &amp;&amp; c &gt;= 9)<a name="line.235"></a>
+<span class="sourceLineNo">236</span>                || // Tab, Linefeed, PageUp, Page, Return<a name="line.236"></a>
+<span class="sourceLineNo">237</span>                (c &lt;= 4 &amp;&amp; c &gt;= 1) // STX, SOT, ETX (Enter), EOT<a name="line.237"></a>
+<span class="sourceLineNo">238</span>        ) {<a name="line.238"></a>
+<span class="sourceLineNo">239</span>            return true;<a name="line.239"></a>
+<span class="sourceLineNo">240</span>        } else if (c &lt;= 255) {<a name="line.240"></a>
+<span class="sourceLineNo">241</span>            return false;<a name="line.241"></a>
+<span class="sourceLineNo">242</span>        } else {<a name="line.242"></a>
+<span class="sourceLineNo">243</span>            return Character.isWhitespace(c);<a name="line.243"></a>
+<span class="sourceLineNo">244</span>        }<a name="line.244"></a>
+<span class="sourceLineNo">245</span>    }<a name="line.245"></a>
+<span class="sourceLineNo">246</span><a name="line.246"></a>
+<span class="sourceLineNo">247</span>    /**<a name="line.247"></a>
+<span class="sourceLineNo">248</span>     * A quick check for a character in a language that may not separate words<a name="line.248"></a>
+<span class="sourceLineNo">249</span>     * with whitespace (includes Arabic, CJK, and Thai). Uses Unicode Standard<a name="line.249"></a>
+<span class="sourceLineNo">250</span>     * Version 2.0.<a name="line.250"></a>
+<span class="sourceLineNo">251</span>     *<a name="line.251"></a>
+<span class="sourceLineNo">252</span>     * @param c The character to check<a name="line.252"></a>
+<span class="sourceLineNo">253</span>     * @return True if the input character is in a region which is not whitespace separated.<a name="line.253"></a>
+<span class="sourceLineNo">254</span>     */<a name="line.254"></a>
+<span class="sourceLineNo">255</span>    public static boolean isNgram(char c) {<a name="line.255"></a>
+<span class="sourceLineNo">256</span>        // Test for characters that may not separate words with white<a name="line.256"></a>
+<span class="sourceLineNo">257</span>        // space and therefore require bigram treatment.<a name="line.257"></a>
+<span class="sourceLineNo">258</span>        // Uses Unicode Standard Version 2.0.<a name="line.258"></a>
+<span class="sourceLineNo">259</span>        if (c &gt; '\u3002' &amp;&amp; c &lt;= '\uD7FF') {           // (CJK Characters)<a name="line.259"></a>
+<span class="sourceLineNo">260</span>            return (c &lt; '\u3040' || c &gt; '\u30FF');   // - Hiragana and Katakana<a name="line.260"></a>
+<span class="sourceLineNo">261</span>        } else if ((c &gt;= '\u0600' &amp;&amp; c &lt;= '\u06FF') || // (Arabic)<a name="line.261"></a>
+<span class="sourceLineNo">262</span>                (c &gt;= '\uF900' &amp;&amp; c &lt;= '\uFAFF') || // (CJK Compatibility Ideographs)<a name="line.262"></a>
+<span class="sourceLineNo">263</span>                (c &gt;= '\u1100' &amp;&amp; c &lt;= '\u11FF') || // (Hangul Jamo)<a name="line.263"></a>
+<span class="sourceLineNo">264</span>                (c &gt;= '\uFB50' &amp;&amp; c &lt;= '\uFE2F') || // (Arabic Presentation Forms-A)<a name="line.264"></a>
+<span class="sourceLineNo">265</span>                (c &gt;= '\uFE30' &amp;&amp; c &lt;= '\uFE4F') || // (CJK Compatibility Forms)<a name="line.265"></a>
+<span class="sourceLineNo">266</span>                (c &gt;= '\uFE70' &amp;&amp; c &lt;= '\uFEFF') || // (Arabic Presentation Forms-B)<a name="line.266"></a>
+<span class="sourceLineNo">267</span>                (c &gt;= '\uFF60' &amp;&amp; c &lt;= '\uFFDF') || // (CJK Half Width Forms)<a name="line.267"></a>
+<span class="sourceLineNo">268</span>                (c &gt;= '\u0E00' &amp;&amp; c &lt;= '\u0E7F') || // (Thai)<a name="line.268"></a>
+<span class="sourceLineNo">269</span>                (c &gt;= '\u0E80' &amp;&amp; c &lt;= '\u0EFF') || // (Lao)<a name="line.269"></a>
+<span class="sourceLineNo">270</span>                (c &gt;= '\u0F00' &amp;&amp; c &lt;= '\u0FBF') || // (Tibetan)<a name="line.270"></a>
+<span class="sourceLineNo">271</span>                (c &gt;= '\u0B80' &amp;&amp; c &lt;= '\u0BFF') || // (Tamil)<a name="line.271"></a>
+<span class="sourceLineNo">272</span>                (c &gt;= '\u0C00' &amp;&amp; c &lt;= '\u0C7F') || // (Telugu)<a name="line.272"></a>
+<span class="sourceLineNo">273</span>                (c &gt;= '\u0C80' &amp;&amp; c &lt;= '\u0CFF') || // (Kannada)<a name="line.273"></a>
+<span class="sourceLineNo">274</span>                (c &gt;= '\u0D00' &amp;&amp; c &lt;= '\u0D7F') || // (Malayalam)<a name="line.274"></a>
+<span class="sourceLineNo">275</span>                (c &gt;= '\u10A0' &amp;&amp; c &lt;= '\u10FF')) { // (Georgian)<a name="line.275"></a>
+<span class="sourceLineNo">276</span>            return true;<a name="line.276"></a>
+<span class="sourceLineNo">277</span>        } else {<a name="line.277"></a>
+<span class="sourceLineNo">278</span>            return false;<a name="line.278"></a>
+<span class="sourceLineNo">279</span>        }<a name="line.279"></a>
+<span class="sourceLineNo">280</span>    }<a name="line.280"></a>
+<span class="sourceLineNo">281</span><a name="line.281"></a>
+<span class="sourceLineNo">282</span>    public boolean isGenerateUnigrams() {<a name="line.282"></a>
+<span class="sourceLineNo">283</span>        return generateUnigrams;<a name="line.283"></a>
+<span class="sourceLineNo">284</span>    }<a name="line.284"></a>
+<span class="sourceLineNo">285</span><a name="line.285"></a>
+<span class="sourceLineNo">286</span>    public void setGenerateUnigrams(boolean generateUnigrams) {<a name="line.286"></a>
+<span class="sourceLineNo">287</span>        this.generateUnigrams = generateUnigrams;<a name="line.287"></a>
+<span class="sourceLineNo">288</span>    }<a name="line.288"></a>
+<span class="sourceLineNo">289</span><a name="line.289"></a>
+<span class="sourceLineNo">290</span>    public boolean isGenerateNgrams() {<a name="line.290"></a>
+<span class="sourceLineNo">291</span>        return generateNgrams;<a name="line.291"></a>
+<span class="sourceLineNo">292</span>    }<a name="line.292"></a>
+<span class="sourceLineNo">293</span><a name="line.293"></a>
+<span class="sourceLineNo">294</span>    public void setGenerateNgrams(boolean generateNgrams) {<a name="line.294"></a>
+<span class="sourceLineNo">295</span>        this.generateNgrams = generateNgrams;<a name="line.295"></a>
+<span class="sourceLineNo">296</span>    }<a name="line.296"></a>
+<span class="sourceLineNo">297</span><a name="line.297"></a>
+<span class="sourceLineNo">298</span>    public int getMaxTokenLength() {<a name="line.298"></a>
+<span class="sourceLineNo">299</span>        return maxTokenLength;<a name="line.299"></a>
+<span class="sourceLineNo">300</span>    }<a name="line.300"></a>
+<span class="sourceLineNo">301</span><a name="line.301"></a>
+<span class="sourceLineNo">302</span>    public void setMaxTokenLength(int maxTokenLength) {<a name="line.302"></a>
+<span class="sourceLineNo">303</span>        this.maxTokenLength = maxTokenLength;<a name="line.303"></a>
+<span class="sourceLineNo">304</span>    }<a name="line.304"></a>
+<span class="sourceLineNo">305</span><a name="line.305"></a>
+<span class="sourceLineNo">306</span>    @Override<a name="line.306"></a>
+<span class="sourceLineNo">307</span>    public ConfiguredObjectProvenance getProvenance() {<a name="line.307"></a>
+<span class="sourceLineNo">308</span>        return new ConfiguredObjectProvenanceImpl(this, "Tokenizer");<a name="line.308"></a>
+<span class="sourceLineNo">309</span>    }<a name="line.309"></a>
+<span class="sourceLineNo">310</span><a name="line.310"></a>
+<span class="sourceLineNo">311</span>    @Override<a name="line.311"></a>
+<span class="sourceLineNo">312</span>    public final boolean advance() {<a name="line.312"></a>
+<span class="sourceLineNo">313</span>        if (cs == null) {<a name="line.313"></a>
+<span class="sourceLineNo">314</span>            throw new IllegalStateException("UniversalTokenizer has not been reset.");<a name="line.314"></a>
+<span class="sourceLineNo">315</span>        }<a name="line.315"></a>
+<span class="sourceLineNo">316</span>        //<a name="line.316"></a>
+<span class="sourceLineNo">317</span>        // Do we have tokens queued up to go?<a name="line.317"></a>
+<span class="sourceLineNo">318</span>        if (queuedTokens.size() &gt; 0) {<a name="line.318"></a>
+<span class="sourceLineNo">319</span>            handleQueued();<a name="line.319"></a>
+<span class="sourceLineNo">320</span>            return true;<a name="line.320"></a>
+<span class="sourceLineNo">321</span>        }<a name="line.321"></a>
+<span class="sourceLineNo">322</span><a name="line.322"></a>
+<span class="sourceLineNo">323</span>        //<a name="line.323"></a>
+<span class="sourceLineNo">324</span>        // If we've already read the data, then we're done.<a name="line.324"></a>
+<span class="sourceLineNo">325</span>        if (eofReached) {<a name="line.325"></a>
+<span class="sourceLineNo">326</span>            return false;<a name="line.326"></a>
+<span class="sourceLineNo">327</span>        }<a name="line.327"></a>
+<span class="sourceLineNo">328</span><a name="line.328"></a>
+<span class="sourceLineNo">329</span>        //<a name="line.329"></a>
+<span class="sourceLineNo">330</span>        // Read characters until we have one or more tokens to send.<a name="line.330"></a>
+<span class="sourceLineNo">331</span>        while (pos &lt; cs.length()) {<a name="line.331"></a>
+<span class="sourceLineNo">332</span>            c = cs.charAt(pos);<a name="line.332"></a>
+<span class="sourceLineNo">333</span>            handleChar();<a name="line.333"></a>
+<span class="sourceLineNo">334</span>            pos++;<a name="line.334"></a>
+<span class="sourceLineNo">335</span>            if (queuedTokens.size() &gt; 0) {<a name="line.335"></a>
+<span class="sourceLineNo">336</span>                handleQueued();<a name="line.336"></a>
+<span class="sourceLineNo">337</span>                return true;<a name="line.337"></a>
+<span class="sourceLineNo">338</span>            }<a name="line.338"></a>
+<span class="sourceLineNo">339</span>        }<a name="line.339"></a>
+<span class="sourceLineNo">340</span><a name="line.340"></a>
+<span class="sourceLineNo">341</span>        eofReached = true;<a name="line.341"></a>
+<span class="sourceLineNo">342</span>        makeTokens();<a name="line.342"></a>
+<span class="sourceLineNo">343</span>        if (queuedTokens.size() &gt; 0) {<a name="line.343"></a>
+<span class="sourceLineNo">344</span>            handleQueued();<a name="line.344"></a>
+<span class="sourceLineNo">345</span>            return true;<a name="line.345"></a>
+<span class="sourceLineNo">346</span>        }<a name="line.346"></a>
+<span class="sourceLineNo">347</span>        return false;<a name="line.347"></a>
+<span class="sourceLineNo">348</span>    }<a name="line.348"></a>
+<span class="sourceLineNo">349</span><a name="line.349"></a>
+<span class="sourceLineNo">350</span>    private void handleQueued() {<a name="line.350"></a>
+<span class="sourceLineNo">351</span>        ready = true;<a name="line.351"></a>
+<span class="sourceLineNo">352</span>        Range range = queuedTokens.poll();<a name="line.352"></a>
+<span class="sourceLineNo">353</span>        currToken = new String(range.buff, 0, range.len);<a name="line.353"></a>
+<span class="sourceLineNo">354</span>        startOffset = range.start;<a name="line.354"></a>
+<span class="sourceLineNo">355</span>        endOffset = range.end;<a name="line.355"></a>
+<span class="sourceLineNo">356</span>        if (firstToken &amp;&amp; range.incr == 0) {<a name="line.356"></a>
+<span class="sourceLineNo">357</span>            range.incr = 1;<a name="line.357"></a>
+<span class="sourceLineNo">358</span>            firstToken = false;<a name="line.358"></a>
+<span class="sourceLineNo">359</span>        }<a name="line.359"></a>
+<span class="sourceLineNo">360</span>        currType = range.type;<a name="line.360"></a>
+<span class="sourceLineNo">361</span>        currPos = range.incr;<a name="line.361"></a>
+<span class="sourceLineNo">362</span>        pool.offer(range);<a name="line.362"></a>
+<span class="sourceLineNo">363</span>    }<a name="line.363"></a>
+<span class="sourceLineNo">364</span><a name="line.364"></a>
+<span class="sourceLineNo">365</span>    /**<a name="line.365"></a>
+<span class="sourceLineNo">366</span>     * Handle a character to add to the token buffer.<a name="line.366"></a>
+<span class="sourceLineNo">367</span>     */<a name="line.367"></a>
+<span class="sourceLineNo">368</span>    protected void handleChar() {<a name="line.368"></a>
+<span class="sourceLineNo">369</span><a name="line.369"></a>
+<span class="sourceLineNo">370</span>        //<a name="line.370"></a>
+<span class="sourceLineNo">371</span>        // ASCII characters.<a name="line.371"></a>
+<span class="sourceLineNo">372</span>        if ((c &gt;= 97 &amp;&amp; c &lt;= 122) || (c &gt;= 65 &amp;&amp; c &lt;= 90)) {<a name="line.372"></a>
+<span class="sourceLineNo">373</span>            if (state == State.NGRAM) {<a name="line.373"></a>
+<span class="sourceLineNo">374</span>                makeTokens();<a name="line.374"></a>
+<span class="sourceLineNo">375</span>            }<a name="line.375"></a>
+<span class="sourceLineNo">376</span>            addChar();<a name="line.376"></a>
+<span class="sourceLineNo">377</span>            state = State.COLLECTING;<a name="line.377"></a>
+<span class="sourceLineNo">378</span>            return;<a name="line.378"></a>
+<span class="sourceLineNo">379</span>        }<a name="line.379"></a>
+<span class="sourceLineNo">380</span><a name="line.380"></a>
+<span class="sourceLineNo">381</span>        //<a name="line.381"></a>
+<span class="sourceLineNo">382</span>        // ASCII space. We need to treat other whitespace differently, depending<a name="line.382"></a>
+<span class="sourceLineNo">383</span>        // on whether we're ngram tokenizing.<a name="line.383"></a>
+<span class="sourceLineNo">384</span>        if (c == 32) {<a name="line.384"></a>
+<span class="sourceLineNo">385</span>            switch (state) {<a name="line.385"></a>
+<span class="sourceLineNo">386</span>                case COLLECTING:<a name="line.386"></a>
+<span class="sourceLineNo">387</span>                case NGRAM:<a name="line.387"></a>
+<span class="sourceLineNo">388</span>                    // The transition from collecting or n-gram to whitespace<a name="line.388"></a>
+<span class="sourceLineNo">389</span>                    // causes us to emit tokens.<a name="line.389"></a>
+<span class="sourceLineNo">390</span>                    makeTokens();<a name="line.390"></a>
+<span class="sourceLineNo">391</span>                    break;<a name="line.391"></a>
+<span class="sourceLineNo">392</span>                case SKIPPING:<a name="line.392"></a>
+<span class="sourceLineNo">393</span>                    break;<a name="line.393"></a>
+<span class="sourceLineNo">394</span>                default:<a name="line.394"></a>
+<span class="sourceLineNo">395</span>                    break;<a name="line.395"></a>
+<span class="sourceLineNo">396</span>            }<a name="line.396"></a>
+<span class="sourceLineNo">397</span>            sendPunct();<a name="line.397"></a>
+<span class="sourceLineNo">398</span>            state = State.SKIPPING;<a name="line.398"></a>
+<span class="sourceLineNo">399</span>            return;<a name="line.399"></a>
+<span class="sourceLineNo">400</span>        }<a name="line.400"></a>
+<span class="sourceLineNo">401</span><a name="line.401"></a>
+<span class="sourceLineNo">402</span>        if (isNgram(c)) {<a name="line.402"></a>
+<span class="sourceLineNo">403</span>            // CJK characters (Chinese, Japanese, Korean)<a name="line.403"></a>
+<span class="sourceLineNo">404</span>            // to be tokenized with bigram tokens.<a name="line.404"></a>
+<span class="sourceLineNo">405</span>            // (Put this test here so these languages will tokenize<a name="line.405"></a>
+<span class="sourceLineNo">406</span>            // more efficiently and it doesn't cost much for the non CJK<a name="line.406"></a>
+<span class="sourceLineNo">407</span>            // languages.)<a name="line.407"></a>
+<span class="sourceLineNo">408</span><a name="line.408"></a>
+<span class="sourceLineNo">409</span>            switch (state) {<a name="line.409"></a>
+<span class="sourceLineNo">410</span>                case SKIPPING:<a name="line.410"></a>
+<span class="sourceLineNo">411</span>                    state = State.NGRAM;<a name="line.411"></a>
+<span class="sourceLineNo">412</span>                    break;<a name="line.412"></a>
+<span class="sourceLineNo">413</span>                case COLLECTING:<a name="line.413"></a>
+<span class="sourceLineNo">414</span>                    makeTokens();<a name="line.414"></a>
+<span class="sourceLineNo">415</span>                    state = State.NGRAM;<a name="line.415"></a>
+<span class="sourceLineNo">416</span>                    break;<a name="line.416"></a>
+<span class="sourceLineNo">417</span>                case NGRAM:<a name="line.417"></a>
+<span class="sourceLineNo">418</span>                    break;<a name="line.418"></a>
+<span class="sourceLineNo">419</span>                default:<a name="line.419"></a>
+<span class="sourceLineNo">420</span>                    break;<a name="line.420"></a>
+<span class="sourceLineNo">421</span>            }<a name="line.421"></a>
+<span class="sourceLineNo">422</span>            addChar();<a name="line.422"></a>
+<span class="sourceLineNo">423</span>            return;<a name="line.423"></a>
+<span class="sourceLineNo">424</span>        }<a name="line.424"></a>
+<span class="sourceLineNo">425</span><a name="line.425"></a>
+<span class="sourceLineNo">426</span>        if (c == 0 || (state == State.NGRAM &amp;&amp; (c &gt;= 10 &amp;&amp; c &lt;= 13))) {<a name="line.426"></a>
+<span class="sourceLineNo">427</span>            // While processing ngram character regions, Linefeed, PageUp, Page, Return<a name="line.427"></a>
+<span class="sourceLineNo">428</span>            // don't do anything, so just return.<a name="line.428"></a>
+<span class="sourceLineNo">429</span>            return;<a name="line.429"></a>
+<span class="sourceLineNo">430</span>        }<a name="line.430"></a>
+<span class="sourceLineNo">431</span><a name="line.431"></a>
+<span class="sourceLineNo">432</span>        if (isWhitespace(c)) {<a name="line.432"></a>
+<span class="sourceLineNo">433</span>            // The rest of the white space characters for break:<a name="line.433"></a>
+<span class="sourceLineNo">434</span>            switch (state) {<a name="line.434"></a>
+<span class="sourceLineNo">435</span>                case COLLECTING:<a name="line.435"></a>
+<span class="sourceLineNo">436</span>                case NGRAM:<a name="line.436"></a>
+<span class="sourceLineNo">437</span>                    // The transition from collecting to whitespace<a name="line.437"></a>
+<span class="sourceLineNo">438</span>                    // causes us to emit tokens.<a name="line.438"></a>
+<span class="sourceLineNo">439</span>                    makeTokens();<a name="line.439"></a>
+<span class="sourceLineNo">440</span>                    break;<a name="line.440"></a>
+<span class="sourceLineNo">441</span>                case SKIPPING:<a name="line.441"></a>
+<span class="sourceLineNo">442</span>                    break;<a name="line.442"></a>
+<span class="sourceLineNo">443</span>                default:<a name="line.443"></a>
+<span class="sourceLineNo">444</span>                    break;<a name="line.444"></a>
+<span class="sourceLineNo">445</span>            }<a name="line.445"></a>
+<span class="sourceLineNo">446</span>            sendPunct();<a name="line.446"></a>
+<span class="sourceLineNo">447</span>            state = State.SKIPPING;<a name="line.447"></a>
+<span class="sourceLineNo">448</span>            return;<a name="line.448"></a>
+<span class="sourceLineNo">449</span>        }<a name="line.449"></a>
+<span class="sourceLineNo">450</span><a name="line.450"></a>
+<span class="sourceLineNo">451</span>        if ((c &gt;= 48 &amp;&amp; c &lt;= 57) || (c &gt; 255 &amp;&amp; Character.isDigit(c))) {<a name="line.451"></a>
+<span class="sourceLineNo">452</span><a name="line.452"></a>
+<span class="sourceLineNo">453</span>            //<a name="line.453"></a>
+<span class="sourceLineNo">454</span>            // The digits.<a name="line.454"></a>
+<span class="sourceLineNo">455</span>            switch (state) {<a name="line.455"></a>
+<span class="sourceLineNo">456</span>                case SKIPPING:<a name="line.456"></a>
+<span class="sourceLineNo">457</span>                    state = State.COLLECTING;<a name="line.457"></a>
+<span class="sourceLineNo">458</span>                    break;<a name="line.458"></a>
+<span class="sourceLineNo">459</span>                case NGRAM:<a name="line.459"></a>
+<span class="sourceLineNo">460</span>                    makeTokens();<a name="line.460"></a>
+<span class="sourceLineNo">461</span>                    state = State.COLLECTING;<a name="line.461"></a>
+<span class="sourceLineNo">462</span>                    break;<a name="line.462"></a>
+<span class="sourceLineNo">463</span>                case COLLECTING:<a name="line.463"></a>
+<span class="sourceLineNo">464</span>                    break;<a name="line.464"></a>
+<span class="sourceLineNo">465</span>                default:<a name="line.465"></a>
+<span class="sourceLineNo">466</span>                    break;<a name="line.466"></a>
+<span class="sourceLineNo">467</span>            }<a name="line.467"></a>
+<span class="sourceLineNo">468</span>            addChar();<a name="line.468"></a>
+<span class="sourceLineNo">469</span>            return;<a name="line.469"></a>
+<span class="sourceLineNo">470</span>        }<a name="line.470"></a>
+<span class="sourceLineNo">471</span><a name="line.471"></a>
+<span class="sourceLineNo">472</span>        //<a name="line.472"></a>
+<span class="sourceLineNo">473</span>        // Any other letter or digit.<a name="line.473"></a>
+<span class="sourceLineNo">474</span>        if (isLetterOrDigit(c)) {<a name="line.474"></a>
+<span class="sourceLineNo">475</span>            if (state == State.NGRAM) {<a name="line.475"></a>
+<span class="sourceLineNo">476</span>                makeTokens();<a name="line.476"></a>
+<span class="sourceLineNo">477</span>            }<a name="line.477"></a>
+<span class="sourceLineNo">478</span>            addChar();<a name="line.478"></a>
+<span class="sourceLineNo">479</span>            state = State.COLLECTING;<a name="line.479"></a>
+<span class="sourceLineNo">480</span>            return;<a name="line.480"></a>
+<span class="sourceLineNo">481</span>        }<a name="line.481"></a>
+<span class="sourceLineNo">482</span><a name="line.482"></a>
+<span class="sourceLineNo">483</span>        // Anything other than the above cases, we break.<a name="line.483"></a>
+<span class="sourceLineNo">484</span>        if (state != State.SKIPPING) {<a name="line.484"></a>
+<span class="sourceLineNo">485</span>            makeTokens();<a name="line.485"></a>
+<span class="sourceLineNo">486</span>        }<a name="line.486"></a>
+<span class="sourceLineNo">487</span>        sendPunct();<a name="line.487"></a>
+<span class="sourceLineNo">488</span>        state = State.SKIPPING;<a name="line.488"></a>
+<span class="sourceLineNo">489</span>    }<a name="line.489"></a>
+<span class="sourceLineNo">490</span><a name="line.490"></a>
+<span class="sourceLineNo">491</span>    private void sendPunct() {<a name="line.491"></a>
+<span class="sourceLineNo">492</span>        if (sendPunct &amp;&amp; !isWhitespace(c)) {<a name="line.492"></a>
+<span class="sourceLineNo">493</span>            Range r = getRange();<a name="line.493"></a>
+<span class="sourceLineNo">494</span>            r.punct(c, pos);<a name="line.494"></a>
+<span class="sourceLineNo">495</span>            queuedTokens.add(r);<a name="line.495"></a>
+<span class="sourceLineNo">496</span>        }<a name="line.496"></a>
+<span class="sourceLineNo">497</span>    }<a name="line.497"></a>
+<span class="sourceLineNo">498</span><a name="line.498"></a>
+<span class="sourceLineNo">499</span>    /**<a name="line.499"></a>
+<span class="sourceLineNo">500</span>     * Add a character to the buffer that we're building for a token.<a name="line.500"></a>
+<span class="sourceLineNo">501</span>     */<a name="line.501"></a>
+<span class="sourceLineNo">502</span>    protected void addChar() {<a name="line.502"></a>
+<span class="sourceLineNo">503</span><a name="line.503"></a>
+<span class="sourceLineNo">504</span>        //<a name="line.504"></a>
+<span class="sourceLineNo">505</span>        // First see if token buffer needs to be expanded.<a name="line.505"></a>
+<span class="sourceLineNo">506</span>        // Note: tokLen points to the next unused slot in token.<a name="line.506"></a>
+<span class="sourceLineNo">507</span>        if (buffer.length &lt;= tokenLength) {<a name="line.507"></a>
+<span class="sourceLineNo">508</span>            buffer = Arrays.copyOf(buffer, tokenLength + 32);<a name="line.508"></a>
+<span class="sourceLineNo">509</span>        }<a name="line.509"></a>
+<span class="sourceLineNo">510</span><a name="line.510"></a>
+<span class="sourceLineNo">511</span>        if (tokenLength == 0) {<a name="line.511"></a>
+<span class="sourceLineNo">512</span>            start = pos;<a name="line.512"></a>
+<span class="sourceLineNo">513</span>        }<a name="line.513"></a>
+<span class="sourceLineNo">514</span>        buffer[tokenLength++] = c;<a name="line.514"></a>
+<span class="sourceLineNo">515</span><a name="line.515"></a>
+<span class="sourceLineNo">516</span>        if (tokenLength &gt;= maxTokenLength) {<a name="line.516"></a>
+<span class="sourceLineNo">517</span>            makeTokens();<a name="line.517"></a>
+<span class="sourceLineNo">518</span>        }<a name="line.518"></a>
+<span class="sourceLineNo">519</span>    }<a name="line.519"></a>
+<span class="sourceLineNo">520</span><a name="line.520"></a>
+<span class="sourceLineNo">521</span>    @Override<a name="line.521"></a>
+<span class="sourceLineNo">522</span>    public int getStart() {<a name="line.522"></a>
+<span class="sourceLineNo">523</span>        if (ready) {<a name="line.523"></a>
+<span class="sourceLineNo">524</span>            return startOffset;<a name="line.524"></a>
+<span class="sourceLineNo">525</span>        } else {<a name="line.525"></a>
+<span class="sourceLineNo">526</span>            throw new IllegalStateException("UniversalTokenizer is not ready.");<a name="line.526"></a>
+<span class="sourceLineNo">527</span>        }<a name="line.527"></a>
+<span class="sourceLineNo">528</span>    }<a name="line.528"></a>
+<span class="sourceLineNo">529</span><a name="line.529"></a>
+<span class="sourceLineNo">530</span>    @Override<a name="line.530"></a>
+<span class="sourceLineNo">531</span>    public int getEnd() {<a name="line.531"></a>
+<span class="sourceLineNo">532</span>        if (ready) {<a name="line.532"></a>
+<span class="sourceLineNo">533</span>            return endOffset;<a name="line.533"></a>
+<span class="sourceLineNo">534</span>        } else {<a name="line.534"></a>
+<span class="sourceLineNo">535</span>            throw new IllegalStateException("UniversalTokenizer is not ready.");<a name="line.535"></a>
+<span class="sourceLineNo">536</span>        }<a name="line.536"></a>
+<span class="sourceLineNo">537</span>    }<a name="line.537"></a>
+<span class="sourceLineNo">538</span><a name="line.538"></a>
+<span class="sourceLineNo">539</span>    @Override<a name="line.539"></a>
+<span class="sourceLineNo">540</span>    public String getText() {<a name="line.540"></a>
+<span class="sourceLineNo">541</span>        if (ready) {<a name="line.541"></a>
+<span class="sourceLineNo">542</span>            return currToken;<a name="line.542"></a>
+<span class="sourceLineNo">543</span>        } else {<a name="line.543"></a>
+<span class="sourceLineNo">544</span>            throw new IllegalStateException("UniversalTokenizer is not ready.");<a name="line.544"></a>
+<span class="sourceLineNo">545</span>        }<a name="line.545"></a>
+<span class="sourceLineNo">546</span>    }<a name="line.546"></a>
+<span class="sourceLineNo">547</span><a name="line.547"></a>
+<span class="sourceLineNo">548</span>    @Override<a name="line.548"></a>
+<span class="sourceLineNo">549</span>    public Token.TokenType getType() {<a name="line.549"></a>
+<span class="sourceLineNo">550</span>        if (ready) {<a name="line.550"></a>
+<span class="sourceLineNo">551</span>            return currType;<a name="line.551"></a>
+<span class="sourceLineNo">552</span>        } else {<a name="line.552"></a>
+<span class="sourceLineNo">553</span>            throw new IllegalStateException("UniversalTokenizer is not ready.");<a name="line.553"></a>
+<span class="sourceLineNo">554</span>        }<a name="line.554"></a>
+<span class="sourceLineNo">555</span>    }<a name="line.555"></a>
+<span class="sourceLineNo">556</span><a name="line.556"></a>
+<span class="sourceLineNo">557</span>    public int getPos() {<a name="line.557"></a>
+<span class="sourceLineNo">558</span>        return currPos;<a name="line.558"></a>
+<span class="sourceLineNo">559</span>    }<a name="line.559"></a>
+<span class="sourceLineNo">560</span><a name="line.560"></a>
+<span class="sourceLineNo">561</span>    @Override<a name="line.561"></a>
+<span class="sourceLineNo">562</span>    public Tokenizer clone() {<a name="line.562"></a>
+<span class="sourceLineNo">563</span>        try {<a name="line.563"></a>
+<span class="sourceLineNo">564</span>            UniversalTokenizer copy = (UniversalTokenizer) super.clone();<a name="line.564"></a>
+<span class="sourceLineNo">565</span><a name="line.565"></a>
+<span class="sourceLineNo">566</span>            copy.buffer = new char[maxTokenLength];<a name="line.566"></a>
+<span class="sourceLineNo">567</span>            copy.tokenLength = 0;<a name="line.567"></a>
+<span class="sourceLineNo">568</span>            copy.state = State.SKIPPING;<a name="line.568"></a>
+<span class="sourceLineNo">569</span>            copy.pool = new LinkedList&lt;&gt;();<a name="line.569"></a>
+<span class="sourceLineNo">570</span>            copy.queuedTokens = new LinkedList&lt;&gt;();<a name="line.570"></a>
+<span class="sourceLineNo">571</span>            copy.currToken = null;<a name="line.571"></a>
+<span class="sourceLineNo">572</span>            copy.ready = false;<a name="line.572"></a>
+<span class="sourceLineNo">573</span>            copy.cs = null;<a name="line.573"></a>
+<span class="sourceLineNo">574</span><a name="line.574"></a>
+<span class="sourceLineNo">575</span>            return copy;<a name="line.575"></a>
+<span class="sourceLineNo">576</span>        } catch (CloneNotSupportedException e) {<a name="line.576"></a>
+<span class="sourceLineNo">577</span>            throw new AssertionError("UniversalTokenizer is Cloneable, but clone call failed");<a name="line.577"></a>
+<span class="sourceLineNo">578</span>        }<a name="line.578"></a>
+<span class="sourceLineNo">579</span>    }<a name="line.579"></a>
+<span class="sourceLineNo">580</span><a name="line.580"></a>
+<span class="sourceLineNo">581</span>    /**<a name="line.581"></a>
+<span class="sourceLineNo">582</span>     * Reset state of tokenizer to clean slate.<a name="line.582"></a>
+<span class="sourceLineNo">583</span>     */<a name="line.583"></a>
+<span class="sourceLineNo">584</span>    @Override<a name="line.584"></a>
+<span class="sourceLineNo">585</span>    public void reset(CharSequence cs) {<a name="line.585"></a>
+<span class="sourceLineNo">586</span>        this.cs = cs;<a name="line.586"></a>
+<span class="sourceLineNo">587</span>        pos = 0;<a name="line.587"></a>
+<span class="sourceLineNo">588</span>        tokenLength = 0;<a name="line.588"></a>
+<span class="sourceLineNo">589</span>        start = -1;<a name="line.589"></a>
+<span class="sourceLineNo">590</span>        state = State.SKIPPING;<a name="line.590"></a>
+<span class="sourceLineNo">591</span>        eofReached = false;<a name="line.591"></a>
+<span class="sourceLineNo">592</span>        firstToken = true;<a name="line.592"></a>
+<span class="sourceLineNo">593</span>        c = 0;<a name="line.593"></a>
+<span class="sourceLineNo">594</span>        startOffset = -1;<a name="line.594"></a>
+<span class="sourceLineNo">595</span>        endOffset = -1;<a name="line.595"></a>
+<span class="sourceLineNo">596</span>        currToken = null;<a name="line.596"></a>
+<span class="sourceLineNo">597</span>        ready = false;<a name="line.597"></a>
+<span class="sourceLineNo">598</span>    }<a name="line.598"></a>
+<span class="sourceLineNo">599</span><a name="line.599"></a>
+<span class="sourceLineNo">600</span>    private Range getRange() {<a name="line.600"></a>
+<span class="sourceLineNo">601</span>        if (pool.isEmpty()) {<a name="line.601"></a>
+<span class="sourceLineNo">602</span>            return new Range();<a name="line.602"></a>
+<span class="sourceLineNo">603</span>        }<a name="line.603"></a>
+<span class="sourceLineNo">604</span>        return pool.remove();<a name="line.604"></a>
+<span class="sourceLineNo">605</span>    }<a name="line.605"></a>
+<span class="sourceLineNo">606</span><a name="line.606"></a>
+<span class="sourceLineNo">607</span>    /**<a name="line.607"></a>
+<span class="sourceLineNo">608</span>     * Make one or more tokens from our current collected characters.<a name="line.608"></a>
+<span class="sourceLineNo">609</span>     */<a name="line.609"></a>
+<span class="sourceLineNo">610</span>    protected void makeTokens() {<a name="line.610"></a>
+<span class="sourceLineNo">611</span><a name="line.611"></a>
+<span class="sourceLineNo">612</span>        //<a name="line.612"></a>
+<span class="sourceLineNo">613</span>        // Don't generate empty tokens.<a name="line.613"></a>
+<span class="sourceLineNo">614</span>        if (tokenLength &lt;= 0) {<a name="line.614"></a>
+<span class="sourceLineNo">615</span>            return;<a name="line.615"></a>
+<span class="sourceLineNo">616</span>        }<a name="line.616"></a>
+<span class="sourceLineNo">617</span><a name="line.617"></a>
+<span class="sourceLineNo">618</span>        if (state == State.NGRAM) {<a name="line.618"></a>
+<span class="sourceLineNo">619</span>            // if we only have one character, then just generate a single<a name="line.619"></a>
+<span class="sourceLineNo">620</span>            // token and be done.<a name="line.620"></a>
+<span class="sourceLineNo">621</span>            if (tokenLength == 1) {<a name="line.621"></a>
+<span class="sourceLineNo">622</span>                Range range = getRange();<a name="line.622"></a>
+<span class="sourceLineNo">623</span>                range.set(buffer[0], start);<a name="line.623"></a>
+<span class="sourceLineNo">624</span>                queuedTokens.add(range);<a name="line.624"></a>
+<span class="sourceLineNo">625</span>                tokenLength = 0;<a name="line.625"></a>
+<span class="sourceLineNo">626</span>                return;<a name="line.626"></a>
+<span class="sourceLineNo">627</span>            }<a name="line.627"></a>
+<span class="sourceLineNo">628</span><a name="line.628"></a>
+<span class="sourceLineNo">629</span>            for (int i = 0; i &lt; tokenLength; i++) {<a name="line.629"></a>
+<span class="sourceLineNo">630</span>                if (generateUnigrams) {<a name="line.630"></a>
+<span class="sourceLineNo">631</span>                    // Generate a unigram for this character.<a name="line.631"></a>
+<span class="sourceLineNo">632</span>                    Range range = getRange();<a name="line.632"></a>
+<span class="sourceLineNo">633</span>                    range.set(buffer[i], start + i);<a name="line.633"></a>
+<span class="sourceLineNo">634</span>                    queuedTokens.add(range);<a name="line.634"></a>
+<span class="sourceLineNo">635</span>                }<a name="line.635"></a>
+<span class="sourceLineNo">636</span>                if (generateNgrams &amp;&amp; i &lt; tokenLength - 1) {<a name="line.636"></a>
+<span class="sourceLineNo">637</span>                    // Generate a bigram for this character.<a name="line.637"></a>
+<span class="sourceLineNo">638</span>                    Range range = getRange();<a name="line.638"></a>
+<span class="sourceLineNo">639</span>                    range.set(buffer[i], buffer[i + 1], start + i);<a name="line.639"></a>
+<span class="sourceLineNo">640</span>                    queuedTokens.add(range);<a name="line.640"></a>
+<span class="sourceLineNo">641</span>                }<a name="line.641"></a>
+<span class="sourceLineNo">642</span>            }<a name="line.642"></a>
+<span class="sourceLineNo">643</span>        } else {<a name="line.643"></a>
+<span class="sourceLineNo">644</span>            // Generate one token from the buffer.<a name="line.644"></a>
+<span class="sourceLineNo">645</span>            Range range = getRange();<a name="line.645"></a>
+<span class="sourceLineNo">646</span>            range.set(buffer, tokenLength, start);<a name="line.646"></a>
+<span class="sourceLineNo">647</span>            queuedTokens.add(range);<a name="line.647"></a>
+<span class="sourceLineNo">648</span>        }<a name="line.648"></a>
+<span class="sourceLineNo">649</span>        tokenLength = 0;<a name="line.649"></a>
+<span class="sourceLineNo">650</span>    }<a name="line.650"></a>
+<span class="sourceLineNo">651</span><a name="line.651"></a>
+<span class="sourceLineNo">652</span>    private enum State {<a name="line.652"></a>
+<span class="sourceLineNo">653</span>        SKIPPING,<a name="line.653"></a>
+<span class="sourceLineNo">654</span>        COLLECTING,<a name="line.654"></a>
+<span class="sourceLineNo">655</span>        NGRAM,<a name="line.655"></a>
+<span class="sourceLineNo">656</span>    }<a name="line.656"></a>
+<span class="sourceLineNo">657</span><a name="line.657"></a>
+<span class="sourceLineNo">658</span>}<a name="line.658"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</div>
+</body>
+</html>

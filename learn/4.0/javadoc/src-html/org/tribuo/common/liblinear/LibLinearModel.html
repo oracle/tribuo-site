@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<title>Source code</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<div class="sourceContainer">
+<pre><span class="sourceLineNo">001</span>/*<a name="line.1"></a>
+<span class="sourceLineNo">002</span> * Copyright (c) 2015-2020, Oracle and/or its affiliates. All rights reserved.<a name="line.2"></a>
+<span class="sourceLineNo">003</span> *<a name="line.3"></a>
+<span class="sourceLineNo">004</span> * Licensed under the Apache License, Version 2.0 (the "License");<a name="line.4"></a>
+<span class="sourceLineNo">005</span> * you may not use this file except in compliance with the License.<a name="line.5"></a>
+<span class="sourceLineNo">006</span> * You may obtain a copy of the License at<a name="line.6"></a>
+<span class="sourceLineNo">007</span> *<a name="line.7"></a>
+<span class="sourceLineNo">008</span> *     http://www.apache.org/licenses/LICENSE-2.0<a name="line.8"></a>
+<span class="sourceLineNo">009</span> *<a name="line.9"></a>
+<span class="sourceLineNo">010</span> * Unless required by applicable law or agreed to in writing, software<a name="line.10"></a>
+<span class="sourceLineNo">011</span> * distributed under the License is distributed on an "AS IS" BASIS,<a name="line.11"></a>
+<span class="sourceLineNo">012</span> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express implied.<a name="line.12"></a>
+<span class="sourceLineNo">013</span> * See the License for the specific language governing permissions and<a name="line.13"></a>
+<span class="sourceLineNo">014</span> * limitations under the License.<a name="line.14"></a>
+<span class="sourceLineNo">015</span> */<a name="line.15"></a>
+<span class="sourceLineNo">016</span><a name="line.16"></a>
+<span class="sourceLineNo">017</span>package org.tribuo.common.liblinear;<a name="line.17"></a>
+<span class="sourceLineNo">018</span><a name="line.18"></a>
+<span class="sourceLineNo">019</span>import org.tribuo.Example;<a name="line.19"></a>
+<span class="sourceLineNo">020</span>import org.tribuo.Excuse;<a name="line.20"></a>
+<span class="sourceLineNo">021</span>import org.tribuo.ImmutableFeatureMap;<a name="line.21"></a>
+<span class="sourceLineNo">022</span>import org.tribuo.ImmutableOutputInfo;<a name="line.22"></a>
+<span class="sourceLineNo">023</span>import org.tribuo.Model;<a name="line.23"></a>
+<span class="sourceLineNo">024</span>import org.tribuo.Output;<a name="line.24"></a>
+<span class="sourceLineNo">025</span>import org.tribuo.provenance.ModelProvenance;<a name="line.25"></a>
+<span class="sourceLineNo">026</span>import de.bwaldvogel.liblinear.Linear;<a name="line.26"></a>
+<span class="sourceLineNo">027</span><a name="line.27"></a>
+<span class="sourceLineNo">028</span>import java.io.IOException;<a name="line.28"></a>
+<span class="sourceLineNo">029</span>import java.io.StringReader;<a name="line.29"></a>
+<span class="sourceLineNo">030</span>import java.io.StringWriter;<a name="line.30"></a>
+<span class="sourceLineNo">031</span>import java.util.ArrayList;<a name="line.31"></a>
+<span class="sourceLineNo">032</span>import java.util.List;<a name="line.32"></a>
+<span class="sourceLineNo">033</span>import java.util.Optional;<a name="line.33"></a>
+<span class="sourceLineNo">034</span>import java.util.logging.Logger;<a name="line.34"></a>
+<span class="sourceLineNo">035</span><a name="line.35"></a>
+<span class="sourceLineNo">036</span>/**<a name="line.36"></a>
+<span class="sourceLineNo">037</span> * A {@link Model} which wraps a LibLinear-java model.<a name="line.37"></a>
+<span class="sourceLineNo">038</span> * &lt;p&gt;<a name="line.38"></a>
+<span class="sourceLineNo">039</span> * It disables the LibLinear debug output as it's very chatty.<a name="line.39"></a>
+<span class="sourceLineNo">040</span> * &lt;p&gt;<a name="line.40"></a>
+<span class="sourceLineNo">041</span> * See:<a name="line.41"></a>
+<span class="sourceLineNo">042</span> * &lt;pre&gt;<a name="line.42"></a>
+<span class="sourceLineNo">043</span> * Fan RE, Chang KW, Hsieh CJ, Wang XR, Lin CJ.<a name="line.43"></a>
+<span class="sourceLineNo">044</span> * "LIBLINEAR: A library for Large Linear Classification"<a name="line.44"></a>
+<span class="sourceLineNo">045</span> * Journal of Machine Learning Research, 2008.<a name="line.45"></a>
+<span class="sourceLineNo">046</span> * &lt;/pre&gt;<a name="line.46"></a>
+<span class="sourceLineNo">047</span> * and for the original algorithm:<a name="line.47"></a>
+<span class="sourceLineNo">048</span> * &lt;pre&gt;<a name="line.48"></a>
+<span class="sourceLineNo">049</span> * Cortes C, Vapnik V.<a name="line.49"></a>
+<span class="sourceLineNo">050</span> * "Support-Vector Networks"<a name="line.50"></a>
+<span class="sourceLineNo">051</span> * Machine Learning, 1995.<a name="line.51"></a>
+<span class="sourceLineNo">052</span> * &lt;/pre&gt;<a name="line.52"></a>
+<span class="sourceLineNo">053</span> */<a name="line.53"></a>
+<span class="sourceLineNo">054</span>public abstract class LibLinearModel&lt;T extends Output&lt;T&gt;&gt; extends Model&lt;T&gt; {<a name="line.54"></a>
+<span class="sourceLineNo">055</span>    private static final long serialVersionUID = 3L;<a name="line.55"></a>
+<span class="sourceLineNo">056</span><a name="line.56"></a>
+<span class="sourceLineNo">057</span>    private static final Logger logger = Logger.getLogger(LibLinearModel.class.getName());<a name="line.57"></a>
+<span class="sourceLineNo">058</span><a name="line.58"></a>
+<span class="sourceLineNo">059</span>    protected final List&lt;de.bwaldvogel.liblinear.Model&gt; models;<a name="line.59"></a>
+<span class="sourceLineNo">060</span><a name="line.60"></a>
+<span class="sourceLineNo">061</span>    protected LibLinearModel(String name, ModelProvenance description, ImmutableFeatureMap featureIDMap, ImmutableOutputInfo&lt;T&gt; labelIDMap, boolean generatesProbabilities, List&lt;de.bwaldvogel.liblinear.Model&gt; models) {<a name="line.61"></a>
+<span class="sourceLineNo">062</span>        super(name, description, featureIDMap, labelIDMap, generatesProbabilities);<a name="line.62"></a>
+<span class="sourceLineNo">063</span>        this.models = models;<a name="line.63"></a>
+<span class="sourceLineNo">064</span>        Linear.disableDebugOutput();<a name="line.64"></a>
+<span class="sourceLineNo">065</span>    }<a name="line.65"></a>
+<span class="sourceLineNo">066</span><a name="line.66"></a>
+<span class="sourceLineNo">067</span>    /**<a name="line.67"></a>
+<span class="sourceLineNo">068</span>     * This call is expensive as it copies out the weight matrix from the<a name="line.68"></a>
+<span class="sourceLineNo">069</span>     * LibLinear model.<a name="line.69"></a>
+<span class="sourceLineNo">070</span>     * &lt;p&gt;<a name="line.70"></a>
+<span class="sourceLineNo">071</span>     * Prefer {@link LibLinearModel#getExcuses} to get multiple excuses.<a name="line.71"></a>
+<span class="sourceLineNo">072</span>     * &lt;p&gt;<a name="line.72"></a>
+<span class="sourceLineNo">073</span>     * @param e The example to excuse.<a name="line.73"></a>
+<span class="sourceLineNo">074</span>     * @return An {@link Excuse} for this example.<a name="line.74"></a>
+<span class="sourceLineNo">075</span>     */<a name="line.75"></a>
+<span class="sourceLineNo">076</span>    @Override<a name="line.76"></a>
+<span class="sourceLineNo">077</span>    public Optional&lt;Excuse&lt;T&gt;&gt; getExcuse(Example&lt;T&gt; e) {<a name="line.77"></a>
+<span class="sourceLineNo">078</span>        double[][] featureWeights = getFeatureWeights();<a name="line.78"></a>
+<span class="sourceLineNo">079</span>        return Optional.of(innerGetExcuse(e, featureWeights));<a name="line.79"></a>
+<span class="sourceLineNo">080</span>    }<a name="line.80"></a>
+<span class="sourceLineNo">081</span><a name="line.81"></a>
+<span class="sourceLineNo">082</span>    @Override<a name="line.82"></a>
+<span class="sourceLineNo">083</span>    public Optional&lt;List&lt;Excuse&lt;T&gt;&gt;&gt; getExcuses(Iterable&lt;Example&lt;T&gt;&gt; examples) {<a name="line.83"></a>
+<span class="sourceLineNo">084</span>        //This call copies out the weights, so it's better to do it once<a name="line.84"></a>
+<span class="sourceLineNo">085</span>        double[][] featureWeights = getFeatureWeights();<a name="line.85"></a>
+<span class="sourceLineNo">086</span>        List&lt;Excuse&lt;T&gt;&gt; excuses = new ArrayList&lt;&gt;();<a name="line.86"></a>
+<span class="sourceLineNo">087</span><a name="line.87"></a>
+<span class="sourceLineNo">088</span>        for (Example&lt;T&gt; e : examples) {<a name="line.88"></a>
+<span class="sourceLineNo">089</span>            excuses.add(innerGetExcuse(e, featureWeights));<a name="line.89"></a>
+<span class="sourceLineNo">090</span>        }<a name="line.90"></a>
+<span class="sourceLineNo">091</span><a name="line.91"></a>
+<span class="sourceLineNo">092</span>        return Optional.of(excuses);<a name="line.92"></a>
+<span class="sourceLineNo">093</span>    }<a name="line.93"></a>
+<span class="sourceLineNo">094</span><a name="line.94"></a>
+<span class="sourceLineNo">095</span>    /**<a name="line.95"></a>
+<span class="sourceLineNo">096</span>     * Copies the model by writing it out to a String and loading it back in.<a name="line.96"></a>
+<span class="sourceLineNo">097</span>     * &lt;p&gt;<a name="line.97"></a>
+<span class="sourceLineNo">098</span>     * Unfortunately liblinear-java doesn't have a copy constructor on it's model.<a name="line.98"></a>
+<span class="sourceLineNo">099</span>     * @param model THe model to copy.<a name="line.99"></a>
+<span class="sourceLineNo">100</span>     * @return A deep copy of the model.<a name="line.100"></a>
+<span class="sourceLineNo">101</span>     */<a name="line.101"></a>
+<span class="sourceLineNo">102</span>    protected static de.bwaldvogel.liblinear.Model copyModel(de.bwaldvogel.liblinear.Model model) {<a name="line.102"></a>
+<span class="sourceLineNo">103</span>        try {<a name="line.103"></a>
+<span class="sourceLineNo">104</span>            StringWriter writer = new StringWriter();<a name="line.104"></a>
+<span class="sourceLineNo">105</span>            Linear.saveModel(writer,model);<a name="line.105"></a>
+<span class="sourceLineNo">106</span>            String modelString = writer.toString();<a name="line.106"></a>
+<span class="sourceLineNo">107</span>            StringReader reader = new StringReader(modelString);<a name="line.107"></a>
+<span class="sourceLineNo">108</span>            return Linear.loadModel(reader);<a name="line.108"></a>
+<span class="sourceLineNo">109</span>        } catch (IOException e) {<a name="line.109"></a>
+<span class="sourceLineNo">110</span>            throw new IllegalStateException("IOException found when copying the model in memory via a String.",e);<a name="line.110"></a>
+<span class="sourceLineNo">111</span>        }<a name="line.111"></a>
+<span class="sourceLineNo">112</span>    }<a name="line.112"></a>
+<span class="sourceLineNo">113</span><a name="line.113"></a>
+<span class="sourceLineNo">114</span>    /**<a name="line.114"></a>
+<span class="sourceLineNo">115</span>     * Extracts the feature weights from the models.<a name="line.115"></a>
+<span class="sourceLineNo">116</span>     * The first dimension corresponds to the model index.<a name="line.116"></a>
+<span class="sourceLineNo">117</span>     * @return The feature weights.<a name="line.117"></a>
+<span class="sourceLineNo">118</span>     */<a name="line.118"></a>
+<span class="sourceLineNo">119</span>    protected abstract double[][] getFeatureWeights();<a name="line.119"></a>
+<span class="sourceLineNo">120</span><a name="line.120"></a>
+<span class="sourceLineNo">121</span>    /**<a name="line.121"></a>
+<span class="sourceLineNo">122</span>     * The call to getFeatureWeights in the public methods copies the<a name="line.122"></a>
+<span class="sourceLineNo">123</span>     * weights array so this inner method exists to save the copy in getExcuses.<a name="line.123"></a>
+<span class="sourceLineNo">124</span>     * &lt;p&gt;<a name="line.124"></a>
+<span class="sourceLineNo">125</span>     * If it becomes a problem then we could cache the feature weights in the<a name="line.125"></a>
+<span class="sourceLineNo">126</span>     * model.<a name="line.126"></a>
+<span class="sourceLineNo">127</span>     * &lt;p&gt;<a name="line.127"></a>
+<span class="sourceLineNo">128</span>     * @param e The example.<a name="line.128"></a>
+<span class="sourceLineNo">129</span>     * @param featureWeights The per dimension feature weights.<a name="line.129"></a>
+<span class="sourceLineNo">130</span>     * @return An excuse for this example.<a name="line.130"></a>
+<span class="sourceLineNo">131</span>     */<a name="line.131"></a>
+<span class="sourceLineNo">132</span>    protected abstract Excuse&lt;T&gt; innerGetExcuse(Example&lt;T&gt; e, double[][] featureWeights);<a name="line.132"></a>
+<span class="sourceLineNo">133</span>}<a name="line.133"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</div>
+</body>
+</html>
