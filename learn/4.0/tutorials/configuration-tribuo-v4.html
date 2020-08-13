@@ -30,9 +30,8 @@ We'll also briefly look at Tribuo's feature transformation system and see how th
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="o">%</span><span class="n">jars</span> <span class="p">.</span><span class="o">/</span><span class="n">olcut</span><span class="o">-</span><span class="n">core</span><span class="o">-</span><span class="mf">5.1.4</span><span class="o">-</span><span class="n">SNAPSHOT</span><span class="p">.</span><span class="na">jar</span>
-<span class="o">%</span><span class="n">jars</span> <span class="p">.</span><span class="o">/</span><span class="n">tribuo</span><span class="o">-</span><span class="n">classification</span><span class="o">-</span><span class="n">experiments</span><span class="o">-</span><span class="mf">4.0.0</span><span class="o">-</span><span class="n">SNAPSHOT</span><span class="o">-</span><span class="n">jar</span><span class="o">-</span><span class="n">with</span><span class="o">-</span><span class="n">dependencies</span><span class="p">.</span><span class="na">jar</span>
-<span class="o">%</span><span class="n">jars</span> <span class="p">.</span><span class="o">/</span><span class="n">tribuo</span><span class="o">-</span><span class="n">json</span><span class="o">-</span><span class="mf">4.0.0</span><span class="o">-</span><span class="n">SNAPSHOT</span><span class="o">-</span><span class="n">jar</span><span class="o">-</span><span class="n">with</span><span class="o">-</span><span class="n">dependencies</span><span class="p">.</span><span class="na">jar</span>
+<div class=" highlight hl-java"><pre><span></span><span class="o">%</span><span class="n">jars</span> <span class="p">.</span><span class="o">/</span><span class="n">tribuo</span><span class="o">-</span><span class="n">classification</span><span class="o">-</span><span class="n">experiments</span><span class="o">-</span><span class="mf">4.0.0</span><span class="o">-</span><span class="n">jar</span><span class="o">-</span><span class="n">with</span><span class="o">-</span><span class="n">dependencies</span><span class="p">.</span><span class="na">jar</span>
+<span class="o">%</span><span class="n">jars</span> <span class="p">.</span><span class="o">/</span><span class="n">tribuo</span><span class="o">-</span><span class="n">json</span><span class="o">-</span><span class="mf">4.0.0</span><span class="o">-</span><span class="n">jar</span><span class="o">-</span><span class="n">with</span><span class="o">-</span><span class="n">dependencies</span><span class="p">.</span><span class="na">jar</span>
 </pre></div>
 
     </div>
@@ -504,7 +503,7 @@ Testing data size = 10000, number of features = 668, number of classes = 10
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Training logistic regression took (00:00:04:934)
+<pre>Training logistic regression took (00:00:05:388)
 </pre>
 </div>
 </div>
@@ -753,16 +752,16 @@ it out to a new JSON file.</p>
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Class                           n          tp          fn          fp      recall        prec          f1
-0                             980         904          76          21       0.922       0.977       0.922
-1                           1,135       1,072          63          18       0.944       0.983       0.944
-2                           1,032         856         176          56       0.829       0.939       0.829
-3                           1,010         844         166          84       0.836       0.909       0.836
-4                             982         888          94          72       0.904       0.925       0.904
-5                             892         751         141         143       0.842       0.840       0.842
-6                             958         938          20         139       0.979       0.871       0.979
-7                           1,028         963          65         133       0.937       0.879       0.937
-8                             974         892          82         363       0.916       0.711       0.916
-9                           1,009         801         208          62       0.794       0.928       0.794
+0                             980         904          76          21       0.922       0.977       0.949
+1                           1,135       1,072          63          18       0.944       0.983       0.964
+2                           1,032         856         176          56       0.829       0.939       0.881
+3                           1,010         844         166          84       0.836       0.909       0.871
+4                             982         888          94          72       0.904       0.925       0.915
+5                             892         751         141         143       0.842       0.840       0.841
+6                             958         938          20         139       0.979       0.871       0.922
+7                           1,028         963          65         133       0.937       0.879       0.907
+8                             974         892          82         363       0.916       0.711       0.800
+9                           1,009         801         208          62       0.794       0.928       0.856
 Total                      10,000       8,909       1,091       1,091
 Accuracy                                                                    0.891
 Micro Average                                                               0.891       0.891       0.891
@@ -822,16 +821,16 @@ Balanced Error Rate                                                         0.11
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Class                           n          tp          fn          fp      recall        prec          f1
-0                             980         904          76          21       0.922       0.977       0.922
-1                           1,135       1,072          63          18       0.944       0.983       0.944
-2                           1,032         856         176          56       0.829       0.939       0.829
-3                           1,010         844         166          84       0.836       0.909       0.836
-4                             982         888          94          72       0.904       0.925       0.904
-5                             892         751         141         143       0.842       0.840       0.842
-6                             958         938          20         139       0.979       0.871       0.979
-7                           1,028         963          65         133       0.937       0.879       0.937
-8                             974         892          82         363       0.916       0.711       0.916
-9                           1,009         801         208          62       0.794       0.928       0.794
+0                             980         904          76          21       0.922       0.977       0.949
+1                           1,135       1,072          63          18       0.944       0.983       0.964
+2                           1,032         856         176          56       0.829       0.939       0.881
+3                           1,010         844         166          84       0.836       0.909       0.871
+4                             982         888          94          72       0.904       0.925       0.915
+5                             892         751         141         143       0.842       0.840       0.841
+6                             958         938          20         139       0.979       0.871       0.922
+7                           1,028         963          65         133       0.937       0.879       0.907
+8                             974         892          82         363       0.916       0.711       0.800
+9                           1,009         801         208          62       0.794       0.928       0.856
 Total                      10,000       8,909       1,091       1,091
 Accuracy                                                                    0.891
 Micro Average                                                               0.891       0.891       0.891
@@ -907,7 +906,7 @@ Balanced Error Rate                                                         0.11
 							url = file:/Users/apocock/Development/Tribuo/tutorials/mnist
 							resource-hash = C42B75FCB54DDA11D97AF9BD6E3950B41C93B4F44EEB9608AA115F79A5979E88
 							file-modified-time = 2020-07-06T10:52:01.776-04:00
-							datasource-creation-time = 2020-07-21T13:28:11.674954-04:00
+							datasource-creation-time = 2020-08-12T18:36:38.744657-04:00
 							host-short-name = DataSource
 						)
 					transformations = List[]
@@ -916,7 +915,7 @@ Balanced Error Rate                                                         0.11
 					num-examples = 60000
 					num-features = 717
 					num-outputs = 10
-					tribuo-version = 4.0.0-SNAPSHOT
+					tribuo-version = 4.0.0
 				)
 			trainer = LinearSGDTrainer(
 					class-name = org.tribuo.classification.sgd.linear.LinearSGDTrainer
@@ -940,11 +939,11 @@ Balanced Error Rate                                                         0.11
 					is-sequence = false
 					host-short-name = Trainer
 				)
-			trained-at = 2020-07-21T13:28:17.640344-04:00
+			trained-at = 2020-08-12T18:36:45.206397-04:00
 			instance-values = Map{
-			reconfigured-model=true
+				reconfigured-model=true
 			}
-			tribuo-version = 4.0.0-SNAPSHOT
+			tribuo-version = 4.0.0
 		)
 	dataset-provenance = MutableDataset(
 			class-name = org.tribuo.MutableDataset
@@ -959,7 +958,7 @@ Balanced Error Rate                                                         0.11
 					url = file:/Users/apocock/Development/Tribuo/tutorials/mnist.t
 					resource-hash = 31FFC3CFB1824D0994D57172BB8CA68882E578859E1EE1BD9FC1F2F15BFD06A2
 					file-modified-time = 2020-07-06T10:52:01.888-04:00
-					datasource-creation-time = 2020-07-21T13:28:01.871792-04:00
+					datasource-creation-time = 2020-08-12T18:36:28.641924-04:00
 					host-short-name = DataSource
 				)
 			transformations = List[]
@@ -968,9 +967,9 @@ Balanced Error Rate                                                         0.11
 			num-examples = 10000
 			num-features = 668
 			num-outputs = 10
-			tribuo-version = 4.0.0-SNAPSHOT
+			tribuo-version = 4.0.0
 		)
-	tribuo-version = 4.0.0-SNAPSHOT
+	tribuo-version = 4.0.0
 )
 </pre>
 </div>
@@ -1015,7 +1014,7 @@ Balanced Error Rate                                                         0.11
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Training transformed logistic regression took (00:00:08:542)
+<pre>Training transformed logistic regression took (00:00:09:435)
 </pre>
 </div>
 </div>
@@ -1057,16 +1056,16 @@ Balanced Error Rate                                                         0.11
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Class                           n          tp          fn          fp      recall        prec          f1
-0                             980         957          23          40       0.977       0.960       0.977
-1                           1,135       1,109          26          36       0.977       0.969       0.977
-2                           1,032         940          92          90       0.911       0.913       0.911
-3                           1,010         927          83         141       0.918       0.868       0.918
-4                             982         914          68          73       0.931       0.926       0.931
-5                             892         813          79         183       0.911       0.816       0.911
-6                             958         892          66          45       0.931       0.952       0.931
-7                           1,028         918         110          54       0.893       0.944       0.893
-8                             974         753         221          60       0.773       0.926       0.773
-9                           1,009         926          83         129       0.918       0.878       0.918
+0                             980         957          23          40       0.977       0.960       0.968
+1                           1,135       1,109          26          36       0.977       0.969       0.973
+2                           1,032         940          92          90       0.911       0.913       0.912
+3                           1,010         927          83         141       0.918       0.868       0.892
+4                             982         914          68          73       0.931       0.926       0.928
+5                             892         813          79         183       0.911       0.816       0.861
+6                             958         892          66          45       0.931       0.952       0.941
+7                           1,028         918         110          54       0.893       0.944       0.918
+8                             974         753         221          60       0.773       0.926       0.843
+9                           1,009         926          83         129       0.918       0.878       0.897
 Total                      10,000       9,149         851         851
 Accuracy                                                                    0.915
 Micro Average                                                               0.915       0.915       0.915

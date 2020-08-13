@@ -53,7 +53,7 @@ EOF
 {:toc}
 EOF
     tail -n +2 $TRIBUO_DOC_DIR/$doc  | sed  'H;1h;$!d;x; s/|\n\n\n*/|\
-{: .table}\
+{: .table .table-responsive}\
 \
 /g' >> $DOC_DIR/$LOWERCASE
     # Check if we ended with a table
