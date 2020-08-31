@@ -2390,7 +2390,7 @@ pre,
 code,
 kbd,
 samp {
-    white-space: pre-wrap;
+    white-space: pre;
 }
 #fonttest {
     font-family: monospace;

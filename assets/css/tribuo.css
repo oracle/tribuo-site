@@ -1,4 +1,6 @@
 
+@import "github-syntax.min.css";
+
 body {
     font-family: 'Libre Franklin',Helvetica,Arial,serif;
     --tribuo-red: rgb(255, 29, 37);
@@ -65,6 +67,14 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Adjust anchor targets to add padding for the fixed top nav */
+:target::before {
+    content: "";
+    display: block;
+    height: 60px; /* fixed header height*/
+    margin: -60px 0 0; /* negative fixed header height */
+}
+
 .source-links {
     min-height: 11em;
 }
@@ -78,8 +88,9 @@ code.copy-url  {
     color: rgb(50, 50, 50);
 }
 
-code {
+code,code a {
     color: #cd3108;
+    word-wrap: normal;
 }
 
 .preformat {
@@ -91,6 +102,15 @@ pre {
     border: 1px solid rgb(70, 70 70);
     border-left: 3px solid var(--tribuo-red);
     padding-left: 8px;
+    overflow-x: auto;
+}
+
+ul.feature-list li {
+    /*
+    list-style: none;
+    border-left: 2px solid rgb(227,227,227);
+    margin-left: -20px;
+    padding-left: 20px;*/
 }
 
 /*
