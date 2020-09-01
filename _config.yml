@@ -33,7 +33,7 @@ og-tags:
   - classification
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://tribuo.org"
-tribuo_version: 4.0.0 # Current version of Tribuo library.
+tribuo_version: 4.0.1 # Current version of Tribuo library.
 repository_url: "https://github.com/oracle/tribuo.git"
 javadocs: "https://tribuo.org/learn/4.0/javadoc/index.html" # Path to index.html
 javadoc_root: "https://tribuo.org/learn/4.0/javadoc/" # Path to top of class hierarchy
