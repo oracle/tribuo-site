@@ -6,7 +6,7 @@ case $SYS in
     Darwin)
         GHEAD=$(command -v ghead)
         if [ -z "$GHEAD" ]; then
-            echo "Since you're on a Mac, you'll need to brew install ghead first"
+            echo "Since you're on a Mac, you'll need to 'brew install coreutils' first"
             exit
         fi
         HEAD="$GHEAD"
