@@ -1,0 +1,627 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<title>Source code</title>
+<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<div class="sourceContainer">
+<pre><span class="sourceLineNo">001</span>/*<a name="line.1"></a>
+<span class="sourceLineNo">002</span> * Copyright (c) 2015-2020, Oracle and/or its affiliates. All rights reserved.<a name="line.2"></a>
+<span class="sourceLineNo">003</span> *<a name="line.3"></a>
+<span class="sourceLineNo">004</span> * Licensed under the Apache License, Version 2.0 (the "License");<a name="line.4"></a>
+<span class="sourceLineNo">005</span> * you may not use this file except in compliance with the License.<a name="line.5"></a>
+<span class="sourceLineNo">006</span> * You may obtain a copy of the License at<a name="line.6"></a>
+<span class="sourceLineNo">007</span> *<a name="line.7"></a>
+<span class="sourceLineNo">008</span> *     http://www.apache.org/licenses/LICENSE-2.0<a name="line.8"></a>
+<span class="sourceLineNo">009</span> *<a name="line.9"></a>
+<span class="sourceLineNo">010</span> * Unless required by applicable law or agreed to in writing, software<a name="line.10"></a>
+<span class="sourceLineNo">011</span> * distributed under the License is distributed on an "AS IS" BASIS,<a name="line.11"></a>
+<span class="sourceLineNo">012</span> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express implied.<a name="line.12"></a>
+<span class="sourceLineNo">013</span> * See the License for the specific language governing permissions and<a name="line.13"></a>
+<span class="sourceLineNo">014</span> * limitations under the License.<a name="line.14"></a>
+<span class="sourceLineNo">015</span> */<a name="line.15"></a>
+<span class="sourceLineNo">016</span><a name="line.16"></a>
+<span class="sourceLineNo">017</span>package org.tribuo.datasource;<a name="line.17"></a>
+<span class="sourceLineNo">018</span><a name="line.18"></a>
+<span class="sourceLineNo">019</span>import com.oracle.labs.mlrg.olcut.config.Config;<a name="line.19"></a>
+<span class="sourceLineNo">020</span>import com.oracle.labs.mlrg.olcut.provenance.ObjectProvenance;<a name="line.20"></a>
+<span class="sourceLineNo">021</span>import com.oracle.labs.mlrg.olcut.provenance.PrimitiveProvenance;<a name="line.21"></a>
+<span class="sourceLineNo">022</span>import com.oracle.labs.mlrg.olcut.provenance.Provenance;<a name="line.22"></a>
+<span class="sourceLineNo">023</span>import com.oracle.labs.mlrg.olcut.provenance.ProvenanceUtil;<a name="line.23"></a>
+<span class="sourceLineNo">024</span>import com.oracle.labs.mlrg.olcut.provenance.impl.SkeletalConfiguredObjectProvenance;<a name="line.24"></a>
+<span class="sourceLineNo">025</span>import com.oracle.labs.mlrg.olcut.provenance.primitives.DateTimeProvenance;<a name="line.25"></a>
+<span class="sourceLineNo">026</span>import com.oracle.labs.mlrg.olcut.provenance.primitives.EnumProvenance;<a name="line.26"></a>
+<span class="sourceLineNo">027</span>import com.oracle.labs.mlrg.olcut.provenance.primitives.HashProvenance;<a name="line.27"></a>
+<span class="sourceLineNo">028</span>import com.oracle.labs.mlrg.olcut.provenance.primitives.StringProvenance;<a name="line.28"></a>
+<span class="sourceLineNo">029</span>import com.oracle.labs.mlrg.olcut.util.IOUtil;<a name="line.29"></a>
+<span class="sourceLineNo">030</span>import org.tribuo.ConfigurableDataSource;<a name="line.30"></a>
+<span class="sourceLineNo">031</span>import org.tribuo.Example;<a name="line.31"></a>
+<span class="sourceLineNo">032</span>import org.tribuo.Feature;<a name="line.32"></a>
+<span class="sourceLineNo">033</span>import org.tribuo.Output;<a name="line.33"></a>
+<span class="sourceLineNo">034</span>import org.tribuo.OutputFactory;<a name="line.34"></a>
+<span class="sourceLineNo">035</span>import org.tribuo.impl.ArrayExample;<a name="line.35"></a>
+<span class="sourceLineNo">036</span>import org.tribuo.provenance.DataSourceProvenance;<a name="line.36"></a>
+<span class="sourceLineNo">037</span><a name="line.37"></a>
+<span class="sourceLineNo">038</span>import java.io.BufferedOutputStream;<a name="line.38"></a>
+<span class="sourceLineNo">039</span>import java.io.DataInputStream;<a name="line.39"></a>
+<span class="sourceLineNo">040</span>import java.io.DataOutputStream;<a name="line.40"></a>
+<span class="sourceLineNo">041</span>import java.io.EOFException;<a name="line.41"></a>
+<span class="sourceLineNo">042</span>import java.io.FileOutputStream;<a name="line.42"></a>
+<span class="sourceLineNo">043</span>import java.io.IOException;<a name="line.43"></a>
+<span class="sourceLineNo">044</span>import java.io.OutputStream;<a name="line.44"></a>
+<span class="sourceLineNo">045</span>import java.nio.file.Path;<a name="line.45"></a>
+<span class="sourceLineNo">046</span>import java.time.Instant;<a name="line.46"></a>
+<span class="sourceLineNo">047</span>import java.time.OffsetDateTime;<a name="line.47"></a>
+<span class="sourceLineNo">048</span>import java.time.ZoneId;<a name="line.48"></a>
+<span class="sourceLineNo">049</span>import java.util.ArrayList;<a name="line.49"></a>
+<span class="sourceLineNo">050</span>import java.util.Arrays;<a name="line.50"></a>
+<span class="sourceLineNo">051</span>import java.util.HashMap;<a name="line.51"></a>
+<span class="sourceLineNo">052</span>import java.util.Iterator;<a name="line.52"></a>
+<span class="sourceLineNo">053</span>import java.util.Map;<a name="line.53"></a>
+<span class="sourceLineNo">054</span>import java.util.logging.Logger;<a name="line.54"></a>
+<span class="sourceLineNo">055</span>import java.util.zip.GZIPOutputStream;<a name="line.55"></a>
+<span class="sourceLineNo">056</span><a name="line.56"></a>
+<span class="sourceLineNo">057</span>/**<a name="line.57"></a>
+<span class="sourceLineNo">058</span> * A DataSource which can read IDX formatted data (i.e. MNIST).<a name="line.58"></a>
+<span class="sourceLineNo">059</span> * &lt;p&gt;<a name="line.59"></a>
+<span class="sourceLineNo">060</span> * Transparently reads GZipped files.<a name="line.60"></a>
+<span class="sourceLineNo">061</span> * &lt;p&gt;<a name="line.61"></a>
+<span class="sourceLineNo">062</span> * The file format is defined &lt;a href="http://yann.lecun.com/exdb/mnist/"&gt;here&lt;/a&gt;.<a name="line.62"></a>
+<span class="sourceLineNo">063</span> */<a name="line.63"></a>
+<span class="sourceLineNo">064</span>public final class IDXDataSource&lt;T extends Output&lt;T&gt;&gt; implements ConfigurableDataSource&lt;T&gt; {<a name="line.64"></a>
+<span class="sourceLineNo">065</span>    private static final Logger logger = Logger.getLogger(IDXDataSource.class.getName());<a name="line.65"></a>
+<span class="sourceLineNo">066</span><a name="line.66"></a>
+<span class="sourceLineNo">067</span>    /**<a name="line.67"></a>
+<span class="sourceLineNo">068</span>     * The possible IDX input formats.<a name="line.68"></a>
+<span class="sourceLineNo">069</span>     */<a name="line.69"></a>
+<span class="sourceLineNo">070</span>    public enum IDXType {<a name="line.70"></a>
+<span class="sourceLineNo">071</span>        UBYTE((byte) 0x08),<a name="line.71"></a>
+<span class="sourceLineNo">072</span>        BYTE((byte) 0x09),<a name="line.72"></a>
+<span class="sourceLineNo">073</span>        SHORT((byte) 0x0B),<a name="line.73"></a>
+<span class="sourceLineNo">074</span>        INT((byte) 0x0C),<a name="line.74"></a>
+<span class="sourceLineNo">075</span>        FLOAT((byte) 0x0D),<a name="line.75"></a>
+<span class="sourceLineNo">076</span>        DOUBLE((byte) 0x0E);<a name="line.76"></a>
+<span class="sourceLineNo">077</span><a name="line.77"></a>
+<span class="sourceLineNo">078</span>        /**<a name="line.78"></a>
+<span class="sourceLineNo">079</span>         * The encoded byte value.<a name="line.79"></a>
+<span class="sourceLineNo">080</span>         */<a name="line.80"></a>
+<span class="sourceLineNo">081</span>        public final byte value;<a name="line.81"></a>
+<span class="sourceLineNo">082</span><a name="line.82"></a>
+<span class="sourceLineNo">083</span>        IDXType(byte value) {<a name="line.83"></a>
+<span class="sourceLineNo">084</span>            this.value = value;<a name="line.84"></a>
+<span class="sourceLineNo">085</span>        }<a name="line.85"></a>
+<span class="sourceLineNo">086</span><a name="line.86"></a>
+<span class="sourceLineNo">087</span>        /**<a name="line.87"></a>
+<span class="sourceLineNo">088</span>         * Converts the byte into the enum. Throws IllegalArgumentException if it's<a name="line.88"></a>
+<span class="sourceLineNo">089</span>         * not a valid byte.<a name="line.89"></a>
+<span class="sourceLineNo">090</span>         *<a name="line.90"></a>
+<span class="sourceLineNo">091</span>         * @param input The byte to convert.<a name="line.91"></a>
+<span class="sourceLineNo">092</span>         * @return The corresponding enum instance.<a name="line.92"></a>
+<span class="sourceLineNo">093</span>         */<a name="line.93"></a>
+<span class="sourceLineNo">094</span>        public static IDXType convert(byte input) {<a name="line.94"></a>
+<span class="sourceLineNo">095</span>            for (IDXType f : values()) {<a name="line.95"></a>
+<span class="sourceLineNo">096</span>                if (f.value == input) {<a name="line.96"></a>
+<span class="sourceLineNo">097</span>                    return f;<a name="line.97"></a>
+<span class="sourceLineNo">098</span>                }<a name="line.98"></a>
+<span class="sourceLineNo">099</span>            }<a name="line.99"></a>
+<span class="sourceLineNo">100</span>            throw new IllegalArgumentException("Invalid byte found - " + input);<a name="line.100"></a>
+<span class="sourceLineNo">101</span>        }<a name="line.101"></a>
+<span class="sourceLineNo">102</span>    }<a name="line.102"></a>
+<span class="sourceLineNo">103</span><a name="line.103"></a>
+<span class="sourceLineNo">104</span>    @Config(mandatory = true, description = "Path to load the features from.")<a name="line.104"></a>
+<span class="sourceLineNo">105</span>    private Path featuresPath;<a name="line.105"></a>
+<span class="sourceLineNo">106</span><a name="line.106"></a>
+<span class="sourceLineNo">107</span>    @Config(mandatory = true, description = "Path to load the features from.")<a name="line.107"></a>
+<span class="sourceLineNo">108</span>    private Path outputPath;<a name="line.108"></a>
+<span class="sourceLineNo">109</span><a name="line.109"></a>
+<span class="sourceLineNo">110</span>    @Config(mandatory = true, description = "The output factory to use.")<a name="line.110"></a>
+<span class="sourceLineNo">111</span>    private OutputFactory&lt;T&gt; outputFactory;<a name="line.111"></a>
+<span class="sourceLineNo">112</span><a name="line.112"></a>
+<span class="sourceLineNo">113</span>    private final ArrayList&lt;Example&lt;T&gt;&gt; data = new ArrayList&lt;&gt;();<a name="line.113"></a>
+<span class="sourceLineNo">114</span><a name="line.114"></a>
+<span class="sourceLineNo">115</span>    private IDXType dataType;<a name="line.115"></a>
+<span class="sourceLineNo">116</span><a name="line.116"></a>
+<span class="sourceLineNo">117</span>    private IDXDataSourceProvenance provenance;<a name="line.117"></a>
+<span class="sourceLineNo">118</span><a name="line.118"></a>
+<span class="sourceLineNo">119</span>    /**<a name="line.119"></a>
+<span class="sourceLineNo">120</span>     * For olcut.<a name="line.120"></a>
+<span class="sourceLineNo">121</span>     */<a name="line.121"></a>
+<span class="sourceLineNo">122</span>    private IDXDataSource() {}<a name="line.122"></a>
+<span class="sourceLineNo">123</span><a name="line.123"></a>
+<span class="sourceLineNo">124</span>    /**<a name="line.124"></a>
+<span class="sourceLineNo">125</span>     * Constructs an IDXDataSource from the supplied paths.<a name="line.125"></a>
+<span class="sourceLineNo">126</span>     *<a name="line.126"></a>
+<span class="sourceLineNo">127</span>     * @param featuresPath  The path to the features file.<a name="line.127"></a>
+<span class="sourceLineNo">128</span>     * @param outputPath    The path to the output file.<a name="line.128"></a>
+<span class="sourceLineNo">129</span>     * @param outputFactory The output factory.<a name="line.129"></a>
+<span class="sourceLineNo">130</span>     * @throws IOException If either file cannot be read.<a name="line.130"></a>
+<span class="sourceLineNo">131</span>     */<a name="line.131"></a>
+<span class="sourceLineNo">132</span>    public IDXDataSource(Path featuresPath, Path outputPath, OutputFactory&lt;T&gt; outputFactory) throws IOException {<a name="line.132"></a>
+<span class="sourceLineNo">133</span>        this.outputFactory = outputFactory;<a name="line.133"></a>
+<span class="sourceLineNo">134</span>        this.featuresPath = featuresPath;<a name="line.134"></a>
+<span class="sourceLineNo">135</span>        this.outputPath = outputPath;<a name="line.135"></a>
+<span class="sourceLineNo">136</span>        read();<a name="line.136"></a>
+<span class="sourceLineNo">137</span>    }<a name="line.137"></a>
+<span class="sourceLineNo">138</span><a name="line.138"></a>
+<span class="sourceLineNo">139</span>    @Override<a name="line.139"></a>
+<span class="sourceLineNo">140</span>    public void postConfig() throws IOException {<a name="line.140"></a>
+<span class="sourceLineNo">141</span>        read();<a name="line.141"></a>
+<span class="sourceLineNo">142</span>    }<a name="line.142"></a>
+<span class="sourceLineNo">143</span><a name="line.143"></a>
+<span class="sourceLineNo">144</span>    @Override<a name="line.144"></a>
+<span class="sourceLineNo">145</span>    public String toString() {<a name="line.145"></a>
+<span class="sourceLineNo">146</span>        return "IDXDataSource(featuresPath=" + featuresPath.toString() + ",outputPath=" + outputPath.toString() + ",featureType=" + dataType + ")";<a name="line.146"></a>
+<span class="sourceLineNo">147</span>    }<a name="line.147"></a>
+<span class="sourceLineNo">148</span><a name="line.148"></a>
+<span class="sourceLineNo">149</span>    @Override<a name="line.149"></a>
+<span class="sourceLineNo">150</span>    public OutputFactory&lt;T&gt; getOutputFactory() {<a name="line.150"></a>
+<span class="sourceLineNo">151</span>        return outputFactory;<a name="line.151"></a>
+<span class="sourceLineNo">152</span>    }<a name="line.152"></a>
+<span class="sourceLineNo">153</span><a name="line.153"></a>
+<span class="sourceLineNo">154</span>    @Override<a name="line.154"></a>
+<span class="sourceLineNo">155</span>    public synchronized DataSourceProvenance getProvenance() {<a name="line.155"></a>
+<span class="sourceLineNo">156</span>        if (provenance == null) {<a name="line.156"></a>
+<span class="sourceLineNo">157</span>            provenance = cacheProvenance();<a name="line.157"></a>
+<span class="sourceLineNo">158</span>        }<a name="line.158"></a>
+<span class="sourceLineNo">159</span>        return provenance;<a name="line.159"></a>
+<span class="sourceLineNo">160</span>    }<a name="line.160"></a>
+<span class="sourceLineNo">161</span><a name="line.161"></a>
+<span class="sourceLineNo">162</span>    private IDXDataSourceProvenance cacheProvenance() {<a name="line.162"></a>
+<span class="sourceLineNo">163</span>        return new IDXDataSourceProvenance(this);<a name="line.163"></a>
+<span class="sourceLineNo">164</span>    }<a name="line.164"></a>
+<span class="sourceLineNo">165</span><a name="line.165"></a>
+<span class="sourceLineNo">166</span>    /**<a name="line.166"></a>
+<span class="sourceLineNo">167</span>     * Loads the data.<a name="line.167"></a>
+<span class="sourceLineNo">168</span>     *<a name="line.168"></a>
+<span class="sourceLineNo">169</span>     * @throws IOException If the files could not be read.<a name="line.169"></a>
+<span class="sourceLineNo">170</span>     */<a name="line.170"></a>
+<span class="sourceLineNo">171</span>    private void read() throws IOException {<a name="line.171"></a>
+<span class="sourceLineNo">172</span>        IDXData features = readData(featuresPath);<a name="line.172"></a>
+<span class="sourceLineNo">173</span>        IDXData outputs = readData(outputPath);<a name="line.173"></a>
+<span class="sourceLineNo">174</span><a name="line.174"></a>
+<span class="sourceLineNo">175</span>        dataType = features.dataType;<a name="line.175"></a>
+<span class="sourceLineNo">176</span><a name="line.176"></a>
+<span class="sourceLineNo">177</span>        if (features.shape[0] != outputs.shape[0]) {<a name="line.177"></a>
+<span class="sourceLineNo">178</span>            throw new IllegalStateException("Features and outputs have different numbers of examples, feature shape = " + Arrays.toString(features.shape) + ", output shape = " + Arrays.toString(outputs.shape));<a name="line.178"></a>
+<span class="sourceLineNo">179</span>        }<a name="line.179"></a>
+<span class="sourceLineNo">180</span><a name="line.180"></a>
+<span class="sourceLineNo">181</span>        // Calculate the example size<a name="line.181"></a>
+<span class="sourceLineNo">182</span>        int numFeatures = 1;<a name="line.182"></a>
+<span class="sourceLineNo">183</span>        for (int i = 1; i &lt; features.shape.length; i++) {<a name="line.183"></a>
+<span class="sourceLineNo">184</span>            numFeatures *= features.shape[i];<a name="line.184"></a>
+<span class="sourceLineNo">185</span>        }<a name="line.185"></a>
+<span class="sourceLineNo">186</span>        int numOutputs = 1;<a name="line.186"></a>
+<span class="sourceLineNo">187</span>        for (int i = 1; i &lt; outputs.shape.length; i++) {<a name="line.187"></a>
+<span class="sourceLineNo">188</span>            numOutputs *= outputs.shape[i];<a name="line.188"></a>
+<span class="sourceLineNo">189</span>        }<a name="line.189"></a>
+<span class="sourceLineNo">190</span><a name="line.190"></a>
+<span class="sourceLineNo">191</span>        String[] featureNames = new String[numFeatures];<a name="line.191"></a>
+<span class="sourceLineNo">192</span>        int width = ("" + numFeatures).length();<a name="line.192"></a>
+<span class="sourceLineNo">193</span>        String formatString = "%0" + width + "d";<a name="line.193"></a>
+<span class="sourceLineNo">194</span>        for (int i = 0; i &lt; numFeatures; i++) {<a name="line.194"></a>
+<span class="sourceLineNo">195</span>            featureNames[i] = String.format(formatString, i);<a name="line.195"></a>
+<span class="sourceLineNo">196</span>        }<a name="line.196"></a>
+<span class="sourceLineNo">197</span><a name="line.197"></a>
+<span class="sourceLineNo">198</span>        ArrayList&lt;Feature&gt; buffer = new ArrayList&lt;&gt;();<a name="line.198"></a>
+<span class="sourceLineNo">199</span>        int featureCounter = 0;<a name="line.199"></a>
+<span class="sourceLineNo">200</span>        int outputCounter = 0;<a name="line.200"></a>
+<span class="sourceLineNo">201</span>        StringBuilder outputBuilder = new StringBuilder();<a name="line.201"></a>
+<span class="sourceLineNo">202</span>        for (int i = 0; i &lt; features.data.length; i++) {<a name="line.202"></a>
+<span class="sourceLineNo">203</span>            double curValue = features.data[i];<a name="line.203"></a>
+<span class="sourceLineNo">204</span>            if (curValue != 0.0) {<a name="line.204"></a>
+<span class="sourceLineNo">205</span>                // Tribuo is sparse, so only create non-zero features<a name="line.205"></a>
+<span class="sourceLineNo">206</span>                buffer.add(new Feature(featureNames[featureCounter], curValue));<a name="line.206"></a>
+<span class="sourceLineNo">207</span>            }<a name="line.207"></a>
+<span class="sourceLineNo">208</span>            featureCounter++;<a name="line.208"></a>
+<span class="sourceLineNo">209</span>            if (featureCounter == numFeatures) {<a name="line.209"></a>
+<span class="sourceLineNo">210</span>                // fabricate output. Multidimensional outputs expect a comma separated string.<a name="line.210"></a>
+<span class="sourceLineNo">211</span>                outputBuilder.setLength(0);<a name="line.211"></a>
+<span class="sourceLineNo">212</span>                for (int j = 0; j &lt; numOutputs; j++) {<a name="line.212"></a>
+<span class="sourceLineNo">213</span>                    if (j != 0) {<a name="line.213"></a>
+<span class="sourceLineNo">214</span>                        outputBuilder.append(',');<a name="line.214"></a>
+<span class="sourceLineNo">215</span>                    }<a name="line.215"></a>
+<span class="sourceLineNo">216</span>                    // If necessary cast to int to ensure we get a integer out for use as a class label<a name="line.216"></a>
+<span class="sourceLineNo">217</span>                    // No-one wants to have MNIST digits with labels "0.0", "1.0" etc.<a name="line.217"></a>
+<span class="sourceLineNo">218</span>                    switch (outputs.dataType) {<a name="line.218"></a>
+<span class="sourceLineNo">219</span>                        case BYTE:<a name="line.219"></a>
+<span class="sourceLineNo">220</span>                        case UBYTE:<a name="line.220"></a>
+<span class="sourceLineNo">221</span>                        case SHORT:<a name="line.221"></a>
+<span class="sourceLineNo">222</span>                        case INT:<a name="line.222"></a>
+<span class="sourceLineNo">223</span>                            outputBuilder.append((int) outputs.data[j + outputCounter]);<a name="line.223"></a>
+<span class="sourceLineNo">224</span>                            break;<a name="line.224"></a>
+<span class="sourceLineNo">225</span>                        case FLOAT:<a name="line.225"></a>
+<span class="sourceLineNo">226</span>                        case DOUBLE:<a name="line.226"></a>
+<span class="sourceLineNo">227</span>                            outputBuilder.append(outputs.data[j + outputCounter]);<a name="line.227"></a>
+<span class="sourceLineNo">228</span>                            break;<a name="line.228"></a>
+<span class="sourceLineNo">229</span>                    }<a name="line.229"></a>
+<span class="sourceLineNo">230</span>                }<a name="line.230"></a>
+<span class="sourceLineNo">231</span>                outputCounter += numOutputs;<a name="line.231"></a>
+<span class="sourceLineNo">232</span>                T output = outputFactory.generateOutput(outputBuilder.toString());<a name="line.232"></a>
+<span class="sourceLineNo">233</span><a name="line.233"></a>
+<span class="sourceLineNo">234</span>                // create example<a name="line.234"></a>
+<span class="sourceLineNo">235</span>                Example&lt;T&gt; example = new ArrayExample&lt;T&gt;(output);<a name="line.235"></a>
+<span class="sourceLineNo">236</span>                example.addAll(buffer);<a name="line.236"></a>
+<span class="sourceLineNo">237</span>                data.add(example);<a name="line.237"></a>
+<span class="sourceLineNo">238</span><a name="line.238"></a>
+<span class="sourceLineNo">239</span>                // Clean up<a name="line.239"></a>
+<span class="sourceLineNo">240</span>                buffer.clear();<a name="line.240"></a>
+<span class="sourceLineNo">241</span>                featureCounter = 0;<a name="line.241"></a>
+<span class="sourceLineNo">242</span>            }<a name="line.242"></a>
+<span class="sourceLineNo">243</span>        }<a name="line.243"></a>
+<span class="sourceLineNo">244</span><a name="line.244"></a>
+<span class="sourceLineNo">245</span>        if (featureCounter != 0) {<a name="line.245"></a>
+<span class="sourceLineNo">246</span>            throw new IllegalStateException("Failed to process all the features, missing " + (numFeatures - featureCounter) + " values");<a name="line.246"></a>
+<span class="sourceLineNo">247</span>        }<a name="line.247"></a>
+<span class="sourceLineNo">248</span>    }<a name="line.248"></a>
+<span class="sourceLineNo">249</span><a name="line.249"></a>
+<span class="sourceLineNo">250</span>    /**<a name="line.250"></a>
+<span class="sourceLineNo">251</span>     * Reads a single IDX format file.<a name="line.251"></a>
+<span class="sourceLineNo">252</span>     *<a name="line.252"></a>
+<span class="sourceLineNo">253</span>     * @param path The path to read.<a name="line.253"></a>
+<span class="sourceLineNo">254</span>     * @return The IDXData from the file.<a name="line.254"></a>
+<span class="sourceLineNo">255</span>     * @throws IOException If the file could not be read.<a name="line.255"></a>
+<span class="sourceLineNo">256</span>     */<a name="line.256"></a>
+<span class="sourceLineNo">257</span>    static IDXData readData(Path path) throws IOException {<a name="line.257"></a>
+<span class="sourceLineNo">258</span>        DataInputStream stream = new DataInputStream(IOUtil.getInputStreamForLocation(path.toString()));<a name="line.258"></a>
+<span class="sourceLineNo">259</span>        short magicNumber = stream.readShort();<a name="line.259"></a>
+<span class="sourceLineNo">260</span>        if (magicNumber != 0) {<a name="line.260"></a>
+<span class="sourceLineNo">261</span>            throw new IllegalStateException("Invalid IDX file, magic number was not zero. Found " + magicNumber);<a name="line.261"></a>
+<span class="sourceLineNo">262</span>        }<a name="line.262"></a>
+<span class="sourceLineNo">263</span>        final byte dataTypeByte = stream.readByte();<a name="line.263"></a>
+<span class="sourceLineNo">264</span>        final IDXType dataType = IDXType.convert(dataTypeByte);<a name="line.264"></a>
+<span class="sourceLineNo">265</span>        final byte numDimensions = stream.readByte();<a name="line.265"></a>
+<span class="sourceLineNo">266</span>        if (numDimensions &lt; 1) {<a name="line.266"></a>
+<span class="sourceLineNo">267</span>            throw new IllegalStateException("Invalid number of dimensions, found " + numDimensions);<a name="line.267"></a>
+<span class="sourceLineNo">268</span>        }<a name="line.268"></a>
+<span class="sourceLineNo">269</span>        final int[] shape = new int[numDimensions];<a name="line.269"></a>
+<span class="sourceLineNo">270</span>        int size = 1;<a name="line.270"></a>
+<span class="sourceLineNo">271</span>        for (int i = 0; i &lt; numDimensions; i++) {<a name="line.271"></a>
+<span class="sourceLineNo">272</span>            shape[i] = stream.readInt();<a name="line.272"></a>
+<span class="sourceLineNo">273</span>            if (shape[i] &lt; 1) {<a name="line.273"></a>
+<span class="sourceLineNo">274</span>                throw new IllegalStateException("Invalid shape, found " + Arrays.toString(shape));<a name="line.274"></a>
+<span class="sourceLineNo">275</span>            }<a name="line.275"></a>
+<span class="sourceLineNo">276</span>            size *= shape[i];<a name="line.276"></a>
+<span class="sourceLineNo">277</span>        }<a name="line.277"></a>
+<span class="sourceLineNo">278</span>        double[] data = new double[size];<a name="line.278"></a>
+<span class="sourceLineNo">279</span>        try {<a name="line.279"></a>
+<span class="sourceLineNo">280</span>            for (int i = 0; i &lt; size; i++) {<a name="line.280"></a>
+<span class="sourceLineNo">281</span>                switch (dataType) {<a name="line.281"></a>
+<span class="sourceLineNo">282</span>                    case BYTE:<a name="line.282"></a>
+<span class="sourceLineNo">283</span>                        data[i] = stream.readByte();<a name="line.283"></a>
+<span class="sourceLineNo">284</span>                        break;<a name="line.284"></a>
+<span class="sourceLineNo">285</span>                    case UBYTE:<a name="line.285"></a>
+<span class="sourceLineNo">286</span>                        data[i] = stream.readUnsignedByte();<a name="line.286"></a>
+<span class="sourceLineNo">287</span>                        break;<a name="line.287"></a>
+<span class="sourceLineNo">288</span>                    case SHORT:<a name="line.288"></a>
+<span class="sourceLineNo">289</span>                        data[i] = stream.readShort();<a name="line.289"></a>
+<span class="sourceLineNo">290</span>                        break;<a name="line.290"></a>
+<span class="sourceLineNo">291</span>                    case INT:<a name="line.291"></a>
+<span class="sourceLineNo">292</span>                        data[i] = stream.readInt();<a name="line.292"></a>
+<span class="sourceLineNo">293</span>                        break;<a name="line.293"></a>
+<span class="sourceLineNo">294</span>                    case FLOAT:<a name="line.294"></a>
+<span class="sourceLineNo">295</span>                        data[i] = stream.readFloat();<a name="line.295"></a>
+<span class="sourceLineNo">296</span>                        break;<a name="line.296"></a>
+<span class="sourceLineNo">297</span>                    case DOUBLE:<a name="line.297"></a>
+<span class="sourceLineNo">298</span>                        data[i] = stream.readDouble();<a name="line.298"></a>
+<span class="sourceLineNo">299</span>                        break;<a name="line.299"></a>
+<span class="sourceLineNo">300</span>                }<a name="line.300"></a>
+<span class="sourceLineNo">301</span>            }<a name="line.301"></a>
+<span class="sourceLineNo">302</span>        } catch (EOFException e) {<a name="line.302"></a>
+<span class="sourceLineNo">303</span>            throw new IllegalStateException("Too little data in the file, expected to find " + size + " elements");<a name="line.303"></a>
+<span class="sourceLineNo">304</span>        }<a name="line.304"></a>
+<span class="sourceLineNo">305</span>        try {<a name="line.305"></a>
+<span class="sourceLineNo">306</span>            byte unexpectedByte = stream.readByte();<a name="line.306"></a>
+<span class="sourceLineNo">307</span>            throw new IllegalStateException("Too much data in the file");<a name="line.307"></a>
+<span class="sourceLineNo">308</span>        } catch (EOFException e) {<a name="line.308"></a>
+<span class="sourceLineNo">309</span>            //pass as the stream is exhausted<a name="line.309"></a>
+<span class="sourceLineNo">310</span>        }<a name="line.310"></a>
+<span class="sourceLineNo">311</span><a name="line.311"></a>
+<span class="sourceLineNo">312</span>        return new IDXData(dataType, shape, data);<a name="line.312"></a>
+<span class="sourceLineNo">313</span>    }<a name="line.313"></a>
+<span class="sourceLineNo">314</span><a name="line.314"></a>
+<span class="sourceLineNo">315</span>    /**<a name="line.315"></a>
+<span class="sourceLineNo">316</span>     * The number of examples loaded.<a name="line.316"></a>
+<span class="sourceLineNo">317</span>     *<a name="line.317"></a>
+<span class="sourceLineNo">318</span>     * @return The number of examples.<a name="line.318"></a>
+<span class="sourceLineNo">319</span>     */<a name="line.319"></a>
+<span class="sourceLineNo">320</span>    public int size() {<a name="line.320"></a>
+<span class="sourceLineNo">321</span>        return data.size();<a name="line.321"></a>
+<span class="sourceLineNo">322</span>    }<a name="line.322"></a>
+<span class="sourceLineNo">323</span><a name="line.323"></a>
+<span class="sourceLineNo">324</span>    /**<a name="line.324"></a>
+<span class="sourceLineNo">325</span>     * The type of the features that were loaded in.<a name="line.325"></a>
+<span class="sourceLineNo">326</span>     *<a name="line.326"></a>
+<span class="sourceLineNo">327</span>     * @return The feature type.<a name="line.327"></a>
+<span class="sourceLineNo">328</span>     */<a name="line.328"></a>
+<span class="sourceLineNo">329</span>    public IDXType getDataType() {<a name="line.329"></a>
+<span class="sourceLineNo">330</span>        return dataType;<a name="line.330"></a>
+<span class="sourceLineNo">331</span>    }<a name="line.331"></a>
+<span class="sourceLineNo">332</span><a name="line.332"></a>
+<span class="sourceLineNo">333</span>    @Override<a name="line.333"></a>
+<span class="sourceLineNo">334</span>    public Iterator&lt;Example&lt;T&gt;&gt; iterator() {<a name="line.334"></a>
+<span class="sourceLineNo">335</span>        return data.iterator();<a name="line.335"></a>
+<span class="sourceLineNo">336</span>    }<a name="line.336"></a>
+<span class="sourceLineNo">337</span><a name="line.337"></a>
+<span class="sourceLineNo">338</span>    /**<a name="line.338"></a>
+<span class="sourceLineNo">339</span>     * Java side representation for an IDX file.<a name="line.339"></a>
+<span class="sourceLineNo">340</span>     */<a name="line.340"></a>
+<span class="sourceLineNo">341</span>    public static class IDXData {<a name="line.341"></a>
+<span class="sourceLineNo">342</span>        final IDXType dataType;<a name="line.342"></a>
+<span class="sourceLineNo">343</span>        final int[] shape;<a name="line.343"></a>
+<span class="sourceLineNo">344</span>        final double[] data;<a name="line.344"></a>
+<span class="sourceLineNo">345</span><a name="line.345"></a>
+<span class="sourceLineNo">346</span>        /**<a name="line.346"></a>
+<span class="sourceLineNo">347</span>         * Constructor, does not validate or copy inputs.<a name="line.347"></a>
+<span class="sourceLineNo">348</span>         * Use the factory method.<a name="line.348"></a>
+<span class="sourceLineNo">349</span>         * @param dataType The data type.<a name="line.349"></a>
+<span class="sourceLineNo">350</span>         * @param shape    The tensor shape.<a name="line.350"></a>
+<span class="sourceLineNo">351</span>         * @param data     The data to write.<a name="line.351"></a>
+<span class="sourceLineNo">352</span>         */<a name="line.352"></a>
+<span class="sourceLineNo">353</span>        IDXData(IDXType dataType, int[] shape, double[] data) {<a name="line.353"></a>
+<span class="sourceLineNo">354</span>            this.dataType = dataType;<a name="line.354"></a>
+<span class="sourceLineNo">355</span>            this.shape = shape;<a name="line.355"></a>
+<span class="sourceLineNo">356</span>            this.data = data;<a name="line.356"></a>
+<span class="sourceLineNo">357</span>        }<a name="line.357"></a>
+<span class="sourceLineNo">358</span><a name="line.358"></a>
+<span class="sourceLineNo">359</span>        /**<a name="line.359"></a>
+<span class="sourceLineNo">360</span>         * Constructs an IDXData, validating the input and defensively copying it.<a name="line.360"></a>
+<span class="sourceLineNo">361</span>         *<a name="line.361"></a>
+<span class="sourceLineNo">362</span>         * @param dataType The data type.<a name="line.362"></a>
+<span class="sourceLineNo">363</span>         * @param shape    The tensor shape.<a name="line.363"></a>
+<span class="sourceLineNo">364</span>         * @param data     The data to write.<a name="line.364"></a>
+<span class="sourceLineNo">365</span>         * @return An IDXData.<a name="line.365"></a>
+<span class="sourceLineNo">366</span>         */<a name="line.366"></a>
+<span class="sourceLineNo">367</span>        public static IDXData createIDXData(IDXType dataType, int[] shape, double[] data) {<a name="line.367"></a>
+<span class="sourceLineNo">368</span>            int[] shapeCopy = Arrays.copyOf(shape, shape.length);<a name="line.368"></a>
+<span class="sourceLineNo">369</span>            double[] dataCopy = Arrays.copyOf(data, data.length);<a name="line.369"></a>
+<span class="sourceLineNo">370</span>            if (shape.length &gt; 128) {<a name="line.370"></a>
+<span class="sourceLineNo">371</span>                throw new IllegalArgumentException("Must have fewer than 128 dimensions");<a name="line.371"></a>
+<span class="sourceLineNo">372</span>            }<a name="line.372"></a>
+<span class="sourceLineNo">373</span>            int numElements = 1;<a name="line.373"></a>
+<span class="sourceLineNo">374</span>            for (int i = 0; i &lt; shapeCopy.length; i++) {<a name="line.374"></a>
+<span class="sourceLineNo">375</span>                numElements *= shapeCopy[i];<a name="line.375"></a>
+<span class="sourceLineNo">376</span>                if (shapeCopy[i] &lt; 1) {<a name="line.376"></a>
+<span class="sourceLineNo">377</span>                    throw new IllegalArgumentException("Invalid shape, all elements must be positive, found " + Arrays.toString(shapeCopy));<a name="line.377"></a>
+<span class="sourceLineNo">378</span>                }<a name="line.378"></a>
+<span class="sourceLineNo">379</span>            }<a name="line.379"></a>
+<span class="sourceLineNo">380</span>            if (numElements != dataCopy.length) {<a name="line.380"></a>
+<span class="sourceLineNo">381</span>                throw new IllegalArgumentException("Incorrect number of elements, expected " + numElements + ", found " + dataCopy.length);<a name="line.381"></a>
+<span class="sourceLineNo">382</span>            }<a name="line.382"></a>
+<span class="sourceLineNo">383</span><a name="line.383"></a>
+<span class="sourceLineNo">384</span>            if (dataType != IDXType.DOUBLE) {<a name="line.384"></a>
+<span class="sourceLineNo">385</span>                for (int i = 0; i &lt; dataCopy.length; i++) {<a name="line.385"></a>
+<span class="sourceLineNo">386</span>                    switch (dataType) {<a name="line.386"></a>
+<span class="sourceLineNo">387</span>                        case UBYTE:<a name="line.387"></a>
+<span class="sourceLineNo">388</span>                            int tmpU = 0xFF &amp; (int) dataCopy[i];<a name="line.388"></a>
+<span class="sourceLineNo">389</span>                            if (dataCopy[i] != tmpU) {<a name="line.389"></a>
+<span class="sourceLineNo">390</span>                                throw new IllegalArgumentException("Invalid value at idx " + i + ", could not be converted to unsigned byte");<a name="line.390"></a>
+<span class="sourceLineNo">391</span>                            }<a name="line.391"></a>
+<span class="sourceLineNo">392</span>                            break;<a name="line.392"></a>
+<span class="sourceLineNo">393</span>                        case BYTE:<a name="line.393"></a>
+<span class="sourceLineNo">394</span>                            byte tmpB = (byte) dataCopy[i];<a name="line.394"></a>
+<span class="sourceLineNo">395</span>                            if (dataCopy[i] != tmpB) {<a name="line.395"></a>
+<span class="sourceLineNo">396</span>                                throw new IllegalArgumentException("Invalid value at idx " + i + ", could not be converted to byte");<a name="line.396"></a>
+<span class="sourceLineNo">397</span>                            }<a name="line.397"></a>
+<span class="sourceLineNo">398</span>                            break;<a name="line.398"></a>
+<span class="sourceLineNo">399</span>                        case SHORT:<a name="line.399"></a>
+<span class="sourceLineNo">400</span>                            short tmpS = (short) dataCopy[i];<a name="line.400"></a>
+<span class="sourceLineNo">401</span>                            if (dataCopy[i] != tmpS) {<a name="line.401"></a>
+<span class="sourceLineNo">402</span>                                throw new IllegalArgumentException("Invalid value at idx " + i + ", could not be converted to short");<a name="line.402"></a>
+<span class="sourceLineNo">403</span>                            }<a name="line.403"></a>
+<span class="sourceLineNo">404</span>                            break;<a name="line.404"></a>
+<span class="sourceLineNo">405</span>                        case INT:<a name="line.405"></a>
+<span class="sourceLineNo">406</span>                            int tmpI = (int) dataCopy[i];<a name="line.406"></a>
+<span class="sourceLineNo">407</span>                            if (dataCopy[i] != tmpI) {<a name="line.407"></a>
+<span class="sourceLineNo">408</span>                                throw new IllegalArgumentException("Invalid value at idx " + i + ", could not be converted to int");<a name="line.408"></a>
+<span class="sourceLineNo">409</span>                            }<a name="line.409"></a>
+<span class="sourceLineNo">410</span>                            break;<a name="line.410"></a>
+<span class="sourceLineNo">411</span>                        case FLOAT:<a name="line.411"></a>
+<span class="sourceLineNo">412</span>                            float tmpF = (float) dataCopy[i];<a name="line.412"></a>
+<span class="sourceLineNo">413</span>                            if (dataCopy[i] != tmpF) {<a name="line.413"></a>
+<span class="sourceLineNo">414</span>                                throw new IllegalArgumentException("Invalid value at idx " + i + ", could not be converted to float");<a name="line.414"></a>
+<span class="sourceLineNo">415</span>                            }<a name="line.415"></a>
+<span class="sourceLineNo">416</span>                            break;<a name="line.416"></a>
+<span class="sourceLineNo">417</span>                    }<a name="line.417"></a>
+<span class="sourceLineNo">418</span>                }<a name="line.418"></a>
+<span class="sourceLineNo">419</span>            }<a name="line.419"></a>
+<span class="sourceLineNo">420</span><a name="line.420"></a>
+<span class="sourceLineNo">421</span>            return new IDXData(dataType, shape, data);<a name="line.421"></a>
+<span class="sourceLineNo">422</span>        }<a name="line.422"></a>
+<span class="sourceLineNo">423</span><a name="line.423"></a>
+<span class="sourceLineNo">424</span>        /**<a name="line.424"></a>
+<span class="sourceLineNo">425</span>         * Writes out this IDXData to the specified path.<a name="line.425"></a>
+<span class="sourceLineNo">426</span>         *<a name="line.426"></a>
+<span class="sourceLineNo">427</span>         * @param outputPath The path to write to.<a name="line.427"></a>
+<span class="sourceLineNo">428</span>         * @param gzip       If true, gzip the output.<a name="line.428"></a>
+<span class="sourceLineNo">429</span>         * @throws IOException If the write failed.<a name="line.429"></a>
+<span class="sourceLineNo">430</span>         */<a name="line.430"></a>
+<span class="sourceLineNo">431</span>        public void save(Path outputPath, boolean gzip) throws IOException {<a name="line.431"></a>
+<span class="sourceLineNo">432</span>            try (DataOutputStream ds = makeStream(outputPath, gzip)) {<a name="line.432"></a>
+<span class="sourceLineNo">433</span>                // Magic number<a name="line.433"></a>
+<span class="sourceLineNo">434</span>                ds.writeShort(0);<a name="line.434"></a>
+<span class="sourceLineNo">435</span>                // Data type<a name="line.435"></a>
+<span class="sourceLineNo">436</span>                ds.writeByte(dataType.value);<a name="line.436"></a>
+<span class="sourceLineNo">437</span>                // Num dimensions<a name="line.437"></a>
+<span class="sourceLineNo">438</span>                ds.writeByte(shape.length);<a name="line.438"></a>
+<span class="sourceLineNo">439</span><a name="line.439"></a>
+<span class="sourceLineNo">440</span>                for (int i = 0; i &lt; shape.length; i++) {<a name="line.440"></a>
+<span class="sourceLineNo">441</span>                    ds.writeInt(shape[i]);<a name="line.441"></a>
+<span class="sourceLineNo">442</span>                }<a name="line.442"></a>
+<span class="sourceLineNo">443</span><a name="line.443"></a>
+<span class="sourceLineNo">444</span>                for (int i = 0; i &lt; data.length; i++) {<a name="line.444"></a>
+<span class="sourceLineNo">445</span>                    switch (dataType) {<a name="line.445"></a>
+<span class="sourceLineNo">446</span>                        case UBYTE:<a name="line.446"></a>
+<span class="sourceLineNo">447</span>                            ds.writeByte(0xFF &amp; (int) data[i]);<a name="line.447"></a>
+<span class="sourceLineNo">448</span>                            break;<a name="line.448"></a>
+<span class="sourceLineNo">449</span>                        case BYTE:<a name="line.449"></a>
+<span class="sourceLineNo">450</span>                            ds.writeByte((byte) data[i]);<a name="line.450"></a>
+<span class="sourceLineNo">451</span>                            break;<a name="line.451"></a>
+<span class="sourceLineNo">452</span>                        case SHORT:<a name="line.452"></a>
+<span class="sourceLineNo">453</span>                            ds.writeShort((short) data[i]);<a name="line.453"></a>
+<span class="sourceLineNo">454</span>                            break;<a name="line.454"></a>
+<span class="sourceLineNo">455</span>                        case INT:<a name="line.455"></a>
+<span class="sourceLineNo">456</span>                            ds.writeInt((int) data[i]);<a name="line.456"></a>
+<span class="sourceLineNo">457</span>                            break;<a name="line.457"></a>
+<span class="sourceLineNo">458</span>                        case FLOAT:<a name="line.458"></a>
+<span class="sourceLineNo">459</span>                            ds.writeFloat((float) data[i]);<a name="line.459"></a>
+<span class="sourceLineNo">460</span>                            break;<a name="line.460"></a>
+<span class="sourceLineNo">461</span>                        case DOUBLE:<a name="line.461"></a>
+<span class="sourceLineNo">462</span>                            ds.writeDouble(data[i]);<a name="line.462"></a>
+<span class="sourceLineNo">463</span>                            break;<a name="line.463"></a>
+<span class="sourceLineNo">464</span>                    }<a name="line.464"></a>
+<span class="sourceLineNo">465</span>                }<a name="line.465"></a>
+<span class="sourceLineNo">466</span>            }<a name="line.466"></a>
+<span class="sourceLineNo">467</span>        }<a name="line.467"></a>
+<span class="sourceLineNo">468</span><a name="line.468"></a>
+<span class="sourceLineNo">469</span>        private static DataOutputStream makeStream(Path outputPath, boolean gzip) throws IOException {<a name="line.469"></a>
+<span class="sourceLineNo">470</span>            OutputStream stream;<a name="line.470"></a>
+<span class="sourceLineNo">471</span>            if (gzip) {<a name="line.471"></a>
+<span class="sourceLineNo">472</span>                stream = new GZIPOutputStream(new FileOutputStream(outputPath.toFile()));<a name="line.472"></a>
+<span class="sourceLineNo">473</span>            } else {<a name="line.473"></a>
+<span class="sourceLineNo">474</span>                stream = new FileOutputStream(outputPath.toFile());<a name="line.474"></a>
+<span class="sourceLineNo">475</span>            }<a name="line.475"></a>
+<span class="sourceLineNo">476</span>            return new DataOutputStream(new BufferedOutputStream(stream));<a name="line.476"></a>
+<span class="sourceLineNo">477</span>        }<a name="line.477"></a>
+<span class="sourceLineNo">478</span>    }<a name="line.478"></a>
+<span class="sourceLineNo">479</span><a name="line.479"></a>
+<span class="sourceLineNo">480</span>    /**<a name="line.480"></a>
+<span class="sourceLineNo">481</span>     * Provenance class for {@link IDXDataSource}.<a name="line.481"></a>
+<span class="sourceLineNo">482</span>     */<a name="line.482"></a>
+<span class="sourceLineNo">483</span>    public static final class IDXDataSourceProvenance extends SkeletalConfiguredObjectProvenance implements DataSourceProvenance {<a name="line.483"></a>
+<span class="sourceLineNo">484</span>        private static final long serialVersionUID = 1L;<a name="line.484"></a>
+<span class="sourceLineNo">485</span><a name="line.485"></a>
+<span class="sourceLineNo">486</span>        public static final String OUTPUT_FILE_MODIFIED_TIME = "output-file-modified-time";<a name="line.486"></a>
+<span class="sourceLineNo">487</span>        public static final String FEATURES_FILE_MODIFIED_TIME = "features-file-modified-time";<a name="line.487"></a>
+<span class="sourceLineNo">488</span>        public static final String FEATURES_RESOURCE_HASH = "features-resource-hash";<a name="line.488"></a>
+<span class="sourceLineNo">489</span>        public static final String OUTPUT_RESOURCE_HASH = "output-resource-hash";<a name="line.489"></a>
+<span class="sourceLineNo">490</span>        public static final String FEATURE_TYPE = "idx-feature-type";<a name="line.490"></a>
+<span class="sourceLineNo">491</span><a name="line.491"></a>
+<span class="sourceLineNo">492</span>        private final DateTimeProvenance featuresFileModifiedTime;<a name="line.492"></a>
+<span class="sourceLineNo">493</span>        private final DateTimeProvenance outputFileModifiedTime;<a name="line.493"></a>
+<span class="sourceLineNo">494</span>        private final DateTimeProvenance dataSourceCreationTime;<a name="line.494"></a>
+<span class="sourceLineNo">495</span>        private final HashProvenance featuresSHA256Hash;<a name="line.495"></a>
+<span class="sourceLineNo">496</span>        private final HashProvenance outputSHA256Hash;<a name="line.496"></a>
+<span class="sourceLineNo">497</span>        private final EnumProvenance&lt;IDXType&gt; featureType;<a name="line.497"></a>
+<span class="sourceLineNo">498</span><a name="line.498"></a>
+<span class="sourceLineNo">499</span>        &lt;T extends Output&lt;T&gt;&gt; IDXDataSourceProvenance(IDXDataSource&lt;T&gt; host) {<a name="line.499"></a>
+<span class="sourceLineNo">500</span>            super(host, "DataSource");<a name="line.500"></a>
+<span class="sourceLineNo">501</span>            this.outputFileModifiedTime = new DateTimeProvenance(OUTPUT_FILE_MODIFIED_TIME, OffsetDateTime.ofInstant(Instant.ofEpochMilli(host.outputPath.toFile().lastModified()), ZoneId.systemDefault()));<a name="line.501"></a>
+<span class="sourceLineNo">502</span>            this.featuresFileModifiedTime = new DateTimeProvenance(FEATURES_FILE_MODIFIED_TIME, OffsetDateTime.ofInstant(Instant.ofEpochMilli(host.featuresPath.toFile().lastModified()), ZoneId.systemDefault()));<a name="line.502"></a>
+<span class="sourceLineNo">503</span>            this.dataSourceCreationTime = new DateTimeProvenance(DATASOURCE_CREATION_TIME, OffsetDateTime.now());<a name="line.503"></a>
+<span class="sourceLineNo">504</span>            this.featuresSHA256Hash = new HashProvenance(DEFAULT_HASH_TYPE, FEATURES_RESOURCE_HASH, ProvenanceUtil.hashResource(DEFAULT_HASH_TYPE, host.featuresPath));<a name="line.504"></a>
+<span class="sourceLineNo">505</span>            this.outputSHA256Hash = new HashProvenance(DEFAULT_HASH_TYPE, OUTPUT_RESOURCE_HASH, ProvenanceUtil.hashResource(DEFAULT_HASH_TYPE, host.outputPath));<a name="line.505"></a>
+<span class="sourceLineNo">506</span>            this.featureType = new EnumProvenance&lt;&gt;(FEATURE_TYPE, host.dataType);<a name="line.506"></a>
+<span class="sourceLineNo">507</span>        }<a name="line.507"></a>
+<span class="sourceLineNo">508</span><a name="line.508"></a>
+<span class="sourceLineNo">509</span>        public IDXDataSourceProvenance(Map&lt;String, Provenance&gt; map) {<a name="line.509"></a>
+<span class="sourceLineNo">510</span>            this(extractProvenanceInfo(map));<a name="line.510"></a>
+<span class="sourceLineNo">511</span>        }<a name="line.511"></a>
+<span class="sourceLineNo">512</span><a name="line.512"></a>
+<span class="sourceLineNo">513</span>        // Suppressed due to enum provenance cast<a name="line.513"></a>
+<span class="sourceLineNo">514</span>        @SuppressWarnings("unchecked")<a name="line.514"></a>
+<span class="sourceLineNo">515</span>        private IDXDataSourceProvenance(ExtractedInfo info) {<a name="line.515"></a>
+<span class="sourceLineNo">516</span>            super(info);<a name="line.516"></a>
+<span class="sourceLineNo">517</span>            this.featuresFileModifiedTime = (DateTimeProvenance) info.instanceValues.get(FEATURES_FILE_MODIFIED_TIME);<a name="line.517"></a>
+<span class="sourceLineNo">518</span>            this.outputFileModifiedTime = (DateTimeProvenance) info.instanceValues.get(OUTPUT_FILE_MODIFIED_TIME);<a name="line.518"></a>
+<span class="sourceLineNo">519</span>            this.dataSourceCreationTime = (DateTimeProvenance) info.instanceValues.get(DATASOURCE_CREATION_TIME);<a name="line.519"></a>
+<span class="sourceLineNo">520</span>            this.featuresSHA256Hash = (HashProvenance) info.instanceValues.get(FEATURES_RESOURCE_HASH);<a name="line.520"></a>
+<span class="sourceLineNo">521</span>            this.outputSHA256Hash = (HashProvenance) info.instanceValues.get(OUTPUT_RESOURCE_HASH);<a name="line.521"></a>
+<span class="sourceLineNo">522</span>            this.featureType = (EnumProvenance&lt;IDXType&gt;) info.instanceValues.get(FEATURE_TYPE);<a name="line.522"></a>
+<span class="sourceLineNo">523</span>        }<a name="line.523"></a>
+<span class="sourceLineNo">524</span><a name="line.524"></a>
+<span class="sourceLineNo">525</span>        protected static ExtractedInfo extractProvenanceInfo(Map&lt;String, Provenance&gt; map) {<a name="line.525"></a>
+<span class="sourceLineNo">526</span>            Map&lt;String, Provenance&gt; configuredParameters = new HashMap&lt;&gt;(map);<a name="line.526"></a>
+<span class="sourceLineNo">527</span>            String className = ObjectProvenance.checkAndExtractProvenance(configuredParameters, CLASS_NAME, StringProvenance.class, IDXDataSourceProvenance.class.getSimpleName()).getValue();<a name="line.527"></a>
+<span class="sourceLineNo">528</span>            String hostTypeStringName = ObjectProvenance.checkAndExtractProvenance(configuredParameters, HOST_SHORT_NAME, StringProvenance.class, IDXDataSourceProvenance.class.getSimpleName()).getValue();<a name="line.528"></a>
+<span class="sourceLineNo">529</span><a name="line.529"></a>
+<span class="sourceLineNo">530</span>            Map&lt;String, PrimitiveProvenance&lt;?&gt;&gt; instanceParameters = new HashMap&lt;&gt;();<a name="line.530"></a>
+<span class="sourceLineNo">531</span>            instanceParameters.put(FEATURES_FILE_MODIFIED_TIME, ObjectProvenance.checkAndExtractProvenance(configuredParameters, FEATURES_FILE_MODIFIED_TIME, DateTimeProvenance.class, IDXDataSourceProvenance.class.getSimpleName()));<a name="line.531"></a>
+<span class="sourceLineNo">532</span>            instanceParameters.put(OUTPUT_FILE_MODIFIED_TIME, ObjectProvenance.checkAndExtractProvenance(configuredParameters, OUTPUT_FILE_MODIFIED_TIME, DateTimeProvenance.class, IDXDataSourceProvenance.class.getSimpleName()));<a name="line.532"></a>
+<span class="sourceLineNo">533</span>            instanceParameters.put(DATASOURCE_CREATION_TIME, ObjectProvenance.checkAndExtractProvenance(configuredParameters, DATASOURCE_CREATION_TIME, DateTimeProvenance.class, IDXDataSourceProvenance.class.getSimpleName()));<a name="line.533"></a>
+<span class="sourceLineNo">534</span>            instanceParameters.put(FEATURES_RESOURCE_HASH, ObjectProvenance.checkAndExtractProvenance(configuredParameters, FEATURES_RESOURCE_HASH, HashProvenance.class, IDXDataSourceProvenance.class.getSimpleName()));<a name="line.534"></a>
+<span class="sourceLineNo">535</span>            instanceParameters.put(OUTPUT_RESOURCE_HASH, ObjectProvenance.checkAndExtractProvenance(configuredParameters, OUTPUT_RESOURCE_HASH, HashProvenance.class, IDXDataSourceProvenance.class.getSimpleName()));<a name="line.535"></a>
+<span class="sourceLineNo">536</span>            instanceParameters.put(FEATURE_TYPE, ObjectProvenance.checkAndExtractProvenance(configuredParameters, FEATURE_TYPE, EnumProvenance.class, IDXDataSourceProvenance.class.getSimpleName()));<a name="line.536"></a>
+<span class="sourceLineNo">537</span><a name="line.537"></a>
+<span class="sourceLineNo">538</span>            return new ExtractedInfo(className, hostTypeStringName, configuredParameters, instanceParameters);<a name="line.538"></a>
+<span class="sourceLineNo">539</span>        }<a name="line.539"></a>
+<span class="sourceLineNo">540</span><a name="line.540"></a>
+<span class="sourceLineNo">541</span>        @Override<a name="line.541"></a>
+<span class="sourceLineNo">542</span>        public Map&lt;String, PrimitiveProvenance&lt;?&gt;&gt; getInstanceValues() {<a name="line.542"></a>
+<span class="sourceLineNo">543</span>            Map&lt;String, PrimitiveProvenance&lt;?&gt;&gt; map = super.getInstanceValues();<a name="line.543"></a>
+<span class="sourceLineNo">544</span><a name="line.544"></a>
+<span class="sourceLineNo">545</span>            map.put(featuresFileModifiedTime.getKey(), featuresFileModifiedTime);<a name="line.545"></a>
+<span class="sourceLineNo">546</span>            map.put(outputFileModifiedTime.getKey(), outputFileModifiedTime);<a name="line.546"></a>
+<span class="sourceLineNo">547</span>            map.put(dataSourceCreationTime.getKey(), dataSourceCreationTime);<a name="line.547"></a>
+<span class="sourceLineNo">548</span>            map.put(featuresSHA256Hash.getKey(), featuresSHA256Hash);<a name="line.548"></a>
+<span class="sourceLineNo">549</span>            map.put(outputSHA256Hash.getKey(), outputSHA256Hash);<a name="line.549"></a>
+<span class="sourceLineNo">550</span>            map.put(featureType.getKey(), featureType);<a name="line.550"></a>
+<span class="sourceLineNo">551</span><a name="line.551"></a>
+<span class="sourceLineNo">552</span>            return map;<a name="line.552"></a>
+<span class="sourceLineNo">553</span>        }<a name="line.553"></a>
+<span class="sourceLineNo">554</span>    }<a name="line.554"></a>
+<span class="sourceLineNo">555</span>}<a name="line.555"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</div>
+</body>
+</html>

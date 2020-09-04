@@ -47,19 +47,20 @@ nav_order: 103
         </p>
         <h3>Maven</h3>
         <p>
-            <pre>
-&lt;dependency&gt;
-    &lt;groupId&gt;org.tribuo&lt;/groupId&gt;
-    &lt;artifactId&gt;tribuo-all&lt;/artifactId&gt;
-    &lt;version&gt;{{ site.tribuo_version }}&lt;/version&gt;
-    &lt;type&gt;pom&lt;/type&gt;
-&lt;/dependency&gt;</pre>
+{% highlight xml %}
+<dependency>
+    <groupId>org.tribuo</groupId>
+    <artifactId>tribuo-all</artifactId>
+    <version>{{ site.tribuo_version }}</version>
+    <type>pom</type>
+</dependency>
+{% endhighlight %}
         </p>
         <h3>Gradle</h3>
         <p>
-            <pre>
-implementation 'org.tribuo:tribuo-all:{{ site.tribuo_version }}@pom'</pre>
-        </p>
+{% highlight groovy %}
+implementation 'org.tribuo:tribuo-all:{{ site.tribuo_version }}@pom'
+{% endhighlight xml %}
     </div>
 </div>
 <div class="row">

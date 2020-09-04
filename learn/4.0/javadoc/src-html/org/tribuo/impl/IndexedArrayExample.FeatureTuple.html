@@ -32,340 +32,344 @@
 <span class="sourceLineNo">024</span>import org.tribuo.Output;<a name="line.24"></a>
 <span class="sourceLineNo">025</span>import org.tribuo.util.Merger;<a name="line.25"></a>
 <span class="sourceLineNo">026</span><a name="line.26"></a>
-<span class="sourceLineNo">027</span>import java.util.Arrays;<a name="line.27"></a>
-<span class="sourceLineNo">028</span>import java.util.Collection;<a name="line.28"></a>
-<span class="sourceLineNo">029</span>import java.util.HashMap;<a name="line.29"></a>
-<span class="sourceLineNo">030</span>import java.util.Iterator;<a name="line.30"></a>
-<span class="sourceLineNo">031</span>import java.util.List;<a name="line.31"></a>
-<span class="sourceLineNo">032</span>import java.util.Map;<a name="line.32"></a>
-<span class="sourceLineNo">033</span>import java.util.NoSuchElementException;<a name="line.33"></a>
-<span class="sourceLineNo">034</span>import java.util.Objects;<a name="line.34"></a>
-<span class="sourceLineNo">035</span>import java.util.PriorityQueue;<a name="line.35"></a>
-<span class="sourceLineNo">036</span><a name="line.36"></a>
-<span class="sourceLineNo">037</span>/**<a name="line.37"></a>
-<span class="sourceLineNo">038</span> * A version of ArrayExample which also has the id numbers.<a name="line.38"></a>
-<span class="sourceLineNo">039</span> * &lt;p&gt;<a name="line.39"></a>
-<span class="sourceLineNo">040</span> * Used in feature selection to provide log n lookups. May be used<a name="line.40"></a>
-<span class="sourceLineNo">041</span> * elsewhere in the future as a performance optimisation.<a name="line.41"></a>
-<span class="sourceLineNo">042</span> */<a name="line.42"></a>
-<span class="sourceLineNo">043</span>public class IndexedArrayExample&lt;T extends Output&lt;T&gt;&gt; extends ArrayExample&lt;T&gt; {<a name="line.43"></a>
-<span class="sourceLineNo">044</span>    private static final long serialVersionUID = 1L;<a name="line.44"></a>
-<span class="sourceLineNo">045</span><a name="line.45"></a>
-<span class="sourceLineNo">046</span>    protected int[] featureIDs;<a name="line.46"></a>
-<span class="sourceLineNo">047</span><a name="line.47"></a>
-<span class="sourceLineNo">048</span>    protected final int outputID;<a name="line.48"></a>
-<span class="sourceLineNo">049</span><a name="line.49"></a>
-<span class="sourceLineNo">050</span>    private final ImmutableFeatureMap featureMap;<a name="line.50"></a>
-<span class="sourceLineNo">051</span><a name="line.51"></a>
-<span class="sourceLineNo">052</span>    private final ImmutableOutputInfo&lt;T&gt; outputMap;<a name="line.52"></a>
-<span class="sourceLineNo">053</span><a name="line.53"></a>
-<span class="sourceLineNo">054</span>    /**<a name="line.54"></a>
-<span class="sourceLineNo">055</span>     * Copy constructor.<a name="line.55"></a>
-<span class="sourceLineNo">056</span>     * @param other The example to copy.<a name="line.56"></a>
-<span class="sourceLineNo">057</span>     */<a name="line.57"></a>
-<span class="sourceLineNo">058</span>    public IndexedArrayExample(IndexedArrayExample&lt;T&gt; other) {<a name="line.58"></a>
-<span class="sourceLineNo">059</span>        super(other.getOutput(),other.getWeight(),other.getMetadata());<a name="line.59"></a>
-<span class="sourceLineNo">060</span>        featureNames = Arrays.copyOf(other.featureNames,other.featureNames.length);<a name="line.60"></a>
-<span class="sourceLineNo">061</span>        featureIDs = Arrays.copyOf(other.featureIDs,other.size());<a name="line.61"></a>
-<span class="sourceLineNo">062</span>        featureValues = Arrays.copyOf(other.featureValues,other.featureValues.length);<a name="line.62"></a>
-<span class="sourceLineNo">063</span>        featureMap = other.featureMap;<a name="line.63"></a>
-<span class="sourceLineNo">064</span>        outputMap = other.outputMap;<a name="line.64"></a>
-<span class="sourceLineNo">065</span>        outputID = outputMap.getID(output);<a name="line.65"></a>
-<span class="sourceLineNo">066</span>        size = other.size;<a name="line.66"></a>
-<span class="sourceLineNo">067</span>    }<a name="line.67"></a>
-<span class="sourceLineNo">068</span><a name="line.68"></a>
-<span class="sourceLineNo">069</span>    /**<a name="line.69"></a>
-<span class="sourceLineNo">070</span>     * This constructor removes unknown features.<a name="line.70"></a>
-<span class="sourceLineNo">071</span>     * @param other The example to copy from.<a name="line.71"></a>
-<span class="sourceLineNo">072</span>     * @param featureMap The feature map.<a name="line.72"></a>
-<span class="sourceLineNo">073</span>     * @param outputMap The output info.<a name="line.73"></a>
-<span class="sourceLineNo">074</span>     */<a name="line.74"></a>
-<span class="sourceLineNo">075</span>    public IndexedArrayExample(Example&lt;T&gt; other, ImmutableFeatureMap featureMap, ImmutableOutputInfo&lt;T&gt; outputMap) {<a name="line.75"></a>
-<span class="sourceLineNo">076</span>        super(other);<a name="line.76"></a>
-<span class="sourceLineNo">077</span>        this.featureIDs = new int[other.size()];<a name="line.77"></a>
-<span class="sourceLineNo">078</span>        this.featureMap = featureMap;<a name="line.78"></a>
-<span class="sourceLineNo">079</span>        this.outputMap = outputMap;<a name="line.79"></a>
-<span class="sourceLineNo">080</span>        this.outputID = outputMap.getID(output);<a name="line.80"></a>
-<span class="sourceLineNo">081</span>        for (int i = 0; i &lt; featureNames.length; i++) {<a name="line.81"></a>
-<span class="sourceLineNo">082</span>            featureIDs[i] = featureMap.getID(featureNames[i]);<a name="line.82"></a>
-<span class="sourceLineNo">083</span>        }<a name="line.83"></a>
-<span class="sourceLineNo">084</span>        int[] newIDs = new int[other.size()];<a name="line.84"></a>
-<span class="sourceLineNo">085</span>        String[] newNames = new String[other.size()];<a name="line.85"></a>
-<span class="sourceLineNo">086</span>        double[] newValues = new double[other.size()];<a name="line.86"></a>
-<span class="sourceLineNo">087</span>        int counter = 0;<a name="line.87"></a>
-<span class="sourceLineNo">088</span>        for (int i = 0; i &lt; featureIDs.length; i++) {<a name="line.88"></a>
-<span class="sourceLineNo">089</span>            if (featureIDs[i] != -1) {<a name="line.89"></a>
-<span class="sourceLineNo">090</span>                newIDs[counter] = featureIDs[i];<a name="line.90"></a>
-<span class="sourceLineNo">091</span>                newValues[counter] = featureValues[i];<a name="line.91"></a>
-<span class="sourceLineNo">092</span>                newNames[counter] = featureNames[i];<a name="line.92"></a>
-<span class="sourceLineNo">093</span>                counter++;<a name="line.93"></a>
-<span class="sourceLineNo">094</span>            }<a name="line.94"></a>
-<span class="sourceLineNo">095</span>        }<a name="line.95"></a>
-<span class="sourceLineNo">096</span>        size = counter;<a name="line.96"></a>
-<span class="sourceLineNo">097</span>        featureNames = newNames;<a name="line.97"></a>
-<span class="sourceLineNo">098</span>        featureIDs = newIDs;<a name="line.98"></a>
-<span class="sourceLineNo">099</span>        featureValues = newValues;<a name="line.99"></a>
-<span class="sourceLineNo">100</span>    }<a name="line.100"></a>
-<span class="sourceLineNo">101</span><a name="line.101"></a>
-<span class="sourceLineNo">102</span>    @Override<a name="line.102"></a>
-<span class="sourceLineNo">103</span>    public boolean equals(Object o) {<a name="line.103"></a>
-<span class="sourceLineNo">104</span>        if (this == o) return true;<a name="line.104"></a>
-<span class="sourceLineNo">105</span>        if (!(o instanceof IndexedArrayExample)) return false;<a name="line.105"></a>
-<span class="sourceLineNo">106</span>        if (!super.equals(o)) return false;<a name="line.106"></a>
-<span class="sourceLineNo">107</span>        IndexedArrayExample&lt;?&gt; that = (IndexedArrayExample&lt;?&gt;) o;<a name="line.107"></a>
-<span class="sourceLineNo">108</span>        return outputID == that.outputID &amp;&amp;<a name="line.108"></a>
-<span class="sourceLineNo">109</span>                Arrays.equals(featureIDs, that.featureIDs) &amp;&amp;<a name="line.109"></a>
-<span class="sourceLineNo">110</span>                featureMap.equals(that.featureMap) &amp;&amp;<a name="line.110"></a>
-<span class="sourceLineNo">111</span>                outputMap.equals(that.outputMap);<a name="line.111"></a>
-<span class="sourceLineNo">112</span>    }<a name="line.112"></a>
-<span class="sourceLineNo">113</span><a name="line.113"></a>
-<span class="sourceLineNo">114</span>    @Override<a name="line.114"></a>
-<span class="sourceLineNo">115</span>    public int hashCode() {<a name="line.115"></a>
-<span class="sourceLineNo">116</span>        int result = Objects.hash(super.hashCode(), outputID, featureMap, outputMap);<a name="line.116"></a>
-<span class="sourceLineNo">117</span>        result = 31 * result + Arrays.hashCode(featureIDs);<a name="line.117"></a>
-<span class="sourceLineNo">118</span>        return result;<a name="line.118"></a>
-<span class="sourceLineNo">119</span>    }<a name="line.119"></a>
-<span class="sourceLineNo">120</span><a name="line.120"></a>
-<span class="sourceLineNo">121</span>    @Override<a name="line.121"></a>
-<span class="sourceLineNo">122</span>    protected void growArray(int minCapacity) {<a name="line.122"></a>
-<span class="sourceLineNo">123</span>        int newCapacity = newCapacity(minCapacity);<a name="line.123"></a>
-<span class="sourceLineNo">124</span>        featureNames = Arrays.copyOf(featureNames,newCapacity);<a name="line.124"></a>
-<span class="sourceLineNo">125</span>        featureIDs = Arrays.copyOf(featureIDs,newCapacity);<a name="line.125"></a>
-<span class="sourceLineNo">126</span>        featureValues = Arrays.copyOf(featureValues,newCapacity);<a name="line.126"></a>
-<span class="sourceLineNo">127</span>    }<a name="line.127"></a>
-<span class="sourceLineNo">128</span><a name="line.128"></a>
-<span class="sourceLineNo">129</span>    @Override<a name="line.129"></a>
-<span class="sourceLineNo">130</span>    public void add(Feature feature) {<a name="line.130"></a>
-<span class="sourceLineNo">131</span>        if (size &gt;= featureNames.length) {<a name="line.131"></a>
-<span class="sourceLineNo">132</span>            growArray();<a name="line.132"></a>
-<span class="sourceLineNo">133</span>        }<a name="line.133"></a>
-<span class="sourceLineNo">134</span>        featureNames[size] = feature.getName();<a name="line.134"></a>
-<span class="sourceLineNo">135</span>        featureIDs[size] = featureMap.getID(feature.getName());<a name="line.135"></a>
-<span class="sourceLineNo">136</span>        featureValues[size] = feature.getValue();<a name="line.136"></a>
-<span class="sourceLineNo">137</span>        size++;<a name="line.137"></a>
-<span class="sourceLineNo">138</span>        sort();<a name="line.138"></a>
-<span class="sourceLineNo">139</span>    }<a name="line.139"></a>
-<span class="sourceLineNo">140</span><a name="line.140"></a>
-<span class="sourceLineNo">141</span>    @Override<a name="line.141"></a>
-<span class="sourceLineNo">142</span>    public void addAll(Collection&lt;? extends Feature&gt; features) {<a name="line.142"></a>
-<span class="sourceLineNo">143</span>        if (size + features.size() &gt;= featureNames.length) {<a name="line.143"></a>
-<span class="sourceLineNo">144</span>            growArray(size+features.size());<a name="line.144"></a>
-<span class="sourceLineNo">145</span>        }<a name="line.145"></a>
-<span class="sourceLineNo">146</span>        for (Feature f : features) {<a name="line.146"></a>
-<span class="sourceLineNo">147</span>            featureNames[size] = f.getName();<a name="line.147"></a>
-<span class="sourceLineNo">148</span>            featureIDs[size] = featureMap.getID(f.getName());<a name="line.148"></a>
-<span class="sourceLineNo">149</span>            featureValues[size] = f.getValue();<a name="line.149"></a>
-<span class="sourceLineNo">150</span>            size++;<a name="line.150"></a>
-<span class="sourceLineNo">151</span>        }<a name="line.151"></a>
-<span class="sourceLineNo">152</span>        sort();<a name="line.152"></a>
-<span class="sourceLineNo">153</span>    }<a name="line.153"></a>
-<span class="sourceLineNo">154</span><a name="line.154"></a>
-<span class="sourceLineNo">155</span>    @Override<a name="line.155"></a>
-<span class="sourceLineNo">156</span>    protected void sort() {<a name="line.156"></a>
-<span class="sourceLineNo">157</span>        int[] sortedIndices = SortUtil.argsort(featureNames,0,size,true);<a name="line.157"></a>
-<span class="sourceLineNo">158</span><a name="line.158"></a>
-<span class="sourceLineNo">159</span>        String[] newNames = Arrays.copyOf(featureNames,size);<a name="line.159"></a>
-<span class="sourceLineNo">160</span>        int[] newIDs = Arrays.copyOf(featureIDs,size);<a name="line.160"></a>
-<span class="sourceLineNo">161</span>        double[] newValues = Arrays.copyOf(featureValues,size);<a name="line.161"></a>
-<span class="sourceLineNo">162</span>        for (int i = 0; i &lt; sortedIndices.length; i++) {<a name="line.162"></a>
-<span class="sourceLineNo">163</span>            featureNames[i] = newNames[sortedIndices[i]];<a name="line.163"></a>
-<span class="sourceLineNo">164</span>            featureIDs[i] = newIDs[sortedIndices[i]];<a name="line.164"></a>
-<span class="sourceLineNo">165</span>            featureValues[i] = newValues[sortedIndices[i]];<a name="line.165"></a>
-<span class="sourceLineNo">166</span>        }<a name="line.166"></a>
-<span class="sourceLineNo">167</span>    }<a name="line.167"></a>
-<span class="sourceLineNo">168</span><a name="line.168"></a>
-<span class="sourceLineNo">169</span>    @Override<a name="line.169"></a>
-<span class="sourceLineNo">170</span>    public void reduceByName(Merger merger) {<a name="line.170"></a>
-<span class="sourceLineNo">171</span>        if (size &gt; 0) {<a name="line.171"></a>
-<span class="sourceLineNo">172</span>            int[] sortedIndices = SortUtil.argsort(featureNames, 0, size, true);<a name="line.172"></a>
-<span class="sourceLineNo">173</span>            String[] newNames = new String[featureNames.length];<a name="line.173"></a>
-<span class="sourceLineNo">174</span>            int[] newIDs = new int[featureIDs.length];<a name="line.174"></a>
-<span class="sourceLineNo">175</span>            double[] newValues = new double[featureNames.length];<a name="line.175"></a>
-<span class="sourceLineNo">176</span>            for (int i = 0; i &lt; sortedIndices.length; i++) {<a name="line.176"></a>
-<span class="sourceLineNo">177</span>                newNames[i] = featureNames[sortedIndices[i]];<a name="line.177"></a>
-<span class="sourceLineNo">178</span>                newIDs[i] = featureIDs[sortedIndices[i]];<a name="line.178"></a>
-<span class="sourceLineNo">179</span>                newValues[i] = featureValues[sortedIndices[i]];<a name="line.179"></a>
-<span class="sourceLineNo">180</span>            }<a name="line.180"></a>
-<span class="sourceLineNo">181</span>            featureNames[0] = newNames[0];<a name="line.181"></a>
-<span class="sourceLineNo">182</span>            featureIDs[0] = newIDs[0];<a name="line.182"></a>
-<span class="sourceLineNo">183</span>            featureValues[0] = newValues[0];<a name="line.183"></a>
-<span class="sourceLineNo">184</span>            int dest = 0;<a name="line.184"></a>
-<span class="sourceLineNo">185</span>            for (int i = 1; i &lt; size; i++) {<a name="line.185"></a>
-<span class="sourceLineNo">186</span>                while ((i &lt; size) &amp;&amp; newNames[i].equals(featureNames[dest])) {<a name="line.186"></a>
-<span class="sourceLineNo">187</span>                    featureValues[dest] = merger.merge(featureValues[dest], newValues[i]);<a name="line.187"></a>
-<span class="sourceLineNo">188</span>                    i++;<a name="line.188"></a>
-<span class="sourceLineNo">189</span>                }<a name="line.189"></a>
-<span class="sourceLineNo">190</span>                if (i &lt; size) {<a name="line.190"></a>
-<span class="sourceLineNo">191</span>                    dest++;<a name="line.191"></a>
-<span class="sourceLineNo">192</span>                    featureNames[dest] = newNames[i];<a name="line.192"></a>
-<span class="sourceLineNo">193</span>                    featureIDs[dest] = newIDs[i];<a name="line.193"></a>
-<span class="sourceLineNo">194</span>                    featureValues[dest] = newValues[i];<a name="line.194"></a>
-<span class="sourceLineNo">195</span>                }<a name="line.195"></a>
-<span class="sourceLineNo">196</span>            }<a name="line.196"></a>
-<span class="sourceLineNo">197</span>            size = dest + 1;<a name="line.197"></a>
-<span class="sourceLineNo">198</span>        }<a name="line.198"></a>
-<span class="sourceLineNo">199</span>    }<a name="line.199"></a>
-<span class="sourceLineNo">200</span><a name="line.200"></a>
-<span class="sourceLineNo">201</span>    @Override<a name="line.201"></a>
-<span class="sourceLineNo">202</span>    public void removeFeatures(List&lt;Feature&gt; featureList) {<a name="line.202"></a>
-<span class="sourceLineNo">203</span>        Map&lt;String,Integer&gt; map = new HashMap&lt;&gt;();<a name="line.203"></a>
-<span class="sourceLineNo">204</span>        for (int i = 0; i &lt; featureNames.length; i++) {<a name="line.204"></a>
-<span class="sourceLineNo">205</span>            map.put(featureNames[i],i);<a name="line.205"></a>
-<span class="sourceLineNo">206</span>        }<a name="line.206"></a>
-<span class="sourceLineNo">207</span><a name="line.207"></a>
-<span class="sourceLineNo">208</span>        PriorityQueue&lt;Integer&gt; removeQueue = new PriorityQueue&lt;&gt;();<a name="line.208"></a>
-<span class="sourceLineNo">209</span>        for (Feature f : featureList) {<a name="line.209"></a>
-<span class="sourceLineNo">210</span>            Integer i = map.get(f.getName());<a name="line.210"></a>
-<span class="sourceLineNo">211</span>            if (i != null) {<a name="line.211"></a>
-<span class="sourceLineNo">212</span>                removeQueue.add(i);<a name="line.212"></a>
-<span class="sourceLineNo">213</span>            }<a name="line.213"></a>
-<span class="sourceLineNo">214</span>        }<a name="line.214"></a>
-<span class="sourceLineNo">215</span><a name="line.215"></a>
-<span class="sourceLineNo">216</span>        String[] newNames = new String[size-removeQueue.size()];<a name="line.216"></a>
-<span class="sourceLineNo">217</span>        int[] newIDs = new int[size-removeQueue.size()];<a name="line.217"></a>
-<span class="sourceLineNo">218</span>        double[] newValues = new double[size-removeQueue.size()];<a name="line.218"></a>
+<span class="sourceLineNo">027</span>import java.util.ArrayList;<a name="line.27"></a>
+<span class="sourceLineNo">028</span>import java.util.Arrays;<a name="line.28"></a>
+<span class="sourceLineNo">029</span>import java.util.Collection;<a name="line.29"></a>
+<span class="sourceLineNo">030</span>import java.util.HashMap;<a name="line.30"></a>
+<span class="sourceLineNo">031</span>import java.util.Iterator;<a name="line.31"></a>
+<span class="sourceLineNo">032</span>import java.util.List;<a name="line.32"></a>
+<span class="sourceLineNo">033</span>import java.util.Map;<a name="line.33"></a>
+<span class="sourceLineNo">034</span>import java.util.NoSuchElementException;<a name="line.34"></a>
+<span class="sourceLineNo">035</span>import java.util.Objects;<a name="line.35"></a>
+<span class="sourceLineNo">036</span>import java.util.PriorityQueue;<a name="line.36"></a>
+<span class="sourceLineNo">037</span><a name="line.37"></a>
+<span class="sourceLineNo">038</span>/**<a name="line.38"></a>
+<span class="sourceLineNo">039</span> * A version of ArrayExample which also has the id numbers.<a name="line.39"></a>
+<span class="sourceLineNo">040</span> * &lt;p&gt;<a name="line.40"></a>
+<span class="sourceLineNo">041</span> * Used in feature selection to provide log n lookups. May be used<a name="line.41"></a>
+<span class="sourceLineNo">042</span> * elsewhere in the future as a performance optimisation.<a name="line.42"></a>
+<span class="sourceLineNo">043</span> */<a name="line.43"></a>
+<span class="sourceLineNo">044</span>public class IndexedArrayExample&lt;T extends Output&lt;T&gt;&gt; extends ArrayExample&lt;T&gt; {<a name="line.44"></a>
+<span class="sourceLineNo">045</span>    private static final long serialVersionUID = 1L;<a name="line.45"></a>
+<span class="sourceLineNo">046</span><a name="line.46"></a>
+<span class="sourceLineNo">047</span>    protected int[] featureIDs;<a name="line.47"></a>
+<span class="sourceLineNo">048</span><a name="line.48"></a>
+<span class="sourceLineNo">049</span>    protected final int outputID;<a name="line.49"></a>
+<span class="sourceLineNo">050</span><a name="line.50"></a>
+<span class="sourceLineNo">051</span>    private final ImmutableFeatureMap featureMap;<a name="line.51"></a>
+<span class="sourceLineNo">052</span><a name="line.52"></a>
+<span class="sourceLineNo">053</span>    private final ImmutableOutputInfo&lt;T&gt; outputMap;<a name="line.53"></a>
+<span class="sourceLineNo">054</span><a name="line.54"></a>
+<span class="sourceLineNo">055</span>    /**<a name="line.55"></a>
+<span class="sourceLineNo">056</span>     * Copy constructor.<a name="line.56"></a>
+<span class="sourceLineNo">057</span>     * @param other The example to copy.<a name="line.57"></a>
+<span class="sourceLineNo">058</span>     */<a name="line.58"></a>
+<span class="sourceLineNo">059</span>    public IndexedArrayExample(IndexedArrayExample&lt;T&gt; other) {<a name="line.59"></a>
+<span class="sourceLineNo">060</span>        super(other.getOutput(),other.getWeight(),other.getMetadata());<a name="line.60"></a>
+<span class="sourceLineNo">061</span>        featureNames = Arrays.copyOf(other.featureNames,other.featureNames.length);<a name="line.61"></a>
+<span class="sourceLineNo">062</span>        featureIDs = Arrays.copyOf(other.featureIDs,other.size());<a name="line.62"></a>
+<span class="sourceLineNo">063</span>        featureValues = Arrays.copyOf(other.featureValues,other.featureValues.length);<a name="line.63"></a>
+<span class="sourceLineNo">064</span>        featureMap = other.featureMap;<a name="line.64"></a>
+<span class="sourceLineNo">065</span>        outputMap = other.outputMap;<a name="line.65"></a>
+<span class="sourceLineNo">066</span>        outputID = outputMap.getID(output);<a name="line.66"></a>
+<span class="sourceLineNo">067</span>        size = other.size;<a name="line.67"></a>
+<span class="sourceLineNo">068</span>    }<a name="line.68"></a>
+<span class="sourceLineNo">069</span><a name="line.69"></a>
+<span class="sourceLineNo">070</span>    /**<a name="line.70"></a>
+<span class="sourceLineNo">071</span>     * This constructor removes unknown features.<a name="line.71"></a>
+<span class="sourceLineNo">072</span>     * @param other The example to copy from.<a name="line.72"></a>
+<span class="sourceLineNo">073</span>     * @param featureMap The feature map.<a name="line.73"></a>
+<span class="sourceLineNo">074</span>     * @param outputMap The output info.<a name="line.74"></a>
+<span class="sourceLineNo">075</span>     */<a name="line.75"></a>
+<span class="sourceLineNo">076</span>    public IndexedArrayExample(Example&lt;T&gt; other, ImmutableFeatureMap featureMap, ImmutableOutputInfo&lt;T&gt; outputMap) {<a name="line.76"></a>
+<span class="sourceLineNo">077</span>        super(other);<a name="line.77"></a>
+<span class="sourceLineNo">078</span>        this.featureIDs = new int[other.size()];<a name="line.78"></a>
+<span class="sourceLineNo">079</span>        this.featureMap = featureMap;<a name="line.79"></a>
+<span class="sourceLineNo">080</span>        this.outputMap = outputMap;<a name="line.80"></a>
+<span class="sourceLineNo">081</span>        this.outputID = outputMap.getID(output);<a name="line.81"></a>
+<span class="sourceLineNo">082</span>        for (int i = 0; i &lt; featureNames.length; i++) {<a name="line.82"></a>
+<span class="sourceLineNo">083</span>            featureIDs[i] = featureMap.getID(featureNames[i]);<a name="line.83"></a>
+<span class="sourceLineNo">084</span>        }<a name="line.84"></a>
+<span class="sourceLineNo">085</span>        int[] newIDs = new int[other.size()];<a name="line.85"></a>
+<span class="sourceLineNo">086</span>        String[] newNames = new String[other.size()];<a name="line.86"></a>
+<span class="sourceLineNo">087</span>        double[] newValues = new double[other.size()];<a name="line.87"></a>
+<span class="sourceLineNo">088</span>        int counter = 0;<a name="line.88"></a>
+<span class="sourceLineNo">089</span>        for (int i = 0; i &lt; featureIDs.length; i++) {<a name="line.89"></a>
+<span class="sourceLineNo">090</span>            if (featureIDs[i] != -1) {<a name="line.90"></a>
+<span class="sourceLineNo">091</span>                newIDs[counter] = featureIDs[i];<a name="line.91"></a>
+<span class="sourceLineNo">092</span>                newValues[counter] = featureValues[i];<a name="line.92"></a>
+<span class="sourceLineNo">093</span>                newNames[counter] = featureNames[i];<a name="line.93"></a>
+<span class="sourceLineNo">094</span>                counter++;<a name="line.94"></a>
+<span class="sourceLineNo">095</span>            }<a name="line.95"></a>
+<span class="sourceLineNo">096</span>        }<a name="line.96"></a>
+<span class="sourceLineNo">097</span>        size = counter;<a name="line.97"></a>
+<span class="sourceLineNo">098</span>        featureNames = newNames;<a name="line.98"></a>
+<span class="sourceLineNo">099</span>        featureIDs = newIDs;<a name="line.99"></a>
+<span class="sourceLineNo">100</span>        featureValues = newValues;<a name="line.100"></a>
+<span class="sourceLineNo">101</span>    }<a name="line.101"></a>
+<span class="sourceLineNo">102</span><a name="line.102"></a>
+<span class="sourceLineNo">103</span>    @Override<a name="line.103"></a>
+<span class="sourceLineNo">104</span>    public boolean equals(Object o) {<a name="line.104"></a>
+<span class="sourceLineNo">105</span>        if (this == o) return true;<a name="line.105"></a>
+<span class="sourceLineNo">106</span>        if (!(o instanceof IndexedArrayExample)) return false;<a name="line.106"></a>
+<span class="sourceLineNo">107</span>        if (!super.equals(o)) return false;<a name="line.107"></a>
+<span class="sourceLineNo">108</span>        IndexedArrayExample&lt;?&gt; that = (IndexedArrayExample&lt;?&gt;) o;<a name="line.108"></a>
+<span class="sourceLineNo">109</span>        return outputID == that.outputID &amp;&amp;<a name="line.109"></a>
+<span class="sourceLineNo">110</span>                Arrays.equals(featureIDs, that.featureIDs) &amp;&amp;<a name="line.110"></a>
+<span class="sourceLineNo">111</span>                featureMap.equals(that.featureMap) &amp;&amp;<a name="line.111"></a>
+<span class="sourceLineNo">112</span>                outputMap.equals(that.outputMap);<a name="line.112"></a>
+<span class="sourceLineNo">113</span>    }<a name="line.113"></a>
+<span class="sourceLineNo">114</span><a name="line.114"></a>
+<span class="sourceLineNo">115</span>    @Override<a name="line.115"></a>
+<span class="sourceLineNo">116</span>    public int hashCode() {<a name="line.116"></a>
+<span class="sourceLineNo">117</span>        int result = Objects.hash(super.hashCode(), outputID, featureMap, outputMap);<a name="line.117"></a>
+<span class="sourceLineNo">118</span>        result = 31 * result + Arrays.hashCode(featureIDs);<a name="line.118"></a>
+<span class="sourceLineNo">119</span>        return result;<a name="line.119"></a>
+<span class="sourceLineNo">120</span>    }<a name="line.120"></a>
+<span class="sourceLineNo">121</span><a name="line.121"></a>
+<span class="sourceLineNo">122</span>    @Override<a name="line.122"></a>
+<span class="sourceLineNo">123</span>    protected void growArray(int minCapacity) {<a name="line.123"></a>
+<span class="sourceLineNo">124</span>        int newCapacity = newCapacity(minCapacity);<a name="line.124"></a>
+<span class="sourceLineNo">125</span>        featureNames = Arrays.copyOf(featureNames,newCapacity);<a name="line.125"></a>
+<span class="sourceLineNo">126</span>        featureIDs = Arrays.copyOf(featureIDs,newCapacity);<a name="line.126"></a>
+<span class="sourceLineNo">127</span>        featureValues = Arrays.copyOf(featureValues,newCapacity);<a name="line.127"></a>
+<span class="sourceLineNo">128</span>    }<a name="line.128"></a>
+<span class="sourceLineNo">129</span><a name="line.129"></a>
+<span class="sourceLineNo">130</span>    @Override<a name="line.130"></a>
+<span class="sourceLineNo">131</span>    public void add(Feature feature) {<a name="line.131"></a>
+<span class="sourceLineNo">132</span>        if (size &gt;= featureNames.length) {<a name="line.132"></a>
+<span class="sourceLineNo">133</span>            growArray();<a name="line.133"></a>
+<span class="sourceLineNo">134</span>        }<a name="line.134"></a>
+<span class="sourceLineNo">135</span>        featureNames[size] = feature.getName();<a name="line.135"></a>
+<span class="sourceLineNo">136</span>        featureIDs[size] = featureMap.getID(feature.getName());<a name="line.136"></a>
+<span class="sourceLineNo">137</span>        featureValues[size] = feature.getValue();<a name="line.137"></a>
+<span class="sourceLineNo">138</span>        size++;<a name="line.138"></a>
+<span class="sourceLineNo">139</span>        sort();<a name="line.139"></a>
+<span class="sourceLineNo">140</span>    }<a name="line.140"></a>
+<span class="sourceLineNo">141</span><a name="line.141"></a>
+<span class="sourceLineNo">142</span>    @Override<a name="line.142"></a>
+<span class="sourceLineNo">143</span>    public void addAll(Collection&lt;? extends Feature&gt; features) {<a name="line.143"></a>
+<span class="sourceLineNo">144</span>        if (size + features.size() &gt;= featureNames.length) {<a name="line.144"></a>
+<span class="sourceLineNo">145</span>            growArray(size+features.size());<a name="line.145"></a>
+<span class="sourceLineNo">146</span>        }<a name="line.146"></a>
+<span class="sourceLineNo">147</span>        for (Feature f : features) {<a name="line.147"></a>
+<span class="sourceLineNo">148</span>            featureNames[size] = f.getName();<a name="line.148"></a>
+<span class="sourceLineNo">149</span>            featureIDs[size] = featureMap.getID(f.getName());<a name="line.149"></a>
+<span class="sourceLineNo">150</span>            featureValues[size] = f.getValue();<a name="line.150"></a>
+<span class="sourceLineNo">151</span>            size++;<a name="line.151"></a>
+<span class="sourceLineNo">152</span>        }<a name="line.152"></a>
+<span class="sourceLineNo">153</span>        sort();<a name="line.153"></a>
+<span class="sourceLineNo">154</span>    }<a name="line.154"></a>
+<span class="sourceLineNo">155</span><a name="line.155"></a>
+<span class="sourceLineNo">156</span>    @Override<a name="line.156"></a>
+<span class="sourceLineNo">157</span>    protected void sort() {<a name="line.157"></a>
+<span class="sourceLineNo">158</span>        int[] sortedIndices = SortUtil.argsort(featureNames,0,size,true);<a name="line.158"></a>
+<span class="sourceLineNo">159</span><a name="line.159"></a>
+<span class="sourceLineNo">160</span>        String[] newNames = Arrays.copyOf(featureNames,size);<a name="line.160"></a>
+<span class="sourceLineNo">161</span>        int[] newIDs = Arrays.copyOf(featureIDs,size);<a name="line.161"></a>
+<span class="sourceLineNo">162</span>        double[] newValues = Arrays.copyOf(featureValues,size);<a name="line.162"></a>
+<span class="sourceLineNo">163</span>        for (int i = 0; i &lt; sortedIndices.length; i++) {<a name="line.163"></a>
+<span class="sourceLineNo">164</span>            featureNames[i] = newNames[sortedIndices[i]];<a name="line.164"></a>
+<span class="sourceLineNo">165</span>            featureIDs[i] = newIDs[sortedIndices[i]];<a name="line.165"></a>
+<span class="sourceLineNo">166</span>            featureValues[i] = newValues[sortedIndices[i]];<a name="line.166"></a>
+<span class="sourceLineNo">167</span>        }<a name="line.167"></a>
+<span class="sourceLineNo">168</span>    }<a name="line.168"></a>
+<span class="sourceLineNo">169</span><a name="line.169"></a>
+<span class="sourceLineNo">170</span>    @Override<a name="line.170"></a>
+<span class="sourceLineNo">171</span>    public void reduceByName(Merger merger) {<a name="line.171"></a>
+<span class="sourceLineNo">172</span>        if (size &gt; 0) {<a name="line.172"></a>
+<span class="sourceLineNo">173</span>            int[] sortedIndices = SortUtil.argsort(featureNames, 0, size, true);<a name="line.173"></a>
+<span class="sourceLineNo">174</span>            String[] newNames = new String[featureNames.length];<a name="line.174"></a>
+<span class="sourceLineNo">175</span>            int[] newIDs = new int[featureIDs.length];<a name="line.175"></a>
+<span class="sourceLineNo">176</span>            double[] newValues = new double[featureNames.length];<a name="line.176"></a>
+<span class="sourceLineNo">177</span>            for (int i = 0; i &lt; sortedIndices.length; i++) {<a name="line.177"></a>
+<span class="sourceLineNo">178</span>                newNames[i] = featureNames[sortedIndices[i]];<a name="line.178"></a>
+<span class="sourceLineNo">179</span>                newIDs[i] = featureIDs[sortedIndices[i]];<a name="line.179"></a>
+<span class="sourceLineNo">180</span>                newValues[i] = featureValues[sortedIndices[i]];<a name="line.180"></a>
+<span class="sourceLineNo">181</span>            }<a name="line.181"></a>
+<span class="sourceLineNo">182</span>            featureNames[0] = newNames[0];<a name="line.182"></a>
+<span class="sourceLineNo">183</span>            featureIDs[0] = newIDs[0];<a name="line.183"></a>
+<span class="sourceLineNo">184</span>            featureValues[0] = newValues[0];<a name="line.184"></a>
+<span class="sourceLineNo">185</span>            int dest = 0;<a name="line.185"></a>
+<span class="sourceLineNo">186</span>            for (int i = 1; i &lt; size; i++) {<a name="line.186"></a>
+<span class="sourceLineNo">187</span>                while ((i &lt; size) &amp;&amp; newNames[i].equals(featureNames[dest])) {<a name="line.187"></a>
+<span class="sourceLineNo">188</span>                    featureValues[dest] = merger.merge(featureValues[dest], newValues[i]);<a name="line.188"></a>
+<span class="sourceLineNo">189</span>                    i++;<a name="line.189"></a>
+<span class="sourceLineNo">190</span>                }<a name="line.190"></a>
+<span class="sourceLineNo">191</span>                if (i &lt; size) {<a name="line.191"></a>
+<span class="sourceLineNo">192</span>                    dest++;<a name="line.192"></a>
+<span class="sourceLineNo">193</span>                    featureNames[dest] = newNames[i];<a name="line.193"></a>
+<span class="sourceLineNo">194</span>                    featureIDs[dest] = newIDs[i];<a name="line.194"></a>
+<span class="sourceLineNo">195</span>                    featureValues[dest] = newValues[i];<a name="line.195"></a>
+<span class="sourceLineNo">196</span>                }<a name="line.196"></a>
+<span class="sourceLineNo">197</span>            }<a name="line.197"></a>
+<span class="sourceLineNo">198</span>            size = dest + 1;<a name="line.198"></a>
+<span class="sourceLineNo">199</span>        }<a name="line.199"></a>
+<span class="sourceLineNo">200</span>    }<a name="line.200"></a>
+<span class="sourceLineNo">201</span><a name="line.201"></a>
+<span class="sourceLineNo">202</span>    @Override<a name="line.202"></a>
+<span class="sourceLineNo">203</span>    public void removeFeatures(List&lt;Feature&gt; featureList) {<a name="line.203"></a>
+<span class="sourceLineNo">204</span>        Map&lt;String,List&lt;Integer&gt;&gt; map = new HashMap&lt;&gt;();<a name="line.204"></a>
+<span class="sourceLineNo">205</span>        for (int i = 0; i &lt; featureNames.length; i++) {<a name="line.205"></a>
+<span class="sourceLineNo">206</span>            List&lt;Integer&gt; list = map.computeIfAbsent(featureNames[i],(k) -&gt; new ArrayList&lt;&gt;());<a name="line.206"></a>
+<span class="sourceLineNo">207</span>            list.add(i);<a name="line.207"></a>
+<span class="sourceLineNo">208</span>        }<a name="line.208"></a>
+<span class="sourceLineNo">209</span><a name="line.209"></a>
+<span class="sourceLineNo">210</span>        PriorityQueue&lt;Integer&gt; removeQueue = new PriorityQueue&lt;&gt;();<a name="line.210"></a>
+<span class="sourceLineNo">211</span>        for (Feature f : featureList) {<a name="line.211"></a>
+<span class="sourceLineNo">212</span>            List&lt;Integer&gt; i = map.get(f.getName());<a name="line.212"></a>
+<span class="sourceLineNo">213</span>            if (i != null) {<a name="line.213"></a>
+<span class="sourceLineNo">214</span>                // If we've found this feature remove it from the map to prevent double counting<a name="line.214"></a>
+<span class="sourceLineNo">215</span>                map.remove(f.getName());<a name="line.215"></a>
+<span class="sourceLineNo">216</span>                removeQueue.addAll(i);<a name="line.216"></a>
+<span class="sourceLineNo">217</span>            }<a name="line.217"></a>
+<span class="sourceLineNo">218</span>        }<a name="line.218"></a>
 <span class="sourceLineNo">219</span><a name="line.219"></a>
-<span class="sourceLineNo">220</span>        int source = 0;<a name="line.220"></a>
-<span class="sourceLineNo">221</span>        int dest = 0;<a name="line.221"></a>
-<span class="sourceLineNo">222</span>        while (!removeQueue.isEmpty()) {<a name="line.222"></a>
-<span class="sourceLineNo">223</span>            int curRemoveIdx = removeQueue.poll();<a name="line.223"></a>
-<span class="sourceLineNo">224</span>            while (source &lt; curRemoveIdx) {<a name="line.224"></a>
-<span class="sourceLineNo">225</span>                newNames[dest] = featureNames[source];<a name="line.225"></a>
-<span class="sourceLineNo">226</span>                newIDs[dest] = featureIDs[source];<a name="line.226"></a>
-<span class="sourceLineNo">227</span>                newValues[dest] = featureValues[source];<a name="line.227"></a>
-<span class="sourceLineNo">228</span>                source++;<a name="line.228"></a>
-<span class="sourceLineNo">229</span>                dest++;<a name="line.229"></a>
-<span class="sourceLineNo">230</span>            }<a name="line.230"></a>
-<span class="sourceLineNo">231</span>            source++;<a name="line.231"></a>
-<span class="sourceLineNo">232</span>        }<a name="line.232"></a>
-<span class="sourceLineNo">233</span>        while (source &lt; size) {<a name="line.233"></a>
-<span class="sourceLineNo">234</span>            newNames[dest] = featureNames[source];<a name="line.234"></a>
-<span class="sourceLineNo">235</span>            newIDs[dest] = featureIDs[source];<a name="line.235"></a>
-<span class="sourceLineNo">236</span>            newValues[dest] = featureValues[source];<a name="line.236"></a>
-<span class="sourceLineNo">237</span>            source++;<a name="line.237"></a>
-<span class="sourceLineNo">238</span>            dest++;<a name="line.238"></a>
-<span class="sourceLineNo">239</span>        }<a name="line.239"></a>
-<span class="sourceLineNo">240</span>        featureNames = newNames;<a name="line.240"></a>
-<span class="sourceLineNo">241</span>        featureIDs = newIDs;<a name="line.241"></a>
-<span class="sourceLineNo">242</span>        featureValues = newValues;<a name="line.242"></a>
-<span class="sourceLineNo">243</span>        size = featureNames.length;<a name="line.243"></a>
-<span class="sourceLineNo">244</span>    }<a name="line.244"></a>
-<span class="sourceLineNo">245</span><a name="line.245"></a>
-<span class="sourceLineNo">246</span>    /**<a name="line.246"></a>
-<span class="sourceLineNo">247</span>     * Does this example contain a feature with id i.<a name="line.247"></a>
-<span class="sourceLineNo">248</span>     * @param i The index to check.<a name="line.248"></a>
-<span class="sourceLineNo">249</span>     * @return True if the example contains the id.<a name="line.249"></a>
-<span class="sourceLineNo">250</span>     */<a name="line.250"></a>
-<span class="sourceLineNo">251</span>    public boolean contains(int i) {<a name="line.251"></a>
-<span class="sourceLineNo">252</span>        return Arrays.binarySearch(featureIDs,i) &gt; -1;<a name="line.252"></a>
-<span class="sourceLineNo">253</span>    }<a name="line.253"></a>
-<span class="sourceLineNo">254</span><a name="line.254"></a>
-<span class="sourceLineNo">255</span>    @Override<a name="line.255"></a>
-<span class="sourceLineNo">256</span>    public IndexedArrayExample&lt;T&gt; copy() {<a name="line.256"></a>
-<span class="sourceLineNo">257</span>        return new IndexedArrayExample&lt;&gt;(this);<a name="line.257"></a>
-<span class="sourceLineNo">258</span>    }<a name="line.258"></a>
-<span class="sourceLineNo">259</span><a name="line.259"></a>
-<span class="sourceLineNo">260</span>    @Override<a name="line.260"></a>
-<span class="sourceLineNo">261</span>    public void densify(List&lt;String&gt; featureList) {<a name="line.261"></a>
-<span class="sourceLineNo">262</span>        if (featureList.size() != featureMap.size()) {<a name="line.262"></a>
-<span class="sourceLineNo">263</span>            throw new IllegalArgumentException("Densifying an example with a different feature map");<a name="line.263"></a>
-<span class="sourceLineNo">264</span>        }<a name="line.264"></a>
-<span class="sourceLineNo">265</span>        // Ensure we have enough space.<a name="line.265"></a>
-<span class="sourceLineNo">266</span>        if (featureList.size() &gt; featureNames.length) {<a name="line.266"></a>
-<span class="sourceLineNo">267</span>            growArray(featureList.size());<a name="line.267"></a>
+<span class="sourceLineNo">220</span>        String[] newNames = new String[size-removeQueue.size()];<a name="line.220"></a>
+<span class="sourceLineNo">221</span>        int[] newIDs = new int[size-removeQueue.size()];<a name="line.221"></a>
+<span class="sourceLineNo">222</span>        double[] newValues = new double[size-removeQueue.size()];<a name="line.222"></a>
+<span class="sourceLineNo">223</span><a name="line.223"></a>
+<span class="sourceLineNo">224</span>        int source = 0;<a name="line.224"></a>
+<span class="sourceLineNo">225</span>        int dest = 0;<a name="line.225"></a>
+<span class="sourceLineNo">226</span>        while (!removeQueue.isEmpty()) {<a name="line.226"></a>
+<span class="sourceLineNo">227</span>            int curRemoveIdx = removeQueue.poll();<a name="line.227"></a>
+<span class="sourceLineNo">228</span>            while (source &lt; curRemoveIdx) {<a name="line.228"></a>
+<span class="sourceLineNo">229</span>                newNames[dest] = featureNames[source];<a name="line.229"></a>
+<span class="sourceLineNo">230</span>                newIDs[dest] = featureIDs[source];<a name="line.230"></a>
+<span class="sourceLineNo">231</span>                newValues[dest] = featureValues[source];<a name="line.231"></a>
+<span class="sourceLineNo">232</span>                source++;<a name="line.232"></a>
+<span class="sourceLineNo">233</span>                dest++;<a name="line.233"></a>
+<span class="sourceLineNo">234</span>            }<a name="line.234"></a>
+<span class="sourceLineNo">235</span>            source++;<a name="line.235"></a>
+<span class="sourceLineNo">236</span>        }<a name="line.236"></a>
+<span class="sourceLineNo">237</span>        while (source &lt; size) {<a name="line.237"></a>
+<span class="sourceLineNo">238</span>            newNames[dest] = featureNames[source];<a name="line.238"></a>
+<span class="sourceLineNo">239</span>            newIDs[dest] = featureIDs[source];<a name="line.239"></a>
+<span class="sourceLineNo">240</span>            newValues[dest] = featureValues[source];<a name="line.240"></a>
+<span class="sourceLineNo">241</span>            source++;<a name="line.241"></a>
+<span class="sourceLineNo">242</span>            dest++;<a name="line.242"></a>
+<span class="sourceLineNo">243</span>        }<a name="line.243"></a>
+<span class="sourceLineNo">244</span>        featureNames = newNames;<a name="line.244"></a>
+<span class="sourceLineNo">245</span>        featureIDs = newIDs;<a name="line.245"></a>
+<span class="sourceLineNo">246</span>        featureValues = newValues;<a name="line.246"></a>
+<span class="sourceLineNo">247</span>        size = featureNames.length;<a name="line.247"></a>
+<span class="sourceLineNo">248</span>    }<a name="line.248"></a>
+<span class="sourceLineNo">249</span><a name="line.249"></a>
+<span class="sourceLineNo">250</span>    /**<a name="line.250"></a>
+<span class="sourceLineNo">251</span>     * Does this example contain a feature with id i.<a name="line.251"></a>
+<span class="sourceLineNo">252</span>     * @param i The index to check.<a name="line.252"></a>
+<span class="sourceLineNo">253</span>     * @return True if the example contains the id.<a name="line.253"></a>
+<span class="sourceLineNo">254</span>     */<a name="line.254"></a>
+<span class="sourceLineNo">255</span>    public boolean contains(int i) {<a name="line.255"></a>
+<span class="sourceLineNo">256</span>        return Arrays.binarySearch(featureIDs,i) &gt; -1;<a name="line.256"></a>
+<span class="sourceLineNo">257</span>    }<a name="line.257"></a>
+<span class="sourceLineNo">258</span><a name="line.258"></a>
+<span class="sourceLineNo">259</span>    @Override<a name="line.259"></a>
+<span class="sourceLineNo">260</span>    public IndexedArrayExample&lt;T&gt; copy() {<a name="line.260"></a>
+<span class="sourceLineNo">261</span>        return new IndexedArrayExample&lt;&gt;(this);<a name="line.261"></a>
+<span class="sourceLineNo">262</span>    }<a name="line.262"></a>
+<span class="sourceLineNo">263</span><a name="line.263"></a>
+<span class="sourceLineNo">264</span>    @Override<a name="line.264"></a>
+<span class="sourceLineNo">265</span>    public void densify(List&lt;String&gt; featureList) {<a name="line.265"></a>
+<span class="sourceLineNo">266</span>        if (featureList.size() != featureMap.size()) {<a name="line.266"></a>
+<span class="sourceLineNo">267</span>            throw new IllegalArgumentException("Densifying an example with a different feature map");<a name="line.267"></a>
 <span class="sourceLineNo">268</span>        }<a name="line.268"></a>
-<span class="sourceLineNo">269</span>        int insertedCount = 0;<a name="line.269"></a>
-<span class="sourceLineNo">270</span>        int curPos = 0;<a name="line.270"></a>
-<span class="sourceLineNo">271</span>        for (String curName : featureList) {<a name="line.271"></a>
-<span class="sourceLineNo">272</span>            // If we've reached the end of our old feature set, just insert.<a name="line.272"></a>
-<span class="sourceLineNo">273</span>            if (curPos == size) {<a name="line.273"></a>
-<span class="sourceLineNo">274</span>                featureNames[size + insertedCount] = curName;<a name="line.274"></a>
-<span class="sourceLineNo">275</span>                featureIDs[size + insertedCount] = featureMap.getID(curName);<a name="line.275"></a>
-<span class="sourceLineNo">276</span>                insertedCount++;<a name="line.276"></a>
-<span class="sourceLineNo">277</span>            } else {<a name="line.277"></a>
-<span class="sourceLineNo">278</span>                // Check to see if our insertion candidate is the same as the current feature name.<a name="line.278"></a>
-<span class="sourceLineNo">279</span>                int comparison = curName.compareTo(featureNames[curPos]);<a name="line.279"></a>
-<span class="sourceLineNo">280</span>                if (comparison &lt; 0) {<a name="line.280"></a>
-<span class="sourceLineNo">281</span>                    // If it's earlier, insert it.<a name="line.281"></a>
-<span class="sourceLineNo">282</span>                    featureNames[size + insertedCount] = curName;<a name="line.282"></a>
-<span class="sourceLineNo">283</span>                    featureIDs[size + insertedCount] = featureMap.getID(curName);<a name="line.283"></a>
-<span class="sourceLineNo">284</span>                    insertedCount++;<a name="line.284"></a>
-<span class="sourceLineNo">285</span>                } else if (comparison == 0) {<a name="line.285"></a>
-<span class="sourceLineNo">286</span>                    // Otherwise just bump our pointer, we've already got this feature.<a name="line.286"></a>
-<span class="sourceLineNo">287</span>                    curPos++;<a name="line.287"></a>
-<span class="sourceLineNo">288</span>                }<a name="line.288"></a>
-<span class="sourceLineNo">289</span>            }<a name="line.289"></a>
-<span class="sourceLineNo">290</span>        }<a name="line.290"></a>
-<span class="sourceLineNo">291</span>        // Bump the size up by the number of inserted features.<a name="line.291"></a>
-<span class="sourceLineNo">292</span>        size += insertedCount;<a name="line.292"></a>
-<span class="sourceLineNo">293</span>        // Sort the features<a name="line.293"></a>
-<span class="sourceLineNo">294</span>        sort();<a name="line.294"></a>
-<span class="sourceLineNo">295</span>    }<a name="line.295"></a>
-<span class="sourceLineNo">296</span><a name="line.296"></a>
-<span class="sourceLineNo">297</span>    /**<a name="line.297"></a>
-<span class="sourceLineNo">298</span>     * Gets the feature at internal index i.<a name="line.298"></a>
-<span class="sourceLineNo">299</span>     * @param i The internal index.<a name="line.299"></a>
-<span class="sourceLineNo">300</span>     * @return The feature index.<a name="line.300"></a>
-<span class="sourceLineNo">301</span>     */<a name="line.301"></a>
-<span class="sourceLineNo">302</span>    public int getIdx(int i) {<a name="line.302"></a>
-<span class="sourceLineNo">303</span>        return featureIDs[i];<a name="line.303"></a>
-<span class="sourceLineNo">304</span>    }<a name="line.304"></a>
-<span class="sourceLineNo">305</span><a name="line.305"></a>
-<span class="sourceLineNo">306</span>    /**<a name="line.306"></a>
-<span class="sourceLineNo">307</span>     * Gets the output id dimension number.<a name="line.307"></a>
-<span class="sourceLineNo">308</span>     * @return The output id.<a name="line.308"></a>
-<span class="sourceLineNo">309</span>     */<a name="line.309"></a>
-<span class="sourceLineNo">310</span>    public int getOutputID() {<a name="line.310"></a>
-<span class="sourceLineNo">311</span>        return outputID;<a name="line.311"></a>
-<span class="sourceLineNo">312</span>    }<a name="line.312"></a>
-<span class="sourceLineNo">313</span><a name="line.313"></a>
-<span class="sourceLineNo">314</span>    /**<a name="line.314"></a>
-<span class="sourceLineNo">315</span>     * Iterator over the feature ids and values.<a name="line.315"></a>
-<span class="sourceLineNo">316</span>     * @return The feature ids and values.<a name="line.316"></a>
-<span class="sourceLineNo">317</span>     */<a name="line.317"></a>
-<span class="sourceLineNo">318</span>    public Iterable&lt;FeatureTuple&gt; idIterator() {<a name="line.318"></a>
-<span class="sourceLineNo">319</span>        return ArrayIndexedExampleIterator::new;<a name="line.319"></a>
-<span class="sourceLineNo">320</span>    }<a name="line.320"></a>
-<span class="sourceLineNo">321</span><a name="line.321"></a>
-<span class="sourceLineNo">322</span>    /**<a name="line.322"></a>
-<span class="sourceLineNo">323</span>     * A tuple of the feature name, id and value.<a name="line.323"></a>
-<span class="sourceLineNo">324</span>     */<a name="line.324"></a>
-<span class="sourceLineNo">325</span>    public static class FeatureTuple {<a name="line.325"></a>
-<span class="sourceLineNo">326</span>        public String name;<a name="line.326"></a>
-<span class="sourceLineNo">327</span>        public int id;<a name="line.327"></a>
-<span class="sourceLineNo">328</span>        public double value;<a name="line.328"></a>
-<span class="sourceLineNo">329</span><a name="line.329"></a>
-<span class="sourceLineNo">330</span>        public FeatureTuple() { }<a name="line.330"></a>
-<span class="sourceLineNo">331</span><a name="line.331"></a>
-<span class="sourceLineNo">332</span>        public FeatureTuple(String name, int id, double value) {<a name="line.332"></a>
-<span class="sourceLineNo">333</span>            this.name = name;<a name="line.333"></a>
-<span class="sourceLineNo">334</span>            this.id = id;<a name="line.334"></a>
-<span class="sourceLineNo">335</span>            this.value = value;<a name="line.335"></a>
-<span class="sourceLineNo">336</span>        }<a name="line.336"></a>
-<span class="sourceLineNo">337</span>    }<a name="line.337"></a>
-<span class="sourceLineNo">338</span><a name="line.338"></a>
-<span class="sourceLineNo">339</span>    class ArrayIndexedExampleIterator implements Iterator&lt;FeatureTuple&gt; {<a name="line.339"></a>
-<span class="sourceLineNo">340</span>        int pos = 0;<a name="line.340"></a>
-<span class="sourceLineNo">341</span>        FeatureTuple tuple = new FeatureTuple();<a name="line.341"></a>
+<span class="sourceLineNo">269</span>        // Ensure we have enough space.<a name="line.269"></a>
+<span class="sourceLineNo">270</span>        if (featureList.size() &gt; featureNames.length) {<a name="line.270"></a>
+<span class="sourceLineNo">271</span>            growArray(featureList.size());<a name="line.271"></a>
+<span class="sourceLineNo">272</span>        }<a name="line.272"></a>
+<span class="sourceLineNo">273</span>        int insertedCount = 0;<a name="line.273"></a>
+<span class="sourceLineNo">274</span>        int curPos = 0;<a name="line.274"></a>
+<span class="sourceLineNo">275</span>        for (String curName : featureList) {<a name="line.275"></a>
+<span class="sourceLineNo">276</span>            // If we've reached the end of our old feature set, just insert.<a name="line.276"></a>
+<span class="sourceLineNo">277</span>            if (curPos == size) {<a name="line.277"></a>
+<span class="sourceLineNo">278</span>                featureNames[size + insertedCount] = curName;<a name="line.278"></a>
+<span class="sourceLineNo">279</span>                featureIDs[size + insertedCount] = featureMap.getID(curName);<a name="line.279"></a>
+<span class="sourceLineNo">280</span>                insertedCount++;<a name="line.280"></a>
+<span class="sourceLineNo">281</span>            } else {<a name="line.281"></a>
+<span class="sourceLineNo">282</span>                // Check to see if our insertion candidate is the same as the current feature name.<a name="line.282"></a>
+<span class="sourceLineNo">283</span>                int comparison = curName.compareTo(featureNames[curPos]);<a name="line.283"></a>
+<span class="sourceLineNo">284</span>                if (comparison &lt; 0) {<a name="line.284"></a>
+<span class="sourceLineNo">285</span>                    // If it's earlier, insert it.<a name="line.285"></a>
+<span class="sourceLineNo">286</span>                    featureNames[size + insertedCount] = curName;<a name="line.286"></a>
+<span class="sourceLineNo">287</span>                    featureIDs[size + insertedCount] = featureMap.getID(curName);<a name="line.287"></a>
+<span class="sourceLineNo">288</span>                    insertedCount++;<a name="line.288"></a>
+<span class="sourceLineNo">289</span>                } else if (comparison == 0) {<a name="line.289"></a>
+<span class="sourceLineNo">290</span>                    // Otherwise just bump our pointer, we've already got this feature.<a name="line.290"></a>
+<span class="sourceLineNo">291</span>                    curPos++;<a name="line.291"></a>
+<span class="sourceLineNo">292</span>                }<a name="line.292"></a>
+<span class="sourceLineNo">293</span>            }<a name="line.293"></a>
+<span class="sourceLineNo">294</span>        }<a name="line.294"></a>
+<span class="sourceLineNo">295</span>        // Bump the size up by the number of inserted features.<a name="line.295"></a>
+<span class="sourceLineNo">296</span>        size += insertedCount;<a name="line.296"></a>
+<span class="sourceLineNo">297</span>        // Sort the features<a name="line.297"></a>
+<span class="sourceLineNo">298</span>        sort();<a name="line.298"></a>
+<span class="sourceLineNo">299</span>    }<a name="line.299"></a>
+<span class="sourceLineNo">300</span><a name="line.300"></a>
+<span class="sourceLineNo">301</span>    /**<a name="line.301"></a>
+<span class="sourceLineNo">302</span>     * Gets the feature at internal index i.<a name="line.302"></a>
+<span class="sourceLineNo">303</span>     * @param i The internal index.<a name="line.303"></a>
+<span class="sourceLineNo">304</span>     * @return The feature index.<a name="line.304"></a>
+<span class="sourceLineNo">305</span>     */<a name="line.305"></a>
+<span class="sourceLineNo">306</span>    public int getIdx(int i) {<a name="line.306"></a>
+<span class="sourceLineNo">307</span>        return featureIDs[i];<a name="line.307"></a>
+<span class="sourceLineNo">308</span>    }<a name="line.308"></a>
+<span class="sourceLineNo">309</span><a name="line.309"></a>
+<span class="sourceLineNo">310</span>    /**<a name="line.310"></a>
+<span class="sourceLineNo">311</span>     * Gets the output id dimension number.<a name="line.311"></a>
+<span class="sourceLineNo">312</span>     * @return The output id.<a name="line.312"></a>
+<span class="sourceLineNo">313</span>     */<a name="line.313"></a>
+<span class="sourceLineNo">314</span>    public int getOutputID() {<a name="line.314"></a>
+<span class="sourceLineNo">315</span>        return outputID;<a name="line.315"></a>
+<span class="sourceLineNo">316</span>    }<a name="line.316"></a>
+<span class="sourceLineNo">317</span><a name="line.317"></a>
+<span class="sourceLineNo">318</span>    /**<a name="line.318"></a>
+<span class="sourceLineNo">319</span>     * Iterator over the feature ids and values.<a name="line.319"></a>
+<span class="sourceLineNo">320</span>     * @return The feature ids and values.<a name="line.320"></a>
+<span class="sourceLineNo">321</span>     */<a name="line.321"></a>
+<span class="sourceLineNo">322</span>    public Iterable&lt;FeatureTuple&gt; idIterator() {<a name="line.322"></a>
+<span class="sourceLineNo">323</span>        return ArrayIndexedExampleIterator::new;<a name="line.323"></a>
+<span class="sourceLineNo">324</span>    }<a name="line.324"></a>
+<span class="sourceLineNo">325</span><a name="line.325"></a>
+<span class="sourceLineNo">326</span>    /**<a name="line.326"></a>
+<span class="sourceLineNo">327</span>     * A tuple of the feature name, id and value.<a name="line.327"></a>
+<span class="sourceLineNo">328</span>     */<a name="line.328"></a>
+<span class="sourceLineNo">329</span>    public static class FeatureTuple {<a name="line.329"></a>
+<span class="sourceLineNo">330</span>        public String name;<a name="line.330"></a>
+<span class="sourceLineNo">331</span>        public int id;<a name="line.331"></a>
+<span class="sourceLineNo">332</span>        public double value;<a name="line.332"></a>
+<span class="sourceLineNo">333</span><a name="line.333"></a>
+<span class="sourceLineNo">334</span>        public FeatureTuple() { }<a name="line.334"></a>
+<span class="sourceLineNo">335</span><a name="line.335"></a>
+<span class="sourceLineNo">336</span>        public FeatureTuple(String name, int id, double value) {<a name="line.336"></a>
+<span class="sourceLineNo">337</span>            this.name = name;<a name="line.337"></a>
+<span class="sourceLineNo">338</span>            this.id = id;<a name="line.338"></a>
+<span class="sourceLineNo">339</span>            this.value = value;<a name="line.339"></a>
+<span class="sourceLineNo">340</span>        }<a name="line.340"></a>
+<span class="sourceLineNo">341</span>    }<a name="line.341"></a>
 <span class="sourceLineNo">342</span><a name="line.342"></a>
-<span class="sourceLineNo">343</span>        @Override<a name="line.343"></a>
-<span class="sourceLineNo">344</span>        public boolean hasNext() {<a name="line.344"></a>
-<span class="sourceLineNo">345</span>            return pos &lt; size;<a name="line.345"></a>
-<span class="sourceLineNo">346</span>        }<a name="line.346"></a>
-<span class="sourceLineNo">347</span><a name="line.347"></a>
-<span class="sourceLineNo">348</span>        @Override<a name="line.348"></a>
-<span class="sourceLineNo">349</span>        public FeatureTuple next() {<a name="line.349"></a>
-<span class="sourceLineNo">350</span>            if (!hasNext()) {<a name="line.350"></a>
-<span class="sourceLineNo">351</span>                throw new NoSuchElementException("Off the end of the iterator.");<a name="line.351"></a>
-<span class="sourceLineNo">352</span>            }<a name="line.352"></a>
-<span class="sourceLineNo">353</span>            tuple.name = featureNames[pos];<a name="line.353"></a>
-<span class="sourceLineNo">354</span>            tuple.id = featureIDs[pos];<a name="line.354"></a>
-<span class="sourceLineNo">355</span>            tuple.value = featureValues[pos];<a name="line.355"></a>
-<span class="sourceLineNo">356</span>            pos++;<a name="line.356"></a>
-<span class="sourceLineNo">357</span>            return tuple;<a name="line.357"></a>
-<span class="sourceLineNo">358</span>        }<a name="line.358"></a>
-<span class="sourceLineNo">359</span>    }<a name="line.359"></a>
-<span class="sourceLineNo">360</span>}<a name="line.360"></a>
+<span class="sourceLineNo">343</span>    class ArrayIndexedExampleIterator implements Iterator&lt;FeatureTuple&gt; {<a name="line.343"></a>
+<span class="sourceLineNo">344</span>        int pos = 0;<a name="line.344"></a>
+<span class="sourceLineNo">345</span>        FeatureTuple tuple = new FeatureTuple();<a name="line.345"></a>
+<span class="sourceLineNo">346</span><a name="line.346"></a>
+<span class="sourceLineNo">347</span>        @Override<a name="line.347"></a>
+<span class="sourceLineNo">348</span>        public boolean hasNext() {<a name="line.348"></a>
+<span class="sourceLineNo">349</span>            return pos &lt; size;<a name="line.349"></a>
+<span class="sourceLineNo">350</span>        }<a name="line.350"></a>
+<span class="sourceLineNo">351</span><a name="line.351"></a>
+<span class="sourceLineNo">352</span>        @Override<a name="line.352"></a>
+<span class="sourceLineNo">353</span>        public FeatureTuple next() {<a name="line.353"></a>
+<span class="sourceLineNo">354</span>            if (!hasNext()) {<a name="line.354"></a>
+<span class="sourceLineNo">355</span>                throw new NoSuchElementException("Off the end of the iterator.");<a name="line.355"></a>
+<span class="sourceLineNo">356</span>            }<a name="line.356"></a>
+<span class="sourceLineNo">357</span>            tuple.name = featureNames[pos];<a name="line.357"></a>
+<span class="sourceLineNo">358</span>            tuple.id = featureIDs[pos];<a name="line.358"></a>
+<span class="sourceLineNo">359</span>            tuple.value = featureValues[pos];<a name="line.359"></a>
+<span class="sourceLineNo">360</span>            pos++;<a name="line.360"></a>
+<span class="sourceLineNo">361</span>            return tuple;<a name="line.361"></a>
+<span class="sourceLineNo">362</span>        }<a name="line.362"></a>
+<span class="sourceLineNo">363</span>    }<a name="line.363"></a>
+<span class="sourceLineNo">364</span>}<a name="line.364"></a>
 
 
 
