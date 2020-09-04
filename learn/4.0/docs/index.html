@@ -57,8 +57,8 @@ Tribuo has a modern <b>Java-centric</b> API design:
 <p>
 We plan to increase the algorithms available over time, we're happy to accept
 community contributions, and the current
-<a href="https://github.com/oracle/tribuo/blob/main/docs/Roadmap.md">raodmap</a> is on Github.
-​</p>
+<a href="https://github.com/oracle/tribuo/blob/main/docs/Roadmap.md">roadmap</a> is on Github.
+</p>
 <p>
 Tribuo makes it straightforward to load datasets, train models, and evaluate
 models on test data. For example, this code trains a logistic regression model
@@ -79,7 +79,7 @@ var eval     = new LabelEvaluator().evaluate(new LibSVMDataSource("test-data",tr
         <h2>Getting Started</h2>
 <p>
     To pull Tribuo into your project use these Maven co-ordinates:
-​</p>
+</p>
 {% highlight xml %}
 {% raw %}
 <dependency>
@@ -95,65 +95,52 @@ The <code>tribuo-all</code> module pulls in all of Tribuo, you can select the su
 your particular usecase later, it's all available as separate maven artifacts.
 </p>
 <p>
-We'll run through a quick example showing the different options available for
-a classification system, and how simple it is to change things around.
-The following code snippet loads in a CSV
-<a href="https://archive.ics.uci.edu/ml/datasets/iris">dataset for classifying the species of Irises</a>:
+Here's a quick example showing how to build and evaluate a classification system. It has 4 steps:
+
+<ol>
+    <li>Load a <a href="https://archive.ics.uci.edu/ml/datasets/iris">dataset for classifying the species of Irises</a> from a CSV.</li>
+    <li>Split that dataset into training and testing datasets.</li>
+    <li>Train two types models using different trainers.</li>
+    <li>Use a model to make predictions on the test set, and evaluate it's performance on the whole test set.</li>
+</ol>
 
 {% highlight java %}
 {% raw %}
 // Load labelled iris data
 var irisHeaders = new String[]{"sepalLength", "sepalWidth", "petalLength", "petalWidth", "species"};
 DataSource<Label> irisData =
-new CSVLoader<>(new LabelFactory()).loadDataSource(Paths.get("bezdekIris.data"),
-                             /* Output column   */ irisHeaders[4],
-                             /* Column headers  */ irisHeaders);
-​
+        new CSVLoader<>(new LabelFactory()).loadDataSource(Paths.get("bezdekIris.data"),
+                                     /* Output column   */ irisHeaders[4],
+                                     /* Column headers  */ irisHeaders);
+
 // Split iris data into training set (70%) and test set (30%)
 var splitIrisData = new TrainTestSplitter<>(irisesSource,
                        /* Train fraction */ 0.7,
                              /* RNG seed */ 1L);
 var trainData = new MutableDataset<>(splitIrisData.getTrain());
 var testData = new MutableDataset<>(splitIrisData.getTest());
-{% endraw %}
-{% endhighlight %}
 
-Now we can try a variety of different models by using different trainers:
-</p>
-<p>
-{% highlight java %}
-{% raw %}
-// A decision tree
+// We can train a decision tree
 var cartTrainer = new CARTClassificationTrainer();
 Model<Label> tree = cartTrainer.train(trainData);
-
-// A logistic regression
+// Or a logistic regression
 var linearTrainer = new LogisticRegressionTrainer();
 Model<Label> linear = linearTrainer.train(trainData);
-{% endraw %}
-{% endhighlight %}
 
-And finally we can evaluate their performance on a single example or
-the full dataset:
-</p>
-<p>
-{% highlight java %}
-{% raw %}
-// A prediction is a Map from the output names (i.e. the labels)
-// to the scores
-Prediction<Label> prediction = linear.predict(testingData.get(0));
-​
+// Finally we make predictions on unseen data
+// Each prediction is a map from the output names (i.e. the labels) to the scores/probabilities
+Prediction<Label> prediction = linear.predict(testData.get(0));
+
 // Or we can evaluate the full test dataset, calculating the accuracy, F1 etc.
 Evaluation<Label> evaluation = new LabelEvaluation().evaluate(linear,testData);
 // we can inspect the evaluation manually
-evaluation.accuracy();
-// per label
-evaluation.accuracy(new Label("Iris-versicolor"))
+double acc = evaluation.accuracy();
+// which returns 0.978
 // or print a formatted evaluation string
 System.out.println(evaluation.toString());
 {% endraw %}
 {% endhighlight %}
-Which looks like this:
+The formatted evaluation output looks like this:
 </p>
 <pre>
 Class                           n          tp          fn          fp      recall        prec          f1
@@ -211,7 +198,7 @@ We have tutorial notebooks for Classification, Clustering, Regression, Anomaly
 Detection and the configuration system in
 <a href="/learn/{{ site.doc_version }}/tutorials">tutorials</a>. These use the
 <a href="https://github.com/SpencerPark/IJava">IJava</a> Jupyter notebook kernel, and work
-with Java 10+. It should be straight-forwad to convert the code in the tutorials
+with Java 10+. It should be straight-forward to convert the code in the tutorials
 back to Java 8 code by replacing the <code>var</code> keyword with the appropriate types.
 </p>
     </div>
