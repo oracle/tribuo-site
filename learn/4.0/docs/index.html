@@ -66,9 +66,9 @@ and evaluates it:
 
 {% highlight java %}
 {% raw %}
-var trainSet = new MutableDataset<>(new LibSVMDataSource("train-data",new LabelFactory()));
+var trainSet = new MutableDataset<>(new LibSVMDataSource(Paths.get("train-data"),new LabelFactory()));
 var model    = new LogisticRegressionTrainer().train(trainSet);
-var eval     = new LabelEvaluator().evaluate(new LibSVMDataSource("test-data",trainSet.getOutputFactory()));
+var eval     = new LabelEvaluator().evaluate(new LibSVMDataSource(Paths.get("test-data"),trainSet.getOutputFactory()));
 {% endraw %}
 {% endhighlight %}
 </p>
@@ -85,7 +85,7 @@ var eval     = new LabelEvaluator().evaluate(new LibSVMDataSource("test-data",tr
 <dependency>
     <groupId>org.tribuo</groupId>
     <artifactId>tribuo-all</artifactId>
-    <version>4.0.0</version>
+    <version>4.0.1</version>
     <type>pom</type>
 </dependency>
 {% endraw %}
@@ -114,7 +114,7 @@ DataSource<Label> irisData =
                                      /* Column headers  */ irisHeaders);
 
 // Split iris data into training set (70%) and test set (30%)
-var splitIrisData = new TrainTestSplitter<>(irisesSource,
+var splitIrisData = new TrainTestSplitter<>(irisData,
                        /* Train fraction */ 0.7,
                              /* RNG seed */ 1L);
 var trainData = new MutableDataset<>(splitIrisData.getTrain());
@@ -129,10 +129,10 @@ Model<Label> linear = linearTrainer.train(trainData);
 
 // Finally we make predictions on unseen data
 // Each prediction is a map from the output names (i.e. the labels) to the scores/probabilities
-Prediction<Label> prediction = linear.predict(testData.get(0));
+Prediction<Label> prediction = linear.predict(testData.getExample(0));
 
 // Or we can evaluate the full test dataset, calculating the accuracy, F1 etc.
-Evaluation<Label> evaluation = new LabelEvaluation().evaluate(linear,testData);
+LabelEvaluation evaluation = new LabelEvaluator().evaluate(linear,testData);
 // we can inspect the evaluation manually
 double acc = evaluation.accuracy();
 // which returns 0.978
