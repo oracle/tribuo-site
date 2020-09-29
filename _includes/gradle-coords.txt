@@ -1,0 +1,4 @@
+implementation ("org.tribuo:tribuo-all:{{ site.tribuo_version }}@pom") {
+    transitive = true // for Groovy
+    // isTransitive = true // for Kotlin
+}
