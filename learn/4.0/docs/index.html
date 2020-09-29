@@ -68,7 +68,8 @@ and evaluates it:
 {% raw %}
 var trainSet = new MutableDataset<>(new LibSVMDataSource(Paths.get("train-data"),new LabelFactory()));
 var model    = new LogisticRegressionTrainer().train(trainSet);
-var eval     = new LabelEvaluator().evaluate(new LibSVMDataSource(Paths.get("test-data"),trainSet.getOutputFactory()));
+var testSet  = new LibSVMDataSource(Paths.get("test-data"),trainSet.getOutputFactory());
+var eval     = new LabelEvaluator().evaluate(model,testSet);
 {% endraw %}
 {% endhighlight %}
 </p>
