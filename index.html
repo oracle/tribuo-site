@@ -87,7 +87,7 @@ active: home
         </div>
         <div class="tab-pane fade justify-content-center" id="gradle" role="tabpanel" aria-labelledby="profile-tab">
             <div class="d-flex alert alert-danger align-items-center bg-red-tribuo overflow-source-links" role="alert">
-                <code id="gradle-coords" class="copy-url preformat">implementation 'org.tribuo:tribuo-all:{{ site.tribuo_version }}@pom'</code>
+                <code id="gradle-coords" class="copy-url preformat">{% include gradle-coords.txt %}</code>
                 <button class="btn btn-sm float-right" data-clipboard-action="copy" data-clipboard-target="#gradle-coords">
                     <img src="assets/img/copy_to_clipboard.svg" alt="Copy to clipboard" width="18" />
                 </button>
