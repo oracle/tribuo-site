@@ -1,4 +1,4 @@
 implementation ("org.tribuo:tribuo-all:{{ site.tribuo_version }}@pom") {
-    transitive = true // for Groovy
-    // isTransitive = true // for Kotlin
+    transitive = true // for build.gradle (i.e. Groovy Gradle files)
+    // isTransitive = true // for build.gradle.kts (i.e. Kotlin Gradle files)
 }
