@@ -42,28 +42,36 @@ for tut in $TUTORIALS; do
     case $TITLE in
         *Classification*)
             ORDER=301
+            NEW_TITLE=$TITLE
             ;;
         *Clustering*)
             ORDER=302
+            NEW_TITLE=$TITLE
             ;;
         *Regression*)
             ORDER=303
+            NEW_TITLE=$TITLE
             ;;
         *Anomaly*)
             ORDER=304
+            NEW_TITLE=$TITLE
             ;;
         *Configuration*)
             ORDER=305
+            NEW_TITLE=$TITLE
             ;;
-        *Columnar*)
+        *columnar*)
             ORDER=306
+            NEW_TITLE="Loading Columnar Data"
             ;;
-        *External*)
+        *external*)
             ORDER=307
+            NEW_TITLE="External Models"
             ;;
         *)
             ORDER=$UNORDERED
             UNORDERED=$(($UNORDERED + 1))
+            NEW_TITLE=$TITLE
             ;;
     esac
 
@@ -75,7 +83,7 @@ for tut in $TUTORIALS; do
 
     cat << EOF > $TARGET
 ---
-title: "$TITLE"
+title: "$NEW_TITLE"
 og-title: "$TITLE Tutorial"
 learn_nav: true
 parent: Tutorials
