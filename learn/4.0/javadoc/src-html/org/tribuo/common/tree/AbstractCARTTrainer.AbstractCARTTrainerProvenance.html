@@ -177,19 +177,23 @@
 <span class="sourceLineNo">169</span><a name="line.169"></a>
 <span class="sourceLineNo">170</span>    protected abstract AbstractTrainingNode&lt;T&gt; mkTrainingNode(Dataset&lt;T&gt; examples);<a name="line.170"></a>
 <span class="sourceLineNo">171</span><a name="line.171"></a>
-<span class="sourceLineNo">172</span>    protected static abstract class AbstractCARTTrainerProvenance extends SkeletalTrainerProvenance {<a name="line.172"></a>
-<span class="sourceLineNo">173</span>        private static final long serialVersionUID = 1L;<a name="line.173"></a>
-<span class="sourceLineNo">174</span><a name="line.174"></a>
-<span class="sourceLineNo">175</span>        protected &lt;T extends Output&lt;T&gt;&gt; AbstractCARTTrainerProvenance(AbstractCARTTrainer&lt;T&gt; host) {<a name="line.175"></a>
-<span class="sourceLineNo">176</span>            super(host);<a name="line.176"></a>
-<span class="sourceLineNo">177</span>        }<a name="line.177"></a>
+<span class="sourceLineNo">172</span>    /**<a name="line.172"></a>
+<span class="sourceLineNo">173</span>     * Provenance for {@link AbstractCARTTrainer}. No longer used.<a name="line.173"></a>
+<span class="sourceLineNo">174</span>     */<a name="line.174"></a>
+<span class="sourceLineNo">175</span>    @Deprecated<a name="line.175"></a>
+<span class="sourceLineNo">176</span>    protected static abstract class AbstractCARTTrainerProvenance extends SkeletalTrainerProvenance {<a name="line.176"></a>
+<span class="sourceLineNo">177</span>        private static final long serialVersionUID = 1L;<a name="line.177"></a>
 <span class="sourceLineNo">178</span><a name="line.178"></a>
-<span class="sourceLineNo">179</span>        protected AbstractCARTTrainerProvenance(Map&lt;String,Provenance&gt; map) {<a name="line.179"></a>
-<span class="sourceLineNo">180</span>            super(map);<a name="line.180"></a>
+<span class="sourceLineNo">179</span>        protected &lt;T extends Output&lt;T&gt;&gt; AbstractCARTTrainerProvenance(AbstractCARTTrainer&lt;T&gt; host) {<a name="line.179"></a>
+<span class="sourceLineNo">180</span>            super(host);<a name="line.180"></a>
 <span class="sourceLineNo">181</span>        }<a name="line.181"></a>
-<span class="sourceLineNo">182</span>    }<a name="line.182"></a>
-<span class="sourceLineNo">183</span><a name="line.183"></a>
-<span class="sourceLineNo">184</span>}<a name="line.184"></a>
+<span class="sourceLineNo">182</span><a name="line.182"></a>
+<span class="sourceLineNo">183</span>        protected AbstractCARTTrainerProvenance(Map&lt;String,Provenance&gt; map) {<a name="line.183"></a>
+<span class="sourceLineNo">184</span>            super(map);<a name="line.184"></a>
+<span class="sourceLineNo">185</span>        }<a name="line.185"></a>
+<span class="sourceLineNo">186</span>    }<a name="line.186"></a>
+<span class="sourceLineNo">187</span><a name="line.187"></a>
+<span class="sourceLineNo">188</span>}<a name="line.188"></a>
 
 
 

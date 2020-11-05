@@ -55,6 +55,12 @@ for tut in $TUTORIALS; do
         *Configuration*)
             ORDER=305
             ;;
+        *Columnar*)
+            ORDER=306
+            ;;
+        *External*)
+            ORDER=307
+            ;;
         *)
             ORDER=$UNORDERED
             UNORDERED=$(($UNORDERED + 1))

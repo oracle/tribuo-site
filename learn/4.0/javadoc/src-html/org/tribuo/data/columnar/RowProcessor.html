@@ -60,7 +60,7 @@
 <span class="sourceLineNo">052</span> * construction. Optionally metadata and weights can be extracted using {@link FieldExtractor}s<a name="line.52"></a>
 <span class="sourceLineNo">053</span> * and written into each example as they are constructed.<a name="line.53"></a>
 <span class="sourceLineNo">054</span> * &lt;p&gt;<a name="line.54"></a>
-<span class="sourceLineNo">055</span> * If the metadata extractors are invalid (i.e. two extractors write to the same metadata key),<a name="line.55"></a>
+<span class="sourceLineNo">055</span> * If the metadata extractors are invalid (i.e., two extractors write to the same metadata key),<a name="line.55"></a>
 <span class="sourceLineNo">056</span> * the RowProcessor throws {@link PropertyException}.<a name="line.56"></a>
 <span class="sourceLineNo">057</span> */<a name="line.57"></a>
 <span class="sourceLineNo">058</span>public class RowProcessor&lt;T extends Output&lt;T&gt;&gt; implements Configurable, Provenancable&lt;ConfiguredObjectProvenance&gt; {<a name="line.58"></a>
@@ -71,372 +71,461 @@
 <span class="sourceLineNo">063</span><a name="line.63"></a>
 <span class="sourceLineNo">064</span>    private static final Pattern FEATURE_NAME_PATTERN = Pattern.compile(FEATURE_NAME_REGEX);<a name="line.64"></a>
 <span class="sourceLineNo">065</span><a name="line.65"></a>
-<span class="sourceLineNo">066</span><a name="line.66"></a>
-<span class="sourceLineNo">067</span>    @Config(description="Extractors for the example metadata.")<a name="line.67"></a>
-<span class="sourceLineNo">068</span>    private List&lt;FieldExtractor&lt;?&gt;&gt; metadataExtractors = Collections.emptyList();<a name="line.68"></a>
-<span class="sourceLineNo">069</span><a name="line.69"></a>
-<span class="sourceLineNo">070</span>    @Config(description="Extractor for the example weight.")<a name="line.70"></a>
-<span class="sourceLineNo">071</span>    protected FieldExtractor&lt;Float&gt; weightExtractor = null;<a name="line.71"></a>
-<span class="sourceLineNo">072</span><a name="line.72"></a>
-<span class="sourceLineNo">073</span>    @Config(mandatory = true,description="Processor which extracts the response.")<a name="line.73"></a>
-<span class="sourceLineNo">074</span>    protected ResponseProcessor&lt;T&gt; responseProcessor;<a name="line.74"></a>
-<span class="sourceLineNo">075</span><a name="line.75"></a>
-<span class="sourceLineNo">076</span>    @Config(mandatory = true,description="The list of field processors to use.")<a name="line.76"></a>
-<span class="sourceLineNo">077</span>    private List&lt;FieldProcessor&gt; fieldProcessorList;<a name="line.77"></a>
-<span class="sourceLineNo">078</span><a name="line.78"></a>
-<span class="sourceLineNo">079</span>    // fieldProcessorList is unpacked into this map to make the config files less complex.<a name="line.79"></a>
-<span class="sourceLineNo">080</span>    // fieldProcessorMap is the store of record for field processors.<a name="line.80"></a>
-<span class="sourceLineNo">081</span>    protected Map&lt;String,FieldProcessor&gt; fieldProcessorMap;<a name="line.81"></a>
-<span class="sourceLineNo">082</span><a name="line.82"></a>
-<span class="sourceLineNo">083</span>    @Config(description="A set of feature processors to apply after extraction.")<a name="line.83"></a>
-<span class="sourceLineNo">084</span>    private Set&lt;FeatureProcessor&gt; featureProcessors = new HashSet&lt;&gt;();<a name="line.84"></a>
-<span class="sourceLineNo">085</span><a name="line.85"></a>
-<span class="sourceLineNo">086</span>    @Config(description="A map from a regex to field processors to apply to fields matching the regex.")<a name="line.86"></a>
-<span class="sourceLineNo">087</span>    protected Map&lt;String,FieldProcessor&gt; regexMappingProcessors = new HashMap&lt;&gt;();<a name="line.87"></a>
-<span class="sourceLineNo">088</span><a name="line.88"></a>
-<span class="sourceLineNo">089</span>    protected boolean configured;<a name="line.89"></a>
-<span class="sourceLineNo">090</span><a name="line.90"></a>
-<span class="sourceLineNo">091</span>    public RowProcessor(ResponseProcessor&lt;T&gt; responseProcessor, Map&lt;String,FieldProcessor&gt; fieldProcessorMap) {<a name="line.91"></a>
-<span class="sourceLineNo">092</span>        this(Collections.emptyList(),null,responseProcessor,fieldProcessorMap,Collections.emptySet());<a name="line.92"></a>
-<span class="sourceLineNo">093</span>    }<a name="line.93"></a>
-<span class="sourceLineNo">094</span><a name="line.94"></a>
-<span class="sourceLineNo">095</span>    public RowProcessor(ResponseProcessor&lt;T&gt; responseProcessor, Map&lt;String,FieldProcessor&gt; fieldProcessorMap, Set&lt;FeatureProcessor&gt; featureProcessors) {<a name="line.95"></a>
-<span class="sourceLineNo">096</span>        this(Collections.emptyList(),null,responseProcessor,fieldProcessorMap,featureProcessors);<a name="line.96"></a>
-<span class="sourceLineNo">097</span>    }<a name="line.97"></a>
-<span class="sourceLineNo">098</span><a name="line.98"></a>
-<span class="sourceLineNo">099</span>    public RowProcessor(List&lt;FieldExtractor&lt;?&gt;&gt; metadataExtractors, FieldExtractor&lt;Float&gt; weightExtractor,<a name="line.99"></a>
-<span class="sourceLineNo">100</span>                        ResponseProcessor&lt;T&gt; responseProcessor, Map&lt;String,FieldProcessor&gt; fieldProcessorMap,<a name="line.100"></a>
-<span class="sourceLineNo">101</span>                        Set&lt;FeatureProcessor&gt; featureProcessors) {<a name="line.101"></a>
-<span class="sourceLineNo">102</span>        this(metadataExtractors,weightExtractor,responseProcessor,fieldProcessorMap,Collections.emptyMap(),featureProcessors);<a name="line.102"></a>
-<span class="sourceLineNo">103</span>    }<a name="line.103"></a>
-<span class="sourceLineNo">104</span><a name="line.104"></a>
-<span class="sourceLineNo">105</span>    public RowProcessor(List&lt;FieldExtractor&lt;?&gt;&gt; metadataExtractors, FieldExtractor&lt;Float&gt; weightExtractor,<a name="line.105"></a>
-<span class="sourceLineNo">106</span>                        ResponseProcessor&lt;T&gt; responseProcessor, Map&lt;String,FieldProcessor&gt; fieldProcessorMap,<a name="line.106"></a>
-<span class="sourceLineNo">107</span>                        Map&lt;String,FieldProcessor&gt; regexMappingProcessors, Set&lt;FeatureProcessor&gt; featureProcessors) {<a name="line.107"></a>
-<span class="sourceLineNo">108</span>        this.metadataExtractors = metadataExtractors.isEmpty() ? Collections.emptyList() : new ArrayList&lt;&gt;(metadataExtractors);<a name="line.108"></a>
-<span class="sourceLineNo">109</span>        this.weightExtractor = weightExtractor;<a name="line.109"></a>
-<span class="sourceLineNo">110</span>        this.responseProcessor = responseProcessor;<a name="line.110"></a>
-<span class="sourceLineNo">111</span>        this.fieldProcessorMap = new HashMap&lt;&gt;(fieldProcessorMap);<a name="line.111"></a>
-<span class="sourceLineNo">112</span>        this.regexMappingProcessors = regexMappingProcessors.isEmpty() ? Collections.emptyMap() : new HashMap&lt;&gt;(regexMappingProcessors);<a name="line.112"></a>
-<span class="sourceLineNo">113</span>        this.featureProcessors.addAll(featureProcessors);<a name="line.113"></a>
-<span class="sourceLineNo">114</span>        postConfig();<a name="line.114"></a>
-<span class="sourceLineNo">115</span>    }<a name="line.115"></a>
-<span class="sourceLineNo">116</span><a name="line.116"></a>
-<span class="sourceLineNo">117</span>    /**<a name="line.117"></a>
-<span class="sourceLineNo">118</span>     * For olcut.<a name="line.118"></a>
-<span class="sourceLineNo">119</span>     */<a name="line.119"></a>
-<span class="sourceLineNo">120</span>    protected RowProcessor() {}<a name="line.120"></a>
-<span class="sourceLineNo">121</span><a name="line.121"></a>
-<span class="sourceLineNo">122</span>    @Override<a name="line.122"></a>
-<span class="sourceLineNo">123</span>    public void postConfig() {<a name="line.123"></a>
-<span class="sourceLineNo">124</span>        configured = regexMappingProcessors.isEmpty();<a name="line.124"></a>
-<span class="sourceLineNo">125</span>        if (fieldProcessorList != null) {<a name="line.125"></a>
-<span class="sourceLineNo">126</span>            fieldProcessorMap = fieldProcessorList.stream().collect(Collectors.toMap(FieldProcessor::getFieldName, Function.identity()));<a name="line.126"></a>
-<span class="sourceLineNo">127</span>        } else {<a name="line.127"></a>
-<span class="sourceLineNo">128</span>            fieldProcessorList = new ArrayList&lt;&gt;();<a name="line.128"></a>
-<span class="sourceLineNo">129</span>            fieldProcessorList.addAll(fieldProcessorMap.values());<a name="line.129"></a>
-<span class="sourceLineNo">130</span>        }<a name="line.130"></a>
-<span class="sourceLineNo">131</span>        Set&lt;String&gt; metadataNames = new HashSet&lt;&gt;();<a name="line.131"></a>
-<span class="sourceLineNo">132</span>        for (FieldExtractor&lt;?&gt; extractor : metadataExtractors) {<a name="line.132"></a>
-<span class="sourceLineNo">133</span>            String newMetadataName = extractor.getMetadataName();<a name="line.133"></a>
-<span class="sourceLineNo">134</span>            if (metadataNames.contains(newMetadataName)) {<a name="line.134"></a>
-<span class="sourceLineNo">135</span>                throw new PropertyException("","metadataExtractors",<a name="line.135"></a>
-<span class="sourceLineNo">136</span>                        "Two metadata extractors found referencing the same metadata name '" + newMetadataName + "'");<a name="line.136"></a>
-<span class="sourceLineNo">137</span>            } else {<a name="line.137"></a>
-<span class="sourceLineNo">138</span>                metadataNames.add(newMetadataName);<a name="line.138"></a>
-<span class="sourceLineNo">139</span>            }<a name="line.139"></a>
-<span class="sourceLineNo">140</span>        }<a name="line.140"></a>
-<span class="sourceLineNo">141</span>    }<a name="line.141"></a>
-<span class="sourceLineNo">142</span><a name="line.142"></a>
-<span class="sourceLineNo">143</span>    /**<a name="line.143"></a>
-<span class="sourceLineNo">144</span>     * Returns the response processor this RowProcessor uses.<a name="line.144"></a>
-<span class="sourceLineNo">145</span>     * @return The response processor.<a name="line.145"></a>
-<span class="sourceLineNo">146</span>     */<a name="line.146"></a>
-<span class="sourceLineNo">147</span>    public ResponseProcessor&lt;T&gt; getResponseProcessor() {<a name="line.147"></a>
-<span class="sourceLineNo">148</span>        return responseProcessor;<a name="line.148"></a>
-<span class="sourceLineNo">149</span>    }<a name="line.149"></a>
-<span class="sourceLineNo">150</span><a name="line.150"></a>
-<span class="sourceLineNo">151</span>    /**<a name="line.151"></a>
-<span class="sourceLineNo">152</span>     * Returns the map of {@link FieldProcessor}s this RowProcessor uses.<a name="line.152"></a>
-<span class="sourceLineNo">153</span>     * @return The field processors.<a name="line.153"></a>
-<span class="sourceLineNo">154</span>     */<a name="line.154"></a>
-<span class="sourceLineNo">155</span>    public Map&lt;String,FieldProcessor&gt; getFieldProcessors() {<a name="line.155"></a>
-<span class="sourceLineNo">156</span>        return fieldProcessorMap;<a name="line.156"></a>
-<span class="sourceLineNo">157</span>    }<a name="line.157"></a>
-<span class="sourceLineNo">158</span><a name="line.158"></a>
-<span class="sourceLineNo">159</span>    /**<a name="line.159"></a>
-<span class="sourceLineNo">160</span>     * Returns the set of {@link FeatureProcessor}s this RowProcessor uses.<a name="line.160"></a>
-<span class="sourceLineNo">161</span>     * @return The feature processors.<a name="line.161"></a>
-<span class="sourceLineNo">162</span>     */<a name="line.162"></a>
-<span class="sourceLineNo">163</span>    public Set&lt;FeatureProcessor&gt; getFeatureProcessors() {<a name="line.163"></a>
-<span class="sourceLineNo">164</span>        return featureProcessors;<a name="line.164"></a>
-<span class="sourceLineNo">165</span>    }<a name="line.165"></a>
-<span class="sourceLineNo">166</span><a name="line.166"></a>
-<span class="sourceLineNo">167</span>    /**<a name="line.167"></a>
-<span class="sourceLineNo">168</span>     * Generate an {@link Example} from the supplied row. Returns an empty Optional if<a name="line.168"></a>
-<span class="sourceLineNo">169</span>     * there are no features, or the response is required but it was not found. The latter case is<a name="line.169"></a>
-<span class="sourceLineNo">170</span>     * used at training time.<a name="line.170"></a>
-<span class="sourceLineNo">171</span>     * @param row The row to process.<a name="line.171"></a>
-<span class="sourceLineNo">172</span>     * @param outputRequired If an Output must be found in the row to return an Example.<a name="line.172"></a>
-<span class="sourceLineNo">173</span>     * @return An Optional containing an Example if the row was valid, an empty Optional otherwise.<a name="line.173"></a>
-<span class="sourceLineNo">174</span>     */<a name="line.174"></a>
-<span class="sourceLineNo">175</span>    public Optional&lt;Example&lt;T&gt;&gt; generateExample(ColumnarIterator.Row row, boolean outputRequired) {<a name="line.175"></a>
-<span class="sourceLineNo">176</span>        String responseValue = row.getRowData().get(responseProcessor.getFieldName());<a name="line.176"></a>
-<span class="sourceLineNo">177</span>        Optional&lt;T&gt; labelOpt = responseProcessor.process(responseValue);<a name="line.177"></a>
-<span class="sourceLineNo">178</span>        if (!labelOpt.isPresent() &amp;&amp; outputRequired) {<a name="line.178"></a>
-<span class="sourceLineNo">179</span>            return Optional.empty();<a name="line.179"></a>
-<span class="sourceLineNo">180</span>        }<a name="line.180"></a>
-<span class="sourceLineNo">181</span><a name="line.181"></a>
-<span class="sourceLineNo">182</span>        List&lt;ColumnarFeature&gt; features = generateFeatures(row.getRowData());<a name="line.182"></a>
-<span class="sourceLineNo">183</span><a name="line.183"></a>
-<span class="sourceLineNo">184</span>        if (features.isEmpty()) {<a name="line.184"></a>
-<span class="sourceLineNo">185</span>            logger.warning(String.format("Row %d empty of features, omitting", row.getIndex()));<a name="line.185"></a>
-<span class="sourceLineNo">186</span>            return Optional.empty();<a name="line.186"></a>
-<span class="sourceLineNo">187</span>        } else {<a name="line.187"></a>
-<span class="sourceLineNo">188</span>            T label = labelOpt.orElse(responseProcessor.getOutputFactory().getUnknownOutput());<a name="line.188"></a>
-<span class="sourceLineNo">189</span><a name="line.189"></a>
-<span class="sourceLineNo">190</span>            Map&lt;String,Object&gt; metadata = generateMetadata(row);<a name="line.190"></a>
-<span class="sourceLineNo">191</span><a name="line.191"></a>
-<span class="sourceLineNo">192</span>            Example&lt;T&gt; example;<a name="line.192"></a>
-<span class="sourceLineNo">193</span>            if (weightExtractor == null) {<a name="line.193"></a>
-<span class="sourceLineNo">194</span>                example = new ArrayExample&lt;&gt;(label,metadata);<a name="line.194"></a>
-<span class="sourceLineNo">195</span>            } else {<a name="line.195"></a>
-<span class="sourceLineNo">196</span>                example = new ArrayExample&lt;&gt;(label,<a name="line.196"></a>
-<span class="sourceLineNo">197</span>                        weightExtractor.extract(row).orElse(Example.DEFAULT_WEIGHT),<a name="line.197"></a>
-<span class="sourceLineNo">198</span>                        metadata);<a name="line.198"></a>
-<span class="sourceLineNo">199</span>            }<a name="line.199"></a>
-<span class="sourceLineNo">200</span>            example.addAll(features);<a name="line.200"></a>
-<span class="sourceLineNo">201</span>            return Optional.of(example);<a name="line.201"></a>
-<span class="sourceLineNo">202</span>        }<a name="line.202"></a>
-<span class="sourceLineNo">203</span>    }<a name="line.203"></a>
-<span class="sourceLineNo">204</span><a name="line.204"></a>
-<span class="sourceLineNo">205</span>    /**<a name="line.205"></a>
-<span class="sourceLineNo">206</span>     * Generate an {@link Example} from the supplied row. Returns an empty Optional if<a name="line.206"></a>
-<span class="sourceLineNo">207</span>     * there are no features, or the response is required but it was not found.<a name="line.207"></a>
-<span class="sourceLineNo">208</span>     * &lt;p&gt;<a name="line.208"></a>
-<span class="sourceLineNo">209</span>     * Supplies -1 as the example index, used in cases where the index isn't meaningful.<a name="line.209"></a>
-<span class="sourceLineNo">210</span>     * @param row The row to process.<a name="line.210"></a>
-<span class="sourceLineNo">211</span>     * @param outputRequired If an Output must be found in the row to return an Example.<a name="line.211"></a>
-<span class="sourceLineNo">212</span>     * @return An Optional containing an Example if the row was valid, an empty Optional otherwise.<a name="line.212"></a>
-<span class="sourceLineNo">213</span>     */<a name="line.213"></a>
-<span class="sourceLineNo">214</span>    public Optional&lt;Example&lt;T&gt;&gt; generateExample(Map&lt;String,String&gt; row, boolean outputRequired) {<a name="line.214"></a>
-<span class="sourceLineNo">215</span>        return generateExample(-1,row,outputRequired);<a name="line.215"></a>
-<span class="sourceLineNo">216</span>    }<a name="line.216"></a>
-<span class="sourceLineNo">217</span><a name="line.217"></a>
-<span class="sourceLineNo">218</span>    /**<a name="line.218"></a>
-<span class="sourceLineNo">219</span>     * Generate an {@link Example} from the supplied row. Returns an empty Optional if<a name="line.219"></a>
-<span class="sourceLineNo">220</span>     * there are no features, or the response is required but it was not found. The latter case is<a name="line.220"></a>
-<span class="sourceLineNo">221</span>     * used at training time.<a name="line.221"></a>
-<span class="sourceLineNo">222</span>     * @param idx The index for use in the example metadata if desired.<a name="line.222"></a>
-<span class="sourceLineNo">223</span>     * @param row The row to process.<a name="line.223"></a>
-<span class="sourceLineNo">224</span>     * @param outputRequired If an Output must be found in the row to return an Example.<a name="line.224"></a>
-<span class="sourceLineNo">225</span>     * @return An Optional containing an Example if the row was valid, an empty Optional otherwise.<a name="line.225"></a>
-<span class="sourceLineNo">226</span>     */<a name="line.226"></a>
-<span class="sourceLineNo">227</span>    public Optional&lt;Example&lt;T&gt;&gt; generateExample(long idx, Map&lt;String,String&gt; row, boolean outputRequired) {<a name="line.227"></a>
-<span class="sourceLineNo">228</span>        return generateExample(new ColumnarIterator.Row(idx, new ArrayList&lt;&gt;(row.keySet()), row), outputRequired);<a name="line.228"></a>
-<span class="sourceLineNo">229</span>    }<a name="line.229"></a>
-<span class="sourceLineNo">230</span><a name="line.230"></a>
-<span class="sourceLineNo">231</span>    /**<a name="line.231"></a>
-<span class="sourceLineNo">232</span>     * Generates the example metadata from the supplied row and index.<a name="line.232"></a>
-<span class="sourceLineNo">233</span>     * @param row The row to process.<a name="line.233"></a>
-<span class="sourceLineNo">234</span>     * @return A (possibly empty) map containing the metadata.<a name="line.234"></a>
-<span class="sourceLineNo">235</span>     */<a name="line.235"></a>
-<span class="sourceLineNo">236</span>    public Map&lt;String,Object&gt; generateMetadata(ColumnarIterator.Row row) {<a name="line.236"></a>
-<span class="sourceLineNo">237</span>        if (metadataExtractors.isEmpty()) {<a name="line.237"></a>
-<span class="sourceLineNo">238</span>            return Collections.emptyMap();<a name="line.238"></a>
-<span class="sourceLineNo">239</span>        } else {<a name="line.239"></a>
-<span class="sourceLineNo">240</span>            Map&lt;String,Object&gt; metadataMap = new HashMap&lt;&gt;();<a name="line.240"></a>
-<span class="sourceLineNo">241</span>            long idx = row.getIndex();<a name="line.241"></a>
-<span class="sourceLineNo">242</span><a name="line.242"></a>
-<span class="sourceLineNo">243</span>            for (FieldExtractor&lt;?&gt; field : metadataExtractors) {<a name="line.243"></a>
-<span class="sourceLineNo">244</span>                String metadataName = field.getMetadataName();<a name="line.244"></a>
-<span class="sourceLineNo">245</span>                Optional&lt;?&gt; extractedValue = field.extract(row);<a name="line.245"></a>
-<span class="sourceLineNo">246</span>                if(extractedValue.isPresent()) {<a name="line.246"></a>
-<span class="sourceLineNo">247</span>                    metadataMap.put(metadataName, extractedValue.get());<a name="line.247"></a>
-<span class="sourceLineNo">248</span>                } else {<a name="line.248"></a>
-<span class="sourceLineNo">249</span>                    logger.warning("Failed to extract field with name " + metadataName + " from index " + idx);<a name="line.249"></a>
-<span class="sourceLineNo">250</span>                }<a name="line.250"></a>
-<span class="sourceLineNo">251</span>            }<a name="line.251"></a>
-<span class="sourceLineNo">252</span><a name="line.252"></a>
-<span class="sourceLineNo">253</span>            return metadataMap;<a name="line.253"></a>
-<span class="sourceLineNo">254</span>        }<a name="line.254"></a>
-<span class="sourceLineNo">255</span>    }<a name="line.255"></a>
-<span class="sourceLineNo">256</span><a name="line.256"></a>
-<span class="sourceLineNo">257</span>    /**<a name="line.257"></a>
-<span class="sourceLineNo">258</span>     * Generates the features from the supplied row.<a name="line.258"></a>
-<span class="sourceLineNo">259</span>     * @param row The row to process.<a name="line.259"></a>
-<span class="sourceLineNo">260</span>     * @return A (possibly empty) list of {@link ColumnarFeature}s.<a name="line.260"></a>
-<span class="sourceLineNo">261</span>     */<a name="line.261"></a>
-<span class="sourceLineNo">262</span>    public List&lt;ColumnarFeature&gt; generateFeatures(Map&lt;String,String&gt; row) {<a name="line.262"></a>
-<span class="sourceLineNo">263</span>        if (!configured) {<a name="line.263"></a>
-<span class="sourceLineNo">264</span>            throw new IllegalStateException("expandRegexMapping not called, yet there are fieldProcessorMap which have not been bound to a field name.");<a name="line.264"></a>
-<span class="sourceLineNo">265</span>        }<a name="line.265"></a>
-<span class="sourceLineNo">266</span>        List&lt;ColumnarFeature&gt; features = new ArrayList&lt;&gt;();<a name="line.266"></a>
-<span class="sourceLineNo">267</span><a name="line.267"></a>
-<span class="sourceLineNo">268</span>        for (Map.Entry&lt;String,FieldProcessor&gt; e : fieldProcessorMap.entrySet()) {<a name="line.268"></a>
-<span class="sourceLineNo">269</span>            String value = row.get(e.getKey());<a name="line.269"></a>
-<span class="sourceLineNo">270</span>            if (value != null) {<a name="line.270"></a>
-<span class="sourceLineNo">271</span>                value = value.replace('\n', ' ').trim();<a name="line.271"></a>
-<span class="sourceLineNo">272</span>                features.addAll(e.getValue().process(value));<a name="line.272"></a>
-<span class="sourceLineNo">273</span>            }<a name="line.273"></a>
-<span class="sourceLineNo">274</span>        }<a name="line.274"></a>
-<span class="sourceLineNo">275</span><a name="line.275"></a>
-<span class="sourceLineNo">276</span>        for (FeatureProcessor f : featureProcessors) {<a name="line.276"></a>
-<span class="sourceLineNo">277</span>            features = f.process(features);<a name="line.277"></a>
-<span class="sourceLineNo">278</span>        }<a name="line.278"></a>
-<span class="sourceLineNo">279</span><a name="line.279"></a>
-<span class="sourceLineNo">280</span>        return features;<a name="line.280"></a>
-<span class="sourceLineNo">281</span>    }<a name="line.281"></a>
-<span class="sourceLineNo">282</span><a name="line.282"></a>
-<span class="sourceLineNo">283</span>    /**<a name="line.283"></a>
-<span class="sourceLineNo">284</span>     * The set of column names this will use for the feature processing.<a name="line.284"></a>
-<span class="sourceLineNo">285</span>     * @return The set of column names it processes.<a name="line.285"></a>
-<span class="sourceLineNo">286</span>     */<a name="line.286"></a>
-<span class="sourceLineNo">287</span>    public Set&lt;String&gt; getColumnNames() {<a name="line.287"></a>
-<span class="sourceLineNo">288</span>        return fieldProcessorMap.keySet();<a name="line.288"></a>
-<span class="sourceLineNo">289</span>    }<a name="line.289"></a>
-<span class="sourceLineNo">290</span><a name="line.290"></a>
-<span class="sourceLineNo">291</span>    /**<a name="line.291"></a>
-<span class="sourceLineNo">292</span>     * Returns a description of the row processor and it's fields.<a name="line.292"></a>
-<span class="sourceLineNo">293</span>     * @return A String description of the RowProcessor.<a name="line.293"></a>
-<span class="sourceLineNo">294</span>     */<a name="line.294"></a>
-<span class="sourceLineNo">295</span>    public String getDescription() {<a name="line.295"></a>
-<span class="sourceLineNo">296</span>        String weightExtractorStr = weightExtractor == null ? "null" : weightExtractor.toString();<a name="line.296"></a>
-<span class="sourceLineNo">297</span>        if (configured || regexMappingProcessors.isEmpty()) {<a name="line.297"></a>
-<span class="sourceLineNo">298</span>            return "RowProcessor(responseProcessor=" + responseProcessor.toString() +<a name="line.298"></a>
-<span class="sourceLineNo">299</span>                    ",fieldProcessorMap=" + fieldProcessorMap.toString() +<a name="line.299"></a>
-<span class="sourceLineNo">300</span>                    ",featureProcessors=" + featureProcessors.toString() +<a name="line.300"></a>
-<span class="sourceLineNo">301</span>                    ",metadataExtractors=" + metadataExtractors.toString() +<a name="line.301"></a>
-<span class="sourceLineNo">302</span>                    ",weightExtractor=" + weightExtractorStr + ")";<a name="line.302"></a>
-<span class="sourceLineNo">303</span>        } else {<a name="line.303"></a>
-<span class="sourceLineNo">304</span>            return "RowProcessor(responseProcessor=" + responseProcessor.toString() +<a name="line.304"></a>
-<span class="sourceLineNo">305</span>                    ",fieldProcessorMap=" + fieldProcessorMap.toString() +<a name="line.305"></a>
-<span class="sourceLineNo">306</span>                    ",regexMappingProcessors=" + regexMappingProcessors.toString() +<a name="line.306"></a>
-<span class="sourceLineNo">307</span>                    ",featureProcessors=" + featureProcessors.toString() +<a name="line.307"></a>
-<span class="sourceLineNo">308</span>                    ",metadataExtractors=" + metadataExtractors.toString() +<a name="line.308"></a>
-<span class="sourceLineNo">309</span>                    ",weightExtractor=" + weightExtractorStr + ")";<a name="line.309"></a>
-<span class="sourceLineNo">310</span>        }<a name="line.310"></a>
-<span class="sourceLineNo">311</span>    }<a name="line.311"></a>
-<span class="sourceLineNo">312</span><a name="line.312"></a>
-<span class="sourceLineNo">313</span>    @Override<a name="line.313"></a>
-<span class="sourceLineNo">314</span>    public String toString() {<a name="line.314"></a>
-<span class="sourceLineNo">315</span>        return getDescription();<a name="line.315"></a>
-<span class="sourceLineNo">316</span>    }<a name="line.316"></a>
-<span class="sourceLineNo">317</span><a name="line.317"></a>
-<span class="sourceLineNo">318</span>    /**<a name="line.318"></a>
-<span class="sourceLineNo">319</span>     * Returns the metadata keys and value types that are extracted<a name="line.319"></a>
-<span class="sourceLineNo">320</span>     * by this RowProcessor.<a name="line.320"></a>
-<span class="sourceLineNo">321</span>     * @return The metadata keys and value types.<a name="line.321"></a>
-<span class="sourceLineNo">322</span>     */<a name="line.322"></a>
-<span class="sourceLineNo">323</span>    public Map&lt;String,Class&lt;?&gt;&gt; getMetadataTypes() {<a name="line.323"></a>
-<span class="sourceLineNo">324</span>        if (metadataExtractors.isEmpty()) {<a name="line.324"></a>
-<span class="sourceLineNo">325</span>            return Collections.emptyMap();<a name="line.325"></a>
-<span class="sourceLineNo">326</span>        } else {<a name="line.326"></a>
-<span class="sourceLineNo">327</span>            Map&lt;String, Class&lt;?&gt;&gt; types = new HashMap&lt;&gt;();<a name="line.327"></a>
-<span class="sourceLineNo">328</span><a name="line.328"></a>
-<span class="sourceLineNo">329</span>            for (FieldExtractor&lt;?&gt; extractor : metadataExtractors) {<a name="line.329"></a>
-<span class="sourceLineNo">330</span>                types.put(extractor.getMetadataName(), extractor.getValueType());<a name="line.330"></a>
-<span class="sourceLineNo">331</span>            }<a name="line.331"></a>
-<span class="sourceLineNo">332</span><a name="line.332"></a>
-<span class="sourceLineNo">333</span>            return types;<a name="line.333"></a>
-<span class="sourceLineNo">334</span>        }<a name="line.334"></a>
-<span class="sourceLineNo">335</span>    }<a name="line.335"></a>
-<span class="sourceLineNo">336</span><a name="line.336"></a>
-<span class="sourceLineNo">337</span>    /**<a name="line.337"></a>
-<span class="sourceLineNo">338</span>     * Returns true if the regexes have been expanded into field processors.<a name="line.338"></a>
-<span class="sourceLineNo">339</span>     * @return True if the RowProcessor has seen the set of input fields.<a name="line.339"></a>
-<span class="sourceLineNo">340</span>     */<a name="line.340"></a>
-<span class="sourceLineNo">341</span>    public boolean isConfigured() {<a name="line.341"></a>
-<span class="sourceLineNo">342</span>        return configured;<a name="line.342"></a>
-<span class="sourceLineNo">343</span>    }<a name="line.343"></a>
-<span class="sourceLineNo">344</span><a name="line.344"></a>
-<span class="sourceLineNo">345</span>    /**<a name="line.345"></a>
-<span class="sourceLineNo">346</span>     * Uses similar logic to {@link org.tribuo.transform.TransformationMap#validateTransformations} to check the regexes<a name="line.346"></a>
-<span class="sourceLineNo">347</span>     * against the {@link ImmutableFeatureMap} contained in the supplied {@link Model}.<a name="line.347"></a>
-<span class="sourceLineNo">348</span>     * Throws an IllegalArgumentException if any regexes overlap with<a name="line.348"></a>
-<span class="sourceLineNo">349</span>     * themselves, or with the currently defined set of fieldProcessorMap.<a name="line.349"></a>
-<span class="sourceLineNo">350</span>     * @param model The model to use to expand the regexes.<a name="line.350"></a>
-<span class="sourceLineNo">351</span>     */<a name="line.351"></a>
-<span class="sourceLineNo">352</span>    public void expandRegexMapping(Model&lt;T&gt; model) {<a name="line.352"></a>
-<span class="sourceLineNo">353</span>        expandRegexMapping(model.getFeatureIDMap());<a name="line.353"></a>
-<span class="sourceLineNo">354</span>    }<a name="line.354"></a>
-<span class="sourceLineNo">355</span><a name="line.355"></a>
-<span class="sourceLineNo">356</span>    /**<a name="line.356"></a>
-<span class="sourceLineNo">357</span>     * Uses similar logic to {@link org.tribuo.transform.TransformationMap#validateTransformations} to check the regexes<a name="line.357"></a>
-<span class="sourceLineNo">358</span>     * against the supplied feature map. Throws an IllegalArgumentException if any regexes overlap with<a name="line.358"></a>
-<span class="sourceLineNo">359</span>     * themselves, or with the currently defined set of fieldProcessorMap.<a name="line.359"></a>
-<span class="sourceLineNo">360</span>     * @param featureMap The feature map to use to expand the regexes.<a name="line.360"></a>
-<span class="sourceLineNo">361</span>     */<a name="line.361"></a>
-<span class="sourceLineNo">362</span>    public void expandRegexMapping(ImmutableFeatureMap featureMap) {<a name="line.362"></a>
-<span class="sourceLineNo">363</span>        ArrayList&lt;String&gt; fieldNames = new ArrayList&lt;&gt;(featureMap.size());<a name="line.363"></a>
-<span class="sourceLineNo">364</span><a name="line.364"></a>
-<span class="sourceLineNo">365</span>        for (VariableInfo v : featureMap) {<a name="line.365"></a>
-<span class="sourceLineNo">366</span>            String[] split = FEATURE_NAME_PATTERN.split(v.getName(),1);<a name="line.366"></a>
-<span class="sourceLineNo">367</span>            String fieldName = split[0];<a name="line.367"></a>
-<span class="sourceLineNo">368</span>            fieldNames.add(fieldName);<a name="line.368"></a>
-<span class="sourceLineNo">369</span>        }<a name="line.369"></a>
-<span class="sourceLineNo">370</span><a name="line.370"></a>
-<span class="sourceLineNo">371</span>        expandRegexMapping(fieldNames);<a name="line.371"></a>
-<span class="sourceLineNo">372</span>    }<a name="line.372"></a>
-<span class="sourceLineNo">373</span><a name="line.373"></a>
-<span class="sourceLineNo">374</span>    /**<a name="line.374"></a>
-<span class="sourceLineNo">375</span>     * Uses similar logic to {@link org.tribuo.transform.TransformationMap#validateTransformations} to check the regexes<a name="line.375"></a>
-<span class="sourceLineNo">376</span>     * against the supplied list of field names. Throws an IllegalArgumentException if any regexes overlap with<a name="line.376"></a>
-<span class="sourceLineNo">377</span>     * themselves, or with the currently defined set of fieldProcessorMap or if there are unmatched regexes after<a name="line.377"></a>
-<span class="sourceLineNo">378</span>     * processing.<a name="line.378"></a>
-<span class="sourceLineNo">379</span>     * @param fieldNames The list of field names.<a name="line.379"></a>
-<span class="sourceLineNo">380</span>     */<a name="line.380"></a>
-<span class="sourceLineNo">381</span>    public void expandRegexMapping(Collection&lt;String&gt; fieldNames) {<a name="line.381"></a>
-<span class="sourceLineNo">382</span>        if (configured) {<a name="line.382"></a>
-<span class="sourceLineNo">383</span>            logger.warning("RowProcessor was already configured, yet expandRegexMapping was called with " + fieldNames.toString());<a name="line.383"></a>
-<span class="sourceLineNo">384</span>        }<a name="line.384"></a>
-<span class="sourceLineNo">385</span>        Set&lt;String&gt; foundFields = partialExpandRegexMapping(fieldNames);<a name="line.385"></a>
-<span class="sourceLineNo">386</span><a name="line.386"></a>
-<span class="sourceLineNo">387</span>        if (foundFields.size() != regexMappingProcessors.size()) {<a name="line.387"></a>
-<span class="sourceLineNo">388</span>            throw new IllegalArgumentException("Failed to match all the regexes, found " + foundFields.size() + ", required " + regexMappingProcessors.size());<a name="line.388"></a>
-<span class="sourceLineNo">389</span>        } else {<a name="line.389"></a>
-<span class="sourceLineNo">390</span>            regexMappingProcessors.clear();<a name="line.390"></a>
-<span class="sourceLineNo">391</span>            configured = true;<a name="line.391"></a>
-<span class="sourceLineNo">392</span>        }<a name="line.392"></a>
-<span class="sourceLineNo">393</span>    }<a name="line.393"></a>
+<span class="sourceLineNo">066</span>    @Config(description="Extractors for the example metadata.")<a name="line.66"></a>
+<span class="sourceLineNo">067</span>    private List&lt;FieldExtractor&lt;?&gt;&gt; metadataExtractors = Collections.emptyList();<a name="line.67"></a>
+<span class="sourceLineNo">068</span><a name="line.68"></a>
+<span class="sourceLineNo">069</span>    @Config(description="Extractor for the example weight.")<a name="line.69"></a>
+<span class="sourceLineNo">070</span>    protected FieldExtractor&lt;Float&gt; weightExtractor = null;<a name="line.70"></a>
+<span class="sourceLineNo">071</span><a name="line.71"></a>
+<span class="sourceLineNo">072</span>    @Config(mandatory = true,description="Processor which extracts the response.")<a name="line.72"></a>
+<span class="sourceLineNo">073</span>    protected ResponseProcessor&lt;T&gt; responseProcessor;<a name="line.73"></a>
+<span class="sourceLineNo">074</span><a name="line.74"></a>
+<span class="sourceLineNo">075</span>    @Config(mandatory = true,description="The list of field processors to use.")<a name="line.75"></a>
+<span class="sourceLineNo">076</span>    private List&lt;FieldProcessor&gt; fieldProcessorList;<a name="line.76"></a>
+<span class="sourceLineNo">077</span><a name="line.77"></a>
+<span class="sourceLineNo">078</span>    // fieldProcessorList is unpacked into this map to make the config files less complex.<a name="line.78"></a>
+<span class="sourceLineNo">079</span>    // fieldProcessorMap is the store of record for field processors.<a name="line.79"></a>
+<span class="sourceLineNo">080</span>    protected Map&lt;String,FieldProcessor&gt; fieldProcessorMap;<a name="line.80"></a>
+<span class="sourceLineNo">081</span><a name="line.81"></a>
+<span class="sourceLineNo">082</span>    @Config(description="A set of feature processors to apply after extraction.")<a name="line.82"></a>
+<span class="sourceLineNo">083</span>    private Set&lt;FeatureProcessor&gt; featureProcessors = new HashSet&lt;&gt;();<a name="line.83"></a>
+<span class="sourceLineNo">084</span><a name="line.84"></a>
+<span class="sourceLineNo">085</span>    @Config(description="A map from a regex to field processors to apply to fields matching the regex.")<a name="line.85"></a>
+<span class="sourceLineNo">086</span>    protected Map&lt;String,FieldProcessor&gt; regexMappingProcessors = new HashMap&lt;&gt;();<a name="line.86"></a>
+<span class="sourceLineNo">087</span><a name="line.87"></a>
+<span class="sourceLineNo">088</span>    protected boolean configured;<a name="line.88"></a>
+<span class="sourceLineNo">089</span><a name="line.89"></a>
+<span class="sourceLineNo">090</span>    /**<a name="line.90"></a>
+<span class="sourceLineNo">091</span>     * Constructs a RowProcessor using the supplied responseProcessor to extract the response variable,<a name="line.91"></a>
+<span class="sourceLineNo">092</span>     * and the supplied fieldProcessorMap to control which fields are parsed and how they are parsed.<a name="line.92"></a>
+<span class="sourceLineNo">093</span>     * &lt;p&gt;<a name="line.93"></a>
+<span class="sourceLineNo">094</span>     * This processor does not generate any additional metadata for the examples, nor does it set the<a name="line.94"></a>
+<span class="sourceLineNo">095</span>     * weight value on generated examples.<a name="line.95"></a>
+<span class="sourceLineNo">096</span>     * @param responseProcessor The response processor to use.<a name="line.96"></a>
+<span class="sourceLineNo">097</span>     * @param fieldProcessorMap The keys are the field names and the values are the field processors to apply to those fields.<a name="line.97"></a>
+<span class="sourceLineNo">098</span>     */<a name="line.98"></a>
+<span class="sourceLineNo">099</span>    public RowProcessor(ResponseProcessor&lt;T&gt; responseProcessor, Map&lt;String,FieldProcessor&gt; fieldProcessorMap) {<a name="line.99"></a>
+<span class="sourceLineNo">100</span>        this(Collections.emptyList(),null,responseProcessor,fieldProcessorMap,Collections.emptySet());<a name="line.100"></a>
+<span class="sourceLineNo">101</span>    }<a name="line.101"></a>
+<span class="sourceLineNo">102</span><a name="line.102"></a>
+<span class="sourceLineNo">103</span>    /**<a name="line.103"></a>
+<span class="sourceLineNo">104</span>     * Constructs a RowProcessor using the supplied responseProcessor to extract the response variable,<a name="line.104"></a>
+<span class="sourceLineNo">105</span>     * and the supplied fieldProcessorMap to control which fields are parsed and how they are parsed.<a name="line.105"></a>
+<span class="sourceLineNo">106</span>     * &lt;p&gt;<a name="line.106"></a>
+<span class="sourceLineNo">107</span>     * After extraction the features are then processed using the supplied set of feature processors.<a name="line.107"></a>
+<span class="sourceLineNo">108</span>     * These processors can be used to insert conjunction features which are triggered when<a name="line.108"></a>
+<span class="sourceLineNo">109</span>     * multiple features appear, or to filter out unnecessary features.<a name="line.109"></a>
+<span class="sourceLineNo">110</span>     * &lt;p&gt;<a name="line.110"></a>
+<span class="sourceLineNo">111</span>     * This processor does not generate any additional metadata for the examples, nor does it set the<a name="line.111"></a>
+<span class="sourceLineNo">112</span>     * weight value on generated examples.<a name="line.112"></a>
+<span class="sourceLineNo">113</span>     * @param responseProcessor The response processor to use.<a name="line.113"></a>
+<span class="sourceLineNo">114</span>     * @param fieldProcessorMap The keys are the field names and the values are the field processors to apply to those fields.<a name="line.114"></a>
+<span class="sourceLineNo">115</span>     * @param featureProcessors The feature processors to run on each extracted feature list.<a name="line.115"></a>
+<span class="sourceLineNo">116</span>     */<a name="line.116"></a>
+<span class="sourceLineNo">117</span>    public RowProcessor(ResponseProcessor&lt;T&gt; responseProcessor, Map&lt;String,FieldProcessor&gt; fieldProcessorMap, Set&lt;FeatureProcessor&gt; featureProcessors) {<a name="line.117"></a>
+<span class="sourceLineNo">118</span>        this(Collections.emptyList(),null,responseProcessor,fieldProcessorMap,featureProcessors);<a name="line.118"></a>
+<span class="sourceLineNo">119</span>    }<a name="line.119"></a>
+<span class="sourceLineNo">120</span><a name="line.120"></a>
+<span class="sourceLineNo">121</span>    /**<a name="line.121"></a>
+<span class="sourceLineNo">122</span>     * Constructs a RowProcessor using the supplied responseProcessor to extract the response variable,<a name="line.122"></a>
+<span class="sourceLineNo">123</span>     * and the supplied fieldProcessorMap to control which fields are parsed and how they are parsed.<a name="line.123"></a>
+<span class="sourceLineNo">124</span>     * &lt;p&gt;<a name="line.124"></a>
+<span class="sourceLineNo">125</span>     * After extraction the features are then processed using the supplied set of feature processors.<a name="line.125"></a>
+<span class="sourceLineNo">126</span>     * These processors can be used to insert conjunction features which are triggered when<a name="line.126"></a>
+<span class="sourceLineNo">127</span>     * multiple features appear, or to filter out unnecessary features.<a name="line.127"></a>
+<span class="sourceLineNo">128</span>     * &lt;p&gt;<a name="line.128"></a>
+<span class="sourceLineNo">129</span>     * Additionally this processor can extract a weight from each row and insert it into the example, along<a name="line.129"></a>
+<span class="sourceLineNo">130</span>     * with more general metadata fields (e.g., the row number, date stamps). The weightExtractor can be null,<a name="line.130"></a>
+<span class="sourceLineNo">131</span>     * and if so the weights are left unset.<a name="line.131"></a>
+<span class="sourceLineNo">132</span>     * @param metadataExtractors The metadata extractors to run per example. If two metadata extractors emit<a name="line.132"></a>
+<span class="sourceLineNo">133</span>     *                           the same metadata name then the constructor throws a PropertyException.<a name="line.133"></a>
+<span class="sourceLineNo">134</span>     * @param weightExtractor The weight extractor, if null the weights are left unset at their default.<a name="line.134"></a>
+<span class="sourceLineNo">135</span>     * @param responseProcessor The response processor to use.<a name="line.135"></a>
+<span class="sourceLineNo">136</span>     * @param fieldProcessorMap The keys are the field names and the values are the field processors to apply to those fields.<a name="line.136"></a>
+<span class="sourceLineNo">137</span>     * @param featureProcessors The feature processors to run on each extracted feature list.<a name="line.137"></a>
+<span class="sourceLineNo">138</span>     */<a name="line.138"></a>
+<span class="sourceLineNo">139</span>    public RowProcessor(List&lt;FieldExtractor&lt;?&gt;&gt; metadataExtractors, FieldExtractor&lt;Float&gt; weightExtractor,<a name="line.139"></a>
+<span class="sourceLineNo">140</span>                        ResponseProcessor&lt;T&gt; responseProcessor, Map&lt;String,FieldProcessor&gt; fieldProcessorMap,<a name="line.140"></a>
+<span class="sourceLineNo">141</span>                        Set&lt;FeatureProcessor&gt; featureProcessors) {<a name="line.141"></a>
+<span class="sourceLineNo">142</span>        this(metadataExtractors,weightExtractor,responseProcessor,fieldProcessorMap,Collections.emptyMap(),featureProcessors);<a name="line.142"></a>
+<span class="sourceLineNo">143</span>    }<a name="line.143"></a>
+<span class="sourceLineNo">144</span><a name="line.144"></a>
+<span class="sourceLineNo">145</span>    /**<a name="line.145"></a>
+<span class="sourceLineNo">146</span>     * Constructs a RowProcessor using the supplied responseProcessor to extract the response variable,<a name="line.146"></a>
+<span class="sourceLineNo">147</span>     * and the supplied fieldProcessorMap to control which fields are parsed and how they are parsed.<a name="line.147"></a>
+<span class="sourceLineNo">148</span>     * &lt;p&gt;<a name="line.148"></a>
+<span class="sourceLineNo">149</span>     * In addition this processor can instantiate field processors which match the regexes supplied in<a name="line.149"></a>
+<span class="sourceLineNo">150</span>     * the regexMappingProcessors. If a regex matches a field which already has a fieldProcessor assigned to<a name="line.150"></a>
+<span class="sourceLineNo">151</span>     * it, it throws an IllegalArgumentException.<a name="line.151"></a>
+<span class="sourceLineNo">152</span>     * &lt;p&gt;<a name="line.152"></a>
+<span class="sourceLineNo">153</span>     * After extraction the features are then processed using the supplied set of feature processors.<a name="line.153"></a>
+<span class="sourceLineNo">154</span>     * These processors can be used to insert conjunction features which are triggered when<a name="line.154"></a>
+<span class="sourceLineNo">155</span>     * multiple features appear, or to filter out unnecessary features.<a name="line.155"></a>
+<span class="sourceLineNo">156</span>     * &lt;p&gt;<a name="line.156"></a>
+<span class="sourceLineNo">157</span>     * Additionally this processor can extract a weight from each row and insert it into the example, along<a name="line.157"></a>
+<span class="sourceLineNo">158</span>     * with more general metadata fields (e.g., the row number, date stamps). The weightExtractor can be null,<a name="line.158"></a>
+<span class="sourceLineNo">159</span>     * and if so the weights are left unset.<a name="line.159"></a>
+<span class="sourceLineNo">160</span>     * @param metadataExtractors The metadata extractors to run per example. If two metadata extractors emit<a name="line.160"></a>
+<span class="sourceLineNo">161</span>     *                           the same metadata name then the constructor throws a PropertyException.<a name="line.161"></a>
+<span class="sourceLineNo">162</span>     * @param weightExtractor The weight extractor, if null the weights are left unset at their default.<a name="line.162"></a>
+<span class="sourceLineNo">163</span>     * @param responseProcessor The response processor to use.<a name="line.163"></a>
+<span class="sourceLineNo">164</span>     * @param fieldProcessorMap The keys are the field names and the values are the field processors to apply to those fields.<a name="line.164"></a>
+<span class="sourceLineNo">165</span>     * @param regexMappingProcessors A set of field processors which can be instantiated if the regexes match the field names.<a name="line.165"></a>
+<span class="sourceLineNo">166</span>     * @param featureProcessors The feature processors to run on each extracted feature list.<a name="line.166"></a>
+<span class="sourceLineNo">167</span>     */<a name="line.167"></a>
+<span class="sourceLineNo">168</span>    public RowProcessor(List&lt;FieldExtractor&lt;?&gt;&gt; metadataExtractors, FieldExtractor&lt;Float&gt; weightExtractor,<a name="line.168"></a>
+<span class="sourceLineNo">169</span>                        ResponseProcessor&lt;T&gt; responseProcessor, Map&lt;String,FieldProcessor&gt; fieldProcessorMap,<a name="line.169"></a>
+<span class="sourceLineNo">170</span>                        Map&lt;String,FieldProcessor&gt; regexMappingProcessors, Set&lt;FeatureProcessor&gt; featureProcessors) {<a name="line.170"></a>
+<span class="sourceLineNo">171</span>        this.metadataExtractors = metadataExtractors.isEmpty() ? Collections.emptyList() : new ArrayList&lt;&gt;(metadataExtractors);<a name="line.171"></a>
+<span class="sourceLineNo">172</span>        this.weightExtractor = weightExtractor;<a name="line.172"></a>
+<span class="sourceLineNo">173</span>        this.responseProcessor = responseProcessor;<a name="line.173"></a>
+<span class="sourceLineNo">174</span>        this.fieldProcessorMap = new HashMap&lt;&gt;(fieldProcessorMap);<a name="line.174"></a>
+<span class="sourceLineNo">175</span>        this.regexMappingProcessors = regexMappingProcessors.isEmpty() ? Collections.emptyMap() : new HashMap&lt;&gt;(regexMappingProcessors);<a name="line.175"></a>
+<span class="sourceLineNo">176</span>        this.featureProcessors.addAll(featureProcessors);<a name="line.176"></a>
+<span class="sourceLineNo">177</span>        postConfig();<a name="line.177"></a>
+<span class="sourceLineNo">178</span>    }<a name="line.178"></a>
+<span class="sourceLineNo">179</span><a name="line.179"></a>
+<span class="sourceLineNo">180</span>    /**<a name="line.180"></a>
+<span class="sourceLineNo">181</span>     * For olcut.<a name="line.181"></a>
+<span class="sourceLineNo">182</span>     */<a name="line.182"></a>
+<span class="sourceLineNo">183</span>    protected RowProcessor() {}<a name="line.183"></a>
+<span class="sourceLineNo">184</span><a name="line.184"></a>
+<span class="sourceLineNo">185</span>    /**<a name="line.185"></a>
+<span class="sourceLineNo">186</span>     * Used by the OLCUT configuration system, and should not be called by external code.<a name="line.186"></a>
+<span class="sourceLineNo">187</span>     */<a name="line.187"></a>
+<span class="sourceLineNo">188</span>    @Override<a name="line.188"></a>
+<span class="sourceLineNo">189</span>    public void postConfig() {<a name="line.189"></a>
+<span class="sourceLineNo">190</span>        configured = regexMappingProcessors.isEmpty();<a name="line.190"></a>
+<span class="sourceLineNo">191</span>        if (fieldProcessorList != null) {<a name="line.191"></a>
+<span class="sourceLineNo">192</span>            fieldProcessorMap = fieldProcessorList.stream().collect(Collectors.toMap(FieldProcessor::getFieldName, Function.identity()));<a name="line.192"></a>
+<span class="sourceLineNo">193</span>        } else {<a name="line.193"></a>
+<span class="sourceLineNo">194</span>            fieldProcessorList = new ArrayList&lt;&gt;();<a name="line.194"></a>
+<span class="sourceLineNo">195</span>            fieldProcessorList.addAll(fieldProcessorMap.values());<a name="line.195"></a>
+<span class="sourceLineNo">196</span>        }<a name="line.196"></a>
+<span class="sourceLineNo">197</span>        Set&lt;String&gt; metadataNames = new HashSet&lt;&gt;();<a name="line.197"></a>
+<span class="sourceLineNo">198</span>        for (FieldExtractor&lt;?&gt; extractor : metadataExtractors) {<a name="line.198"></a>
+<span class="sourceLineNo">199</span>            String newMetadataName = extractor.getMetadataName();<a name="line.199"></a>
+<span class="sourceLineNo">200</span>            if (metadataNames.contains(newMetadataName)) {<a name="line.200"></a>
+<span class="sourceLineNo">201</span>                throw new PropertyException("","metadataExtractors",<a name="line.201"></a>
+<span class="sourceLineNo">202</span>                        "Two metadata extractors found referencing the same metadata name '" + newMetadataName + "'");<a name="line.202"></a>
+<span class="sourceLineNo">203</span>            } else {<a name="line.203"></a>
+<span class="sourceLineNo">204</span>                metadataNames.add(newMetadataName);<a name="line.204"></a>
+<span class="sourceLineNo">205</span>            }<a name="line.205"></a>
+<span class="sourceLineNo">206</span>        }<a name="line.206"></a>
+<span class="sourceLineNo">207</span>    }<a name="line.207"></a>
+<span class="sourceLineNo">208</span><a name="line.208"></a>
+<span class="sourceLineNo">209</span>    /**<a name="line.209"></a>
+<span class="sourceLineNo">210</span>     * Returns the response processor this RowProcessor uses.<a name="line.210"></a>
+<span class="sourceLineNo">211</span>     * @return The response processor.<a name="line.211"></a>
+<span class="sourceLineNo">212</span>     */<a name="line.212"></a>
+<span class="sourceLineNo">213</span>    public ResponseProcessor&lt;T&gt; getResponseProcessor() {<a name="line.213"></a>
+<span class="sourceLineNo">214</span>        return responseProcessor;<a name="line.214"></a>
+<span class="sourceLineNo">215</span>    }<a name="line.215"></a>
+<span class="sourceLineNo">216</span><a name="line.216"></a>
+<span class="sourceLineNo">217</span>    /**<a name="line.217"></a>
+<span class="sourceLineNo">218</span>     * Returns the map of {@link FieldProcessor}s this RowProcessor uses.<a name="line.218"></a>
+<span class="sourceLineNo">219</span>     * @return The field processors.<a name="line.219"></a>
+<span class="sourceLineNo">220</span>     */<a name="line.220"></a>
+<span class="sourceLineNo">221</span>    public Map&lt;String,FieldProcessor&gt; getFieldProcessors() {<a name="line.221"></a>
+<span class="sourceLineNo">222</span>        return Collections.unmodifiableMap(fieldProcessorMap);<a name="line.222"></a>
+<span class="sourceLineNo">223</span>    }<a name="line.223"></a>
+<span class="sourceLineNo">224</span><a name="line.224"></a>
+<span class="sourceLineNo">225</span>    /**<a name="line.225"></a>
+<span class="sourceLineNo">226</span>     * Returns the set of {@link FeatureProcessor}s this RowProcessor uses.<a name="line.226"></a>
+<span class="sourceLineNo">227</span>     * @return The feature processors.<a name="line.227"></a>
+<span class="sourceLineNo">228</span>     */<a name="line.228"></a>
+<span class="sourceLineNo">229</span>    public Set&lt;FeatureProcessor&gt; getFeatureProcessors() {<a name="line.229"></a>
+<span class="sourceLineNo">230</span>        return Collections.unmodifiableSet(featureProcessors);<a name="line.230"></a>
+<span class="sourceLineNo">231</span>    }<a name="line.231"></a>
+<span class="sourceLineNo">232</span><a name="line.232"></a>
+<span class="sourceLineNo">233</span>    /**<a name="line.233"></a>
+<span class="sourceLineNo">234</span>     * Generate an {@link Example} from the supplied row. Returns an empty Optional if<a name="line.234"></a>
+<span class="sourceLineNo">235</span>     * there are no features, or the response is required but it was not found. The latter case is<a name="line.235"></a>
+<span class="sourceLineNo">236</span>     * used at training time.<a name="line.236"></a>
+<span class="sourceLineNo">237</span>     * @param row The row to process.<a name="line.237"></a>
+<span class="sourceLineNo">238</span>     * @param outputRequired If an Output must be found in the row to return an Example.<a name="line.238"></a>
+<span class="sourceLineNo">239</span>     * @return An Optional containing an Example if the row was valid, an empty Optional otherwise.<a name="line.239"></a>
+<span class="sourceLineNo">240</span>     */<a name="line.240"></a>
+<span class="sourceLineNo">241</span>    public Optional&lt;Example&lt;T&gt;&gt; generateExample(ColumnarIterator.Row row, boolean outputRequired) {<a name="line.241"></a>
+<span class="sourceLineNo">242</span>        String responseValue = row.getRowData().get(responseProcessor.getFieldName());<a name="line.242"></a>
+<span class="sourceLineNo">243</span>        Optional&lt;T&gt; labelOpt = responseProcessor.process(responseValue);<a name="line.243"></a>
+<span class="sourceLineNo">244</span>        if (!labelOpt.isPresent() &amp;&amp; outputRequired) {<a name="line.244"></a>
+<span class="sourceLineNo">245</span>            return Optional.empty();<a name="line.245"></a>
+<span class="sourceLineNo">246</span>        }<a name="line.246"></a>
+<span class="sourceLineNo">247</span><a name="line.247"></a>
+<span class="sourceLineNo">248</span>        List&lt;ColumnarFeature&gt; features = generateFeatures(row.getRowData());<a name="line.248"></a>
+<span class="sourceLineNo">249</span><a name="line.249"></a>
+<span class="sourceLineNo">250</span>        if (features.isEmpty()) {<a name="line.250"></a>
+<span class="sourceLineNo">251</span>            logger.warning(String.format("Row %d empty of features, omitting", row.getIndex()));<a name="line.251"></a>
+<span class="sourceLineNo">252</span>            return Optional.empty();<a name="line.252"></a>
+<span class="sourceLineNo">253</span>        } else {<a name="line.253"></a>
+<span class="sourceLineNo">254</span>            T label = labelOpt.orElse(responseProcessor.getOutputFactory().getUnknownOutput());<a name="line.254"></a>
+<span class="sourceLineNo">255</span><a name="line.255"></a>
+<span class="sourceLineNo">256</span>            Map&lt;String,Object&gt; metadata = generateMetadata(row);<a name="line.256"></a>
+<span class="sourceLineNo">257</span><a name="line.257"></a>
+<span class="sourceLineNo">258</span>            Example&lt;T&gt; example;<a name="line.258"></a>
+<span class="sourceLineNo">259</span>            if (weightExtractor == null) {<a name="line.259"></a>
+<span class="sourceLineNo">260</span>                example = new ArrayExample&lt;&gt;(label,metadata);<a name="line.260"></a>
+<span class="sourceLineNo">261</span>            } else {<a name="line.261"></a>
+<span class="sourceLineNo">262</span>                example = new ArrayExample&lt;&gt;(label,<a name="line.262"></a>
+<span class="sourceLineNo">263</span>                        weightExtractor.extract(row).orElse(Example.DEFAULT_WEIGHT),<a name="line.263"></a>
+<span class="sourceLineNo">264</span>                        metadata);<a name="line.264"></a>
+<span class="sourceLineNo">265</span>            }<a name="line.265"></a>
+<span class="sourceLineNo">266</span>            example.addAll(features);<a name="line.266"></a>
+<span class="sourceLineNo">267</span>            return Optional.of(example);<a name="line.267"></a>
+<span class="sourceLineNo">268</span>        }<a name="line.268"></a>
+<span class="sourceLineNo">269</span>    }<a name="line.269"></a>
+<span class="sourceLineNo">270</span><a name="line.270"></a>
+<span class="sourceLineNo">271</span>    /**<a name="line.271"></a>
+<span class="sourceLineNo">272</span>     * Generate an {@link Example} from the supplied row. Returns an empty Optional if<a name="line.272"></a>
+<span class="sourceLineNo">273</span>     * there are no features, or the response is required but it was not found.<a name="line.273"></a>
+<span class="sourceLineNo">274</span>     * &lt;p&gt;<a name="line.274"></a>
+<span class="sourceLineNo">275</span>     * Supplies -1 as the example index, used in cases where the index isn't meaningful.<a name="line.275"></a>
+<span class="sourceLineNo">276</span>     * @param row The row to process.<a name="line.276"></a>
+<span class="sourceLineNo">277</span>     * @param outputRequired If an Output must be found in the row to return an Example.<a name="line.277"></a>
+<span class="sourceLineNo">278</span>     * @return An Optional containing an Example if the row was valid, an empty Optional otherwise.<a name="line.278"></a>
+<span class="sourceLineNo">279</span>     */<a name="line.279"></a>
+<span class="sourceLineNo">280</span>    public Optional&lt;Example&lt;T&gt;&gt; generateExample(Map&lt;String,String&gt; row, boolean outputRequired) {<a name="line.280"></a>
+<span class="sourceLineNo">281</span>        return generateExample(-1,row,outputRequired);<a name="line.281"></a>
+<span class="sourceLineNo">282</span>    }<a name="line.282"></a>
+<span class="sourceLineNo">283</span><a name="line.283"></a>
+<span class="sourceLineNo">284</span>    /**<a name="line.284"></a>
+<span class="sourceLineNo">285</span>     * Generate an {@link Example} from the supplied row. Returns an empty Optional if<a name="line.285"></a>
+<span class="sourceLineNo">286</span>     * there are no features, or the response is required but it was not found. The latter case is<a name="line.286"></a>
+<span class="sourceLineNo">287</span>     * used at training time.<a name="line.287"></a>
+<span class="sourceLineNo">288</span>     * @param idx The index for use in the example metadata if desired.<a name="line.288"></a>
+<span class="sourceLineNo">289</span>     * @param row The row to process.<a name="line.289"></a>
+<span class="sourceLineNo">290</span>     * @param outputRequired If an Output must be found in the row to return an Example.<a name="line.290"></a>
+<span class="sourceLineNo">291</span>     * @return An Optional containing an Example if the row was valid, an empty Optional otherwise.<a name="line.291"></a>
+<span class="sourceLineNo">292</span>     */<a name="line.292"></a>
+<span class="sourceLineNo">293</span>    public Optional&lt;Example&lt;T&gt;&gt; generateExample(long idx, Map&lt;String,String&gt; row, boolean outputRequired) {<a name="line.293"></a>
+<span class="sourceLineNo">294</span>        return generateExample(new ColumnarIterator.Row(idx, new ArrayList&lt;&gt;(row.keySet()), row), outputRequired);<a name="line.294"></a>
+<span class="sourceLineNo">295</span>    }<a name="line.295"></a>
+<span class="sourceLineNo">296</span><a name="line.296"></a>
+<span class="sourceLineNo">297</span>    /**<a name="line.297"></a>
+<span class="sourceLineNo">298</span>     * Generates the example metadata from the supplied row and index.<a name="line.298"></a>
+<span class="sourceLineNo">299</span>     * @param row The row to process.<a name="line.299"></a>
+<span class="sourceLineNo">300</span>     * @return A (possibly empty) map containing the metadata.<a name="line.300"></a>
+<span class="sourceLineNo">301</span>     */<a name="line.301"></a>
+<span class="sourceLineNo">302</span>    public Map&lt;String,Object&gt; generateMetadata(ColumnarIterator.Row row) {<a name="line.302"></a>
+<span class="sourceLineNo">303</span>        if (metadataExtractors.isEmpty()) {<a name="line.303"></a>
+<span class="sourceLineNo">304</span>            return Collections.emptyMap();<a name="line.304"></a>
+<span class="sourceLineNo">305</span>        } else {<a name="line.305"></a>
+<span class="sourceLineNo">306</span>            Map&lt;String,Object&gt; metadataMap = new HashMap&lt;&gt;();<a name="line.306"></a>
+<span class="sourceLineNo">307</span>            long idx = row.getIndex();<a name="line.307"></a>
+<span class="sourceLineNo">308</span><a name="line.308"></a>
+<span class="sourceLineNo">309</span>            for (FieldExtractor&lt;?&gt; field : metadataExtractors) {<a name="line.309"></a>
+<span class="sourceLineNo">310</span>                String metadataName = field.getMetadataName();<a name="line.310"></a>
+<span class="sourceLineNo">311</span>                Optional&lt;?&gt; extractedValue = field.extract(row);<a name="line.311"></a>
+<span class="sourceLineNo">312</span>                if(extractedValue.isPresent()) {<a name="line.312"></a>
+<span class="sourceLineNo">313</span>                    metadataMap.put(metadataName, extractedValue.get());<a name="line.313"></a>
+<span class="sourceLineNo">314</span>                } else {<a name="line.314"></a>
+<span class="sourceLineNo">315</span>                    logger.warning("Failed to extract field with name " + metadataName + " from index " + idx);<a name="line.315"></a>
+<span class="sourceLineNo">316</span>                }<a name="line.316"></a>
+<span class="sourceLineNo">317</span>            }<a name="line.317"></a>
+<span class="sourceLineNo">318</span><a name="line.318"></a>
+<span class="sourceLineNo">319</span>            return metadataMap;<a name="line.319"></a>
+<span class="sourceLineNo">320</span>        }<a name="line.320"></a>
+<span class="sourceLineNo">321</span>    }<a name="line.321"></a>
+<span class="sourceLineNo">322</span><a name="line.322"></a>
+<span class="sourceLineNo">323</span>    /**<a name="line.323"></a>
+<span class="sourceLineNo">324</span>     * Generates the features from the supplied row.<a name="line.324"></a>
+<span class="sourceLineNo">325</span>     * @param row The row to process.<a name="line.325"></a>
+<span class="sourceLineNo">326</span>     * @return A (possibly empty) list of {@link ColumnarFeature}s.<a name="line.326"></a>
+<span class="sourceLineNo">327</span>     */<a name="line.327"></a>
+<span class="sourceLineNo">328</span>    public List&lt;ColumnarFeature&gt; generateFeatures(Map&lt;String,String&gt; row) {<a name="line.328"></a>
+<span class="sourceLineNo">329</span>        if (!configured) {<a name="line.329"></a>
+<span class="sourceLineNo">330</span>            throw new IllegalStateException("expandRegexMapping not called, yet there are entries in regexMappingProcessors which have not been bound to a field name.");<a name="line.330"></a>
+<span class="sourceLineNo">331</span>        }<a name="line.331"></a>
+<span class="sourceLineNo">332</span>        List&lt;ColumnarFeature&gt; features = new ArrayList&lt;&gt;();<a name="line.332"></a>
+<span class="sourceLineNo">333</span><a name="line.333"></a>
+<span class="sourceLineNo">334</span>        for (Map.Entry&lt;String,FieldProcessor&gt; e : fieldProcessorMap.entrySet()) {<a name="line.334"></a>
+<span class="sourceLineNo">335</span>            String value = row.get(e.getKey());<a name="line.335"></a>
+<span class="sourceLineNo">336</span>            if (value != null) {<a name="line.336"></a>
+<span class="sourceLineNo">337</span>                value = value.replace('\n', ' ').trim();<a name="line.337"></a>
+<span class="sourceLineNo">338</span>                features.addAll(e.getValue().process(value));<a name="line.338"></a>
+<span class="sourceLineNo">339</span>            }<a name="line.339"></a>
+<span class="sourceLineNo">340</span>        }<a name="line.340"></a>
+<span class="sourceLineNo">341</span><a name="line.341"></a>
+<span class="sourceLineNo">342</span>        for (FeatureProcessor f : featureProcessors) {<a name="line.342"></a>
+<span class="sourceLineNo">343</span>            features = f.process(features);<a name="line.343"></a>
+<span class="sourceLineNo">344</span>        }<a name="line.344"></a>
+<span class="sourceLineNo">345</span><a name="line.345"></a>
+<span class="sourceLineNo">346</span>        return features;<a name="line.346"></a>
+<span class="sourceLineNo">347</span>    }<a name="line.347"></a>
+<span class="sourceLineNo">348</span><a name="line.348"></a>
+<span class="sourceLineNo">349</span>    /**<a name="line.349"></a>
+<span class="sourceLineNo">350</span>     * The set of column names this will use for the feature processing.<a name="line.350"></a>
+<span class="sourceLineNo">351</span>     * @return The set of column names it processes.<a name="line.351"></a>
+<span class="sourceLineNo">352</span>     */<a name="line.352"></a>
+<span class="sourceLineNo">353</span>    public Set&lt;String&gt; getColumnNames() {<a name="line.353"></a>
+<span class="sourceLineNo">354</span>        return Collections.unmodifiableSet(fieldProcessorMap.keySet());<a name="line.354"></a>
+<span class="sourceLineNo">355</span>    }<a name="line.355"></a>
+<span class="sourceLineNo">356</span><a name="line.356"></a>
+<span class="sourceLineNo">357</span>    /**<a name="line.357"></a>
+<span class="sourceLineNo">358</span>     * Returns a description of the row processor and it's fields.<a name="line.358"></a>
+<span class="sourceLineNo">359</span>     * @return A String description of the RowProcessor.<a name="line.359"></a>
+<span class="sourceLineNo">360</span>     */<a name="line.360"></a>
+<span class="sourceLineNo">361</span>    public String getDescription() {<a name="line.361"></a>
+<span class="sourceLineNo">362</span>        String weightExtractorStr = weightExtractor == null ? "null" : weightExtractor.toString();<a name="line.362"></a>
+<span class="sourceLineNo">363</span>        if (configured || regexMappingProcessors.isEmpty()) {<a name="line.363"></a>
+<span class="sourceLineNo">364</span>            return "RowProcessor(responseProcessor=" + responseProcessor.toString() +<a name="line.364"></a>
+<span class="sourceLineNo">365</span>                    ",fieldProcessorMap=" + fieldProcessorMap.toString() +<a name="line.365"></a>
+<span class="sourceLineNo">366</span>                    ",featureProcessors=" + featureProcessors.toString() +<a name="line.366"></a>
+<span class="sourceLineNo">367</span>                    ",metadataExtractors=" + metadataExtractors.toString() +<a name="line.367"></a>
+<span class="sourceLineNo">368</span>                    ",weightExtractor=" + weightExtractorStr + ")";<a name="line.368"></a>
+<span class="sourceLineNo">369</span>        } else {<a name="line.369"></a>
+<span class="sourceLineNo">370</span>            return "RowProcessor(responseProcessor=" + responseProcessor.toString() +<a name="line.370"></a>
+<span class="sourceLineNo">371</span>                    ",fieldProcessorMap=" + fieldProcessorMap.toString() +<a name="line.371"></a>
+<span class="sourceLineNo">372</span>                    ",regexMappingProcessors=" + regexMappingProcessors.toString() +<a name="line.372"></a>
+<span class="sourceLineNo">373</span>                    ",featureProcessors=" + featureProcessors.toString() +<a name="line.373"></a>
+<span class="sourceLineNo">374</span>                    ",metadataExtractors=" + metadataExtractors.toString() +<a name="line.374"></a>
+<span class="sourceLineNo">375</span>                    ",weightExtractor=" + weightExtractorStr + ")";<a name="line.375"></a>
+<span class="sourceLineNo">376</span>        }<a name="line.376"></a>
+<span class="sourceLineNo">377</span>    }<a name="line.377"></a>
+<span class="sourceLineNo">378</span><a name="line.378"></a>
+<span class="sourceLineNo">379</span>    @Override<a name="line.379"></a>
+<span class="sourceLineNo">380</span>    public String toString() {<a name="line.380"></a>
+<span class="sourceLineNo">381</span>        return getDescription();<a name="line.381"></a>
+<span class="sourceLineNo">382</span>    }<a name="line.382"></a>
+<span class="sourceLineNo">383</span><a name="line.383"></a>
+<span class="sourceLineNo">384</span>    /**<a name="line.384"></a>
+<span class="sourceLineNo">385</span>     * Returns the metadata keys and value types that are extracted<a name="line.385"></a>
+<span class="sourceLineNo">386</span>     * by this RowProcessor.<a name="line.386"></a>
+<span class="sourceLineNo">387</span>     * @return The metadata keys and value types.<a name="line.387"></a>
+<span class="sourceLineNo">388</span>     */<a name="line.388"></a>
+<span class="sourceLineNo">389</span>    public Map&lt;String,Class&lt;?&gt;&gt; getMetadataTypes() {<a name="line.389"></a>
+<span class="sourceLineNo">390</span>        if (metadataExtractors.isEmpty()) {<a name="line.390"></a>
+<span class="sourceLineNo">391</span>            return Collections.emptyMap();<a name="line.391"></a>
+<span class="sourceLineNo">392</span>        } else {<a name="line.392"></a>
+<span class="sourceLineNo">393</span>            Map&lt;String, Class&lt;?&gt;&gt; types = new HashMap&lt;&gt;();<a name="line.393"></a>
 <span class="sourceLineNo">394</span><a name="line.394"></a>
-<span class="sourceLineNo">395</span>    /**<a name="line.395"></a>
-<span class="sourceLineNo">396</span>     * Caveat Implementor! This method contains the logic of {@link org.tribuo.data.columnar.RowProcessor#expandRegexMapping}<a name="line.396"></a>
-<span class="sourceLineNo">397</span>     * without any of the checks that ensure the RowProcessor is in a valid state. This can be used in a subclass to expand a regex mapping<a name="line.397"></a>
-<span class="sourceLineNo">398</span>     * several times for a single instance of RowProcessor. The caller is responsible for ensuring that fieldNames are not duplicated<a name="line.398"></a>
-<span class="sourceLineNo">399</span>     * within or between calls.<a name="line.399"></a>
-<span class="sourceLineNo">400</span>     * @param fieldNames The list of field names - should contain only previously unseen field names.<a name="line.400"></a>
-<span class="sourceLineNo">401</span>     * @return the set of regexes that were matched by fieldNames.<a name="line.401"></a>
-<span class="sourceLineNo">402</span>     */<a name="line.402"></a>
-<span class="sourceLineNo">403</span>    protected Set&lt;String&gt; partialExpandRegexMapping(Collection&lt;String&gt; fieldNames) {<a name="line.403"></a>
-<span class="sourceLineNo">404</span>        HashSet&lt;String&gt; foundFields = new HashSet&lt;&gt;();<a name="line.404"></a>
-<span class="sourceLineNo">405</span>        // Loop over all regexes<a name="line.405"></a>
-<span class="sourceLineNo">406</span>        for (Map.Entry&lt;String,FieldProcessor&gt; e : regexMappingProcessors.entrySet()) {<a name="line.406"></a>
-<span class="sourceLineNo">407</span>            Pattern p = Pattern.compile(e.getKey());<a name="line.407"></a>
-<span class="sourceLineNo">408</span>            // Loop over all field names<a name="line.408"></a>
-<span class="sourceLineNo">409</span>            for (String s : fieldNames) {<a name="line.409"></a>
-<span class="sourceLineNo">410</span>                // Check if the pattern matches the field name<a name="line.410"></a>
-<span class="sourceLineNo">411</span>                if (p.matcher(s).matches()) {<a name="line.411"></a>
-<span class="sourceLineNo">412</span>                    // If it matches, add the field to the fieldProcessorMap map<a name="line.412"></a>
-<span class="sourceLineNo">413</span>                    FieldProcessor f = fieldProcessorMap.put(s,e.getValue().copy(s));<a name="line.413"></a>
-<span class="sourceLineNo">414</span><a name="line.414"></a>
-<span class="sourceLineNo">415</span>                    if (f != null) {<a name="line.415"></a>
-<span class="sourceLineNo">416</span>                        throw new IllegalArgumentException("Regex " + p.toString() + " matched field " + s + " which already had a field processor " + f.toString());<a name="line.416"></a>
-<span class="sourceLineNo">417</span>                    }<a name="line.417"></a>
-<span class="sourceLineNo">418</span><a name="line.418"></a>
-<span class="sourceLineNo">419</span>                    foundFields.add(e.getKey());<a name="line.419"></a>
-<span class="sourceLineNo">420</span>                }<a name="line.420"></a>
-<span class="sourceLineNo">421</span>            }<a name="line.421"></a>
-<span class="sourceLineNo">422</span>        }<a name="line.422"></a>
-<span class="sourceLineNo">423</span>        return foundFields;<a name="line.423"></a>
-<span class="sourceLineNo">424</span>    }<a name="line.424"></a>
-<span class="sourceLineNo">425</span><a name="line.425"></a>
-<span class="sourceLineNo">426</span>    @Override<a name="line.426"></a>
-<span class="sourceLineNo">427</span>    public ConfiguredObjectProvenance getProvenance() {<a name="line.427"></a>
-<span class="sourceLineNo">428</span>        return new ConfiguredObjectProvenanceImpl(this,"RowProcessor");<a name="line.428"></a>
-<span class="sourceLineNo">429</span>    }<a name="line.429"></a>
+<span class="sourceLineNo">395</span>            for (FieldExtractor&lt;?&gt; extractor : metadataExtractors) {<a name="line.395"></a>
+<span class="sourceLineNo">396</span>                types.put(extractor.getMetadataName(), extractor.getValueType());<a name="line.396"></a>
+<span class="sourceLineNo">397</span>            }<a name="line.397"></a>
+<span class="sourceLineNo">398</span><a name="line.398"></a>
+<span class="sourceLineNo">399</span>            return types;<a name="line.399"></a>
+<span class="sourceLineNo">400</span>        }<a name="line.400"></a>
+<span class="sourceLineNo">401</span>    }<a name="line.401"></a>
+<span class="sourceLineNo">402</span><a name="line.402"></a>
+<span class="sourceLineNo">403</span>    /**<a name="line.403"></a>
+<span class="sourceLineNo">404</span>     * Returns true if the regexes have been expanded into field processors.<a name="line.404"></a>
+<span class="sourceLineNo">405</span>     * @return True if the RowProcessor has seen the set of input fields.<a name="line.405"></a>
+<span class="sourceLineNo">406</span>     */<a name="line.406"></a>
+<span class="sourceLineNo">407</span>    public boolean isConfigured() {<a name="line.407"></a>
+<span class="sourceLineNo">408</span>        return configured;<a name="line.408"></a>
+<span class="sourceLineNo">409</span>    }<a name="line.409"></a>
+<span class="sourceLineNo">410</span><a name="line.410"></a>
+<span class="sourceLineNo">411</span>    /**<a name="line.411"></a>
+<span class="sourceLineNo">412</span>     * Uses similar logic to {@link org.tribuo.transform.TransformationMap#validateTransformations} to check the regexes<a name="line.412"></a>
+<span class="sourceLineNo">413</span>     * against the {@link ImmutableFeatureMap} contained in the supplied {@link Model}.<a name="line.413"></a>
+<span class="sourceLineNo">414</span>     * Throws an IllegalArgumentException if any regexes overlap with<a name="line.414"></a>
+<span class="sourceLineNo">415</span>     * themselves, or with the currently defined set of fieldProcessorMap.<a name="line.415"></a>
+<span class="sourceLineNo">416</span>     * @param model The model to use to expand the regexes.<a name="line.416"></a>
+<span class="sourceLineNo">417</span>     */<a name="line.417"></a>
+<span class="sourceLineNo">418</span>    public void expandRegexMapping(Model&lt;T&gt; model) {<a name="line.418"></a>
+<span class="sourceLineNo">419</span>        expandRegexMapping(model.getFeatureIDMap());<a name="line.419"></a>
+<span class="sourceLineNo">420</span>    }<a name="line.420"></a>
+<span class="sourceLineNo">421</span><a name="line.421"></a>
+<span class="sourceLineNo">422</span>    /**<a name="line.422"></a>
+<span class="sourceLineNo">423</span>     * Uses similar logic to {@link org.tribuo.transform.TransformationMap#validateTransformations} to check the regexes<a name="line.423"></a>
+<span class="sourceLineNo">424</span>     * against the supplied feature map. Throws an IllegalArgumentException if any regexes overlap with<a name="line.424"></a>
+<span class="sourceLineNo">425</span>     * themselves, or with the currently defined set of fieldProcessorMap.<a name="line.425"></a>
+<span class="sourceLineNo">426</span>     * @param featureMap The feature map to use to expand the regexes.<a name="line.426"></a>
+<span class="sourceLineNo">427</span>     */<a name="line.427"></a>
+<span class="sourceLineNo">428</span>    public void expandRegexMapping(ImmutableFeatureMap featureMap) {<a name="line.428"></a>
+<span class="sourceLineNo">429</span>        ArrayList&lt;String&gt; fieldNames = new ArrayList&lt;&gt;(featureMap.size());<a name="line.429"></a>
 <span class="sourceLineNo">430</span><a name="line.430"></a>
-<span class="sourceLineNo">431</span>}<a name="line.431"></a>
+<span class="sourceLineNo">431</span>        for (VariableInfo v : featureMap) {<a name="line.431"></a>
+<span class="sourceLineNo">432</span>            String[] split = FEATURE_NAME_PATTERN.split(v.getName(),1);<a name="line.432"></a>
+<span class="sourceLineNo">433</span>            String fieldName = split[0];<a name="line.433"></a>
+<span class="sourceLineNo">434</span>            fieldNames.add(fieldName);<a name="line.434"></a>
+<span class="sourceLineNo">435</span>        }<a name="line.435"></a>
+<span class="sourceLineNo">436</span><a name="line.436"></a>
+<span class="sourceLineNo">437</span>        expandRegexMapping(fieldNames);<a name="line.437"></a>
+<span class="sourceLineNo">438</span>    }<a name="line.438"></a>
+<span class="sourceLineNo">439</span><a name="line.439"></a>
+<span class="sourceLineNo">440</span>    /**<a name="line.440"></a>
+<span class="sourceLineNo">441</span>     * Uses similar logic to {@link org.tribuo.transform.TransformationMap#validateTransformations} to check the regexes<a name="line.441"></a>
+<span class="sourceLineNo">442</span>     * against the supplied list of field names. Throws an IllegalArgumentException if any regexes overlap with<a name="line.442"></a>
+<span class="sourceLineNo">443</span>     * themselves, or with the currently defined set of fieldProcessorMap or if there are unmatched regexes after<a name="line.443"></a>
+<span class="sourceLineNo">444</span>     * processing.<a name="line.444"></a>
+<span class="sourceLineNo">445</span>     * @param fieldNames The list of field names.<a name="line.445"></a>
+<span class="sourceLineNo">446</span>     */<a name="line.446"></a>
+<span class="sourceLineNo">447</span>    public void expandRegexMapping(Collection&lt;String&gt; fieldNames) {<a name="line.447"></a>
+<span class="sourceLineNo">448</span>        if (configured) {<a name="line.448"></a>
+<span class="sourceLineNo">449</span>            logger.warning("RowProcessor was already configured, yet expandRegexMapping was called with " + fieldNames.toString());<a name="line.449"></a>
+<span class="sourceLineNo">450</span>        } else {<a name="line.450"></a>
+<span class="sourceLineNo">451</span>            Set&lt;String&gt; regexesMatchingFieldNames = partialExpandRegexMapping(fieldNames);<a name="line.451"></a>
+<span class="sourceLineNo">452</span><a name="line.452"></a>
+<span class="sourceLineNo">453</span>            if (regexesMatchingFieldNames.size() != regexMappingProcessors.size()) {<a name="line.453"></a>
+<span class="sourceLineNo">454</span>                throw new IllegalArgumentException("Failed to match all the regexes, found " + regexesMatchingFieldNames.size() + ", required " + regexMappingProcessors.size());<a name="line.454"></a>
+<span class="sourceLineNo">455</span>            } else {<a name="line.455"></a>
+<span class="sourceLineNo">456</span>                regexMappingProcessors.clear();<a name="line.456"></a>
+<span class="sourceLineNo">457</span>                configured = true;<a name="line.457"></a>
+<span class="sourceLineNo">458</span>            }<a name="line.458"></a>
+<span class="sourceLineNo">459</span>        }<a name="line.459"></a>
+<span class="sourceLineNo">460</span>    }<a name="line.460"></a>
+<span class="sourceLineNo">461</span><a name="line.461"></a>
+<span class="sourceLineNo">462</span>    /**<a name="line.462"></a>
+<span class="sourceLineNo">463</span>     * Caveat Implementor! This method contains the logic of {@link org.tribuo.data.columnar.RowProcessor#expandRegexMapping}<a name="line.463"></a>
+<span class="sourceLineNo">464</span>     * without any of the checks that ensure the RowProcessor is in a valid state. This can be used in a subclass to expand a regex mapping<a name="line.464"></a>
+<span class="sourceLineNo">465</span>     * several times for a single instance of RowProcessor. The caller is responsible for ensuring that fieldNames are not duplicated<a name="line.465"></a>
+<span class="sourceLineNo">466</span>     * within or between calls.<a name="line.466"></a>
+<span class="sourceLineNo">467</span>     * @param fieldNames The list of field names - should contain only previously unseen field names.<a name="line.467"></a>
+<span class="sourceLineNo">468</span>     * @return the set of regexes that were matched by fieldNames.<a name="line.468"></a>
+<span class="sourceLineNo">469</span>     */<a name="line.469"></a>
+<span class="sourceLineNo">470</span>    protected Set&lt;String&gt; partialExpandRegexMapping(Collection&lt;String&gt; fieldNames) {<a name="line.470"></a>
+<span class="sourceLineNo">471</span>        HashSet&lt;String&gt; regexesMatchingFieldNames = new HashSet&lt;&gt;();<a name="line.471"></a>
+<span class="sourceLineNo">472</span>        // Loop over all regexes<a name="line.472"></a>
+<span class="sourceLineNo">473</span>        for (Map.Entry&lt;String,FieldProcessor&gt; e : regexMappingProcessors.entrySet()) {<a name="line.473"></a>
+<span class="sourceLineNo">474</span>            Pattern p = Pattern.compile(e.getKey());<a name="line.474"></a>
+<span class="sourceLineNo">475</span>            // Loop over all field names<a name="line.475"></a>
+<span class="sourceLineNo">476</span>            for (String s : fieldNames) {<a name="line.476"></a>
+<span class="sourceLineNo">477</span>                // Check if the pattern matches the field name<a name="line.477"></a>
+<span class="sourceLineNo">478</span>                if (p.matcher(s).matches()) {<a name="line.478"></a>
+<span class="sourceLineNo">479</span>                    // If it matches, add the field to the fieldProcessorMap map and the fieldProcessorList (for the provenance).<a name="line.479"></a>
+<span class="sourceLineNo">480</span>                    FieldProcessor newProcessor = e.getValue().copy(s);<a name="line.480"></a>
+<span class="sourceLineNo">481</span>                    fieldProcessorList.add(newProcessor);<a name="line.481"></a>
+<span class="sourceLineNo">482</span>                    FieldProcessor f = fieldProcessorMap.put(s,newProcessor);<a name="line.482"></a>
+<span class="sourceLineNo">483</span><a name="line.483"></a>
+<span class="sourceLineNo">484</span><a name="line.484"></a>
+<span class="sourceLineNo">485</span>                    if (f != null) {<a name="line.485"></a>
+<span class="sourceLineNo">486</span>                        throw new IllegalArgumentException("Regex " + p.toString() + " matched field " + s + " which already had a field processor " + f.toString());<a name="line.486"></a>
+<span class="sourceLineNo">487</span>                    }<a name="line.487"></a>
+<span class="sourceLineNo">488</span><a name="line.488"></a>
+<span class="sourceLineNo">489</span>                    regexesMatchingFieldNames.add(e.getKey());<a name="line.489"></a>
+<span class="sourceLineNo">490</span>                }<a name="line.490"></a>
+<span class="sourceLineNo">491</span>            }<a name="line.491"></a>
+<span class="sourceLineNo">492</span>        }<a name="line.492"></a>
+<span class="sourceLineNo">493</span>        return regexesMatchingFieldNames;<a name="line.493"></a>
+<span class="sourceLineNo">494</span>    }<a name="line.494"></a>
+<span class="sourceLineNo">495</span><a name="line.495"></a>
+<span class="sourceLineNo">496</span>    /**<a name="line.496"></a>
+<span class="sourceLineNo">497</span>     * @deprecated In a future release this API will change, in the meantime this is the correct way to get a row<a name="line.497"></a>
+<span class="sourceLineNo">498</span>     *   processor with clean state.<a name="line.498"></a>
+<span class="sourceLineNo">499</span>     * &lt;p&gt;<a name="line.499"></a>
+<span class="sourceLineNo">500</span>     * When using regexMappingProcessors, RowProcessor is stateful in a way that can sometimes make it fail the second<a name="line.500"></a>
+<span class="sourceLineNo">501</span>     * time it is used. Concretely:<a name="line.501"></a>
+<span class="sourceLineNo">502</span>     * &lt;pre&gt;<a name="line.502"></a>
+<span class="sourceLineNo">503</span>     *     RowProcessor rp;<a name="line.503"></a>
+<span class="sourceLineNo">504</span>     *     Dataset ds1 = new MutableDataset(new CSVDataSource(csvfile1, rp));<a name="line.504"></a>
+<span class="sourceLineNo">505</span>     *     Dataset ds2 = new MutableDataset(new CSVDataSource(csvfile2, rp)); // this may fail due to state in rp<a name="line.505"></a>
+<span class="sourceLineNo">506</span>     * &lt;/pre&gt;<a name="line.506"></a>
+<span class="sourceLineNo">507</span>     * This method returns a RowProcessor with clean state and the same configuration as this row processor.<a name="line.507"></a>
+<span class="sourceLineNo">508</span>     * @return a RowProcessor instance with clean state and the same configuration as this row processor.<a name="line.508"></a>
+<span class="sourceLineNo">509</span>     */<a name="line.509"></a>
+<span class="sourceLineNo">510</span>    @Deprecated<a name="line.510"></a>
+<span class="sourceLineNo">511</span>    public RowProcessor&lt;T&gt; copy() {<a name="line.511"></a>
+<span class="sourceLineNo">512</span>        return new RowProcessor&lt;&gt;(metadataExtractors, weightExtractor, responseProcessor, fieldProcessorMap, regexMappingProcessors, featureProcessors);<a name="line.512"></a>
+<span class="sourceLineNo">513</span>    }<a name="line.513"></a>
+<span class="sourceLineNo">514</span><a name="line.514"></a>
+<span class="sourceLineNo">515</span>    @Override<a name="line.515"></a>
+<span class="sourceLineNo">516</span>    public ConfiguredObjectProvenance getProvenance() {<a name="line.516"></a>
+<span class="sourceLineNo">517</span>        return new ConfiguredObjectProvenanceImpl(this,"RowProcessor");<a name="line.517"></a>
+<span class="sourceLineNo">518</span>    }<a name="line.518"></a>
+<span class="sourceLineNo">519</span><a name="line.519"></a>
+<span class="sourceLineNo">520</span>}<a name="line.520"></a>
 
 
 

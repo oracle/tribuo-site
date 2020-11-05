@@ -180,50 +180,53 @@
 <span class="sourceLineNo">172</span>        return new MinimumCardinalitySequenceDatasetProvenance(this);<a name="line.172"></a>
 <span class="sourceLineNo">173</span>    }<a name="line.173"></a>
 <span class="sourceLineNo">174</span><a name="line.174"></a>
-<span class="sourceLineNo">175</span>    public static class MinimumCardinalitySequenceDatasetProvenance extends DatasetProvenance {<a name="line.175"></a>
-<span class="sourceLineNo">176</span>        private static final long serialVersionUID = 1L;<a name="line.176"></a>
-<span class="sourceLineNo">177</span><a name="line.177"></a>
-<span class="sourceLineNo">178</span>        private static final String MIN_CARDINALITY = "min-cardinality";<a name="line.178"></a>
-<span class="sourceLineNo">179</span><a name="line.179"></a>
-<span class="sourceLineNo">180</span>        private final IntProvenance minCardinality;<a name="line.180"></a>
-<span class="sourceLineNo">181</span><a name="line.181"></a>
-<span class="sourceLineNo">182</span>        &lt;T extends Output&lt;T&gt;&gt; MinimumCardinalitySequenceDatasetProvenance(<a name="line.182"></a>
-<span class="sourceLineNo">183</span>                MinimumCardinalitySequenceDataset&lt;T&gt; dataset) {<a name="line.183"></a>
-<span class="sourceLineNo">184</span>            super(dataset.sourceProvenance, new ListProvenance&lt;&gt;(), dataset);<a name="line.184"></a>
-<span class="sourceLineNo">185</span>            this.minCardinality = new IntProvenance(MIN_CARDINALITY, dataset.minCardinality);<a name="line.185"></a>
-<span class="sourceLineNo">186</span>        }<a name="line.186"></a>
-<span class="sourceLineNo">187</span><a name="line.187"></a>
-<span class="sourceLineNo">188</span>        public MinimumCardinalitySequenceDatasetProvenance(Map&lt;String, Provenance&gt; map) {<a name="line.188"></a>
-<span class="sourceLineNo">189</span>            super(map);<a name="line.189"></a>
-<span class="sourceLineNo">190</span>            this.minCardinality = ObjectProvenance.checkAndExtractProvenance(map, MIN_CARDINALITY, IntProvenance.class,<a name="line.190"></a>
-<span class="sourceLineNo">191</span>                    MinimumCardinalitySequenceDatasetProvenance.class.getSimpleName());<a name="line.191"></a>
-<span class="sourceLineNo">192</span>        }<a name="line.192"></a>
-<span class="sourceLineNo">193</span><a name="line.193"></a>
-<span class="sourceLineNo">194</span>        @Override<a name="line.194"></a>
-<span class="sourceLineNo">195</span>        public boolean equals(Object o) {<a name="line.195"></a>
-<span class="sourceLineNo">196</span>            if (this == o)<a name="line.196"></a>
-<span class="sourceLineNo">197</span>                return true;<a name="line.197"></a>
-<span class="sourceLineNo">198</span>            if (!(o instanceof MinimumCardinalitySequenceDatasetProvenance))<a name="line.198"></a>
-<span class="sourceLineNo">199</span>                return false;<a name="line.199"></a>
-<span class="sourceLineNo">200</span>            if (!super.equals(o))<a name="line.200"></a>
-<span class="sourceLineNo">201</span>                return false;<a name="line.201"></a>
-<span class="sourceLineNo">202</span>            MinimumCardinalitySequenceDatasetProvenance pairs = (MinimumCardinalitySequenceDatasetProvenance) o;<a name="line.202"></a>
-<span class="sourceLineNo">203</span>            return minCardinality.equals(pairs.minCardinality);<a name="line.203"></a>
-<span class="sourceLineNo">204</span>        }<a name="line.204"></a>
-<span class="sourceLineNo">205</span><a name="line.205"></a>
-<span class="sourceLineNo">206</span>        @Override<a name="line.206"></a>
-<span class="sourceLineNo">207</span>        public int hashCode() {<a name="line.207"></a>
-<span class="sourceLineNo">208</span>            return Objects.hash(super.hashCode(), minCardinality);<a name="line.208"></a>
-<span class="sourceLineNo">209</span>        }<a name="line.209"></a>
-<span class="sourceLineNo">210</span><a name="line.210"></a>
-<span class="sourceLineNo">211</span>        @Override<a name="line.211"></a>
-<span class="sourceLineNo">212</span>        protected List&lt;Pair&lt;String, Provenance&gt;&gt; allProvenances() {<a name="line.212"></a>
-<span class="sourceLineNo">213</span>            List&lt;Pair&lt;String, Provenance&gt;&gt; provenances = super.allProvenances();<a name="line.213"></a>
-<span class="sourceLineNo">214</span>            provenances.add(new Pair&lt;&gt;(MIN_CARDINALITY, minCardinality));<a name="line.214"></a>
-<span class="sourceLineNo">215</span>            return provenances;<a name="line.215"></a>
-<span class="sourceLineNo">216</span>        }<a name="line.216"></a>
-<span class="sourceLineNo">217</span>    }<a name="line.217"></a>
-<span class="sourceLineNo">218</span>}<a name="line.218"></a>
+<span class="sourceLineNo">175</span>    /**<a name="line.175"></a>
+<span class="sourceLineNo">176</span>     * Provenance for {@link MinimumCardinalitySequenceDataset}.<a name="line.176"></a>
+<span class="sourceLineNo">177</span>     */<a name="line.177"></a>
+<span class="sourceLineNo">178</span>    public static class MinimumCardinalitySequenceDatasetProvenance extends DatasetProvenance {<a name="line.178"></a>
+<span class="sourceLineNo">179</span>        private static final long serialVersionUID = 1L;<a name="line.179"></a>
+<span class="sourceLineNo">180</span><a name="line.180"></a>
+<span class="sourceLineNo">181</span>        private static final String MIN_CARDINALITY = "min-cardinality";<a name="line.181"></a>
+<span class="sourceLineNo">182</span><a name="line.182"></a>
+<span class="sourceLineNo">183</span>        private final IntProvenance minCardinality;<a name="line.183"></a>
+<span class="sourceLineNo">184</span><a name="line.184"></a>
+<span class="sourceLineNo">185</span>        &lt;T extends Output&lt;T&gt;&gt; MinimumCardinalitySequenceDatasetProvenance(<a name="line.185"></a>
+<span class="sourceLineNo">186</span>                MinimumCardinalitySequenceDataset&lt;T&gt; dataset) {<a name="line.186"></a>
+<span class="sourceLineNo">187</span>            super(dataset.sourceProvenance, new ListProvenance&lt;&gt;(), dataset);<a name="line.187"></a>
+<span class="sourceLineNo">188</span>            this.minCardinality = new IntProvenance(MIN_CARDINALITY, dataset.minCardinality);<a name="line.188"></a>
+<span class="sourceLineNo">189</span>        }<a name="line.189"></a>
+<span class="sourceLineNo">190</span><a name="line.190"></a>
+<span class="sourceLineNo">191</span>        public MinimumCardinalitySequenceDatasetProvenance(Map&lt;String, Provenance&gt; map) {<a name="line.191"></a>
+<span class="sourceLineNo">192</span>            super(map);<a name="line.192"></a>
+<span class="sourceLineNo">193</span>            this.minCardinality = ObjectProvenance.checkAndExtractProvenance(map, MIN_CARDINALITY, IntProvenance.class,<a name="line.193"></a>
+<span class="sourceLineNo">194</span>                    MinimumCardinalitySequenceDatasetProvenance.class.getSimpleName());<a name="line.194"></a>
+<span class="sourceLineNo">195</span>        }<a name="line.195"></a>
+<span class="sourceLineNo">196</span><a name="line.196"></a>
+<span class="sourceLineNo">197</span>        @Override<a name="line.197"></a>
+<span class="sourceLineNo">198</span>        public boolean equals(Object o) {<a name="line.198"></a>
+<span class="sourceLineNo">199</span>            if (this == o)<a name="line.199"></a>
+<span class="sourceLineNo">200</span>                return true;<a name="line.200"></a>
+<span class="sourceLineNo">201</span>            if (!(o instanceof MinimumCardinalitySequenceDatasetProvenance))<a name="line.201"></a>
+<span class="sourceLineNo">202</span>                return false;<a name="line.202"></a>
+<span class="sourceLineNo">203</span>            if (!super.equals(o))<a name="line.203"></a>
+<span class="sourceLineNo">204</span>                return false;<a name="line.204"></a>
+<span class="sourceLineNo">205</span>            MinimumCardinalitySequenceDatasetProvenance pairs = (MinimumCardinalitySequenceDatasetProvenance) o;<a name="line.205"></a>
+<span class="sourceLineNo">206</span>            return minCardinality.equals(pairs.minCardinality);<a name="line.206"></a>
+<span class="sourceLineNo">207</span>        }<a name="line.207"></a>
+<span class="sourceLineNo">208</span><a name="line.208"></a>
+<span class="sourceLineNo">209</span>        @Override<a name="line.209"></a>
+<span class="sourceLineNo">210</span>        public int hashCode() {<a name="line.210"></a>
+<span class="sourceLineNo">211</span>            return Objects.hash(super.hashCode(), minCardinality);<a name="line.211"></a>
+<span class="sourceLineNo">212</span>        }<a name="line.212"></a>
+<span class="sourceLineNo">213</span><a name="line.213"></a>
+<span class="sourceLineNo">214</span>        @Override<a name="line.214"></a>
+<span class="sourceLineNo">215</span>        protected List&lt;Pair&lt;String, Provenance&gt;&gt; allProvenances() {<a name="line.215"></a>
+<span class="sourceLineNo">216</span>            List&lt;Pair&lt;String, Provenance&gt;&gt; provenances = super.allProvenances();<a name="line.216"></a>
+<span class="sourceLineNo">217</span>            provenances.add(new Pair&lt;&gt;(MIN_CARDINALITY, minCardinality));<a name="line.217"></a>
+<span class="sourceLineNo">218</span>            return provenances;<a name="line.218"></a>
+<span class="sourceLineNo">219</span>        }<a name="line.219"></a>
+<span class="sourceLineNo">220</span>    }<a name="line.220"></a>
+<span class="sourceLineNo">221</span>}<a name="line.221"></a>
 
 
 

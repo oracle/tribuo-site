@@ -250,13 +250,13 @@
 <span class="sourceLineNo">242</span><a name="line.242"></a>
 <span class="sourceLineNo">243</span>    /**<a name="line.243"></a>
 <span class="sourceLineNo">244</span>     * For a MultiLabel with label set = {a, b, c}, outputs a string of the form:<a name="line.244"></a>
-<span class="sourceLineNo">245</span>     *<a name="line.245"></a>
+<span class="sourceLineNo">245</span>     * &lt;pre&gt;<a name="line.245"></a>
 <span class="sourceLineNo">246</span>     * "a=true,b=true,c=true"<a name="line.246"></a>
-<span class="sourceLineNo">247</span>     *<a name="line.247"></a>
+<span class="sourceLineNo">247</span>     * &lt;/pre&gt;<a name="line.247"></a>
 <span class="sourceLineNo">248</span>     * If includeConfidence is set to true, outputs a string of the form:<a name="line.248"></a>
-<span class="sourceLineNo">249</span>     *<a name="line.249"></a>
+<span class="sourceLineNo">249</span>     * &lt;pre&gt;<a name="line.249"></a>
 <span class="sourceLineNo">250</span>     * "a=true,b=true,c=true:0.5"<a name="line.250"></a>
-<span class="sourceLineNo">251</span>     *<a name="line.251"></a>
+<span class="sourceLineNo">251</span>     * &lt;/pre&gt;<a name="line.251"></a>
 <span class="sourceLineNo">252</span>     * where the last element after the colon is this label's score.<a name="line.252"></a>
 <span class="sourceLineNo">253</span>     *<a name="line.253"></a>
 <span class="sourceLineNo">254</span>     * @param includeConfidence Include whatever confidence score the label contains, if known.<a name="line.254"></a>
@@ -284,8 +284,8 @@
 <span class="sourceLineNo">276</span>     * Parses a string of the form:<a name="line.276"></a>
 <span class="sourceLineNo">277</span>     * dimension-name=output,...,dimension-name=output<a name="line.277"></a>
 <span class="sourceLineNo">278</span>     * where output must be readable by {@link Boolean#parseBoolean(String)}.<a name="line.278"></a>
-<span class="sourceLineNo">279</span>     * @param s The string form of a multiple regressor.<a name="line.279"></a>
-<span class="sourceLineNo">280</span>     * @return A multiple regressor parsed from the input string.<a name="line.280"></a>
+<span class="sourceLineNo">279</span>     * @param s The string form of a multi-label example.<a name="line.279"></a>
+<span class="sourceLineNo">280</span>     * @return A {@link MultiLabel} parsed from the input string.<a name="line.280"></a>
 <span class="sourceLineNo">281</span>     */<a name="line.281"></a>
 <span class="sourceLineNo">282</span>    public static MultiLabel parseString(String s) {<a name="line.282"></a>
 <span class="sourceLineNo">283</span>        return parseString(s,',');<a name="line.283"></a>
@@ -299,7 +299,7 @@
 <span class="sourceLineNo">291</span>     * where output must be readable by {@link Boolean#parseBoolean}.<a name="line.291"></a>
 <span class="sourceLineNo">292</span>     * @param s The string form of a multilabel output.<a name="line.292"></a>
 <span class="sourceLineNo">293</span>     * @param splitChar The char to split on.<a name="line.293"></a>
-<span class="sourceLineNo">294</span>     * @return A multilabel output parsed from the input string.<a name="line.294"></a>
+<span class="sourceLineNo">294</span>     * @return A {@link MultiLabel} output parsed from the input string.<a name="line.294"></a>
 <span class="sourceLineNo">295</span>     */<a name="line.295"></a>
 <span class="sourceLineNo">296</span>    public static MultiLabel parseString(String s, char splitChar) {<a name="line.296"></a>
 <span class="sourceLineNo">297</span>        if (splitChar == '=') {<a name="line.297"></a>
@@ -317,13 +317,13 @@
 <span class="sourceLineNo">309</span>     * Parses a string of the form:<a name="line.309"></a>
 <span class="sourceLineNo">310</span>     *<a name="line.310"></a>
 <span class="sourceLineNo">311</span>     * &lt;pre&gt;<a name="line.311"></a>
-<span class="sourceLineNo">312</span>     *     class1=true,class2=false,...<a name="line.312"></a>
+<span class="sourceLineNo">312</span>     *     class1=true<a name="line.312"></a>
 <span class="sourceLineNo">313</span>     * &lt;/pre&gt;<a name="line.313"></a>
 <span class="sourceLineNo">314</span>     *<a name="line.314"></a>
 <span class="sourceLineNo">315</span>     * OR of the form:<a name="line.315"></a>
 <span class="sourceLineNo">316</span>     *<a name="line.316"></a>
 <span class="sourceLineNo">317</span>     * &lt;pre&gt;<a name="line.317"></a>
-<span class="sourceLineNo">318</span>     *     class1,class2,...<a name="line.318"></a>
+<span class="sourceLineNo">318</span>     *     class1<a name="line.318"></a>
 <span class="sourceLineNo">319</span>     * &lt;/pre&gt;<a name="line.319"></a>
 <span class="sourceLineNo">320</span>     *<a name="line.320"></a>
 <span class="sourceLineNo">321</span>     * In the first case, the value in the "key=value" pair must be parseable by {@link Boolean#parseBoolean(String)}.<a name="line.321"></a>
@@ -352,7 +352,7 @@
 <span class="sourceLineNo">344</span>    }<a name="line.344"></a>
 <span class="sourceLineNo">345</span><a name="line.345"></a>
 <span class="sourceLineNo">346</span>    /**<a name="line.346"></a>
-<span class="sourceLineNo">347</span>     * Creates a MultiLabel from a list of dimension tuples.<a name="line.347"></a>
+<span class="sourceLineNo">347</span>     * Creates a MultiLabel from a list of dimensions.<a name="line.347"></a>
 <span class="sourceLineNo">348</span>     * @param dimensions The dimensions to use.<a name="line.348"></a>
 <span class="sourceLineNo">349</span>     * @return A MultiLabel representing these dimensions.<a name="line.349"></a>
 <span class="sourceLineNo">350</span>     */<a name="line.350"></a>

@@ -59,227 +59,255 @@
 <span class="sourceLineNo">051</span>     */<a name="line.51"></a>
 <span class="sourceLineNo">052</span>    public static final String BIAS_FEATURE = "BIAS";<a name="line.52"></a>
 <span class="sourceLineNo">053</span><a name="line.53"></a>
-<span class="sourceLineNo">054</span>    protected String name;<a name="line.54"></a>
-<span class="sourceLineNo">055</span><a name="line.55"></a>
-<span class="sourceLineNo">056</span>    protected final ModelProvenance provenance;<a name="line.56"></a>
-<span class="sourceLineNo">057</span><a name="line.57"></a>
-<span class="sourceLineNo">058</span>    protected final String provenanceOutput;<a name="line.58"></a>
-<span class="sourceLineNo">059</span>    <a name="line.59"></a>
-<span class="sourceLineNo">060</span>    protected final ImmutableFeatureMap featureIDMap;<a name="line.60"></a>
-<span class="sourceLineNo">061</span>    <a name="line.61"></a>
-<span class="sourceLineNo">062</span>    protected final ImmutableOutputInfo&lt;T&gt; outputIDInfo;<a name="line.62"></a>
+<span class="sourceLineNo">054</span>    /**<a name="line.54"></a>
+<span class="sourceLineNo">055</span>     * The model's name.<a name="line.55"></a>
+<span class="sourceLineNo">056</span>     */<a name="line.56"></a>
+<span class="sourceLineNo">057</span>    protected String name;<a name="line.57"></a>
+<span class="sourceLineNo">058</span><a name="line.58"></a>
+<span class="sourceLineNo">059</span>    /**<a name="line.59"></a>
+<span class="sourceLineNo">060</span>     * The model provenance.<a name="line.60"></a>
+<span class="sourceLineNo">061</span>     */<a name="line.61"></a>
+<span class="sourceLineNo">062</span>    protected final ModelProvenance provenance;<a name="line.62"></a>
 <span class="sourceLineNo">063</span><a name="line.63"></a>
-<span class="sourceLineNo">064</span>    protected final boolean generatesProbabilities;<a name="line.64"></a>
-<span class="sourceLineNo">065</span>    <a name="line.65"></a>
-<span class="sourceLineNo">066</span>    protected Model(String name, ModelProvenance provenance, ImmutableFeatureMap featureIDMap, ImmutableOutputInfo&lt;T&gt; outputIDInfo, boolean generatesProbabilities) {<a name="line.66"></a>
-<span class="sourceLineNo">067</span>        this.name = name;<a name="line.67"></a>
-<span class="sourceLineNo">068</span>        this.provenance = provenance;<a name="line.68"></a>
-<span class="sourceLineNo">069</span>        this.provenanceOutput = provenance.toString();<a name="line.69"></a>
-<span class="sourceLineNo">070</span>        this.featureIDMap = featureIDMap;<a name="line.70"></a>
-<span class="sourceLineNo">071</span>        this.outputIDInfo = outputIDInfo;<a name="line.71"></a>
-<span class="sourceLineNo">072</span>        this.generatesProbabilities = generatesProbabilities;<a name="line.72"></a>
-<span class="sourceLineNo">073</span>    }<a name="line.73"></a>
-<span class="sourceLineNo">074</span><a name="line.74"></a>
-<span class="sourceLineNo">075</span>    /**<a name="line.75"></a>
-<span class="sourceLineNo">076</span>     * Returns the model name.<a name="line.76"></a>
-<span class="sourceLineNo">077</span>     * @return The model name.<a name="line.77"></a>
+<span class="sourceLineNo">064</span>    /**<a name="line.64"></a>
+<span class="sourceLineNo">065</span>     * The cached toString of the model provenance.<a name="line.65"></a>
+<span class="sourceLineNo">066</span>     * &lt;p&gt;<a name="line.66"></a>
+<span class="sourceLineNo">067</span>     * Mostly cached so it appears in the serialized output and can be read by grepping the binary.<a name="line.67"></a>
+<span class="sourceLineNo">068</span>     */<a name="line.68"></a>
+<span class="sourceLineNo">069</span>    protected final String provenanceOutput;<a name="line.69"></a>
+<span class="sourceLineNo">070</span><a name="line.70"></a>
+<span class="sourceLineNo">071</span>    /**<a name="line.71"></a>
+<span class="sourceLineNo">072</span>     * The features this model knows about.<a name="line.72"></a>
+<span class="sourceLineNo">073</span>     */<a name="line.73"></a>
+<span class="sourceLineNo">074</span>    protected final ImmutableFeatureMap featureIDMap;<a name="line.74"></a>
+<span class="sourceLineNo">075</span><a name="line.75"></a>
+<span class="sourceLineNo">076</span>    /**<a name="line.76"></a>
+<span class="sourceLineNo">077</span>     * The outputs this model predicts.<a name="line.77"></a>
 <span class="sourceLineNo">078</span>     */<a name="line.78"></a>
-<span class="sourceLineNo">079</span>    public String getName() {<a name="line.79"></a>
-<span class="sourceLineNo">080</span>        return name;<a name="line.80"></a>
-<span class="sourceLineNo">081</span>    }<a name="line.81"></a>
-<span class="sourceLineNo">082</span><a name="line.82"></a>
-<span class="sourceLineNo">083</span>    /**<a name="line.83"></a>
-<span class="sourceLineNo">084</span>     * Sets the model name.<a name="line.84"></a>
-<span class="sourceLineNo">085</span>     * @param name The new model name.<a name="line.85"></a>
-<span class="sourceLineNo">086</span>     */<a name="line.86"></a>
-<span class="sourceLineNo">087</span>    public void setName(String name) {<a name="line.87"></a>
-<span class="sourceLineNo">088</span>        this.name = name;<a name="line.88"></a>
-<span class="sourceLineNo">089</span>    }<a name="line.89"></a>
-<span class="sourceLineNo">090</span> <a name="line.90"></a>
-<span class="sourceLineNo">091</span>    @Override<a name="line.91"></a>
-<span class="sourceLineNo">092</span>    public ModelProvenance getProvenance() {<a name="line.92"></a>
-<span class="sourceLineNo">093</span>        return provenance;<a name="line.93"></a>
-<span class="sourceLineNo">094</span>    }<a name="line.94"></a>
-<span class="sourceLineNo">095</span><a name="line.95"></a>
-<span class="sourceLineNo">096</span>    /**<a name="line.96"></a>
-<span class="sourceLineNo">097</span>     * Gets the feature domain.<a name="line.97"></a>
-<span class="sourceLineNo">098</span>     * @return The feature domain.<a name="line.98"></a>
-<span class="sourceLineNo">099</span>     */<a name="line.99"></a>
-<span class="sourceLineNo">100</span>    public ImmutableFeatureMap getFeatureIDMap() {<a name="line.100"></a>
-<span class="sourceLineNo">101</span>        return featureIDMap;<a name="line.101"></a>
-<span class="sourceLineNo">102</span>    }<a name="line.102"></a>
-<span class="sourceLineNo">103</span><a name="line.103"></a>
-<span class="sourceLineNo">104</span>    /**<a name="line.104"></a>
-<span class="sourceLineNo">105</span>     * Gets the output domain.<a name="line.105"></a>
-<span class="sourceLineNo">106</span>     * @return The output domain.<a name="line.106"></a>
-<span class="sourceLineNo">107</span>     */<a name="line.107"></a>
-<span class="sourceLineNo">108</span>    public ImmutableOutputInfo&lt;T&gt; getOutputIDInfo() {<a name="line.108"></a>
-<span class="sourceLineNo">109</span>        return outputIDInfo;<a name="line.109"></a>
-<span class="sourceLineNo">110</span>    }<a name="line.110"></a>
-<span class="sourceLineNo">111</span><a name="line.111"></a>
-<span class="sourceLineNo">112</span>    /**<a name="line.112"></a>
-<span class="sourceLineNo">113</span>     * Does this model generate probabilistic predictions.<a name="line.113"></a>
-<span class="sourceLineNo">114</span>     * @return True if the model generates probabilistic predictions.<a name="line.114"></a>
-<span class="sourceLineNo">115</span>     */<a name="line.115"></a>
-<span class="sourceLineNo">116</span>    public boolean generatesProbabilities() {<a name="line.116"></a>
-<span class="sourceLineNo">117</span>        return generatesProbabilities;<a name="line.117"></a>
-<span class="sourceLineNo">118</span>    }<a name="line.118"></a>
-<span class="sourceLineNo">119</span><a name="line.119"></a>
-<span class="sourceLineNo">120</span>    /**<a name="line.120"></a>
-<span class="sourceLineNo">121</span>     * Validates that this Model does in fact support the supplied output type.<a name="line.121"></a>
-<span class="sourceLineNo">122</span>     * &lt;p&gt;<a name="line.122"></a>
-<span class="sourceLineNo">123</span>     * As the output type is erased at runtime, deserialising a Model is an unchecked<a name="line.123"></a>
-<span class="sourceLineNo">124</span>     * operation. This method allows the user to check that the deserialised model is<a name="line.124"></a>
-<span class="sourceLineNo">125</span>     * of the appropriate type, rather than seeing if {@link Model#predict} throws a {@link ClassCastException}<a name="line.125"></a>
-<span class="sourceLineNo">126</span>     * when called.<a name="line.126"></a>
-<span class="sourceLineNo">127</span>     * &lt;/p&gt;<a name="line.127"></a>
-<span class="sourceLineNo">128</span>     * @param clazz The class object to verify the output type against.<a name="line.128"></a>
-<span class="sourceLineNo">129</span>     * @return True if the output type is assignable to the class object type, false otherwise.<a name="line.129"></a>
-<span class="sourceLineNo">130</span>     */<a name="line.130"></a>
-<span class="sourceLineNo">131</span>    public boolean validate(Class&lt;? extends Output&lt;?&gt;&gt; clazz) {<a name="line.131"></a>
-<span class="sourceLineNo">132</span>        Set&lt;T&gt; domain = outputIDInfo.getDomain();<a name="line.132"></a>
-<span class="sourceLineNo">133</span>        boolean output = true;<a name="line.133"></a>
-<span class="sourceLineNo">134</span>        for (T type : domain) {<a name="line.134"></a>
-<span class="sourceLineNo">135</span>            output &amp;= clazz.isInstance(type);<a name="line.135"></a>
-<span class="sourceLineNo">136</span>        }<a name="line.136"></a>
-<span class="sourceLineNo">137</span>        return output;<a name="line.137"></a>
+<span class="sourceLineNo">079</span>    protected final ImmutableOutputInfo&lt;T&gt; outputIDInfo;<a name="line.79"></a>
+<span class="sourceLineNo">080</span><a name="line.80"></a>
+<span class="sourceLineNo">081</span>    /**<a name="line.81"></a>
+<span class="sourceLineNo">082</span>     * Does this model generate probability distributions in the output.<a name="line.82"></a>
+<span class="sourceLineNo">083</span>     */<a name="line.83"></a>
+<span class="sourceLineNo">084</span>    protected final boolean generatesProbabilities;<a name="line.84"></a>
+<span class="sourceLineNo">085</span><a name="line.85"></a>
+<span class="sourceLineNo">086</span>    /**<a name="line.86"></a>
+<span class="sourceLineNo">087</span>     * Constructs a new model, storing the supplied fields.<a name="line.87"></a>
+<span class="sourceLineNo">088</span>     * @param name The model name.<a name="line.88"></a>
+<span class="sourceLineNo">089</span>     * @param provenance The model provenance.<a name="line.89"></a>
+<span class="sourceLineNo">090</span>     * @param featureIDMap The features.<a name="line.90"></a>
+<span class="sourceLineNo">091</span>     * @param outputIDInfo The possible outputs.<a name="line.91"></a>
+<span class="sourceLineNo">092</span>     * @param generatesProbabilities Does this model emit probabilistic outputs.<a name="line.92"></a>
+<span class="sourceLineNo">093</span>     */<a name="line.93"></a>
+<span class="sourceLineNo">094</span>    protected Model(String name, ModelProvenance provenance, ImmutableFeatureMap featureIDMap, ImmutableOutputInfo&lt;T&gt; outputIDInfo, boolean generatesProbabilities) {<a name="line.94"></a>
+<span class="sourceLineNo">095</span>        this.name = name;<a name="line.95"></a>
+<span class="sourceLineNo">096</span>        this.provenance = provenance;<a name="line.96"></a>
+<span class="sourceLineNo">097</span>        this.provenanceOutput = provenance.toString();<a name="line.97"></a>
+<span class="sourceLineNo">098</span>        this.featureIDMap = featureIDMap;<a name="line.98"></a>
+<span class="sourceLineNo">099</span>        this.outputIDInfo = outputIDInfo;<a name="line.99"></a>
+<span class="sourceLineNo">100</span>        this.generatesProbabilities = generatesProbabilities;<a name="line.100"></a>
+<span class="sourceLineNo">101</span>    }<a name="line.101"></a>
+<span class="sourceLineNo">102</span><a name="line.102"></a>
+<span class="sourceLineNo">103</span>    /**<a name="line.103"></a>
+<span class="sourceLineNo">104</span>     * Returns the model name.<a name="line.104"></a>
+<span class="sourceLineNo">105</span>     * @return The model name.<a name="line.105"></a>
+<span class="sourceLineNo">106</span>     */<a name="line.106"></a>
+<span class="sourceLineNo">107</span>    public String getName() {<a name="line.107"></a>
+<span class="sourceLineNo">108</span>        return name;<a name="line.108"></a>
+<span class="sourceLineNo">109</span>    }<a name="line.109"></a>
+<span class="sourceLineNo">110</span><a name="line.110"></a>
+<span class="sourceLineNo">111</span>    /**<a name="line.111"></a>
+<span class="sourceLineNo">112</span>     * Sets the model name.<a name="line.112"></a>
+<span class="sourceLineNo">113</span>     * @param name The new model name.<a name="line.113"></a>
+<span class="sourceLineNo">114</span>     */<a name="line.114"></a>
+<span class="sourceLineNo">115</span>    public void setName(String name) {<a name="line.115"></a>
+<span class="sourceLineNo">116</span>        this.name = name;<a name="line.116"></a>
+<span class="sourceLineNo">117</span>    }<a name="line.117"></a>
+<span class="sourceLineNo">118</span> <a name="line.118"></a>
+<span class="sourceLineNo">119</span>    @Override<a name="line.119"></a>
+<span class="sourceLineNo">120</span>    public ModelProvenance getProvenance() {<a name="line.120"></a>
+<span class="sourceLineNo">121</span>        return provenance;<a name="line.121"></a>
+<span class="sourceLineNo">122</span>    }<a name="line.122"></a>
+<span class="sourceLineNo">123</span><a name="line.123"></a>
+<span class="sourceLineNo">124</span>    /**<a name="line.124"></a>
+<span class="sourceLineNo">125</span>     * Gets the feature domain.<a name="line.125"></a>
+<span class="sourceLineNo">126</span>     * @return The feature domain.<a name="line.126"></a>
+<span class="sourceLineNo">127</span>     */<a name="line.127"></a>
+<span class="sourceLineNo">128</span>    public ImmutableFeatureMap getFeatureIDMap() {<a name="line.128"></a>
+<span class="sourceLineNo">129</span>        return featureIDMap;<a name="line.129"></a>
+<span class="sourceLineNo">130</span>    }<a name="line.130"></a>
+<span class="sourceLineNo">131</span><a name="line.131"></a>
+<span class="sourceLineNo">132</span>    /**<a name="line.132"></a>
+<span class="sourceLineNo">133</span>     * Gets the output domain.<a name="line.133"></a>
+<span class="sourceLineNo">134</span>     * @return The output domain.<a name="line.134"></a>
+<span class="sourceLineNo">135</span>     */<a name="line.135"></a>
+<span class="sourceLineNo">136</span>    public ImmutableOutputInfo&lt;T&gt; getOutputIDInfo() {<a name="line.136"></a>
+<span class="sourceLineNo">137</span>        return outputIDInfo;<a name="line.137"></a>
 <span class="sourceLineNo">138</span>    }<a name="line.138"></a>
 <span class="sourceLineNo">139</span><a name="line.139"></a>
 <span class="sourceLineNo">140</span>    /**<a name="line.140"></a>
-<span class="sourceLineNo">141</span>     * Uses the model to predict the output for a single example.<a name="line.141"></a>
-<span class="sourceLineNo">142</span>     * &lt;p&gt;<a name="line.142"></a>
-<span class="sourceLineNo">143</span>     * predict does not mutate the example.<a name="line.143"></a>
-<span class="sourceLineNo">144</span>     * &lt;p&gt;<a name="line.144"></a>
-<span class="sourceLineNo">145</span>     * Throws {@link IllegalArgumentException} if the example has no features<a name="line.145"></a>
-<span class="sourceLineNo">146</span>     * or no feature overlap with the model.<a name="line.146"></a>
-<span class="sourceLineNo">147</span>     * @param example the example to predict.<a name="line.147"></a>
-<span class="sourceLineNo">148</span>     * @return the result of the prediction.<a name="line.148"></a>
-<span class="sourceLineNo">149</span>     */<a name="line.149"></a>
-<span class="sourceLineNo">150</span>    public abstract Prediction&lt;T&gt; predict(Example&lt;T&gt; example);<a name="line.150"></a>
-<span class="sourceLineNo">151</span>    <a name="line.151"></a>
-<span class="sourceLineNo">152</span>    /**<a name="line.152"></a>
-<span class="sourceLineNo">153</span>     * Uses the model to predict the output for multiple examples.<a name="line.153"></a>
-<span class="sourceLineNo">154</span>     * &lt;p&gt;<a name="line.154"></a>
-<span class="sourceLineNo">155</span>     * Throws {@link IllegalArgumentException} if the examples have no features<a name="line.155"></a>
-<span class="sourceLineNo">156</span>     * or no feature overlap with the model.<a name="line.156"></a>
-<span class="sourceLineNo">157</span>     * @param examples the examples to predict.<a name="line.157"></a>
-<span class="sourceLineNo">158</span>     * @return the results of the prediction, in the same order as the <a name="line.158"></a>
-<span class="sourceLineNo">159</span>     * examples.<a name="line.159"></a>
-<span class="sourceLineNo">160</span>     */<a name="line.160"></a>
-<span class="sourceLineNo">161</span>    public List&lt;Prediction&lt;T&gt;&gt; predict(Iterable&lt;Example&lt;T&gt;&gt; examples) {<a name="line.161"></a>
-<span class="sourceLineNo">162</span>        return innerPredict(examples);<a name="line.162"></a>
-<span class="sourceLineNo">163</span>    }<a name="line.163"></a>
-<span class="sourceLineNo">164</span><a name="line.164"></a>
-<span class="sourceLineNo">165</span>    /**<a name="line.165"></a>
-<span class="sourceLineNo">166</span>     * Uses the model to predict the outputs for multiple examples contained in<a name="line.166"></a>
-<span class="sourceLineNo">167</span>     * a data set.<a name="line.167"></a>
-<span class="sourceLineNo">168</span>     * &lt;p&gt;<a name="line.168"></a>
-<span class="sourceLineNo">169</span>     * Throws {@link IllegalArgumentException} if the examples have no features<a name="line.169"></a>
-<span class="sourceLineNo">170</span>     * or no feature overlap with the model.<a name="line.170"></a>
-<span class="sourceLineNo">171</span>     * @param examples the data set containing the examples to predict.<a name="line.171"></a>
-<span class="sourceLineNo">172</span>     * @return the results of the predictions, in the same order as the <a name="line.172"></a>
-<span class="sourceLineNo">173</span>     * Dataset provides the examples.<a name="line.173"></a>
-<span class="sourceLineNo">174</span>     */<a name="line.174"></a>
-<span class="sourceLineNo">175</span>    public List&lt;Prediction&lt;T&gt;&gt; predict(Dataset&lt;T&gt; examples) {<a name="line.175"></a>
-<span class="sourceLineNo">176</span>        return innerPredict(examples);<a name="line.176"></a>
-<span class="sourceLineNo">177</span>    }<a name="line.177"></a>
-<span class="sourceLineNo">178</span><a name="line.178"></a>
-<span class="sourceLineNo">179</span>    /**<a name="line.179"></a>
-<span class="sourceLineNo">180</span>     * Called by the base implementations of {@link Model#predict(Iterable)} and {@link Model#predict(Dataset)}.<a name="line.180"></a>
-<span class="sourceLineNo">181</span>     * @param examples The examples to predict.<a name="line.181"></a>
-<span class="sourceLineNo">182</span>     * @return The results of the predictions, in the same order as the examples.<a name="line.182"></a>
-<span class="sourceLineNo">183</span>     */<a name="line.183"></a>
-<span class="sourceLineNo">184</span>    protected List&lt;Prediction&lt;T&gt;&gt; innerPredict(Iterable&lt;Example&lt;T&gt;&gt; examples) {<a name="line.184"></a>
-<span class="sourceLineNo">185</span>        List&lt;Prediction&lt;T&gt;&gt; predictions = new ArrayList&lt;&gt;();<a name="line.185"></a>
-<span class="sourceLineNo">186</span>        for (Example&lt;T&gt; example : examples) {<a name="line.186"></a>
-<span class="sourceLineNo">187</span>            predictions.add(predict(example));<a name="line.187"></a>
-<span class="sourceLineNo">188</span>        }<a name="line.188"></a>
-<span class="sourceLineNo">189</span>        return predictions;<a name="line.189"></a>
-<span class="sourceLineNo">190</span>    }<a name="line.190"></a>
-<span class="sourceLineNo">191</span>    <a name="line.191"></a>
-<span class="sourceLineNo">192</span>    /**<a name="line.192"></a>
-<span class="sourceLineNo">193</span>     * Gets the top {@code n} features associated with this model.<a name="line.193"></a>
-<span class="sourceLineNo">194</span>     * &lt;p&gt;<a name="line.194"></a>
-<span class="sourceLineNo">195</span>     * If the model does not produce per output feature lists, it returns<a name="line.195"></a>
-<span class="sourceLineNo">196</span>     * a map with a single element with key Model.ALL_OUTPUTS.<a name="line.196"></a>
-<span class="sourceLineNo">197</span>     * &lt;/p&gt;<a name="line.197"></a>
-<span class="sourceLineNo">198</span>     * &lt;p&gt;<a name="line.198"></a>
-<span class="sourceLineNo">199</span>     * If the model cannot describe it's top features then it returns {@link java.util.Collections#emptyMap}.<a name="line.199"></a>
-<span class="sourceLineNo">200</span>     * &lt;/p&gt;<a name="line.200"></a>
-<span class="sourceLineNo">201</span>     * @param n the number of features to return. If this value is less than 0, <a name="line.201"></a>
-<span class="sourceLineNo">202</span>     * all features should be returned for each class, unless the model cannot score it's features.<a name="line.202"></a>
-<span class="sourceLineNo">203</span>     * @return a map from string outputs to an ordered list of pairs of<a name="line.203"></a>
-<span class="sourceLineNo">204</span>     * feature names and weights associated with that feature in the model<a name="line.204"></a>
-<span class="sourceLineNo">205</span>     */<a name="line.205"></a>
-<span class="sourceLineNo">206</span>    public abstract Map&lt;String,List&lt;Pair&lt;String,Double&gt;&gt;&gt; getTopFeatures(int n);<a name="line.206"></a>
-<span class="sourceLineNo">207</span><a name="line.207"></a>
-<span class="sourceLineNo">208</span>    /**<a name="line.208"></a>
-<span class="sourceLineNo">209</span>     * Generates an excuse for an example.<a name="line.209"></a>
-<span class="sourceLineNo">210</span>     * &lt;p&gt;<a name="line.210"></a>
-<span class="sourceLineNo">211</span>     * This attempts to explain a classification result. Generating an excuse may be quite an expensive operation.<a name="line.211"></a>
-<span class="sourceLineNo">212</span>     * &lt;p&gt;<a name="line.212"></a>
-<span class="sourceLineNo">213</span>     * This excuse either contains per class information or an entry with key Model.ALL_OUTPUTS.<a name="line.213"></a>
-<span class="sourceLineNo">214</span>     * &lt;p&gt;<a name="line.214"></a>
-<span class="sourceLineNo">215</span>     * The optional is empty if the model does not provide excuses.<a name="line.215"></a>
-<span class="sourceLineNo">216</span>     * @param example The input example.<a name="line.216"></a>
-<span class="sourceLineNo">217</span>     * @return An optional excuse object. The optional is empty if this model does not provide excuses.<a name="line.217"></a>
-<span class="sourceLineNo">218</span>     */<a name="line.218"></a>
-<span class="sourceLineNo">219</span>    public abstract Optional&lt;Excuse&lt;T&gt;&gt; getExcuse(Example&lt;T&gt; example);<a name="line.219"></a>
-<span class="sourceLineNo">220</span><a name="line.220"></a>
-<span class="sourceLineNo">221</span>    /**<a name="line.221"></a>
-<span class="sourceLineNo">222</span>     * Generates an excuse for each example.<a name="line.222"></a>
-<span class="sourceLineNo">223</span>     * &lt;p&gt;<a name="line.223"></a>
-<span class="sourceLineNo">224</span>     * This may be an expensive operation, and probably should be overridden in subclasses for performance reasons.<a name="line.224"></a>
-<span class="sourceLineNo">225</span>     * &lt;p&gt;<a name="line.225"></a>
-<span class="sourceLineNo">226</span>     * These excuses either contain per class information or an entry with key Model.ALL_OUTPUTS.<a name="line.226"></a>
-<span class="sourceLineNo">227</span>     * &lt;p&gt;<a name="line.227"></a>
-<span class="sourceLineNo">228</span>     * The optional is empty if the model does not provide excuses.<a name="line.228"></a>
-<span class="sourceLineNo">229</span>     * @param examples An iterable of examples<a name="line.229"></a>
-<span class="sourceLineNo">230</span>     * @return A optional list of excuses. The Optional is empty if this model does not provide excuses.<a name="line.230"></a>
-<span class="sourceLineNo">231</span>     */<a name="line.231"></a>
-<span class="sourceLineNo">232</span>    public Optional&lt;List&lt;Excuse&lt;T&gt;&gt;&gt; getExcuses(Iterable&lt;Example&lt;T&gt;&gt; examples) {<a name="line.232"></a>
-<span class="sourceLineNo">233</span>        List&lt;Excuse&lt;T&gt;&gt; excuses = new ArrayList&lt;&gt;();<a name="line.233"></a>
-<span class="sourceLineNo">234</span>        for (Example&lt;T&gt; e : examples) {<a name="line.234"></a>
-<span class="sourceLineNo">235</span>            Optional&lt;Excuse&lt;T&gt;&gt; excuse = getExcuse(e);<a name="line.235"></a>
-<span class="sourceLineNo">236</span>            if (excuse.isPresent()) {<a name="line.236"></a>
-<span class="sourceLineNo">237</span>                excuses.add(excuse.get());<a name="line.237"></a>
-<span class="sourceLineNo">238</span>            } else {<a name="line.238"></a>
-<span class="sourceLineNo">239</span>                return Optional.empty();<a name="line.239"></a>
-<span class="sourceLineNo">240</span>            }<a name="line.240"></a>
-<span class="sourceLineNo">241</span>        }<a name="line.241"></a>
-<span class="sourceLineNo">242</span>        return Optional.of(excuses);<a name="line.242"></a>
-<span class="sourceLineNo">243</span>    }<a name="line.243"></a>
-<span class="sourceLineNo">244</span><a name="line.244"></a>
-<span class="sourceLineNo">245</span>    /**<a name="line.245"></a>
-<span class="sourceLineNo">246</span>     * Copies a model, returning a deep copy of any mutable state, and a shallow copy otherwise.<a name="line.246"></a>
-<span class="sourceLineNo">247</span>     * @return A copy of the model.<a name="line.247"></a>
-<span class="sourceLineNo">248</span>     */<a name="line.248"></a>
-<span class="sourceLineNo">249</span>    public Model&lt;T&gt; copy() {<a name="line.249"></a>
-<span class="sourceLineNo">250</span>        List&lt;ObjectMarshalledProvenance&gt; omp = ProvenanceUtil.marshalProvenance(provenance);<a name="line.250"></a>
-<span class="sourceLineNo">251</span>        ModelProvenance provenanceCopy = (ModelProvenance) ProvenanceUtil.unmarshalProvenance(omp);<a name="line.251"></a>
-<span class="sourceLineNo">252</span>        return copy(name,provenanceCopy);<a name="line.252"></a>
-<span class="sourceLineNo">253</span>    }<a name="line.253"></a>
-<span class="sourceLineNo">254</span><a name="line.254"></a>
-<span class="sourceLineNo">255</span>    /**<a name="line.255"></a>
-<span class="sourceLineNo">256</span>     * Copies a model, replacing it's provenance and name with the supplied values.<a name="line.256"></a>
-<span class="sourceLineNo">257</span>     * &lt;p&gt;<a name="line.257"></a>
-<span class="sourceLineNo">258</span>     * Used to provide the provenance removal functionality.<a name="line.258"></a>
-<span class="sourceLineNo">259</span>     * @param newName The new name.<a name="line.259"></a>
-<span class="sourceLineNo">260</span>     * @param newProvenance The new provenance.<a name="line.260"></a>
-<span class="sourceLineNo">261</span>     * @return A copy of the model.<a name="line.261"></a>
-<span class="sourceLineNo">262</span>     */<a name="line.262"></a>
-<span class="sourceLineNo">263</span>    protected abstract Model&lt;T&gt; copy(String newName, ModelProvenance newProvenance);<a name="line.263"></a>
-<span class="sourceLineNo">264</span><a name="line.264"></a>
-<span class="sourceLineNo">265</span>    @Override<a name="line.265"></a>
-<span class="sourceLineNo">266</span>    public String toString() {<a name="line.266"></a>
-<span class="sourceLineNo">267</span>        if (name != null &amp;&amp; !name.isEmpty()) {<a name="line.267"></a>
-<span class="sourceLineNo">268</span>            return name + " - " + provenanceOutput;<a name="line.268"></a>
-<span class="sourceLineNo">269</span>        } else {<a name="line.269"></a>
-<span class="sourceLineNo">270</span>            return provenanceOutput;<a name="line.270"></a>
-<span class="sourceLineNo">271</span>        }<a name="line.271"></a>
-<span class="sourceLineNo">272</span>    }<a name="line.272"></a>
-<span class="sourceLineNo">273</span>    <a name="line.273"></a>
-<span class="sourceLineNo">274</span>}<a name="line.274"></a>
+<span class="sourceLineNo">141</span>     * Does this model generate probabilistic predictions.<a name="line.141"></a>
+<span class="sourceLineNo">142</span>     * @return True if the model generates probabilistic predictions.<a name="line.142"></a>
+<span class="sourceLineNo">143</span>     */<a name="line.143"></a>
+<span class="sourceLineNo">144</span>    public boolean generatesProbabilities() {<a name="line.144"></a>
+<span class="sourceLineNo">145</span>        return generatesProbabilities;<a name="line.145"></a>
+<span class="sourceLineNo">146</span>    }<a name="line.146"></a>
+<span class="sourceLineNo">147</span><a name="line.147"></a>
+<span class="sourceLineNo">148</span>    /**<a name="line.148"></a>
+<span class="sourceLineNo">149</span>     * Validates that this Model does in fact support the supplied output type.<a name="line.149"></a>
+<span class="sourceLineNo">150</span>     * &lt;p&gt;<a name="line.150"></a>
+<span class="sourceLineNo">151</span>     * As the output type is erased at runtime, deserialising a Model is an unchecked<a name="line.151"></a>
+<span class="sourceLineNo">152</span>     * operation. This method allows the user to check that the deserialised model is<a name="line.152"></a>
+<span class="sourceLineNo">153</span>     * of the appropriate type, rather than seeing if {@link Model#predict} throws a {@link ClassCastException}<a name="line.153"></a>
+<span class="sourceLineNo">154</span>     * when called.<a name="line.154"></a>
+<span class="sourceLineNo">155</span>     * &lt;/p&gt;<a name="line.155"></a>
+<span class="sourceLineNo">156</span>     * @param clazz The class object to verify the output type against.<a name="line.156"></a>
+<span class="sourceLineNo">157</span>     * @return True if the output type is assignable to the class object type, false otherwise.<a name="line.157"></a>
+<span class="sourceLineNo">158</span>     */<a name="line.158"></a>
+<span class="sourceLineNo">159</span>    public boolean validate(Class&lt;? extends Output&lt;?&gt;&gt; clazz) {<a name="line.159"></a>
+<span class="sourceLineNo">160</span>        Set&lt;T&gt; domain = outputIDInfo.getDomain();<a name="line.160"></a>
+<span class="sourceLineNo">161</span>        boolean output = true;<a name="line.161"></a>
+<span class="sourceLineNo">162</span>        for (T type : domain) {<a name="line.162"></a>
+<span class="sourceLineNo">163</span>            output &amp;= clazz.isInstance(type);<a name="line.163"></a>
+<span class="sourceLineNo">164</span>        }<a name="line.164"></a>
+<span class="sourceLineNo">165</span>        return output;<a name="line.165"></a>
+<span class="sourceLineNo">166</span>    }<a name="line.166"></a>
+<span class="sourceLineNo">167</span><a name="line.167"></a>
+<span class="sourceLineNo">168</span>    /**<a name="line.168"></a>
+<span class="sourceLineNo">169</span>     * Uses the model to predict the output for a single example.<a name="line.169"></a>
+<span class="sourceLineNo">170</span>     * &lt;p&gt;<a name="line.170"></a>
+<span class="sourceLineNo">171</span>     * predict does not mutate the example.<a name="line.171"></a>
+<span class="sourceLineNo">172</span>     * &lt;p&gt;<a name="line.172"></a>
+<span class="sourceLineNo">173</span>     * Throws {@link IllegalArgumentException} if the example has no features<a name="line.173"></a>
+<span class="sourceLineNo">174</span>     * or no feature overlap with the model.<a name="line.174"></a>
+<span class="sourceLineNo">175</span>     * @param example the example to predict.<a name="line.175"></a>
+<span class="sourceLineNo">176</span>     * @return the result of the prediction.<a name="line.176"></a>
+<span class="sourceLineNo">177</span>     */<a name="line.177"></a>
+<span class="sourceLineNo">178</span>    public abstract Prediction&lt;T&gt; predict(Example&lt;T&gt; example);<a name="line.178"></a>
+<span class="sourceLineNo">179</span>    <a name="line.179"></a>
+<span class="sourceLineNo">180</span>    /**<a name="line.180"></a>
+<span class="sourceLineNo">181</span>     * Uses the model to predict the output for multiple examples.<a name="line.181"></a>
+<span class="sourceLineNo">182</span>     * &lt;p&gt;<a name="line.182"></a>
+<span class="sourceLineNo">183</span>     * Throws {@link IllegalArgumentException} if the examples have no features<a name="line.183"></a>
+<span class="sourceLineNo">184</span>     * or no feature overlap with the model.<a name="line.184"></a>
+<span class="sourceLineNo">185</span>     * @param examples the examples to predict.<a name="line.185"></a>
+<span class="sourceLineNo">186</span>     * @return the results of the prediction, in the same order as the <a name="line.186"></a>
+<span class="sourceLineNo">187</span>     * examples.<a name="line.187"></a>
+<span class="sourceLineNo">188</span>     */<a name="line.188"></a>
+<span class="sourceLineNo">189</span>    public List&lt;Prediction&lt;T&gt;&gt; predict(Iterable&lt;Example&lt;T&gt;&gt; examples) {<a name="line.189"></a>
+<span class="sourceLineNo">190</span>        return innerPredict(examples);<a name="line.190"></a>
+<span class="sourceLineNo">191</span>    }<a name="line.191"></a>
+<span class="sourceLineNo">192</span><a name="line.192"></a>
+<span class="sourceLineNo">193</span>    /**<a name="line.193"></a>
+<span class="sourceLineNo">194</span>     * Uses the model to predict the outputs for multiple examples contained in<a name="line.194"></a>
+<span class="sourceLineNo">195</span>     * a data set.<a name="line.195"></a>
+<span class="sourceLineNo">196</span>     * &lt;p&gt;<a name="line.196"></a>
+<span class="sourceLineNo">197</span>     * Throws {@link IllegalArgumentException} if the examples have no features<a name="line.197"></a>
+<span class="sourceLineNo">198</span>     * or no feature overlap with the model.<a name="line.198"></a>
+<span class="sourceLineNo">199</span>     * @param examples the data set containing the examples to predict.<a name="line.199"></a>
+<span class="sourceLineNo">200</span>     * @return the results of the predictions, in the same order as the <a name="line.200"></a>
+<span class="sourceLineNo">201</span>     * Dataset provides the examples.<a name="line.201"></a>
+<span class="sourceLineNo">202</span>     */<a name="line.202"></a>
+<span class="sourceLineNo">203</span>    public List&lt;Prediction&lt;T&gt;&gt; predict(Dataset&lt;T&gt; examples) {<a name="line.203"></a>
+<span class="sourceLineNo">204</span>        return innerPredict(examples);<a name="line.204"></a>
+<span class="sourceLineNo">205</span>    }<a name="line.205"></a>
+<span class="sourceLineNo">206</span><a name="line.206"></a>
+<span class="sourceLineNo">207</span>    /**<a name="line.207"></a>
+<span class="sourceLineNo">208</span>     * Called by the base implementations of {@link Model#predict(Iterable)} and {@link Model#predict(Dataset)}.<a name="line.208"></a>
+<span class="sourceLineNo">209</span>     * @param examples The examples to predict.<a name="line.209"></a>
+<span class="sourceLineNo">210</span>     * @return The results of the predictions, in the same order as the examples.<a name="line.210"></a>
+<span class="sourceLineNo">211</span>     */<a name="line.211"></a>
+<span class="sourceLineNo">212</span>    protected List&lt;Prediction&lt;T&gt;&gt; innerPredict(Iterable&lt;Example&lt;T&gt;&gt; examples) {<a name="line.212"></a>
+<span class="sourceLineNo">213</span>        List&lt;Prediction&lt;T&gt;&gt; predictions = new ArrayList&lt;&gt;();<a name="line.213"></a>
+<span class="sourceLineNo">214</span>        for (Example&lt;T&gt; example : examples) {<a name="line.214"></a>
+<span class="sourceLineNo">215</span>            predictions.add(predict(example));<a name="line.215"></a>
+<span class="sourceLineNo">216</span>        }<a name="line.216"></a>
+<span class="sourceLineNo">217</span>        return predictions;<a name="line.217"></a>
+<span class="sourceLineNo">218</span>    }<a name="line.218"></a>
+<span class="sourceLineNo">219</span>    <a name="line.219"></a>
+<span class="sourceLineNo">220</span>    /**<a name="line.220"></a>
+<span class="sourceLineNo">221</span>     * Gets the top {@code n} features associated with this model.<a name="line.221"></a>
+<span class="sourceLineNo">222</span>     * &lt;p&gt;<a name="line.222"></a>
+<span class="sourceLineNo">223</span>     * If the model does not produce per output feature lists, it returns<a name="line.223"></a>
+<span class="sourceLineNo">224</span>     * a map with a single element with key Model.ALL_OUTPUTS.<a name="line.224"></a>
+<span class="sourceLineNo">225</span>     * &lt;/p&gt;<a name="line.225"></a>
+<span class="sourceLineNo">226</span>     * &lt;p&gt;<a name="line.226"></a>
+<span class="sourceLineNo">227</span>     * If the model cannot describe it's top features then it returns {@link java.util.Collections#emptyMap}.<a name="line.227"></a>
+<span class="sourceLineNo">228</span>     * &lt;/p&gt;<a name="line.228"></a>
+<span class="sourceLineNo">229</span>     * @param n the number of features to return. If this value is less than 0, <a name="line.229"></a>
+<span class="sourceLineNo">230</span>     * all features should be returned for each class, unless the model cannot score it's features.<a name="line.230"></a>
+<span class="sourceLineNo">231</span>     * @return a map from string outputs to an ordered list of pairs of<a name="line.231"></a>
+<span class="sourceLineNo">232</span>     * feature names and weights associated with that feature in the model<a name="line.232"></a>
+<span class="sourceLineNo">233</span>     */<a name="line.233"></a>
+<span class="sourceLineNo">234</span>    public abstract Map&lt;String,List&lt;Pair&lt;String,Double&gt;&gt;&gt; getTopFeatures(int n);<a name="line.234"></a>
+<span class="sourceLineNo">235</span><a name="line.235"></a>
+<span class="sourceLineNo">236</span>    /**<a name="line.236"></a>
+<span class="sourceLineNo">237</span>     * Generates an excuse for an example.<a name="line.237"></a>
+<span class="sourceLineNo">238</span>     * &lt;p&gt;<a name="line.238"></a>
+<span class="sourceLineNo">239</span>     * This attempts to explain a classification result. Generating an excuse may be quite an expensive operation.<a name="line.239"></a>
+<span class="sourceLineNo">240</span>     * &lt;p&gt;<a name="line.240"></a>
+<span class="sourceLineNo">241</span>     * This excuse either contains per class information or an entry with key Model.ALL_OUTPUTS.<a name="line.241"></a>
+<span class="sourceLineNo">242</span>     * &lt;p&gt;<a name="line.242"></a>
+<span class="sourceLineNo">243</span>     * The optional is empty if the model does not provide excuses.<a name="line.243"></a>
+<span class="sourceLineNo">244</span>     * @param example The input example.<a name="line.244"></a>
+<span class="sourceLineNo">245</span>     * @return An optional excuse object. The optional is empty if this model does not provide excuses.<a name="line.245"></a>
+<span class="sourceLineNo">246</span>     */<a name="line.246"></a>
+<span class="sourceLineNo">247</span>    public abstract Optional&lt;Excuse&lt;T&gt;&gt; getExcuse(Example&lt;T&gt; example);<a name="line.247"></a>
+<span class="sourceLineNo">248</span><a name="line.248"></a>
+<span class="sourceLineNo">249</span>    /**<a name="line.249"></a>
+<span class="sourceLineNo">250</span>     * Generates an excuse for each example.<a name="line.250"></a>
+<span class="sourceLineNo">251</span>     * &lt;p&gt;<a name="line.251"></a>
+<span class="sourceLineNo">252</span>     * This may be an expensive operation, and probably should be overridden in subclasses for performance reasons.<a name="line.252"></a>
+<span class="sourceLineNo">253</span>     * &lt;p&gt;<a name="line.253"></a>
+<span class="sourceLineNo">254</span>     * These excuses either contain per class information or an entry with key Model.ALL_OUTPUTS.<a name="line.254"></a>
+<span class="sourceLineNo">255</span>     * &lt;p&gt;<a name="line.255"></a>
+<span class="sourceLineNo">256</span>     * The optional is empty if the model does not provide excuses.<a name="line.256"></a>
+<span class="sourceLineNo">257</span>     * @param examples An iterable of examples<a name="line.257"></a>
+<span class="sourceLineNo">258</span>     * @return A optional list of excuses. The Optional is empty if this model does not provide excuses.<a name="line.258"></a>
+<span class="sourceLineNo">259</span>     */<a name="line.259"></a>
+<span class="sourceLineNo">260</span>    public Optional&lt;List&lt;Excuse&lt;T&gt;&gt;&gt; getExcuses(Iterable&lt;Example&lt;T&gt;&gt; examples) {<a name="line.260"></a>
+<span class="sourceLineNo">261</span>        List&lt;Excuse&lt;T&gt;&gt; excuses = new ArrayList&lt;&gt;();<a name="line.261"></a>
+<span class="sourceLineNo">262</span>        for (Example&lt;T&gt; e : examples) {<a name="line.262"></a>
+<span class="sourceLineNo">263</span>            Optional&lt;Excuse&lt;T&gt;&gt; excuse = getExcuse(e);<a name="line.263"></a>
+<span class="sourceLineNo">264</span>            if (excuse.isPresent()) {<a name="line.264"></a>
+<span class="sourceLineNo">265</span>                excuses.add(excuse.get());<a name="line.265"></a>
+<span class="sourceLineNo">266</span>            } else {<a name="line.266"></a>
+<span class="sourceLineNo">267</span>                return Optional.empty();<a name="line.267"></a>
+<span class="sourceLineNo">268</span>            }<a name="line.268"></a>
+<span class="sourceLineNo">269</span>        }<a name="line.269"></a>
+<span class="sourceLineNo">270</span>        return Optional.of(excuses);<a name="line.270"></a>
+<span class="sourceLineNo">271</span>    }<a name="line.271"></a>
+<span class="sourceLineNo">272</span><a name="line.272"></a>
+<span class="sourceLineNo">273</span>    /**<a name="line.273"></a>
+<span class="sourceLineNo">274</span>     * Copies a model, returning a deep copy of any mutable state, and a shallow copy otherwise.<a name="line.274"></a>
+<span class="sourceLineNo">275</span>     * @return A copy of the model.<a name="line.275"></a>
+<span class="sourceLineNo">276</span>     */<a name="line.276"></a>
+<span class="sourceLineNo">277</span>    public Model&lt;T&gt; copy() {<a name="line.277"></a>
+<span class="sourceLineNo">278</span>        List&lt;ObjectMarshalledProvenance&gt; omp = ProvenanceUtil.marshalProvenance(provenance);<a name="line.278"></a>
+<span class="sourceLineNo">279</span>        ModelProvenance provenanceCopy = (ModelProvenance) ProvenanceUtil.unmarshalProvenance(omp);<a name="line.279"></a>
+<span class="sourceLineNo">280</span>        return copy(name,provenanceCopy);<a name="line.280"></a>
+<span class="sourceLineNo">281</span>    }<a name="line.281"></a>
+<span class="sourceLineNo">282</span><a name="line.282"></a>
+<span class="sourceLineNo">283</span>    /**<a name="line.283"></a>
+<span class="sourceLineNo">284</span>     * Copies a model, replacing it's provenance and name with the supplied values.<a name="line.284"></a>
+<span class="sourceLineNo">285</span>     * &lt;p&gt;<a name="line.285"></a>
+<span class="sourceLineNo">286</span>     * Used to provide the provenance removal functionality.<a name="line.286"></a>
+<span class="sourceLineNo">287</span>     * @param newName The new name.<a name="line.287"></a>
+<span class="sourceLineNo">288</span>     * @param newProvenance The new provenance.<a name="line.288"></a>
+<span class="sourceLineNo">289</span>     * @return A copy of the model.<a name="line.289"></a>
+<span class="sourceLineNo">290</span>     */<a name="line.290"></a>
+<span class="sourceLineNo">291</span>    protected abstract Model&lt;T&gt; copy(String newName, ModelProvenance newProvenance);<a name="line.291"></a>
+<span class="sourceLineNo">292</span><a name="line.292"></a>
+<span class="sourceLineNo">293</span>    @Override<a name="line.293"></a>
+<span class="sourceLineNo">294</span>    public String toString() {<a name="line.294"></a>
+<span class="sourceLineNo">295</span>        if (name != null &amp;&amp; !name.isEmpty()) {<a name="line.295"></a>
+<span class="sourceLineNo">296</span>            return name + " - " + provenanceOutput;<a name="line.296"></a>
+<span class="sourceLineNo">297</span>        } else {<a name="line.297"></a>
+<span class="sourceLineNo">298</span>            return provenanceOutput;<a name="line.298"></a>
+<span class="sourceLineNo">299</span>        }<a name="line.299"></a>
+<span class="sourceLineNo">300</span>    }<a name="line.300"></a>
+<span class="sourceLineNo">301</span>    <a name="line.301"></a>
+<span class="sourceLineNo">302</span>}<a name="line.302"></a>
 
 
 
