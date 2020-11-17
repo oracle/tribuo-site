@@ -246,7 +246,7 @@
 <span class="sourceLineNo">238</span>        sb.append(String.format(labelFormatString, "Total"));<a name="line.238"></a>
 <span class="sourceLineNo">239</span>        sb.append(String.format("%,12d%,12d%,12d%,12d%n", n, tp, fn, fp));<a name="line.239"></a>
 <span class="sourceLineNo">240</span>        sb.append(String.format(labelFormatString, "Accuracy"));<a name="line.240"></a>
-<span class="sourceLineNo">241</span>        sb.append(String.format("%60.3f%n", (double) tp / n));<a name="line.241"></a>
+<span class="sourceLineNo">241</span>        sb.append(String.format("%60.3f%n", ((double) tp) / n));<a name="line.241"></a>
 <span class="sourceLineNo">242</span>        sb.append(String.format(labelFormatString, "Micro Average"));<a name="line.242"></a>
 <span class="sourceLineNo">243</span>        sb.append(String.format("%60.3f%12.3f%12.3f%n", microAveragedRecall(), microAveragedPrecision(), microAveragedF1()));<a name="line.243"></a>
 <span class="sourceLineNo">244</span>        sb.append(String.format(labelFormatString, "Macro Average"));<a name="line.244"></a>

@@ -32,8 +32,8 @@ We'll also briefly look at Tribuo's feature transformation system and see how th
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="o">%</span><span class="n">jars</span> <span class="p">.</span><span class="o">/</span><span class="n">tribuo</span><span class="o">-</span><span class="n">classification</span><span class="o">-</span><span class="n">experiments</span><span class="o">-</span><span class="mf">4.0.1</span><span class="o">-</span><span class="n">jar</span><span class="o">-</span><span class="n">with</span><span class="o">-</span><span class="n">dependencies</span><span class="p">.</span><span class="na">jar</span>
-<span class="o">%</span><span class="n">jars</span> <span class="p">.</span><span class="o">/</span><span class="n">tribuo</span><span class="o">-</span><span class="n">json</span><span class="o">-</span><span class="mf">4.0.1</span><span class="o">-</span><span class="n">jar</span><span class="o">-</span><span class="n">with</span><span class="o">-</span><span class="n">dependencies</span><span class="p">.</span><span class="na">jar</span>
+<div class=" highlight hl-java"><pre><span></span><span class="o">%</span><span class="n">jars</span> <span class="p">.</span><span class="o">/</span><span class="n">tribuo</span><span class="o">-</span><span class="n">classification</span><span class="o">-</span><span class="n">experiments</span><span class="o">-</span><span class="mf">4.0.2</span><span class="o">-</span><span class="n">jar</span><span class="o">-</span><span class="n">with</span><span class="o">-</span><span class="n">dependencies</span><span class="p">.</span><span class="na">jar</span>
+<span class="o">%</span><span class="n">jars</span> <span class="p">.</span><span class="o">/</span><span class="n">tribuo</span><span class="o">-</span><span class="n">json</span><span class="o">-</span><span class="mf">4.0.2</span><span class="o">-</span><span class="n">jar</span><span class="o">-</span><span class="n">with</span><span class="o">-</span><span class="n">dependencies</span><span class="p">.</span><span class="na">jar</span>
 </pre></div>
 
     </div>
@@ -74,7 +74,9 @@ We'll also briefly look at Tribuo's feature transformation system and see how th
 <span class="kn">import</span> <span class="nn">org.tribuo.transform.transformations.LinearScalingTransformation</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">org.tribuo.classification.*</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">org.tribuo.classification.evaluation.*</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.oracle.labs.mlrg.olcut.config.Configurable</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">com.oracle.labs.mlrg.olcut.config.ConfigurationManager</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.oracle.labs.mlrg.olcut.config.DescribeConfigurable</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">com.oracle.labs.mlrg.olcut.provenance.*</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">com.oracle.labs.mlrg.olcut.provenance.primitives.*</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">com.oracle.labs.mlrg.olcut.config.json.JsonConfigFactory</span><span class="p">;</span>
@@ -109,7 +111,12 @@ We'll also briefly look at Tribuo's feature transformation system and see how th
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Using-a-configuration-file">Using a configuration file<a class="anchor-link" href="#Using-a-configuration-file">&#182;</a></h2><p>We're going to read in an example configuration file, in JSON format. This configuration knows about a bunch of different trainers, and also the training and testing MNIST data sources. In the tutorials directory we supply both the JSON and XML versions of this file, and the remainder of this tutorial is completely agnostic to which one is used.</p>
+<h2 id="How-does-configuration-work?">How does configuration work?<a class="anchor-link" href="#How-does-configuration-work?">&#182;</a></h2><p>Tribuo uses a configuration system originally built in Sun Labs, open sourced in the <a href="https://github.com/oracle/olcut">OLCUT</a> library. Classes which can be configured must implement the <code>Configurable</code> interface, and optionally implement a <code>public void postConfig()</code> method, which can be used to check invariants after a class has beeen configured but before it's visible. Configurable classes can mark which of their fields are available for configuration using the <code>@Config</code> annotation, which accepts three arguments: <code>boolean mandatory</code> if the configuration system should error out when the field is not configured, <code>String description</code> a description of the field used as a comment and in the <code>DescribeConfigurable</code> system seen below, and <code>boolean redact</code> which controls if this field value should be written into configuration files or provenance objects.</p>
+<p>As configuration is part of the class file rather than the public documented API (because it operates on private fields), OLCUT ships with a CLI utility for inspecting a configurable class and generating an example configuration in any supported configuration format. To use this utility from the command line you can run:</p>
+
+<pre><code>$ java -cp &lt;path-to-jars-including-olcut-core&gt; com.oracle.labs.mlrg.olcut.config.DescribeConfigurable -n &lt;class-name&gt; -o -e xml</code></pre>
+<p>where the <code>-n</code> argument denotes what class to describe, <code>-o</code> denotes that an example configuration should be generated, and <code>-e</code> gives the file format to emit the example configuration in.</p>
+<p>You can also use the REPL to inspect a configurable class, like so:</p>
 
 </div>
 </div>
@@ -119,8 +126,14 @@ We'll also briefly look at Tribuo's feature transformation system and see how th
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">String</span> <span class="n">configFile</span> <span class="o">=</span> <span class="s">&quot;example-config.json&quot;</span><span class="p">;</span>
-<span class="n">String</span><span class="p">.</span><span class="na">join</span><span class="p">(</span><span class="s">&quot;\n&quot;</span><span class="p">,</span><span class="n">Files</span><span class="p">.</span><span class="na">readAllLines</span><span class="p">(</span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">configFile</span><span class="p">)))</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kd">var</span> <span class="n">className</span> <span class="o">=</span> <span class="s">&quot;org.tribuo.classification.sgd.linear.LinearSGDTrainer&quot;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="n">clazz</span> <span class="o">=</span> <span class="p">(</span><span class="n">Class</span><span class="o">&lt;?</span> <span class="kd">extends</span> <span class="n">Configurable</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">Class</span><span class="p">.</span><span class="na">forName</span><span class="p">(</span><span class="n">className</span><span class="p">);</span>
+<span class="n">Map</span> <span class="n">map</span> <span class="o">=</span> <span class="n">DescribeConfigurable</span><span class="p">.</span><span class="na">generateFieldInfo</span><span class="p">(</span><span class="n">clazz</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="n">output</span> <span class="o">=</span> <span class="n">DescribeConfigurable</span><span class="p">.</span><span class="na">generateDescription</span><span class="p">(</span><span class="n">map</span><span class="p">);</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Class: &quot;</span> <span class="o">+</span> <span class="n">clazz</span><span class="p">.</span><span class="na">getCanonicalName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;\n&quot;</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">DescribeConfigurable</span><span class="p">.</span><span class="na">formatDescription</span><span class="p">(</span><span class="n">output</span><span class="p">));</span>
 </pre></div>
 
     </div>
@@ -133,7 +146,124 @@ We'll also briefly look at Tribuo's feature transformation system and see how th
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Class: org.tribuo.classification.sgd.linear.LinearSGDTrainer
+
+Field Name      Type                                         Mandatory Redact Default                                                       Description
+epochs          int                                          false     false  5                                                             The number of gradient descent epochs.
+loggingInterval int                                          false     false  -1                                                            Log values after this many updates.
+minibatchSize   int                                          false     false  1                                                             Minibatch size in SGD.
+objective       org.tribuo.classification.sgd.LabelObjective false     false  LogMulticlass                                                 The classification objective function to use.
+optimiser       org.tribuo.math.StochasticGradientOptimiser  false     false  AdaGrad(initialLearningRate=1.0,epsilon=0.1,initialValue=0.0) The gradient optimiser to use.
+seed            long                                         false     false  12345                                                         Seed for the RNG used to shuffle elements.
+shuffle         boolean                                      false     false  true                                                          Shuffle the data before each epoch. Only turn off for debugging.
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And also to print out an example config file:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="n">ByteArrayOutputStream</span> <span class="n">writer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ByteArrayOutputStream</span><span class="p">();</span>
+<span class="n">DescribeConfigurable</span><span class="p">.</span><span class="na">writeExampleConfig</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span><span class="s">&quot;json&quot;</span><span class="p">,</span><span class="n">clazz</span><span class="p">,</span><span class="n">map</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">writer</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="s">&quot;UTF-8&quot;</span><span class="p">));</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{
+  &#34;config&#34; : {
+    &#34;components&#34; : [ {
+      &#34;name&#34; : &#34;example&#34;,
+      &#34;type&#34; : &#34;org.tribuo.classification.sgd.linear.LinearSGDTrainer&#34;,
+      &#34;export&#34; : &#34;false&#34;,
+      &#34;import&#34; : &#34;false&#34;,
+      &#34;properties&#34; : {
+        &#34;seed&#34; : &#34;0&#34;,
+        &#34;minibatchSize&#34; : &#34;0&#34;,
+        &#34;shuffle&#34; : &#34;false&#34;,
+        &#34;epochs&#34; : &#34;0&#34;,
+        &#34;optimiser&#34; : &#34;StochasticGradientOptimiser-instance&#34;,
+        &#34;loggingInterval&#34; : &#34;0&#34;,
+        &#34;objective&#34; : &#34;LabelObjective-instance&#34;
+      }
+    } ]
+  }
+}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>At the moment using it from the REPL is poorly specified (note the lack of generic type information from <code>DescribeConfigurable.generateFieldInfo</code>), we'll fix that in the next OLCUT release.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Using-a-configuration-file">Using a configuration file<a class="anchor-link" href="#Using-a-configuration-file">&#182;</a></h2><p>We're going to read in an example configuration file, in JSON format. This configuration knows about a bunch of different trainers, and also the training and testing MNIST data sources. In the tutorials directory we supply both the JSON and XML versions of this file, and the remainder of this tutorial is completely agnostic to which one is used.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">var</span> <span class="n">configPath</span> <span class="o">=</span> <span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;configuration&quot;</span><span class="p">,</span><span class="s">&quot;example-config.json&quot;</span><span class="p">);</span>
+<span class="n">String</span><span class="p">.</span><span class="na">join</span><span class="p">(</span><span class="s">&quot;\n&quot;</span><span class="p">,</span><span class="n">Files</span><span class="p">.</span><span class="na">readAllLines</span><span class="p">(</span><span class="n">configPath</span><span class="p">));</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -250,10 +380,10 @@ We'll also briefly look at Tribuo's feature transformation system and see how th
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">var</span> <span class="n">cm</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConfigurationManager</span><span class="p">(</span><span class="n">configFile</span><span class="p">);</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kd">var</span> <span class="n">cm</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConfigurationManager</span><span class="p">(</span><span class="n">configPath</span><span class="p">.</span><span class="na">toString</span><span class="p">());</span>
 </pre></div>
 
     </div>
@@ -271,7 +401,7 @@ We'll also briefly look at Tribuo's feature transformation system and see how th
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="n">DataSource</span><span class="o">&lt;</span><span class="n">Label</span><span class="o">&gt;</span> <span class="n">mnistTrain</span> <span class="o">=</span> <span class="p">(</span><span class="n">DataSource</span><span class="o">&lt;</span><span class="n">Label</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">cm</span><span class="p">.</span><span class="na">lookup</span><span class="p">(</span><span class="s">&quot;mnist-train&quot;</span><span class="p">);</span>
@@ -318,7 +448,7 @@ Testing data size = 10000, number of features = 668, number of classes = 10
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">var</span> <span class="n">cart</span> <span class="o">=</span> <span class="p">(</span><span class="n">Trainer</span><span class="o">&lt;</span><span class="n">Label</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">cm</span><span class="p">.</span><span class="na">lookup</span><span class="p">(</span><span class="s">&quot;cart&quot;</span><span class="p">);</span>
@@ -335,7 +465,7 @@ Testing data size = 10000, number of features = 668, number of classes = 10
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[8]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -353,14 +483,14 @@ Testing data size = 10000, number of features = 668, number of classes = 10
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Next we'll load an XGBoost trainer, using 10 trees, 6 computation threads, and some regularisation parameters.</p>
+<p>Next we'll load an XGBoost trainer, using 10 trees, 6 computation threads, and some regularisation parameters. Note: Tribuo's XGBoost support relies upon the Maven Central XGBoost jar from DMLC which contains macOS and Linux binaries, on Windows please compile DMLC's XGBoost jar from source and rebuild Tribuo.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">var</span> <span class="n">xgb</span> <span class="o">=</span> <span class="p">(</span><span class="n">Trainer</span><span class="o">&lt;</span><span class="n">Label</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">cm</span><span class="p">.</span><span class="na">lookup</span><span class="p">(</span><span class="s">&quot;xgboost&quot;</span><span class="p">);</span>
@@ -377,7 +507,7 @@ Testing data size = 10000, number of features = 668, number of classes = 10
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -402,7 +532,7 @@ Testing data size = 10000, number of features = 668, number of classes = 10
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">var</span> <span class="n">logistic</span> <span class="o">=</span> <span class="p">(</span><span class="n">Trainer</span><span class="o">&lt;</span><span class="n">Label</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">cm</span><span class="p">.</span><span class="na">lookup</span><span class="p">(</span><span class="s">&quot;logistic&quot;</span><span class="p">);</span>
@@ -419,7 +549,7 @@ Testing data size = 10000, number of features = 668, number of classes = 10
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[10]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -444,7 +574,7 @@ Testing data size = 10000, number of features = 668, number of classes = 10
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">var</span> <span class="n">trainers</span> <span class="o">=</span> <span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Trainer</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">cm</span><span class="p">.</span><span class="na">lookupAll</span><span class="p">(</span><span class="n">Trainer</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
@@ -484,7 +614,7 @@ Testing data size = 10000, number of features = 668, number of classes = 10
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">var</span> <span class="n">lrStartTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">currentTimeMillis</span><span class="p">();</span>
@@ -507,7 +637,7 @@ Testing data size = 10000, number of features = 668, number of classes = 10
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Training logistic regression took (00:00:05:007)
+<pre>Training logistic regression took (00:00:04:710)
 </pre>
 </div>
 </div>
@@ -527,7 +657,7 @@ Testing data size = 10000, number of features = 668, number of classes = 10
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">var</span> <span class="n">provenance</span> <span class="o">=</span> <span class="n">lrModel</span><span class="p">.</span><span class="na">getProvenance</span><span class="p">();</span>
@@ -545,7 +675,7 @@ Testing data size = 10000, number of features = 668, number of classes = 10
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[13]:</div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -572,7 +702,7 @@ it out to a new JSON file.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">var</span> <span class="n">outputFile</span> <span class="o">=</span> <span class="s">&quot;mnist-logistic-config.json&quot;</span><span class="p">;</span>
@@ -592,7 +722,7 @@ it out to a new JSON file.</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[14]:</div>
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -666,7 +796,7 @@ it out to a new JSON file.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">var</span> <span class="n">newTrainer</span> <span class="o">=</span> <span class="p">(</span><span class="n">Trainer</span><span class="o">&lt;</span><span class="n">Label</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">newCM</span><span class="p">.</span><span class="na">lookup</span><span class="p">(</span><span class="s">&quot;linearsgdtrainer-0&quot;</span><span class="p">);</span>
@@ -690,10 +820,10 @@ it out to a new JSON file.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="n">lrModel</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">newModel</span><span class="p">)</span>
+<div class=" highlight hl-java"><pre><span></span><span class="n">lrModel</span><span class="p">.</span><span class="na">getProvenance</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="n">newModel</span><span class="p">.</span><span class="na">getProvenance</span><span class="p">())</span>
 </pre></div>
 
     </div>
@@ -706,7 +836,7 @@ it out to a new JSON file.</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[16]:</div>
+    <div class="prompt output_prompt">Out[18]:</div>
 
 
 
@@ -731,7 +861,7 @@ it out to a new JSON file.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">var</span> <span class="n">lrEvaluator</span> <span class="o">=</span> <span class="n">evaluator</span><span class="p">.</span><span class="na">evaluate</span><span class="p">(</span><span class="n">lrModel</span><span class="p">,</span><span class="n">testData</span><span class="p">);</span>
@@ -800,7 +930,7 @@ Balanced Error Rate                                                         0.11
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">var</span> <span class="n">newEvaluator</span> <span class="o">=</span> <span class="n">evaluator</span><span class="p">.</span><span class="na">evaluate</span><span class="p">(</span><span class="n">newModel</span><span class="p">,</span><span class="n">testData</span><span class="p">);</span>
@@ -870,7 +1000,7 @@ Balanced Error Rate                                                         0.11
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">var</span> <span class="n">evalProvenance</span> <span class="o">=</span> <span class="n">newEvaluator</span><span class="p">.</span><span class="na">getProvenance</span><span class="p">();</span>
@@ -906,7 +1036,7 @@ Balanced Error Rate                                                         0.11
 							featuresPath = /Users/apocock/Development/Tribuo/tutorials/train-images-idx3-ubyte.gz
 							features-file-modified-time = 2000-07-21T14:20:24-04:00
 							output-resource-hash = 3552534A0A558BBED6AED32B30C495CCA23D567EC52CAC8BE1A0730E8010255C
-							datasource-creation-time = 2020-08-31T20:26:48.633442-04:00
+							datasource-creation-time = 2020-11-05T10:31:35.857394-05:00
 							output-file-modified-time = 2000-07-21T14:20:27-04:00
 							idx-feature-type = UBYTE
 							features-resource-hash = 440FCABF73CC546FA21475E81EA370265605F56BE210A4024D2CA8F203523609
@@ -918,7 +1048,7 @@ Balanced Error Rate                                                         0.11
 					num-examples = 60000
 					num-features = 717
 					num-outputs = 10
-					tribuo-version = 4.0.1
+					tribuo-version = 4.0.2
 				)
 			trainer = LinearSGDTrainer(
 					class-name = org.tribuo.classification.sgd.linear.LinearSGDTrainer
@@ -942,11 +1072,11 @@ Balanced Error Rate                                                         0.11
 					is-sequence = false
 					host-short-name = Trainer
 				)
-			trained-at = 2020-08-31T20:26:54.253904-04:00
+			trained-at = 2020-11-05T10:31:41.706114-05:00
 			instance-values = Map{
 				reconfigured-model=true
 			}
-			tribuo-version = 4.0.1
+			tribuo-version = 4.0.2
 		)
 	dataset-provenance = MutableDataset(
 			class-name = org.tribuo.MutableDataset
@@ -959,7 +1089,7 @@ Balanced Error Rate                                                         0.11
 					featuresPath = /Users/apocock/Development/Tribuo/tutorials/t10k-images-idx3-ubyte.gz
 					features-file-modified-time = 2000-07-21T14:19:56-04:00
 					output-resource-hash = F7AE60F92E00EC6DEBD23A6088C31DBD2371ECA3FFA0DEFAEFB259924204AEC6
-					datasource-creation-time = 2020-08-31T20:26:36.008283-04:00
+					datasource-creation-time = 2020-11-05T10:31:23.188908-05:00
 					output-file-modified-time = 2000-07-21T14:20:05-04:00
 					idx-feature-type = UBYTE
 					features-resource-hash = 8D422C7B0A1C1C79245A5BCF07FE86E33EEAFEE792B84584AEC276F5A2DBC4E6
@@ -971,9 +1101,9 @@ Balanced Error Rate                                                         0.11
 			num-examples = 10000
 			num-features = 668
 			num-outputs = 10
-			tribuo-version = 4.0.1
+			tribuo-version = 4.0.2
 		)
-	tribuo-version = 4.0.1
+	tribuo-version = 4.0.2
 )
 </pre>
 </div>
@@ -986,14 +1116,14 @@ Balanced Error Rate                                                         0.11
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Feature-Transformations">Feature Transformations<a class="anchor-link" href="#Feature-Transformations">&#182;</a></h2><p>We can take the new trainer, wrap it programmatically in a TransfomTrainer which rescales the input features into the range <code>[0,2]</code>, and still generate provenance and configuration automatically as the model is trained.</p>
+<h2 id="Feature-Transformations">Feature Transformations<a class="anchor-link" href="#Feature-Transformations">&#182;</a></h2><p>We can take the new trainer, wrap it programmatically in a TransfomTrainer which rescales the input features into the range <code>[0,1]</code>, and still generate provenance and configuration automatically as the model is trained.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">var</span> <span class="n">transformations</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TransformationMap</span><span class="p">(</span><span class="n">List</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="k">new</span> <span class="n">LinearScalingTransformation</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)));</span>
@@ -1018,7 +1148,7 @@ Balanced Error Rate                                                         0.11
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Training transformed logistic regression took (00:00:09:152)
+<pre>Training transformed logistic regression took (00:00:08:613)
 </pre>
 </div>
 </div>
@@ -1037,7 +1167,7 @@ Balanced Error Rate                                                         0.11
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="n">LabelEvaluation</span> <span class="n">transformedEvaluator</span> <span class="o">=</span> <span class="n">evaluator</span><span class="p">.</span><span class="na">evaluate</span><span class="p">(</span><span class="n">transformedModel</span><span class="p">,</span><span class="n">testData</span><span class="p">);</span>
@@ -1098,22 +1228,22 @@ Balanced Error Rate                                                         0.08
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can emit a configuration which includes both the transformation trainer and the original trainer pulled from the old configuration.</p>
+<p>We can emit a configuration which includes both the transformation trainer and the original trainer pulled from the old configuration. We'll write it out to a byte array rather than putting it on disk, but the process is the same.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">var</span> <span class="n">transformedProvConfig</span> <span class="o">=</span> <span class="n">ProvenanceUtil</span><span class="p">.</span><span class="na">extractConfiguration</span><span class="p">(</span><span class="n">transformedModel</span><span class="p">.</span><span class="na">getProvenance</span><span class="p">());</span>
-<span class="kd">var</span> <span class="n">transformedOutputFile</span> <span class="o">=</span> <span class="s">&quot;mnist-transformed-logistic-config.json&quot;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="n">baos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ByteArrayOutputStream</span><span class="p">();</span>
 <span class="n">newCM</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConfigurationManager</span><span class="p">();</span>
 <span class="n">newCM</span><span class="p">.</span><span class="na">addConfiguration</span><span class="p">(</span><span class="n">transformedProvConfig</span><span class="p">);</span>
-<span class="n">newCM</span><span class="p">.</span><span class="na">save</span><span class="p">(</span><span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="n">transformedOutputFile</span><span class="p">),</span><span class="kc">true</span><span class="p">);</span>
-<span class="n">String</span><span class="p">.</span><span class="na">join</span><span class="p">(</span><span class="s">&quot;\n&quot;</span><span class="p">,</span><span class="n">Files</span><span class="p">.</span><span class="na">readAllLines</span><span class="p">(</span><span class="n">Paths</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">transformedOutputFile</span><span class="p">)))</span>
+<span class="n">newCM</span><span class="p">.</span><span class="na">save</span><span class="p">(</span><span class="n">baos</span><span class="p">,</span><span class="s">&quot;json&quot;</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+<span class="n">baos</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span>
 </pre></div>
 
     </div>
@@ -1126,7 +1256,7 @@ Balanced Error Rate                                                         0.08
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[22]:</div>
+    <div class="prompt output_prompt">Out[24]:</div>
 
 
 
@@ -1230,8 +1360,8 @@ Balanced Error Rate                                                         0.08
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h2><p>We've taken a closer look at Tribuo's configuration and provenance systems, showing how to train a model using a configuration file, how to inspect the model's provenance, extract it's configuration, and finally how to combine that extracted configuration with other programmatic elements of the Tribuo library (in this case the feature transformation system). We saw that the provenance combines both the configuration of the trainer and the datasource, along with runtime information extracted from the dataset itself (e.g. timestamps and file hashes).</p>
-<p>Tribuo's configuration system is integrated into a CLI options/arguments parsing system, which can be used to override elements from the configuration file. The values from the options are then stored in the <code>ConfigurationManager</code> and appear in the provenance and downstream configuration objects as expected. Tribuo also provides a redaction system for configuration files (e.g. to ensure a password isn't stored in the provenance) and for provenance objects themselves (e.g. to remove the data provenance from a trained model), which aids model deployment to untrusted or less trusted systems.</p>
+<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h2><p>We've taken a closer look at Tribuo's configuration and provenance systems, showing how to train a model using a configuration file, how to inspect the model's provenance, extract it's configuration, and finally how to combine that extracted configuration with other programmatic elements of the Tribuo library (in this case the feature transformation system). We saw that the provenance combines both the configuration of the trainer and the datasource, along with runtime information extracted from the dataset itself (e.g., timestamps and file hashes).</p>
+<p>Tribuo's configuration system is integrated into a CLI options/arguments parsing system, which can be used to override elements from the configuration file. The values from the options are then stored in the <code>ConfigurationManager</code> and appear in the provenance and downstream configuration objects as expected. Tribuo also provides a redaction system for configuration files (e.g., to ensure a password isn't stored in the provenance) and for provenance objects themselves (e.g., to remove the data provenance from a trained model), which aids model deployment to untrusted or less trusted systems.</p>
 
 </div>
 </div>

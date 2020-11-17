@@ -76,57 +76,60 @@
 <span class="sourceLineNo">068</span>     */<a name="line.68"></a>
 <span class="sourceLineNo">069</span>    private NgramProcessor() {}<a name="line.69"></a>
 <span class="sourceLineNo">070</span><a name="line.70"></a>
-<span class="sourceLineNo">071</span>    @Override<a name="line.71"></a>
-<span class="sourceLineNo">072</span>    public void postConfig() {<a name="line.72"></a>
-<span class="sourceLineNo">073</span>        this.tokenizerThreadLocal = ThreadLocal.withInitial(() -&gt; {try { return tokenizer.clone(); } catch (CloneNotSupportedException e) { throw new IllegalArgumentException("Tokenizer not cloneable",e); }});<a name="line.73"></a>
-<span class="sourceLineNo">074</span>    }<a name="line.74"></a>
-<span class="sourceLineNo">075</span><a name="line.75"></a>
-<span class="sourceLineNo">076</span>    @Override<a name="line.76"></a>
-<span class="sourceLineNo">077</span>    public List&lt;Feature&gt; process(String text) throws TextProcessingException {<a name="line.77"></a>
-<span class="sourceLineNo">078</span>        return innerProcess(n+"-N=",text);<a name="line.78"></a>
-<span class="sourceLineNo">079</span>    }<a name="line.79"></a>
-<span class="sourceLineNo">080</span><a name="line.80"></a>
-<span class="sourceLineNo">081</span>    @Override<a name="line.81"></a>
-<span class="sourceLineNo">082</span>    public List&lt;Feature&gt; process(String tag, String text) throws TextProcessingException {<a name="line.82"></a>
-<span class="sourceLineNo">083</span>        if (tag == null || tag.isEmpty()) {<a name="line.83"></a>
-<span class="sourceLineNo">084</span>            return innerProcess(n+"-N=",text);<a name="line.84"></a>
-<span class="sourceLineNo">085</span>        } else {<a name="line.85"></a>
-<span class="sourceLineNo">086</span>            return innerProcess(tag + "-" + n + "-N=", text);<a name="line.86"></a>
-<span class="sourceLineNo">087</span>        }<a name="line.87"></a>
-<span class="sourceLineNo">088</span>    }<a name="line.88"></a>
-<span class="sourceLineNo">089</span><a name="line.89"></a>
-<span class="sourceLineNo">090</span>    private List&lt;Feature&gt; innerProcess(String tag, String text) {<a name="line.90"></a>
-<span class="sourceLineNo">091</span>        List&lt;Feature&gt; ret = new ArrayList&lt;&gt;();<a name="line.91"></a>
+<span class="sourceLineNo">071</span>    /**<a name="line.71"></a>
+<span class="sourceLineNo">072</span>     * Used by the OLCUT configuration system, and should not be called by external code.<a name="line.72"></a>
+<span class="sourceLineNo">073</span>     */<a name="line.73"></a>
+<span class="sourceLineNo">074</span>    @Override<a name="line.74"></a>
+<span class="sourceLineNo">075</span>    public void postConfig() {<a name="line.75"></a>
+<span class="sourceLineNo">076</span>        this.tokenizerThreadLocal = ThreadLocal.withInitial(() -&gt; {try { return tokenizer.clone(); } catch (CloneNotSupportedException e) { throw new IllegalArgumentException("Tokenizer not cloneable",e); }});<a name="line.76"></a>
+<span class="sourceLineNo">077</span>    }<a name="line.77"></a>
+<span class="sourceLineNo">078</span><a name="line.78"></a>
+<span class="sourceLineNo">079</span>    @Override<a name="line.79"></a>
+<span class="sourceLineNo">080</span>    public List&lt;Feature&gt; process(String text) throws TextProcessingException {<a name="line.80"></a>
+<span class="sourceLineNo">081</span>        return innerProcess(n+"-N=",text);<a name="line.81"></a>
+<span class="sourceLineNo">082</span>    }<a name="line.82"></a>
+<span class="sourceLineNo">083</span><a name="line.83"></a>
+<span class="sourceLineNo">084</span>    @Override<a name="line.84"></a>
+<span class="sourceLineNo">085</span>    public List&lt;Feature&gt; process(String tag, String text) throws TextProcessingException {<a name="line.85"></a>
+<span class="sourceLineNo">086</span>        if (tag == null || tag.isEmpty()) {<a name="line.86"></a>
+<span class="sourceLineNo">087</span>            return innerProcess(n+"-N=",text);<a name="line.87"></a>
+<span class="sourceLineNo">088</span>        } else {<a name="line.88"></a>
+<span class="sourceLineNo">089</span>            return innerProcess(tag + "-" + n + "-N=", text);<a name="line.89"></a>
+<span class="sourceLineNo">090</span>        }<a name="line.90"></a>
+<span class="sourceLineNo">091</span>    }<a name="line.91"></a>
 <span class="sourceLineNo">092</span><a name="line.92"></a>
-<span class="sourceLineNo">093</span>        List&lt;String&gt; words = tokenizerThreadLocal.get().split(text);<a name="line.93"></a>
-<span class="sourceLineNo">094</span><a name="line.94"></a>
-<span class="sourceLineNo">095</span>        if (words.size() &lt; n) {<a name="line.95"></a>
-<span class="sourceLineNo">096</span>            return ret;<a name="line.96"></a>
-<span class="sourceLineNo">097</span>        }<a name="line.97"></a>
-<span class="sourceLineNo">098</span><a name="line.98"></a>
-<span class="sourceLineNo">099</span>        StringBuilder ngram = new StringBuilder();<a name="line.99"></a>
-<span class="sourceLineNo">100</span>        for (int start = 0, end = n; end &lt;= words.size(); start++, end++) {<a name="line.100"></a>
-<span class="sourceLineNo">101</span>            ngram.delete(0,ngram.length());<a name="line.101"></a>
-<span class="sourceLineNo">102</span>            ngram.append(tag);<a name="line.102"></a>
-<span class="sourceLineNo">103</span>            for (int i = start; i &lt; end; ++i) {<a name="line.103"></a>
-<span class="sourceLineNo">104</span>                ngram.append(words.get(i));<a name="line.104"></a>
-<span class="sourceLineNo">105</span>                ngram.append('/');<a name="line.105"></a>
-<span class="sourceLineNo">106</span>            }<a name="line.106"></a>
-<span class="sourceLineNo">107</span>            ngram.deleteCharAt(ngram.length()-1);<a name="line.107"></a>
-<span class="sourceLineNo">108</span>            if (ngram.length() &gt; 0 &amp;&amp; Character.isLetterOrDigit(ngram.charAt(0))) {<a name="line.108"></a>
-<span class="sourceLineNo">109</span>                String ngramString = ngram.toString();<a name="line.109"></a>
-<span class="sourceLineNo">110</span>                ret.add(new Feature(ngramString, value));<a name="line.110"></a>
-<span class="sourceLineNo">111</span>            }<a name="line.111"></a>
-<span class="sourceLineNo">112</span>        }<a name="line.112"></a>
-<span class="sourceLineNo">113</span>        return ret;<a name="line.113"></a>
-<span class="sourceLineNo">114</span>    }<a name="line.114"></a>
-<span class="sourceLineNo">115</span><a name="line.115"></a>
-<span class="sourceLineNo">116</span>    @Override<a name="line.116"></a>
-<span class="sourceLineNo">117</span>    public ConfiguredObjectProvenance getProvenance() {<a name="line.117"></a>
-<span class="sourceLineNo">118</span>        return new ConfiguredObjectProvenanceImpl(this,"TextProcessor");<a name="line.118"></a>
-<span class="sourceLineNo">119</span>    }<a name="line.119"></a>
-<span class="sourceLineNo">120</span><a name="line.120"></a>
-<span class="sourceLineNo">121</span>}<a name="line.121"></a>
+<span class="sourceLineNo">093</span>    private List&lt;Feature&gt; innerProcess(String tag, String text) {<a name="line.93"></a>
+<span class="sourceLineNo">094</span>        List&lt;Feature&gt; ret = new ArrayList&lt;&gt;();<a name="line.94"></a>
+<span class="sourceLineNo">095</span><a name="line.95"></a>
+<span class="sourceLineNo">096</span>        List&lt;String&gt; words = tokenizerThreadLocal.get().split(text);<a name="line.96"></a>
+<span class="sourceLineNo">097</span><a name="line.97"></a>
+<span class="sourceLineNo">098</span>        if (words.size() &lt; n) {<a name="line.98"></a>
+<span class="sourceLineNo">099</span>            return ret;<a name="line.99"></a>
+<span class="sourceLineNo">100</span>        }<a name="line.100"></a>
+<span class="sourceLineNo">101</span><a name="line.101"></a>
+<span class="sourceLineNo">102</span>        StringBuilder ngram = new StringBuilder();<a name="line.102"></a>
+<span class="sourceLineNo">103</span>        for (int start = 0, end = n; end &lt;= words.size(); start++, end++) {<a name="line.103"></a>
+<span class="sourceLineNo">104</span>            ngram.delete(0,ngram.length());<a name="line.104"></a>
+<span class="sourceLineNo">105</span>            ngram.append(tag);<a name="line.105"></a>
+<span class="sourceLineNo">106</span>            for (int i = start; i &lt; end; ++i) {<a name="line.106"></a>
+<span class="sourceLineNo">107</span>                ngram.append(words.get(i));<a name="line.107"></a>
+<span class="sourceLineNo">108</span>                ngram.append('/');<a name="line.108"></a>
+<span class="sourceLineNo">109</span>            }<a name="line.109"></a>
+<span class="sourceLineNo">110</span>            ngram.deleteCharAt(ngram.length()-1);<a name="line.110"></a>
+<span class="sourceLineNo">111</span>            if (ngram.length() &gt; 0 &amp;&amp; Character.isLetterOrDigit(ngram.charAt(0))) {<a name="line.111"></a>
+<span class="sourceLineNo">112</span>                String ngramString = ngram.toString();<a name="line.112"></a>
+<span class="sourceLineNo">113</span>                ret.add(new Feature(ngramString, value));<a name="line.113"></a>
+<span class="sourceLineNo">114</span>            }<a name="line.114"></a>
+<span class="sourceLineNo">115</span>        }<a name="line.115"></a>
+<span class="sourceLineNo">116</span>        return ret;<a name="line.116"></a>
+<span class="sourceLineNo">117</span>    }<a name="line.117"></a>
+<span class="sourceLineNo">118</span><a name="line.118"></a>
+<span class="sourceLineNo">119</span>    @Override<a name="line.119"></a>
+<span class="sourceLineNo">120</span>    public ConfiguredObjectProvenance getProvenance() {<a name="line.120"></a>
+<span class="sourceLineNo">121</span>        return new ConfiguredObjectProvenanceImpl(this,"TextProcessor");<a name="line.121"></a>
+<span class="sourceLineNo">122</span>    }<a name="line.122"></a>
+<span class="sourceLineNo">123</span><a name="line.123"></a>
+<span class="sourceLineNo">124</span>}<a name="line.124"></a>
 
 
 

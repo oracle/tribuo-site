@@ -90,60 +90,63 @@
 <span class="sourceLineNo">082</span>        super(trainerType,cost,maxIterations,terminationCriterion,epsilon);<a name="line.82"></a>
 <span class="sourceLineNo">083</span>    }<a name="line.83"></a>
 <span class="sourceLineNo">084</span><a name="line.84"></a>
-<span class="sourceLineNo">085</span>    @Override<a name="line.85"></a>
-<span class="sourceLineNo">086</span>    public void postConfig() {<a name="line.86"></a>
-<span class="sourceLineNo">087</span>        super.postConfig();<a name="line.87"></a>
-<span class="sourceLineNo">088</span>        if (!trainerType.isClassification()) {<a name="line.88"></a>
-<span class="sourceLineNo">089</span>            throw new IllegalArgumentException("Supplied regression parameters to a classification linear model.");<a name="line.89"></a>
-<span class="sourceLineNo">090</span>        }<a name="line.90"></a>
-<span class="sourceLineNo">091</span>    }<a name="line.91"></a>
-<span class="sourceLineNo">092</span><a name="line.92"></a>
-<span class="sourceLineNo">093</span>    @Override<a name="line.93"></a>
-<span class="sourceLineNo">094</span>    protected List&lt;Model&gt; trainModels(Parameter curParams, int numFeatures, FeatureNode[][] features, double[][] outputs) {<a name="line.94"></a>
-<span class="sourceLineNo">095</span>        ArrayList&lt;Model&gt; models = new ArrayList&lt;&gt;();<a name="line.95"></a>
-<span class="sourceLineNo">096</span><a name="line.96"></a>
-<span class="sourceLineNo">097</span>        for (int i = 0; i &lt; outputs.length; i++) {<a name="line.97"></a>
-<span class="sourceLineNo">098</span>            Problem data = new Problem();<a name="line.98"></a>
+<span class="sourceLineNo">085</span>    /**<a name="line.85"></a>
+<span class="sourceLineNo">086</span>     * Used by the OLCUT configuration system, and should not be called by external code.<a name="line.86"></a>
+<span class="sourceLineNo">087</span>     */<a name="line.87"></a>
+<span class="sourceLineNo">088</span>    @Override<a name="line.88"></a>
+<span class="sourceLineNo">089</span>    public void postConfig() {<a name="line.89"></a>
+<span class="sourceLineNo">090</span>        super.postConfig();<a name="line.90"></a>
+<span class="sourceLineNo">091</span>        if (!trainerType.isClassification()) {<a name="line.91"></a>
+<span class="sourceLineNo">092</span>            throw new IllegalArgumentException("Supplied regression parameters to a classification linear model.");<a name="line.92"></a>
+<span class="sourceLineNo">093</span>        }<a name="line.93"></a>
+<span class="sourceLineNo">094</span>    }<a name="line.94"></a>
+<span class="sourceLineNo">095</span><a name="line.95"></a>
+<span class="sourceLineNo">096</span>    @Override<a name="line.96"></a>
+<span class="sourceLineNo">097</span>    protected List&lt;Model&gt; trainModels(Parameter curParams, int numFeatures, FeatureNode[][] features, double[][] outputs) {<a name="line.97"></a>
+<span class="sourceLineNo">098</span>        ArrayList&lt;Model&gt; models = new ArrayList&lt;&gt;();<a name="line.98"></a>
 <span class="sourceLineNo">099</span><a name="line.99"></a>
-<span class="sourceLineNo">100</span>            data.l = features.length;<a name="line.100"></a>
-<span class="sourceLineNo">101</span>            data.y = outputs[i];<a name="line.101"></a>
-<span class="sourceLineNo">102</span>            data.x = features;<a name="line.102"></a>
-<span class="sourceLineNo">103</span>            data.n = numFeatures;<a name="line.103"></a>
-<span class="sourceLineNo">104</span>            data.bias = 1.0;<a name="line.104"></a>
-<span class="sourceLineNo">105</span><a name="line.105"></a>
-<span class="sourceLineNo">106</span>            models.add(Linear.train(data, curParams));<a name="line.106"></a>
-<span class="sourceLineNo">107</span>        }<a name="line.107"></a>
+<span class="sourceLineNo">100</span>        for (int i = 0; i &lt; outputs.length; i++) {<a name="line.100"></a>
+<span class="sourceLineNo">101</span>            Problem data = new Problem();<a name="line.101"></a>
+<span class="sourceLineNo">102</span><a name="line.102"></a>
+<span class="sourceLineNo">103</span>            data.l = features.length;<a name="line.103"></a>
+<span class="sourceLineNo">104</span>            data.y = outputs[i];<a name="line.104"></a>
+<span class="sourceLineNo">105</span>            data.x = features;<a name="line.105"></a>
+<span class="sourceLineNo">106</span>            data.n = numFeatures;<a name="line.106"></a>
+<span class="sourceLineNo">107</span>            data.bias = 1.0;<a name="line.107"></a>
 <span class="sourceLineNo">108</span><a name="line.108"></a>
-<span class="sourceLineNo">109</span>        return models;<a name="line.109"></a>
-<span class="sourceLineNo">110</span>    }<a name="line.110"></a>
+<span class="sourceLineNo">109</span>            models.add(Linear.train(data, curParams));<a name="line.109"></a>
+<span class="sourceLineNo">110</span>        }<a name="line.110"></a>
 <span class="sourceLineNo">111</span><a name="line.111"></a>
-<span class="sourceLineNo">112</span>    @Override<a name="line.112"></a>
-<span class="sourceLineNo">113</span>    protected LibLinearModel&lt;Regressor&gt; createModel(ModelProvenance provenance, ImmutableFeatureMap featureIDMap, ImmutableOutputInfo&lt;Regressor&gt; outputIDInfo, List&lt;Model&gt; models) {<a name="line.113"></a>
-<span class="sourceLineNo">114</span>        if (models.size() != outputIDInfo.size()) {<a name="line.114"></a>
-<span class="sourceLineNo">115</span>            throw new IllegalArgumentException("Regression uses one model per dimension. Found " + models.size() + " models, and " + outputIDInfo.size() + " dimensions.");<a name="line.115"></a>
-<span class="sourceLineNo">116</span>        }<a name="line.116"></a>
-<span class="sourceLineNo">117</span>        return new LibLinearRegressionModel("liblinear-regression-model",provenance,featureIDMap,outputIDInfo,models);<a name="line.117"></a>
-<span class="sourceLineNo">118</span>    }<a name="line.118"></a>
-<span class="sourceLineNo">119</span><a name="line.119"></a>
-<span class="sourceLineNo">120</span>    @Override<a name="line.120"></a>
-<span class="sourceLineNo">121</span>    protected Pair&lt;FeatureNode[][], double[][]&gt; extractData(Dataset&lt;Regressor&gt; data, ImmutableOutputInfo&lt;Regressor&gt; outputInfo, ImmutableFeatureMap featureMap) {<a name="line.121"></a>
-<span class="sourceLineNo">122</span>        int numOutputs = outputInfo.size();<a name="line.122"></a>
-<span class="sourceLineNo">123</span>        ArrayList&lt;FeatureNode&gt; featureCache = new ArrayList&lt;&gt;();<a name="line.123"></a>
-<span class="sourceLineNo">124</span>        FeatureNode[][] features = new FeatureNode[data.size()][];<a name="line.124"></a>
-<span class="sourceLineNo">125</span>        double[][] outputs = new double[numOutputs][data.size()];<a name="line.125"></a>
-<span class="sourceLineNo">126</span>        int i = 0;<a name="line.126"></a>
-<span class="sourceLineNo">127</span>        for (Example&lt;Regressor&gt; e : data) {<a name="line.127"></a>
-<span class="sourceLineNo">128</span>            double[] curOutputs = e.getOutput().getValues();<a name="line.128"></a>
-<span class="sourceLineNo">129</span>            for (int j = 0; j &lt; curOutputs.length; j++) {<a name="line.129"></a>
-<span class="sourceLineNo">130</span>                outputs[j][i] = curOutputs[j];<a name="line.130"></a>
-<span class="sourceLineNo">131</span>            }<a name="line.131"></a>
-<span class="sourceLineNo">132</span>            features[i] = exampleToNodes(e,featureMap,featureCache);<a name="line.132"></a>
-<span class="sourceLineNo">133</span>            i++;<a name="line.133"></a>
-<span class="sourceLineNo">134</span>        }<a name="line.134"></a>
-<span class="sourceLineNo">135</span>        return new Pair&lt;&gt;(features,outputs);<a name="line.135"></a>
-<span class="sourceLineNo">136</span>    }<a name="line.136"></a>
-<span class="sourceLineNo">137</span><a name="line.137"></a>
-<span class="sourceLineNo">138</span>}<a name="line.138"></a>
+<span class="sourceLineNo">112</span>        return models;<a name="line.112"></a>
+<span class="sourceLineNo">113</span>    }<a name="line.113"></a>
+<span class="sourceLineNo">114</span><a name="line.114"></a>
+<span class="sourceLineNo">115</span>    @Override<a name="line.115"></a>
+<span class="sourceLineNo">116</span>    protected LibLinearModel&lt;Regressor&gt; createModel(ModelProvenance provenance, ImmutableFeatureMap featureIDMap, ImmutableOutputInfo&lt;Regressor&gt; outputIDInfo, List&lt;Model&gt; models) {<a name="line.116"></a>
+<span class="sourceLineNo">117</span>        if (models.size() != outputIDInfo.size()) {<a name="line.117"></a>
+<span class="sourceLineNo">118</span>            throw new IllegalArgumentException("Regression uses one model per dimension. Found " + models.size() + " models, and " + outputIDInfo.size() + " dimensions.");<a name="line.118"></a>
+<span class="sourceLineNo">119</span>        }<a name="line.119"></a>
+<span class="sourceLineNo">120</span>        return new LibLinearRegressionModel("liblinear-regression-model",provenance,featureIDMap,outputIDInfo,models);<a name="line.120"></a>
+<span class="sourceLineNo">121</span>    }<a name="line.121"></a>
+<span class="sourceLineNo">122</span><a name="line.122"></a>
+<span class="sourceLineNo">123</span>    @Override<a name="line.123"></a>
+<span class="sourceLineNo">124</span>    protected Pair&lt;FeatureNode[][], double[][]&gt; extractData(Dataset&lt;Regressor&gt; data, ImmutableOutputInfo&lt;Regressor&gt; outputInfo, ImmutableFeatureMap featureMap) {<a name="line.124"></a>
+<span class="sourceLineNo">125</span>        int numOutputs = outputInfo.size();<a name="line.125"></a>
+<span class="sourceLineNo">126</span>        ArrayList&lt;FeatureNode&gt; featureCache = new ArrayList&lt;&gt;();<a name="line.126"></a>
+<span class="sourceLineNo">127</span>        FeatureNode[][] features = new FeatureNode[data.size()][];<a name="line.127"></a>
+<span class="sourceLineNo">128</span>        double[][] outputs = new double[numOutputs][data.size()];<a name="line.128"></a>
+<span class="sourceLineNo">129</span>        int i = 0;<a name="line.129"></a>
+<span class="sourceLineNo">130</span>        for (Example&lt;Regressor&gt; e : data) {<a name="line.130"></a>
+<span class="sourceLineNo">131</span>            double[] curOutputs = e.getOutput().getValues();<a name="line.131"></a>
+<span class="sourceLineNo">132</span>            for (int j = 0; j &lt; curOutputs.length; j++) {<a name="line.132"></a>
+<span class="sourceLineNo">133</span>                outputs[j][i] = curOutputs[j];<a name="line.133"></a>
+<span class="sourceLineNo">134</span>            }<a name="line.134"></a>
+<span class="sourceLineNo">135</span>            features[i] = exampleToNodes(e,featureMap,featureCache);<a name="line.135"></a>
+<span class="sourceLineNo">136</span>            i++;<a name="line.136"></a>
+<span class="sourceLineNo">137</span>        }<a name="line.137"></a>
+<span class="sourceLineNo">138</span>        return new Pair&lt;&gt;(features,outputs);<a name="line.138"></a>
+<span class="sourceLineNo">139</span>    }<a name="line.139"></a>
+<span class="sourceLineNo">140</span><a name="line.140"></a>
+<span class="sourceLineNo">141</span>}<a name="line.141"></a>
 
 
 

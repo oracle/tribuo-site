@@ -166,7 +166,7 @@
 <span class="sourceLineNo">158</span>        LabelEvaluation labelEvaluation = labelEvaluator.evaluate(model,predictions,test.getProvenance());<a name="line.158"></a>
 <span class="sourceLineNo">159</span>        final long testStop = System.currentTimeMillis();<a name="line.159"></a>
 <span class="sourceLineNo">160</span>        logger.info("Finished evaluating model " + Util.formatDuration(testStart,testStop));<a name="line.160"></a>
-<span class="sourceLineNo">161</span>        System.out.println(labelEvaluator.toString());<a name="line.161"></a>
+<span class="sourceLineNo">161</span>        System.out.println(labelEvaluation.toString());<a name="line.161"></a>
 <span class="sourceLineNo">162</span>        ConfusionMatrix&lt;Label&gt; matrix = labelEvaluation.getConfusionMatrix();<a name="line.162"></a>
 <span class="sourceLineNo">163</span>        System.out.println(matrix.toString());<a name="line.163"></a>
 <span class="sourceLineNo">164</span>        if (model.generatesProbabilities()) {<a name="line.164"></a>

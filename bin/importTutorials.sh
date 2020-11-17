@@ -55,6 +55,14 @@ for tut in $TUTORIALS; do
         *Configuration*)
             ORDER=305
             ;;
+        *columnar*)
+            ORDER=306
+            TITLE="Loading Columnar Data"
+            ;;
+        *external*)
+            ORDER=307
+            TITLE="External Models"
+            ;;
         *)
             ORDER=$UNORDERED
             UNORDERED=$(($UNORDERED + 1))
