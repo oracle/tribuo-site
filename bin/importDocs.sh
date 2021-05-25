@@ -15,6 +15,10 @@ TRIBUO_DOC_DIR="${TRIBUO_DIR}/docs/"
 DOCS="Architecture.md PackageOverview.md Security.md"
 
 #
+# Make docs dir if it doesn't already exist
+mkdir -p $DOC_DIR
+
+#
 # Copy in each doc, adding appropriate frontmatter
 for doc in $DOCS; do
     LOWERCASE=$(echo $doc |tr '[:upper:]' '[:lower:]')

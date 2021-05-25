@@ -29,6 +29,10 @@ fi
 
 TUTORIALS=$(ls "${TRIBUO_DIR}"/tutorials/*.ipynb)
 
+#
+# Make the tutorial directory if it doesn't exist
+TUTORIAL_OUTPUT_DIR=${SITE_ROOT}/learn/$DOC_VERSION/tutorials
+mkdir -p ${TUTORIAL_OUTPUT_DIR}
 
 UNORDERED=320
 for tut in $TUTORIALS; do
@@ -40,7 +44,7 @@ for tut in $TUTORIALS; do
 
     # Is this a recognized title?
     case $TITLE in
-        *Classification*)
+        Classification*)
             ORDER=301
             ;;
         *Clustering*)
@@ -63,6 +67,14 @@ for tut in $TUTORIALS; do
             ORDER=307
             TITLE="External Models"
             ;;
+        *Document*)
+            ORDER=308
+            TITLE="Document Classification"
+            ;;
+        *TensorFlow*)
+            ORDER=309
+            TITLE="Deep Learning with TensorFlow"
+            ;;
         *)
             ORDER=$UNORDERED
             UNORDERED=$(($UNORDERED + 1))
@@ -70,9 +82,10 @@ for tut in $TUTORIALS; do
     esac
 
     # Convert the notebook to html
-    $JUPYTER nbconvert --to html $tut > /dev/null 2>&1
+    # We use the classic template as the html output changed in nbconvert 6 - https://blog.jupyter.org/the-templating-system-of-nbconvert-6-47ea781eacd2
+    $JUPYTER nbconvert --to html --template classic $tut > /dev/null 2>&1
     HTML="${tut%.*}.html"
-    TARGET=${SITE_ROOT}/learn/$DOC_VERSION/tutorials/$(basename $HTML)
+    TARGET=${TUTORIAL_OUTPUT_DIR}/$(basename $HTML)
     NOTEBOOK_URL="https://github.com/oracle/tribuo/blob/main/tutorials/$(basename $tut)"
 
     cat << EOF > $TARGET
