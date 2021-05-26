@@ -50,7 +50,7 @@
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         {%- for vers in site.doc_versions -%}
-        <a class="dropdown-item {% if page.version == vers %}font-weight-bold{% endif %}" href="/learn/{{ vers }}">{{ vers }}</a>
+        <a class="dropdown-item {% if page.version == vers %}font-weight-bold{% endif %}" href="/learn/{{ vers }}/docs">{{ vers }}</a>
         {%- endfor -%}
     </div>
 </div>

@@ -56,6 +56,14 @@ defaults:
       active: learn
   -
     scope:
+      path: "/learn/4.0/*"
+      type: "pages"
+    values:
+      layout: learn
+      version: 4.0
+      active: learn
+  -
+    scope:
       path: "learn/*/tutorials/*"
       type: pages
     values:
