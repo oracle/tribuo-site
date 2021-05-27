@@ -8,7 +8,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-2 pr-0 sidebar">
-                {% include learn-nav.html %}
+                <div class="sticky-top learn-nav">
+                    {% include learn-nav.html %}
+                </div>
             </div>
             <div class="col-md-10 mt-3">
                 {% if page.parent %}
@@ -26,6 +28,11 @@
                     </nav>
                 </div>
                 {% endif %}
+                <div class="row">
+                    <div class="col">
+                        <div class="alert alert-danger ml-5 mr-5 mt-3 mb-4">This page describes Tribuo {{ page.version }}. View the <a href="/learn/{{ site.doc_version }}/doc">documentation for Tribuo {{site.doc_version}}</a> instead.</div>
+                    </div>
+                </div>
                 {% if page.is_notebook and page.notebook_url %}
                 <div class="row mt-4">
                     <div class="col-12 col-md-10 offset-md-1">
@@ -39,11 +46,6 @@
                     </div>
                 </div>
                 {% endif %}
-                <div class="row">
-                    <div class="col">
-                        <div class="alert alert-danger ml-5 mr-5 mt-3 mb-4">This page describes version {{ page.version }}. A <a href="/learn/{{ site.doc_version }}">newer version</a> ({{site.doc_version}}) exists.</div>
-                    </div>
-                </div>
                 <div class="mt-3">
                     {{ content }}
                 </div>

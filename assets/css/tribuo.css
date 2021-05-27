@@ -576,13 +576,13 @@ a.dropdown-item:hover {
 }
 
 /* Styles specific to each indent level, hard locked to each one */
-.sidebar > .nav-list > .nav-list-item {
+.sidebar .nav-list > .nav-list-item {
     font-weight: 600;
     font-size: 20px;
     -webkit-font-smoothing: antialiased;
 }
 
-.sidebar > .nav-list > .nav-list-item > .nav-list > .nav-list-item  {
+.sidebar .nav-list > .nav-list-item > .nav-list > .nav-list-item  {
     font-weight: 500;
     font-size: 14px;
     line-height: 26px;
@@ -590,7 +590,7 @@ a.dropdown-item:hover {
     margin-left: 10px;
 }
 
-.sidebar > .nav-list > .nav-list-item > .nav-list > .nav-list-item.active  {
+.sidebar .nav-list > .nav-list-item > .nav-list > .nav-list-item.active  {
     font-weight: 500;
     font-size: 14px;
     line-height: 26px;
@@ -606,10 +606,19 @@ a.dropdown-item:hover {
     color: rgb(50, 50, 50) !important;
 }
 
+.sidebar a.dropdown-item.active,
+.sidebar a.dropdown-item:hover.active,
+.sidebar a.dropdown-item:focus.active{
+    color: white !important;
+    background-color: var(--tribuo-dark-red);
+}
+
 .sidebar .dropdown-menu {
     min-width: 3em;
 }
 
+.doc-ver-selected {
+}
 
 /* Breadcrumb nav */
 

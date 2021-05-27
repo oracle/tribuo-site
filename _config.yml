@@ -59,7 +59,7 @@ defaults:
       path: "/learn/4.0/*"
       type: "pages"
     values:
-      layout: learn
+      layout: learn-outdated
       version: 4.0
       active: learn
   -

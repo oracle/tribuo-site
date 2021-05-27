@@ -1,7 +1,7 @@
 # tribuo-site
 
 This repo hosts the website for the [Tribuo](https://tribuo.org)
-Java Machine Learning Library. Please visit the [Tribuo Github Repo](https://github.org/oracle/tribuo)
+Java Machine Learning Library. Please visit the [Tribuo GitHub Repo](https://github.org/oracle/tribuo)
 to report issues.
 
 # Checking out and "building"
