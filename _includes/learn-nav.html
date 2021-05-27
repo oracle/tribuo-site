@@ -49,8 +49,9 @@
         v{{ page.version }} Docs
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        {%- for vers in site.doc_versions -%}
-        <a class="dropdown-item {% if page.version == vers %}active doc-ver-selected{% endif %}" href="/learn/{{ vers }}/docs">v{{ vers }}</a>
+        {% assign reversed_versions = site.doc_versions | reverse %}
+        {%- for vers in reversed_versions -%}
+        <a class="dropdown-item {% if page.version == vers %}active doc-ver-selected{% endif %}" href="/learn/{{ vers }}/docs">v{{ vers }} {% if vers == site.doc_version %}(Latest){% endif %}</a>
         {%- endfor -%}
     </div>
 </div>
