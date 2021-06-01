@@ -290,6 +290,9 @@ img[alt="faq graphic"] {
 
 }
 
+img.faded {
+    opacity: 0.5;
+}
 
 /* Bootstrap 4 text input with search icon */
 

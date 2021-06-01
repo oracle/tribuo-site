@@ -8,16 +8,23 @@ search_exclude: true
 <div class="row">
     <p style="margin-top: 40px">&nbsp;</p>
 </div>
-<div class="row">
-    <div class="col">
+<div class="row justify-content-center">
+    <div class="col-8 text-center">
+        <div class="align-self-center" style="z-index:1;position:relative;">
+            <img src="/assets/img/pythia640.jpg" class="faded">
+        </div>
+        <div style="z-index:2;position:relative;opacity:1.0;margin-top:-625px">
         <div id="notFoundMessage">
-            Sorry, the page you were trying to find seems to be missing. Return to the
-            <a href="{{ site.url }}">Home page</a> or use the search box to find what you need.
+            <p>Sorry, the page you were trying to find seems to be missing.</p>
+            <p>Return to the
+            <a href="{{ site.url }}">home page</a> or use the search box to find what you need.</p>
         </div>
         <div id="notFoundLearnMessage" style="display: none;">
-            The page you are trying to view does not exist in this version of the
-            documentation. This page will redirect to the <a id="docsTop" href="">top-level doc page</a> for the
-            version you are browsing.
+            <p>The page you are trying to view does not exist in this version of the
+                documentation.</p>
+            <p>This page will redirect to the <a id="docsTop" href="">top-level doc page</a> for the
+                version you are browsing.</p>
+        </div>
         </div>
     </div>
 </div>
