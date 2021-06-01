@@ -1,11 +1,23 @@
 ---
-layout: default
+layout: redirect404
 title: Page not found
 permalink: /404
 nav_exclude: true
 search_exclude: true
 ---
-
-<h1>Page not found</h1>
-
-<p>The page you requested could not be found. Try using the navigation {% if site.search_enabled %}or search {% endif %}to find what you're looking for or go to this <a href="{{ site.url }}{{ site.baseurl }}">site's home page</a>.</p>
+<div class="row">
+    <p style="margin-top: 40px">&nbsp;</p>
+</div>
+<div class="row">
+    <div class="col">
+        <div id="notFoundMessage">
+            Sorry, the page you were trying to find seems to be missing. Return to the
+            <a href="{{ site.url }}">Home page</a> or use the search box to find what you need.
+        </div>
+        <div id="notFoundLearnMessage" style="display: none;">
+            The page you are trying to view does not exist in this version of the
+            documentation. This page will redirect to the <a id="docsTop" href="">top-level doc page</a> for the
+            version you are browsing.
+        </div>
+    </div>
+</div>
