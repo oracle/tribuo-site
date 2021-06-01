@@ -125,6 +125,12 @@ img[alt="faq graphic"] {
     height: auto;
 }
 
+.pythia {
+    background:url(/assets/img/pythia640.jpg) no-repeat local center;
+    background-position-y: 20px;
+    background-size: contain;
+}
+
 
 /* Small devices (landscape phones, 544px and up) */
 @media (min-width: 544px) {
@@ -160,6 +166,12 @@ img[alt="faq graphic"] {
         max-width: 425px;
         height: auto;
     }
+
+    .pythia {
+        background:url(/assets/img/pythia640.jpg) no-repeat local center;
+        background-position-y: 20px;
+    }
+
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -288,10 +300,6 @@ img[alt="faq graphic"] {
     color: rgb(247, 38, 33);
     text-decoration: underline;
 
-}
-
-img.faded {
-    opacity: 0.5;
 }
 
 /* Bootstrap 4 text input with search icon */
