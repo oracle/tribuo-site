@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="robots" content="noindex">
+    <script type="text/javascript">
+        const versions = {{ site.doc_versions | jsonify }}
+        const pathParts = window.location.pathname.split('/');
+        let redirVersion = '';
+        if ((pathParts[1] === "learn") && (versions.includes(parseFloat(pathParts[2])))) {
+            redirVersion = pathParts[2];
+            const topPath =  window.location.protocol + "//"
+                + window.location.host + "/learn/" + pathParts[2] + "/docs/";
+            setTimeout(function() {
+                window.location.replace(topPath);
+            }, 5000);
+            window.onload = function() {
+                document.getElementById("notFoundMessage").style.display = "none";
+                document.getElementById("docsTop").href=topPath;
+                document.getElementById("notFoundLearnMessage").style.display = "block";
+            }
+        }
+    </script>
+    {% if site.search_enabled != nil %}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+    {% endif %}
+    <title>404 Not Found</title>
+    <link rel="stylesheet" href="{{ "assets/css/bootstrap.min.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "assets/css/tribuo.min.css" | relative_url }}">
+</head>
+<body class="d-flex flex-column min-vh-100">
+<div class="container-fluid">
+{% include topbar.html %}
+
+    {{ content }}
+</div>
+{% include footer.html %}
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+<script type="text/javascript" src="{{ "/assets/js/bootstrap.min.js" | relative_url }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/tribuo.js" | relative_url }}"></script>
+</body>
+</html>
+
