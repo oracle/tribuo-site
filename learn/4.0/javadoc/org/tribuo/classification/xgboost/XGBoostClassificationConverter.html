@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public final class <a href="../../../../src-html/org/tribuo/classification/xgboost/XGBoostClassificationConverter.html#line.32">XGBoostClassificationConverter</a>
+<pre>public final class <span class="typeNameLabel">XGBoostClassificationConverter</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/common/xgboost/XGBoostOutputConverter.html" title="interface in org.tribuo.common.xgboost">XGBoostOutputConverter</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;</pre>
 <div class="block">Converts XGBoost outputs into <a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification"><code>Label</code></a> <a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo"><code>Prediction</code></a>s.</div>
@@ -207,7 +207,7 @@ implements <a href="../../../../org/tribuo/common/xgboost/XGBoostOutputConverter
 <ul class="blockListLast">
 <li class="blockList">
 <h4>XGBoostClassificationConverter</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/classification/xgboost/XGBoostClassificationConverter.html#line.35">XGBoostClassificationConverter</a>()</pre>
+<pre>public&nbsp;XGBoostClassificationConverter()</pre>
 </li>
 </ul>
 </li>
@@ -224,7 +224,7 @@ implements <a href="../../../../org/tribuo/common/xgboost/XGBoostOutputConverter
 <ul class="blockList">
 <li class="blockList">
 <h4>generatesProbabilities</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../../src-html/org/tribuo/classification/xgboost/XGBoostClassificationConverter.html#line.38">generatesProbabilities</a>()</pre>
+<pre>public&nbsp;boolean&nbsp;generatesProbabilities()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/common/xgboost/XGBoostOutputConverter.html#generatesProbabilities--">XGBoostOutputConverter</a></code></span></div>
 <div class="block">Does this converter produce probabilities?</div>
 <dl>
@@ -241,7 +241,7 @@ implements <a href="../../../../org/tribuo/common/xgboost/XGBoostOutputConverter
 <ul class="blockList">
 <li class="blockList">
 <h4>convertOutput</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/classification/xgboost/XGBoostClassificationConverter.html#line.43">convertOutput</a>(<a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;info,
+<pre>public&nbsp;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;convertOutput(<a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;info,
                                        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;float[]&gt;&nbsp;probabilitiesList,
                                        int&nbsp;numValidFeatures,
                                        <a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;example)</pre>
@@ -266,7 +266,7 @@ implements <a href="../../../../org/tribuo/common/xgboost/XGBoostOutputConverter
 <ul class="blockListLast">
 <li class="blockList">
 <h4>convertBatchOutput</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/classification/xgboost/XGBoostClassificationConverter.html#line.66">convertBatchOutput</a>(<a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;info,
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&gt;&nbsp;convertBatchOutput(<a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;info,
                                                   <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;float[][]&gt;&nbsp;probabilitiesList,
                                                   int[]&nbsp;numValidFeatures,
                                                   <a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;[]&nbsp;examples)</pre>
@@ -353,6 +353,6 @@ implements <a href="../../../../org/tribuo/common/xgboost/XGBoostOutputConverter
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

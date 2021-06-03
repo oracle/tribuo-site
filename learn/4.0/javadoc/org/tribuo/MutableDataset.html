@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../src-html/org/tribuo/MutableDataset.html#line.37">MutableDataset</a>&lt;T extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public class <span class="typeNameLabel">MutableDataset&lt;T extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;T&gt;</pre>
 <div class="block">A MutableDataset is a <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo"><code>Dataset</code></a> with a <a href="../../org/tribuo/MutableFeatureMap.html" title="class in org.tribuo"><code>MutableFeatureMap</code></a> which grows over time.
  Whenever an <a href="../../org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a> is added to the dataset it observes each feature and output
@@ -350,7 +350,7 @@ extends <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Data
 <ul class="blockList">
 <li class="blockList">
 <h4>outputMap</h4>
-<pre>protected final&nbsp;<a href="../../org/tribuo/MutableOutputInfo.html" title="interface in org.tribuo">MutableOutputInfo</a>&lt;<a href="../../org/tribuo/MutableDataset.html" title="type parameter in MutableDataset">T</a> extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../org/tribuo/MutableDataset.html" title="type parameter in MutableDataset">T</a>&gt;&gt; <a href="../../src-html/org/tribuo/MutableDataset.html#line.43">outputMap</a></pre>
+<pre>protected final&nbsp;<a href="../../org/tribuo/MutableOutputInfo.html" title="interface in org.tribuo">MutableOutputInfo</a>&lt;<a href="../../org/tribuo/MutableDataset.html" title="type parameter in MutableDataset">T</a> extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../org/tribuo/MutableDataset.html" title="type parameter in MutableDataset">T</a>&gt;&gt; outputMap</pre>
 <div class="block">Information about the outputs in this dataset.</div>
 </li>
 </ul>
@@ -360,7 +360,7 @@ extends <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Data
 <ul class="blockList">
 <li class="blockList">
 <h4>featureMap</h4>
-<pre>protected final&nbsp;<a href="../../org/tribuo/MutableFeatureMap.html" title="class in org.tribuo">MutableFeatureMap</a> <a href="../../src-html/org/tribuo/MutableDataset.html#line.48">featureMap</a></pre>
+<pre>protected final&nbsp;<a href="../../org/tribuo/MutableFeatureMap.html" title="class in org.tribuo">MutableFeatureMap</a> featureMap</pre>
 <div class="block">A map from feature names to feature info objects.</div>
 </li>
 </ul>
@@ -370,7 +370,7 @@ extends <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Data
 <ul class="blockList">
 <li class="blockList">
 <h4>transformProvenances</h4>
-<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.provenance.ObjectProvenance&gt; <a href="../../src-html/org/tribuo/MutableDataset.html#line.53">transformProvenances</a></pre>
+<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.provenance.ObjectProvenance&gt; transformProvenances</pre>
 <div class="block">The provenances of the transformations applied to this dataset.</div>
 </li>
 </ul>
@@ -380,7 +380,7 @@ extends <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Data
 <ul class="blockListLast">
 <li class="blockList">
 <h4>dense</h4>
-<pre>protected&nbsp;boolean <a href="../../src-html/org/tribuo/MutableDataset.html#line.58">dense</a></pre>
+<pre>protected&nbsp;boolean dense</pre>
 <div class="block">Denotes if this dataset contains implicit zeros or not.</div>
 </li>
 </ul>
@@ -398,7 +398,7 @@ extends <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Data
 <ul class="blockList">
 <li class="blockList">
 <h4>MutableDataset</h4>
-<pre>public&nbsp;<a href="../../src-html/org/tribuo/MutableDataset.html#line.65">MutableDataset</a>(<a href="../../org/tribuo/provenance/DataProvenance.html" title="interface in org.tribuo.provenance">DataProvenance</a>&nbsp;sourceProvenance,
+<pre>public&nbsp;MutableDataset(<a href="../../org/tribuo/provenance/DataProvenance.html" title="interface in org.tribuo.provenance">DataProvenance</a>&nbsp;sourceProvenance,
                       <a href="../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../org/tribuo/MutableDataset.html" title="type parameter in MutableDataset">T</a>&gt;&nbsp;outputFactory)</pre>
 <div class="block">Creates an empty dataset.</div>
 <dl>
@@ -414,7 +414,7 @@ extends <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Data
 <ul class="blockList">
 <li class="blockList">
 <h4>MutableDataset</h4>
-<pre>public&nbsp;<a href="../../src-html/org/tribuo/MutableDataset.html#line.78">MutableDataset</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/MutableDataset.html" title="type parameter in MutableDataset">T</a>&gt;&gt;&nbsp;dataSource,
+<pre>public&nbsp;MutableDataset(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/MutableDataset.html" title="type parameter in MutableDataset">T</a>&gt;&gt;&nbsp;dataSource,
                       <a href="../../org/tribuo/provenance/DataProvenance.html" title="interface in org.tribuo.provenance">DataProvenance</a>&nbsp;provenance,
                       <a href="../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../org/tribuo/MutableDataset.html" title="type parameter in MutableDataset">T</a>&gt;&nbsp;outputFactory)</pre>
 <div class="block">Creates a dataset from a data source. This method will create the output
@@ -433,7 +433,7 @@ extends <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Data
 <ul class="blockListLast">
 <li class="blockList">
 <h4>MutableDataset</h4>
-<pre>public&nbsp;<a href="../../src-html/org/tribuo/MutableDataset.html#line.92">MutableDataset</a>(<a href="../../org/tribuo/DataSource.html" title="interface in org.tribuo">DataSource</a>&lt;<a href="../../org/tribuo/MutableDataset.html" title="type parameter in MutableDataset">T</a>&gt;&nbsp;dataSource)</pre>
+<pre>public&nbsp;MutableDataset(<a href="../../org/tribuo/DataSource.html" title="interface in org.tribuo">DataSource</a>&lt;<a href="../../org/tribuo/MutableDataset.html" title="type parameter in MutableDataset">T</a>&gt;&nbsp;dataSource)</pre>
 <div class="block">Creates a dataset from a data source. This method creates the output and feature maps
  needed for training and evaluating classifiers.</div>
 <dl>
@@ -456,7 +456,7 @@ extends <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Data
 <ul class="blockList">
 <li class="blockList">
 <h4>add</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../src-html/org/tribuo/MutableDataset.html#line.104">add</a>(<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/MutableDataset.html" title="type parameter in MutableDataset">T</a>&gt;&nbsp;ex)</pre>
+<pre>public&nbsp;void&nbsp;add(<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/MutableDataset.html" title="type parameter in MutableDataset">T</a>&gt;&nbsp;ex)</pre>
 <div class="block">Adds an example to the dataset, which observes the output and each feature value.
  <p>
  It also canonicalises the reference to each feature's name (i.e., replacing the reference
@@ -474,7 +474,7 @@ extends <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Data
 <ul class="blockList">
 <li class="blockList">
 <h4>addAll</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../src-html/org/tribuo/MutableDataset.html#line.121">addAll</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;? extends <a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/MutableDataset.html" title="type parameter in MutableDataset">T</a>&gt;&gt;&nbsp;collection)</pre>
+<pre>public&nbsp;void&nbsp;addAll(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;? extends <a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/MutableDataset.html" title="type parameter in MutableDataset">T</a>&gt;&gt;&nbsp;collection)</pre>
 <div class="block">Adds all the Examples in the supplied collection to this dataset.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -488,7 +488,7 @@ extends <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Data
 <ul class="blockList">
 <li class="blockList">
 <h4>setWeights</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../src-html/org/tribuo/MutableDataset.html#line.131">setWeights</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../org/tribuo/MutableDataset.html" title="type parameter in MutableDataset">T</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Float.html?is-external=true" title="class or interface in java.lang">Float</a>&gt;&nbsp;weights)</pre>
+<pre>public&nbsp;void&nbsp;setWeights(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../org/tribuo/MutableDataset.html" title="type parameter in MutableDataset">T</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Float.html?is-external=true" title="class or interface in java.lang">Float</a>&gt;&nbsp;weights)</pre>
 <div class="block">Sets the weights in each example according to their output.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -502,7 +502,7 @@ extends <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Data
 <ul class="blockList">
 <li class="blockList">
 <h4>getOutputs</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../org/tribuo/MutableDataset.html" title="type parameter in MutableDataset">T</a>&gt;&nbsp;<a href="../../src-html/org/tribuo/MutableDataset.html#line.149">getOutputs</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../org/tribuo/MutableDataset.html" title="type parameter in MutableDataset">T</a>&gt;&nbsp;getOutputs()</pre>
 <div class="block">Gets the set of possible outputs in this dataset.
  <p>
  In the case of regression returns a Set containing dimension names.</div>
@@ -520,7 +520,7 @@ extends <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Data
 <ul class="blockList">
 <li class="blockList">
 <h4>getFeatureIDMap</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;<a href="../../src-html/org/tribuo/MutableDataset.html#line.154">getFeatureIDMap</a>()</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;getFeatureIDMap()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../org/tribuo/Dataset.html#getFeatureIDMap--">Dataset</a></code></span></div>
 <div class="block">Returns or generates an <a href="../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo"><code>ImmutableFeatureMap</code></a>.</div>
 <dl>
@@ -537,7 +537,7 @@ extends <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Data
 <ul class="blockList">
 <li class="blockList">
 <h4>getFeatureMap</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/MutableFeatureMap.html" title="class in org.tribuo">MutableFeatureMap</a>&nbsp;<a href="../../src-html/org/tribuo/MutableDataset.html#line.159">getFeatureMap</a>()</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/MutableFeatureMap.html" title="class in org.tribuo">MutableFeatureMap</a>&nbsp;getFeatureMap()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../org/tribuo/Dataset.html#getFeatureMap--">Dataset</a></code></span></div>
 <div class="block">Returns this dataset's <a href="../../org/tribuo/FeatureMap.html" title="class in org.tribuo"><code>FeatureMap</code></a>.</div>
 <dl>
@@ -554,7 +554,7 @@ extends <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Data
 <ul class="blockList">
 <li class="blockList">
 <h4>getOutputIDInfo</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../org/tribuo/MutableDataset.html" title="type parameter in MutableDataset">T</a>&gt;&nbsp;<a href="../../src-html/org/tribuo/MutableDataset.html#line.164">getOutputIDInfo</a>()</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../org/tribuo/MutableDataset.html" title="type parameter in MutableDataset">T</a>&gt;&nbsp;getOutputIDInfo()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../org/tribuo/Dataset.html#getOutputIDInfo--">Dataset</a></code></span></div>
 <div class="block">Returns or generates an <a href="../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo"><code>ImmutableOutputInfo</code></a>.</div>
 <dl>
@@ -571,7 +571,7 @@ extends <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Data
 <ul class="blockList">
 <li class="blockList">
 <h4>getOutputInfo</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/OutputInfo.html" title="interface in org.tribuo">OutputInfo</a>&lt;<a href="../../org/tribuo/MutableDataset.html" title="type parameter in MutableDataset">T</a>&gt;&nbsp;<a href="../../src-html/org/tribuo/MutableDataset.html#line.169">getOutputInfo</a>()</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/OutputInfo.html" title="interface in org.tribuo">OutputInfo</a>&lt;<a href="../../org/tribuo/MutableDataset.html" title="type parameter in MutableDataset">T</a>&gt;&nbsp;getOutputInfo()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../org/tribuo/Dataset.html#getOutputInfo--">Dataset</a></code></span></div>
 <div class="block">Returns this dataset's <a href="../../org/tribuo/OutputInfo.html" title="interface in org.tribuo"><code>OutputInfo</code></a>.</div>
 <dl>
@@ -588,7 +588,7 @@ extends <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Data
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../src-html/org/tribuo/MutableDataset.html#line.174">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../org/tribuo/Dataset.html#toString--">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../org/tribuo/MutableDataset.html" title="type parameter in MutableDataset">T</a> extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../org/tribuo/MutableDataset.html" title="type parameter in MutableDataset">T</a>&gt;&gt;</code></dd>
@@ -601,7 +601,7 @@ extends <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Data
 <ul class="blockList">
 <li class="blockList">
 <h4>isDense</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../src-html/org/tribuo/MutableDataset.html#line.186">isDense</a>()</pre>
+<pre>public&nbsp;boolean&nbsp;isDense()</pre>
 <div class="block">Is the dataset dense (i.e., do all features in the domain have a value in each example).</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -615,7 +615,7 @@ extends <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Data
 <ul class="blockList">
 <li class="blockList">
 <h4>transform</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../src-html/org/tribuo/MutableDataset.html#line.194">transform</a>(<a href="../../org/tribuo/transform/TransformerMap.html" title="class in org.tribuo.transform">TransformerMap</a>&nbsp;transformerMap)</pre>
+<pre>public&nbsp;void&nbsp;transform(<a href="../../org/tribuo/transform/TransformerMap.html" title="class in org.tribuo.transform">TransformerMap</a>&nbsp;transformerMap)</pre>
 <div class="block">Applies all the transformations from the <a href="../../org/tribuo/transform/TransformerMap.html" title="class in org.tribuo.transform"><code>TransformerMap</code></a> to this dataset.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -629,7 +629,7 @@ extends <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Data
 <ul class="blockList">
 <li class="blockList">
 <h4>densify</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../src-html/org/tribuo/MutableDataset.html#line.208">densify</a>()</pre>
+<pre>public&nbsp;void&nbsp;densify()</pre>
 <div class="block">Iterates through the examples, converting implicit zeros into explicit zeros.</div>
 </li>
 </ul>
@@ -639,7 +639,7 @@ extends <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Data
 <ul class="blockList">
 <li class="blockList">
 <h4>clear</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../src-html/org/tribuo/MutableDataset.html#line.220">clear</a>()</pre>
+<pre>public&nbsp;void&nbsp;clear()</pre>
 <div class="block">Clears all the examples out of this dataset, and flushes the FeatureMap, OutputInfo, and transform provenances.</div>
 </li>
 </ul>
@@ -649,7 +649,7 @@ extends <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Data
 <ul class="blockList">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/provenance/DatasetProvenance.html" title="class in org.tribuo.provenance">DatasetProvenance</a>&nbsp;<a href="../../src-html/org/tribuo/MutableDataset.html#line.228">getProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/provenance/DatasetProvenance.html" title="class in org.tribuo.provenance">DatasetProvenance</a>&nbsp;getProvenance()</pre>
 </li>
 </ul>
 <a name="createDeepCopy-org.tribuo.Dataset-">
@@ -658,7 +658,7 @@ extends <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Data
 <ul class="blockListLast">
 <li class="blockList">
 <h4>createDeepCopy</h4>
-<pre>public static&nbsp;&lt;T extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../org/tribuo/MutableDataset.html" title="class in org.tribuo">MutableDataset</a>&lt;T&gt;&nbsp;<a href="../../src-html/org/tribuo/MutableDataset.html#line.240">createDeepCopy</a>(<a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;T&gt;&nbsp;other)</pre>
+<pre>public static&nbsp;&lt;T extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../org/tribuo/MutableDataset.html" title="class in org.tribuo">MutableDataset</a>&lt;T&gt;&nbsp;createDeepCopy(<a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;T&gt;&nbsp;other)</pre>
 <div class="block">Creates a deep copy of the supplied <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo"><code>Dataset</code></a> which is mutable.
  <p>
  Copies the individual examples using their copy method.</div>
@@ -740,6 +740,6 @@ extends <a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Data
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

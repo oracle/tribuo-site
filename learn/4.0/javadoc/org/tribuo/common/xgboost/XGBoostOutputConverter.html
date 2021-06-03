@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <a href="../../../../src-html/org/tribuo/common/xgboost/XGBoostOutputConverter.html#line.30">XGBoostOutputConverter</a>&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public interface <span class="typeNameLabel">XGBoostOutputConverter&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
 <div class="block">Converts the output of XGBoost into the appropriate prediction type.</div>
 </li>
@@ -174,7 +174,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <ul class="blockList">
 <li class="blockList">
 <h4>generatesProbabilities</h4>
-<pre>boolean&nbsp;<a href="../../../../src-html/org/tribuo/common/xgboost/XGBoostOutputConverter.html#line.36">generatesProbabilities</a>()</pre>
+<pre>boolean&nbsp;generatesProbabilities()</pre>
 <div class="block">Does this converter produce probabilities?</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -188,7 +188,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <ul class="blockList">
 <li class="blockList">
 <h4>convertOutput</h4>
-<pre><a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/common/xgboost/XGBoostOutputConverter.html" title="type parameter in XGBoostOutputConverter">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/xgboost/XGBoostOutputConverter.html#line.46">convertOutput</a>(<a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/common/xgboost/XGBoostOutputConverter.html" title="type parameter in XGBoostOutputConverter">T</a>&gt;&nbsp;info,
+<pre><a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/common/xgboost/XGBoostOutputConverter.html" title="type parameter in XGBoostOutputConverter">T</a>&gt;&nbsp;convertOutput(<a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/common/xgboost/XGBoostOutputConverter.html" title="type parameter in XGBoostOutputConverter">T</a>&gt;&nbsp;info,
                             <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;float[]&gt;&nbsp;probabilities,
                             int&nbsp;numValidFeatures,
                             <a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/common/xgboost/XGBoostOutputConverter.html" title="type parameter in XGBoostOutputConverter">T</a>&gt;&nbsp;example)</pre>
@@ -210,7 +210,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>convertBatchOutput</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/common/xgboost/XGBoostOutputConverter.html" title="type parameter in XGBoostOutputConverter">T</a>&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/xgboost/XGBoostOutputConverter.html#line.56">convertBatchOutput</a>(<a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/common/xgboost/XGBoostOutputConverter.html" title="type parameter in XGBoostOutputConverter">T</a>&gt;&nbsp;info,
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/common/xgboost/XGBoostOutputConverter.html" title="type parameter in XGBoostOutputConverter">T</a>&gt;&gt;&nbsp;convertBatchOutput(<a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/common/xgboost/XGBoostOutputConverter.html" title="type parameter in XGBoostOutputConverter">T</a>&gt;&nbsp;info,
                                        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;float[][]&gt;&nbsp;probabilities,
                                        int[]&nbsp;numValidFeatures,
                                        <a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/common/xgboost/XGBoostOutputConverter.html" title="type parameter in XGBoostOutputConverter">T</a>&gt;[]&nbsp;examples)</pre>
@@ -294,6 +294,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

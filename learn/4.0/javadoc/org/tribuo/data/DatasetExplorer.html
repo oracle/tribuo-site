@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public final class <a href="../../../src-html/org/tribuo/data/DatasetExplorer.html#line.45">DatasetExplorer</a>
+<pre>public final class <span class="typeNameLabel">DatasetExplorer</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <div class="block">A CLI for exploring a serialised <a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo"><code>Dataset</code></a>.</div>
@@ -279,7 +279,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>shell</h4>
-<pre>protected&nbsp;com.oracle.labs.mlrg.olcut.command.CommandInterpreter <a href="../../../src-html/org/tribuo/data/DatasetExplorer.html#line.48">shell</a></pre>
+<pre>protected&nbsp;com.oracle.labs.mlrg.olcut.command.CommandInterpreter shell</pre>
 </li>
 </ul>
 </li>
@@ -296,7 +296,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>DatasetExplorer</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/data/DatasetExplorer.html#line.52">DatasetExplorer</a>()</pre>
+<pre>public&nbsp;DatasetExplorer()</pre>
 </li>
 </ul>
 </li>
@@ -313,7 +313,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getName</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/data/DatasetExplorer.html#line.58">getName</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getName()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getName</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.command.CommandGroup</code></dd>
@@ -326,7 +326,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getDescription</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/data/DatasetExplorer.html#line.63">getDescription</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getDescription()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getDescription</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.command.CommandGroup</code></dd>
@@ -339,7 +339,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>fileCompleter</h4>
-<pre>public&nbsp;org.jline.reader.Completer[]&nbsp;<a href="../../../src-html/org/tribuo/data/DatasetExplorer.html#line.67">fileCompleter</a>()</pre>
+<pre>public&nbsp;org.jline.reader.Completer[]&nbsp;fileCompleter()</pre>
 </li>
 </ul>
 <a name="startShell--">
@@ -348,7 +348,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>startShell</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/data/DatasetExplorer.html#line.77">startShell</a>()</pre>
+<pre>public&nbsp;void&nbsp;startShell()</pre>
 <div class="block">Start the command shell</div>
 </li>
 </ul>
@@ -360,7 +360,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <h4>loadDataset</h4>
 <pre>@Command(usage="&lt;filename&gt; - Load a dataset from disk.",
          completers="fileCompleter")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/data/DatasetExplorer.html#line.83">loadDataset</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;loadDataset(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
                                                                                                                         <a href="https://docs.oracle.com/javase/8/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;path)</pre>
 </li>
 </ul>
@@ -371,7 +371,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>featureInfo</h4>
 <pre>@Command(usage="Shows the information on a particular feature")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/data/DatasetExplorer.html#line.101">featureInfo</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;featureInfo(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
                                                                                           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;featureName)</pre>
 </li>
 </ul>
@@ -382,7 +382,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>outputInfo</h4>
 <pre>@Command(usage="Shows the output information.")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/data/DatasetExplorer.html#line.111">outputInfo</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;outputInfo(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
 </li>
 </ul>
 <a name="numExamples-com.oracle.labs.mlrg.olcut.command.CommandInterpreter-">
@@ -392,7 +392,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>numExamples</h4>
 <pre>@Command(usage="Shows the number of rows in the dataset")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/data/DatasetExplorer.html#line.116">numExamples</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;numExamples(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
 </li>
 </ul>
 <a name="numFeatures-com.oracle.labs.mlrg.olcut.command.CommandInterpreter-">
@@ -402,7 +402,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>numFeatures</h4>
 <pre>@Command(usage="Shows the number of features in the dataset")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/data/DatasetExplorer.html#line.121">numFeatures</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;numFeatures(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
 </li>
 </ul>
 <a name="minCount-com.oracle.labs.mlrg.olcut.command.CommandInterpreter-int-">
@@ -412,7 +412,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>minCount</h4>
 <pre>@Command(usage="&lt;min count&gt; - Shows the number of features that occurred more than min count times.")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/data/DatasetExplorer.html#line.126">minCount</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;minCount(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
                                                                                                                              int&nbsp;minCount)</pre>
 </li>
 </ul>
@@ -423,7 +423,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>showLabelStats</h4>
 <pre>@Command(usage="Shows the output statistics")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/data/DatasetExplorer.html#line.137">showLabelStats</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;showLabelStats(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
 </li>
 </ul>
 <a name="saveCSV-com.oracle.labs.mlrg.olcut.command.CommandInterpreter-java.lang.String-">
@@ -433,7 +433,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>saveCSV</h4>
 <pre>@Command(usage="Saves out the data as a CSV.")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/data/DatasetExplorer.html#line.142">saveCSV</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;saveCSV(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
                                                                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;path)</pre>
 </li>
 </ul>
@@ -444,7 +444,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>showProvenance</h4>
 <pre>@Command(usage="Shows the dataset provenance")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/data/DatasetExplorer.html#line.154">showProvenance</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;showProvenance(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
 </li>
 </ul>
 <a name="main-java.lang.String:A-">
@@ -453,7 +453,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>main</h4>
-<pre>public static&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/data/DatasetExplorer.html#line.163">main</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;args)</pre>
+<pre>public static&nbsp;void&nbsp;main(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;args)</pre>
 </li>
 </ul>
 </li>
@@ -524,6 +524,6 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

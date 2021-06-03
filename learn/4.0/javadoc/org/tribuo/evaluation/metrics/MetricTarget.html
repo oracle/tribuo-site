@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/evaluation/metrics/MetricTarget.html#line.30">MetricTarget</a>&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public class <span class="typeNameLabel">MetricTarget&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
 <div class="block">Used by a given <a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="interface in org.tribuo.evaluation.metrics"><code>EvaluationMetric</code></a> to determine whether it should compute its value for a specific <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo"><code>Output</code></a> value
  or whether it should average them.</div>
@@ -224,7 +224,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>MetricTarget</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/evaluation/metrics/MetricTarget.html#line.42">MetricTarget</a>(<a href="../../../../org/tribuo/evaluation/metrics/MetricTarget.html" title="type parameter in MetricTarget">T</a>&nbsp;target)</pre>
+<pre>public&nbsp;MetricTarget(<a href="../../../../org/tribuo/evaluation/metrics/MetricTarget.html" title="type parameter in MetricTarget">T</a>&nbsp;target)</pre>
 <div class="block">Builds a metric target for an output.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -238,7 +238,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>MetricTarget</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/evaluation/metrics/MetricTarget.html#line.51">MetricTarget</a>(<a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.Average.html" title="enum in org.tribuo.evaluation.metrics">EvaluationMetric.Average</a>&nbsp;avg)</pre>
+<pre>public&nbsp;MetricTarget(<a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.Average.html" title="enum in org.tribuo.evaluation.metrics">EvaluationMetric.Average</a>&nbsp;avg)</pre>
 <div class="block">Builds a metric target for an average.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -260,7 +260,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getOutputTarget</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/MetricTarget.html" title="type parameter in MetricTarget">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/evaluation/metrics/MetricTarget.html#line.60">getOutputTarget</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/MetricTarget.html" title="type parameter in MetricTarget">T</a>&gt;&nbsp;getOutputTarget()</pre>
 <div class="block">Returns the Output this metric targets, or <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true#empty--" title="class or interface in java.util"><code>Optional.empty()</code></a> if it's an average.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -274,7 +274,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getAverageTarget</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.Average.html" title="enum in org.tribuo.evaluation.metrics">EvaluationMetric.Average</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/evaluation/metrics/MetricTarget.html#line.66">getAverageTarget</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.Average.html" title="enum in org.tribuo.evaluation.metrics">EvaluationMetric.Average</a>&gt;&nbsp;getAverageTarget()</pre>
 <div class="block">Returns the average this metric computes, or <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true#empty--" title="class or interface in java.util"><code>Optional.empty()</code></a> if it targets an output.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -288,7 +288,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/evaluation/metrics/MetricTarget.html#line.69">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -301,7 +301,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../../src-html/org/tribuo/evaluation/metrics/MetricTarget.html#line.78">equals</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -314,7 +314,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/evaluation/metrics/MetricTarget.html#line.87">hashCode</a>()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -327,7 +327,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>macroAverageTarget</h4>
-<pre>public static&nbsp;&lt;U extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;U&gt;&gt;&nbsp;<a href="../../../../org/tribuo/evaluation/metrics/MetricTarget.html" title="class in org.tribuo.evaluation.metrics">MetricTarget</a>&lt;U&gt;&nbsp;<a href="../../../../src-html/org/tribuo/evaluation/metrics/MetricTarget.html#line.101">macroAverageTarget</a>()</pre>
+<pre>public static&nbsp;&lt;U extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;U&gt;&gt;&nbsp;<a href="../../../../org/tribuo/evaluation/metrics/MetricTarget.html" title="class in org.tribuo.evaluation.metrics">MetricTarget</a>&lt;U&gt;&nbsp;macroAverageTarget()</pre>
 <div class="block">Get the singleton <code>MetricTarget</code> which contains the <a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.Average.html#MACRO"><code>EvaluationMetric.Average.MACRO</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -343,7 +343,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>microAverageTarget</h4>
-<pre>public static&nbsp;&lt;U extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;U&gt;&gt;&nbsp;<a href="../../../../org/tribuo/evaluation/metrics/MetricTarget.html" title="class in org.tribuo.evaluation.metrics">MetricTarget</a>&lt;U&gt;&nbsp;<a href="../../../../src-html/org/tribuo/evaluation/metrics/MetricTarget.html#line.112">microAverageTarget</a>()</pre>
+<pre>public static&nbsp;&lt;U extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;U&gt;&gt;&nbsp;<a href="../../../../org/tribuo/evaluation/metrics/MetricTarget.html" title="class in org.tribuo.evaluation.metrics">MetricTarget</a>&lt;U&gt;&nbsp;microAverageTarget()</pre>
 <div class="block">Get the singleton <code>MetricTarget</code> which contains the <a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.Average.html#MICRO"><code>EvaluationMetric.Average.MICRO</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -421,6 +421,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

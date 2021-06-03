@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEText.html#line.57">LIMEText</a>
+<pre>public class <span class="typeNameLabel">LIMEText</span>
 extends <a href="../../../../../org/tribuo/classification/explanations/lime/LIMEBase.html" title="class in org.tribuo.classification.explanations.lime">LIMEBase</a>
 implements <a href="../../../../../org/tribuo/classification/explanations/TextExplainer.html" title="interface in org.tribuo.classification.explanations">TextExplainer</a>&lt;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;</pre>
 <div class="block">Uses a Tribuo <a href="../../../../../org/tribuo/data/text/TextFeatureExtractor.html" title="interface in org.tribuo.data.text"><code>TextFeatureExtractor</code></a> to explain the prediction for a given piece of text.
@@ -246,7 +246,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/TextEx
 <ul class="blockListLast">
 <li class="blockList">
 <h4>LIMEText</h4>
-<pre>public&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEText.html#line.76">LIMEText</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/SplittableRandom.html?is-external=true" title="class or interface in java.util">SplittableRandom</a>&nbsp;rng,
+<pre>public&nbsp;LIMEText(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/SplittableRandom.html?is-external=true" title="class or interface in java.util">SplittableRandom</a>&nbsp;rng,
                 <a href="../../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;innerModel,
                 <a href="../../../../../org/tribuo/SparseTrainer.html" title="interface in org.tribuo">SparseTrainer</a>&lt;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;explanationTrainer,
                 int&nbsp;numSamples,
@@ -278,7 +278,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/TextEx
 <ul class="blockList">
 <li class="blockList">
 <h4>explain</h4>
-<pre>public&nbsp;<a href="../../../../../org/tribuo/classification/explanations/lime/LIMEExplanation.html" title="class in org.tribuo.classification.explanations.lime">LIMEExplanation</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEText.html#line.84">explain</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;inputText)</pre>
+<pre>public&nbsp;<a href="../../../../../org/tribuo/classification/explanations/lime/LIMEExplanation.html" title="class in org.tribuo.classification.explanations.lime">LIMEExplanation</a>&nbsp;explain(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;inputText)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/tribuo/classification/explanations/TextExplainer.html#explain-java.lang.String-">TextExplainer</a></code></span></div>
 <div class="block">Converts the supplied text into an <a href="../../../../../org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a>, and
  generates an explanation of the contained <a href="../../../../../org/tribuo/Model.html" title="class in org.tribuo"><code>Model</code></a>'s prediction.</div>
@@ -298,7 +298,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/TextEx
 <ul class="blockList">
 <li class="blockList">
 <h4>nameFeature</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEText.html#line.114">nameFeature</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;nameFeature(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                              int&nbsp;idx)</pre>
 <div class="block">Generate the feature name by combining the word and index.</div>
 <dl>
@@ -316,7 +316,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/TextEx
 <ul class="blockListLast">
 <li class="blockList">
 <h4>sampleData</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEText.html#line.126">sampleData</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;inputText,
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&gt;&nbsp;sampleData(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;inputText,
                                               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/tribuo/util/tokens/Token.html" title="class in org.tribuo.util.tokens">Token</a>&gt;&nbsp;tokens)</pre>
 <div class="block">Samples a new dataset from the input text. Uses the tokenized representation,
  removes words by blanking them out. Only removes words to generate a new sentence,
@@ -398,6 +398,6 @@ implements <a href="../../../../../org/tribuo/classification/explanations/TextEx
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

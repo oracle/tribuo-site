@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/interop/onnx/ImageTransformer.html#line.41">ImageTransformer</a>
+<pre>public class <span class="typeNameLabel">ImageTransformer</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/interop/onnx/ExampleTransformer.html" title="interface in org.tribuo.interop.onnx">ExampleTransformer</a></pre>
 <div class="block">Image transformer. Assumes the feature id numbers are linearised ids of the form
@@ -217,7 +217,7 @@ implements <a href="../../../../org/tribuo/interop/onnx/ExampleTransformer.html"
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ImageTransformer</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/interop/onnx/ImageTransformer.html#line.58">ImageTransformer</a>(int&nbsp;channels,
+<pre>public&nbsp;ImageTransformer(int&nbsp;channels,
                         int&nbsp;height,
                         int&nbsp;width)</pre>
 </li>
@@ -236,7 +236,7 @@ implements <a href="../../../../org/tribuo/interop/onnx/ExampleTransformer.html"
 <ul class="blockList">
 <li class="blockList">
 <h4>postConfig</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/interop/onnx/ImageTransformer.html#line.71">postConfig</a>()</pre>
+<pre>public&nbsp;void&nbsp;postConfig()</pre>
 <div class="block">Used by the OLCUT configuration system, and should not be called by external code.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -250,7 +250,7 @@ implements <a href="../../../../org/tribuo/interop/onnx/ExampleTransformer.html"
 <ul class="blockList">
 <li class="blockList">
 <h4>transform</h4>
-<pre>public&nbsp;ai.onnxruntime.OnnxTensor&nbsp;<a href="../../../../src-html/org/tribuo/interop/onnx/ImageTransformer.html#line.92">transform</a>(ai.onnxruntime.OrtEnvironment&nbsp;env,
+<pre>public&nbsp;ai.onnxruntime.OnnxTensor&nbsp;transform(ai.onnxruntime.OrtEnvironment&nbsp;env,
                                            <a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;vector)
                                     throws ai.onnxruntime.OrtException</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/interop/onnx/ExampleTransformer.html#transform-ai.onnxruntime.OrtEnvironment-org.tribuo.math.la.SparseVector-">ExampleTransformer</a></code></span></div>
@@ -276,7 +276,7 @@ implements <a href="../../../../org/tribuo/interop/onnx/ExampleTransformer.html"
 <ul class="blockList">
 <li class="blockList">
 <h4>transform</h4>
-<pre>public&nbsp;ai.onnxruntime.OnnxTensor&nbsp;<a href="../../../../src-html/org/tribuo/interop/onnx/ImageTransformer.html#line.99">transform</a>(ai.onnxruntime.OrtEnvironment&nbsp;env,
+<pre>public&nbsp;ai.onnxruntime.OnnxTensor&nbsp;transform(ai.onnxruntime.OrtEnvironment&nbsp;env,
                                            <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&gt;&nbsp;vectors)
                                     throws ai.onnxruntime.OrtException</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/interop/onnx/ExampleTransformer.html#transform-ai.onnxruntime.OrtEnvironment-java.util.List-">ExampleTransformer</a></code></span></div>
@@ -300,7 +300,7 @@ implements <a href="../../../../org/tribuo/interop/onnx/ExampleTransformer.html"
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/interop/onnx/ImageTransformer.html#line.118">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -313,7 +313,7 @@ implements <a href="../../../../org/tribuo/interop/onnx/ExampleTransformer.html"
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;<a href="../../../../src-html/org/tribuo/interop/onnx/ImageTransformer.html#line.123">getProvenance</a>()</pre>
+<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&gt;</code></dd>
@@ -388,6 +388,6 @@ implements <a href="../../../../org/tribuo/interop/onnx/ExampleTransformer.html"
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

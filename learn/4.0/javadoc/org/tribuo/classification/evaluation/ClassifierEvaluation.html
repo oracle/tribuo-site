@@ -116,7 +116,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.27">ClassifierEvaluation</a>&lt;T extends <a href="../../../../org/tribuo/classification/Classifiable.html" title="interface in org.tribuo.classification">Classifiable</a>&lt;T&gt;&gt;
+<pre>public interface <span class="typeNameLabel">ClassifierEvaluation&lt;T extends <a href="../../../../org/tribuo/classification/Classifiable.html" title="interface in org.tribuo.classification">Classifiable</a>&lt;T&gt;&gt;</span>
 extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="interface in org.tribuo.evaluation">Evaluation</a>&lt;T&gt;</pre>
 <div class="block">Defines methods that calculate classification performance, used for both multi-class and multi-label classification.</div>
 </li>
@@ -321,7 +321,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>confusion</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.36">confusion</a>(<a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html" title="type parameter in ClassifierEvaluation">T</a>&nbsp;predicted,
+<pre>double&nbsp;confusion(<a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html" title="type parameter in ClassifierEvaluation">T</a>&nbsp;predicted,
                  <a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html" title="type parameter in ClassifierEvaluation">T</a>&nbsp;truth)</pre>
 <div class="block">Returns the number of times label <code>truth</code> was predicted as label <code>predicted</code>.</div>
 <dl>
@@ -341,7 +341,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>tp</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.46">tp</a>(<a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html" title="type parameter in ClassifierEvaluation">T</a>&nbsp;label)</pre>
+<pre>double&nbsp;tp(<a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html" title="type parameter in ClassifierEvaluation">T</a>&nbsp;label)</pre>
 <div class="block">Returns the number of true positives, i.e., the number of times the label was correctly predicted.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -357,7 +357,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>tp</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.54">tp</a>()</pre>
+<pre>double&nbsp;tp()</pre>
 <div class="block">Returns the micro average of the number of true positives across all the labels, i.e., the total
  number of true positives.</div>
 <dl>
@@ -372,7 +372,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>macroTP</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.61">macroTP</a>()</pre>
+<pre>double&nbsp;macroTP()</pre>
 <div class="block">Returns the macro averaged number of true positives, averaged across the labels.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -388,7 +388,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>fp</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.69">fp</a>(<a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html" title="type parameter in ClassifierEvaluation">T</a>&nbsp;label)</pre>
+<pre>double&nbsp;fp(<a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html" title="type parameter in ClassifierEvaluation">T</a>&nbsp;label)</pre>
 <div class="block">Returns the number of false positives, i.e., the number of times this label was predicted but it was not the true label..</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -404,7 +404,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>fp</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.77">fp</a>()</pre>
+<pre>double&nbsp;fp()</pre>
 <div class="block">Returns the micro average of the number of false positives across all the labels, i.e., the total
  number of false positives.</div>
 <dl>
@@ -419,7 +419,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>macroFP</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.84">macroFP</a>()</pre>
+<pre>double&nbsp;macroFP()</pre>
 <div class="block">Returns the macro averaged number of false positives, averaged across the labels.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -435,7 +435,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>tn</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.92">tn</a>(<a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html" title="type parameter in ClassifierEvaluation">T</a>&nbsp;label)</pre>
+<pre>double&nbsp;tn(<a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html" title="type parameter in ClassifierEvaluation">T</a>&nbsp;label)</pre>
 <div class="block">Returns the number of true negatives for that label, i.e., the number of times it wasn't predicted, and was not the true label.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -451,7 +451,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>tn</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.99">tn</a>()</pre>
+<pre>double&nbsp;tn()</pre>
 <div class="block">Returns the total number of true negatives. This isn't very useful in multiclass problems.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -465,7 +465,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>macroTN</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.106">macroTN</a>()</pre>
+<pre>double&nbsp;macroTN()</pre>
 <div class="block">Returns the macro averaged number of true negatives.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -481,7 +481,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>fn</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.114">fn</a>(<a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html" title="type parameter in ClassifierEvaluation">T</a>&nbsp;label)</pre>
+<pre>double&nbsp;fn(<a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html" title="type parameter in ClassifierEvaluation">T</a>&nbsp;label)</pre>
 <div class="block">Returns the number of false negatives, i.e., the number of times the true label was incorrectly predicted as another label.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -497,7 +497,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>fn</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.121">fn</a>()</pre>
+<pre>double&nbsp;fn()</pre>
 <div class="block">Returns the micro averaged number of false negatives.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -511,7 +511,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>macroFN</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.128">macroFN</a>()</pre>
+<pre>double&nbsp;macroFN()</pre>
 <div class="block">Returns the macro averaged number of false negatives.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -527,7 +527,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>precision</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.136">precision</a>(<a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html" title="type parameter in ClassifierEvaluation">T</a>&nbsp;label)</pre>
+<pre>double&nbsp;precision(<a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html" title="type parameter in ClassifierEvaluation">T</a>&nbsp;label)</pre>
 <div class="block">Returns the precision of this label, i.e., the number of true positives divided by the number of true positives plus false positives.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -543,7 +543,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>microAveragedPrecision</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.143">microAveragedPrecision</a>()</pre>
+<pre>double&nbsp;microAveragedPrecision()</pre>
 <div class="block">Returns the micro averaged precision.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -557,7 +557,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>macroAveragedPrecision</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.150">macroAveragedPrecision</a>()</pre>
+<pre>double&nbsp;macroAveragedPrecision()</pre>
 <div class="block">Returns the macro averaged precision.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -573,7 +573,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>recall</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.158">recall</a>(<a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html" title="type parameter in ClassifierEvaluation">T</a>&nbsp;label)</pre>
+<pre>double&nbsp;recall(<a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html" title="type parameter in ClassifierEvaluation">T</a>&nbsp;label)</pre>
 <div class="block">Returns the recall of this label, i.e., the number of true positives divided by the number of true positives plus false negatives.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -589,7 +589,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>microAveragedRecall</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.165">microAveragedRecall</a>()</pre>
+<pre>double&nbsp;microAveragedRecall()</pre>
 <div class="block">Returns the micro averaged recall.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -603,7 +603,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>macroAveragedRecall</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.172">macroAveragedRecall</a>()</pre>
+<pre>double&nbsp;macroAveragedRecall()</pre>
 <div class="block">Returns the macro averaged recall.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -619,7 +619,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>f1</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.180">f1</a>(<a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html" title="type parameter in ClassifierEvaluation">T</a>&nbsp;label)</pre>
+<pre>double&nbsp;f1(<a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html" title="type parameter in ClassifierEvaluation">T</a>&nbsp;label)</pre>
 <div class="block">Returns the F_1 score, i.e., the harmonic mean of the precision and recall.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -635,7 +635,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>microAveragedF1</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.187">microAveragedF1</a>()</pre>
+<pre>double&nbsp;microAveragedF1()</pre>
 <div class="block">Returns the micro averaged F_1 across all labels.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -649,7 +649,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>macroAveragedF1</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.194">macroAveragedF1</a>()</pre>
+<pre>double&nbsp;macroAveragedF1()</pre>
 <div class="block">Returns the macro averaged F_1 across all the labels.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -663,7 +663,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>balancedErrorRate</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.201">balancedErrorRate</a>()</pre>
+<pre>double&nbsp;balancedErrorRate()</pre>
 <div class="block">Returns the balanced error rate, i.e., the mean of the per label recalls.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -677,7 +677,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getConfusionMatrix</h4>
-<pre><a href="../../../../org/tribuo/classification/evaluation/ConfusionMatrix.html" title="interface in org.tribuo.classification.evaluation">ConfusionMatrix</a>&lt;<a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html" title="type parameter in ClassifierEvaluation">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/ClassifierEvaluation.html#line.207">getConfusionMatrix</a>()</pre>
+<pre><a href="../../../../org/tribuo/classification/evaluation/ConfusionMatrix.html" title="interface in org.tribuo.classification.evaluation">ConfusionMatrix</a>&lt;<a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html" title="type parameter in ClassifierEvaluation">T</a>&gt;&nbsp;getConfusionMatrix()</pre>
 <div class="block">Returns the underlying confusion matrix.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -753,6 +753,6 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

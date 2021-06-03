@@ -122,7 +122,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../../src-html/org/tribuo/data/text/impl/SimpleStringDataSource.html#line.48">SimpleStringDataSource</a>&lt;T extends <a href="../../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public class <span class="typeNameLabel">SimpleStringDataSource&lt;T extends <a href="../../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="../../../../../org/tribuo/data/text/impl/SimpleTextDataSource.html" title="class in org.tribuo.data.text.impl">SimpleTextDataSource</a>&lt;T&gt;</pre>
 <div class="block">A version of <a href="../../../../../org/tribuo/data/text/impl/SimpleTextDataSource.html" title="class in org.tribuo.data.text.impl"><code>SimpleTextDataSource</code></a> that accepts an <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang"><code>Iterable</code></a> of Strings.
  <p>
@@ -298,7 +298,7 @@ extends <a href="../../../../../org/tribuo/data/text/impl/SimpleTextDataSource.h
 <h4>rawLines</h4>
 <pre>@Config(mandatory=true,
         description="The input data lines.")
-protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt; <a href="../../../../../src-html/org/tribuo/data/text/impl/SimpleStringDataSource.html#line.56">rawLines</a></pre>
+protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt; rawLines</pre>
 <div class="block">Used because OLCUT doesn't support generic Iterables.</div>
 </li>
 </ul>
@@ -316,7 +316,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List
 <ul class="blockListLast">
 <li class="blockList">
 <h4>SimpleStringDataSource</h4>
-<pre>public&nbsp;<a href="../../../../../src-html/org/tribuo/data/text/impl/SimpleStringDataSource.html#line.63">SimpleStringDataSource</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;rawLines,
+<pre>public&nbsp;SimpleStringDataSource(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;rawLines,
                               <a href="../../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../../../org/tribuo/data/text/impl/SimpleStringDataSource.html" title="type parameter in SimpleStringDataSource">T</a>&gt;&nbsp;outputFactory,
                               <a href="../../../../../org/tribuo/data/text/TextFeatureExtractor.html" title="interface in org.tribuo.data.text">TextFeatureExtractor</a>&lt;<a href="../../../../../org/tribuo/data/text/impl/SimpleStringDataSource.html" title="type parameter in SimpleStringDataSource">T</a>&gt;&nbsp;extractor)</pre>
 </li>
@@ -335,7 +335,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List
 <ul class="blockList">
 <li class="blockList">
 <h4>postConfig</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/data/text/impl/SimpleStringDataSource.html#line.75">postConfig</a>()</pre>
+<pre>public&nbsp;void&nbsp;postConfig()</pre>
 <div class="block">Used by the OLCUT configuration system, and should not be called by external code.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -351,7 +351,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/data/text/impl/SimpleStringDataSource.html#line.81">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../../../../org/tribuo/data/text/TextDataSource.html#toString--">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/tribuo/data/text/TextDataSource.html" title="class in org.tribuo.data.text">TextDataSource</a>&lt;<a href="../../../../../org/tribuo/data/text/impl/SimpleStringDataSource.html" title="type parameter in SimpleStringDataSource">T</a> extends <a href="../../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../../../org/tribuo/data/text/impl/SimpleStringDataSource.html" title="type parameter in SimpleStringDataSource">T</a>&gt;&gt;</code></dd>
@@ -364,7 +364,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List
 <ul class="blockList">
 <li class="blockList">
 <h4>read</h4>
-<pre>protected&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/data/text/impl/SimpleStringDataSource.html#line.93">read</a>()</pre>
+<pre>protected&nbsp;void&nbsp;read()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../org/tribuo/data/text/TextDataSource.html#read--">TextDataSource</a></code></span></div>
 <div class="block">Reads the data from the Path.</div>
 <dl>
@@ -379,7 +379,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List
 <ul class="blockListLast">
 <li class="blockList">
 <h4>cacheProvenance</h4>
-<pre>protected&nbsp;<a href="../../../../../org/tribuo/provenance/ConfiguredDataSourceProvenance.html" title="interface in org.tribuo.provenance">ConfiguredDataSourceProvenance</a>&nbsp;<a href="../../../../../src-html/org/tribuo/data/text/impl/SimpleStringDataSource.html#line.103">cacheProvenance</a>()</pre>
+<pre>protected&nbsp;<a href="../../../../../org/tribuo/provenance/ConfiguredDataSourceProvenance.html" title="interface in org.tribuo.provenance">ConfiguredDataSourceProvenance</a>&nbsp;cacheProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../../../../org/tribuo/data/text/impl/SimpleTextDataSource.html#cacheProvenance--">cacheProvenance</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/tribuo/data/text/impl/SimpleTextDataSource.html" title="class in org.tribuo.data.text.impl">SimpleTextDataSource</a>&lt;<a href="../../../../../org/tribuo/data/text/impl/SimpleStringDataSource.html" title="type parameter in SimpleStringDataSource">T</a> extends <a href="../../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../../../org/tribuo/data/text/impl/SimpleStringDataSource.html" title="type parameter in SimpleStringDataSource">T</a>&gt;&gt;</code></dd>
@@ -454,6 +454,6 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

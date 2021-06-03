@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <a href="../../../../src-html/org/tribuo/classification/sgd/LabelObjective.html#line.32">LabelObjective</a>
+<pre>public interface <span class="typeNameLabel">LabelObjective</span>
 extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&gt;</pre>
 <div class="block">An interface for single label prediction objectives.
  <p>
@@ -186,7 +186,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>valueAndGradient</h4>
-<pre>com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>,<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/classification/sgd/LabelObjective.html#line.40">valueAndGradient</a>(int&nbsp;truth,
+<pre>com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>,<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&gt;&nbsp;valueAndGradient(int&nbsp;truth,
                                                                         <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;prediction)</pre>
 <div class="block">Scores a prediction, returning the loss and a vector of per label gradients.</div>
 <dl>
@@ -204,7 +204,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>getNormalizer</h4>
-<pre><a href="../../../../org/tribuo/math/util/VectorNormalizer.html" title="interface in org.tribuo.math.util">VectorNormalizer</a>&nbsp;<a href="../../../../src-html/org/tribuo/classification/sgd/LabelObjective.html#line.46">getNormalizer</a>()</pre>
+<pre><a href="../../../../org/tribuo/math/util/VectorNormalizer.html" title="interface in org.tribuo.math.util">VectorNormalizer</a>&nbsp;getNormalizer()</pre>
 <div class="block">Generates a new <a href="../../../../org/tribuo/math/util/VectorNormalizer.html" title="interface in org.tribuo.math.util"><code>VectorNormalizer</code></a> which normalizes the predictions into [0,1].</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -218,7 +218,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockListLast">
 <li class="blockList">
 <h4>isProbabilistic</h4>
-<pre>boolean&nbsp;<a href="../../../../src-html/org/tribuo/classification/sgd/LabelObjective.html#line.52">isProbabilistic</a>()</pre>
+<pre>boolean&nbsp;isProbabilistic()</pre>
 <div class="block">Does the objective function score probabilities or not?</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -294,6 +294,6 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

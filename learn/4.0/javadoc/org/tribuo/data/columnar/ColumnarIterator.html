@@ -121,7 +121,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public abstract class <a href="../../../../src-html/org/tribuo/data/columnar/ColumnarIterator.html#line.36">ColumnarIterator</a>
+<pre>public abstract class <span class="typeNameLabel">ColumnarIterator</span>
 extends com.oracle.labs.mlrg.olcut.util.IOSpliterator&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarIterator.Row.html" title="class in org.tribuo.data.columnar">ColumnarIterator.Row</a>&gt;
 implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarIterator.Row.html" title="class in org.tribuo.data.columnar">ColumnarIterator.Row</a>&gt;</pre>
 <div class="block">An abstract class for iterators that read data in to a columnar format, usually from a file of some kind. Subclasses
@@ -318,7 +318,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator
 <ul class="blockList">
 <li class="blockList">
 <h4>fields</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt; <a href="../../../../src-html/org/tribuo/data/columnar/ColumnarIterator.html#line.39">fields</a></pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt; fields</pre>
 </li>
 </ul>
 <a name="currentRow">
@@ -327,7 +327,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator
 <ul class="blockListLast">
 <li class="blockList">
 <h4>currentRow</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarIterator.Row.html" title="class in org.tribuo.data.columnar">ColumnarIterator.Row</a>&gt; <a href="../../../../src-html/org/tribuo/data/columnar/ColumnarIterator.html#line.40">currentRow</a></pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarIterator.Row.html" title="class in org.tribuo.data.columnar">ColumnarIterator.Row</a>&gt; currentRow</pre>
 </li>
 </ul>
 </li>
@@ -344,7 +344,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator
 <ul class="blockList">
 <li class="blockList">
 <h4>ColumnarIterator</h4>
-<pre>protected&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/ColumnarIterator.html#line.84">ColumnarIterator</a>()</pre>
+<pre>protected&nbsp;ColumnarIterator()</pre>
 <div class="block">Constructs a ColumnarIterator wrapped around a buffering spliterator.
  <p>
  Note when using this constructor you must set the <code>fields</code> field to
@@ -357,7 +357,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ColumnarIterator</h4>
-<pre>protected&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/ColumnarIterator.html#line.97">ColumnarIterator</a>(int&nbsp;characteristics,
+<pre>protected&nbsp;ColumnarIterator(int&nbsp;characteristics,
                            int&nbsp;batchsize,
                            long&nbsp;estimatedSize)</pre>
 <div class="block">Constructs a ColumnarIterator wrapped around a buffering spliterator.
@@ -386,7 +386,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator
 <ul class="blockList">
 <li class="blockList">
 <h4>getFields</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/ColumnarIterator.html#line.105">getFields</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;getFields()</pre>
 <div class="block">The immutable list of field names.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -400,7 +400,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator
 <ul class="blockList">
 <li class="blockList">
 <h4>hasNext</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/ColumnarIterator.html#line.110">hasNext</a>()</pre>
+<pre>public&nbsp;boolean&nbsp;hasNext()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#hasNext--" title="class or interface in java.util">hasNext</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarIterator.Row.html" title="class in org.tribuo.data.columnar">ColumnarIterator.Row</a>&gt;</code></dd>
@@ -413,7 +413,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator
 <ul class="blockList">
 <li class="blockList">
 <h4>next</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/data/columnar/ColumnarIterator.Row.html" title="class in org.tribuo.data.columnar">ColumnarIterator.Row</a>&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/ColumnarIterator.html#line.120">next</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/data/columnar/ColumnarIterator.Row.html" title="class in org.tribuo.data.columnar">ColumnarIterator.Row</a>&nbsp;next()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#next--" title="class or interface in java.util">next</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarIterator.Row.html" title="class in org.tribuo.data.columnar">ColumnarIterator.Row</a>&gt;</code></dd>
@@ -426,7 +426,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator
 <ul class="blockList">
 <li class="blockList">
 <h4>tryAdvance</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/ColumnarIterator.html#line.131">tryAdvance</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html?is-external=true" title="class or interface in java.util.function">Consumer</a>&lt;? super <a href="../../../../org/tribuo/data/columnar/ColumnarIterator.Row.html" title="class in org.tribuo.data.columnar">ColumnarIterator.Row</a>&gt;&nbsp;action)</pre>
+<pre>public&nbsp;boolean&nbsp;tryAdvance(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html?is-external=true" title="class or interface in java.util.function">Consumer</a>&lt;? super <a href="../../../../org/tribuo/data/columnar/ColumnarIterator.Row.html" title="class in org.tribuo.data.columnar">ColumnarIterator.Row</a>&gt;&nbsp;action)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Spliterator.html?is-external=true#tryAdvance-java.util.function.Consumer-" title="class or interface in java.util">tryAdvance</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Spliterator.html?is-external=true" title="class or interface in java.util">Spliterator</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarIterator.Row.html" title="class in org.tribuo.data.columnar">ColumnarIterator.Row</a>&gt;</code></dd>
@@ -439,7 +439,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator
 <ul class="blockList">
 <li class="blockList">
 <h4>forEachRemaining</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/ColumnarIterator.html#line.141">forEachRemaining</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html?is-external=true" title="class or interface in java.util.function">Consumer</a>&lt;? super <a href="../../../../org/tribuo/data/columnar/ColumnarIterator.Row.html" title="class in org.tribuo.data.columnar">ColumnarIterator.Row</a>&gt;&nbsp;action)</pre>
+<pre>public&nbsp;void&nbsp;forEachRemaining(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Consumer.html?is-external=true" title="class or interface in java.util.function">Consumer</a>&lt;? super <a href="../../../../org/tribuo/data/columnar/ColumnarIterator.Row.html" title="class in org.tribuo.data.columnar">ColumnarIterator.Row</a>&gt;&nbsp;action)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true#forEachRemaining-java.util.function.Consumer-" title="class or interface in java.util">forEachRemaining</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarIterator.Row.html" title="class in org.tribuo.data.columnar">ColumnarIterator.Row</a>&gt;</code></dd>
@@ -454,7 +454,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getRow</h4>
-<pre>protected abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarIterator.Row.html" title="class in org.tribuo.data.columnar">ColumnarIterator.Row</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/ColumnarIterator.html#line.152">getRow</a>()</pre>
+<pre>protected abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarIterator.Row.html" title="class in org.tribuo.data.columnar">ColumnarIterator.Row</a>&gt;&nbsp;getRow()</pre>
 <div class="block">Returns the next row of data based on internal state stored by the implementor, or <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true#empty--" title="class or interface in java.util"><code>Optional.empty()</code></a>
  if there is no more data.</div>
 <dl>
@@ -531,6 +531,6 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

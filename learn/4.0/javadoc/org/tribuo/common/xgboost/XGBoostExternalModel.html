@@ -122,7 +122,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public final class <a href="../../../../src-html/org/tribuo/common/xgboost/XGBoostExternalModel.html#line.83">XGBoostExternalModel</a>&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public final class <span class="typeNameLabel">XGBoostExternalModel&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="../../../../org/tribuo/interop/ExternalModel.html" title="class in org.tribuo.interop">ExternalModel</a>&lt;T,ml.dmlc.xgboost4j.java.DMatrix,float[][]&gt;</pre>
 <div class="block">A <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo"><code>Model</code></a> which wraps around a XGBoost.Booster which was trained by a system other than Tribuo.
  <p>
@@ -326,7 +326,7 @@ extends <a href="../../../../org/tribuo/interop/ExternalModel.html" title="class
 <ul class="blockListLast">
 <li class="blockList">
 <h4>model</h4>
-<pre>protected transient&nbsp;ml.dmlc.xgboost4j.java.Booster <a href="../../../../src-html/org/tribuo/common/xgboost/XGBoostExternalModel.html#line.93">model</a></pre>
+<pre>protected transient&nbsp;ml.dmlc.xgboost4j.java.Booster model</pre>
 <div class="block">Transient as we rely upon the native serialisation mechanism to bytes rather than Java serializing the Booster.</div>
 </li>
 </ul>
@@ -344,7 +344,7 @@ extends <a href="../../../../org/tribuo/interop/ExternalModel.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>convertFeatures</h4>
-<pre>protected&nbsp;ml.dmlc.xgboost4j.java.DMatrix&nbsp;<a href="../../../../src-html/org/tribuo/common/xgboost/XGBoostExternalModel.html#line.115">convertFeatures</a>(<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;input)</pre>
+<pre>protected&nbsp;ml.dmlc.xgboost4j.java.DMatrix&nbsp;convertFeatures(<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;input)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/interop/ExternalModel.html#convertFeatures-org.tribuo.math.la.SparseVector-">ExternalModel</a></code></span></div>
 <div class="block">Converts from a SparseVector using the external model's indices into
  the ingestion format for the external model.</div>
@@ -364,7 +364,7 @@ extends <a href="../../../../org/tribuo/interop/ExternalModel.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>convertFeaturesList</h4>
-<pre>protected&nbsp;ml.dmlc.xgboost4j.java.DMatrix&nbsp;<a href="../../../../src-html/org/tribuo/common/xgboost/XGBoostExternalModel.html#line.125">convertFeaturesList</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&gt;&nbsp;input)</pre>
+<pre>protected&nbsp;ml.dmlc.xgboost4j.java.DMatrix&nbsp;convertFeaturesList(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&gt;&nbsp;input)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/interop/ExternalModel.html#convertFeaturesList-java.util.List-">ExternalModel</a></code></span></div>
 <div class="block">Converts from a list of SparseVector using the external model's indices
  into the ingestion format for the external model.</div>
@@ -384,7 +384,7 @@ extends <a href="../../../../org/tribuo/interop/ExternalModel.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>externalPrediction</h4>
-<pre>protected&nbsp;float[][]&nbsp;<a href="../../../../src-html/org/tribuo/common/xgboost/XGBoostExternalModel.html#line.135">externalPrediction</a>(ml.dmlc.xgboost4j.java.DMatrix&nbsp;input)</pre>
+<pre>protected&nbsp;float[][]&nbsp;externalPrediction(ml.dmlc.xgboost4j.java.DMatrix&nbsp;input)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/interop/ExternalModel.html#externalPrediction-U-">ExternalModel</a></code></span></div>
 <div class="block">Runs the external model's prediction function.</div>
 <dl>
@@ -403,7 +403,7 @@ extends <a href="../../../../org/tribuo/interop/ExternalModel.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>convertOutput</h4>
-<pre>protected&nbsp;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/common/xgboost/XGBoostExternalModel.html" title="type parameter in XGBoostExternalModel">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/xgboost/XGBoostExternalModel.html#line.145">convertOutput</a>(float[][]&nbsp;output,
+<pre>protected&nbsp;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/common/xgboost/XGBoostExternalModel.html" title="type parameter in XGBoostExternalModel">T</a>&gt;&nbsp;convertOutput(float[][]&nbsp;output,
                                       int&nbsp;numValidFeatures,
                                       <a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/common/xgboost/XGBoostExternalModel.html" title="type parameter in XGBoostExternalModel">T</a>&gt;&nbsp;example)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/interop/ExternalModel.html#convertOutput-V-int-org.tribuo.Example-">ExternalModel</a></code></span></div>
@@ -426,7 +426,7 @@ extends <a href="../../../../org/tribuo/interop/ExternalModel.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>convertOutput</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/common/xgboost/XGBoostExternalModel.html" title="type parameter in XGBoostExternalModel">T</a>&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/xgboost/XGBoostExternalModel.html#line.151">convertOutput</a>(float[][]&nbsp;output,
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/common/xgboost/XGBoostExternalModel.html" title="type parameter in XGBoostExternalModel">T</a>&gt;&gt;&nbsp;convertOutput(float[][]&nbsp;output,
                                             int[]&nbsp;numValidFeatures,
                                             <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/common/xgboost/XGBoostExternalModel.html" title="type parameter in XGBoostExternalModel">T</a>&gt;&gt;&nbsp;examples)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/interop/ExternalModel.html#convertOutput-V-int:A-java.util.List-">ExternalModel</a></code></span></div>
@@ -449,7 +449,7 @@ extends <a href="../../../../org/tribuo/interop/ExternalModel.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>getTopFeatures</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/xgboost/XGBoostExternalModel.html#line.156">getTopFeatures</a>(int&nbsp;n)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&gt;&gt;&nbsp;getTopFeatures(int&nbsp;n)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/Model.html#getTopFeatures-int-">Model</a></code></span></div>
 <div class="block">Gets the top <code>n</code> features associated with this model.
  <p>
@@ -477,7 +477,7 @@ extends <a href="../../../../org/tribuo/interop/ExternalModel.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>protected&nbsp;<a href="../../../../org/tribuo/common/xgboost/XGBoostExternalModel.html" title="class in org.tribuo.common.xgboost">XGBoostExternalModel</a>&lt;<a href="../../../../org/tribuo/common/xgboost/XGBoostExternalModel.html" title="type parameter in XGBoostExternalModel">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/xgboost/XGBoostExternalModel.html#line.191">copy</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newName,
+<pre>protected&nbsp;<a href="../../../../org/tribuo/common/xgboost/XGBoostExternalModel.html" title="class in org.tribuo.common.xgboost">XGBoostExternalModel</a>&lt;<a href="../../../../org/tribuo/common/xgboost/XGBoostExternalModel.html" title="type parameter in XGBoostExternalModel">T</a>&gt;&nbsp;copy(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newName,
                                        <a href="../../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;newProvenance)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/Model.html#copy-java.lang.String-org.tribuo.provenance.ModelProvenance-">Model</a></code></span></div>
 <div class="block">Copies a model, replacing it's provenance and name with the supplied values.
@@ -500,7 +500,7 @@ extends <a href="../../../../org/tribuo/interop/ExternalModel.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>createXGBoostModel</h4>
-<pre>public static&nbsp;&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../../org/tribuo/common/xgboost/XGBoostExternalModel.html" title="class in org.tribuo.common.xgboost">XGBoostExternalModel</a>&lt;T&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/xgboost/XGBoostExternalModel.html#line.207">createXGBoostModel</a>(<a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;T&gt;&nbsp;factory,
+<pre>public static&nbsp;&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../../org/tribuo/common/xgboost/XGBoostExternalModel.html" title="class in org.tribuo.common.xgboost">XGBoostExternalModel</a>&lt;T&gt;&nbsp;createXGBoostModel(<a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;T&gt;&nbsp;factory,
                                                                                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;featureMapping,
                                                                                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;T,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;outputMapping,
                                                                                <a href="../../../../org/tribuo/common/xgboost/XGBoostOutputConverter.html" title="interface in org.tribuo.common.xgboost">XGBoostOutputConverter</a>&lt;T&gt;&nbsp;outputFunc,
@@ -526,7 +526,7 @@ extends <a href="../../../../org/tribuo/interop/ExternalModel.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>createXGBoostModel</h4>
-<pre>public static&nbsp;&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../../org/tribuo/common/xgboost/XGBoostExternalModel.html" title="class in org.tribuo.common.xgboost">XGBoostExternalModel</a>&lt;T&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/xgboost/XGBoostExternalModel.html#line.226">createXGBoostModel</a>(<a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;T&gt;&nbsp;factory,
+<pre>public static&nbsp;&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../../org/tribuo/common/xgboost/XGBoostExternalModel.html" title="class in org.tribuo.common.xgboost">XGBoostExternalModel</a>&lt;T&gt;&nbsp;createXGBoostModel(<a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;T&gt;&nbsp;factory,
                                                                                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;featureMapping,
                                                                                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;T,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;outputMapping,
                                                                                <a href="../../../../org/tribuo/common/xgboost/XGBoostOutputConverter.html" title="interface in org.tribuo.common.xgboost">XGBoostOutputConverter</a>&lt;T&gt;&nbsp;outputFunc,
@@ -552,7 +552,7 @@ extends <a href="../../../../org/tribuo/interop/ExternalModel.html" title="class
 <ul class="blockListLast">
 <li class="blockList">
 <h4>createXGBoostModel</h4>
-<pre>public static&nbsp;&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../../org/tribuo/common/xgboost/XGBoostExternalModel.html" title="class in org.tribuo.common.xgboost">XGBoostExternalModel</a>&lt;T&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/xgboost/XGBoostExternalModel.html#line.253">createXGBoostModel</a>(<a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;T&gt;&nbsp;factory,
+<pre>public static&nbsp;&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../../org/tribuo/common/xgboost/XGBoostExternalModel.html" title="class in org.tribuo.common.xgboost">XGBoostExternalModel</a>&lt;T&gt;&nbsp;createXGBoostModel(<a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;T&gt;&nbsp;factory,
                                                                                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;featureMapping,
                                                                                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;T,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;outputMapping,
                                                                                <a href="../../../../org/tribuo/common/xgboost/XGBoostOutputConverter.html" title="interface in org.tribuo.common.xgboost">XGBoostOutputConverter</a>&lt;T&gt;&nbsp;outputFunc,
@@ -649,6 +649,6 @@ extends <a href="../../../../org/tribuo/interop/ExternalModel.html" title="class
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

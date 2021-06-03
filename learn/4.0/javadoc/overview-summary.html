@@ -72,8 +72,8 @@
 <h1 class="title">Tribuo 4.0.2 API</h1>
 </div>
 <div class="contentContainer">
-<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Packages table, listing packages, and an explanation">
-<caption><span>Packages</span><span class="tabEnd">&nbsp;</span></caption>
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Core Packages table, listing packages, and an explanation">
+<caption><span>Core Packages</span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
 <th class="colFirst" scope="col">Package</th>
 <th class="colLast" scope="col">Description</th>
@@ -86,195 +86,206 @@
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/anomaly/package-summary.html">org.tribuo.anomaly</a></td>
+<td class="colFirst"><a href="org/tribuo/data/package-summary.html">org.tribuo.data</a></td>
 <td class="colLast">
-<div class="block">Provides classes and infrastructure for anomaly detection problems.</div>
+<div class="block">Provides classes for loading in data from disk, processing it into examples, and splitting datasets for
+ things like cross-validation and train-test splits.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/anomaly/evaluation/package-summary.html">org.tribuo.anomaly.evaluation</a></td>
+<td class="colFirst"><a href="org/tribuo/data/columnar/package-summary.html">org.tribuo.data.columnar</a></td>
 <td class="colLast">
-<div class="block">Evaluation classes for anomaly detection.</div>
+<div class="block">Provides classes for processing columnar data and generating <a href="org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a>s.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/anomaly/example/package-summary.html">org.tribuo.anomaly.example</a></td>
+<td class="colFirst"><a href="org/tribuo/data/columnar/extractors/package-summary.html">org.tribuo.data.columnar.extractors</a></td>
 <td class="colLast">
-<div class="block">Provides a anomaly data generator used for testing implementations.</div>
+<div class="block">Provides implementations of <a href="org/tribuo/data/columnar/FieldExtractor.html" title="interface in org.tribuo.data.columnar"><code>FieldExtractor</code></a>.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/anomaly/libsvm/package-summary.html">org.tribuo.anomaly.libsvm</a></td>
+<td class="colFirst"><a href="org/tribuo/data/columnar/processors/feature/package-summary.html">org.tribuo.data.columnar.processors.feature</a></td>
 <td class="colLast">
-<div class="block">Provides an interface to LibSVM for anomaly detection problems.</div>
+<div class="block">Provides implementations of <a href="org/tribuo/data/columnar/FeatureProcessor.html" title="interface in org.tribuo.data.columnar"><code>FeatureProcessor</code></a>.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/classification/package-summary.html">org.tribuo.classification</a></td>
+<td class="colFirst"><a href="org/tribuo/data/columnar/processors/field/package-summary.html">org.tribuo.data.columnar.processors.field</a></td>
 <td class="colLast">
-<div class="block">Provides classes and infrastructure for multiclass classification problems.</div>
+<div class="block">Provides implementations of <a href="org/tribuo/data/columnar/FieldProcessor.html" title="interface in org.tribuo.data.columnar"><code>FieldProcessor</code></a>.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/classification/baseline/package-summary.html">org.tribuo.classification.baseline</a></td>
+<td class="colFirst"><a href="org/tribuo/data/columnar/processors/response/package-summary.html">org.tribuo.data.columnar.processors.response</a></td>
 <td class="colLast">
-<div class="block">Provides simple baseline multiclass classifiers.</div>
+<div class="block">Provides implementations of <a href="org/tribuo/data/columnar/ResponseProcessor.html" title="interface in org.tribuo.data.columnar"><code>ResponseProcessor</code></a>.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/classification/dtree/package-summary.html">org.tribuo.classification.dtree</a></td>
+<td class="colFirst"><a href="org/tribuo/data/csv/package-summary.html">org.tribuo.data.csv</a></td>
 <td class="colLast">
-<div class="block">Provides implementations of decision trees for classification problems.</div>
+<div class="block">Provides classes which can load columnar data (using a <a href="org/tribuo/data/columnar/RowProcessor.html" title="class in org.tribuo.data.columnar"><code>RowProcessor</code></a>)
+ from a CSV (or other character delimited format) file.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/classification/dtree/impl/package-summary.html">org.tribuo.classification.dtree.impl</a></td>
+<td class="colFirst"><a href="org/tribuo/data/sql/package-summary.html">org.tribuo.data.sql</a></td>
 <td class="colLast">
-<div class="block">Provides internal implementation classes for classification decision trees.</div>
+<div class="block">Provides classes which can load columnar data (using a <a href="org/tribuo/data/columnar/RowProcessor.html" title="class in org.tribuo.data.columnar"><code>RowProcessor</code></a>)
+ from a SQL source.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/classification/dtree/impurity/package-summary.html">org.tribuo.classification.dtree.impurity</a></td>
+<td class="colFirst"><a href="org/tribuo/data/text/package-summary.html">org.tribuo.data.text</a></td>
 <td class="colLast">
-<div class="block">Provides classification impurity metrics for decision trees.</div>
+<div class="block">Provides interfaces for converting text inputs into <a href="org/tribuo/Feature.html" title="class in org.tribuo"><code>Feature</code></a>s and <a href="org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a>s.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/classification/ensemble/package-summary.html">org.tribuo.classification.ensemble</a></td>
+<td class="colFirst"><a href="org/tribuo/data/text/impl/package-summary.html">org.tribuo.data.text.impl</a></td>
 <td class="colLast">
-<div class="block">Provides majority vote ensemble combiners for classification
- along with an implementation of multiclass Adaboost.</div>
+<div class="block">Provides implementations of text data processors.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/classification/evaluation/package-summary.html">org.tribuo.classification.evaluation</a></td>
+<td class="colFirst"><a href="org/tribuo/dataset/package-summary.html">org.tribuo.dataset</a></td>
 <td class="colLast">
-<div class="block">Evaluation classes for multi-class classification.</div>
+<div class="block">Provides utility datasets which subsample or otherwise
+ transform the wrapped dataset.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/classification/example/package-summary.html">org.tribuo.classification.example</a></td>
+<td class="colFirst"><a href="org/tribuo/datasource/package-summary.html">org.tribuo.datasource</a></td>
 <td class="colLast">
-<div class="block">Provides a multiclass data generator used for testing implementations.</div>
+<div class="block">Simple data sources for ingesting or aggregating data.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/classification/experiments/package-summary.html">org.tribuo.classification.experiments</a></td>
+<td class="colFirst"><a href="org/tribuo/ensemble/package-summary.html">org.tribuo.ensemble</a></td>
 <td class="colLast">
-<div class="block">Provides a set of main methods for interacting with classification tasks.</div>
+<div class="block">Provides an interface for model prediction combinations,
+ two base classes for ensemble models, a base class for
+ ensemble excuses, and a Bagging implementation.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/classification/explanations/package-summary.html">org.tribuo.classification.explanations</a></td>
+<td class="colFirst"><a href="org/tribuo/evaluation/package-summary.html">org.tribuo.evaluation</a></td>
 <td class="colLast">
-<div class="block">Provides core infrastructure for local model based explanations.</div>
+<div class="block">Evaluation base classes, along with code for train/test splits and cross validation.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/classification/explanations/lime/package-summary.html">org.tribuo.classification.explanations.lime</a></td>
+<td class="colFirst"><a href="org/tribuo/evaluation/metrics/package-summary.html">org.tribuo.evaluation.metrics</a></td>
 <td class="colLast">
-<div class="block">Provides an implementation of LIME (Locally Interpretable Model Explanations).</div>
+<div class="block">This package contains the infrastructure classes for building evaluation metrics.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/classification/liblinear/package-summary.html">org.tribuo.classification.liblinear</a></td>
+<td class="colFirst"><a href="org/tribuo/hash/package-summary.html">org.tribuo.hash</a></td>
 <td class="colLast">
-<div class="block">Provides an interface to LibLinear-java for classification problems.</div>
+<div class="block">Provides the base interface and implementations of the <a href="org/tribuo/Model.html" title="class in org.tribuo"><code>Model</code></a> hashing
+ which obscures the feature names stored in a model.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/classification/libsvm/package-summary.html">org.tribuo.classification.libsvm</a></td>
+<td class="colFirst"><a href="org/tribuo/impl/package-summary.html">org.tribuo.impl</a></td>
 <td class="colLast">
-<div class="block">Provides an interface to LibSVM for classification problems.</div>
+<div class="block">Provides implementations of base classes and interfaces from <a href="org/tribuo/package-summary.html"><code>org.tribuo</code></a>.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/classification/mnb/package-summary.html">org.tribuo.classification.mnb</a></td>
+<td class="colFirst"><a href="org/tribuo/json/package-summary.html">org.tribuo.json</a></td>
 <td class="colLast">
-<div class="block">Provides an implementation of multinomial naive bayes (i.e., naive bayes for non-negative count data).</div>
+<div class="block">Provides interop with JSON formatted data, along with tools for interacting with JSON provenance objects.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/classification/sequence/package-summary.html">org.tribuo.classification.sequence</a></td>
+<td class="colFirst"><a href="org/tribuo/math/package-summary.html">org.tribuo.math</a></td>
 <td class="colLast">
-<div class="block">Provides infrastructure for <a href="org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence"><code>SequenceModel</code></a>s which
- emit <a href="org/tribuo/classification/Label.html" title="class in org.tribuo.classification"><code>Label</code></a>s at each step of the sequence.</div>
+<div class="block">Contains the implementation of Tribuo's math library, it's gradient descent optimisers, kernels and a set of
+ math related utils.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/classification/sequence/example/package-summary.html">org.tribuo.classification.sequence.example</a></td>
+<td class="colFirst"><a href="org/tribuo/math/kernel/package-summary.html">org.tribuo.math.kernel</a></td>
 <td class="colLast">
-<div class="block">Provides a classification sequence data generator for smoke testing implementations.</div>
+<div class="block">Provides a <a href="org/tribuo/math/kernel/Kernel.html" title="interface in org.tribuo.math.kernel"><code>Kernel</code></a> interface for Mercer kernels, along with implementations of standard kernels.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/classification/sequence/viterbi/package-summary.html">org.tribuo.classification.sequence.viterbi</a></td>
+<td class="colFirst"><a href="org/tribuo/math/la/package-summary.html">org.tribuo.math.la</a></td>
 <td class="colLast">
-<div class="block">Provides an implementation of Viterbi for generating structured outputs, which can sit on top of any
- <a href="org/tribuo/classification/Label.html" title="class in org.tribuo.classification"><code>Label</code></a> based classification model.</div>
+<div class="block">Provides a linear algebra system used for numerical operations in Tribuo.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/classification/sgd/package-summary.html">org.tribuo.classification.sgd</a></td>
+<td class="colFirst"><a href="org/tribuo/math/optimisers/package-summary.html">org.tribuo.math.optimisers</a></td>
 <td class="colLast">
-<div class="block">Provides infrastructure for Stochastic Gradient Descent for classification problems.</div>
+<div class="block">Provides implementations of <a href="org/tribuo/math/StochasticGradientOptimiser.html" title="interface in org.tribuo.math"><code>StochasticGradientOptimiser</code></a>.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/classification/sgd/crf/package-summary.html">org.tribuo.classification.sgd.crf</a></td>
+<td class="colFirst"><a href="org/tribuo/math/optimisers/util/package-summary.html">org.tribuo.math.optimisers.util</a></td>
 <td class="colLast">
-<div class="block">Provides an implementation of a linear chain CRF trained using Stochastic Gradient Descent.</div>
+<div class="block">Provides some utility tensors for use in gradient optimisers.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/classification/sgd/kernel/package-summary.html">org.tribuo.classification.sgd.kernel</a></td>
+<td class="colFirst"><a href="org/tribuo/math/util/package-summary.html">org.tribuo.math.util</a></td>
 <td class="colLast">
-<div class="block">Provides a SGD implementation of a Kernel SVM using the Pegasos algorithm.</div>
+<div class="block">Provides math related util classes.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/classification/sgd/linear/package-summary.html">org.tribuo.classification.sgd.linear</a></td>
+<td class="colFirst"><a href="org/tribuo/provenance/package-summary.html">org.tribuo.provenance</a></td>
 <td class="colLast">
-<div class="block">Provides an implementation of a classification linear model using Stochastic Gradient Descent.</div>
+<div class="block">Provides Tribuo specific infrastructure for the
+ <code>Provenance</code> system which
+ tracks models and datasets.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/classification/sgd/objectives/package-summary.html">org.tribuo.classification.sgd.objectives</a></td>
+<td class="colFirst"><a href="org/tribuo/provenance/impl/package-summary.html">org.tribuo.provenance.impl</a></td>
 <td class="colLast">
-<div class="block">Provides classification loss functions for Stochastic Gradient Descent.</div>
+<div class="block">Provides internal implementations for empty provenance classes and TrainerProvenance.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/classification/xgboost/package-summary.html">org.tribuo.classification.xgboost</a></td>
+<td class="colFirst"><a href="org/tribuo/sequence/package-summary.html">org.tribuo.sequence</a></td>
 <td class="colLast">
-<div class="block">Provides an interface to XGBoost for classification problems.</div>
+<div class="block">Provides core classes for working with sequences of <a href="org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a>s.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/clustering/package-summary.html">org.tribuo.clustering</a></td>
+<td class="colFirst"><a href="org/tribuo/transform/package-summary.html">org.tribuo.transform</a></td>
 <td class="colLast">
-<div class="block">Provides classes and infrastructure for working with clustering problems.</div>
+<div class="block">Provides infrastructure for applying transformations to a <a href="org/tribuo/Dataset.html" title="class in org.tribuo"><code>Dataset</code></a>.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/clustering/evaluation/package-summary.html">org.tribuo.clustering.evaluation</a></td>
+<td class="colFirst"><a href="org/tribuo/transform/transformations/package-summary.html">org.tribuo.transform.transformations</a></td>
 <td class="colLast">
-<div class="block">Evaluation classes for clustering.</div>
+<div class="block">Provides implementations of standard transformations like binning, scaling, taking logs and exponents.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/clustering/example/package-summary.html">org.tribuo.clustering.example</a></td>
+<td class="colFirst"><a href="org/tribuo/util/package-summary.html">org.tribuo.util</a></td>
 <td class="colLast">
-<div class="block">Provides a clustering data generator used for testing implementations.</div>
+<div class="block">Provides utilities which don't have other Tribuo dependencies.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/clustering/kmeans/package-summary.html">org.tribuo.clustering.kmeans</a></td>
-<td class="colLast">
-<div class="block">Provides a multithreaded implementation of K-Means, with a
- configurable distance function.</div>
-</td>
+</tbody>
+</table>
+</div>
+<div class="contentContainer">
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Shared Backend Packages table, listing packages, and an explanation">
+<caption><span>Shared Backend Packages</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Package</th>
+<th class="colLast" scope="col">Description</th>
 </tr>
+<tbody>
 <tr class="altColor">
 <td class="colFirst"><a href="org/tribuo/common/liblinear/package-summary.html">org.tribuo.common.liblinear</a></td>
 <td class="colLast">
@@ -314,185 +325,240 @@
  dependent parts.</div>
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+<div class="contentContainer">
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Anomaly Detection Packages table, listing packages, and an explanation">
+<caption><span>Anomaly Detection Packages</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Package</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/data/package-summary.html">org.tribuo.data</a></td>
+<td class="colFirst"><a href="org/tribuo/anomaly/package-summary.html">org.tribuo.anomaly</a></td>
 <td class="colLast">
-<div class="block">Provides classes for loading in data from disk, processing it into examples, and splitting datasets for
- things like cross-validation and train-test splits.</div>
+<div class="block">Provides classes and infrastructure for anomaly detection problems.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/data/columnar/package-summary.html">org.tribuo.data.columnar</a></td>
+<td class="colFirst"><a href="org/tribuo/anomaly/evaluation/package-summary.html">org.tribuo.anomaly.evaluation</a></td>
 <td class="colLast">
-<div class="block">Provides classes for processing columnar data and generating <a href="org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a>s.</div>
+<div class="block">Evaluation classes for anomaly detection.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/data/columnar/extractors/package-summary.html">org.tribuo.data.columnar.extractors</a></td>
+<td class="colFirst"><a href="org/tribuo/anomaly/example/package-summary.html">org.tribuo.anomaly.example</a></td>
 <td class="colLast">
-<div class="block">Provides implementations of <a href="org/tribuo/data/columnar/FieldExtractor.html" title="interface in org.tribuo.data.columnar"><code>FieldExtractor</code></a>.</div>
+<div class="block">Provides a anomaly data generator used for testing implementations.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/data/columnar/processors/feature/package-summary.html">org.tribuo.data.columnar.processors.feature</a></td>
+<td class="colFirst"><a href="org/tribuo/anomaly/libsvm/package-summary.html">org.tribuo.anomaly.libsvm</a></td>
 <td class="colLast">
-<div class="block">Provides implementations of <a href="org/tribuo/data/columnar/FeatureProcessor.html" title="interface in org.tribuo.data.columnar"><code>FeatureProcessor</code></a>.</div>
+<div class="block">Provides an interface to LibSVM for anomaly detection problems.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="contentContainer">
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Multi-class Classification Packages table, listing packages, and an explanation">
+<caption><span>Multi-class Classification Packages</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Package</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a href="org/tribuo/classification/package-summary.html">org.tribuo.classification</a></td>
+<td class="colLast">
+<div class="block">Provides classes and infrastructure for multiclass classification problems.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="org/tribuo/classification/baseline/package-summary.html">org.tribuo.classification.baseline</a></td>
+<td class="colLast">
+<div class="block">Provides simple baseline multiclass classifiers.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/data/columnar/processors/field/package-summary.html">org.tribuo.data.columnar.processors.field</a></td>
+<td class="colFirst"><a href="org/tribuo/classification/dtree/package-summary.html">org.tribuo.classification.dtree</a></td>
 <td class="colLast">
-<div class="block">Provides implementations of <a href="org/tribuo/data/columnar/FieldProcessor.html" title="interface in org.tribuo.data.columnar"><code>FieldProcessor</code></a>.</div>
+<div class="block">Provides implementations of decision trees for classification problems.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/data/columnar/processors/response/package-summary.html">org.tribuo.data.columnar.processors.response</a></td>
+<td class="colFirst"><a href="org/tribuo/classification/dtree/impl/package-summary.html">org.tribuo.classification.dtree.impl</a></td>
 <td class="colLast">
-<div class="block">Provides implementations of <a href="org/tribuo/data/columnar/ResponseProcessor.html" title="interface in org.tribuo.data.columnar"><code>ResponseProcessor</code></a>.</div>
+<div class="block">Provides internal implementation classes for classification decision trees.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/data/csv/package-summary.html">org.tribuo.data.csv</a></td>
+<td class="colFirst"><a href="org/tribuo/classification/dtree/impurity/package-summary.html">org.tribuo.classification.dtree.impurity</a></td>
 <td class="colLast">
-<div class="block">Provides classes which can load columnar data (using a <a href="org/tribuo/data/columnar/RowProcessor.html" title="class in org.tribuo.data.columnar"><code>RowProcessor</code></a>)
- from a CSV (or other character delimited format) file.</div>
+<div class="block">Provides classification impurity metrics for decision trees.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/data/sql/package-summary.html">org.tribuo.data.sql</a></td>
+<td class="colFirst"><a href="org/tribuo/classification/ensemble/package-summary.html">org.tribuo.classification.ensemble</a></td>
 <td class="colLast">
-<div class="block">Provides classes which can load columnar data (using a <a href="org/tribuo/data/columnar/RowProcessor.html" title="class in org.tribuo.data.columnar"><code>RowProcessor</code></a>)
- from a SQL source.</div>
+<div class="block">Provides majority vote ensemble combiners for classification
+ along with an implementation of multiclass Adaboost.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/data/text/package-summary.html">org.tribuo.data.text</a></td>
+<td class="colFirst"><a href="org/tribuo/classification/evaluation/package-summary.html">org.tribuo.classification.evaluation</a></td>
 <td class="colLast">
-<div class="block">Provides interfaces for converting text inputs into <a href="org/tribuo/Feature.html" title="class in org.tribuo"><code>Feature</code></a>s and <a href="org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a>s.</div>
+<div class="block">Evaluation classes for multi-class classification.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/data/text/impl/package-summary.html">org.tribuo.data.text.impl</a></td>
+<td class="colFirst"><a href="org/tribuo/classification/example/package-summary.html">org.tribuo.classification.example</a></td>
 <td class="colLast">
-<div class="block">Provides implementations of text data processors.</div>
+<div class="block">Provides a multiclass data generator used for testing implementations.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/dataset/package-summary.html">org.tribuo.dataset</a></td>
+<td class="colFirst"><a href="org/tribuo/classification/experiments/package-summary.html">org.tribuo.classification.experiments</a></td>
 <td class="colLast">
-<div class="block">Provides utility datasets which subsample or otherwise
- transform the wrapped dataset.</div>
+<div class="block">Provides a set of main methods for interacting with classification tasks.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/datasource/package-summary.html">org.tribuo.datasource</a></td>
+<td class="colFirst"><a href="org/tribuo/classification/explanations/package-summary.html">org.tribuo.classification.explanations</a></td>
 <td class="colLast">
-<div class="block">Simple data sources for ingesting or aggregating data.</div>
+<div class="block">Provides core infrastructure for local model based explanations.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/ensemble/package-summary.html">org.tribuo.ensemble</a></td>
+<td class="colFirst"><a href="org/tribuo/classification/explanations/lime/package-summary.html">org.tribuo.classification.explanations.lime</a></td>
 <td class="colLast">
-<div class="block">Provides an interface for model prediction combinations,
- two base classes for ensemble models, a base class for
- ensemble excuses, and a Bagging implementation.</div>
+<div class="block">Provides an implementation of LIME (Locally Interpretable Model Explanations).</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/evaluation/package-summary.html">org.tribuo.evaluation</a></td>
+<td class="colFirst"><a href="org/tribuo/classification/liblinear/package-summary.html">org.tribuo.classification.liblinear</a></td>
 <td class="colLast">
-<div class="block">Evaluation base classes, along with code for train/test splits and cross validation.</div>
+<div class="block">Provides an interface to LibLinear-java for classification problems.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/evaluation/metrics/package-summary.html">org.tribuo.evaluation.metrics</a></td>
+<td class="colFirst"><a href="org/tribuo/classification/libsvm/package-summary.html">org.tribuo.classification.libsvm</a></td>
 <td class="colLast">
-<div class="block">This package contains the infrastructure classes for building evaluation metrics.</div>
+<div class="block">Provides an interface to LibSVM for classification problems.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/hash/package-summary.html">org.tribuo.hash</a></td>
+<td class="colFirst"><a href="org/tribuo/classification/mnb/package-summary.html">org.tribuo.classification.mnb</a></td>
 <td class="colLast">
-<div class="block">Provides the base interface and implementations of the <a href="org/tribuo/Model.html" title="class in org.tribuo"><code>Model</code></a> hashing
- which obscures the feature names stored in a model.</div>
+<div class="block">Provides an implementation of multinomial naive bayes (i.e., naive bayes for non-negative count data).</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/impl/package-summary.html">org.tribuo.impl</a></td>
+<td class="colFirst"><a href="org/tribuo/classification/sequence/package-summary.html">org.tribuo.classification.sequence</a></td>
 <td class="colLast">
-<div class="block">Provides implementations of base classes and interfaces from <a href="org/tribuo/package-summary.html"><code>org.tribuo</code></a>.</div>
+<div class="block">Provides infrastructure for <a href="org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence"><code>SequenceModel</code></a>s which
+ emit <a href="org/tribuo/classification/Label.html" title="class in org.tribuo.classification"><code>Label</code></a>s at each step of the sequence.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/interop/package-summary.html">org.tribuo.interop</a></td>
+<td class="colFirst"><a href="org/tribuo/classification/sequence/example/package-summary.html">org.tribuo.classification.sequence.example</a></td>
 <td class="colLast">
-<div class="block">This package contains the abstract implementation of an external model
- trained by something outside of Tribuo.</div>
+<div class="block">Provides a classification sequence data generator for smoke testing implementations.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/interop/onnx/package-summary.html">org.tribuo.interop.onnx</a></td>
+<td class="colFirst"><a href="org/tribuo/classification/sequence/viterbi/package-summary.html">org.tribuo.classification.sequence.viterbi</a></td>
 <td class="colLast">
-<div class="block">This package contains a Tribuo wrapper around the ONNX Runtime.</div>
+<div class="block">Provides an implementation of Viterbi for generating structured outputs, which can sit on top of any
+ <a href="org/tribuo/classification/Label.html" title="class in org.tribuo.classification"><code>Label</code></a> based classification model.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/interop/tensorflow/package-summary.html">org.tribuo.interop.tensorflow</a></td>
+<td class="colFirst"><a href="org/tribuo/classification/sgd/package-summary.html">org.tribuo.classification.sgd</a></td>
 <td class="colLast">
-<div class="block">Provides an interface to Tensorflow, allowing the training of non-sequential models using any supported
- Tribuo output type.</div>
+<div class="block">Provides infrastructure for Stochastic Gradient Descent for classification problems.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/interop/tensorflow/sequence/package-summary.html">org.tribuo.interop.tensorflow.sequence</a></td>
+<td class="colFirst"><a href="org/tribuo/classification/sgd/crf/package-summary.html">org.tribuo.classification.sgd.crf</a></td>
 <td class="colLast">
-<div class="block">Provides an interface for working with Tensorflow sequence models, using Tribuo's
- <a href="org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence"><code>SequenceModel</code></a> abstraction.</div>
+<div class="block">Provides an implementation of a linear chain CRF trained using Stochastic Gradient Descent.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/json/package-summary.html">org.tribuo.json</a></td>
+<td class="colFirst"><a href="org/tribuo/classification/sgd/kernel/package-summary.html">org.tribuo.classification.sgd.kernel</a></td>
 <td class="colLast">
-<div class="block">Provides interop with JSON formatted data, along with tools for interacting with JSON provenance objects.</div>
+<div class="block">Provides a SGD implementation of a Kernel SVM using the Pegasos algorithm.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/math/package-summary.html">org.tribuo.math</a></td>
+<td class="colFirst"><a href="org/tribuo/classification/sgd/linear/package-summary.html">org.tribuo.classification.sgd.linear</a></td>
 <td class="colLast">
-<div class="block">Contains the implementation of Tribuo's math library, it's gradient descent optimisers, kernels and a set of
- math related utils.</div>
+<div class="block">Provides an implementation of a classification linear model using Stochastic Gradient Descent.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/math/kernel/package-summary.html">org.tribuo.math.kernel</a></td>
+<td class="colFirst"><a href="org/tribuo/classification/sgd/objectives/package-summary.html">org.tribuo.classification.sgd.objectives</a></td>
 <td class="colLast">
-<div class="block">Provides a <a href="org/tribuo/math/kernel/Kernel.html" title="interface in org.tribuo.math.kernel"><code>Kernel</code></a> interface for Mercer kernels, along with implementations of standard kernels.</div>
+<div class="block">Provides classification loss functions for Stochastic Gradient Descent.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/math/la/package-summary.html">org.tribuo.math.la</a></td>
+<td class="colFirst"><a href="org/tribuo/classification/xgboost/package-summary.html">org.tribuo.classification.xgboost</a></td>
 <td class="colLast">
-<div class="block">Provides a linear algebra system used for numerical operations in Tribuo.</div>
+<div class="block">Provides an interface to XGBoost for classification problems.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="contentContainer">
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Clustering Packages table, listing packages, and an explanation">
+<caption><span>Clustering Packages</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Package</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a href="org/tribuo/clustering/package-summary.html">org.tribuo.clustering</a></td>
+<td class="colLast">
+<div class="block">Provides classes and infrastructure for working with clustering problems.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/math/optimisers/package-summary.html">org.tribuo.math.optimisers</a></td>
+<td class="colFirst"><a href="org/tribuo/clustering/evaluation/package-summary.html">org.tribuo.clustering.evaluation</a></td>
 <td class="colLast">
-<div class="block">Provides implementations of <a href="org/tribuo/math/StochasticGradientOptimiser.html" title="interface in org.tribuo.math"><code>StochasticGradientOptimiser</code></a>.</div>
+<div class="block">Evaluation classes for clustering.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/math/optimisers/util/package-summary.html">org.tribuo.math.optimisers.util</a></td>
+<td class="colFirst"><a href="org/tribuo/clustering/example/package-summary.html">org.tribuo.clustering.example</a></td>
 <td class="colLast">
-<div class="block">Provides some utility tensors for use in gradient optimisers.</div>
+<div class="block">Provides a clustering data generator used for testing implementations.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/math/util/package-summary.html">org.tribuo.math.util</a></td>
+<td class="colFirst"><a href="org/tribuo/clustering/kmeans/package-summary.html">org.tribuo.clustering.kmeans</a></td>
 <td class="colLast">
-<div class="block">Provides math related util classes.</div>
+<div class="block">Provides a multithreaded implementation of K-Means, with a
+ configurable distance function.</div>
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+<div class="contentContainer">
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Multi-label Classification Packages table, listing packages, and an explanation">
+<caption><span>Multi-label Classification Packages</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Package</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
 <tr class="altColor">
 <td class="colFirst"><a href="org/tribuo/multilabel/package-summary.html">org.tribuo.multilabel</a></td>
 <td class="colLast">
@@ -519,20 +585,17 @@
 <div class="block">Provides a multi-label data generator for testing implementations.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/provenance/package-summary.html">org.tribuo.provenance</a></td>
-<td class="colLast">
-<div class="block">Provides Tribuo specific infrastructure for the
- <code>Provenance</code> system which
- tracks models and datasets.</div>
-</td>
+</tbody>
+</table>
+</div>
+<div class="contentContainer">
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Regression Packages table, listing packages, and an explanation">
+<caption><span>Regression Packages</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Package</th>
+<th class="colLast" scope="col">Description</th>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/provenance/impl/package-summary.html">org.tribuo.provenance.impl</a></td>
-<td class="colLast">
-<div class="block">Provides internal implementations for empty provenance classes and TrainerProvenance.</div>
-</td>
-</tr>
+<tbody>
 <tr class="altColor">
 <td class="colFirst"><a href="org/tribuo/regression/package-summary.html">org.tribuo.regression</a></td>
 <td class="colLast">
@@ -632,34 +695,59 @@
 <div class="block">Provides an interface to XGBoost for regression problems.</div>
 </td>
 </tr>
+</tbody>
+</table>
+</div>
+<div class="contentContainer">
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="External Interface Packages table, listing packages, and an explanation">
+<caption><span>External Interface Packages</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Package</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
 <tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/sequence/package-summary.html">org.tribuo.sequence</a></td>
+<td class="colFirst"><a href="org/tribuo/interop/package-summary.html">org.tribuo.interop</a></td>
 <td class="colLast">
-<div class="block">Provides core classes for working with sequences of <a href="org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a>s.</div>
+<div class="block">This package contains the abstract implementation of an external model
+ trained by something outside of Tribuo.</div>
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><a href="org/tribuo/interop/onnx/package-summary.html">org.tribuo.interop.onnx</a></td>
+<td class="colLast">
+<div class="block">This package contains a Tribuo wrapper around the ONNX Runtime.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="org/tribuo/interop/tensorflow/package-summary.html">org.tribuo.interop.tensorflow</a></td>
+<td class="colLast">
+<div class="block">Provides an interface to Tensorflow, allowing the training of non-sequential models using any supported
+ Tribuo output type.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="org/tribuo/interop/tensorflow/sequence/package-summary.html">org.tribuo.interop.tensorflow.sequence</a></td>
+<td class="colLast">
+<div class="block">Provides an interface for working with Tensorflow sequence models, using Tribuo's
+ <a href="org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence"><code>SequenceModel</code></a> abstraction.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="contentContainer">
+<table class="overviewSummary" border="0" cellpadding="3" cellspacing="0" summary="Utility Packages table, listing packages, and an explanation">
+<caption><span>Utility Packages</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Package</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
+<tr class="altColor">
 <td class="colFirst"><a href="org/tribuo/tests/package-summary.html">org.tribuo.tests</a></td>
 <td class="colLast">
 <div class="block">This package provides helper classes for Tribuo's unit tests.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/transform/package-summary.html">org.tribuo.transform</a></td>
-<td class="colLast">
-<div class="block">Provides infrastructure for applying transformations to a <a href="org/tribuo/Dataset.html" title="class in org.tribuo"><code>Dataset</code></a>.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><a href="org/tribuo/transform/transformations/package-summary.html">org.tribuo.transform.transformations</a></td>
-<td class="colLast">
-<div class="block">Provides implementations of standard transformations like binning, scaling, taking logs and exponents.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><a href="org/tribuo/util/package-summary.html">org.tribuo.util</a></td>
-<td class="colLast">
-<div class="block">Provides utilities which don't have other Tribuo dependencies.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -754,6 +842,6 @@
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

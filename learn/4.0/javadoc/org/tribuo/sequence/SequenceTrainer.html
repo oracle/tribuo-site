@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <a href="../../../src-html/org/tribuo/sequence/SequenceTrainer.html#line.31">SequenceTrainer</a>&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public interface <span class="typeNameLabel">SequenceTrainer&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&gt;</pre>
 <div class="block">An interface for things that can train sequence prediction models.</div>
 </li>
@@ -183,7 +183,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>train</h4>
-<pre>default&nbsp;<a href="../../../org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence">SequenceModel</a>&lt;<a href="../../../org/tribuo/sequence/SequenceTrainer.html" title="type parameter in SequenceTrainer">T</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceTrainer.html#line.38">train</a>(<a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class in org.tribuo.sequence">SequenceDataset</a>&lt;<a href="../../../org/tribuo/sequence/SequenceTrainer.html" title="type parameter in SequenceTrainer">T</a>&gt;&nbsp;examples)</pre>
+<pre>default&nbsp;<a href="../../../org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence">SequenceModel</a>&lt;<a href="../../../org/tribuo/sequence/SequenceTrainer.html" title="type parameter in SequenceTrainer">T</a>&gt;&nbsp;train(<a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class in org.tribuo.sequence">SequenceDataset</a>&lt;<a href="../../../org/tribuo/sequence/SequenceTrainer.html" title="type parameter in SequenceTrainer">T</a>&gt;&nbsp;examples)</pre>
 <div class="block">Trains a sequence prediction model using the examples in the given data set.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -199,7 +199,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>train</h4>
-<pre><a href="../../../org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence">SequenceModel</a>&lt;<a href="../../../org/tribuo/sequence/SequenceTrainer.html" title="type parameter in SequenceTrainer">T</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceTrainer.html#line.48">train</a>(<a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class in org.tribuo.sequence">SequenceDataset</a>&lt;<a href="../../../org/tribuo/sequence/SequenceTrainer.html" title="type parameter in SequenceTrainer">T</a>&gt;&nbsp;examples,
+<pre><a href="../../../org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence">SequenceModel</a>&lt;<a href="../../../org/tribuo/sequence/SequenceTrainer.html" title="type parameter in SequenceTrainer">T</a>&gt;&nbsp;train(<a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class in org.tribuo.sequence">SequenceDataset</a>&lt;<a href="../../../org/tribuo/sequence/SequenceTrainer.html" title="type parameter in SequenceTrainer">T</a>&gt;&nbsp;examples,
                        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,com.oracle.labs.mlrg.olcut.provenance.Provenance&gt;&nbsp;runProvenance)</pre>
 <div class="block">Trains a sequence prediction model using the examples in the given data set.</div>
 <dl>
@@ -217,7 +217,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getInvocationCount</h4>
-<pre>int&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceTrainer.html#line.54">getInvocationCount</a>()</pre>
+<pre>int&nbsp;getInvocationCount()</pre>
 <div class="block">Returns the number of times the train method has been invoked.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -293,6 +293,6 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

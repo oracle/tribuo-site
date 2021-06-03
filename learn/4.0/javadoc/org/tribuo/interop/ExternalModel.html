@@ -127,7 +127,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public abstract class <a href="../../../src-html/org/tribuo/interop/ExternalModel.html#line.49">ExternalModel</a>&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;,U,V&gt;
+<pre>public abstract class <span class="typeNameLabel">ExternalModel&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;,U,V&gt;</span>
 extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;T&gt;</pre>
 <div class="block">This is the base class for third party models which are trained externally and
  loaded into Tribuo for prediction.
@@ -339,7 +339,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockList">
 <li class="blockList">
 <h4>DEFAULT_BATCH_SIZE</h4>
-<pre>public static final&nbsp;int <a href="../../../src-html/org/tribuo/interop/ExternalModel.html#line.54">DEFAULT_BATCH_SIZE</a></pre>
+<pre>public static final&nbsp;int DEFAULT_BATCH_SIZE</pre>
 <div class="block">Default batch size for external model batch predictions.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -353,7 +353,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockList">
 <li class="blockList">
 <h4>featureForwardMapping</h4>
-<pre>protected final&nbsp;int[] <a href="../../../src-html/org/tribuo/interop/ExternalModel.html#line.56">featureForwardMapping</a></pre>
+<pre>protected final&nbsp;int[] featureForwardMapping</pre>
 </li>
 </ul>
 <a name="featureBackwardMapping">
@@ -362,7 +362,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockListLast">
 <li class="blockList">
 <h4>featureBackwardMapping</h4>
-<pre>protected final&nbsp;int[] <a href="../../../src-html/org/tribuo/interop/ExternalModel.html#line.57">featureBackwardMapping</a></pre>
+<pre>protected final&nbsp;int[] featureBackwardMapping</pre>
 </li>
 </ul>
 </li>
@@ -379,7 +379,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockList">
 <li class="blockList">
 <h4>ExternalModel</h4>
-<pre>protected&nbsp;<a href="../../../src-html/org/tribuo/interop/ExternalModel.html#line.61">ExternalModel</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+<pre>protected&nbsp;ExternalModel(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                         <a href="../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;provenance,
                         <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap,
                         <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">T</a>&gt;&nbsp;outputIDInfo,
@@ -393,7 +393,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ExternalModel</h4>
-<pre>protected&nbsp;<a href="../../../src-html/org/tribuo/interop/ExternalModel.html#line.91">ExternalModel</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+<pre>protected&nbsp;ExternalModel(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                         <a href="../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;provenance,
                         <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap,
                         <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">T</a>&gt;&nbsp;outputIDInfo,
@@ -416,7 +416,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockList">
 <li class="blockList">
 <h4>predict</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">T</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/interop/ExternalModel.html#line.98">predict</a>(<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">T</a>&gt;&nbsp;example)</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">T</a>&gt;&nbsp;predict(<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">T</a>&gt;&nbsp;example)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/Model.html#predict-org.tribuo.Example-">Model</a></code></span></div>
 <div class="block">Uses the model to predict the output for a single example.
  <p>
@@ -440,7 +440,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockList">
 <li class="blockList">
 <h4>innerPredict</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">T</a>&gt;&gt;&nbsp;<a href="../../../src-html/org/tribuo/interop/ExternalModel.html#line.107">innerPredict</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">T</a>&gt;&gt;&nbsp;examples)</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">T</a>&gt;&gt;&nbsp;innerPredict(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">T</a>&gt;&gt;&nbsp;examples)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/Model.html#innerPredict-java.lang.Iterable-">Model</a></code></span></div>
 <div class="block">Called by the base implementations of <a href="../../../org/tribuo/Model.html#predict-java.lang.Iterable-"><code>Model.predict(Iterable)</code></a> and <a href="../../../org/tribuo/Model.html#predict-org.tribuo.Dataset-"><code>Model.predict(Dataset)</code></a>.</div>
 <dl>
@@ -459,7 +459,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockList">
 <li class="blockList">
 <h4>convertFeatures</h4>
-<pre>protected abstract&nbsp;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">U</a>&nbsp;<a href="../../../src-html/org/tribuo/interop/ExternalModel.html#line.173">convertFeatures</a>(<a href="../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;input)</pre>
+<pre>protected abstract&nbsp;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">U</a>&nbsp;convertFeatures(<a href="../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;input)</pre>
 <div class="block">Converts from a SparseVector using the external model's indices into
  the ingestion format for the external model.</div>
 <dl>
@@ -476,7 +476,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockList">
 <li class="blockList">
 <h4>convertFeaturesList</h4>
-<pre>protected abstract&nbsp;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">U</a>&nbsp;<a href="../../../src-html/org/tribuo/interop/ExternalModel.html#line.181">convertFeaturesList</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&gt;&nbsp;input)</pre>
+<pre>protected abstract&nbsp;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">U</a>&nbsp;convertFeaturesList(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&gt;&nbsp;input)</pre>
 <div class="block">Converts from a list of SparseVector using the external model's indices
  into the ingestion format for the external model.</div>
 <dl>
@@ -495,7 +495,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockList">
 <li class="blockList">
 <h4>externalPrediction</h4>
-<pre>protected abstract&nbsp;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">V</a>&nbsp;<a href="../../../src-html/org/tribuo/interop/ExternalModel.html#line.188">externalPrediction</a>(<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">U</a>&nbsp;input)</pre>
+<pre>protected abstract&nbsp;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">V</a>&nbsp;externalPrediction(<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">U</a>&nbsp;input)</pre>
 <div class="block">Runs the external model's prediction function.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -513,7 +513,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockList">
 <li class="blockList">
 <h4>convertOutput</h4>
-<pre>protected abstract&nbsp;<a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">T</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/interop/ExternalModel.html#line.197">convertOutput</a>(<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">V</a>&nbsp;output,
+<pre>protected abstract&nbsp;<a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">T</a>&gt;&nbsp;convertOutput(<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">V</a>&nbsp;output,
                                                int&nbsp;numValidFeatures,
                                                <a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">T</a>&gt;&nbsp;example)</pre>
 <div class="block">Converts the output of the external model into a <a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo"><code>Prediction</code></a>.</div>
@@ -535,7 +535,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockList">
 <li class="blockList">
 <h4>convertOutput</h4>
-<pre>protected abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">T</a>&gt;&gt;&nbsp;<a href="../../../src-html/org/tribuo/interop/ExternalModel.html#line.206">convertOutput</a>(<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">V</a>&nbsp;output,
+<pre>protected abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">T</a>&gt;&gt;&nbsp;convertOutput(<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">V</a>&nbsp;output,
                                                      int[]&nbsp;numValidFeatures,
                                                      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">T</a>&gt;&gt;&nbsp;examples)</pre>
 <div class="block">Converts the output of the external model into a list of <a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo"><code>Prediction</code></a>s.</div>
@@ -555,7 +555,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockList">
 <li class="blockList">
 <h4>getExcuse</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../org/tribuo/Excuse.html" title="class in org.tribuo">Excuse</a>&lt;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">T</a>&gt;&gt;&nbsp;<a href="../../../src-html/org/tribuo/interop/ExternalModel.html#line.214">getExcuse</a>(<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">T</a>&gt;&nbsp;example)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../org/tribuo/Excuse.html" title="class in org.tribuo">Excuse</a>&lt;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">T</a>&gt;&gt;&nbsp;getExcuse(<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/interop/ExternalModel.html" title="type parameter in ExternalModel">T</a>&gt;&nbsp;example)</pre>
 <div class="block">By default third party models don't return excuses.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -573,7 +573,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockList">
 <li class="blockList">
 <h4>getBatchSize</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../src-html/org/tribuo/interop/ExternalModel.html#line.222">getBatchSize</a>()</pre>
+<pre>public&nbsp;int&nbsp;getBatchSize()</pre>
 <div class="block">Gets the current testing batch size.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -587,7 +587,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockList">
 <li class="blockList">
 <h4>setBatchSize</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/interop/ExternalModel.html#line.232">setBatchSize</a>(int&nbsp;batchSize)</pre>
+<pre>public&nbsp;void&nbsp;setBatchSize(int&nbsp;batchSize)</pre>
 <div class="block">Sets a new batch size.
  <p>
  Throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang"><code>IllegalArgumentException</code></a> if the batch size isn't positive.</div>
@@ -603,7 +603,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockList">
 <li class="blockList">
 <h4>createFeatureMap</h4>
-<pre>protected static&nbsp;<a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;<a href="../../../src-html/org/tribuo/interop/ExternalModel.html#line.247">createFeatureMap</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;featureNames)</pre>
+<pre>protected static&nbsp;<a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;createFeatureMap(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;featureNames)</pre>
 <div class="block">Creates an immutable feature map from a set of feature names.
  <p>
  Each feature is unobserved.</div>
@@ -621,7 +621,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockListLast">
 <li class="blockList">
 <h4>createOutputInfo</h4>
-<pre>protected static&nbsp;&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;T&gt;&nbsp;<a href="../../../src-html/org/tribuo/interop/ExternalModel.html#line.264">createOutputInfo</a>(<a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;T&gt;&nbsp;factory,
+<pre>protected static&nbsp;&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;T&gt;&nbsp;createOutputInfo(<a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;T&gt;&nbsp;factory,
                                                                                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;T,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;outputs)</pre>
 <div class="block">Creates an output info from a set of outputs.</div>
 <dl>
@@ -703,6 +703,6 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

@@ -121,7 +121,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public abstract class <a href="../../../../src-html/org/tribuo/common/liblinear/LibLinearModel.html#line.55">LibLinearModel</a>&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public abstract class <span class="typeNameLabel">LibLinearModel&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;T&gt;</pre>
 <div class="block">A <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo"><code>Model</code></a> which wraps a LibLinear-java model.
  <p>
@@ -289,7 +289,7 @@ extends <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">
 <ul class="blockListLast">
 <li class="blockList">
 <h4>models</h4>
-<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;de.bwaldvogel.liblinear.Model&gt; <a href="../../../../src-html/org/tribuo/common/liblinear/LibLinearModel.html#line.63">models</a></pre>
+<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;de.bwaldvogel.liblinear.Model&gt; models</pre>
 <div class="block">The list of LibLinear models. Multiple models are used by multi-label and multidimensional regression outputs.</div>
 </li>
 </ul>
@@ -307,7 +307,7 @@ extends <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">
 <ul class="blockListLast">
 <li class="blockList">
 <h4>LibLinearModel</h4>
-<pre>protected&nbsp;<a href="../../../../src-html/org/tribuo/common/liblinear/LibLinearModel.html#line.74">LibLinearModel</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+<pre>protected&nbsp;LibLinearModel(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                          <a href="../../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;description,
                          <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap,
                          <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html" title="type parameter in LibLinearModel">T</a>&gt;&nbsp;labelIDMap,
@@ -339,7 +339,7 @@ extends <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">
 <ul class="blockList">
 <li class="blockList">
 <h4>getInnerModels</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;de.bwaldvogel.liblinear.Model&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/liblinear/LibLinearModel.html#line.88">getInnerModels</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;de.bwaldvogel.liblinear.Model&gt;&nbsp;getInnerModels()</pre>
 <div class="block">Returns an unmodifiable list containing a copy of each model.
  <p>
  As liblinear-java models don't expose a copy constructor this requires
@@ -356,7 +356,7 @@ extends <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">
 <ul class="blockList">
 <li class="blockList">
 <h4>getExcuse</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../org/tribuo/Excuse.html" title="class in org.tribuo">Excuse</a>&lt;<a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html" title="type parameter in LibLinearModel">T</a>&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/liblinear/LibLinearModel.html#line.108">getExcuse</a>(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html" title="type parameter in LibLinearModel">T</a>&gt;&nbsp;e)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../org/tribuo/Excuse.html" title="class in org.tribuo">Excuse</a>&lt;<a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html" title="type parameter in LibLinearModel">T</a>&gt;&gt;&nbsp;getExcuse(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html" title="type parameter in LibLinearModel">T</a>&gt;&nbsp;e)</pre>
 <div class="block">This call is expensive as it copies out the weight matrix from the
  LibLinear model.
  <p>
@@ -378,7 +378,7 @@ extends <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">
 <ul class="blockList">
 <li class="blockList">
 <h4>getExcuses</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Excuse.html" title="class in org.tribuo">Excuse</a>&lt;<a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html" title="type parameter in LibLinearModel">T</a>&gt;&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/liblinear/LibLinearModel.html#line.114">getExcuses</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html" title="type parameter in LibLinearModel">T</a>&gt;&gt;&nbsp;examples)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Excuse.html" title="class in org.tribuo">Excuse</a>&lt;<a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html" title="type parameter in LibLinearModel">T</a>&gt;&gt;&gt;&nbsp;getExcuses(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html" title="type parameter in LibLinearModel">T</a>&gt;&gt;&nbsp;examples)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/Model.html#getExcuses-java.lang.Iterable-">Model</a></code></span></div>
 <div class="block">Generates an excuse for each example.
  <p>
@@ -403,7 +403,7 @@ extends <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">
 <ul class="blockList">
 <li class="blockList">
 <h4>copyModel</h4>
-<pre>protected static&nbsp;de.bwaldvogel.liblinear.Model&nbsp;<a href="../../../../src-html/org/tribuo/common/liblinear/LibLinearModel.html#line.133">copyModel</a>(de.bwaldvogel.liblinear.Model&nbsp;model)</pre>
+<pre>protected static&nbsp;de.bwaldvogel.liblinear.Model&nbsp;copyModel(de.bwaldvogel.liblinear.Model&nbsp;model)</pre>
 <div class="block">Copies the model by writing it out to a String and loading it back in.
  <p>
  Unfortunately liblinear-java doesn't have a copy constructor on it's model.</div>
@@ -421,7 +421,7 @@ extends <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">
 <ul class="blockList">
 <li class="blockList">
 <h4>getFeatureWeights</h4>
-<pre>protected abstract&nbsp;double[][]&nbsp;<a href="../../../../src-html/org/tribuo/common/liblinear/LibLinearModel.html#line.150">getFeatureWeights</a>()</pre>
+<pre>protected abstract&nbsp;double[][]&nbsp;getFeatureWeights()</pre>
 <div class="block">Extracts the feature weights from the models.
  The first dimension corresponds to the model index.</div>
 <dl>
@@ -436,7 +436,7 @@ extends <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">
 <ul class="blockListLast">
 <li class="blockList">
 <h4>innerGetExcuse</h4>
-<pre>protected abstract&nbsp;<a href="../../../../org/tribuo/Excuse.html" title="class in org.tribuo">Excuse</a>&lt;<a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html" title="type parameter in LibLinearModel">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/liblinear/LibLinearModel.html#line.163">innerGetExcuse</a>(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html" title="type parameter in LibLinearModel">T</a>&gt;&nbsp;e,
+<pre>protected abstract&nbsp;<a href="../../../../org/tribuo/Excuse.html" title="class in org.tribuo">Excuse</a>&lt;<a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html" title="type parameter in LibLinearModel">T</a>&gt;&nbsp;innerGetExcuse(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html" title="type parameter in LibLinearModel">T</a>&gt;&nbsp;e,
                                             double[][]&nbsp;featureWeights)</pre>
 <div class="block">The call to getFeatureWeights in the public methods copies the
  weights array so this inner method exists to save the copy in getExcuses.
@@ -521,6 +521,6 @@ extends <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

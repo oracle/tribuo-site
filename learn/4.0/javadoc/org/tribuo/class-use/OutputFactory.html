@@ -253,15 +253,15 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../org/tribuo/DataSource.html" title="type parameter in DataSource">T</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">DataSource.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/DataSource.html#getOutputFactory--">getOutputFactory</a></span>()</code>
-<div class="block">Returns the OutputFactory associated with this Output subclass.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">Dataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/Dataset.html#getOutputFactory--">getOutputFactory</a></span>()</code>
 <div class="block">Gets the output factory this dataset contains.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../org/tribuo/DataSource.html" title="type parameter in DataSource">T</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">DataSource.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/DataSource.html#getOutputFactory--">getOutputFactory</a></span>()</code>
+<div class="block">Returns the OutputFactory associated with this Output subclass.</div>
 </td>
 </tr>
 </tbody>
@@ -533,16 +533,16 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../org/tribuo/data/columnar/processors/response/BinaryResponseProcessor.html" title="type parameter in BinaryResponseProcessor">T</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">BinaryResponseProcessor.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/data/columnar/processors/response/BinaryResponseProcessor.html#getOutputFactory--">getOutputFactory</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../org/tribuo/data/columnar/processors/response/QuartileResponseProcessor.html" title="type parameter in QuartileResponseProcessor">T</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">QuartileResponseProcessor.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/data/columnar/processors/response/QuartileResponseProcessor.html#getOutputFactory--">getOutputFactory</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../org/tribuo/data/columnar/processors/response/FieldResponseProcessor.html" title="type parameter in FieldResponseProcessor">T</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">FieldResponseProcessor.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/data/columnar/processors/response/FieldResponseProcessor.html#getOutputFactory--">getOutputFactory</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../org/tribuo/data/columnar/processors/response/QuartileResponseProcessor.html" title="type parameter in QuartileResponseProcessor">T</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">QuartileResponseProcessor.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/data/columnar/processors/response/QuartileResponseProcessor.html#getOutputFactory--">getOutputFactory</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../org/tribuo/data/columnar/processors/response/BinaryResponseProcessor.html" title="type parameter in BinaryResponseProcessor">T</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">BinaryResponseProcessor.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/data/columnar/processors/response/BinaryResponseProcessor.html#getOutputFactory--">getOutputFactory</a></span>()</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -756,16 +756,16 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../org/tribuo/datasource/IDXDataSource.html" title="type parameter in IDXDataSource">T</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">IDXDataSource.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/datasource/IDXDataSource.html#getOutputFactory--">getOutputFactory</a></span>()</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../org/tribuo/datasource/ListDataSource.html" title="type parameter in ListDataSource">T</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">ListDataSource.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/datasource/ListDataSource.html#getOutputFactory--">getOutputFactory</a></span>()</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../org/tribuo/datasource/LibSVMDataSource.html" title="type parameter in LibSVMDataSource">T</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">LibSVMDataSource.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/datasource/LibSVMDataSource.html#getOutputFactory--">getOutputFactory</a></span>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../org/tribuo/datasource/IDXDataSource.html" title="type parameter in IDXDataSource">T</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">IDXDataSource.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/datasource/IDXDataSource.html#getOutputFactory--">getOutputFactory</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../org/tribuo/datasource/AggregateDataSource.html" title="type parameter in AggregateDataSource">T</a>&gt;</code></td>
@@ -1042,15 +1042,15 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../org/tribuo/sequence/SequenceDataSource.html" title="type parameter in SequenceDataSource">T</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">SequenceDataSource.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/sequence/SequenceDataSource.html#getOutputFactory--">getOutputFactory</a></span>()</code>
-<div class="block">Gets the OutputFactory which was used to generate the Outputs in this SequenceDataSource.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../org/tribuo/sequence/SequenceDataset.html" title="type parameter in SequenceDataset">T</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">SequenceDataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/sequence/SequenceDataset.html#getOutputFactory--">getOutputFactory</a></span>()</code>
 <div class="block">Gets the output factory.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../org/tribuo/sequence/SequenceDataSource.html" title="type parameter in SequenceDataSource">T</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">SequenceDataSource.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/sequence/SequenceDataSource.html#getOutputFactory--">getOutputFactory</a></span>()</code>
+<div class="block">Gets the OutputFactory which was used to generate the Outputs in this SequenceDataSource.</div>
 </td>
 </tr>
 </tbody>
@@ -1172,6 +1172,6 @@
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

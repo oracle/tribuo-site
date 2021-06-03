@@ -116,7 +116,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public abstract class <a href="../../src-html/org/tribuo/FeatureMap.html#line.30">FeatureMap</a>
+<pre>public abstract class <span class="typeNameLabel">FeatureMap</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../org/tribuo/VariableInfo.html" title="interface in org.tribuo">VariableInfo</a>&gt;</pre>
 <div class="block">A map from Strings to <a href="../../org/tribuo/VariableInfo.html" title="interface in org.tribuo"><code>VariableInfo</code></a> objects storing
@@ -264,7 +264,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockListLast">
 <li class="blockList">
 <h4>m</h4>
-<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../org/tribuo/VariableInfo.html" title="interface in org.tribuo">VariableInfo</a>&gt; <a href="../../src-html/org/tribuo/FeatureMap.html#line.36">m</a></pre>
+<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../org/tribuo/VariableInfo.html" title="interface in org.tribuo">VariableInfo</a>&gt; m</pre>
 <div class="block">Map from the feature names to their info.</div>
 </li>
 </ul>
@@ -282,7 +282,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>FeatureMap</h4>
-<pre>protected&nbsp;<a href="../../src-html/org/tribuo/FeatureMap.html#line.41">FeatureMap</a>()</pre>
+<pre>protected&nbsp;FeatureMap()</pre>
 <div class="block">Constructs an empty feature map.</div>
 </li>
 </ul>
@@ -292,7 +292,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>FeatureMap</h4>
-<pre>protected&nbsp;<a href="../../src-html/org/tribuo/FeatureMap.html#line.49">FeatureMap</a>(<a href="../../org/tribuo/FeatureMap.html" title="class in org.tribuo">FeatureMap</a>&nbsp;map)</pre>
+<pre>protected&nbsp;FeatureMap(<a href="../../org/tribuo/FeatureMap.html" title="class in org.tribuo">FeatureMap</a>&nbsp;map)</pre>
 <div class="block">Constructs a deep copy of the supplied feature map.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -306,7 +306,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockListLast">
 <li class="blockList">
 <h4>FeatureMap</h4>
-<pre>protected&nbsp;<a href="../../src-html/org/tribuo/FeatureMap.html#line.65">FeatureMap</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,? extends <a href="../../org/tribuo/VariableInfo.html" title="interface in org.tribuo">VariableInfo</a>&gt;&nbsp;m)</pre>
+<pre>protected&nbsp;FeatureMap(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,? extends <a href="../../org/tribuo/VariableInfo.html" title="interface in org.tribuo">VariableInfo</a>&gt;&nbsp;m)</pre>
 <div class="block">Constructs a feature map wrapping the supplied map.
  <p>
  Note the map is not defensively copied.</div>
@@ -330,7 +330,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/VariableInfo.html" title="interface in org.tribuo">VariableInfo</a>&nbsp;<a href="../../src-html/org/tribuo/FeatureMap.html#line.74">get</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/VariableInfo.html" title="interface in org.tribuo">VariableInfo</a>&nbsp;get(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
 <div class="block">Gets the variable info associated with that feature name, or null if it's unknown.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -346,7 +346,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>size</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../src-html/org/tribuo/FeatureMap.html#line.82">size</a>()</pre>
+<pre>public&nbsp;int&nbsp;size()</pre>
 <div class="block">Returns the number of features in the domain.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -360,7 +360,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../src-html/org/tribuo/FeatureMap.html#line.87">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -373,7 +373,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>keySet</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;<a href="../../src-html/org/tribuo/FeatureMap.html#line.95">keySet</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;keySet()</pre>
 <div class="block">Returns all the feature names in the domain.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -387,7 +387,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>iterator</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../org/tribuo/VariableInfo.html" title="interface in org.tribuo">VariableInfo</a>&gt;&nbsp;<a href="../../src-html/org/tribuo/FeatureMap.html#line.100">iterator</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../org/tribuo/VariableInfo.html" title="interface in org.tribuo">VariableInfo</a>&gt;&nbsp;iterator()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true#iterator--" title="class or interface in java.lang">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../org/tribuo/VariableInfo.html" title="interface in org.tribuo">VariableInfo</a>&gt;</code></dd>
@@ -400,7 +400,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toReadableString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../src-html/org/tribuo/FeatureMap.html#line.108">toReadableString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toReadableString()</pre>
 <div class="block">Same as the toString, but ordered by name, and with newlines.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -476,6 +476,6 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

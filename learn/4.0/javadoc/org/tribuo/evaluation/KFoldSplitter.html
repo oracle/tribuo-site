@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../src-html/org/tribuo/evaluation/KFoldSplitter.html#line.36">KFoldSplitter</a>&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public class <span class="typeNameLabel">KFoldSplitter&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
 <div class="block">A k-fold splitter to be used in cross-validation.</div>
 </li>
@@ -241,7 +241,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>nsplits</h4>
-<pre>protected final&nbsp;int <a href="../../../src-html/org/tribuo/evaluation/KFoldSplitter.html#line.40">nsplits</a></pre>
+<pre>protected final&nbsp;int nsplits</pre>
 </li>
 </ul>
 <a name="seed">
@@ -250,7 +250,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>seed</h4>
-<pre>protected final&nbsp;long <a href="../../../src-html/org/tribuo/evaluation/KFoldSplitter.html#line.41">seed</a></pre>
+<pre>protected final&nbsp;long seed</pre>
 </li>
 </ul>
 <a name="rng">
@@ -259,7 +259,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>rng</h4>
-<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/SplittableRandom.html?is-external=true" title="class or interface in java.util">SplittableRandom</a> <a href="../../../src-html/org/tribuo/evaluation/KFoldSplitter.html#line.42">rng</a></pre>
+<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/SplittableRandom.html?is-external=true" title="class or interface in java.util">SplittableRandom</a> rng</pre>
 </li>
 </ul>
 </li>
@@ -276,7 +276,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>KFoldSplitter</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/evaluation/KFoldSplitter.html#line.49">KFoldSplitter</a>(int&nbsp;nsplits,
+<pre>public&nbsp;KFoldSplitter(int&nbsp;nsplits,
                      long&nbsp;randomSeed)</pre>
 <div class="block">Builds a k-fold splitter.</div>
 <dl>
@@ -292,7 +292,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>KFoldSplitter</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/evaluation/KFoldSplitter.html#line.62">KFoldSplitter</a>(int&nbsp;nsplits)</pre>
+<pre>public&nbsp;KFoldSplitter(int&nbsp;nsplits)</pre>
 <div class="block">Builds a k-fold splitter using <a href="../../../org/tribuo/Trainer.html#DEFAULT_SEED"><code>Trainer.DEFAULT_SEED</code></a> as the seed.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -314,7 +314,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>split</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../org/tribuo/evaluation/KFoldSplitter.TrainTestFold.html" title="class in org.tribuo.evaluation">KFoldSplitter.TrainTestFold</a>&lt;<a href="../../../org/tribuo/evaluation/KFoldSplitter.html" title="type parameter in KFoldSplitter">T</a>&gt;&gt;&nbsp;<a href="../../../src-html/org/tribuo/evaluation/KFoldSplitter.html#line.75">split</a>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/evaluation/KFoldSplitter.html" title="type parameter in KFoldSplitter">T</a>&gt;&nbsp;dataset,
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../org/tribuo/evaluation/KFoldSplitter.TrainTestFold.html" title="class in org.tribuo.evaluation">KFoldSplitter.TrainTestFold</a>&lt;<a href="../../../org/tribuo/evaluation/KFoldSplitter.html" title="type parameter in KFoldSplitter">T</a>&gt;&gt;&nbsp;split(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/evaluation/KFoldSplitter.html" title="type parameter in KFoldSplitter">T</a>&gt;&nbsp;dataset,
                                                       boolean&nbsp;shuffle)</pre>
 <div class="block">Splits a dataset into k consecutive folds; for each fold, the remaining k-1 folds form the training set.
  <p>
@@ -397,6 +397,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

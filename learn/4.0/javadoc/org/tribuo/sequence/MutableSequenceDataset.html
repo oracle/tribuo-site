@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../src-html/org/tribuo/sequence/MutableSequenceDataset.html#line.39">MutableSequenceDataset</a>&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public class <span class="typeNameLabel">MutableSequenceDataset&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class in org.tribuo.sequence">SequenceDataset</a>&lt;T&gt;</pre>
 <div class="block">A MutableSequenceDataset is a <a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class in org.tribuo.sequence"><code>SequenceDataset</code></a> with a <a href="../../../org/tribuo/MutableFeatureMap.html" title="class in org.tribuo"><code>MutableFeatureMap</code></a> which grows over time.
  Whenever an <a href="../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence"><code>SequenceExample</code></a> is added to the dataset.</div>
@@ -302,7 +302,7 @@ extends <a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>outputInfo</h4>
-<pre>protected final&nbsp;<a href="../../../org/tribuo/MutableOutputInfo.html" title="interface in org.tribuo">MutableOutputInfo</a>&lt;<a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="type parameter in MutableSequenceDataset">T</a> extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="type parameter in MutableSequenceDataset">T</a>&gt;&gt; <a href="../../../src-html/org/tribuo/sequence/MutableSequenceDataset.html#line.45">outputInfo</a></pre>
+<pre>protected final&nbsp;<a href="../../../org/tribuo/MutableOutputInfo.html" title="interface in org.tribuo">MutableOutputInfo</a>&lt;<a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="type parameter in MutableSequenceDataset">T</a> extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="type parameter in MutableSequenceDataset">T</a>&gt;&gt; outputInfo</pre>
 <div class="block">A map from labels to IDs for the labels found in this dataset.</div>
 </li>
 </ul>
@@ -312,7 +312,7 @@ extends <a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class
 <ul class="blockListLast">
 <li class="blockList">
 <h4>featureMap</h4>
-<pre>protected final&nbsp;<a href="../../../org/tribuo/MutableFeatureMap.html" title="class in org.tribuo">MutableFeatureMap</a> <a href="../../../src-html/org/tribuo/sequence/MutableSequenceDataset.html#line.50">featureMap</a></pre>
+<pre>protected final&nbsp;<a href="../../../org/tribuo/MutableFeatureMap.html" title="class in org.tribuo">MutableFeatureMap</a> featureMap</pre>
 <div class="block">A map from feature names to IDs for the features found in this dataset.</div>
 </li>
 </ul>
@@ -330,7 +330,7 @@ extends <a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>MutableSequenceDataset</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/sequence/MutableSequenceDataset.html#line.57">MutableSequenceDataset</a>(<a href="../../../org/tribuo/provenance/DataProvenance.html" title="interface in org.tribuo.provenance">DataProvenance</a>&nbsp;sourceProvenance,
+<pre>public&nbsp;MutableSequenceDataset(<a href="../../../org/tribuo/provenance/DataProvenance.html" title="interface in org.tribuo.provenance">DataProvenance</a>&nbsp;sourceProvenance,
                               <a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="type parameter in MutableSequenceDataset">T</a>&gt;&nbsp;outputFactory)</pre>
 <div class="block">Creates an empty sequence dataset.</div>
 <dl>
@@ -346,7 +346,7 @@ extends <a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>MutableSequenceDataset</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/sequence/MutableSequenceDataset.html#line.70">MutableSequenceDataset</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="type parameter in MutableSequenceDataset">T</a>&gt;&gt;&nbsp;dataSource,
+<pre>public&nbsp;MutableSequenceDataset(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="type parameter in MutableSequenceDataset">T</a>&gt;&gt;&nbsp;dataSource,
                               <a href="../../../org/tribuo/provenance/DataProvenance.html" title="interface in org.tribuo.provenance">DataProvenance</a>&nbsp;sourceProvenance,
                               <a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="type parameter in MutableSequenceDataset">T</a>&gt;&nbsp;outputFactory)</pre>
 <div class="block">Creates a dataset from a data source. This method will create the output
@@ -365,7 +365,7 @@ extends <a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>MutableSequenceDataset</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/sequence/MutableSequenceDataset.html#line.79">MutableSequenceDataset</a>(<a href="../../../org/tribuo/sequence/SequenceDataSource.html" title="interface in org.tribuo.sequence">SequenceDataSource</a>&lt;<a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="type parameter in MutableSequenceDataset">T</a>&gt;&nbsp;dataSource)</pre>
+<pre>public&nbsp;MutableSequenceDataset(<a href="../../../org/tribuo/sequence/SequenceDataSource.html" title="interface in org.tribuo.sequence">SequenceDataSource</a>&lt;<a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="type parameter in MutableSequenceDataset">T</a>&gt;&nbsp;dataSource)</pre>
 </li>
 </ul>
 <a name="MutableSequenceDataset-org.tribuo.sequence.ImmutableSequenceDataset-">
@@ -374,7 +374,7 @@ extends <a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class
 <ul class="blockListLast">
 <li class="blockList">
 <h4>MutableSequenceDataset</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/sequence/MutableSequenceDataset.html#line.84">MutableSequenceDataset</a>(<a href="../../../org/tribuo/sequence/ImmutableSequenceDataset.html" title="class in org.tribuo.sequence">ImmutableSequenceDataset</a>&lt;<a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="type parameter in MutableSequenceDataset">T</a>&gt;&nbsp;dataset)</pre>
+<pre>public&nbsp;MutableSequenceDataset(<a href="../../../org/tribuo/sequence/ImmutableSequenceDataset.html" title="class in org.tribuo.sequence">ImmutableSequenceDataset</a>&lt;<a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="type parameter in MutableSequenceDataset">T</a>&gt;&nbsp;dataset)</pre>
 </li>
 </ul>
 </li>
@@ -391,7 +391,7 @@ extends <a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>add</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/sequence/MutableSequenceDataset.html#line.102">add</a>(<a href="../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="type parameter in MutableSequenceDataset">T</a>&gt;&nbsp;ex)</pre>
+<pre>public&nbsp;void&nbsp;add(<a href="../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="type parameter in MutableSequenceDataset">T</a>&gt;&nbsp;ex)</pre>
 <div class="block">Adds a <a href="../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence"><code>SequenceExample</code></a> to this dataset.
  <p>
  It also canonicalises the reference to each feature's name (i.e., replacing the reference
@@ -409,7 +409,7 @@ extends <a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>addAll</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/sequence/MutableSequenceDataset.html#line.120">addAll</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="type parameter in MutableSequenceDataset">T</a>&gt;&gt;&nbsp;collection)</pre>
+<pre>public&nbsp;void&nbsp;addAll(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="type parameter in MutableSequenceDataset">T</a>&gt;&gt;&nbsp;collection)</pre>
 <div class="block">Adds all the SequenceExamples in the supplied collection to this dataset.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -423,7 +423,7 @@ extends <a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>getOutputs</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="type parameter in MutableSequenceDataset">T</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/sequence/MutableSequenceDataset.html#line.127">getOutputs</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="type parameter in MutableSequenceDataset">T</a>&gt;&nbsp;getOutputs()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/sequence/SequenceDataset.html#getOutputs--">SequenceDataset</a></code></span></div>
 <div class="block">Gets the set of labels that occur in the examples in this dataset.</div>
 <dl>
@@ -440,7 +440,7 @@ extends <a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>getFeatureIDMap</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;<a href="../../../src-html/org/tribuo/sequence/MutableSequenceDataset.html#line.132">getFeatureIDMap</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;getFeatureIDMap()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/sequence/SequenceDataset.html#getFeatureIDMap--">SequenceDataset</a></code></span></div>
 <div class="block">An immutable view on the feature map.</div>
 <dl>
@@ -457,7 +457,7 @@ extends <a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>getFeatureMap</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/MutableFeatureMap.html" title="class in org.tribuo">MutableFeatureMap</a>&nbsp;<a href="../../../src-html/org/tribuo/sequence/MutableSequenceDataset.html#line.137">getFeatureMap</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/MutableFeatureMap.html" title="class in org.tribuo">MutableFeatureMap</a>&nbsp;getFeatureMap()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/sequence/SequenceDataset.html#getFeatureMap--">SequenceDataset</a></code></span></div>
 <div class="block">The feature map.</div>
 <dl>
@@ -474,7 +474,7 @@ extends <a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>getOutputIDInfo</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="type parameter in MutableSequenceDataset">T</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/sequence/MutableSequenceDataset.html#line.142">getOutputIDInfo</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="type parameter in MutableSequenceDataset">T</a>&gt;&nbsp;getOutputIDInfo()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/sequence/SequenceDataset.html#getOutputIDInfo--">SequenceDataset</a></code></span></div>
 <div class="block">An immutable view on the output info in this dataset.</div>
 <dl>
@@ -491,7 +491,7 @@ extends <a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>getOutputInfo</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/OutputInfo.html" title="interface in org.tribuo">OutputInfo</a>&lt;<a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="type parameter in MutableSequenceDataset">T</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/sequence/MutableSequenceDataset.html#line.147">getOutputInfo</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/OutputInfo.html" title="interface in org.tribuo">OutputInfo</a>&lt;<a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="type parameter in MutableSequenceDataset">T</a>&gt;&nbsp;getOutputInfo()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/sequence/SequenceDataset.html#getOutputInfo--">SequenceDataset</a></code></span></div>
 <div class="block">The output info in this dataset.</div>
 <dl>
@@ -508,7 +508,7 @@ extends <a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/sequence/MutableSequenceDataset.html#line.152">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../../org/tribuo/sequence/SequenceDataset.html#toString--">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class in org.tribuo.sequence">SequenceDataset</a>&lt;<a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="type parameter in MutableSequenceDataset">T</a> extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="type parameter in MutableSequenceDataset">T</a>&gt;&gt;</code></dd>
@@ -521,7 +521,7 @@ extends <a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/provenance/DatasetProvenance.html" title="class in org.tribuo.provenance">DatasetProvenance</a>&nbsp;<a href="../../../src-html/org/tribuo/sequence/MutableSequenceDataset.html#line.157">getProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/provenance/DatasetProvenance.html" title="class in org.tribuo.provenance">DatasetProvenance</a>&nbsp;getProvenance()</pre>
 </li>
 </ul>
 </li>
@@ -592,6 +592,6 @@ extends <a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

@@ -116,7 +116,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public abstract class <a href="../../../src-html/org/tribuo/hash/Hasher.html#line.28">Hasher</a>
+<pre>public abstract class <span class="typeNameLabel">Hasher</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&gt;, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
 <div class="block">An abstract base class for hash functions used to hash the names of features.</div>
@@ -241,7 +241,7 @@ implements com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>MIN_LENGTH</h4>
-<pre>public static final&nbsp;int <a href="../../../src-html/org/tribuo/hash/Hasher.html#line.34">MIN_LENGTH</a></pre>
+<pre>public static final&nbsp;int MIN_LENGTH</pre>
 <div class="block">The minimum length of the salt. Salts shorter than this will not validate.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -263,7 +263,7 @@ implements com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Hasher</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/hash/Hasher.html#line.28">Hasher</a>()</pre>
+<pre>public&nbsp;Hasher()</pre>
 </li>
 </ul>
 </li>
@@ -280,7 +280,7 @@ implements com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.
 <ul class="blockList">
 <li class="blockList">
 <h4>hash</h4>
-<pre>public abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/hash/Hasher.html#line.41">hash</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;input)</pre>
+<pre>public abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;hash(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;input)</pre>
 <div class="block">Hashes the supplied input using the hashing function.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -296,7 +296,7 @@ implements com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.
 <ul class="blockList">
 <li class="blockList">
 <h4>setSalt</h4>
-<pre>public abstract&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/hash/Hasher.html#line.48">setSalt</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;salt)</pre>
+<pre>public abstract&nbsp;void&nbsp;setSalt(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;salt)</pre>
 <div class="block">The salt is transient, it must be set **to the same value as it was trained with**
  after the <a href="../../../org/tribuo/Model.html" title="class in org.tribuo"><code>Model</code></a> is deserialized.</div>
 <dl>
@@ -311,7 +311,7 @@ implements com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>validateSalt</h4>
-<pre>public static&nbsp;boolean&nbsp;<a href="../../../src-html/org/tribuo/hash/Hasher.html#line.60">validateSalt</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;salt)</pre>
+<pre>public static&nbsp;boolean&nbsp;validateSalt(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;salt)</pre>
 <div class="block">Salt validation is currently a test to see if the string is longer than <a href="../../../org/tribuo/hash/Hasher.html#MIN_LENGTH"><code>MIN_LENGTH</code></a>.
  <p>
  When this method is updated Hasher must update it's serialVersionUID, this ensures that
@@ -394,6 +394,6 @@ implements com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

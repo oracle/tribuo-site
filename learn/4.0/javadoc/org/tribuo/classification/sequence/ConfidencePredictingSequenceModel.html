@@ -121,7 +121,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public abstract class <a href="../../../../src-html/org/tribuo/classification/sequence/ConfidencePredictingSequenceModel.html#line.39">ConfidencePredictingSequenceModel</a>
+<pre>public abstract class <span class="typeNameLabel">ConfidencePredictingSequenceModel</span>
 extends <a href="../../../../org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence">SequenceModel</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;</pre>
 <div class="block">A Sequence model which can provide confidence predictions for subsequence predictions.
  <p>
@@ -259,7 +259,7 @@ extends <a href="../../../../org/tribuo/sequence/SequenceModel.html" title="clas
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ConfidencePredictingSequenceModel</h4>
-<pre>protected&nbsp;<a href="../../../../src-html/org/tribuo/classification/sequence/ConfidencePredictingSequenceModel.html#line.42">ConfidencePredictingSequenceModel</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+<pre>protected&nbsp;ConfidencePredictingSequenceModel(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                                             <a href="../../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;description,
                                             <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap,
                                             <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;labelIDMap)</pre>
@@ -279,7 +279,7 @@ extends <a href="../../../../org/tribuo/sequence/SequenceModel.html" title="clas
 <ul class="blockList">
 <li class="blockList">
 <h4>scoreSubsequences</h4>
-<pre>public abstract&nbsp;&lt;SUB extends <a href="../../../../org/tribuo/classification/sequence/ConfidencePredictingSequenceModel.Subsequence.html" title="class in org.tribuo.classification.sequence">ConfidencePredictingSequenceModel.Subsequence</a>&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/classification/sequence/ConfidencePredictingSequenceModel.html#line.54">scoreSubsequences</a>(<a href="../../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;example,
+<pre>public abstract&nbsp;&lt;SUB extends <a href="../../../../org/tribuo/classification/sequence/ConfidencePredictingSequenceModel.Subsequence.html" title="class in org.tribuo.classification.sequence">ConfidencePredictingSequenceModel.Subsequence</a>&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;scoreSubsequences(<a href="../../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;example,
                                                                                                            <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&gt;&nbsp;predictions,
                                                                                                            <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;SUB&gt;&nbsp;subsequences)</pre>
 <div class="block">The scoring function for the subsequences. Provides the scores which should be assigned to each subsequence.</div>
@@ -301,7 +301,7 @@ extends <a href="../../../../org/tribuo/sequence/SequenceModel.html" title="clas
 <ul class="blockListLast">
 <li class="blockList">
 <h4>multiplyWeights</h4>
-<pre>public static&nbsp;&lt;SUB extends <a href="../../../../org/tribuo/classification/sequence/ConfidencePredictingSequenceModel.Subsequence.html" title="class in org.tribuo.classification.sequence">ConfidencePredictingSequenceModel.Subsequence</a>&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/classification/sequence/ConfidencePredictingSequenceModel.html#line.63">multiplyWeights</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&gt;&nbsp;predictions,
+<pre>public static&nbsp;&lt;SUB extends <a href="../../../../org/tribuo/classification/sequence/ConfidencePredictingSequenceModel.Subsequence.html" title="class in org.tribuo.classification.sequence">ConfidencePredictingSequenceModel.Subsequence</a>&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;multiplyWeights(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&gt;&nbsp;predictions,
                                                                                                        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;SUB&gt;&nbsp;subsequences)</pre>
 <div class="block">A scoring method which multiplies together the per prediction scores.</div>
 <dl>
@@ -383,6 +383,6 @@ extends <a href="../../../../org/tribuo/sequence/SequenceModel.html" title="clas
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

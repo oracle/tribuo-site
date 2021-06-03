@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/classification/libsvm/LibSVMClassificationTrainer.html#line.66">LibSVMClassificationTrainer</a>
+<pre>public class <span class="typeNameLabel">LibSVMClassificationTrainer</span>
 extends <a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title="class in org.tribuo.common.libsvm">LibSVMTrainer</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;
 implements <a href="../../../../org/tribuo/classification/WeightedLabels.html" title="interface in org.tribuo.classification">WeightedLabels</a></pre>
 <div class="block">A trainer for classification models that uses LibSVM.
@@ -282,7 +282,7 @@ implements <a href="../../../../org/tribuo/classification/WeightedLabels.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>LibSVMClassificationTrainer</h4>
-<pre>protected&nbsp;<a href="../../../../src-html/org/tribuo/classification/libsvm/LibSVMClassificationTrainer.html#line.72">LibSVMClassificationTrainer</a>()</pre>
+<pre>protected&nbsp;LibSVMClassificationTrainer()</pre>
 </li>
 </ul>
 <a name="LibSVMClassificationTrainer-org.tribuo.common.libsvm.SVMParameters-">
@@ -291,7 +291,7 @@ implements <a href="../../../../org/tribuo/classification/WeightedLabels.html" t
 <ul class="blockListLast">
 <li class="blockList">
 <h4>LibSVMClassificationTrainer</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/classification/libsvm/LibSVMClassificationTrainer.html#line.74">LibSVMClassificationTrainer</a>(<a href="../../../../org/tribuo/common/libsvm/SVMParameters.html" title="class in org.tribuo.common.libsvm">SVMParameters</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;parameters)</pre>
+<pre>public&nbsp;LibSVMClassificationTrainer(<a href="../../../../org/tribuo/common/libsvm/SVMParameters.html" title="class in org.tribuo.common.libsvm">SVMParameters</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;parameters)</pre>
 </li>
 </ul>
 </li>
@@ -308,7 +308,7 @@ implements <a href="../../../../org/tribuo/classification/WeightedLabels.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>postConfig</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/classification/libsvm/LibSVMClassificationTrainer.html#line.82">postConfig</a>()</pre>
+<pre>public&nbsp;void&nbsp;postConfig()</pre>
 <div class="block">Used by the OLCUT configuration system, and should not be called by external code.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -324,7 +324,7 @@ implements <a href="../../../../org/tribuo/classification/WeightedLabels.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>createModel</h4>
-<pre>protected&nbsp;<a href="../../../../org/tribuo/common/libsvm/LibSVMModel.html" title="class in org.tribuo.common.libsvm">LibSVMModel</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/classification/libsvm/LibSVMClassificationTrainer.html#line.90">createModel</a>(<a href="../../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;provenance,
+<pre>protected&nbsp;<a href="../../../../org/tribuo/common/libsvm/LibSVMModel.html" title="class in org.tribuo.common.libsvm">LibSVMModel</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;createModel(<a href="../../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;provenance,
                                          <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap,
                                          <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;outputIDInfo,
                                          <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;libsvm.svm_model&gt;&nbsp;models)</pre>
@@ -349,7 +349,7 @@ implements <a href="../../../../org/tribuo/classification/WeightedLabels.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>trainModels</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;libsvm.svm_model&gt;&nbsp;<a href="../../../../src-html/org/tribuo/classification/libsvm/LibSVMClassificationTrainer.html#line.95">trainModels</a>(libsvm.svm_parameter&nbsp;curParams,
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;libsvm.svm_model&gt;&nbsp;trainModels(libsvm.svm_parameter&nbsp;curParams,
                                              int&nbsp;numFeatures,
                                              libsvm.svm_node[][]&nbsp;features,
                                              double[][]&nbsp;outputs)</pre>
@@ -374,7 +374,7 @@ implements <a href="../../../../org/tribuo/classification/WeightedLabels.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>extractData</h4>
-<pre>protected&nbsp;com.oracle.labs.mlrg.olcut.util.Pair&lt;libsvm.svm_node[][],double[][]&gt;&nbsp;<a href="../../../../src-html/org/tribuo/classification/libsvm/LibSVMClassificationTrainer.html#line.111">extractData</a>(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;data,
+<pre>protected&nbsp;com.oracle.labs.mlrg.olcut.util.Pair&lt;libsvm.svm_node[][],double[][]&gt;&nbsp;extractData(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;data,
                                                                                            <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;outputInfo,
                                                                                            <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureMap)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html#extractData-org.tribuo.Dataset-org.tribuo.ImmutableOutputInfo-org.tribuo.ImmutableFeatureMap-">LibSVMTrainer</a></code></span></div>
@@ -397,7 +397,7 @@ implements <a href="../../../../org/tribuo/classification/WeightedLabels.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>setupParameters</h4>
-<pre>protected&nbsp;libsvm.svm_parameter&nbsp;<a href="../../../../src-html/org/tribuo/classification/libsvm/LibSVMClassificationTrainer.html#line.125">setupParameters</a>(<a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;outputIDInfo)</pre>
+<pre>protected&nbsp;libsvm.svm_parameter&nbsp;setupParameters(<a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;outputIDInfo)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html#setupParameters-org.tribuo.ImmutableOutputInfo-">LibSVMTrainer</a></code></span></div>
 <div class="block">Constructs the svm_parameter. Most of the time this is a no-op, but
  classification overrides it to incorporate label weights if they exist.</div>
@@ -417,7 +417,7 @@ implements <a href="../../../../org/tribuo/classification/WeightedLabels.html" t
 <ul class="blockListLast">
 <li class="blockList">
 <h4>setLabelWeights</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/classification/libsvm/LibSVMClassificationTrainer.html#line.151">setLabelWeights</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Float.html?is-external=true" title="class or interface in java.lang">Float</a>&gt;&nbsp;weights)</pre>
+<pre>public&nbsp;void&nbsp;setLabelWeights(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Float.html?is-external=true" title="class or interface in java.lang">Float</a>&gt;&nbsp;weights)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/WeightedLabels.html#setLabelWeights-java.util.Map-">WeightedLabels</a></code></span></div>
 <div class="block">Sets the label weights used by this trainer.
  <p>
@@ -498,6 +498,6 @@ implements <a href="../../../../org/tribuo/classification/WeightedLabels.html" t
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

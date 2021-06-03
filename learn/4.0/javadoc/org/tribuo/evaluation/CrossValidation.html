@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <hr>
 <br>
-<pre>public class <a href="../../../src-html/org/tribuo/evaluation/CrossValidation.html#line.38">CrossValidation</a>&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;,E extends <a href="../../../org/tribuo/evaluation/Evaluation.html" title="interface in org.tribuo.evaluation">Evaluation</a>&lt;T&gt;&gt;
+<pre>public class <span class="typeNameLabel">CrossValidation&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;,E extends <a href="../../../org/tribuo/evaluation/Evaluation.html" title="interface in org.tribuo.evaluation">Evaluation</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
 <div class="block">A class that does k-fold cross-validation.
  <p>
@@ -204,7 +204,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>CrossValidation</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/evaluation/CrossValidation.html#line.55">CrossValidation</a>(<a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../org/tribuo/evaluation/CrossValidation.html" title="type parameter in CrossValidation">T</a>&gt;&nbsp;trainer,
+<pre>public&nbsp;CrossValidation(<a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../org/tribuo/evaluation/CrossValidation.html" title="type parameter in CrossValidation">T</a>&gt;&nbsp;trainer,
                        <a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/evaluation/CrossValidation.html" title="type parameter in CrossValidation">T</a>&gt;&nbsp;data,
                        <a href="../../../org/tribuo/evaluation/Evaluator.html" title="interface in org.tribuo.evaluation">Evaluator</a>&lt;<a href="../../../org/tribuo/evaluation/CrossValidation.html" title="type parameter in CrossValidation">T</a>,<a href="../../../org/tribuo/evaluation/CrossValidation.html" title="type parameter in CrossValidation">E</a>&gt;&nbsp;evaluator,
                        int&nbsp;k)</pre>
@@ -224,7 +224,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>CrossValidation</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/evaluation/CrossValidation.html#line.69">CrossValidation</a>(<a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../org/tribuo/evaluation/CrossValidation.html" title="type parameter in CrossValidation">T</a>&gt;&nbsp;trainer,
+<pre>public&nbsp;CrossValidation(<a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../org/tribuo/evaluation/CrossValidation.html" title="type parameter in CrossValidation">T</a>&gt;&nbsp;trainer,
                        <a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/evaluation/CrossValidation.html" title="type parameter in CrossValidation">T</a>&gt;&nbsp;data,
                        <a href="../../../org/tribuo/evaluation/Evaluator.html" title="interface in org.tribuo.evaluation">Evaluator</a>&lt;<a href="../../../org/tribuo/evaluation/CrossValidation.html" title="type parameter in CrossValidation">T</a>,<a href="../../../org/tribuo/evaluation/CrossValidation.html" title="type parameter in CrossValidation">E</a>&gt;&nbsp;evaluator,
                        int&nbsp;k,
@@ -254,7 +254,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getK</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../src-html/org/tribuo/evaluation/CrossValidation.html#line.85">getK</a>()</pre>
+<pre>public&nbsp;int&nbsp;getK()</pre>
 <div class="block">Returns the number of folds.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -268,7 +268,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>evaluate</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="../../../org/tribuo/evaluation/CrossValidation.html" title="type parameter in CrossValidation">E</a>,<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/evaluation/CrossValidation.html" title="type parameter in CrossValidation">T</a>&gt;&gt;&gt;&nbsp;<a href="../../../src-html/org/tribuo/evaluation/CrossValidation.html#line.91">evaluate</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="../../../org/tribuo/evaluation/CrossValidation.html" title="type parameter in CrossValidation">E</a>,<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/evaluation/CrossValidation.html" title="type parameter in CrossValidation">T</a>&gt;&gt;&gt;&nbsp;evaluate()</pre>
 <div class="block">Performs k fold cross validation, returning the k evaluations.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -344,6 +344,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <hr>
 <br>
-<pre>public class <a href="../../../../../src-html/org/tribuo/common/tree/impl/IntArrayContainer.html#line.27">IntArrayContainer</a>
+<pre>public class <span class="typeNameLabel">IntArrayContainer</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
 <div class="block">An array container which maintains the array and the size.
  This class is barely more than a Tuple, it's up to you to maintain the size invariant.</div>
@@ -248,7 +248,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>array</h4>
-<pre>public&nbsp;int[] <a href="../../../../../src-html/org/tribuo/common/tree/impl/IntArrayContainer.html#line.30">array</a></pre>
+<pre>public&nbsp;int[] array</pre>
 </li>
 </ul>
 <a name="size">
@@ -257,7 +257,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>size</h4>
-<pre>public&nbsp;int <a href="../../../../../src-html/org/tribuo/common/tree/impl/IntArrayContainer.html#line.31">size</a></pre>
+<pre>public&nbsp;int size</pre>
 </li>
 </ul>
 </li>
@@ -274,7 +274,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>IntArrayContainer</h4>
-<pre>public&nbsp;<a href="../../../../../src-html/org/tribuo/common/tree/impl/IntArrayContainer.html#line.37">IntArrayContainer</a>(int&nbsp;initialCapacity)</pre>
+<pre>public&nbsp;IntArrayContainer(int&nbsp;initialCapacity)</pre>
 <div class="block">Constructs a new int array container with the specified initial backing array size.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -296,7 +296,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>grow</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/common/tree/impl/IntArrayContainer.html#line.46">grow</a>(int&nbsp;requestedSize)</pre>
+<pre>public&nbsp;void&nbsp;grow(int&nbsp;requestedSize)</pre>
 <div class="block">Grows the backing array, copying the elements.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -310,7 +310,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>public&nbsp;int[]&nbsp;<a href="../../../../../src-html/org/tribuo/common/tree/impl/IntArrayContainer.html#line.63">copy</a>()</pre>
+<pre>public&nbsp;int[]&nbsp;copy()</pre>
 <div class="block">Returns a copy of the elements in use.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -324,7 +324,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>fill</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/common/tree/impl/IntArrayContainer.html#line.71">fill</a>(int[]&nbsp;otherArray)</pre>
+<pre>public&nbsp;void&nbsp;fill(int[]&nbsp;otherArray)</pre>
 <div class="block">Overwrites values from the supplied array into this array.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -338,7 +338,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>fill</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/common/tree/impl/IntArrayContainer.html#line.84">fill</a>(<a href="../../../../../org/tribuo/common/tree/impl/IntArrayContainer.html" title="class in org.tribuo.common.tree.impl">IntArrayContainer</a>&nbsp;other)</pre>
+<pre>public&nbsp;void&nbsp;fill(<a href="../../../../../org/tribuo/common/tree/impl/IntArrayContainer.html" title="class in org.tribuo.common.tree.impl">IntArrayContainer</a>&nbsp;other)</pre>
 <div class="block">Overwrites values in this array with the supplied array.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -352,7 +352,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>removeOther</h4>
-<pre>public static&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/common/tree/impl/IntArrayContainer.html#line.101">removeOther</a>(<a href="../../../../../org/tribuo/common/tree/impl/IntArrayContainer.html" title="class in org.tribuo.common.tree.impl">IntArrayContainer</a>&nbsp;input,
+<pre>public static&nbsp;void&nbsp;removeOther(<a href="../../../../../org/tribuo/common/tree/impl/IntArrayContainer.html" title="class in org.tribuo.common.tree.impl">IntArrayContainer</a>&nbsp;input,
                                int[]&nbsp;otherArray,
                                <a href="../../../../../org/tribuo/common/tree/impl/IntArrayContainer.html" title="class in org.tribuo.common.tree.impl">IntArrayContainer</a>&nbsp;output)</pre>
 <div class="block">Copies from input to output excluding the values in otherArray.
@@ -372,7 +372,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>merge</h4>
-<pre>public static&nbsp;int[]&nbsp;<a href="../../../../../src-html/org/tribuo/common/tree/impl/IntArrayContainer.html#line.150">merge</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;int[]&gt;&nbsp;input,
+<pre>public static&nbsp;int[]&nbsp;merge(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;int[]&gt;&nbsp;input,
                           <a href="../../../../../org/tribuo/common/tree/impl/IntArrayContainer.html" title="class in org.tribuo.common.tree.impl">IntArrayContainer</a>&nbsp;firstBuffer,
                           <a href="../../../../../org/tribuo/common/tree/impl/IntArrayContainer.html" title="class in org.tribuo.common.tree.impl">IntArrayContainer</a>&nbsp;secondBuffer)</pre>
 <div class="block">Merges the list of int arrays into a single int array, using the two supplied buffers.
@@ -393,7 +393,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>merge</h4>
-<pre>public static&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/common/tree/impl/IntArrayContainer.html#line.172">merge</a>(<a href="../../../../../org/tribuo/common/tree/impl/IntArrayContainer.html" title="class in org.tribuo.common.tree.impl">IntArrayContainer</a>&nbsp;input,
+<pre>public static&nbsp;void&nbsp;merge(<a href="../../../../../org/tribuo/common/tree/impl/IntArrayContainer.html" title="class in org.tribuo.common.tree.impl">IntArrayContainer</a>&nbsp;input,
                          int[]&nbsp;otherArray,
                          <a href="../../../../../org/tribuo/common/tree/impl/IntArrayContainer.html" title="class in org.tribuo.common.tree.impl">IntArrayContainer</a>&nbsp;output)</pre>
 <div class="block">Merges input and otherArray writing to output.
@@ -474,6 +474,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

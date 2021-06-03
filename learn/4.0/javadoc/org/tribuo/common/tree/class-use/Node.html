@@ -185,14 +185,14 @@
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;<a href="../../../../../org/tribuo/common/tree/SplitNode.html" title="type parameter in SplitNode">T</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">SplitNode.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/common/tree/SplitNode.html#copy--">copy</a></span>()</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;<a href="../../../../../org/tribuo/common/tree/Node.html" title="type parameter in Node">T</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">Node.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/common/tree/Node.html#copy--">copy</a></span>()</code>
 <div class="block">Copies the node and it's children.</div>
 </td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;<a href="../../../../../org/tribuo/common/tree/SplitNode.html" title="type parameter in SplitNode">T</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">SplitNode.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/common/tree/SplitNode.html#copy--">copy</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;<a href="../../../../../org/tribuo/common/tree/AbstractTrainingNode.html" title="type parameter in AbstractTrainingNode">T</a>&gt;</code></td>
@@ -211,15 +211,15 @@
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;<a href="../../../../../org/tribuo/common/tree/Node.html" title="type parameter in Node">T</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">Node.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/common/tree/Node.html#getNextNode-org.tribuo.math.la.SparseVector-">getNextNode</a></span>(<a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;example)</code>
-<div class="block">Returns the next node in the tree based on the supplied example, or null if it's a leaf.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;<a href="../../../../../org/tribuo/common/tree/SplitNode.html" title="type parameter in SplitNode">T</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">SplitNode.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/common/tree/SplitNode.html#getNextNode-org.tribuo.math.la.SparseVector-">getNextNode</a></span>(<a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;e)</code>
 <div class="block">Return the appropriate child node.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;<a href="../../../../../org/tribuo/common/tree/Node.html" title="type parameter in Node">T</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">Node.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/common/tree/Node.html#getNextNode-org.tribuo.math.la.SparseVector-">getNextNode</a></span>(<a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;example)</code>
+<div class="block">Returns the next node in the tree based on the supplied example, or null if it's a leaf.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -293,13 +293,13 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">JointRegressorTrainingNode.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/regression/rtree/impl/JointRegressorTrainingNode.html#convertTree--">convertTree</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">RegressorTrainingNode.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/regression/rtree/impl/RegressorTrainingNode.html#convertTree--">convertTree</a></span>()</code>
 <div class="block">Generates a test time tree (made of <a href="../../../../../org/tribuo/common/tree/SplitNode.html" title="class in org.tribuo.common.tree"><code>SplitNode</code></a> and <a href="../../../../../org/tribuo/common/tree/LeafNode.html" title="class in org.tribuo.common.tree"><code>LeafNode</code></a>) from the tree rooted at this node.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">RegressorTrainingNode.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/regression/rtree/impl/RegressorTrainingNode.html#convertTree--">convertTree</a></span>()</code>
+<td class="colLast"><span class="typeNameLabel">JointRegressorTrainingNode.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/regression/rtree/impl/JointRegressorTrainingNode.html#convertTree--">convertTree</a></span>()</code>
 <div class="block">Generates a test time tree (made of <a href="../../../../../org/tribuo/common/tree/SplitNode.html" title="class in org.tribuo.common.tree"><code>SplitNode</code></a> and <a href="../../../../../org/tribuo/common/tree/LeafNode.html" title="class in org.tribuo.common.tree"><code>LeafNode</code></a>) from the tree rooted at this node.</div>
 </td>
 </tr>
@@ -356,6 +356,6 @@
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

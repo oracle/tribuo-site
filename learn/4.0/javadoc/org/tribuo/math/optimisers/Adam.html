@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/math/optimisers/Adam.html#line.40">Adam</a>
+<pre>public class <span class="typeNameLabel">Adam</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/math/StochasticGradientOptimiser.html" title="interface in org.tribuo.math">StochasticGradientOptimiser</a></pre>
 <div class="block">An implementation of the Adam gradient optimiser.
@@ -253,7 +253,7 @@ implements <a href="../../../../org/tribuo/math/StochasticGradientOptimiser.html
 <ul class="blockList">
 <li class="blockList">
 <h4>Adam</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/math/optimisers/Adam.html#line.66">Adam</a>(double&nbsp;initialLearningRate,
+<pre>public&nbsp;Adam(double&nbsp;initialLearningRate,
             double&nbsp;betaOne,
             double&nbsp;betaTwo,
             double&nbsp;epsilon)</pre>
@@ -274,7 +274,7 @@ implements <a href="../../../../org/tribuo/math/StochasticGradientOptimiser.html
 <ul class="blockList">
 <li class="blockList">
 <h4>Adam</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/math/optimisers/Adam.html#line.79">Adam</a>(double&nbsp;initialLearningRate,
+<pre>public&nbsp;Adam(double&nbsp;initialLearningRate,
             double&nbsp;epsilon)</pre>
 <div class="block">Sets betaOne to 0.9 and betaTwo to 0.999</div>
 <dl>
@@ -290,7 +290,7 @@ implements <a href="../../../../org/tribuo/math/StochasticGradientOptimiser.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Adam</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/math/optimisers/Adam.html#line.87">Adam</a>()</pre>
+<pre>public&nbsp;Adam()</pre>
 <div class="block">Sets initialLearningRate to 0.001, betaOne to 0.9, betaTwo to 0.999, epsilon to 1e-6.
  These are the parameters from the Adam paper.</div>
 </li>
@@ -309,7 +309,7 @@ implements <a href="../../../../org/tribuo/math/StochasticGradientOptimiser.html
 <ul class="blockList">
 <li class="blockList">
 <h4>initialise</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/optimisers/Adam.html#line.92">initialise</a>(<a href="../../../../org/tribuo/math/Parameters.html" title="interface in org.tribuo.math">Parameters</a>&nbsp;parameters)</pre>
+<pre>public&nbsp;void&nbsp;initialise(<a href="../../../../org/tribuo/math/Parameters.html" title="interface in org.tribuo.math">Parameters</a>&nbsp;parameters)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/StochasticGradientOptimiser.html#initialise-org.tribuo.math.Parameters-">StochasticGradientOptimiser</a></code></span></div>
 <div class="block">Initialises the gradient optimiser.
  <p>
@@ -328,7 +328,7 @@ implements <a href="../../../../org/tribuo/math/StochasticGradientOptimiser.html
 <ul class="blockList">
 <li class="blockList">
 <h4>step</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;<a href="../../../../src-html/org/tribuo/math/optimisers/Adam.html#line.99">step</a>(<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;updates,
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;step(<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;updates,
                      double&nbsp;weight)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/StochasticGradientOptimiser.html#step-org.tribuo.math.la.Tensor:A-double-">StochasticGradientOptimiser</a></code></span></div>
 <div class="block">Take a <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a> array of gradients and transform them
@@ -352,7 +352,7 @@ implements <a href="../../../../org/tribuo/math/StochasticGradientOptimiser.html
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/optimisers/Adam.html#line.120">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -365,7 +365,7 @@ implements <a href="../../../../org/tribuo/math/StochasticGradientOptimiser.html
 <ul class="blockList">
 <li class="blockList">
 <h4>reset</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/optimisers/Adam.html#line.125">reset</a>()</pre>
+<pre>public&nbsp;void&nbsp;reset()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/StochasticGradientOptimiser.html#reset--">StochasticGradientOptimiser</a></code></span></div>
 <div class="block">Resets the optimiser so it's ready to optimise a new <a href="../../../../org/tribuo/math/Parameters.html" title="interface in org.tribuo.math"><code>Parameters</code></a>.</div>
 <dl>
@@ -380,7 +380,7 @@ implements <a href="../../../../org/tribuo/math/StochasticGradientOptimiser.html
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/optimisers/Adam.html" title="class in org.tribuo.math.optimisers">Adam</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/optimisers/Adam.html#line.132">copy</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/optimisers/Adam.html" title="class in org.tribuo.math.optimisers">Adam</a>&nbsp;copy()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/StochasticGradientOptimiser.html#copy--">StochasticGradientOptimiser</a></code></span></div>
 <div class="block">Copies a gradient optimiser with it's configuration. Usually calls the copy constructor.</div>
 <dl>
@@ -397,7 +397,7 @@ implements <a href="../../../../org/tribuo/math/StochasticGradientOptimiser.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;<a href="../../../../src-html/org/tribuo/math/optimisers/Adam.html#line.137">getProvenance</a>()</pre>
+<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&gt;</code></dd>
@@ -472,6 +472,6 @@ implements <a href="../../../../org/tribuo/math/StochasticGradientOptimiser.html
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

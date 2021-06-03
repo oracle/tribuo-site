@@ -121,7 +121,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public abstract class <a href="../../../src-html/org/tribuo/ensemble/EnsembleModel.html#line.42">EnsembleModel</a>&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public abstract class <span class="typeNameLabel">EnsembleModel&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;T&gt;</pre>
 <div class="block">A model which contains a list of other <a href="../../../org/tribuo/Model.html" title="class in org.tribuo"><code>Model</code></a>s.</div>
 <dl>
@@ -269,7 +269,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockListLast">
 <li class="blockList">
 <h4>models</h4>
-<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="type parameter in EnsembleModel">T</a> extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="type parameter in EnsembleModel">T</a>&gt;&gt;&gt; <a href="../../../src-html/org/tribuo/ensemble/EnsembleModel.html#line.45">models</a></pre>
+<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="type parameter in EnsembleModel">T</a> extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="type parameter in EnsembleModel">T</a>&gt;&gt;&gt; models</pre>
 </li>
 </ul>
 </li>
@@ -286,7 +286,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockListLast">
 <li class="blockList">
 <h4>EnsembleModel</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/ensemble/EnsembleModel.html#line.47">EnsembleModel</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+<pre>public&nbsp;EnsembleModel(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                      <a href="../../../org/tribuo/provenance/EnsembleModelProvenance.html" title="class in org.tribuo.provenance">EnsembleModelProvenance</a>&nbsp;description,
                      <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap,
                      <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="type parameter in EnsembleModel">T</a>&gt;&nbsp;outputIDInfo,
@@ -307,7 +307,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockList">
 <li class="blockList">
 <h4>getModels</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="type parameter in EnsembleModel">T</a>&gt;&gt;&nbsp;<a href="../../../src-html/org/tribuo/ensemble/EnsembleModel.html#line.56">getModels</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="type parameter in EnsembleModel">T</a>&gt;&gt;&nbsp;getModels()</pre>
 <div class="block">Returns an unmodifiable view on the ensemble members.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -321,7 +321,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockList">
 <li class="blockList">
 <h4>getNumModels</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../src-html/org/tribuo/ensemble/EnsembleModel.html#line.64">getNumModels</a>()</pre>
+<pre>public&nbsp;int&nbsp;getNumModels()</pre>
 <div class="block">The number of ensemble members.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -335,7 +335,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockList">
 <li class="blockList">
 <h4>getExcuse</h4>
-<pre>public abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../org/tribuo/Excuse.html" title="class in org.tribuo">Excuse</a>&lt;<a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="type parameter in EnsembleModel">T</a>&gt;&gt;&nbsp;<a href="../../../src-html/org/tribuo/ensemble/EnsembleModel.html#line.69">getExcuse</a>(<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="type parameter in EnsembleModel">T</a>&gt;&nbsp;example)</pre>
+<pre>public abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../org/tribuo/Excuse.html" title="class in org.tribuo">Excuse</a>&lt;<a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="type parameter in EnsembleModel">T</a>&gt;&gt;&nbsp;getExcuse(<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="type parameter in EnsembleModel">T</a>&gt;&nbsp;example)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/Model.html#getExcuse-org.tribuo.Example-">Model</a></code></span></div>
 <div class="block">Generates an excuse for an example.
  <p>
@@ -360,7 +360,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockList">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/provenance/EnsembleModelProvenance.html" title="class in org.tribuo.provenance">EnsembleModelProvenance</a>&nbsp;<a href="../../../src-html/org/tribuo/ensemble/EnsembleModel.html#line.72">getProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/provenance/EnsembleModelProvenance.html" title="class in org.tribuo.provenance">EnsembleModelProvenance</a>&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&gt;</code></dd>
@@ -375,7 +375,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>protected&nbsp;<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="type parameter in EnsembleModel">T</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/ensemble/EnsembleModel.html#line.77">copy</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+<pre>protected&nbsp;<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="type parameter in EnsembleModel">T</a>&gt;&nbsp;copy(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                         <a href="../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;newProvenance)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/Model.html#copy-java.lang.String-org.tribuo.provenance.ModelProvenance-">Model</a></code></span></div>
 <div class="block">Copies a model, replacing it's provenance and name with the supplied values.
@@ -398,7 +398,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>protected abstract&nbsp;<a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="class in org.tribuo.ensemble">EnsembleModel</a>&lt;<a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="type parameter in EnsembleModel">T</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/ensemble/EnsembleModel.html#line.81">copy</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+<pre>protected abstract&nbsp;<a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="class in org.tribuo.ensemble">EnsembleModel</a>&lt;<a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="type parameter in EnsembleModel">T</a>&gt;&nbsp;copy(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                                          <a href="../../../org/tribuo/provenance/EnsembleModelProvenance.html" title="class in org.tribuo.provenance">EnsembleModelProvenance</a>&nbsp;newProvenance,
                                          <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="type parameter in EnsembleModel">T</a>&gt;&gt;&nbsp;newModels)</pre>
 </li>
@@ -409,7 +409,7 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getTopFeatures</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&gt;&gt;&nbsp;<a href="../../../src-html/org/tribuo/ensemble/EnsembleModel.html#line.84">getTopFeatures</a>(int&nbsp;n)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&gt;&gt;&nbsp;getTopFeatures(int&nbsp;n)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/Model.html#getTopFeatures-int-">Model</a></code></span></div>
 <div class="block">Gets the top <code>n</code> features associated with this model.
  <p>
@@ -499,6 +499,6 @@ extends <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Mod
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

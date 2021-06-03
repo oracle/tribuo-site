@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/common/libsvm/SVMParameters.html#line.29">SVMParameters</a>&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public class <span class="typeNameLabel">SVMParameters&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
 <div class="block">A container for SVM parameters and the kernel.</div>
@@ -277,7 +277,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>svmType</h4>
-<pre>protected final&nbsp;<a href="../../../../org/tribuo/common/libsvm/SVMType.html" title="interface in org.tribuo.common.libsvm">SVMType</a>&lt;<a href="../../../../org/tribuo/common/libsvm/SVMParameters.html" title="type parameter in SVMParameters">T</a> extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../../org/tribuo/common/libsvm/SVMParameters.html" title="type parameter in SVMParameters">T</a>&gt;&gt; <a href="../../../../src-html/org/tribuo/common/libsvm/SVMParameters.html#line.34">svmType</a></pre>
+<pre>protected final&nbsp;<a href="../../../../org/tribuo/common/libsvm/SVMType.html" title="interface in org.tribuo.common.libsvm">SVMType</a>&lt;<a href="../../../../org/tribuo/common/libsvm/SVMParameters.html" title="type parameter in SVMParameters">T</a> extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../../org/tribuo/common/libsvm/SVMParameters.html" title="type parameter in SVMParameters">T</a>&gt;&gt; svmType</pre>
 </li>
 </ul>
 <a name="kernelType">
@@ -286,7 +286,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>kernelType</h4>
-<pre>protected final&nbsp;<a href="../../../../org/tribuo/common/libsvm/KernelType.html" title="enum in org.tribuo.common.libsvm">KernelType</a> <a href="../../../../src-html/org/tribuo/common/libsvm/SVMParameters.html#line.36">kernelType</a></pre>
+<pre>protected final&nbsp;<a href="../../../../org/tribuo/common/libsvm/KernelType.html" title="enum in org.tribuo.common.libsvm">KernelType</a> kernelType</pre>
 </li>
 </ul>
 <a name="parameters">
@@ -295,7 +295,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockListLast">
 <li class="blockList">
 <h4>parameters</h4>
-<pre>protected final&nbsp;libsvm.svm_parameter <a href="../../../../src-html/org/tribuo/common/libsvm/SVMParameters.html#line.38">parameters</a></pre>
+<pre>protected final&nbsp;libsvm.svm_parameter parameters</pre>
 </li>
 </ul>
 </li>
@@ -312,7 +312,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockListLast">
 <li class="blockList">
 <h4>SVMParameters</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/SVMParameters.html#line.40">SVMParameters</a>(<a href="../../../../org/tribuo/common/libsvm/SVMType.html" title="interface in org.tribuo.common.libsvm">SVMType</a>&lt;<a href="../../../../org/tribuo/common/libsvm/SVMParameters.html" title="type parameter in SVMParameters">T</a>&gt;&nbsp;svmType,
+<pre>public&nbsp;SVMParameters(<a href="../../../../org/tribuo/common/libsvm/SVMType.html" title="interface in org.tribuo.common.libsvm">SVMType</a>&lt;<a href="../../../../org/tribuo/common/libsvm/SVMParameters.html" title="type parameter in SVMParameters">T</a>&gt;&nbsp;svmType,
                      <a href="../../../../org/tribuo/common/libsvm/KernelType.html" title="enum in org.tribuo.common.libsvm">KernelType</a>&nbsp;kernelType)</pre>
 </li>
 </ul>
@@ -330,7 +330,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>getSvmType</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/common/libsvm/SVMType.html" title="interface in org.tribuo.common.libsvm">SVMType</a>&lt;<a href="../../../../org/tribuo/common/libsvm/SVMParameters.html" title="type parameter in SVMParameters">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/SVMParameters.html#line.63">getSvmType</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/common/libsvm/SVMType.html" title="interface in org.tribuo.common.libsvm">SVMType</a>&lt;<a href="../../../../org/tribuo/common/libsvm/SVMParameters.html" title="type parameter in SVMParameters">T</a>&gt;&nbsp;getSvmType()</pre>
 </li>
 </ul>
 <a name="getKernelType--">
@@ -339,7 +339,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>getKernelType</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/common/libsvm/KernelType.html" title="enum in org.tribuo.common.libsvm">KernelType</a>&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/SVMParameters.html#line.67">getKernelType</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/common/libsvm/KernelType.html" title="enum in org.tribuo.common.libsvm">KernelType</a>&nbsp;getKernelType()</pre>
 </li>
 </ul>
 <a name="getParameters--">
@@ -348,7 +348,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>getParameters</h4>
-<pre>public&nbsp;libsvm.svm_parameter&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/SVMParameters.html#line.71">getParameters</a>()</pre>
+<pre>public&nbsp;libsvm.svm_parameter&nbsp;getParameters()</pre>
 </li>
 </ul>
 <a name="toString--">
@@ -357,7 +357,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/SVMParameters.html#line.76">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -370,7 +370,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>setProbability</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/SVMParameters.html#line.83">setProbability</a>()</pre>
+<pre>public&nbsp;void&nbsp;setProbability()</pre>
 <div class="block">Makes the model that is built provide probability estimates.</div>
 </li>
 </ul>
@@ -380,7 +380,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>setCost</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/SVMParameters.html#line.87">setCost</a>(double&nbsp;c)</pre>
+<pre>public&nbsp;void&nbsp;setCost(double&nbsp;c)</pre>
 </li>
 </ul>
 <a name="setNu-double-">
@@ -389,7 +389,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>setNu</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/SVMParameters.html#line.94">setNu</a>(double&nbsp;nu)</pre>
+<pre>public&nbsp;void&nbsp;setNu(double&nbsp;nu)</pre>
 </li>
 </ul>
 <a name="setCoeff-double-">
@@ -398,7 +398,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>setCoeff</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/SVMParameters.html#line.101">setCoeff</a>(double&nbsp;coeff)</pre>
+<pre>public&nbsp;void&nbsp;setCoeff(double&nbsp;coeff)</pre>
 </li>
 </ul>
 <a name="setEpsilon-double-">
@@ -407,7 +407,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>setEpsilon</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/SVMParameters.html#line.105">setEpsilon</a>(double&nbsp;epsilon)</pre>
+<pre>public&nbsp;void&nbsp;setEpsilon(double&nbsp;epsilon)</pre>
 </li>
 </ul>
 <a name="setDegree-int-">
@@ -416,7 +416,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>setDegree</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/SVMParameters.html#line.109">setDegree</a>(int&nbsp;degree)</pre>
+<pre>public&nbsp;void&nbsp;setDegree(int&nbsp;degree)</pre>
 </li>
 </ul>
 <a name="setGamma-double-">
@@ -425,7 +425,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>setGamma</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/SVMParameters.html#line.113">setGamma</a>(double&nbsp;gamma)</pre>
+<pre>public&nbsp;void&nbsp;setGamma(double&nbsp;gamma)</pre>
 </li>
 </ul>
 <a name="getGamma--">
@@ -434,7 +434,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>getGamma</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/SVMParameters.html#line.117">getGamma</a>()</pre>
+<pre>public&nbsp;double&nbsp;getGamma()</pre>
 </li>
 </ul>
 <a name="setCacheSize-double-">
@@ -443,7 +443,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>setCacheSize</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/SVMParameters.html#line.121">setCacheSize</a>(double&nbsp;cacheMB)</pre>
+<pre>public&nbsp;void&nbsp;setCacheSize(double&nbsp;cacheMB)</pre>
 </li>
 </ul>
 <a name="copyParameters-libsvm.svm_parameter-">
@@ -452,7 +452,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>copyParameters</h4>
-<pre>public static&nbsp;libsvm.svm_parameter&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/SVMParameters.html#line.133">copyParameters</a>(libsvm.svm_parameter&nbsp;input)</pre>
+<pre>public static&nbsp;libsvm.svm_parameter&nbsp;copyParameters(libsvm.svm_parameter&nbsp;input)</pre>
 <div class="block">Deep copy of the svm_parameters including the arrays.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -468,7 +468,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockListLast">
 <li class="blockList">
 <h4>svmParamsToString</h4>
-<pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/SVMParameters.html#line.158">svmParamsToString</a>(libsvm.svm_parameter&nbsp;param)</pre>
+<pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;svmParamsToString(libsvm.svm_parameter&nbsp;param)</pre>
 <div class="block">A sensible toString for svm_parameter.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -546,6 +546,6 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

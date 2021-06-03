@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <a href="../../../../src-html/org/tribuo/interop/tensorflow/ExampleTransformer.html#line.38">ExampleTransformer</a>&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public interface <span class="typeNameLabel">ExampleTransformer&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&gt;, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
 <div class="block">TensorFlow support is experimental, and may change without a major version bump.
  <p>
@@ -195,7 +195,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>transform</h4>
-<pre>org.tensorflow.Tensor&lt;?&gt;&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/ExampleTransformer.html#line.48">transform</a>(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/ExampleTransformer.html" title="type parameter in ExampleTransformer">T</a>&gt;&nbsp;example,
+<pre>org.tensorflow.Tensor&lt;?&gt;&nbsp;transform(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/ExampleTransformer.html" title="type parameter in ExampleTransformer">T</a>&gt;&nbsp;example,
                                    <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap)</pre>
 <div class="block">Converts an <a href="../../../../org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a> into a <code>Tensor</code> suitable for supplying as an input to a graph.
  <p>
@@ -215,7 +215,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>transform</h4>
-<pre>org.tensorflow.Tensor&lt;?&gt;&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/ExampleTransformer.html#line.57">transform</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/ExampleTransformer.html" title="type parameter in ExampleTransformer">T</a>&gt;&gt;&nbsp;example,
+<pre>org.tensorflow.Tensor&lt;?&gt;&nbsp;transform(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/ExampleTransformer.html" title="type parameter in ExampleTransformer">T</a>&gt;&gt;&nbsp;example,
                                    <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap)</pre>
 <div class="block">Converts a batch of <a href="../../../../org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a>s into a single <code>Tensor</code> suitable for supplying as
  an input to a graph.</div>
@@ -234,7 +234,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>transform</h4>
-<pre>org.tensorflow.Tensor&lt;?&gt;&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/ExampleTransformer.html#line.66">transform</a>(<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;vector)</pre>
+<pre>org.tensorflow.Tensor&lt;?&gt;&nbsp;transform(<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;vector)</pre>
 <div class="block">Converts a <a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la"><code>SparseVector</code></a> representing the features into a <code>Tensor</code>.
  <p>
  It generates it as a single example minibatch.</div>
@@ -252,7 +252,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockListLast">
 <li class="blockList">
 <h4>transform</h4>
-<pre>org.tensorflow.Tensor&lt;?&gt;&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/ExampleTransformer.html#line.74">transform</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&gt;&nbsp;vectors)</pre>
+<pre>org.tensorflow.Tensor&lt;?&gt;&nbsp;transform(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&gt;&nbsp;vectors)</pre>
 <div class="block">Converts a list of <a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la"><code>SparseVector</code></a>s representing a batch of features into a <code>Tensor</code>.
  <p></div>
 <dl>
@@ -331,6 +331,6 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

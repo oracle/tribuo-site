@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public final class <a href="../../../src-html/org/tribuo/clustering/ClusteringFactory.html#line.37">ClusteringFactory</a>
+<pre>public final class <span class="typeNameLabel">ClusteringFactory</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&gt;</pre>
 <div class="block">A factory for making ClusterID related classes.
@@ -286,7 +286,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockListLast">
 <li class="blockList">
 <h4>UNASSIGNED_CLUSTER_ID</h4>
-<pre>public static final&nbsp;<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a> <a href="../../../src-html/org/tribuo/clustering/ClusteringFactory.html#line.40">UNASSIGNED_CLUSTER_ID</a></pre>
+<pre>public static final&nbsp;<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a> UNASSIGNED_CLUSTER_ID</pre>
 </li>
 </ul>
 </li>
@@ -303,7 +303,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ClusteringFactory</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/clustering/ClusteringFactory.html#line.49">ClusteringFactory</a>()</pre>
+<pre>public&nbsp;ClusteringFactory()</pre>
 <div class="block">ClusteringFactory is stateless and immutable, but we need to be able to construct them via the config system.</div>
 </li>
 </ul>
@@ -323,7 +323,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>generateOutput</h4>
-<pre>public&nbsp;&lt;V&gt;&nbsp;<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&nbsp;<a href="../../../src-html/org/tribuo/clustering/ClusteringFactory.html#line.58">generateOutput</a>(V&nbsp;label)</pre>
+<pre>public&nbsp;&lt;V&gt;&nbsp;<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&nbsp;generateOutput(V&nbsp;label)</pre>
 <div class="block">Generates a ClusterID by calling toString on the input, then calling Integer.parseInt.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -343,7 +343,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>getUnknownOutput</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&nbsp;<a href="../../../src-html/org/tribuo/clustering/ClusteringFactory.html#line.63">getUnknownOutput</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&nbsp;getUnknownOutput()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/OutputFactory.html#getUnknownOutput--">OutputFactory</a></code></span></div>
 <div class="block">Returns the singleton unknown output of type T which can be used for prediction time examples.</div>
 <dl>
@@ -360,7 +360,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>generateInfo</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/MutableOutputInfo.html" title="interface in org.tribuo">MutableOutputInfo</a>&lt;<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/clustering/ClusteringFactory.html#line.68">generateInfo</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/MutableOutputInfo.html" title="interface in org.tribuo">MutableOutputInfo</a>&lt;<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&gt;&nbsp;generateInfo()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/OutputFactory.html#generateInfo--">OutputFactory</a></code></span></div>
 <div class="block">Generates the appropriate <a href="../../../org/tribuo/MutableOutputInfo.html" title="interface in org.tribuo"><code>MutableOutputInfo</code></a> so the
  output values can be tracked by a <a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo"><code>Dataset</code></a> or other
@@ -379,7 +379,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>constructInfoForExternalModel</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/clustering/ClusteringFactory.html#line.79">constructInfoForExternalModel</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;mapping)</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&gt;&nbsp;constructInfoForExternalModel(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;mapping)</pre>
 <div class="block">Unlike the other info types, clustering directly uses the integer IDs as the stored value,
  so this mapping discards the cluster IDs and just uses the supplied integers.</div>
 <dl>
@@ -398,7 +398,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>getEvaluator</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/evaluation/Evaluator.html" title="interface in org.tribuo.evaluation">Evaluator</a>&lt;<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>,<a href="../../../org/tribuo/clustering/evaluation/ClusteringEvaluation.html" title="interface in org.tribuo.clustering.evaluation">ClusteringEvaluation</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/clustering/ClusteringFactory.html#line.93">getEvaluator</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/evaluation/Evaluator.html" title="interface in org.tribuo.evaluation">Evaluator</a>&lt;<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>,<a href="../../../org/tribuo/clustering/evaluation/ClusteringEvaluation.html" title="interface in org.tribuo.clustering.evaluation">ClusteringEvaluation</a>&gt;&nbsp;getEvaluator()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/OutputFactory.html#getEvaluator--">OutputFactory</a></code></span></div>
 <div class="block">Gets an <a href="../../../org/tribuo/evaluation/Evaluator.html" title="interface in org.tribuo.evaluation"><code>Evaluator</code></a> suitable for measuring performance of predictions for the Output subclass.
  <p>
@@ -419,7 +419,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../src-html/org/tribuo/clustering/ClusteringFactory.html#line.98">hashCode</a>()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -432,7 +432,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../src-html/org/tribuo/clustering/ClusteringFactory.html#line.103">equals</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;obj)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;obj)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -445,7 +445,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/provenance/OutputFactoryProvenance.html" title="interface in org.tribuo.provenance">OutputFactoryProvenance</a>&nbsp;<a href="../../../src-html/org/tribuo/clustering/ClusteringFactory.html#line.108">getProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/provenance/OutputFactoryProvenance.html" title="interface in org.tribuo.provenance">OutputFactoryProvenance</a>&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../../org/tribuo/provenance/OutputFactoryProvenance.html" title="interface in org.tribuo.provenance">OutputFactoryProvenance</a>&gt;</code></dd>
@@ -520,6 +520,6 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

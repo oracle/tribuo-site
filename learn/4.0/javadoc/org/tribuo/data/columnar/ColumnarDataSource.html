@@ -116,7 +116,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public abstract class <a href="../../../../src-html/org/tribuo/data/columnar/ColumnarDataSource.html#line.33">ColumnarDataSource</a>&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public abstract class <span class="typeNameLabel">ColumnarDataSource&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/ConfigurableDataSource.html" title="interface in org.tribuo">ConfigurableDataSource</a>&lt;T&gt;</pre>
 <div class="block">A <a href="../../../../org/tribuo/ConfigurableDataSource.html" title="interface in org.tribuo"><code>ConfigurableDataSource</code></a> base class which takes columnar data (e.g., csv or DB table rows) and generates <a href="../../../../org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a>s.</div>
@@ -265,7 +265,7 @@ implements <a href="../../../../org/tribuo/ConfigurableDataSource.html" title="i
 <h4>rowProcessor</h4>
 <pre>@Config(mandatory=true,
         description="The row processor to use.")
-protected&nbsp;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="class in org.tribuo.data.columnar">RowProcessor</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarDataSource.html" title="type parameter in ColumnarDataSource">T</a> extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarDataSource.html" title="type parameter in ColumnarDataSource">T</a>&gt;&gt; <a href="../../../../src-html/org/tribuo/data/columnar/ColumnarDataSource.html#line.39">rowProcessor</a></pre>
+protected&nbsp;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="class in org.tribuo.data.columnar">RowProcessor</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarDataSource.html" title="type parameter in ColumnarDataSource">T</a> extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarDataSource.html" title="type parameter in ColumnarDataSource">T</a>&gt;&gt; rowProcessor</pre>
 </li>
 </ul>
 <a name="outputRequired">
@@ -275,7 +275,7 @@ protected&nbsp;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" 
 <li class="blockList">
 <h4>outputRequired</h4>
 <pre>@Config(description="Is an output required from each row?")
-protected&nbsp;boolean <a href="../../../../src-html/org/tribuo/data/columnar/ColumnarDataSource.html#line.42">outputRequired</a></pre>
+protected&nbsp;boolean outputRequired</pre>
 </li>
 </ul>
 </li>
@@ -292,7 +292,7 @@ protected&nbsp;boolean <a href="../../../../src-html/org/tribuo/data/columnar/Co
 <ul class="blockList">
 <li class="blockList">
 <h4>ColumnarDataSource</h4>
-<pre>protected&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/ColumnarDataSource.html#line.47">ColumnarDataSource</a>()</pre>
+<pre>protected&nbsp;ColumnarDataSource()</pre>
 <div class="block">For OLCUT.</div>
 </li>
 </ul>
@@ -302,7 +302,7 @@ protected&nbsp;boolean <a href="../../../../src-html/org/tribuo/data/columnar/Co
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ColumnarDataSource</h4>
-<pre>protected&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/ColumnarDataSource.html#line.55">ColumnarDataSource</a>(<a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarDataSource.html" title="type parameter in ColumnarDataSource">T</a>&gt;&nbsp;outputFactory,
+<pre>protected&nbsp;ColumnarDataSource(<a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarDataSource.html" title="type parameter in ColumnarDataSource">T</a>&gt;&nbsp;outputFactory,
                              <a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="class in org.tribuo.data.columnar">RowProcessor</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarDataSource.html" title="type parameter in ColumnarDataSource">T</a>&gt;&nbsp;rowProcessor,
                              boolean&nbsp;outputRequired)</pre>
 <div class="block">Constructs a columnar data source with the specified parameters.</div>
@@ -328,7 +328,7 @@ protected&nbsp;boolean <a href="../../../../src-html/org/tribuo/data/columnar/Co
 <ul class="blockList">
 <li class="blockList">
 <h4>getMetadataTypes</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/ColumnarDataSource.html#line.66">getMetadataTypes</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&gt;&nbsp;getMetadataTypes()</pre>
 <div class="block">Returns the metadata keys and value types that are created
  by this DataSource.</div>
 <dl>
@@ -343,7 +343,7 @@ protected&nbsp;boolean <a href="../../../../src-html/org/tribuo/data/columnar/Co
 <ul class="blockList">
 <li class="blockList">
 <h4>getOutputFactory</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarDataSource.html" title="type parameter in ColumnarDataSource">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/ColumnarDataSource.html#line.71">getOutputFactory</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarDataSource.html" title="type parameter in ColumnarDataSource">T</a>&gt;&nbsp;getOutputFactory()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/DataSource.html#getOutputFactory--">DataSource</a></code></span></div>
 <div class="block">Returns the OutputFactory associated with this Output subclass.</div>
 <dl>
@@ -360,7 +360,7 @@ protected&nbsp;boolean <a href="../../../../src-html/org/tribuo/data/columnar/Co
 <ul class="blockList">
 <li class="blockList">
 <h4>iterator</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarDataSource.html" title="type parameter in ColumnarDataSource">T</a>&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/ColumnarDataSource.html#line.76">iterator</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarDataSource.html" title="type parameter in ColumnarDataSource">T</a>&gt;&gt;&nbsp;iterator()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true#iterator--" title="class or interface in java.lang">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarDataSource.html" title="type parameter in ColumnarDataSource">T</a> extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarDataSource.html" title="type parameter in ColumnarDataSource">T</a>&gt;&gt;&gt;</code></dd>
@@ -373,7 +373,7 @@ protected&nbsp;boolean <a href="../../../../src-html/org/tribuo/data/columnar/Co
 <ul class="blockListLast">
 <li class="blockList">
 <h4>rowIterator</h4>
-<pre>protected abstract&nbsp;<a href="../../../../org/tribuo/data/columnar/ColumnarIterator.html" title="class in org.tribuo.data.columnar">ColumnarIterator</a>&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/ColumnarDataSource.html#line.85">rowIterator</a>()</pre>
+<pre>protected abstract&nbsp;<a href="../../../../org/tribuo/data/columnar/ColumnarIterator.html" title="class in org.tribuo.data.columnar">ColumnarIterator</a>&nbsp;rowIterator()</pre>
 <div class="block">The iterator that emits <a href="../../../../org/tribuo/data/columnar/ColumnarIterator.Row.html" title="class in org.tribuo.data.columnar"><code>ColumnarIterator.Row</code></a> objects from the
  underlying data source.</div>
 <dl>
@@ -450,6 +450,6 @@ protected&nbsp;boolean <a href="../../../../src-html/org/tribuo/data/columnar/Co
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

@@ -121,7 +121,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../src-html/org/tribuo/CategoricalInfo.html#line.47">CategoricalInfo</a>
+<pre>public class <span class="typeNameLabel">CategoricalInfo</span>
 extends <a href="../../org/tribuo/SkeletalVariableInfo.html" title="class in org.tribuo">SkeletalVariableInfo</a></pre>
 <div class="block">Stores information about Categorical features.
  <p>
@@ -361,7 +361,7 @@ extends <a href="../../org/tribuo/SkeletalVariableInfo.html" title="class in org
 <ul class="blockList">
 <li class="blockList">
 <h4>THRESHOLD</h4>
-<pre>public static final&nbsp;int <a href="../../src-html/org/tribuo/CategoricalInfo.html#line.54">THRESHOLD</a></pre>
+<pre>public static final&nbsp;int THRESHOLD</pre>
 <div class="block">The default threshold for converting a categorical info into a <a href="../../org/tribuo/RealInfo.html" title="class in org.tribuo"><code>RealInfo</code></a>.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -375,7 +375,7 @@ extends <a href="../../org/tribuo/SkeletalVariableInfo.html" title="class in org
 <ul class="blockList">
 <li class="blockList">
 <h4>valueCounts</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>,com.oracle.labs.mlrg.olcut.util.MutableLong&gt; <a href="../../src-html/org/tribuo/CategoricalInfo.html#line.60">valueCounts</a></pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>,com.oracle.labs.mlrg.olcut.util.MutableLong&gt; valueCounts</pre>
 <div class="block">The occurrence counts of each value.</div>
 </li>
 </ul>
@@ -385,7 +385,7 @@ extends <a href="../../org/tribuo/SkeletalVariableInfo.html" title="class in org
 <ul class="blockList">
 <li class="blockList">
 <h4>observedValue</h4>
-<pre>protected&nbsp;double <a href="../../src-html/org/tribuo/CategoricalInfo.html#line.65">observedValue</a></pre>
+<pre>protected&nbsp;double observedValue</pre>
 <div class="block">The observed value if it's only seen a single one.</div>
 </li>
 </ul>
@@ -395,7 +395,7 @@ extends <a href="../../org/tribuo/SkeletalVariableInfo.html" title="class in org
 <ul class="blockList">
 <li class="blockList">
 <h4>observedCount</h4>
-<pre>protected&nbsp;long <a href="../../src-html/org/tribuo/CategoricalInfo.html#line.70">observedCount</a></pre>
+<pre>protected&nbsp;long observedCount</pre>
 <div class="block">The count of the observed value if it's only seen a single one.</div>
 </li>
 </ul>
@@ -405,7 +405,7 @@ extends <a href="../../org/tribuo/SkeletalVariableInfo.html" title="class in org
 <ul class="blockList">
 <li class="blockList">
 <h4>values</h4>
-<pre>protected transient&nbsp;double[] <a href="../../src-html/org/tribuo/CategoricalInfo.html#line.76">values</a></pre>
+<pre>protected transient&nbsp;double[] values</pre>
 <div class="block">The values array.</div>
 </li>
 </ul>
@@ -415,7 +415,7 @@ extends <a href="../../org/tribuo/SkeletalVariableInfo.html" title="class in org
 <ul class="blockList">
 <li class="blockList">
 <h4>totalObservations</h4>
-<pre>protected transient&nbsp;long <a href="../../src-html/org/tribuo/CategoricalInfo.html#line.80">totalObservations</a></pre>
+<pre>protected transient&nbsp;long totalObservations</pre>
 <div class="block">The total number of observations (including zeros).</div>
 </li>
 </ul>
@@ -425,7 +425,7 @@ extends <a href="../../org/tribuo/SkeletalVariableInfo.html" title="class in org
 <ul class="blockListLast">
 <li class="blockList">
 <h4>cdf</h4>
-<pre>protected transient&nbsp;double[] <a href="../../src-html/org/tribuo/CategoricalInfo.html#line.84">cdf</a></pre>
+<pre>protected transient&nbsp;double[] cdf</pre>
 <div class="block">The CDF to sample from.</div>
 </li>
 </ul>
@@ -443,7 +443,7 @@ extends <a href="../../org/tribuo/SkeletalVariableInfo.html" title="class in org
 <ul class="blockList">
 <li class="blockList">
 <h4>CategoricalInfo</h4>
-<pre>public&nbsp;<a href="../../src-html/org/tribuo/CategoricalInfo.html#line.90">CategoricalInfo</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<pre>public&nbsp;CategoricalInfo(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
 <div class="block">Constructs a new empty categorical info for the supplied feature name.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -457,7 +457,7 @@ extends <a href="../../org/tribuo/SkeletalVariableInfo.html" title="class in org
 <ul class="blockList">
 <li class="blockList">
 <h4>CategoricalInfo</h4>
-<pre>protected&nbsp;<a href="../../src-html/org/tribuo/CategoricalInfo.html#line.98">CategoricalInfo</a>(<a href="../../org/tribuo/CategoricalInfo.html" title="class in org.tribuo">CategoricalInfo</a>&nbsp;info)</pre>
+<pre>protected&nbsp;CategoricalInfo(<a href="../../org/tribuo/CategoricalInfo.html" title="class in org.tribuo">CategoricalInfo</a>&nbsp;info)</pre>
 <div class="block">Constructs a deep copy of the supplied categorical info.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -471,7 +471,7 @@ extends <a href="../../org/tribuo/SkeletalVariableInfo.html" title="class in org
 <ul class="blockListLast">
 <li class="blockList">
 <h4>CategoricalInfo</h4>
-<pre>protected&nbsp;<a href="../../src-html/org/tribuo/CategoricalInfo.html#line.107">CategoricalInfo</a>(<a href="../../org/tribuo/CategoricalInfo.html" title="class in org.tribuo">CategoricalInfo</a>&nbsp;info,
+<pre>protected&nbsp;CategoricalInfo(<a href="../../org/tribuo/CategoricalInfo.html" title="class in org.tribuo">CategoricalInfo</a>&nbsp;info,
                           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newName)</pre>
 <div class="block">Constructs a deep copy of the supplied categorical info, with the new feature name.</div>
 <dl>
@@ -495,7 +495,7 @@ extends <a href="../../org/tribuo/SkeletalVariableInfo.html" title="class in org
 <ul class="blockList">
 <li class="blockList">
 <h4>observe</h4>
-<pre>protected&nbsp;void&nbsp;<a href="../../src-html/org/tribuo/CategoricalInfo.html#line.118">observe</a>(double&nbsp;value)</pre>
+<pre>protected&nbsp;void&nbsp;observe(double&nbsp;value)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../org/tribuo/SkeletalVariableInfo.html#observe-double-">SkeletalVariableInfo</a></code></span></div>
 <div class="block">Records the value.</div>
 <dl>
@@ -512,7 +512,7 @@ extends <a href="../../org/tribuo/SkeletalVariableInfo.html" title="class in org
 <ul class="blockList">
 <li class="blockList">
 <h4>getObservationCount</h4>
-<pre>public&nbsp;long&nbsp;<a href="../../src-html/org/tribuo/CategoricalInfo.html#line.148">getObservationCount</a>(double&nbsp;value)</pre>
+<pre>public&nbsp;long&nbsp;getObservationCount(double&nbsp;value)</pre>
 <div class="block">Gets the number of times a specific value was observed, and zero if this value is unknown.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -528,7 +528,7 @@ extends <a href="../../org/tribuo/SkeletalVariableInfo.html" title="class in org
 <ul class="blockList">
 <li class="blockList">
 <h4>getUniqueObservations</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../src-html/org/tribuo/CategoricalInfo.html#line.164">getUniqueObservations</a>()</pre>
+<pre>public&nbsp;int&nbsp;getUniqueObservations()</pre>
 <div class="block">Gets the number of unique values this CategoricalInfo has observed.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -542,7 +542,7 @@ extends <a href="../../org/tribuo/SkeletalVariableInfo.html" title="class in org
 <ul class="blockList">
 <li class="blockList">
 <h4>generateRealInfo</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/RealInfo.html" title="class in org.tribuo">RealInfo</a>&nbsp;<a href="../../src-html/org/tribuo/CategoricalInfo.html#line.181">generateRealInfo</a>()</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/RealInfo.html" title="class in org.tribuo">RealInfo</a>&nbsp;generateRealInfo()</pre>
 <div class="block">Generates a <a href="../../org/tribuo/RealInfo.html" title="class in org.tribuo"><code>RealInfo</code></a> using the currently observed counts to calculate
  the min, max, mean and variance.</div>
 <dl>
@@ -557,7 +557,7 @@ extends <a href="../../org/tribuo/SkeletalVariableInfo.html" title="class in org
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/CategoricalInfo.html" title="class in org.tribuo">CategoricalInfo</a>&nbsp;<a href="../../src-html/org/tribuo/CategoricalInfo.html#line.218">copy</a>()</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/CategoricalInfo.html" title="class in org.tribuo">CategoricalInfo</a>&nbsp;copy()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../org/tribuo/VariableInfo.html#copy--">VariableInfo</a></code></span></div>
 <div class="block">Returns a copy of this variable info.</div>
 <dl>
@@ -572,7 +572,7 @@ extends <a href="../../org/tribuo/SkeletalVariableInfo.html" title="class in org
 <ul class="blockList">
 <li class="blockList">
 <h4>makeIDInfo</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/CategoricalIDInfo.html" title="class in org.tribuo">CategoricalIDInfo</a>&nbsp;<a href="../../src-html/org/tribuo/CategoricalInfo.html#line.223">makeIDInfo</a>(int&nbsp;id)</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/CategoricalIDInfo.html" title="class in org.tribuo">CategoricalIDInfo</a>&nbsp;makeIDInfo(int&nbsp;id)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../org/tribuo/VariableInfo.html#makeIDInfo-int-">VariableInfo</a></code></span></div>
 <div class="block">Generates a VariableIDInfo subclass which represents the same feature.</div>
 <dl>
@@ -589,7 +589,7 @@ extends <a href="../../org/tribuo/SkeletalVariableInfo.html" title="class in org
 <ul class="blockList">
 <li class="blockList">
 <h4>rename</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/CategoricalInfo.html" title="class in org.tribuo">CategoricalInfo</a>&nbsp;<a href="../../src-html/org/tribuo/CategoricalInfo.html#line.228">rename</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newName)</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/CategoricalInfo.html" title="class in org.tribuo">CategoricalInfo</a>&nbsp;rename(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newName)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../org/tribuo/VariableInfo.html#rename-java.lang.String-">VariableInfo</a></code></span></div>
 <div class="block">Rename generates a fresh VariableInfo with the new name.
 
@@ -608,7 +608,7 @@ extends <a href="../../org/tribuo/SkeletalVariableInfo.html" title="class in org
 <ul class="blockList">
 <li class="blockList">
 <h4>uniformSample</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../src-html/org/tribuo/CategoricalInfo.html#line.233">uniformSample</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/SplittableRandom.html?is-external=true" title="class or interface in java.util">SplittableRandom</a>&nbsp;rng)</pre>
+<pre>public&nbsp;double&nbsp;uniformSample(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/SplittableRandom.html?is-external=true" title="class or interface in java.util">SplittableRandom</a>&nbsp;rng)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../org/tribuo/VariableInfo.html#uniformSample-java.util.SplittableRandom-">VariableInfo</a></code></span></div>
 <div class="block">Sample a value uniformly from the range of this variable.</div>
 <dl>
@@ -625,7 +625,7 @@ extends <a href="../../org/tribuo/SkeletalVariableInfo.html" title="class in org
 <ul class="blockList">
 <li class="blockList">
 <h4>frequencyBasedSample</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../src-html/org/tribuo/CategoricalInfo.html#line.247">frequencyBasedSample</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/SplittableRandom.html?is-external=true" title="class or interface in java.util">SplittableRandom</a>&nbsp;rng,
+<pre>public&nbsp;double&nbsp;frequencyBasedSample(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/SplittableRandom.html?is-external=true" title="class or interface in java.util">SplittableRandom</a>&nbsp;rng,
                                    long&nbsp;totalObservations)</pre>
 <div class="block">Samples a value from this feature according to the frequency of observation.</div>
 <dl>
@@ -643,7 +643,7 @@ extends <a href="../../org/tribuo/SkeletalVariableInfo.html" title="class in org
 <ul class="blockList">
 <li class="blockList">
 <h4>frequencyBasedSample</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../src-html/org/tribuo/CategoricalInfo.html#line.261">frequencyBasedSample</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Random.html?is-external=true" title="class or interface in java.util">Random</a>&nbsp;rng,
+<pre>public&nbsp;double&nbsp;frequencyBasedSample(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Random.html?is-external=true" title="class or interface in java.util">Random</a>&nbsp;rng,
                                    long&nbsp;totalObservations)</pre>
 <div class="block">Samples a value from this feature according to the frequency of observation.</div>
 <dl>
@@ -661,7 +661,7 @@ extends <a href="../../org/tribuo/SkeletalVariableInfo.html" title="class in org
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../src-html/org/tribuo/CategoricalInfo.html#line.358">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../org/tribuo/SkeletalVariableInfo.html#toString--">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../org/tribuo/SkeletalVariableInfo.html" title="class in org.tribuo">SkeletalVariableInfo</a></code></dd>
@@ -736,6 +736,6 @@ extends <a href="../../org/tribuo/SkeletalVariableInfo.html" title="class in org
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/classification/liblinear/LibLinearClassificationTrainer.html#line.61">LibLinearClassificationTrainer</a>
+<pre>public class <span class="typeNameLabel">LibLinearClassificationTrainer</span>
 extends <a href="../../../../org/tribuo/common/liblinear/LibLinearTrainer.html" title="class in org.tribuo.common.liblinear">LibLinearTrainer</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;
 implements <a href="../../../../org/tribuo/classification/WeightedLabels.html" title="interface in org.tribuo.classification">WeightedLabels</a></pre>
 <div class="block">A <a href="../../../../org/tribuo/Trainer.html" title="interface in org.tribuo"><code>Trainer</code></a> which wraps a liblinear-java classifier trainer.
@@ -294,7 +294,7 @@ implements <a href="../../../../org/tribuo/classification/WeightedLabels.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>LibLinearClassificationTrainer</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/classification/liblinear/LibLinearClassificationTrainer.html#line.71">LibLinearClassificationTrainer</a>()</pre>
+<pre>public&nbsp;LibLinearClassificationTrainer()</pre>
 <div class="block">Creates a trainer using the default values (L2R_L2LOSS_SVC_DUAL, 1, 0.1).</div>
 </li>
 </ul>
@@ -304,7 +304,7 @@ implements <a href="../../../../org/tribuo/classification/WeightedLabels.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>LibLinearClassificationTrainer</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/classification/liblinear/LibLinearClassificationTrainer.html#line.81">LibLinearClassificationTrainer</a>(<a href="../../../../org/tribuo/classification/liblinear/LinearClassificationType.html" title="class in org.tribuo.classification.liblinear">LinearClassificationType</a>&nbsp;trainerType,
+<pre>public&nbsp;LibLinearClassificationTrainer(<a href="../../../../org/tribuo/classification/liblinear/LinearClassificationType.html" title="class in org.tribuo.classification.liblinear">LinearClassificationType</a>&nbsp;trainerType,
                                       double&nbsp;cost,
                                       double&nbsp;terminationCriterion)</pre>
 <div class="block">Creates a trainer for a LibLinearClassificationModel. Sets maxIterations to 1000.</div>
@@ -322,7 +322,7 @@ implements <a href="../../../../org/tribuo/classification/WeightedLabels.html" t
 <ul class="blockListLast">
 <li class="blockList">
 <h4>LibLinearClassificationTrainer</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/classification/liblinear/LibLinearClassificationTrainer.html#line.92">LibLinearClassificationTrainer</a>(<a href="../../../../org/tribuo/classification/liblinear/LinearClassificationType.html" title="class in org.tribuo.classification.liblinear">LinearClassificationType</a>&nbsp;trainerType,
+<pre>public&nbsp;LibLinearClassificationTrainer(<a href="../../../../org/tribuo/classification/liblinear/LinearClassificationType.html" title="class in org.tribuo.classification.liblinear">LinearClassificationType</a>&nbsp;trainerType,
                                       double&nbsp;cost,
                                       int&nbsp;maxIterations,
                                       double&nbsp;terminationCriterion)</pre>
@@ -350,7 +350,7 @@ implements <a href="../../../../org/tribuo/classification/WeightedLabels.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>postConfig</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/classification/liblinear/LibLinearClassificationTrainer.html#line.100">postConfig</a>()</pre>
+<pre>public&nbsp;void&nbsp;postConfig()</pre>
 <div class="block">Used by the OLCUT configuration system, and should not be called by external code.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -366,7 +366,7 @@ implements <a href="../../../../org/tribuo/classification/WeightedLabels.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>trainModels</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;de.bwaldvogel.liblinear.Model&gt;&nbsp;<a href="../../../../src-html/org/tribuo/classification/liblinear/LibLinearClassificationTrainer.html#line.108">trainModels</a>(de.bwaldvogel.liblinear.Parameter&nbsp;curParams,
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;de.bwaldvogel.liblinear.Model&gt;&nbsp;trainModels(de.bwaldvogel.liblinear.Parameter&nbsp;curParams,
                                                           int&nbsp;numFeatures,
                                                           de.bwaldvogel.liblinear.FeatureNode[][]&nbsp;features,
                                                           double[][]&nbsp;outputs)</pre>
@@ -391,7 +391,7 @@ implements <a href="../../../../org/tribuo/classification/WeightedLabels.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>createModel</h4>
-<pre>protected&nbsp;<a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html" title="class in org.tribuo.common.liblinear">LibLinearModel</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/classification/liblinear/LibLinearClassificationTrainer.html#line.121">createModel</a>(<a href="../../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;provenance,
+<pre>protected&nbsp;<a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html" title="class in org.tribuo.common.liblinear">LibLinearModel</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;createModel(<a href="../../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;provenance,
                                             <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap,
                                             <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;outputIDInfo,
                                             <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;de.bwaldvogel.liblinear.Model&gt;&nbsp;models)</pre>
@@ -416,7 +416,7 @@ implements <a href="../../../../org/tribuo/classification/WeightedLabels.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>extractData</h4>
-<pre>protected&nbsp;com.oracle.labs.mlrg.olcut.util.Pair&lt;de.bwaldvogel.liblinear.FeatureNode[][],double[][]&gt;&nbsp;<a href="../../../../src-html/org/tribuo/classification/liblinear/LibLinearClassificationTrainer.html#line.129">extractData</a>(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;data,
+<pre>protected&nbsp;com.oracle.labs.mlrg.olcut.util.Pair&lt;de.bwaldvogel.liblinear.FeatureNode[][],double[][]&gt;&nbsp;extractData(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;data,
                                                                                                                <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;outputInfo,
                                                                                                                <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureMap)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/common/liblinear/LibLinearTrainer.html#extractData-org.tribuo.Dataset-org.tribuo.ImmutableOutputInfo-org.tribuo.ImmutableFeatureMap-">LibLinearTrainer</a></code></span></div>
@@ -439,7 +439,7 @@ implements <a href="../../../../org/tribuo/classification/WeightedLabels.html" t
 <ul class="blockList">
 <li class="blockList">
 <h4>setupParameters</h4>
-<pre>protected&nbsp;de.bwaldvogel.liblinear.Parameter&nbsp;<a href="../../../../src-html/org/tribuo/classification/liblinear/LibLinearClassificationTrainer.html#line.143">setupParameters</a>(<a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;labelIDMap)</pre>
+<pre>protected&nbsp;de.bwaldvogel.liblinear.Parameter&nbsp;setupParameters(<a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;labelIDMap)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/common/liblinear/LibLinearTrainer.html#setupParameters-org.tribuo.ImmutableOutputInfo-">LibLinearTrainer</a></code></span></div>
 <div class="block">Constructs the parameters. Most of the time this is a no-op, but
  classification overrides it to incorporate label weights if they exist.</div>
@@ -459,7 +459,7 @@ implements <a href="../../../../org/tribuo/classification/WeightedLabels.html" t
 <ul class="blockListLast">
 <li class="blockList">
 <h4>setLabelWeights</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/classification/liblinear/LibLinearClassificationTrainer.html#line.170">setLabelWeights</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Float.html?is-external=true" title="class or interface in java.lang">Float</a>&gt;&nbsp;weights)</pre>
+<pre>public&nbsp;void&nbsp;setLabelWeights(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Float.html?is-external=true" title="class or interface in java.lang">Float</a>&gt;&nbsp;weights)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/WeightedLabels.html#setLabelWeights-java.util.Map-">WeightedLabels</a></code></span></div>
 <div class="block">Sets the label weights used by this trainer.
  <p>
@@ -540,6 +540,6 @@ implements <a href="../../../../org/tribuo/classification/WeightedLabels.html" t
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

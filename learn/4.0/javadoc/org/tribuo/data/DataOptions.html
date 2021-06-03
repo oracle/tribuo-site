@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public final class <a href="../../../src-html/org/tribuo/data/DataOptions.html#line.54">DataOptions</a>
+<pre>public final class <span class="typeNameLabel">DataOptions</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements com.oracle.labs.mlrg.olcut.config.Options</pre>
 <div class="block">Options for working with training and test data in a CLI.</div>
@@ -301,7 +301,7 @@ implements com.oracle.labs.mlrg.olcut.config.Options</pre>
 <h4>hashDim</h4>
 <pre>@Option(longName="hashing-dimension",
         usage="Hashing dimension used for standard text format.")
-public&nbsp;int <a href="../../../src-html/org/tribuo/data/DataOptions.html#line.82">hashDim</a></pre>
+public&nbsp;int hashDim</pre>
 </li>
 </ul>
 <a name="ngram">
@@ -312,7 +312,7 @@ public&nbsp;int <a href="../../../src-html/org/tribuo/data/DataOptions.html#line
 <h4>ngram</h4>
 <pre>@Option(longName="ngram",
         usage="Ngram size to generate when using standard text format.")
-public&nbsp;int <a href="../../../src-html/org/tribuo/data/DataOptions.html#line.84">ngram</a></pre>
+public&nbsp;int ngram</pre>
 </li>
 </ul>
 <a name="termCounting">
@@ -323,7 +323,7 @@ public&nbsp;int <a href="../../../src-html/org/tribuo/data/DataOptions.html#line
 <h4>termCounting</h4>
 <pre>@Option(longName="term-counting",
         usage="Use term counts instead of boolean when using the standard text format.")
-public&nbsp;boolean <a href="../../../src-html/org/tribuo/data/DataOptions.html#line.86">termCounting</a></pre>
+public&nbsp;boolean termCounting</pre>
 </li>
 </ul>
 <a name="outputPath">
@@ -335,7 +335,7 @@ public&nbsp;boolean <a href="../../../src-html/org/tribuo/data/DataOptions.html#
 <pre>@Option(charName=102,
         longName="model-output-path",
         usage="Path to serialize model to.")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html?is-external=true" title="class or interface in java.nio.file">Path</a> <a href="../../../src-html/org/tribuo/data/DataOptions.html#line.88">outputPath</a></pre>
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html?is-external=true" title="class or interface in java.nio.file">Path</a> outputPath</pre>
 </li>
 </ul>
 <a name="seed">
@@ -347,7 +347,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Pat
 <pre>@Option(charName=114,
         longName="seed",
         usage="RNG seed.")
-public&nbsp;long <a href="../../../src-html/org/tribuo/data/DataOptions.html#line.90">seed</a></pre>
+public&nbsp;long seed</pre>
 </li>
 </ul>
 <a name="inputFormat">
@@ -359,7 +359,7 @@ public&nbsp;long <a href="../../../src-html/org/tribuo/data/DataOptions.html#lin
 <pre>@Option(charName=115,
         longName="input-format",
         usage="Loads the data using the specified format.")
-public&nbsp;<a href="../../../org/tribuo/data/DataOptions.InputFormat.html" title="enum in org.tribuo.data">DataOptions.InputFormat</a> <a href="../../../src-html/org/tribuo/data/DataOptions.html#line.92">inputFormat</a></pre>
+public&nbsp;<a href="../../../org/tribuo/data/DataOptions.InputFormat.html" title="enum in org.tribuo.data">DataOptions.InputFormat</a> inputFormat</pre>
 </li>
 </ul>
 <a name="csvResponseName">
@@ -370,7 +370,7 @@ public&nbsp;<a href="../../../org/tribuo/data/DataOptions.InputFormat.html" titl
 <h4>csvResponseName</h4>
 <pre>@Option(longName="csv-response-name",
         usage="Response name in the csv file.")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> <a href="../../../src-html/org/tribuo/data/DataOptions.html#line.94">csvResponseName</a></pre>
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> csvResponseName</pre>
 </li>
 </ul>
 <a name="delimiter">
@@ -381,7 +381,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <h4>delimiter</h4>
 <pre>@Option(longName="csv-delimiter",
         usage="Delimiter")
-public&nbsp;<a href="../../../org/tribuo/data/DataOptions.Delimiter.html" title="enum in org.tribuo.data">DataOptions.Delimiter</a> <a href="../../../src-html/org/tribuo/data/DataOptions.html#line.96">delimiter</a></pre>
+public&nbsp;<a href="../../../org/tribuo/data/DataOptions.Delimiter.html" title="enum in org.tribuo.data">DataOptions.Delimiter</a> delimiter</pre>
 </li>
 </ul>
 <a name="csvQuoteChar">
@@ -392,7 +392,7 @@ public&nbsp;<a href="../../../org/tribuo/data/DataOptions.Delimiter.html" title=
 <h4>csvQuoteChar</h4>
 <pre>@Option(longName="csv-quote-char",
         usage="Quote character in the CSV file.")
-public&nbsp;char <a href="../../../src-html/org/tribuo/data/DataOptions.html#line.98">csvQuoteChar</a></pre>
+public&nbsp;char csvQuoteChar</pre>
 </li>
 </ul>
 <a name="rowProcessor">
@@ -403,7 +403,7 @@ public&nbsp;char <a href="../../../src-html/org/tribuo/data/DataOptions.html#lin
 <h4>rowProcessor</h4>
 <pre>@Option(longName="columnar-row-processor",
         usage="The name of the row processor from the config file.")
-public&nbsp;<a href="../../../org/tribuo/data/columnar/RowProcessor.html" title="class in org.tribuo.data.columnar">RowProcessor</a>&lt;?&gt; <a href="../../../src-html/org/tribuo/data/DataOptions.html#line.100">rowProcessor</a></pre>
+public&nbsp;<a href="../../../org/tribuo/data/columnar/RowProcessor.html" title="class in org.tribuo.data.columnar">RowProcessor</a>&lt;?&gt; rowProcessor</pre>
 </li>
 </ul>
 <a name="minCount">
@@ -414,7 +414,7 @@ public&nbsp;<a href="../../../org/tribuo/data/columnar/RowProcessor.html" title=
 <h4>minCount</h4>
 <pre>@Option(longName="min-count",
         usage="Minimum cardinality of the features.")
-public&nbsp;int <a href="../../../src-html/org/tribuo/data/DataOptions.html#line.102">minCount</a></pre>
+public&nbsp;int minCount</pre>
 </li>
 </ul>
 <a name="trainingPath">
@@ -426,7 +426,7 @@ public&nbsp;int <a href="../../../src-html/org/tribuo/data/DataOptions.html#line
 <pre>@Option(charName=117,
         longName="training-file",
         usage="Path to the training file.")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html?is-external=true" title="class or interface in java.nio.file">Path</a> <a href="../../../src-html/org/tribuo/data/DataOptions.html#line.104">trainingPath</a></pre>
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html?is-external=true" title="class or interface in java.nio.file">Path</a> trainingPath</pre>
 </li>
 </ul>
 <a name="testingPath">
@@ -438,7 +438,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Pat
 <pre>@Option(charName=118,
         longName="testing-file",
         usage="Path to the testing file.")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html?is-external=true" title="class or interface in java.nio.file">Path</a> <a href="../../../src-html/org/tribuo/data/DataOptions.html#line.106">testingPath</a></pre>
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html?is-external=true" title="class or interface in java.nio.file">Path</a> testingPath</pre>
 </li>
 </ul>
 </li>
@@ -455,7 +455,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Pat
 <ul class="blockListLast">
 <li class="blockList">
 <h4>DataOptions</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/data/DataOptions.html#line.54">DataOptions</a>()</pre>
+<pre>public&nbsp;DataOptions()</pre>
 </li>
 </ul>
 </li>
@@ -472,7 +472,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Pat
 <ul class="blockList">
 <li class="blockList">
 <h4>getOptionsDescription</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/data/DataOptions.html#line.77">getOptionsDescription</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getOptionsDescription()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getOptionsDescription</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.config.Options</code></dd>
@@ -485,7 +485,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Pat
 <ul class="blockList">
 <li class="blockList">
 <h4>load</h4>
-<pre>public&nbsp;&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;T&gt;,<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;T&gt;&gt;&nbsp;<a href="../../../src-html/org/tribuo/data/DataOptions.html#line.108">load</a>(<a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;T&gt;&nbsp;outputFactory)
+<pre>public&nbsp;&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;T&gt;,<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;T&gt;&gt;&nbsp;load(<a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;T&gt;&nbsp;outputFactory)
                                                                                        throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -499,7 +499,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Pat
 <ul class="blockListLast">
 <li class="blockList">
 <h4>saveModel</h4>
-<pre>public&nbsp;&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/data/DataOptions.html#line.211">saveModel</a>(<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;T&gt;&nbsp;model)
+<pre>public&nbsp;&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;void&nbsp;saveModel(<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;T&gt;&nbsp;model)
                                      throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
@@ -575,6 +575,6 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Pat
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

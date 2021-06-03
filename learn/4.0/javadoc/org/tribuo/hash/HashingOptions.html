@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../src-html/org/tribuo/hash/HashingOptions.html#line.30">HashingOptions</a>
+<pre>public class <span class="typeNameLabel">HashingOptions</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements com.oracle.labs.mlrg.olcut.config.Options</pre>
 <div class="block">An Options implementation which provides CLI arguments for the model hashing functionality.</div>
@@ -251,7 +251,7 @@ implements com.oracle.labs.mlrg.olcut.config.Options</pre>
 <h4>modelHashingAlgorithm</h4>
 <pre>@Option(longName="model-hashing-algorithm",
         usage="Hash the model during training, options are {NONE,MOD,HC,SHA1,SHA256}")
-public&nbsp;<a href="../../../org/tribuo/hash/HashingOptions.ModelHashingType.html" title="enum in org.tribuo.hash">HashingOptions.ModelHashingType</a> <a href="../../../src-html/org/tribuo/hash/HashingOptions.html#line.39">modelHashingAlgorithm</a></pre>
+public&nbsp;<a href="../../../org/tribuo/hash/HashingOptions.ModelHashingType.html" title="enum in org.tribuo.hash">HashingOptions.ModelHashingType</a> modelHashingAlgorithm</pre>
 </li>
 </ul>
 <a name="modelHashingSalt">
@@ -262,7 +262,7 @@ public&nbsp;<a href="../../../org/tribuo/hash/HashingOptions.ModelHashingType.ht
 <h4>modelHashingSalt</h4>
 <pre>@Option(longName="model-hashing-salt",
         usage="Salt for hashing the model")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> <a href="../../../src-html/org/tribuo/hash/HashingOptions.html#line.41">modelHashingSalt</a></pre>
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> modelHashingSalt</pre>
 </li>
 </ul>
 </li>
@@ -279,7 +279,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>HashingOptions</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/hash/HashingOptions.html#line.30">HashingOptions</a>()</pre>
+<pre>public&nbsp;HashingOptions()</pre>
 </li>
 </ul>
 </li>
@@ -296,7 +296,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <ul class="blockList">
 <li class="blockList">
 <h4>getHasher</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../org/tribuo/hash/Hasher.html" title="class in org.tribuo.hash">Hasher</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/hash/HashingOptions.html#line.47">getHasher</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../org/tribuo/hash/Hasher.html" title="class in org.tribuo.hash">Hasher</a>&gt;&nbsp;getHasher()</pre>
 <div class="block">Get the specified hasher.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -310,7 +310,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getHashedTrainer</h4>
-<pre>public&nbsp;&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;T&gt;&nbsp;<a href="../../../src-html/org/tribuo/hash/HashingOptions.html#line.76">getHashedTrainer</a>(<a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;T&gt;&nbsp;innerTrainer)</pre>
+<pre>public&nbsp;&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;T&gt;&nbsp;getHashedTrainer(<a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;T&gt;&nbsp;innerTrainer)</pre>
 <div class="block">Gets the trainer wrapped in a hashing trainer.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -390,6 +390,6 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

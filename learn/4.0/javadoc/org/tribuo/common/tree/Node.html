@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <a href="../../../../src-html/org/tribuo/common/tree/Node.html#line.27">Node</a>&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public interface <span class="typeNameLabel">Node&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
 <div class="block">A node in a decision tree.</div>
 </li>
@@ -174,7 +174,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <ul class="blockList">
 <li class="blockList">
 <h4>isLeaf</h4>
-<pre>boolean&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/Node.html#line.33">isLeaf</a>()</pre>
+<pre>boolean&nbsp;isLeaf()</pre>
 <div class="block">Is it a leaf node?</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -188,7 +188,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <ul class="blockList">
 <li class="blockList">
 <h4>getNextNode</h4>
-<pre><a href="../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;<a href="../../../../org/tribuo/common/tree/Node.html" title="type parameter in Node">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/Node.html#line.40">getNextNode</a>(<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;example)</pre>
+<pre><a href="../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;<a href="../../../../org/tribuo/common/tree/Node.html" title="type parameter in Node">T</a>&gt;&nbsp;getNextNode(<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;example)</pre>
 <div class="block">Returns the next node in the tree based on the supplied example, or null if it's a leaf.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -204,7 +204,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <ul class="blockList">
 <li class="blockList">
 <h4>getImpurity</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/Node.html#line.46">getImpurity</a>()</pre>
+<pre>double&nbsp;getImpurity()</pre>
 <div class="block">The impurity score of this node.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -218,7 +218,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>copy</h4>
-<pre><a href="../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;<a href="../../../../org/tribuo/common/tree/Node.html" title="type parameter in Node">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/Node.html#line.52">copy</a>()</pre>
+<pre><a href="../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;<a href="../../../../org/tribuo/common/tree/Node.html" title="type parameter in Node">T</a>&gt;&nbsp;copy()</pre>
 <div class="block">Copies the node and it's children.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -294,6 +294,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

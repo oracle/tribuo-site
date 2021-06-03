@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluator.html#line.42">MultiLabelEvaluator</a>
+<pre>public class <span class="typeNameLabel">MultiLabelEvaluator</span>
 extends <a href="../../../../org/tribuo/evaluation/AbstractEvaluator.html" title="class in org.tribuo.evaluation">AbstractEvaluator</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>,org.tribuo.multilabel.evaluation.MultiLabelMetric.Context,<a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvaluation.html" title="interface in org.tribuo.multilabel.evaluation">MultiLabelEvaluation</a>,<a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelMetric.html" title="class in org.tribuo.multilabel.evaluation">MultiLabelMetric</a>&gt;</pre>
 <div class="block">An <a href="../../../../org/tribuo/evaluation/Evaluator.html" title="interface in org.tribuo.evaluation"><code>Evaluator</code></a> for <a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel"><code>MultiLabel</code></a> problems.
  <p>
@@ -222,7 +222,7 @@ extends <a href="../../../../org/tribuo/evaluation/AbstractEvaluator.html" title
 <ul class="blockListLast">
 <li class="blockList">
 <h4>MultiLabelEvaluator</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluator.html#line.42">MultiLabelEvaluator</a>()</pre>
+<pre>public&nbsp;MultiLabelEvaluator()</pre>
 </li>
 </ul>
 </li>
@@ -239,7 +239,7 @@ extends <a href="../../../../org/tribuo/evaluation/AbstractEvaluator.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>createMetrics</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelMetric.html" title="class in org.tribuo.multilabel.evaluation">MultiLabelMetric</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluator.html#line.45">createMetrics</a>(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&nbsp;model)</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelMetric.html" title="class in org.tribuo.multilabel.evaluation">MultiLabelMetric</a>&gt;&nbsp;createMetrics(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&nbsp;model)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/evaluation/AbstractEvaluator.html#createMetrics-org.tribuo.Model-">AbstractEvaluator</a></code></span></div>
 <div class="block">Creates the appropriate set of metrics for this model, by querying for it's <a href="../../../../org/tribuo/OutputInfo.html" title="interface in org.tribuo"><code>OutputInfo</code></a>.</div>
 <dl>
@@ -258,7 +258,7 @@ extends <a href="../../../../org/tribuo/evaluation/AbstractEvaluator.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>createContext</h4>
-<pre>protected&nbsp;org.tribuo.multilabel.evaluation.MultiLabelMetric.Context&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluator.html#line.82">createContext</a>(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&nbsp;model,
+<pre>protected&nbsp;org.tribuo.multilabel.evaluation.MultiLabelMetric.Context&nbsp;createContext(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&nbsp;model,
                                                                                   <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&gt;&nbsp;predictions)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/evaluation/AbstractEvaluator.html#createContext-org.tribuo.Model-java.util.List-">AbstractEvaluator</a></code></span></div>
 <div class="block">Create the context needed for evaluation. The context might store global properties or cache computation.</div>
@@ -279,7 +279,7 @@ extends <a href="../../../../org/tribuo/evaluation/AbstractEvaluator.html" title
 <ul class="blockListLast">
 <li class="blockList">
 <h4>createEvaluation</h4>
-<pre>protected&nbsp;<a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvaluation.html" title="interface in org.tribuo.multilabel.evaluation">MultiLabelEvaluation</a>&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluator.html#line.87">createEvaluation</a>(org.tribuo.multilabel.evaluation.MultiLabelMetric.Context&nbsp;context,
+<pre>protected&nbsp;<a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvaluation.html" title="interface in org.tribuo.multilabel.evaluation">MultiLabelEvaluation</a>&nbsp;createEvaluation(org.tribuo.multilabel.evaluation.MultiLabelMetric.Context&nbsp;context,
                                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/MetricID.html" title="class in org.tribuo.evaluation.metrics">MetricID</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;results,
                                                 <a href="../../../../org/tribuo/provenance/EvaluationProvenance.html" title="class in org.tribuo.provenance">EvaluationProvenance</a>&nbsp;provenance)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/evaluation/AbstractEvaluator.html#createEvaluation-C-java.util.Map-org.tribuo.provenance.EvaluationProvenance-">AbstractEvaluator</a></code></span></div>
@@ -364,6 +364,6 @@ extends <a href="../../../../org/tribuo/evaluation/AbstractEvaluator.html" title
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

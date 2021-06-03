@@ -126,7 +126,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../src-html/org/tribuo/sequence/MinimumCardinalitySequenceDataset.html#line.57">MinimumCardinalitySequenceDataset</a>&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public class <span class="typeNameLabel">MinimumCardinalitySequenceDataset&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="../../../org/tribuo/sequence/ImmutableSequenceDataset.html" title="class in org.tribuo.sequence">ImmutableSequenceDataset</a>&lt;T&gt;</pre>
 <div class="block">This class creates a pruned dataset in which low frequency features that
  occur less than the provided minimum cardinality have been removed. This can
@@ -291,7 +291,7 @@ extends <a href="../../../org/tribuo/sequence/ImmutableSequenceDataset.html" tit
 <ul class="blockListLast">
 <li class="blockList">
 <h4>MinimumCardinalitySequenceDataset</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/sequence/MinimumCardinalitySequenceDataset.html#line.74">MinimumCardinalitySequenceDataset</a>(<a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class in org.tribuo.sequence">SequenceDataset</a>&lt;<a href="../../../org/tribuo/sequence/MinimumCardinalitySequenceDataset.html" title="type parameter in MinimumCardinalitySequenceDataset">T</a>&gt;&nbsp;sequenceDataset,
+<pre>public&nbsp;MinimumCardinalitySequenceDataset(<a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class in org.tribuo.sequence">SequenceDataset</a>&lt;<a href="../../../org/tribuo/sequence/MinimumCardinalitySequenceDataset.html" title="type parameter in MinimumCardinalitySequenceDataset">T</a>&gt;&nbsp;sequenceDataset,
                                          int&nbsp;minCardinality)</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -316,7 +316,7 @@ extends <a href="../../../org/tribuo/sequence/ImmutableSequenceDataset.html" tit
 <ul class="blockList">
 <li class="blockList">
 <h4>getRemoved</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/sequence/MinimumCardinalitySequenceDataset.html#line.148">getRemoved</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;getRemoved()</pre>
 <div class="block">The feature names that were removed.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -330,7 +330,7 @@ extends <a href="../../../org/tribuo/sequence/ImmutableSequenceDataset.html" tit
 <ul class="blockList">
 <li class="blockList">
 <h4>getNumExamplesRemoved</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../src-html/org/tribuo/sequence/MinimumCardinalitySequenceDataset.html#line.157">getNumExamplesRemoved</a>()</pre>
+<pre>public&nbsp;int&nbsp;getNumExamplesRemoved()</pre>
 <div class="block">The number of examples removed due to a lack of features.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -344,7 +344,7 @@ extends <a href="../../../org/tribuo/sequence/ImmutableSequenceDataset.html" tit
 <ul class="blockList">
 <li class="blockList">
 <h4>getMinCardinality</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../src-html/org/tribuo/sequence/MinimumCardinalitySequenceDataset.html#line.166">getMinCardinality</a>()</pre>
+<pre>public&nbsp;int&nbsp;getMinCardinality()</pre>
 <div class="block">The minimum cardinality threshold for the features.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -358,7 +358,7 @@ extends <a href="../../../org/tribuo/sequence/ImmutableSequenceDataset.html" tit
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/provenance/DatasetProvenance.html" title="class in org.tribuo.provenance">DatasetProvenance</a>&nbsp;<a href="../../../src-html/org/tribuo/sequence/MinimumCardinalitySequenceDataset.html#line.171">getProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/provenance/DatasetProvenance.html" title="class in org.tribuo.provenance">DatasetProvenance</a>&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../../org/tribuo/provenance/DatasetProvenance.html" title="class in org.tribuo.provenance">DatasetProvenance</a>&gt;</code></dd>
@@ -435,6 +435,6 @@ extends <a href="../../../org/tribuo/sequence/ImmutableSequenceDataset.html" tit
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

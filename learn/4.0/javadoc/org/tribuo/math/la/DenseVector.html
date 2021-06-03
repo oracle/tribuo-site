@@ -116,7 +116,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.32">DenseVector</a>
+<pre>public class <span class="typeNameLabel">DenseVector</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a></pre>
 <div class="block">A dense vector, backed by a double array.</div>
@@ -482,7 +482,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockListLast">
 <li class="blockList">
 <h4>elements</h4>
-<pre>protected final&nbsp;double[] <a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.36">elements</a></pre>
+<pre>protected final&nbsp;double[] elements</pre>
 </li>
 </ul>
 </li>
@@ -499,7 +499,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>DenseVector</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.38">DenseVector</a>(int&nbsp;size)</pre>
+<pre>public&nbsp;DenseVector(int&nbsp;size)</pre>
 </li>
 </ul>
 <a name="DenseVector-int-double-">
@@ -508,7 +508,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>DenseVector</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.42">DenseVector</a>(int&nbsp;size,
+<pre>public&nbsp;DenseVector(int&nbsp;size,
                    double&nbsp;value)</pre>
 </li>
 </ul>
@@ -518,7 +518,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>DenseVector</h4>
-<pre>protected&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.52">DenseVector</a>(double[]&nbsp;values)</pre>
+<pre>protected&nbsp;DenseVector(double[]&nbsp;values)</pre>
 <div class="block">Does not defensively copy the input, used internally.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -532,7 +532,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockListLast">
 <li class="blockList">
 <h4>DenseVector</h4>
-<pre>protected&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.57">DenseVector</a>(<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;other)</pre>
+<pre>protected&nbsp;DenseVector(<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;other)</pre>
 </li>
 </ul>
 </li>
@@ -549,7 +549,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>createDenseVector</h4>
-<pre>public static&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.66">createDenseVector</a>(double[]&nbsp;values)</pre>
+<pre>public static&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;createDenseVector(double[]&nbsp;values)</pre>
 <div class="block">Defensively copies the values before construction.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -565,7 +565,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>toArray</h4>
-<pre>public&nbsp;double[]&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.77">toArray</a>()</pre>
+<pre>public&nbsp;double[]&nbsp;toArray()</pre>
 <div class="block">Generates a copy of the values in this DenseVector.
  <p>
  This implementation uses Arrays.copyOf, and should be overridden if the
@@ -582,7 +582,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>getShape</h4>
-<pre>public&nbsp;int[]&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.82">getShape</a>()</pre>
+<pre>public&nbsp;int[]&nbsp;getShape()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Tensor.html#getShape--">Tensor</a></code></span></div>
 <div class="block">Returns an int array specifying the shape of this <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a>.</div>
 <dl>
@@ -599,7 +599,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>reshape</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.87">reshape</a>(int[]&nbsp;newShape)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;reshape(int[]&nbsp;newShape)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Tensor.html#reshape-int:A-">Tensor</a></code></span></div>
 <div class="block">Reshapes the Tensor to the supplied shape. Throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang"><code>IllegalArgumentException</code></a> if the shape isn't compatible.</div>
 <dl>
@@ -618,7 +618,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.111">copy</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;copy()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#copy--">SGDVector</a></code></span></div>
 <div class="block">Returns a deep copy of this vector.</div>
 <dl>
@@ -635,7 +635,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>size</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.116">size</a>()</pre>
+<pre>public&nbsp;int&nbsp;size()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#size--">SGDVector</a></code></span></div>
 <div class="block">Returns the dimensionality of this vector.</div>
 <dl>
@@ -652,7 +652,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>numActiveElements</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.121">numActiveElements</a>()</pre>
+<pre>public&nbsp;int&nbsp;numActiveElements()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#numActiveElements--">SGDVector</a></code></span></div>
 <div class="block">Returns the number of non-zero elements (on construction, an element
  could be set to zero and it would still remain active).</div>
@@ -670,7 +670,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>reduce</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.132">reduce</a>(double&nbsp;initialValue,
+<pre>public&nbsp;double&nbsp;reduce(double&nbsp;initialValue,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function">DoubleUnaryOperator</a>&nbsp;op,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleBinaryOperator.html?is-external=true" title="class or interface in java.util.function">DoubleBinaryOperator</a>&nbsp;reduction)</pre>
 <div class="block">Performs a reduction from left to right of this vector.</div>
@@ -690,7 +690,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.147">equals</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;other)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;other)</pre>
 <div class="block">Equals is defined mathematically, that is two SGDVectors are equal iff they have the same indices
  and the same values at those indices.</div>
 <dl>
@@ -709,7 +709,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.175">hashCode</a>()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -722,7 +722,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>add</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.185">add</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;add(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
 <div class="block">Adds <code>other</code> to this vector, producing a new <a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la"><code>DenseVector</code></a>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -740,7 +740,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>subtract</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.202">subtract</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;subtract(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
 <div class="block">Subtracts <code>other</code> from this vector, producing a new <a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la"><code>DenseVector</code></a>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -758,7 +758,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>intersectAndAddInPlace</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.214">intersectAndAddInPlace</a>(<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;other,
+<pre>public&nbsp;void&nbsp;intersectAndAddInPlace(<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;other,
                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function">DoubleUnaryOperator</a>&nbsp;f)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Tensor.html#intersectAndAddInPlace-org.tribuo.math.la.Tensor-java.util.function.DoubleUnaryOperator-">Tensor</a></code></span></div>
 <div class="block">Updates this <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a> by adding all the values from the intersection with <code>other</code>.
@@ -782,7 +782,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>hadamardProductInPlace</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.229">hadamardProductInPlace</a>(<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;other,
+<pre>public&nbsp;void&nbsp;hadamardProductInPlace(<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;other,
                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function">DoubleUnaryOperator</a>&nbsp;f)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Tensor.html#hadamardProductInPlace-org.tribuo.math.la.Tensor-java.util.function.DoubleUnaryOperator-">Tensor</a></code></span></div>
 <div class="block">Updates this <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a> with the Hadamard product
@@ -806,7 +806,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>foreachInPlace</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.244">foreachInPlace</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function">DoubleUnaryOperator</a>&nbsp;f)</pre>
+<pre>public&nbsp;void&nbsp;foreachInPlace(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function">DoubleUnaryOperator</a>&nbsp;f)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Tensor.html#foreachInPlace-java.util.function.DoubleUnaryOperator-">Tensor</a></code></span></div>
 <div class="block">Applies a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function"><code>DoubleUnaryOperator</code></a> elementwise to this <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a>.</div>
 <dl>
@@ -823,7 +823,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>scale</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.251">scale</a>(double&nbsp;coefficient)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;scale(double&nbsp;coefficient)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#scale-double-">SGDVector</a></code></span></div>
 <div class="block">Generates a new vector with each element scaled by <code>coefficient</code>.</div>
 <dl>
@@ -842,7 +842,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>add</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.258">add</a>(int&nbsp;index,
+<pre>public&nbsp;void&nbsp;add(int&nbsp;index,
                 double&nbsp;value)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#add-int-double-">SGDVector</a></code></span></div>
 <div class="block">Adds <code>value</code> to the element at <code>index</code>.</div>
@@ -861,7 +861,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>dot</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.263">dot</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
+<pre>public&nbsp;double&nbsp;dot(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#dot-org.tribuo.math.la.SGDVector-">SGDVector</a></code></span></div>
 <div class="block">Calculates the dot product between this vector and <code>other</code>.</div>
 <dl>
@@ -880,7 +880,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>outer</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.277">outer</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;outer(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#outer-org.tribuo.math.la.SGDVector-">SGDVector</a></code></span></div>
 <div class="block">Generates the matrix representing the outer product between the two vectors.</div>
 <dl>
@@ -899,7 +899,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>sum</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.301">sum</a>()</pre>
+<pre>public&nbsp;double&nbsp;sum()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#sum--">SGDVector</a></code></span></div>
 <div class="block">Calculates the sum of this vector.</div>
 <dl>
@@ -916,7 +916,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>sum</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.309">sum</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function">DoubleUnaryOperator</a>&nbsp;f)</pre>
+<pre>public&nbsp;double&nbsp;sum(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function">DoubleUnaryOperator</a>&nbsp;f)</pre>
 </li>
 </ul>
 <a name="twoNorm--">
@@ -925,7 +925,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>twoNorm</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.318">twoNorm</a>()</pre>
+<pre>public&nbsp;double&nbsp;twoNorm()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#twoNorm--">SGDVector</a></code></span></div>
 <div class="block">Calculates the euclidean norm for this vector.</div>
 <dl>
@@ -944,7 +944,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>oneNorm</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.327">oneNorm</a>()</pre>
+<pre>public&nbsp;double&nbsp;oneNorm()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#oneNorm--">SGDVector</a></code></span></div>
 <div class="block">Calculates the Manhattan norm for this vector.</div>
 <dl>
@@ -961,7 +961,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.336">get</a>(int&nbsp;index)</pre>
+<pre>public&nbsp;double&nbsp;get(int&nbsp;index)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#get-int-">SGDVector</a></code></span></div>
 <div class="block">Gets an element from this vector.</div>
 <dl>
@@ -980,7 +980,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>set</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.341">set</a>(int&nbsp;index,
+<pre>public&nbsp;void&nbsp;set(int&nbsp;index,
                 double&nbsp;value)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#set-int-double-">SGDVector</a></code></span></div>
 <div class="block">Sets the <code>index</code> to the <code>value</code>.</div>
@@ -999,7 +999,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>setElements</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.349">setElements</a>(<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;other)</pre>
+<pre>public&nbsp;void&nbsp;setElements(<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;other)</pre>
 <div class="block">Sets all the elements of this vector to be the same as <code>other</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1013,7 +1013,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>fill</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.359">fill</a>(double&nbsp;value)</pre>
+<pre>public&nbsp;void&nbsp;fill(double&nbsp;value)</pre>
 <div class="block">Fills this <a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la"><code>DenseVector</code></a> with <code>value</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -1027,7 +1027,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>indexOfMax</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.364">indexOfMax</a>()</pre>
+<pre>public&nbsp;int&nbsp;indexOfMax()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#indexOfMax--">SGDVector</a></code></span></div>
 <div class="block">Returns the index of the maximum value. Requires probing the array.</div>
 <dl>
@@ -1044,7 +1044,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>maxValue</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.378">maxValue</a>()</pre>
+<pre>public&nbsp;double&nbsp;maxValue()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#maxValue--">SGDVector</a></code></span></div>
 <div class="block">Returns the maximum value. Requires probing the array.</div>
 <dl>
@@ -1061,7 +1061,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>minValue</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.390">minValue</a>()</pre>
+<pre>public&nbsp;double&nbsp;minValue()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#minValue--">SGDVector</a></code></span></div>
 <div class="block">Returns the minimum value. Requires probing the array.</div>
 <dl>
@@ -1078,7 +1078,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>normalize</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.402">normalize</a>(<a href="../../../../org/tribuo/math/util/VectorNormalizer.html" title="interface in org.tribuo.math.util">VectorNormalizer</a>&nbsp;normalizer)</pre>
+<pre>public&nbsp;void&nbsp;normalize(<a href="../../../../org/tribuo/math/util/VectorNormalizer.html" title="interface in org.tribuo.math.util">VectorNormalizer</a>&nbsp;normalizer)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#normalize-org.tribuo.math.util.VectorNormalizer-">SGDVector</a></code></span></div>
 <div class="block">Normalizes the vector using the supplied vector normalizer.</div>
 <dl>
@@ -1095,7 +1095,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>expNormalize</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.414">expNormalize</a>(double&nbsp;total)</pre>
+<pre>public&nbsp;void&nbsp;expNormalize(double&nbsp;total)</pre>
 <div class="block">An optimisation for the exponential normalizer when
  you already know the normalization constant.
 
@@ -1112,7 +1112,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.421">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -1125,7 +1125,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>variance</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.439">variance</a>(double&nbsp;mean)</pre>
+<pre>public&nbsp;double&nbsp;variance(double&nbsp;mean)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#variance-double-">SGDVector</a></code></span></div>
 <div class="block">Calculates the variance of this vector based on the supplied mean.</div>
 <dl>
@@ -1144,7 +1144,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>iterator</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/VectorIterator.html" title="interface in org.tribuo.math.la">VectorIterator</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.448">iterator</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/VectorIterator.html" title="interface in org.tribuo.math.la">VectorIterator</a>&nbsp;iterator()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true#iterator--" title="class or interface in java.lang">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../org/tribuo/math/la/VectorTuple.html" title="class in org.tribuo.math.la">VectorTuple</a>&gt;</code></dd>
@@ -1157,7 +1157,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>sparsify</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.457">sparsify</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;sparsify()</pre>
 <div class="block">Generates a <a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la"><code>SparseVector</code></a> representation from this dense vector, removing all values
  with absolute value below <a href="../../../../org/tribuo/math/la/VectorTuple.html#DELTA"><code>VectorTuple.DELTA</code></a>.</div>
 <dl>
@@ -1172,7 +1172,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>sparsify</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.467">sparsify</a>(double&nbsp;tolerance)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;sparsify(double&nbsp;tolerance)</pre>
 <div class="block">Generates a <a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la"><code>SparseVector</code></a> representation from this dense vector, removing all values
  with absolute value below the supplied tolerance.</div>
 <dl>
@@ -1189,7 +1189,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>euclideanDistance</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.488">euclideanDistance</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
+<pre>public&nbsp;double&nbsp;euclideanDistance(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
 <div class="block">The l2 or euclidean distance between this vector and the other vector.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -1207,7 +1207,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockListLast">
 <li class="blockList">
 <h4>l1Distance</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseVector.html#line.536">l1Distance</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
+<pre>public&nbsp;double&nbsp;l1Distance(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
 <div class="block">The l1 or Manhattan distance between this vector and the other vector.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -1287,6 +1287,6 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

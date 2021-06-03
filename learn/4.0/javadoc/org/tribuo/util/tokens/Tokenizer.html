@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <a href="../../../../src-html/org/tribuo/util/tokens/Tokenizer.html#line.40">Tokenizer</a>
+<pre>public interface <span class="typeNameLabel">Tokenizer</span>
 extends com.oracle.labs.mlrg.olcut.config.Configurable, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Cloneable.html?is-external=true" title="class or interface in java.lang">Cloneable</a>, com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&gt;</pre>
 <div class="block">An interface for things that tokenize text: breaking it into words according
  to some set of rules.
@@ -244,7 +244,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, <a href="https://docs.or
 <ul class="blockList">
 <li class="blockList">
 <h4>createSupplier</h4>
-<pre>static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html?is-external=true" title="class or interface in java.util.function">Supplier</a>&lt;<a href="../../../../org/tribuo/util/tokens/Tokenizer.html" title="interface in org.tribuo.util.tokens">Tokenizer</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/util/tokens/Tokenizer.html#line.42">createSupplier</a>(<a href="../../../../org/tribuo/util/tokens/Tokenizer.html" title="interface in org.tribuo.util.tokens">Tokenizer</a>&nbsp;tokenizer)</pre>
+<pre>static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/Supplier.html?is-external=true" title="class or interface in java.util.function">Supplier</a>&lt;<a href="../../../../org/tribuo/util/tokens/Tokenizer.html" title="interface in org.tribuo.util.tokens">Tokenizer</a>&gt;&nbsp;createSupplier(<a href="../../../../org/tribuo/util/tokens/Tokenizer.html" title="interface in org.tribuo.util.tokens">Tokenizer</a>&nbsp;tokenizer)</pre>
 </li>
 </ul>
 <a name="createThreadLocal-org.tribuo.util.tokens.Tokenizer-">
@@ -253,7 +253,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, <a href="https://docs.or
 <ul class="blockList">
 <li class="blockList">
 <h4>createThreadLocal</h4>
-<pre>static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/ThreadLocal.html?is-external=true" title="class or interface in java.lang">ThreadLocal</a>&lt;<a href="../../../../org/tribuo/util/tokens/Tokenizer.html" title="interface in org.tribuo.util.tokens">Tokenizer</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/util/tokens/Tokenizer.html#line.53">createThreadLocal</a>(<a href="../../../../org/tribuo/util/tokens/Tokenizer.html" title="interface in org.tribuo.util.tokens">Tokenizer</a>&nbsp;tokenizer)</pre>
+<pre>static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/ThreadLocal.html?is-external=true" title="class or interface in java.lang">ThreadLocal</a>&lt;<a href="../../../../org/tribuo/util/tokens/Tokenizer.html" title="interface in org.tribuo.util.tokens">Tokenizer</a>&gt;&nbsp;createThreadLocal(<a href="../../../../org/tribuo/util/tokens/Tokenizer.html" title="interface in org.tribuo.util.tokens">Tokenizer</a>&nbsp;tokenizer)</pre>
 </li>
 </ul>
 <a name="reset-java.lang.CharSequence-">
@@ -262,7 +262,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, <a href="https://docs.or
 <ul class="blockList">
 <li class="blockList">
 <h4>reset</h4>
-<pre>void&nbsp;<a href="../../../../src-html/org/tribuo/util/tokens/Tokenizer.html#line.62">reset</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/CharSequence.html?is-external=true" title="class or interface in java.lang">CharSequence</a>&nbsp;cs)</pre>
+<pre>void&nbsp;reset(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/CharSequence.html?is-external=true" title="class or interface in java.lang">CharSequence</a>&nbsp;cs)</pre>
 <div class="block">Resets the tokenizer so that it operates on a new sequence of characters.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -276,7 +276,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, <a href="https://docs.or
 <ul class="blockList">
 <li class="blockList">
 <h4>advance</h4>
-<pre>boolean&nbsp;<a href="../../../../src-html/org/tribuo/util/tokens/Tokenizer.html#line.70">advance</a>()</pre>
+<pre>boolean&nbsp;advance()</pre>
 <div class="block">Advances the tokenizer to the next token.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -291,7 +291,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, <a href="https://docs.or
 <ul class="blockList">
 <li class="blockList">
 <h4>getText</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/util/tokens/Tokenizer.html#line.77">getText</a>()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getText()</pre>
 <div class="block">Gets the text of the current token, as a string</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -305,7 +305,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, <a href="https://docs.or
 <ul class="blockList">
 <li class="blockList">
 <h4>getStart</h4>
-<pre>int&nbsp;<a href="../../../../src-html/org/tribuo/util/tokens/Tokenizer.html#line.85">getStart</a>()</pre>
+<pre>int&nbsp;getStart()</pre>
 <div class="block">Gets the starting character offset of the current token in the character
  sequence</div>
 <dl>
@@ -320,7 +320,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, <a href="https://docs.or
 <ul class="blockList">
 <li class="blockList">
 <h4>getEnd</h4>
-<pre>int&nbsp;<a href="../../../../src-html/org/tribuo/util/tokens/Tokenizer.html#line.93">getEnd</a>()</pre>
+<pre>int&nbsp;getEnd()</pre>
 <div class="block">Gets the ending offset (exclusive) of the current token in the character
  sequence</div>
 <dl>
@@ -335,7 +335,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, <a href="https://docs.or
 <ul class="blockList">
 <li class="blockList">
 <h4>getType</h4>
-<pre><a href="../../../../org/tribuo/util/tokens/Token.TokenType.html" title="enum in org.tribuo.util.tokens">Token.TokenType</a>&nbsp;<a href="../../../../src-html/org/tribuo/util/tokens/Tokenizer.html#line.100">getType</a>()</pre>
+<pre><a href="../../../../org/tribuo/util/tokens/Token.TokenType.html" title="enum in org.tribuo.util.tokens">Token.TokenType</a>&nbsp;getType()</pre>
 <div class="block">Gets the type of the current token.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -349,7 +349,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, <a href="https://docs.or
 <ul class="blockList">
 <li class="blockList">
 <h4>clone</h4>
-<pre><a href="../../../../org/tribuo/util/tokens/Tokenizer.html" title="interface in org.tribuo.util.tokens">Tokenizer</a>&nbsp;<a href="../../../../src-html/org/tribuo/util/tokens/Tokenizer.html#line.110">clone</a>()
+<pre><a href="../../../../org/tribuo/util/tokens/Tokenizer.html" title="interface in org.tribuo.util.tokens">Tokenizer</a>&nbsp;clone()
          throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/CloneNotSupportedException.html?is-external=true" title="class or interface in java.lang">CloneNotSupportedException</a></pre>
 <div class="block">Clones a tokenizer with it's configuration. Cloned tokenizers are
  not processing the same text as the original tokenizer and need to be reset
@@ -368,7 +368,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, <a href="https://docs.or
 <ul class="blockList">
 <li class="blockList">
 <h4>getToken</h4>
-<pre>default&nbsp;<a href="../../../../org/tribuo/util/tokens/Token.html" title="class in org.tribuo.util.tokens">Token</a>&nbsp;<a href="../../../../src-html/org/tribuo/util/tokens/Tokenizer.html#line.116">getToken</a>()</pre>
+<pre>default&nbsp;<a href="../../../../org/tribuo/util/tokens/Token.html" title="class in org.tribuo.util.tokens">Token</a>&nbsp;getToken()</pre>
 <div class="block">Generates a Token object from the current state of the tokenizer.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -382,7 +382,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, <a href="https://docs.or
 <ul class="blockList">
 <li class="blockList">
 <h4>tokenize</h4>
-<pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/util/tokens/Token.html" title="class in org.tribuo.util.tokens">Token</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/util/tokens/Tokenizer.html#line.141">tokenize</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/CharSequence.html?is-external=true" title="class or interface in java.lang">CharSequence</a>&nbsp;cs)</pre>
+<pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/util/tokens/Token.html" title="class in org.tribuo.util.tokens">Token</a>&gt;&nbsp;tokenize(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/CharSequence.html?is-external=true" title="class or interface in java.lang">CharSequence</a>&nbsp;cs)</pre>
 <div class="block">Uses this tokenizer to tokenize a string and return the list of tokens
  that were generated. Many applications will simply want to take a
  character sequence and get a list of tokens, so this will do that for
@@ -413,7 +413,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, <a href="https://docs.or
 <ul class="blockListLast">
 <li class="blockList">
 <h4>split</h4>
-<pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/util/tokens/Tokenizer.html#line.161">split</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/CharSequence.html?is-external=true" title="class or interface in java.lang">CharSequence</a>&nbsp;cs)</pre>
+<pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;split(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/CharSequence.html?is-external=true" title="class or interface in java.lang">CharSequence</a>&nbsp;cs)</pre>
 <div class="block">Uses this tokenizer to split a string into it's component substrings.
  Many applications will simply want the component strings making up a
  larger character sequence.</div>
@@ -493,6 +493,6 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, <a href="https://docs.or
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

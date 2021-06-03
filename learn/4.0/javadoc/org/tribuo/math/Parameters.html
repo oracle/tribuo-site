@@ -104,7 +104,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <a href="../../../src-html/org/tribuo/math/Parameters.html#line.29">Parameters</a></pre>
+<pre>public interface <span class="typeNameLabel">Parameters</span></pre>
 <div class="block">An interface to a <a href="../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a>[] array which accepts updates to the parameters.
  <p>
  Parameters is essentially an SGD model at training time.
@@ -181,7 +181,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>getEmptyCopy</h4>
-<pre><a href="../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;<a href="../../../src-html/org/tribuo/math/Parameters.html#line.37">getEmptyCopy</a>()</pre>
+<pre><a href="../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;getEmptyCopy()</pre>
 <div class="block">Generates an empty copy of the underlying <a href="../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a> array.
  <p>
  It's the same size and shape as the parameters, but all the values are 0.0.</div>
@@ -197,7 +197,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre><a href="../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;<a href="../../../src-html/org/tribuo/math/Parameters.html#line.43">get</a>()</pre>
+<pre><a href="../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;get()</pre>
 <div class="block">Get a reference to the underlying <a href="../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a> array.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -211,7 +211,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>set</h4>
-<pre>void&nbsp;<a href="../../../src-html/org/tribuo/math/Parameters.html#line.49">set</a>(<a href="../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;newWeights)</pre>
+<pre>void&nbsp;set(<a href="../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;newWeights)</pre>
 <div class="block">Set the underlying <a href="../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a> array to newWeights.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -225,7 +225,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>update</h4>
-<pre>void&nbsp;<a href="../../../src-html/org/tribuo/math/Parameters.html#line.58">update</a>(<a href="../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;gradients)</pre>
+<pre>void&nbsp;update(<a href="../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;gradients)</pre>
 <div class="block">Apply gradients to the parameters. Assumes that gradients is the same length as the parameters,
  and each <a href="../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a> is the same size as the corresponding one from the parameters.
  <p>
@@ -242,7 +242,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockListLast">
 <li class="blockList">
 <h4>merge</h4>
-<pre><a href="../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;<a href="../../../src-html/org/tribuo/math/Parameters.html#line.68">merge</a>(<a href="../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[][]&nbsp;gradients,
+<pre><a href="../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;merge(<a href="../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[][]&nbsp;gradients,
                int&nbsp;size)</pre>
 <div class="block">Merge together an array of gradient arrays. Assumes the first dimension
  is the number of gradient arrays and the second dimension is the
@@ -324,6 +324,6 @@ var activeTableTab = "activeTableTab";
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

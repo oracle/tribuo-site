@@ -146,19 +146,19 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DenseVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseVector.html#outer-org.tribuo.math.la.SGDVector-">outer</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a></code></td>
 <td class="colLast"><span class="typeNameLabel">SparseVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/SparseVector.html#outer-org.tribuo.math.la.SGDVector-">outer</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>
 <div class="block">This generates the outer product when dotted with another <a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la"><code>SparseVector</code></a>.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a></code></td>
 <td class="colLast"><span class="typeNameLabel">SGDVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/SGDVector.html#outer-org.tribuo.math.la.SGDVector-">outer</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>
 <div class="block">Generates the matrix representing the outer product between the two vectors.</div>
 </td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a></code></td>
+<td class="colLast"><span class="typeNameLabel">DenseVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseVector.html#outer-org.tribuo.math.la.SGDVector-">outer</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -170,14 +170,6 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/DenseMatrix.html" title="class in org.tribuo.math.la">DenseMatrix</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DenseMatrix.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseMatrix.html#matrixMultiply-org.tribuo.math.la.Matrix-">matrixMultiply</a></span>(<a href="../../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;other)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/DenseMatrix.html" title="class in org.tribuo.math.la">DenseMatrix</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DenseSparseMatrix.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseSparseMatrix.html#matrixMultiply-org.tribuo.math.la.Matrix-">matrixMultiply</a></span>(<a href="../../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;other)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a></code></td>
 <td class="colLast"><span class="typeNameLabel">Matrix.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/Matrix.html#matrixMultiply-org.tribuo.math.la.Matrix-">matrixMultiply</a></span>(<a href="../../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;input)</code>
 <div class="block">Multiplies this Matrix by another <a href="../../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la"><code>Matrix</code></a> returning a matrix of the appropriate size.</div>
@@ -185,15 +177,11 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/DenseMatrix.html" title="class in org.tribuo.math.la">DenseMatrix</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DenseMatrix.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseMatrix.html#matrixMultiply-org.tribuo.math.la.Matrix-boolean-boolean-">matrixMultiply</a></span>(<a href="../../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;other,
-              boolean&nbsp;transposeThis,
-              boolean&nbsp;transposeOther)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">DenseSparseMatrix.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseSparseMatrix.html#matrixMultiply-org.tribuo.math.la.Matrix-">matrixMultiply</a></span>(<a href="../../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;other)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/DenseMatrix.html" title="class in org.tribuo.math.la">DenseMatrix</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DenseSparseMatrix.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseSparseMatrix.html#matrixMultiply-org.tribuo.math.la.Matrix-boolean-boolean-">matrixMultiply</a></span>(<a href="../../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;other,
-              boolean&nbsp;transposeThis,
-              boolean&nbsp;transposeOther)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">DenseMatrix.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseMatrix.html#matrixMultiply-org.tribuo.math.la.Matrix-">matrixMultiply</a></span>(<a href="../../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;other)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a></code></td>
@@ -202,6 +190,18 @@
               boolean&nbsp;transposeOther)</code>
 <div class="block">Multiplies this Matrix by another <a href="../../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la"><code>Matrix</code></a> returning a matrix of the appropriate size.</div>
 </td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/DenseMatrix.html" title="class in org.tribuo.math.la">DenseMatrix</a></code></td>
+<td class="colLast"><span class="typeNameLabel">DenseSparseMatrix.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseSparseMatrix.html#matrixMultiply-org.tribuo.math.la.Matrix-boolean-boolean-">matrixMultiply</a></span>(<a href="../../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;other,
+              boolean&nbsp;transposeThis,
+              boolean&nbsp;transposeOther)</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/DenseMatrix.html" title="class in org.tribuo.math.la">DenseMatrix</a></code></td>
+<td class="colLast"><span class="typeNameLabel">DenseMatrix.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseMatrix.html#matrixMultiply-org.tribuo.math.la.Matrix-boolean-boolean-">matrixMultiply</a></span>(<a href="../../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;other,
+              boolean&nbsp;transposeThis,
+              boolean&nbsp;transposeOther)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -287,6 +287,6 @@
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

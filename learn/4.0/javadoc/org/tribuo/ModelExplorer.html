@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../src-html/org/tribuo/ModelExplorer.html#line.41">ModelExplorer</a>
+<pre>public class <span class="typeNameLabel">ModelExplorer</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <div class="block">A command line interface for loading in models and inspecting their feature and output spaces.</div>
@@ -301,7 +301,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>shell</h4>
-<pre>protected&nbsp;com.oracle.labs.mlrg.olcut.command.CommandInterpreter <a href="../../src-html/org/tribuo/ModelExplorer.html#line.47">shell</a></pre>
+<pre>protected&nbsp;com.oracle.labs.mlrg.olcut.command.CommandInterpreter shell</pre>
 <div class="block">The command shell instance.</div>
 </li>
 </ul>
@@ -319,7 +319,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ModelExplorer</h4>
-<pre>public&nbsp;<a href="../../src-html/org/tribuo/ModelExplorer.html#line.54">ModelExplorer</a>()</pre>
+<pre>public&nbsp;ModelExplorer()</pre>
 <div class="block">Builds a new model explorer shell.</div>
 </li>
 </ul>
@@ -337,7 +337,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getName</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../src-html/org/tribuo/ModelExplorer.html#line.60">getName</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getName()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getName</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.command.CommandGroup</code></dd>
@@ -350,7 +350,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getDescription</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../src-html/org/tribuo/ModelExplorer.html#line.65">getDescription</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getDescription()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getDescription</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.command.CommandGroup</code></dd>
@@ -363,7 +363,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>fileCompleter</h4>
-<pre>public&nbsp;org.jline.reader.Completer[]&nbsp;<a href="../../src-html/org/tribuo/ModelExplorer.html#line.73">fileCompleter</a>()</pre>
+<pre>public&nbsp;org.jline.reader.Completer[]&nbsp;fileCompleter()</pre>
 <div class="block">Completers for files.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -377,7 +377,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>startShell</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../src-html/org/tribuo/ModelExplorer.html#line.83">startShell</a>()</pre>
+<pre>public&nbsp;void&nbsp;startShell()</pre>
 <div class="block">Start the command shell</div>
 </li>
 </ul>
@@ -389,7 +389,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <h4>loadModel</h4>
 <pre>@Command(usage="&lt;filename&gt; - Load a model from disk.",
          completers="fileCompleter")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../src-html/org/tribuo/ModelExplorer.html#line.95">loadModel</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;loadModel(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
                                                                                                                     <a href="https://docs.oracle.com/javase/8/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;path)</pre>
 <div class="block">Loads a model.</div>
 <dl>
@@ -408,7 +408,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>generatesProbabilities</h4>
 <pre>@Command(usage="Does the model generate probabilities")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../src-html/org/tribuo/ModelExplorer.html#line.118">generatesProbabilities</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;generatesProbabilities(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
 <div class="block">Checks if the model generates probabilities.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -425,7 +425,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>modelProvenance</h4>
 <pre>@Command(usage="Shows the model provenance")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../src-html/org/tribuo/ModelExplorer.html#line.128">modelProvenance</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;modelProvenance(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
 <div class="block">Displays the model provenance.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -442,7 +442,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>featureInfo</h4>
 <pre>@Command(usage="Shows the information on a particular feature")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../src-html/org/tribuo/ModelExplorer.html#line.139">featureInfo</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;featureInfo(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
                                                                                           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;featureName)</pre>
 <div class="block">Shows a specific feature's information.</div>
 <dl>
@@ -461,7 +461,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>outputInfo</h4>
 <pre>@Command(usage="Shows the output information.")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../src-html/org/tribuo/ModelExplorer.html#line.154">outputInfo</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;outputInfo(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
 <div class="block">Displays the output info.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -478,7 +478,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>topFeatures</h4>
 <pre>@Command(usage="&lt;int&gt; - Shows the top N features in the model")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../src-html/org/tribuo/ModelExplorer.html#line.165">topFeatures</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topFeatures(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
                                                                                           int&nbsp;numFeatures)</pre>
 <div class="block">Displays the top n features.</div>
 <dl>
@@ -497,7 +497,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>numFeatures</h4>
 <pre>@Command(usage="Shows the number of features in the model")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../src-html/org/tribuo/ModelExplorer.html#line.175">numFeatures</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;numFeatures(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
 <div class="block">Displays the number of features.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -514,7 +514,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>minCount</h4>
 <pre>@Command(usage="&lt;min count&gt; - Shows the number of features that occurred more than min count times.")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../src-html/org/tribuo/ModelExplorer.html#line.186">minCount</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;minCount(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
                                                                                                                              int&nbsp;minCount)</pre>
 <div class="block">Shows the number of features which occurred more than min count times.</div>
 <dl>
@@ -532,7 +532,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>main</h4>
-<pre>public static&nbsp;void&nbsp;<a href="../../src-html/org/tribuo/ModelExplorer.html#line.211">main</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;args)</pre>
+<pre>public static&nbsp;void&nbsp;main(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;args)</pre>
 <div class="block">Entry point.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -608,6 +608,6 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMETextCLI.html#line.57">LIMETextCLI</a>
+<pre>public class <span class="typeNameLabel">LIMETextCLI</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <div class="block">A CLI for interacting with <a href="../../../../../org/tribuo/classification/explanations/lime/LIMEText.html" title="class in org.tribuo.classification.explanations.lime"><code>LIMEText</code></a>. Uses a simple tokenisation and text extraction pipeline.</div>
@@ -299,7 +299,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>shell</h4>
-<pre>protected&nbsp;com.oracle.labs.mlrg.olcut.command.CommandInterpreter <a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMETextCLI.html#line.60">shell</a></pre>
+<pre>protected&nbsp;com.oracle.labs.mlrg.olcut.command.CommandInterpreter shell</pre>
 </li>
 </ul>
 </li>
@@ -316,7 +316,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>LIMETextCLI</h4>
-<pre>public&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMETextCLI.html#line.77">LIMETextCLI</a>()</pre>
+<pre>public&nbsp;LIMETextCLI()</pre>
 </li>
 </ul>
 </li>
@@ -333,7 +333,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getName</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMETextCLI.html#line.83">getName</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getName()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getName</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.command.CommandGroup</code></dd>
@@ -346,7 +346,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getDescription</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMETextCLI.html#line.88">getDescription</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getDescription()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getDescription</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.command.CommandGroup</code></dd>
@@ -359,7 +359,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>fileCompleter</h4>
-<pre>public&nbsp;org.jline.reader.Completer[]&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMETextCLI.html#line.92">fileCompleter</a>()</pre>
+<pre>public&nbsp;org.jline.reader.Completer[]&nbsp;fileCompleter()</pre>
 </li>
 </ul>
 <a name="startShell--">
@@ -368,7 +368,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>startShell</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMETextCLI.html#line.102">startShell</a>()</pre>
+<pre>public&nbsp;void&nbsp;startShell()</pre>
 <div class="block">Start the command shell</div>
 </li>
 </ul>
@@ -380,7 +380,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <h4>loadModel</h4>
 <pre>@Command(usage="&lt;filename&gt; - Load a model from disk.",
          completers="fileCompleter")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMETextCLI.html#line.108">loadModel</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;loadModel(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
                                                                                                                     <a href="https://docs.oracle.com/javase/8/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;path)</pre>
 </li>
 </ul>
@@ -391,7 +391,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>generatesProbabilities</h4>
 <pre>@Command(usage="Does the model generate probabilities")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMETextCLI.html#line.130">generatesProbabilities</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;generatesProbabilities(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
 </li>
 </ul>
 <a name="modelDescription-com.oracle.labs.mlrg.olcut.command.CommandInterpreter-">
@@ -401,7 +401,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>modelDescription</h4>
 <pre>@Command(usage="Shows the model description")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMETextCLI.html#line.135">modelDescription</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;modelDescription(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
 </li>
 </ul>
 <a name="featureInfo-com.oracle.labs.mlrg.olcut.command.CommandInterpreter-java.lang.String-">
@@ -411,7 +411,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>featureInfo</h4>
 <pre>@Command(usage="Shows the information on a particular feature")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMETextCLI.html#line.140">featureInfo</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;featureInfo(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
                                                                                           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;featureName)</pre>
 </li>
 </ul>
@@ -422,7 +422,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>outputInfo</h4>
 <pre>@Command(usage="Shows the output information.")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMETextCLI.html#line.150">outputInfo</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;outputInfo(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
 </li>
 </ul>
 <a name="topFeatures-com.oracle.labs.mlrg.olcut.command.CommandInterpreter-int-">
@@ -432,7 +432,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>topFeatures</h4>
 <pre>@Command(usage="&lt;int&gt; - Shows the top N features in the model")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMETextCLI.html#line.155">topFeatures</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topFeatures(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
                                                                                           int&nbsp;numFeatures)</pre>
 </li>
 </ul>
@@ -443,7 +443,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>numFeatures</h4>
 <pre>@Command(usage="Shows the number of features in the model")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMETextCLI.html#line.160">numFeatures</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;numFeatures(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
 </li>
 </ul>
 <a name="minCount-com.oracle.labs.mlrg.olcut.command.CommandInterpreter-int-">
@@ -453,7 +453,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>minCount</h4>
 <pre>@Command(usage="&lt;min count&gt; - Shows the number of features that occurred more than min count times.")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMETextCLI.html#line.165">minCount</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;minCount(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
                                                                                                                              int&nbsp;minCount)</pre>
 </li>
 </ul>
@@ -464,7 +464,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>showLabelStats</h4>
 <pre>@Command(usage="Shows the output statistics")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMETextCLI.html#line.176">showLabelStats</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;showLabelStats(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
 </li>
 </ul>
 <a name="setNumSamples-com.oracle.labs.mlrg.olcut.command.CommandInterpreter-int-">
@@ -474,7 +474,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>setNumSamples</h4>
 <pre>@Command(usage="Sets the number of samples to use in LIME")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMETextCLI.html#line.181">setNumSamples</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;setNumSamples(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
                                                                                         int&nbsp;newNumSamples)</pre>
 </li>
 </ul>
@@ -485,7 +485,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>explain</h4>
 <pre>@Command(usage="Explain a text classification")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMETextCLI.html#line.187">explain</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;explain(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
                                                                       <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;tokens)</pre>
 </li>
 </ul>
@@ -496,7 +496,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>setNumFeatures</h4>
 <pre>@Command(usage="Sets the number of features LIME should use in an explanation")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMETextCLI.html#line.200">setNumFeatures</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;setNumFeatures(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
                                                                                                              int&nbsp;newNumFeatures)</pre>
 </li>
 </ul>
@@ -507,7 +507,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>predict</h4>
 <pre>@Command(usage="Make a prediction")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMETextCLI.html#line.209">predict</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;predict(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
                                                           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;tokens)</pre>
 </li>
 </ul>
@@ -517,7 +517,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>main</h4>
-<pre>public static&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMETextCLI.html#line.222">main</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;args)</pre>
+<pre>public static&nbsp;void&nbsp;main(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;args)</pre>
 </li>
 </ul>
 </li>
@@ -588,6 +588,6 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

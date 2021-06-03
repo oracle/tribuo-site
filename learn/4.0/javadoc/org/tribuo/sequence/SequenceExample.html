@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../src-html/org/tribuo/sequence/SequenceExample.html#line.38">SequenceExample</a>&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public class <span class="typeNameLabel">SequenceExample&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;T&gt;&gt;, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
 <div class="block">A sequence of examples, used for sequence classification.</div>
@@ -330,7 +330,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockListLast">
 <li class="blockList">
 <h4>DEFAULT_WEIGHT</h4>
-<pre>public static final&nbsp;float <a href="../../../src-html/org/tribuo/sequence/SequenceExample.html#line.43">DEFAULT_WEIGHT</a></pre>
+<pre>public static final&nbsp;float DEFAULT_WEIGHT</pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../constant-values.html#org.tribuo.sequence.SequenceExample.DEFAULT_WEIGHT">Constant Field Values</a></dd>
@@ -351,7 +351,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>SequenceExample</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceExample.html#line.51">SequenceExample</a>()</pre>
+<pre>public&nbsp;SequenceExample()</pre>
 <div class="block">Creates an empty sequence example.</div>
 </li>
 </ul>
@@ -361,7 +361,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>SequenceExample</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceExample.html#line.61">SequenceExample</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="type parameter in SequenceExample">T</a>&gt;&gt;&nbsp;examples)</pre>
+<pre>public&nbsp;SequenceExample(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="type parameter in SequenceExample">T</a>&gt;&gt;&nbsp;examples)</pre>
 <div class="block">Creates a sequence example from the list of examples.
  <p>
  The examples are not copied by this method.</div>
@@ -377,7 +377,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>SequenceExample</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceExample.html#line.72">SequenceExample</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="type parameter in SequenceExample">T</a>&gt;&gt;&nbsp;examples,
+<pre>public&nbsp;SequenceExample(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="type parameter in SequenceExample">T</a>&gt;&gt;&nbsp;examples,
                        float&nbsp;weight)</pre>
 <div class="block">Creates a sequence example from the list of examples, setting the weight.
  <p>
@@ -395,7 +395,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>SequenceExample</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceExample.html#line.85">SequenceExample</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="type parameter in SequenceExample">T</a>&gt;&nbsp;outputs,
+<pre>public&nbsp;SequenceExample(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="type parameter in SequenceExample">T</a>&gt;&nbsp;outputs,
                        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;&gt;&nbsp;features)</pre>
 <div class="block">Creates a sequence example from the supplied outputs and list of list of features.
  <p>
@@ -414,7 +414,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>SequenceExample</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceExample.html#line.98">SequenceExample</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="type parameter in SequenceExample">T</a>&gt;&nbsp;outputs,
+<pre>public&nbsp;SequenceExample(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="type parameter in SequenceExample">T</a>&gt;&nbsp;outputs,
                        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;&gt;&nbsp;features,
                        float&nbsp;weight)</pre>
 <div class="block">Creates a sequence example from the supplied weight, outputs and list of list of features.
@@ -435,7 +435,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>SequenceExample</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceExample.html#line.102">SequenceExample</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="type parameter in SequenceExample">T</a>&gt;&nbsp;outputs,
+<pre>public&nbsp;SequenceExample(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="type parameter in SequenceExample">T</a>&gt;&nbsp;outputs,
                        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;&gt;&nbsp;features,
                        boolean&nbsp;attemptBinaryFeatures)</pre>
 </li>
@@ -446,7 +446,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>SequenceExample</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceExample.html#line.106">SequenceExample</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="type parameter in SequenceExample">T</a>&gt;&nbsp;outputs,
+<pre>public&nbsp;SequenceExample(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="type parameter in SequenceExample">T</a>&gt;&nbsp;outputs,
                        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;&gt;&nbsp;features,
                        float&nbsp;weight,
                        boolean&nbsp;attemptBinaryFeatures)</pre>
@@ -458,7 +458,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockListLast">
 <li class="blockList">
 <h4>SequenceExample</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceExample.html#line.137">SequenceExample</a>(<a href="../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="type parameter in SequenceExample">T</a>&gt;&nbsp;other)</pre>
+<pre>public&nbsp;SequenceExample(<a href="../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="type parameter in SequenceExample">T</a>&gt;&nbsp;other)</pre>
 <div class="block">Creates a deep copy of the supplied sequence example.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -480,7 +480,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>size</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceExample.html#line.149">size</a>()</pre>
+<pre>public&nbsp;int&nbsp;size()</pre>
 <div class="block">Return how many examples are in this sequence.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -494,7 +494,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>removeFeatures</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceExample.html#line.157">removeFeatures</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;&nbsp;features)</pre>
+<pre>public&nbsp;void&nbsp;removeFeatures(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;&nbsp;features)</pre>
 <div class="block">Removes the features in the supplied list from each example contained in this sequence.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -508,7 +508,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="type parameter in SequenceExample">T</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceExample.html#line.168">get</a>(int&nbsp;i)</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="type parameter in SequenceExample">T</a>&gt;&nbsp;get(int&nbsp;i)</pre>
 <div class="block">Gets the example found at the specified index.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -524,7 +524,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>validateExample</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceExample.html#line.176">validateExample</a>()</pre>
+<pre>public&nbsp;boolean&nbsp;validateExample()</pre>
 <div class="block">Checks that each <a href="../../../org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a> in this sequence is valid.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -538,7 +538,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>reduceByName</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceExample.html#line.192">reduceByName</a>(<a href="../../../org/tribuo/util/Merger.html" title="interface in org.tribuo.util">Merger</a>&nbsp;merger)</pre>
+<pre>public&nbsp;void&nbsp;reduceByName(<a href="../../../org/tribuo/util/Merger.html" title="interface in org.tribuo.util">Merger</a>&nbsp;merger)</pre>
 <div class="block">Reduces the features in each example using the supplied <a href="../../../org/tribuo/util/Merger.html" title="interface in org.tribuo.util"><code>Merger</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -552,7 +552,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>setWeight</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceExample.html#line.202">setWeight</a>(float&nbsp;weight)</pre>
+<pre>public&nbsp;void&nbsp;setWeight(float&nbsp;weight)</pre>
 <div class="block">Sets the weight of this sequence.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -566,7 +566,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>getWeight</h4>
-<pre>public&nbsp;float&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceExample.html#line.210">getWeight</a>()</pre>
+<pre>public&nbsp;float&nbsp;getWeight()</pre>
 <div class="block">Gets the weight of this sequence.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -580,7 +580,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>addExample</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceExample.html#line.218">addExample</a>(<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="type parameter in SequenceExample">T</a>&gt;&nbsp;e)</pre>
+<pre>public&nbsp;void&nbsp;addExample(<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="type parameter in SequenceExample">T</a>&gt;&nbsp;e)</pre>
 <div class="block">Adds an <a href="../../../org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a> to this sequence.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -594,7 +594,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="type parameter in SequenceExample">T</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceExample.html#line.226">copy</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="type parameter in SequenceExample">T</a>&gt;&nbsp;copy()</pre>
 <div class="block">Returns a deep copy of this SequenceExample.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -608,7 +608,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>iterator</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="type parameter in SequenceExample">T</a>&gt;&gt;&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceExample.html#line.231">iterator</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="type parameter in SequenceExample">T</a>&gt;&gt;&nbsp;iterator()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true#iterator--" title="class or interface in java.lang">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="type parameter in SequenceExample">T</a> extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="type parameter in SequenceExample">T</a>&gt;&gt;&gt;</code></dd>
@@ -621,7 +621,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>featureIterator</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceExample.html#line.239">featureIterator</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;&nbsp;featureIterator()</pre>
 <div class="block">Creates an iterator over every feature in this sequence.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -635,7 +635,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>canonicalise</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceExample.html#line.251">canonicalise</a>(<a href="../../../org/tribuo/FeatureMap.html" title="class in org.tribuo">FeatureMap</a>&nbsp;featureMap)</pre>
+<pre>public&nbsp;void&nbsp;canonicalise(<a href="../../../org/tribuo/FeatureMap.html" title="class in org.tribuo">FeatureMap</a>&nbsp;featureMap)</pre>
 <div class="block">Reassigns feature name Strings in each Example inside this SequenceExample to point to
  those in the <a href="../../../org/tribuo/FeatureMap.html" title="class in org.tribuo"><code>FeatureMap</code></a>. This significantly reduces memory allocation. It is called
  when a SequenceExample is added to a <a href="../../../org/tribuo/sequence/MutableSequenceDataset.html" title="class in org.tribuo.sequence"><code>MutableSequenceDataset</code></a>, and should not be
@@ -653,7 +653,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockListLast">
 <li class="blockList">
 <h4>createWithEmptyOutputs</h4>
-<pre>public static&nbsp;&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;T&gt;&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceExample.html#line.268">createWithEmptyOutputs</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;&gt;&nbsp;features,
+<pre>public static&nbsp;&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;T&gt;&nbsp;createWithEmptyOutputs(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;&gt;&nbsp;features,
                                                                               <a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;T&gt;&nbsp;outputFactory)</pre>
 <div class="block">Creates a SequenceExample using <a href="../../../org/tribuo/OutputFactory.html#getUnknownOutput--"><code>OutputFactory.getUnknownOutput()</code></a> as the output for each
  sequence element.
@@ -739,6 +739,6 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

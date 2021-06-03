@@ -120,7 +120,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public abstract class <a href="../../src-html/org/tribuo/Dataset.html#line.53">Dataset</a>&lt;T extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public abstract class <span class="typeNameLabel">Dataset&lt;T extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;T&gt;&gt;, com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../org/tribuo/provenance/DatasetProvenance.html" title="class in org.tribuo.provenance">DatasetProvenance</a>&gt;, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
 <div class="block">A class for sets of data, which are used to train and evaluate classifiers.
@@ -345,7 +345,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>data</h4>
-<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a> extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;&gt;&gt; <a href="../../src-html/org/tribuo/Dataset.html#line.66">data</a></pre>
+<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a> extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;&gt;&gt; data</pre>
 <div class="block">The data in this data set.</div>
 </li>
 </ul>
@@ -355,7 +355,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>sourceProvenance</h4>
-<pre>protected final&nbsp;<a href="../../org/tribuo/provenance/DataProvenance.html" title="interface in org.tribuo.provenance">DataProvenance</a> <a href="../../src-html/org/tribuo/Dataset.html#line.71">sourceProvenance</a></pre>
+<pre>protected final&nbsp;<a href="../../org/tribuo/provenance/DataProvenance.html" title="interface in org.tribuo.provenance">DataProvenance</a> sourceProvenance</pre>
 <div class="block">The provenance of the data source, extracted on construction.</div>
 </li>
 </ul>
@@ -365,7 +365,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>outputFactory</h4>
-<pre>protected final&nbsp;<a href="../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a> extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;&gt; <a href="../../src-html/org/tribuo/Dataset.html#line.76">outputFactory</a></pre>
+<pre>protected final&nbsp;<a href="../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a> extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;&gt; outputFactory</pre>
 <div class="block">A factory for making <a href="../../org/tribuo/OutputInfo.html" title="interface in org.tribuo"><code>OutputInfo</code></a> and <a href="../../org/tribuo/Output.html" title="interface in org.tribuo"><code>Output</code></a> of the appropriate type.</div>
 </li>
 </ul>
@@ -375,7 +375,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockListLast">
 <li class="blockList">
 <h4>indices</h4>
-<pre>protected&nbsp;int[] <a href="../../src-html/org/tribuo/Dataset.html#line.81">indices</a></pre>
+<pre>protected&nbsp;int[] indices</pre>
 <div class="block">The indices of the shuffled order.</div>
 </li>
 </ul>
@@ -393,7 +393,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>Dataset</h4>
-<pre>protected&nbsp;<a href="../../src-html/org/tribuo/Dataset.html#line.88">Dataset</a>(<a href="../../org/tribuo/provenance/DataProvenance.html" title="interface in org.tribuo.provenance">DataProvenance</a>&nbsp;provenance,
+<pre>protected&nbsp;Dataset(<a href="../../org/tribuo/provenance/DataProvenance.html" title="interface in org.tribuo.provenance">DataProvenance</a>&nbsp;provenance,
                   <a href="../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;&nbsp;outputFactory)</pre>
 <div class="block">Creates a dataset.</div>
 <dl>
@@ -409,7 +409,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Dataset</h4>
-<pre>protected&nbsp;<a href="../../src-html/org/tribuo/Dataset.html#line.97">Dataset</a>(<a href="../../org/tribuo/DataSource.html" title="interface in org.tribuo">DataSource</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;&nbsp;dataSource)</pre>
+<pre>protected&nbsp;Dataset(<a href="../../org/tribuo/DataSource.html" title="interface in org.tribuo">DataSource</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;&nbsp;dataSource)</pre>
 <div class="block">Creates a dataset.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -431,7 +431,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>getSourceDescription</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../src-html/org/tribuo/Dataset.html#line.105">getSourceDescription</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getSourceDescription()</pre>
 <div class="block">A String description of this dataset.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -445,7 +445,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>getSourceProvenance</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/provenance/DataProvenance.html" title="interface in org.tribuo.provenance">DataProvenance</a>&nbsp;<a href="../../src-html/org/tribuo/Dataset.html#line.113">getSourceProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/provenance/DataProvenance.html" title="interface in org.tribuo.provenance">DataProvenance</a>&nbsp;getSourceProvenance()</pre>
 <div class="block">The provenance of the data this Dataset contains.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -459,7 +459,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>getData</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;&gt;&nbsp;<a href="../../src-html/org/tribuo/Dataset.html#line.129">getData</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;&gt;&nbsp;getData()</pre>
 <div class="block">Gets the examples as an unmodifiable list. This list will throw an UnsupportedOperationException if any elements
  are added to it.
  <p>
@@ -480,7 +480,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>getOutputFactory</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;&nbsp;<a href="../../src-html/org/tribuo/Dataset.html#line.137">getOutputFactory</a>()</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;&nbsp;getOutputFactory()</pre>
 <div class="block">Gets the output factory this dataset contains.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -494,7 +494,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>getOutputs</h4>
-<pre>public abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;&nbsp;<a href="../../src-html/org/tribuo/Dataset.html#line.146">getOutputs</a>()</pre>
+<pre>public abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;&nbsp;getOutputs()</pre>
 <div class="block">Gets the set of outputs that occur in the examples in this dataset.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -508,7 +508,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>getExample</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;&nbsp;<a href="../../src-html/org/tribuo/Dataset.html#line.155">getExample</a>(int&nbsp;index)</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;&nbsp;getExample(int&nbsp;index)</pre>
 <div class="block">Gets the example at the supplied index.
  <p>
  Throws IllegalArgumentException if the index is invalid or outside the bounds.</div>
@@ -526,7 +526,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>size</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../src-html/org/tribuo/Dataset.html#line.167">size</a>()</pre>
+<pre>public&nbsp;int&nbsp;size()</pre>
 <div class="block">Gets the size of the data set.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -540,7 +540,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>shuffle</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../src-html/org/tribuo/Dataset.html#line.185">shuffle</a>(boolean&nbsp;shuffle)</pre>
+<pre>public&nbsp;void&nbsp;shuffle(boolean&nbsp;shuffle)</pre>
 <div class="block">Shuffles the indices, or stops shuffling them.
  <p>
  The shuffle only affects the iterator, it does not affect
@@ -564,7 +564,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>getOutputIDInfo</h4>
-<pre>public abstract&nbsp;<a href="../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;&nbsp;<a href="../../src-html/org/tribuo/Dataset.html#line.197">getOutputIDInfo</a>()</pre>
+<pre>public abstract&nbsp;<a href="../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;&nbsp;getOutputIDInfo()</pre>
 <div class="block">Returns or generates an <a href="../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo"><code>ImmutableOutputInfo</code></a>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -578,7 +578,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>getOutputInfo</h4>
-<pre>public abstract&nbsp;<a href="../../org/tribuo/OutputInfo.html" title="interface in org.tribuo">OutputInfo</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;&nbsp;<a href="../../src-html/org/tribuo/Dataset.html#line.203">getOutputInfo</a>()</pre>
+<pre>public abstract&nbsp;<a href="../../org/tribuo/OutputInfo.html" title="interface in org.tribuo">OutputInfo</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;&nbsp;getOutputInfo()</pre>
 <div class="block">Returns this dataset's <a href="../../org/tribuo/OutputInfo.html" title="interface in org.tribuo"><code>OutputInfo</code></a>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -592,7 +592,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>getFeatureIDMap</h4>
-<pre>public abstract&nbsp;<a href="../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;<a href="../../src-html/org/tribuo/Dataset.html#line.209">getFeatureIDMap</a>()</pre>
+<pre>public abstract&nbsp;<a href="../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;getFeatureIDMap()</pre>
 <div class="block">Returns or generates an <a href="../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo"><code>ImmutableFeatureMap</code></a>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -606,7 +606,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>getFeatureMap</h4>
-<pre>public abstract&nbsp;<a href="../../org/tribuo/FeatureMap.html" title="class in org.tribuo">FeatureMap</a>&nbsp;<a href="../../src-html/org/tribuo/Dataset.html#line.215">getFeatureMap</a>()</pre>
+<pre>public abstract&nbsp;<a href="../../org/tribuo/FeatureMap.html" title="class in org.tribuo">FeatureMap</a>&nbsp;getFeatureMap()</pre>
 <div class="block">Returns this dataset's <a href="../../org/tribuo/FeatureMap.html" title="class in org.tribuo"><code>FeatureMap</code></a>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -620,7 +620,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>iterator</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;&gt;&nbsp;<a href="../../src-html/org/tribuo/Dataset.html#line.218">iterator</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;&gt;&nbsp;iterator()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true#iterator--" title="class or interface in java.lang">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a> extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;&gt;&gt;</code></dd>
@@ -633,7 +633,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../src-html/org/tribuo/Dataset.html#line.227">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -646,7 +646,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockListLast">
 <li class="blockList">
 <h4>createTransformers</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/transform/TransformerMap.html" title="class in org.tribuo.transform">TransformerMap</a>&nbsp;<a href="../../src-html/org/tribuo/Dataset.html#line.247">createTransformers</a>(<a href="../../org/tribuo/transform/TransformationMap.html" title="class in org.tribuo.transform">TransformationMap</a>&nbsp;transformations)</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/transform/TransformerMap.html" title="class in org.tribuo.transform">TransformerMap</a>&nbsp;createTransformers(<a href="../../org/tribuo/transform/TransformationMap.html" title="class in org.tribuo.transform">TransformationMap</a>&nbsp;transformations)</pre>
 <div class="block">Takes a <a href="../../org/tribuo/transform/TransformationMap.html" title="class in org.tribuo.transform"><code>TransformationMap</code></a> and converts it into a <a href="../../org/tribuo/transform/TransformerMap.html" title="class in org.tribuo.transform"><code>TransformerMap</code></a> by
  observing all the values in this dataset.
  <p>
@@ -735,6 +735,6 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

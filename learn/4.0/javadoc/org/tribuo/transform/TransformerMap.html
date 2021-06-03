@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public final class <a href="../../../src-html/org/tribuo/transform/TransformerMap.html#line.51">TransformerMap</a>
+<pre>public final class <span class="typeNameLabel">TransformerMap</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../../org/tribuo/transform/TransformerMap.TransformerMapProvenance.html" title="class in org.tribuo.transform">TransformerMap.TransformerMapProvenance</a>&gt;, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
 <div class="block">A collection of <a href="../../../org/tribuo/transform/Transformer.html" title="interface in org.tribuo.transform"><code>Transformer</code></a>s which can be applied to a <a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo"><code>Dataset</code></a>
@@ -263,7 +263,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockListLast">
 <li class="blockList">
 <h4>TransformerMap</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/transform/TransformerMap.html#line.64">TransformerMap</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/transform/Transformer.html" title="interface in org.tribuo.transform">Transformer</a>&gt;&gt;&nbsp;map,
+<pre>public&nbsp;TransformerMap(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/transform/Transformer.html" title="interface in org.tribuo.transform">Transformer</a>&gt;&gt;&nbsp;map,
                       <a href="../../../org/tribuo/provenance/DatasetProvenance.html" title="class in org.tribuo.provenance">DatasetProvenance</a>&nbsp;datasetProvenance,
                       com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;transformationMapProvenance)</pre>
 <div class="block">Constructs a transformer map which encapsulates a set of transformers that can be applied to features.</div>
@@ -289,7 +289,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>applyTransformerList</h4>
-<pre>public static&nbsp;double&nbsp;<a href="../../../src-html/org/tribuo/transform/TransformerMap.html#line.77">applyTransformerList</a>(double&nbsp;value,
+<pre>public static&nbsp;double&nbsp;applyTransformerList(double&nbsp;value,
                                           <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/transform/Transformer.html" title="interface in org.tribuo.transform">Transformer</a>&gt;&nbsp;transformerList)</pre>
 <div class="block">Applies a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util"><code>List</code></a> of <a href="../../../org/tribuo/transform/Transformer.html" title="interface in org.tribuo.transform"><code>Transformer</code></a>s to the supplied double value,
  returning the transformed value.</div>
@@ -308,7 +308,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>transformExample</h4>
-<pre>public&nbsp;&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;T&gt;&nbsp;<a href="../../../src-html/org/tribuo/transform/TransformerMap.html#line.92">transformExample</a>(<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;T&gt;&nbsp;example)</pre>
+<pre>public&nbsp;&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;T&gt;&nbsp;transformExample(<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;T&gt;&nbsp;example)</pre>
 <div class="block">Copies the supplied example and applies the transformers to it.</div>
 <dl>
 <dt><span class="paramLabel">Type Parameters:</span></dt>
@@ -326,7 +326,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>transformExample</h4>
-<pre>public&nbsp;&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;T&gt;&nbsp;<a href="../../../src-html/org/tribuo/transform/TransformerMap.html#line.105">transformExample</a>(<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;T&gt;&nbsp;example,
+<pre>public&nbsp;&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;T&gt;&nbsp;transformExample(<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;T&gt;&nbsp;example,
                                                          <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;featureNames)</pre>
 <div class="block">Copies the supplied example and applies the transformers to it.</div>
 <dl>
@@ -346,7 +346,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>transformDataset</h4>
-<pre>public&nbsp;&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../org/tribuo/MutableDataset.html" title="class in org.tribuo">MutableDataset</a>&lt;T&gt;&nbsp;<a href="../../../src-html/org/tribuo/transform/TransformerMap.html#line.120">transformDataset</a>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;T&gt;&nbsp;dataset)</pre>
+<pre>public&nbsp;&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../org/tribuo/MutableDataset.html" title="class in org.tribuo">MutableDataset</a>&lt;T&gt;&nbsp;transformDataset(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;T&gt;&nbsp;dataset)</pre>
 <div class="block">Copies the supplied dataset and applies the transformers to each example in it.
  <p>
  Does not densify the dataset first.</div>
@@ -366,7 +366,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>transformDataset</h4>
-<pre>public&nbsp;&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../org/tribuo/MutableDataset.html" title="class in org.tribuo">MutableDataset</a>&lt;T&gt;&nbsp;<a href="../../../src-html/org/tribuo/transform/TransformerMap.html#line.131">transformDataset</a>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;T&gt;&nbsp;dataset,
+<pre>public&nbsp;&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../org/tribuo/MutableDataset.html" title="class in org.tribuo">MutableDataset</a>&lt;T&gt;&nbsp;transformDataset(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;T&gt;&nbsp;dataset,
                                                                 boolean&nbsp;densify)</pre>
 <div class="block">Copies the supplied dataset and applies the transformers to each example in it.</div>
 <dl>
@@ -386,7 +386,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/transform/TransformerMap.html#line.144">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -399,7 +399,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>entrySet</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.Entry.html?is-external=true" title="class or interface in java.util">Map.Entry</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/transform/Transformer.html" title="interface in org.tribuo.transform">Transformer</a>&gt;&gt;&gt;&nbsp;<a href="../../../src-html/org/tribuo/transform/TransformerMap.html#line.152">entrySet</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.Entry.html?is-external=true" title="class or interface in java.util">Map.Entry</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/transform/Transformer.html" title="interface in org.tribuo.transform">Transformer</a>&gt;&gt;&gt;&nbsp;entrySet()</pre>
 <div class="block">Get the feature names and associated list of transformers.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -413,7 +413,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/transform/TransformerMap.TransformerMapProvenance.html" title="class in org.tribuo.transform">TransformerMap.TransformerMapProvenance</a>&nbsp;<a href="../../../src-html/org/tribuo/transform/TransformerMap.html#line.157">getProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/transform/TransformerMap.TransformerMapProvenance.html" title="class in org.tribuo.transform">TransformerMap.TransformerMapProvenance</a>&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../../org/tribuo/transform/TransformerMap.TransformerMapProvenance.html" title="class in org.tribuo.transform">TransformerMap.TransformerMapProvenance</a>&gt;</code></dd>
@@ -488,6 +488,6 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

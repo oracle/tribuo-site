@@ -121,7 +121,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public abstract class <a href="../../src-html/org/tribuo/SparseModel.html#line.30">SparseModel</a>&lt;T extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public abstract class <span class="typeNameLabel">SparseModel&lt;T extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;T&gt;</pre>
 <div class="block">A model which uses a subset of the features it knows about to make predictions.</div>
 <dl>
@@ -232,7 +232,7 @@ extends <a href="../../org/tribuo/Model.html" title="class in org.tribuo">Model<
 <ul class="blockListLast">
 <li class="blockList">
 <h4>SparseModel</h4>
-<pre>public&nbsp;<a href="../../src-html/org/tribuo/SparseModel.html#line.44">SparseModel</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+<pre>public&nbsp;SparseModel(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                    <a href="../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;provenance,
                    <a href="../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap,
                    <a href="../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../org/tribuo/SparseModel.html" title="type parameter in SparseModel">T</a>&gt;&nbsp;outputIDInfo,
@@ -264,7 +264,7 @@ extends <a href="../../org/tribuo/Model.html" title="class in org.tribuo">Model<
 <ul class="blockList">
 <li class="blockList">
 <h4>getActiveFeatures</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;<a href="../../src-html/org/tribuo/SparseModel.html#line.61">getActiveFeatures</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&gt;&nbsp;getActiveFeatures()</pre>
 <div class="block">Return an immutable view on the active features for each dimension.
  <p>
  Sorted lexicographically.</div>
@@ -280,7 +280,7 @@ extends <a href="../../org/tribuo/Model.html" title="class in org.tribuo">Model<
 <ul class="blockListLast">
 <li class="blockList">
 <h4>copy</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/SparseModel.html" title="class in org.tribuo">SparseModel</a>&lt;<a href="../../org/tribuo/SparseModel.html" title="type parameter in SparseModel">T</a>&gt;&nbsp;<a href="../../src-html/org/tribuo/SparseModel.html#line.66">copy</a>()</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/SparseModel.html" title="class in org.tribuo">SparseModel</a>&lt;<a href="../../org/tribuo/SparseModel.html" title="type parameter in SparseModel">T</a>&gt;&nbsp;copy()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../org/tribuo/Model.html#copy--">Model</a></code></span></div>
 <div class="block">Copies a model, returning a deep copy of any mutable state, and a shallow copy otherwise.</div>
 <dl>
@@ -359,6 +359,6 @@ extends <a href="../../org/tribuo/Model.html" title="class in org.tribuo">Model<
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

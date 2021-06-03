@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/anomaly/libsvm/LibSVMAnomalyTrainer.html#line.60">LibSVMAnomalyTrainer</a>
+<pre>public class <span class="typeNameLabel">LibSVMAnomalyTrainer</span>
 extends <a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title="class in org.tribuo.common.libsvm">LibSVMTrainer</a>&lt;<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;</pre>
 <div class="block">A trainer for anomaly models that uses LibSVM.
  <p>
@@ -281,7 +281,7 @@ extends <a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>LibSVMAnomalyTrainer</h4>
-<pre>protected&nbsp;<a href="../../../../src-html/org/tribuo/anomaly/libsvm/LibSVMAnomalyTrainer.html#line.66">LibSVMAnomalyTrainer</a>()</pre>
+<pre>protected&nbsp;LibSVMAnomalyTrainer()</pre>
 <div class="block">For OLCUT.</div>
 </li>
 </ul>
@@ -291,7 +291,7 @@ extends <a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title=
 <ul class="blockListLast">
 <li class="blockList">
 <h4>LibSVMAnomalyTrainer</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/anomaly/libsvm/LibSVMAnomalyTrainer.html#line.72">LibSVMAnomalyTrainer</a>(<a href="../../../../org/tribuo/common/libsvm/SVMParameters.html" title="class in org.tribuo.common.libsvm">SVMParameters</a>&lt;<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;&nbsp;parameters)</pre>
+<pre>public&nbsp;LibSVMAnomalyTrainer(<a href="../../../../org/tribuo/common/libsvm/SVMParameters.html" title="class in org.tribuo.common.libsvm">SVMParameters</a>&lt;<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;&nbsp;parameters)</pre>
 <div class="block">Creates a one-class LibSVM trainer using the supplied parameters.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -313,7 +313,7 @@ extends <a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>postConfig</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/anomaly/libsvm/LibSVMAnomalyTrainer.html#line.80">postConfig</a>()</pre>
+<pre>public&nbsp;void&nbsp;postConfig()</pre>
 <div class="block">Used by the OLCUT configuration system, and should not be called by external code.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -329,7 +329,7 @@ extends <a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>train</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/common/libsvm/LibSVMModel.html" title="class in org.tribuo.common.libsvm">LibSVMModel</a>&lt;<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/anomaly/libsvm/LibSVMAnomalyTrainer.html#line.88">train</a>(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;&nbsp;dataset,
+<pre>public&nbsp;<a href="../../../../org/tribuo/common/libsvm/LibSVMModel.html" title="class in org.tribuo.common.libsvm">LibSVMModel</a>&lt;<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;&nbsp;train(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;&nbsp;dataset,
                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,com.oracle.labs.mlrg.olcut.provenance.Provenance&gt;&nbsp;instanceProvenance)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/Trainer.html#train-org.tribuo.Dataset-java.util.Map-">Trainer</a></code></span></div>
 <div class="block">Trains a predictive model using the examples in the given data set.</div>
@@ -352,7 +352,7 @@ extends <a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>createModel</h4>
-<pre>protected&nbsp;<a href="../../../../org/tribuo/common/libsvm/LibSVMModel.html" title="class in org.tribuo.common.libsvm">LibSVMModel</a>&lt;<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/anomaly/libsvm/LibSVMAnomalyTrainer.html#line.98">createModel</a>(<a href="../../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;provenance,
+<pre>protected&nbsp;<a href="../../../../org/tribuo/common/libsvm/LibSVMModel.html" title="class in org.tribuo.common.libsvm">LibSVMModel</a>&lt;<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;&nbsp;createModel(<a href="../../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;provenance,
                                          <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap,
                                          <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;&nbsp;outputIDInfo,
                                          <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;libsvm.svm_model&gt;&nbsp;models)</pre>
@@ -377,7 +377,7 @@ extends <a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>trainModels</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;libsvm.svm_model&gt;&nbsp;<a href="../../../../src-html/org/tribuo/anomaly/libsvm/LibSVMAnomalyTrainer.html#line.103">trainModels</a>(libsvm.svm_parameter&nbsp;curParams,
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;libsvm.svm_model&gt;&nbsp;trainModels(libsvm.svm_parameter&nbsp;curParams,
                                              int&nbsp;numFeatures,
                                              libsvm.svm_node[][]&nbsp;features,
                                              double[][]&nbsp;outputs)</pre>
@@ -402,7 +402,7 @@ extends <a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>extractData</h4>
-<pre>protected&nbsp;com.oracle.labs.mlrg.olcut.util.Pair&lt;libsvm.svm_node[][],double[][]&gt;&nbsp;<a href="../../../../src-html/org/tribuo/anomaly/libsvm/LibSVMAnomalyTrainer.html#line.119">extractData</a>(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;&nbsp;data,
+<pre>protected&nbsp;com.oracle.labs.mlrg.olcut.util.Pair&lt;libsvm.svm_node[][],double[][]&gt;&nbsp;extractData(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;&nbsp;data,
                                                                                            <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;&nbsp;outputInfo,
                                                                                            <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureMap)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html#extractData-org.tribuo.Dataset-org.tribuo.ImmutableOutputInfo-org.tribuo.ImmutableFeatureMap-">LibSVMTrainer</a></code></span></div>
@@ -425,7 +425,7 @@ extends <a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title=
 <ul class="blockListLast">
 <li class="blockList">
 <h4>extractOutput</h4>
-<pre>protected&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/anomaly/libsvm/LibSVMAnomalyTrainer.html#line.139">extractOutput</a>(<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&nbsp;output)</pre>
+<pre>protected&nbsp;double&nbsp;extractOutput(<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&nbsp;output)</pre>
 <div class="block">Converts an output into a double for use in training.
  <p>
  By convention <a href="../../../../org/tribuo/anomaly/Event.EventType.html#EXPECTED"><code>Event.EventType.EXPECTED</code></a> is 1.0, other events are -1.0.</div>
@@ -505,6 +505,6 @@ extends <a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title=
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

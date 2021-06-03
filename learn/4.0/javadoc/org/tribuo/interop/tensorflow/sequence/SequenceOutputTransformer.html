@@ -104,7 +104,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <a href="../../../../../src-html/org/tribuo/interop/tensorflow/sequence/SequenceOutputTransformer.html#line.36">SequenceOutputTransformer</a>&lt;T extends <a href="../../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public interface <span class="typeNameLabel">SequenceOutputTransformer&lt;T extends <a href="../../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&gt;, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
 <div class="block">Converts a Tensorflow output tensor into a list of predictions, and a Tribuo sequence example into
  a Tensorflow tensor suitable for training.</div>
@@ -191,7 +191,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>decode</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../../org/tribuo/interop/tensorflow/sequence/SequenceOutputTransformer.html" title="type parameter in SequenceOutputTransformer">T</a>&gt;&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/interop/tensorflow/sequence/SequenceOutputTransformer.html#line.46">decode</a>(org.tensorflow.Tensor&lt;?&gt;&nbsp;output,
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../../org/tribuo/interop/tensorflow/sequence/SequenceOutputTransformer.html" title="type parameter in SequenceOutputTransformer">T</a>&gt;&gt;&nbsp;decode(org.tensorflow.Tensor&lt;?&gt;&nbsp;output,
                            <a href="../../../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../../../org/tribuo/interop/tensorflow/sequence/SequenceOutputTransformer.html" title="type parameter in SequenceOutputTransformer">T</a>&gt;&nbsp;input,
                            <a href="../../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../../org/tribuo/interop/tensorflow/sequence/SequenceOutputTransformer.html" title="type parameter in SequenceOutputTransformer">T</a>&gt;&nbsp;labelMap)</pre>
 <div class="block">Decode a tensor of graph output into a list of predictions for the input sequence.</div>
@@ -211,7 +211,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>decode</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../../org/tribuo/interop/tensorflow/sequence/SequenceOutputTransformer.html" title="type parameter in SequenceOutputTransformer">T</a>&gt;&gt;&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/interop/tensorflow/sequence/SequenceOutputTransformer.html#line.56">decode</a>(org.tensorflow.Tensor&lt;?&gt;&nbsp;outputs,
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../../org/tribuo/interop/tensorflow/sequence/SequenceOutputTransformer.html" title="type parameter in SequenceOutputTransformer">T</a>&gt;&gt;&gt;&nbsp;decode(org.tensorflow.Tensor&lt;?&gt;&nbsp;outputs,
                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../../../org/tribuo/interop/tensorflow/sequence/SequenceOutputTransformer.html" title="type parameter in SequenceOutputTransformer">T</a>&gt;&gt;&nbsp;inputBatch,
                                  <a href="../../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../../org/tribuo/interop/tensorflow/sequence/SequenceOutputTransformer.html" title="type parameter in SequenceOutputTransformer">T</a>&gt;&nbsp;labelMap)</pre>
 <div class="block">Decode graph output tensors corresponding to a batch of input sequences.</div>
@@ -231,7 +231,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>encode</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,org.tensorflow.Tensor&lt;?&gt;&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/interop/tensorflow/sequence/SequenceOutputTransformer.html#line.65">encode</a>(<a href="../../../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../../../org/tribuo/interop/tensorflow/sequence/SequenceOutputTransformer.html" title="type parameter in SequenceOutputTransformer">T</a>&gt;&nbsp;example,
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,org.tensorflow.Tensor&lt;?&gt;&gt;&nbsp;encode(<a href="../../../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../../../org/tribuo/interop/tensorflow/sequence/SequenceOutputTransformer.html" title="type parameter in SequenceOutputTransformer">T</a>&gt;&nbsp;example,
                                             <a href="../../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../../org/tribuo/interop/tensorflow/sequence/SequenceOutputTransformer.html" title="type parameter in SequenceOutputTransformer">T</a>&gt;&nbsp;labelMap)</pre>
 <div class="block">Encodes an example's label as a feed dict.</div>
 <dl>
@@ -249,7 +249,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockListLast">
 <li class="blockList">
 <h4>encode</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,org.tensorflow.Tensor&lt;?&gt;&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/interop/tensorflow/sequence/SequenceOutputTransformer.html#line.74">encode</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../../../org/tribuo/interop/tensorflow/sequence/SequenceOutputTransformer.html" title="type parameter in SequenceOutputTransformer">T</a>&gt;&gt;&nbsp;batch,
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,org.tensorflow.Tensor&lt;?&gt;&gt;&nbsp;encode(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../../../org/tribuo/interop/tensorflow/sequence/SequenceOutputTransformer.html" title="type parameter in SequenceOutputTransformer">T</a>&gt;&gt;&nbsp;batch,
                                             <a href="../../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../../org/tribuo/interop/tensorflow/sequence/SequenceOutputTransformer.html" title="type parameter in SequenceOutputTransformer">T</a>&gt;&nbsp;labelMap)</pre>
 <div class="block">Encodes a batch of labels as a feed dict.</div>
 <dl>
@@ -329,6 +329,6 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

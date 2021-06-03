@@ -104,7 +104,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <a href="../../../../src-html/org/tribuo/anomaly/evaluation/AnomalyEvaluation.html#line.25">AnomalyEvaluation</a>
+<pre>public interface <span class="typeNameLabel">AnomalyEvaluation</span>
 extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="interface in org.tribuo.evaluation">Evaluation</a>&lt;<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;</pre>
 <div class="block">An <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="interface in org.tribuo.evaluation"><code>Evaluation</code></a> for anomaly detection <a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly"><code>Event</code></a>s.</div>
 </li>
@@ -208,7 +208,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>getFalsePositives</h4>
-<pre>long&nbsp;<a href="../../../../src-html/org/tribuo/anomaly/evaluation/AnomalyEvaluation.html#line.31">getFalsePositives</a>()</pre>
+<pre>long&nbsp;getFalsePositives()</pre>
 <div class="block">Returns the number of false positives, i.e., expected events classified as anomalous.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -222,7 +222,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>getTruePositives</h4>
-<pre>long&nbsp;<a href="../../../../src-html/org/tribuo/anomaly/evaluation/AnomalyEvaluation.html#line.37">getTruePositives</a>()</pre>
+<pre>long&nbsp;getTruePositives()</pre>
 <div class="block">Returns the number of true positives, i.e., anomalous events classified as anomalous.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -236,7 +236,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>getTrueNegatives</h4>
-<pre>long&nbsp;<a href="../../../../src-html/org/tribuo/anomaly/evaluation/AnomalyEvaluation.html#line.43">getTrueNegatives</a>()</pre>
+<pre>long&nbsp;getTrueNegatives()</pre>
 <div class="block">Returns the number of true negatives, i.e., expected events classified as events.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -250,7 +250,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>getFalseNegatives</h4>
-<pre>long&nbsp;<a href="../../../../src-html/org/tribuo/anomaly/evaluation/AnomalyEvaluation.html#line.51">getFalseNegatives</a>()</pre>
+<pre>long&nbsp;getFalseNegatives()</pre>
 <div class="block">Returns the number of false negatives, i.e., anomalous events classified as expected.
  <p>
  These are the ones you don't want.</div>
@@ -266,7 +266,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>getPrecision</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/anomaly/evaluation/AnomalyEvaluation.html#line.57">getPrecision</a>()</pre>
+<pre>double&nbsp;getPrecision()</pre>
 <div class="block">Returns the precision of the anomalous events, i.e., true positives divided by the number of predicted positives.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -280,7 +280,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>getRecall</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/anomaly/evaluation/AnomalyEvaluation.html#line.63">getRecall</a>()</pre>
+<pre>double&nbsp;getRecall()</pre>
 <div class="block">Returns the recall of the anomalous events, i.e., true positives divided by the number of positives.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -294,7 +294,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>getF1</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/anomaly/evaluation/AnomalyEvaluation.html#line.69">getF1</a>()</pre>
+<pre>double&nbsp;getF1()</pre>
 <div class="block">Returns the F_1 score of the anomalous events, i.e., the harmonic mean of the precision and the recall.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -308,7 +308,7 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <ul class="blockListLast">
 <li class="blockList">
 <h4>confusionString</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/anomaly/evaluation/AnomalyEvaluation.html#line.75">confusionString</a>()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;confusionString()</pre>
 <div class="block">Returns a confusion matrix formatted String for display.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -384,6 +384,6 @@ extends <a href="../../../../org/tribuo/evaluation/Evaluation.html" title="inter
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

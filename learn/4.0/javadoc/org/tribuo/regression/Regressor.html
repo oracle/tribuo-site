@@ -116,7 +116,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../src-html/org/tribuo/regression/Regressor.html#line.51">Regressor</a>
+<pre>public class <span class="typeNameLabel">Regressor</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../org/tribuo/regression/Regressor.DimensionTuple.html" title="class in org.tribuo.regression">Regressor.DimensionTuple</a>&gt;</pre>
 <div class="block">An <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo"><code>Output</code></a> for n-dimensional real valued regression.
@@ -397,7 +397,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>TOLERANCE</h4>
-<pre>public static final&nbsp;double <a href="../../../src-html/org/tribuo/regression/Regressor.html#line.53">TOLERANCE</a></pre>
+<pre>public static final&nbsp;double TOLERANCE</pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../constant-values.html#org.tribuo.regression.Regressor.TOLERANCE">Constant Field Values</a></dd>
@@ -410,7 +410,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockListLast">
 <li class="blockList">
 <h4>DEFAULT_NAME</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> <a href="../../../src-html/org/tribuo/regression/Regressor.html#line.55">DEFAULT_NAME</a></pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> DEFAULT_NAME</pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../constant-values.html#org.tribuo.regression.Regressor.DEFAULT_NAME">Constant Field Values</a></dd>
@@ -431,7 +431,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>Regressor</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/regression/Regressor.html#line.74">Regressor</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;names,
+<pre>public&nbsp;Regressor(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;names,
                  double[]&nbsp;values,
                  double[]&nbsp;variances)</pre>
 <div class="block">Constructs a regressor from the supplied named values. Throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang"><code>IllegalArgumentException</code></a>
@@ -450,7 +450,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>Regressor</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/regression/Regressor.html#line.99">Regressor</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;names,
+<pre>public&nbsp;Regressor(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;names,
                  double[]&nbsp;values)</pre>
 <div class="block">Constructs a regressor from the supplied named values. Uses <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true#NaN" title="class or interface in java.lang"><code>Double.NaN</code></a> as
  the variances.</div>
@@ -467,7 +467,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>Regressor</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/regression/Regressor.html#line.107">Regressor</a>(<a href="../../../org/tribuo/regression/Regressor.DimensionTuple.html" title="class in org.tribuo.regression">Regressor.DimensionTuple</a>[]&nbsp;dimensions)</pre>
+<pre>public&nbsp;Regressor(<a href="../../../org/tribuo/regression/Regressor.DimensionTuple.html" title="class in org.tribuo.regression">Regressor.DimensionTuple</a>[]&nbsp;dimensions)</pre>
 <div class="block">Constructs a regressor from the supplied dimension tuples.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -481,7 +481,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>Regressor</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/regression/Regressor.html#line.130">Regressor</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+<pre>public&nbsp;Regressor(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                  double&nbsp;value)</pre>
 <div class="block">Constructs a regressor containing a single dimension, using
  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true#NaN" title="class or interface in java.lang"><code>Double.NaN</code></a> as the variance.</div>
@@ -498,7 +498,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Regressor</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/regression/Regressor.html#line.140">Regressor</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+<pre>public&nbsp;Regressor(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                  double&nbsp;value,
                  double&nbsp;variance)</pre>
 <div class="block">Constructs a regressor containing a single dimension.</div>
@@ -524,7 +524,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>size</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../src-html/org/tribuo/regression/Regressor.html#line.150">size</a>()</pre>
+<pre>public&nbsp;int&nbsp;size()</pre>
 <div class="block">Returns the number of dimensions in this regressor.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -538,7 +538,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>getNames</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;<a href="../../../src-html/org/tribuo/regression/Regressor.html#line.158">getNames</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;getNames()</pre>
 <div class="block">The names of the dimensions. Always sorted by their natural ordering.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -552,7 +552,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>getValues</h4>
-<pre>public&nbsp;double[]&nbsp;<a href="../../../src-html/org/tribuo/regression/Regressor.html#line.166">getValues</a>()</pre>
+<pre>public&nbsp;double[]&nbsp;getValues()</pre>
 <div class="block">Returns the regression values.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -566,7 +566,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>getVariances</h4>
-<pre>public&nbsp;double[]&nbsp;<a href="../../../src-html/org/tribuo/regression/Regressor.html#line.176">getVariances</a>()</pre>
+<pre>public&nbsp;double[]&nbsp;getVariances()</pre>
 <div class="block">The variances of the regressed values, if known.
 
  Returns Double.NaN otherwise.</div>
@@ -582,7 +582,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/regression/Regressor.html#line.181">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -595,7 +595,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>getDimension</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../org/tribuo/regression/Regressor.DimensionTuple.html" title="class in org.tribuo.regression">Regressor.DimensionTuple</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/regression/Regressor.html#line.211">getDimension</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../org/tribuo/regression/Regressor.DimensionTuple.html" title="class in org.tribuo.regression">Regressor.DimensionTuple</a>&gt;&nbsp;getDimension(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
 <div class="block">Returns a dimension tuple for the requested dimension, or optional empty if
   it's not valid.</div>
 <dl>
@@ -612,7 +612,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>iterator</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../org/tribuo/regression/Regressor.DimensionTuple.html" title="class in org.tribuo.regression">Regressor.DimensionTuple</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/regression/Regressor.html#line.223">iterator</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../org/tribuo/regression/Regressor.DimensionTuple.html" title="class in org.tribuo.regression">Regressor.DimensionTuple</a>&gt;&nbsp;iterator()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true#iterator--" title="class or interface in java.lang">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../org/tribuo/regression/Regressor.DimensionTuple.html" title="class in org.tribuo.regression">Regressor.DimensionTuple</a>&gt;</code></dd>
@@ -625,7 +625,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&nbsp;<a href="../../../src-html/org/tribuo/regression/Regressor.html#line.228">copy</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&nbsp;copy()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/Output.html#copy--">Output</a></code></span></div>
 <div class="block">Deep copy of the output up to it's immutable state.</div>
 <dl>
@@ -642,7 +642,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>getSerializableForm</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/regression/Regressor.html#line.233">getSerializableForm</a>(boolean&nbsp;includeConfidence)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getSerializableForm(boolean&nbsp;includeConfidence)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/Output.html#getSerializableForm-boolean-">Output</a></code></span></div>
 <div class="block">Generates a String suitable for writing to a csv or json file.</div>
 <dl>
@@ -661,7 +661,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>fullEquals</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../src-html/org/tribuo/regression/Regressor.html#line.250">fullEquals</a>(<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&nbsp;other)</pre>
+<pre>public&nbsp;boolean&nbsp;fullEquals(<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&nbsp;other)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/Output.html#fullEquals-T-">Output</a></code></span></div>
 <div class="block">Compares other to this output. Uses all score values
  and the strings.</div>
@@ -681,7 +681,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../src-html/org/tribuo/regression/Regressor.html#line.276">equals</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
 <div class="block">Regressors are equal if they have the same number of dimensions and equal dimension names.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
@@ -699,7 +699,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../src-html/org/tribuo/regression/Regressor.html#line.293">hashCode</a>()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</pre>
 <div class="block">Regressor's hashcode is based on the hash of the dimension names.
  <p>
  It's cached on first access.</div>
@@ -717,7 +717,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>getDimensionNamesString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/regression/Regressor.html#line.308">getDimensionNamesString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getDimensionNamesString()</pre>
 <div class="block">Returns a comma separated list of the dimension names.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -731,7 +731,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>getDimensionNamesString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/regression/Regressor.html#line.317">getDimensionNamesString</a>(char&nbsp;separator)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getDimensionNamesString(char&nbsp;separator)</pre>
 <div class="block">Returns a delimiter separated list of the dimension names.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -747,7 +747,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>extractNames</h4>
-<pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;<a href="../../../src-html/org/tribuo/regression/Regressor.html#line.341">extractNames</a>(<a href="../../../org/tribuo/OutputInfo.html" title="interface in org.tribuo">OutputInfo</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;info)</pre>
+<pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;extractNames(<a href="../../../org/tribuo/OutputInfo.html" title="interface in org.tribuo">OutputInfo</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;info)</pre>
 <div class="block">Extracts the names from the supplied Regressor domain in their canonical order.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -763,7 +763,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>parseString</h4>
-<pre>public static&nbsp;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&nbsp;<a href="../../../src-html/org/tribuo/regression/Regressor.html#line.361">parseString</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+<pre>public static&nbsp;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&nbsp;parseString(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
 <div class="block">Parses a string of the form:
  <pre>
  dimension-name=output,...,dimension-name=output
@@ -783,7 +783,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>parseString</h4>
-<pre>public static&nbsp;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&nbsp;<a href="../../../src-html/org/tribuo/regression/Regressor.html#line.375">parseString</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s,
+<pre>public static&nbsp;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&nbsp;parseString(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s,
                                     char&nbsp;splitChar)</pre>
 <div class="block">Parses a string of the form:
  <pre>
@@ -805,7 +805,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>parseElement</h4>
-<pre>public static&nbsp;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/regression/Regressor.html#line.410">parseElement</a>(int&nbsp;idx,
+<pre>public static&nbsp;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;parseElement(int&nbsp;idx,
                                                                                <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
 <div class="block">Parses a string of the form:
  <pre>
@@ -827,7 +827,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockListLast">
 <li class="blockList">
 <h4>createFromPairList</h4>
-<pre>public static&nbsp;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&nbsp;<a href="../../../src-html/org/tribuo/regression/Regressor.html#line.427">createFromPairList</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&gt;&nbsp;dimensions)</pre>
+<pre>public static&nbsp;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&nbsp;createFromPairList(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&gt;&nbsp;dimensions)</pre>
 <div class="block">Creates a Regressor from a list of dimension tuples.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -905,6 +905,6 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <a href="../../../../src-html/org/tribuo/math/la/Matrix.html#line.24">Matrix</a>
+<pre>public interface <span class="typeNameLabel">Matrix</span>
 extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../org/tribuo/math/la/MatrixTuple.html" title="class in org.tribuo.math.la">MatrixTuple</a>&gt;</pre>
 <div class="block">Interface for 2 dimensional <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a>s.
  <p>
@@ -251,7 +251,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Matrix.html#line.32">get</a>(int&nbsp;i,
+<pre>double&nbsp;get(int&nbsp;i,
            int&nbsp;j)</pre>
 <div class="block">Gets an element from this <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la"><code>Matrix</code></a>.</div>
 <dl>
@@ -269,7 +269,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>set</h4>
-<pre>void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Matrix.html#line.40">set</a>(int&nbsp;i,
+<pre>void&nbsp;set(int&nbsp;i,
          int&nbsp;j,
          double&nbsp;value)</pre>
 <div class="block">Sets an element at the supplied location.</div>
@@ -287,7 +287,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>add</h4>
-<pre>void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Matrix.html#line.48">add</a>(int&nbsp;i,
+<pre>void&nbsp;add(int&nbsp;i,
          int&nbsp;j,
          double&nbsp;value)</pre>
 <div class="block">Adds the argument value to the value at the supplied index.</div>
@@ -305,7 +305,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>getDimension1Size</h4>
-<pre>int&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Matrix.html#line.54">getDimension1Size</a>()</pre>
+<pre>int&nbsp;getDimension1Size()</pre>
 <div class="block">The size of the first dimension.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -319,7 +319,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>getDimension2Size</h4>
-<pre>int&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Matrix.html#line.60">getDimension2Size</a>()</pre>
+<pre>int&nbsp;getDimension2Size()</pre>
 <div class="block">The size of the second dimension.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -333,7 +333,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>numActiveElements</h4>
-<pre>int&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Matrix.html#line.70">numActiveElements</a>(int&nbsp;row)</pre>
+<pre>int&nbsp;numActiveElements(int&nbsp;row)</pre>
 <div class="block">The number of non-zero elements in that row.
  <p>
  An element could be active and zero, if it was active on construction.</div>
@@ -351,7 +351,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>leftMultiply</h4>
-<pre><a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Matrix.html#line.79">leftMultiply</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;input)</pre>
+<pre><a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;leftMultiply(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;input)</pre>
 <div class="block">Multiplies this Matrix by a <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la"><code>SGDVector</code></a> returning a vector of the appropriate size.
  <p>
  The input must have dimension equal to <a href="../../../../org/tribuo/math/la/Matrix.html#getDimension2Size--"><code>getDimension2Size()</code></a>.</div>
@@ -369,7 +369,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>rightMultiply</h4>
-<pre><a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Matrix.html#line.88">rightMultiply</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;input)</pre>
+<pre><a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;rightMultiply(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;input)</pre>
 <div class="block">Multiplies this Matrix by a <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la"><code>SGDVector</code></a> returning a vector of the appropriate size.
  <p>
  The input must have dimension equal to <a href="../../../../org/tribuo/math/la/Matrix.html#getDimension1Size--"><code>getDimension1Size()</code></a>.</div>
@@ -387,7 +387,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>matrixMultiply</h4>
-<pre><a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Matrix.html#line.97">matrixMultiply</a>(<a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;input)</pre>
+<pre><a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;matrixMultiply(<a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;input)</pre>
 <div class="block">Multiplies this Matrix by another <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la"><code>Matrix</code></a> returning a matrix of the appropriate size.
  <p>
  The input must have dimension 1 equal to <a href="../../../../org/tribuo/math/la/Matrix.html#getDimension2Size--"><code>getDimension2Size()</code></a>.</div>
@@ -405,7 +405,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>matrixMultiply</h4>
-<pre><a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Matrix.html#line.108">matrixMultiply</a>(<a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;input,
+<pre><a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;matrixMultiply(<a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;input,
                       boolean&nbsp;transposeThis,
                       boolean&nbsp;transposeOther)</pre>
 <div class="block">Multiplies this Matrix by another <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la"><code>Matrix</code></a> returning a matrix of the appropriate size.
@@ -427,7 +427,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>rowSum</h4>
-<pre><a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Matrix.html#line.114">rowSum</a>()</pre>
+<pre><a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;rowSum()</pre>
 <div class="block">Generates a <a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la"><code>DenseVector</code></a> representing the sum of each row.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -441,7 +441,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>rowScaleInPlace</h4>
-<pre>void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Matrix.html#line.120">rowScaleInPlace</a>(<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;scalingCoefficients)</pre>
+<pre>void&nbsp;rowScaleInPlace(<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;scalingCoefficients)</pre>
 <div class="block">Scales each row by the appropriate value in the <a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la"><code>DenseVector</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -455,7 +455,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getRow</h4>
-<pre><a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Matrix.html#line.129">getRow</a>(int&nbsp;i)</pre>
+<pre><a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;getRow(int&nbsp;i)</pre>
 <div class="block">Extract a row as an <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la"><code>SGDVector</code></a>.
  <p>
  This refers to the same values as the matrix, so updating this vector will update the matrix.</div>
@@ -535,6 +535,6 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

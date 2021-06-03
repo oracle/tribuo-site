@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEColumnar.html#line.72">LIMEColumnar</a>
+<pre>public class <span class="typeNameLabel">LIMEColumnar</span>
 extends <a href="../../../../../org/tribuo/classification/explanations/lime/LIMEBase.html" title="class in org.tribuo.classification.explanations.lime">LIMEBase</a>
 implements <a href="../../../../../org/tribuo/classification/explanations/ColumnarExplainer.html" title="interface in org.tribuo.classification.explanations">ColumnarExplainer</a>&lt;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;</pre>
 <div class="block">Uses the columnar data processing infrastructure to mix text and tabular data.
@@ -242,7 +242,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/Column
 <ul class="blockListLast">
 <li class="blockList">
 <h4>LIMEColumnar</h4>
-<pre>public&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEColumnar.html#line.107">LIMEColumnar</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/SplittableRandom.html?is-external=true" title="class or interface in java.util">SplittableRandom</a>&nbsp;rng,
+<pre>public&nbsp;LIMEColumnar(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/SplittableRandom.html?is-external=true" title="class or interface in java.util">SplittableRandom</a>&nbsp;rng,
                     <a href="../../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;innerModel,
                     <a href="../../../../../org/tribuo/SparseTrainer.html" title="interface in org.tribuo">SparseTrainer</a>&lt;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;explanationTrainer,
                     int&nbsp;numSamples,
@@ -274,7 +274,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/Column
 <ul class="blockList">
 <li class="blockList">
 <h4>explain</h4>
-<pre>public&nbsp;<a href="../../../../../org/tribuo/classification/explanations/lime/LIMEExplanation.html" title="class in org.tribuo.classification.explanations.lime">LIMEExplanation</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEColumnar.html#line.227">explain</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;input)</pre>
+<pre>public&nbsp;<a href="../../../../../org/tribuo/classification/explanations/lime/LIMEExplanation.html" title="class in org.tribuo.classification.explanations.lime">LIMEExplanation</a>&nbsp;explain(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;input)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/tribuo/classification/explanations/ColumnarExplainer.html#explain-java.util.Map-">ColumnarExplainer</a></code></span></div>
 <div class="block">Explains the supplied data. The Map is first converted into
  an <a href="../../../../../org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a> using a <a href="../../../../../org/tribuo/data/columnar/RowProcessor.html" title="class in org.tribuo.data.columnar"><code>RowProcessor</code></a>, before being
@@ -295,7 +295,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/Column
 <ul class="blockList">
 <li class="blockList">
 <h4>explainWithSamples</h4>
-<pre>protected&nbsp;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="../../../../../org/tribuo/classification/explanations/lime/LIMEExplanation.html" title="class in org.tribuo.classification.explanations.lime">LIMEExplanation</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&gt;&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEColumnar.html#line.231">explainWithSamples</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;input)</pre>
+<pre>protected&nbsp;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="../../../../../org/tribuo/classification/explanations/lime/LIMEExplanation.html" title="class in org.tribuo.classification.explanations.lime">LIMEExplanation</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&gt;&gt;&nbsp;explainWithSamples(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;input)</pre>
 </li>
 </ul>
 <a name="nameFeature-java.lang.String-java.lang.String-int-">
@@ -304,7 +304,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/Column
 <ul class="blockListLast">
 <li class="blockList">
 <h4>nameFeature</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEColumnar.html#line.293">nameFeature</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;nameFeature(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
                              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                              int&nbsp;idx)</pre>
 <div class="block">Generate the feature name by combining the word and index.</div>
@@ -386,6 +386,6 @@ implements <a href="../../../../../org/tribuo/classification/explanations/Column
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

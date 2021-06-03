@@ -805,13 +805,13 @@
     <a href="../../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;newProvenance)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected <a href="../../../../org/tribuo/interop/tensorflow/TensorflowCheckpointModel.html" title="class in org.tribuo.interop.tensorflow">TensorflowCheckpointModel</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/TensorflowCheckpointModel.html" title="type parameter in TensorflowCheckpointModel">T</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">TensorflowCheckpointModel.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/interop/tensorflow/TensorflowCheckpointModel.html#copy-java.lang.String-org.tribuo.provenance.ModelProvenance-">copy</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newName,
+<td class="colFirst"><code>protected <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/TensorflowExternalModel.html" title="type parameter in TensorflowExternalModel">T</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">TensorflowExternalModel.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/interop/tensorflow/TensorflowExternalModel.html#copy-java.lang.String-org.tribuo.provenance.ModelProvenance-">copy</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newName,
     <a href="../../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;newProvenance)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/TensorflowExternalModel.html" title="type parameter in TensorflowExternalModel">T</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">TensorflowExternalModel.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/interop/tensorflow/TensorflowExternalModel.html#copy-java.lang.String-org.tribuo.provenance.ModelProvenance-">copy</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newName,
+<td class="colFirst"><code>protected <a href="../../../../org/tribuo/interop/tensorflow/TensorflowCheckpointModel.html" title="class in org.tribuo.interop.tensorflow">TensorflowCheckpointModel</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/TensorflowCheckpointModel.html" title="type parameter in TensorflowCheckpointModel">T</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">TensorflowCheckpointModel.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/interop/tensorflow/TensorflowCheckpointModel.html#copy-java.lang.String-org.tribuo.provenance.ModelProvenance-">copy</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newName,
     <a href="../../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;newProvenance)</code>&nbsp;</td>
 </tr>
 </tbody>
@@ -950,8 +950,8 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code>protected abstract <a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionSparseModel</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SkeletalIndependentRegressionSparseTrainer.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html#createModel-java.util.Map-org.tribuo.provenance.ModelProvenance-org.tribuo.ImmutableFeatureMap-org.tribuo.ImmutableOutputInfo-">createModel</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html" title="type parameter in SkeletalIndependentRegressionSparseTrainer">T</a>&gt;&nbsp;models,
+<td class="colFirst"><code>protected abstract <a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegressionModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionModel</a></code></td>
+<td class="colLast"><span class="typeNameLabel">SkeletalIndependentRegressionTrainer.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegressionTrainer.html#createModel-java.util.Map-org.tribuo.provenance.ModelProvenance-org.tribuo.ImmutableFeatureMap-org.tribuo.ImmutableOutputInfo-">createModel</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegressionTrainer.html" title="type parameter in SkeletalIndependentRegressionTrainer">T</a>&gt;&nbsp;models,
            <a href="../../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;provenance,
            <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureMap,
            <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;outputInfo)</code>
@@ -959,8 +959,8 @@
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected abstract <a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegressionModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionModel</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SkeletalIndependentRegressionTrainer.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegressionTrainer.html#createModel-java.util.Map-org.tribuo.provenance.ModelProvenance-org.tribuo.ImmutableFeatureMap-org.tribuo.ImmutableOutputInfo-">createModel</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegressionTrainer.html" title="type parameter in SkeletalIndependentRegressionTrainer">T</a>&gt;&nbsp;models,
+<td class="colFirst"><code>protected abstract <a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionSparseModel</a></code></td>
+<td class="colLast"><span class="typeNameLabel">SkeletalIndependentRegressionSparseTrainer.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html#createModel-java.util.Map-org.tribuo.provenance.ModelProvenance-org.tribuo.ImmutableFeatureMap-org.tribuo.ImmutableOutputInfo-">createModel</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html" title="type parameter in SkeletalIndependentRegressionSparseTrainer">T</a>&gt;&nbsp;models,
            <a href="../../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;provenance,
            <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureMap,
            <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;outputInfo)</code>
@@ -1207,6 +1207,6 @@
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

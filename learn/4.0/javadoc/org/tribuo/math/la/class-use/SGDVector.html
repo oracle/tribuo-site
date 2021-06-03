@@ -350,21 +350,21 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DenseVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseVector.html#add-org.tribuo.math.la.SGDVector-">add</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>
-<div class="block">Adds <code>other</code> to this vector, producing a new <a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la"><code>DenseVector</code></a>.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a></code></td>
 <td class="colLast"><span class="typeNameLabel">SparseVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/SparseVector.html#add-org.tribuo.math.la.SGDVector-">add</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>
 <div class="block">Adds <code>other</code> to this vector, producing a new <a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la"><code>SGDVector</code></a>.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a></code></td>
 <td class="colLast"><span class="typeNameLabel">SGDVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/SGDVector.html#add-org.tribuo.math.la.SGDVector-">add</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>
 <div class="block">Adds <code>other</code> to this vector, producing a new <a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la"><code>SGDVector</code></a>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a></code></td>
+<td class="colLast"><span class="typeNameLabel">DenseVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseVector.html#add-org.tribuo.math.la.SGDVector-">add</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>
+<div class="block">Adds <code>other</code> to this vector, producing a new <a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la"><code>DenseVector</code></a>.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -394,16 +394,26 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>double</code></td>
+<td class="colLast"><span class="typeNameLabel">SparseVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/SparseVector.html#dot-org.tribuo.math.la.SGDVector-">dot</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>double</code></td>
+<td class="colLast"><span class="typeNameLabel">SGDVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/SGDVector.html#dot-org.tribuo.math.la.SGDVector-">dot</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>
+<div class="block">Calculates the dot product between this vector and <code>other</code>.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>double</code></td>
 <td class="colLast"><span class="typeNameLabel">DenseVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseVector.html#dot-org.tribuo.math.la.SGDVector-">dot</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>double</code></td>
-<td class="colLast"><span class="typeNameLabel">SparseVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/SparseVector.html#dot-org.tribuo.math.la.SGDVector-">dot</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">SparseVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/SparseVector.html#euclideanDistance-org.tribuo.math.la.SGDVector-">euclideanDistance</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>double</code></td>
-<td class="colLast"><span class="typeNameLabel">SGDVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/SGDVector.html#dot-org.tribuo.math.la.SGDVector-">dot</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>
-<div class="block">Calculates the dot product between this vector and <code>other</code>.</div>
+<td class="colLast"><span class="typeNameLabel">SGDVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/SGDVector.html#euclideanDistance-org.tribuo.math.la.SGDVector-">euclideanDistance</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>
+<div class="block">The l2 or euclidean distance between this vector and the other vector.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -414,27 +424,17 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>double</code></td>
-<td class="colLast"><span class="typeNameLabel">SparseVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/SparseVector.html#euclideanDistance-org.tribuo.math.la.SGDVector-">euclideanDistance</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">SparseVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/SparseVector.html#l1Distance-org.tribuo.math.la.SGDVector-">l1Distance</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>double</code></td>
-<td class="colLast"><span class="typeNameLabel">SGDVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/SGDVector.html#euclideanDistance-org.tribuo.math.la.SGDVector-">euclideanDistance</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>
-<div class="block">The l2 or euclidean distance between this vector and the other vector.</div>
+<td class="colLast"><span class="typeNameLabel">SGDVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/SGDVector.html#l1Distance-org.tribuo.math.la.SGDVector-">l1Distance</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>
+<div class="block">The l1 or Manhattan distance between this vector and the other vector.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>double</code></td>
 <td class="colLast"><span class="typeNameLabel">DenseVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseVector.html#l1Distance-org.tribuo.math.la.SGDVector-">l1Distance</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>
-<div class="block">The l1 or Manhattan distance between this vector and the other vector.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>double</code></td>
-<td class="colLast"><span class="typeNameLabel">SparseVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/SparseVector.html#l1Distance-org.tribuo.math.la.SGDVector-">l1Distance</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>double</code></td>
-<td class="colLast"><span class="typeNameLabel">SGDVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/SGDVector.html#l1Distance-org.tribuo.math.la.SGDVector-">l1Distance</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>
 <div class="block">The l1 or Manhattan distance between this vector and the other vector.</div>
 </td>
 </tr>
@@ -445,44 +445,34 @@
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DenseMatrix.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseMatrix.html#leftMultiply-org.tribuo.math.la.SGDVector-">leftMultiply</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;input)</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DenseSparseMatrix.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseSparseMatrix.html#leftMultiply-org.tribuo.math.la.SGDVector-">leftMultiply</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;input)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a></code></td>
 <td class="colLast"><span class="typeNameLabel">Matrix.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/Matrix.html#leftMultiply-org.tribuo.math.la.SGDVector-">leftMultiply</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;input)</code>
 <div class="block">Multiplies this Matrix by a <a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la"><code>SGDVector</code></a> returning a vector of the appropriate size.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DenseVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseVector.html#outer-org.tribuo.math.la.SGDVector-">outer</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a></code></td>
+<td class="colLast"><span class="typeNameLabel">DenseSparseMatrix.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseSparseMatrix.html#leftMultiply-org.tribuo.math.la.SGDVector-">leftMultiply</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;input)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a></code></td>
+<td class="colLast"><span class="typeNameLabel">DenseMatrix.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseMatrix.html#leftMultiply-org.tribuo.math.la.SGDVector-">leftMultiply</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;input)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a></code></td>
 <td class="colLast"><span class="typeNameLabel">SparseVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/SparseVector.html#outer-org.tribuo.math.la.SGDVector-">outer</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>
 <div class="block">This generates the outer product when dotted with another <a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la"><code>SparseVector</code></a>.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a></code></td>
 <td class="colLast"><span class="typeNameLabel">SGDVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/SGDVector.html#outer-org.tribuo.math.la.SGDVector-">outer</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>
 <div class="block">Generates the matrix representing the outer product between the two vectors.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DenseMatrix.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseMatrix.html#rightMultiply-org.tribuo.math.la.SGDVector-">rightMultiply</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;input)</code>&nbsp;</td>
-</tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DenseSparseMatrix.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseSparseMatrix.html#rightMultiply-org.tribuo.math.la.SGDVector-">rightMultiply</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;input)</code>
-<div class="block">rightMultiply is very inefficient on DenseSparseMatrix due to the storage format.</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a></code></td>
+<td class="colLast"><span class="typeNameLabel">DenseVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseVector.html#outer-org.tribuo.math.la.SGDVector-">outer</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a></code></td>
@@ -492,20 +482,30 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a></code></td>
-<td class="colLast"><span class="typeNameLabel">DenseVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseVector.html#subtract-org.tribuo.math.la.SGDVector-">subtract</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>
-<div class="block">Subtracts <code>other</code> from this vector, producing a new <a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la"><code>DenseVector</code></a>.</div>
+<td class="colLast"><span class="typeNameLabel">DenseSparseMatrix.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseSparseMatrix.html#rightMultiply-org.tribuo.math.la.SGDVector-">rightMultiply</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;input)</code>
+<div class="block">rightMultiply is very inefficient on DenseSparseMatrix due to the storage format.</div>
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a></code></td>
+<td class="colLast"><span class="typeNameLabel">DenseMatrix.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseMatrix.html#rightMultiply-org.tribuo.math.la.SGDVector-">rightMultiply</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;input)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a></code></td>
 <td class="colLast"><span class="typeNameLabel">SparseVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/SparseVector.html#subtract-org.tribuo.math.la.SGDVector-">subtract</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>
 <div class="block">Subtracts <code>other</code> from this vector, producing a new <a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la"><code>SGDVector</code></a>.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a></code></td>
 <td class="colLast"><span class="typeNameLabel">SGDVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/SGDVector.html#subtract-org.tribuo.math.la.SGDVector-">subtract</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>
 <div class="block">Subtracts <code>other</code> from this vector, producing a new <a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la"><code>SGDVector</code></a>.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a></code></td>
+<td class="colLast"><span class="typeNameLabel">DenseVector.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/math/la/DenseVector.html#subtract-org.tribuo.math.la.SGDVector-">subtract</a></span>(<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</code>
+<div class="block">Subtracts <code>other</code> from this vector, producing a new <a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la"><code>DenseVector</code></a>.</div>
 </td>
 </tr>
 </tbody>
@@ -598,12 +598,12 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>,<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">Huber.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/regression/sgd/objectives/Huber.html#loss-org.tribuo.math.la.DenseVector-org.tribuo.math.la.SGDVector-">loss</a></span>(<a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;truth,
+<td class="colLast"><span class="typeNameLabel">SquaredLoss.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/regression/sgd/objectives/SquaredLoss.html#loss-org.tribuo.math.la.DenseVector-org.tribuo.math.la.SGDVector-">loss</a></span>(<a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;truth,
     <a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;prediction)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>,<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">SquaredLoss.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/regression/sgd/objectives/SquaredLoss.html#loss-org.tribuo.math.la.DenseVector-org.tribuo.math.la.SGDVector-">loss</a></span>(<a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;truth,
+<td class="colLast"><span class="typeNameLabel">Huber.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/regression/sgd/objectives/Huber.html#loss-org.tribuo.math.la.DenseVector-org.tribuo.math.la.SGDVector-">loss</a></span>(<a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;truth,
     <a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;prediction)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
@@ -622,12 +622,12 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>,<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">Huber.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/regression/sgd/objectives/Huber.html#loss-org.tribuo.math.la.DenseVector-org.tribuo.math.la.SGDVector-">loss</a></span>(<a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;truth,
+<td class="colLast"><span class="typeNameLabel">SquaredLoss.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/regression/sgd/objectives/SquaredLoss.html#loss-org.tribuo.math.la.DenseVector-org.tribuo.math.la.SGDVector-">loss</a></span>(<a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;truth,
     <a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;prediction)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>,<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">SquaredLoss.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/regression/sgd/objectives/SquaredLoss.html#loss-org.tribuo.math.la.DenseVector-org.tribuo.math.la.SGDVector-">loss</a></span>(<a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;truth,
+<td class="colLast"><span class="typeNameLabel">Huber.</span><code><span class="memberNameLink"><a href="../../../../../org/tribuo/regression/sgd/objectives/Huber.html#loss-org.tribuo.math.la.DenseVector-org.tribuo.math.la.SGDVector-">loss</a></span>(<a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;truth,
     <a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;prediction)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
@@ -688,6 +688,6 @@
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

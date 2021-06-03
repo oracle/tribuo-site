@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <a href="../../../../../src-html/org/tribuo/regression/rtree/impurity/RegressorImpurity.html#line.29">RegressorImpurity</a>
+<pre>public interface <span class="typeNameLabel">RegressorImpurity</span>
 extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&gt;</pre>
 <div class="block">Calculates a tree impurity score based on the regression targets.</div>
 </li>
@@ -242,7 +242,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>impurity</h4>
-<pre>double&nbsp;<a href="../../../../../src-html/org/tribuo/regression/rtree/impurity/RegressorImpurity.html#line.37">impurity</a>(float[]&nbsp;targets,
+<pre>double&nbsp;impurity(float[]&nbsp;targets,
                 float[]&nbsp;weights)</pre>
 <div class="block">Calculates the impurity based on the supplied weights and targets.</div>
 <dl>
@@ -260,7 +260,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>impurityTuple</h4>
-<pre><a href="../../../../../org/tribuo/regression/rtree/impurity/RegressorImpurity.ImpurityTuple.html" title="class in org.tribuo.regression.rtree.impurity">RegressorImpurity.ImpurityTuple</a>&nbsp;<a href="../../../../../src-html/org/tribuo/regression/rtree/impurity/RegressorImpurity.html#line.47">impurityTuple</a>(int[]&nbsp;indices,
+<pre><a href="../../../../../org/tribuo/regression/rtree/impurity/RegressorImpurity.ImpurityTuple.html" title="class in org.tribuo.regression.rtree.impurity">RegressorImpurity.ImpurityTuple</a>&nbsp;impurityTuple(int[]&nbsp;indices,
                                               int&nbsp;indicesLength,
                                               float[]&nbsp;targets,
                                               float[]&nbsp;weights)</pre>
@@ -282,7 +282,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>impurityTuple</h4>
-<pre><a href="../../../../../org/tribuo/regression/rtree/impurity/RegressorImpurity.ImpurityTuple.html" title="class in org.tribuo.regression.rtree.impurity">RegressorImpurity.ImpurityTuple</a>&nbsp;<a href="../../../../../src-html/org/tribuo/regression/rtree/impurity/RegressorImpurity.html#line.56">impurityTuple</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;int[]&gt;&nbsp;indices,
+<pre><a href="../../../../../org/tribuo/regression/rtree/impurity/RegressorImpurity.ImpurityTuple.html" title="class in org.tribuo.regression.rtree.impurity">RegressorImpurity.ImpurityTuple</a>&nbsp;impurityTuple(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;int[]&gt;&nbsp;indices,
                                               float[]&nbsp;targets,
                                               float[]&nbsp;weights)</pre>
 <div class="block">Calculates the weighted impurity of the targets specified in all the indices arrays.</div>
@@ -302,7 +302,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>impurity</h4>
-<pre>default&nbsp;double&nbsp;<a href="../../../../../src-html/org/tribuo/regression/rtree/impurity/RegressorImpurity.html#line.66">impurity</a>(int[]&nbsp;indices,
+<pre>default&nbsp;double&nbsp;impurity(int[]&nbsp;indices,
                         int&nbsp;indicesLength,
                         float[]&nbsp;targets,
                         float[]&nbsp;weights)</pre>
@@ -324,7 +324,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>impurity</h4>
-<pre>default&nbsp;double&nbsp;<a href="../../../../../src-html/org/tribuo/regression/rtree/impurity/RegressorImpurity.html#line.77">impurity</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;int[]&gt;&nbsp;indices,
+<pre>default&nbsp;double&nbsp;impurity(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;int[]&gt;&nbsp;indices,
                         float[]&nbsp;targets,
                         float[]&nbsp;weights)</pre>
 <div class="block">Calculates the weighted impurity of the targets specified in all the indices arrays.</div>
@@ -344,7 +344,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>impurity</h4>
-<pre>default&nbsp;double&nbsp;<a href="../../../../../src-html/org/tribuo/regression/rtree/impurity/RegressorImpurity.html#line.88">impurity</a>(int[]&nbsp;indices,
+<pre>default&nbsp;double&nbsp;impurity(int[]&nbsp;indices,
                         float[]&nbsp;targets,
                         float[]&nbsp;weights)</pre>
 <div class="block">Calculates the weighted impurity of the targets specified in the indices array.</div>
@@ -364,7 +364,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockListLast">
 <li class="blockList">
 <h4>impurity</h4>
-<pre>default&nbsp;double&nbsp;<a href="../../../../../src-html/org/tribuo/regression/rtree/impurity/RegressorImpurity.html#line.99">impurity</a>(<a href="../../../../../org/tribuo/common/tree/impl/IntArrayContainer.html" title="class in org.tribuo.common.tree.impl">IntArrayContainer</a>&nbsp;indices,
+<pre>default&nbsp;double&nbsp;impurity(<a href="../../../../../org/tribuo/common/tree/impl/IntArrayContainer.html" title="class in org.tribuo.common.tree.impl">IntArrayContainer</a>&nbsp;indices,
                         float[]&nbsp;targets,
                         float[]&nbsp;weights)</pre>
 <div class="block">Calculates the weighted impurity of the targets specified in the indices container.</div>
@@ -446,6 +446,6 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

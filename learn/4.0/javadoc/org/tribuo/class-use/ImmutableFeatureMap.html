@@ -268,14 +268,14 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a></code></td>
-<td class="colLast"><span class="typeNameLabel">ImmutableDataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/ImmutableDataset.html#featureIDMap">featureIDMap</a></span></code>
-<div class="block">A map from feature names to IDs for the features found in this dataset.</div>
+<td class="colLast"><span class="typeNameLabel">Model.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/Model.html#featureIDMap">featureIDMap</a></span></code>
+<div class="block">The features this model knows about.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a></code></td>
-<td class="colLast"><span class="typeNameLabel">Model.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/Model.html#featureIDMap">featureIDMap</a></span></code>
-<div class="block">The features this model knows about.</div>
+<td class="colLast"><span class="typeNameLabel">ImmutableDataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/ImmutableDataset.html#featureIDMap">featureIDMap</a></span></code>
+<div class="block">A map from feature names to IDs for the features found in this dataset.</div>
 </td>
 </tr>
 </tbody>
@@ -293,18 +293,18 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a></code></td>
-<td class="colLast"><span class="typeNameLabel">ImmutableDataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/ImmutableDataset.html#getFeatureIDMap--">getFeatureIDMap</a></span>()</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">Model.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/Model.html#getFeatureIDMap--">getFeatureIDMap</a></span>()</code>
+<div class="block">Gets the feature domain.</div>
+</td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code><a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a></code></td>
+<td class="colLast"><span class="typeNameLabel">ImmutableDataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/ImmutableDataset.html#getFeatureIDMap--">getFeatureIDMap</a></span>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>abstract <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a></code></td>
 <td class="colLast"><span class="typeNameLabel">Dataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/Dataset.html#getFeatureIDMap--">getFeatureIDMap</a></span>()</code>
 <div class="block">Returns or generates an <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo"><code>ImmutableFeatureMap</code></a>.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a></code></td>
-<td class="colLast"><span class="typeNameLabel">Model.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/Model.html#getFeatureIDMap--">getFeatureIDMap</a></span>()</code>
-<div class="block">Gets the feature domain.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -1008,42 +1008,42 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>org.tensorflow.Tensor&lt;?&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">DenseTransformer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/interop/tensorflow/DenseTransformer.html#transform-org.tribuo.Example-org.tribuo.ImmutableFeatureMap-">transform</a></span>(<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/interop/tensorflow/DenseTransformer.html" title="type parameter in DenseTransformer">T</a>&gt;&nbsp;example,
-         <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code>org.tensorflow.Tensor&lt;?&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">ImageTransformer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/interop/tensorflow/ImageTransformer.html#transform-org.tribuo.Example-org.tribuo.ImmutableFeatureMap-">transform</a></span>(<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/interop/tensorflow/ImageTransformer.html" title="type parameter in ImageTransformer">T</a>&gt;&nbsp;example,
          <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap)</code>
 <div class="block">Transform implicitly pads unseen values with zero.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>org.tensorflow.Tensor&lt;?&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">ExampleTransformer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/interop/tensorflow/ExampleTransformer.html#transform-org.tribuo.Example-org.tribuo.ImmutableFeatureMap-">transform</a></span>(<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/interop/tensorflow/ExampleTransformer.html" title="type parameter in ExampleTransformer">T</a>&gt;&nbsp;example,
          <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap)</code>
 <div class="block">Converts an <a href="../../../org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a> into a <code>Tensor</code> suitable for supplying as an input to a graph.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>org.tensorflow.Tensor&lt;?&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">DenseTransformer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/interop/tensorflow/DenseTransformer.html#transform-java.util.List-org.tribuo.ImmutableFeatureMap-">transform</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/interop/tensorflow/DenseTransformer.html" title="type parameter in DenseTransformer">T</a>&gt;&gt;&nbsp;examples,
+<td class="colLast"><span class="typeNameLabel">DenseTransformer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/interop/tensorflow/DenseTransformer.html#transform-org.tribuo.Example-org.tribuo.ImmutableFeatureMap-">transform</a></span>(<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/interop/tensorflow/DenseTransformer.html" title="type parameter in DenseTransformer">T</a>&gt;&nbsp;example,
          <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>org.tensorflow.Tensor&lt;?&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">ImageTransformer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/interop/tensorflow/ImageTransformer.html#transform-java.util.List-org.tribuo.ImmutableFeatureMap-">transform</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/interop/tensorflow/ImageTransformer.html" title="type parameter in ImageTransformer">T</a>&gt;&gt;&nbsp;examples,
          <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap)</code>
 <div class="block">Transform implicitly pads unseen values with zero.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>org.tensorflow.Tensor&lt;?&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">ExampleTransformer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/interop/tensorflow/ExampleTransformer.html#transform-java.util.List-org.tribuo.ImmutableFeatureMap-">transform</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/interop/tensorflow/ExampleTransformer.html" title="type parameter in ExampleTransformer">T</a>&gt;&gt;&nbsp;example,
          <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap)</code>
 <div class="block">Converts a batch of <a href="../../../org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a>s into a single <code>Tensor</code> suitable for supplying as
  an input to a graph.</div>
 </td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>org.tensorflow.Tensor&lt;?&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">DenseTransformer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/interop/tensorflow/DenseTransformer.html#transform-java.util.List-org.tribuo.ImmutableFeatureMap-">transform</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/interop/tensorflow/DenseTransformer.html" title="type parameter in DenseTransformer">T</a>&gt;&gt;&nbsp;examples,
+         <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -1118,8 +1118,8 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code>protected abstract <a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionSparseModel</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SkeletalIndependentRegressionSparseTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html#createModel-java.util.Map-org.tribuo.provenance.ModelProvenance-org.tribuo.ImmutableFeatureMap-org.tribuo.ImmutableOutputInfo-">createModel</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html" title="type parameter in SkeletalIndependentRegressionSparseTrainer">T</a>&gt;&nbsp;models,
+<td class="colFirst"><code>protected abstract <a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionModel</a></code></td>
+<td class="colLast"><span class="typeNameLabel">SkeletalIndependentRegressionTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionTrainer.html#createModel-java.util.Map-org.tribuo.provenance.ModelProvenance-org.tribuo.ImmutableFeatureMap-org.tribuo.ImmutableOutputInfo-">createModel</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionTrainer.html" title="type parameter in SkeletalIndependentRegressionTrainer">T</a>&gt;&nbsp;models,
            <a href="../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;provenance,
            <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureMap,
            <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;outputInfo)</code>
@@ -1127,8 +1127,8 @@
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected abstract <a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionModel</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SkeletalIndependentRegressionTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionTrainer.html#createModel-java.util.Map-org.tribuo.provenance.ModelProvenance-org.tribuo.ImmutableFeatureMap-org.tribuo.ImmutableOutputInfo-">createModel</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionTrainer.html" title="type parameter in SkeletalIndependentRegressionTrainer">T</a>&gt;&nbsp;models,
+<td class="colFirst"><code>protected abstract <a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionSparseModel</a></code></td>
+<td class="colLast"><span class="typeNameLabel">SkeletalIndependentRegressionSparseTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html#createModel-java.util.Map-org.tribuo.provenance.ModelProvenance-org.tribuo.ImmutableFeatureMap-org.tribuo.ImmutableOutputInfo-">createModel</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html" title="type parameter in SkeletalIndependentRegressionSparseTrainer">T</a>&gt;&nbsp;models,
            <a href="../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;provenance,
            <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureMap,
            <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;outputInfo)</code>
@@ -1254,13 +1254,13 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a></code></td>
-<td class="colLast"><span class="typeNameLabel">ImmutableSequenceDataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/sequence/ImmutableSequenceDataset.html#featureIDMap">featureIDMap</a></span></code>
-<div class="block">A map from feature names to IDs for the features found in this dataset.</div>
-</td>
+<td class="colLast"><span class="typeNameLabel">SequenceModel.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/sequence/SequenceModel.html#featureIDMap">featureIDMap</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SequenceModel.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/sequence/SequenceModel.html#featureIDMap">featureIDMap</a></span></code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">ImmutableSequenceDataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/sequence/ImmutableSequenceDataset.html#featureIDMap">featureIDMap</a></span></code>
+<div class="block">A map from feature names to IDs for the features found in this dataset.</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1273,12 +1273,14 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a></code></td>
-<td class="colLast"><span class="typeNameLabel">ImmutableSequenceDataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/sequence/ImmutableSequenceDataset.html#getFeatureIDMap--">getFeatureIDMap</a></span>()</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a></code></td>
 <td class="colLast"><span class="typeNameLabel">SequenceModel.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/sequence/SequenceModel.html#getFeatureIDMap--">getFeatureIDMap</a></span>()</code>
 <div class="block">Gets the feature domain.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a></code></td>
+<td class="colLast"><span class="typeNameLabel">SequenceDataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/sequence/SequenceDataset.html#getFeatureIDMap--">getFeatureIDMap</a></span>()</code>
+<div class="block">An immutable view on the feature map.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -1286,10 +1288,8 @@
 <td class="colLast"><span class="typeNameLabel">MutableSequenceDataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/sequence/MutableSequenceDataset.html#getFeatureIDMap--">getFeatureIDMap</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>abstract <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SequenceDataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/sequence/SequenceDataset.html#getFeatureIDMap--">getFeatureIDMap</a></span>()</code>
-<div class="block">An immutable view on the feature map.</div>
-</td>
+<td class="colFirst"><code><a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a></code></td>
+<td class="colLast"><span class="typeNameLabel">ImmutableSequenceDataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/sequence/ImmutableSequenceDataset.html#getFeatureIDMap--">getFeatureIDMap</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a></code></td>
@@ -1404,6 +1404,6 @@
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

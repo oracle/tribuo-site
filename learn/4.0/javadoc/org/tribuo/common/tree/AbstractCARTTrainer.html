@@ -116,7 +116,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public abstract class <a href="../../../../src-html/org/tribuo/common/tree/AbstractCARTTrainer.html#line.49">AbstractCARTTrainer</a>&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public abstract class <span class="typeNameLabel">AbstractCARTTrainer&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/common/tree/DecisionTreeTrainer.html" title="interface in org.tribuo.common.tree">DecisionTreeTrainer</a>&lt;T&gt;</pre>
 <div class="block">Base class for <a href="../../../../org/tribuo/Trainer.html" title="interface in org.tribuo"><code>Trainer</code></a>'s that use an approximation of the CART algorithm to build a decision tree.
@@ -316,7 +316,7 @@ implements <a href="../../../../org/tribuo/common/tree/DecisionTreeTrainer.html"
 <ul class="blockList">
 <li class="blockList">
 <h4>MIN_EXAMPLES</h4>
-<pre>public static final&nbsp;int <a href="../../../../src-html/org/tribuo/common/tree/AbstractCARTTrainer.html#line.54">MIN_EXAMPLES</a></pre>
+<pre>public static final&nbsp;int MIN_EXAMPLES</pre>
 <div class="block">Default minimum weight of examples allowed in a leaf node.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -331,7 +331,7 @@ implements <a href="../../../../org/tribuo/common/tree/DecisionTreeTrainer.html"
 <li class="blockList">
 <h4>minChildWeight</h4>
 <pre>@Config(description="The minimum weight allowed in a child node.")
-protected&nbsp;float <a href="../../../../src-html/org/tribuo/common/tree/AbstractCARTTrainer.html#line.60">minChildWeight</a></pre>
+protected&nbsp;float minChildWeight</pre>
 <div class="block">Minimum weight of examples allowed in a leaf.</div>
 </li>
 </ul>
@@ -342,7 +342,7 @@ protected&nbsp;float <a href="../../../../src-html/org/tribuo/common/tree/Abstra
 <li class="blockList">
 <h4>maxDepth</h4>
 <pre>@Config(description="The maximum depth of the tree.")
-protected&nbsp;int <a href="../../../../src-html/org/tribuo/common/tree/AbstractCARTTrainer.html#line.66">maxDepth</a></pre>
+protected&nbsp;int maxDepth</pre>
 <div class="block">Maximum tree depth. Integer.MAX_VALUE indicates the depth is unlimited.</div>
 </li>
 </ul>
@@ -353,7 +353,7 @@ protected&nbsp;int <a href="../../../../src-html/org/tribuo/common/tree/Abstract
 <li class="blockList">
 <h4>fractionFeaturesInSplit</h4>
 <pre>@Config(description="The fraction of features to consider in each split. 1.0f indicates all features are considered.")
-protected&nbsp;float <a href="../../../../src-html/org/tribuo/common/tree/AbstractCARTTrainer.html#line.72">fractionFeaturesInSplit</a></pre>
+protected&nbsp;float fractionFeaturesInSplit</pre>
 <div class="block">Number of features to sample per split. 1 indicates all features are considered.</div>
 </li>
 </ul>
@@ -364,7 +364,7 @@ protected&nbsp;float <a href="../../../../src-html/org/tribuo/common/tree/Abstra
 <li class="blockList">
 <h4>seed</h4>
 <pre>@Config(description="The RNG seed to use when sampling features in a split.")
-protected&nbsp;long <a href="../../../../src-html/org/tribuo/common/tree/AbstractCARTTrainer.html#line.75">seed</a></pre>
+protected&nbsp;long seed</pre>
 </li>
 </ul>
 <a name="rng">
@@ -373,7 +373,7 @@ protected&nbsp;long <a href="../../../../src-html/org/tribuo/common/tree/Abstrac
 <ul class="blockList">
 <li class="blockList">
 <h4>rng</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/SplittableRandom.html?is-external=true" title="class or interface in java.util">SplittableRandom</a> <a href="../../../../src-html/org/tribuo/common/tree/AbstractCARTTrainer.html#line.77">rng</a></pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/SplittableRandom.html?is-external=true" title="class or interface in java.util">SplittableRandom</a> rng</pre>
 </li>
 </ul>
 <a name="trainInvocationCounter">
@@ -382,7 +382,7 @@ protected&nbsp;long <a href="../../../../src-html/org/tribuo/common/tree/Abstrac
 <ul class="blockListLast">
 <li class="blockList">
 <h4>trainInvocationCounter</h4>
-<pre>protected&nbsp;int <a href="../../../../src-html/org/tribuo/common/tree/AbstractCARTTrainer.html#line.79">trainInvocationCounter</a></pre>
+<pre>protected&nbsp;int trainInvocationCounter</pre>
 </li>
 </ul>
 </li>
@@ -399,7 +399,7 @@ protected&nbsp;long <a href="../../../../src-html/org/tribuo/common/tree/Abstrac
 <ul class="blockListLast">
 <li class="blockList">
 <h4>AbstractCARTTrainer</h4>
-<pre>protected&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/AbstractCARTTrainer.html#line.88">AbstractCARTTrainer</a>(int&nbsp;maxDepth,
+<pre>protected&nbsp;AbstractCARTTrainer(int&nbsp;maxDepth,
                               float&nbsp;minChildWeight,
                               float&nbsp;fractionFeaturesInSplit,
                               long&nbsp;seed)</pre>
@@ -427,7 +427,7 @@ protected&nbsp;long <a href="../../../../src-html/org/tribuo/common/tree/Abstrac
 <ul class="blockList">
 <li class="blockList">
 <h4>postConfig</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/AbstractCARTTrainer.html#line.96">postConfig</a>()</pre>
+<pre>public&nbsp;void&nbsp;postConfig()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>postConfig</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.config.Configurable</code></dd>
@@ -440,7 +440,7 @@ protected&nbsp;long <a href="../../../../src-html/org/tribuo/common/tree/Abstrac
 <ul class="blockList">
 <li class="blockList">
 <h4>getInvocationCount</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/AbstractCARTTrainer.html#line.101">getInvocationCount</a>()</pre>
+<pre>public&nbsp;int&nbsp;getInvocationCount()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/Trainer.html#getInvocationCount--">Trainer</a></code></span></div>
 <div class="block">The number of times this trainer instance has had it's train method invoked.
  <p>
@@ -460,7 +460,7 @@ protected&nbsp;long <a href="../../../../src-html/org/tribuo/common/tree/Abstrac
 <ul class="blockList">
 <li class="blockList">
 <h4>getFractionFeaturesInSplit</h4>
-<pre>public&nbsp;float&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/AbstractCARTTrainer.html#line.106">getFractionFeaturesInSplit</a>()</pre>
+<pre>public&nbsp;float&nbsp;getFractionFeaturesInSplit()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/common/tree/DecisionTreeTrainer.html#getFractionFeaturesInSplit--">DecisionTreeTrainer</a></code></span></div>
 <div class="block">Returns the feature subsampling rate.</div>
 <dl>
@@ -477,7 +477,7 @@ protected&nbsp;long <a href="../../../../src-html/org/tribuo/common/tree/Abstrac
 <ul class="blockList">
 <li class="blockList">
 <h4>train</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/common/tree/TreeModel.html" title="class in org.tribuo.common.tree">TreeModel</a>&lt;<a href="../../../../org/tribuo/common/tree/AbstractCARTTrainer.html" title="type parameter in AbstractCARTTrainer">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/AbstractCARTTrainer.html#line.111">train</a>(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/common/tree/AbstractCARTTrainer.html" title="type parameter in AbstractCARTTrainer">T</a>&gt;&nbsp;examples)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/common/tree/TreeModel.html" title="class in org.tribuo.common.tree">TreeModel</a>&lt;<a href="../../../../org/tribuo/common/tree/AbstractCARTTrainer.html" title="type parameter in AbstractCARTTrainer">T</a>&gt;&nbsp;train(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/common/tree/AbstractCARTTrainer.html" title="type parameter in AbstractCARTTrainer">T</a>&gt;&nbsp;examples)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/SparseTrainer.html#train-org.tribuo.Dataset-">SparseTrainer</a></code></span></div>
 <div class="block">Trains a sparse predictive model using the examples in the given data set.</div>
 <dl>
@@ -498,7 +498,7 @@ protected&nbsp;long <a href="../../../../src-html/org/tribuo/common/tree/Abstrac
 <ul class="blockList">
 <li class="blockList">
 <h4>train</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/common/tree/TreeModel.html" title="class in org.tribuo.common.tree">TreeModel</a>&lt;<a href="../../../../org/tribuo/common/tree/AbstractCARTTrainer.html" title="type parameter in AbstractCARTTrainer">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/AbstractCARTTrainer.html#line.116">train</a>(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/common/tree/AbstractCARTTrainer.html" title="type parameter in AbstractCARTTrainer">T</a>&gt;&nbsp;examples,
+<pre>public&nbsp;<a href="../../../../org/tribuo/common/tree/TreeModel.html" title="class in org.tribuo.common.tree">TreeModel</a>&lt;<a href="../../../../org/tribuo/common/tree/AbstractCARTTrainer.html" title="type parameter in AbstractCARTTrainer">T</a>&gt;&nbsp;train(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/common/tree/AbstractCARTTrainer.html" title="type parameter in AbstractCARTTrainer">T</a>&gt;&nbsp;examples,
                           <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,com.oracle.labs.mlrg.olcut.provenance.Provenance&gt;&nbsp;runProvenance)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/SparseTrainer.html#train-org.tribuo.Dataset-java.util.Map-">SparseTrainer</a></code></span></div>
 <div class="block">Trains a sparse predictive model using the examples in the given data set.</div>
@@ -521,7 +521,7 @@ protected&nbsp;long <a href="../../../../src-html/org/tribuo/common/tree/Abstrac
 <ul class="blockListLast">
 <li class="blockList">
 <h4>mkTrainingNode</h4>
-<pre>protected abstract&nbsp;<a href="../../../../org/tribuo/common/tree/AbstractTrainingNode.html" title="class in org.tribuo.common.tree">AbstractTrainingNode</a>&lt;<a href="../../../../org/tribuo/common/tree/AbstractCARTTrainer.html" title="type parameter in AbstractCARTTrainer">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/AbstractCARTTrainer.html#line.170">mkTrainingNode</a>(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/common/tree/AbstractCARTTrainer.html" title="type parameter in AbstractCARTTrainer">T</a>&gt;&nbsp;examples)</pre>
+<pre>protected abstract&nbsp;<a href="../../../../org/tribuo/common/tree/AbstractTrainingNode.html" title="class in org.tribuo.common.tree">AbstractTrainingNode</a>&lt;<a href="../../../../org/tribuo/common/tree/AbstractCARTTrainer.html" title="type parameter in AbstractCARTTrainer">T</a>&gt;&nbsp;mkTrainingNode(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/common/tree/AbstractCARTTrainer.html" title="type parameter in AbstractCARTTrainer">T</a>&gt;&nbsp;examples)</pre>
 </li>
 </ul>
 </li>
@@ -592,6 +592,6 @@ protected&nbsp;long <a href="../../../../src-html/org/tribuo/common/tree/Abstrac
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

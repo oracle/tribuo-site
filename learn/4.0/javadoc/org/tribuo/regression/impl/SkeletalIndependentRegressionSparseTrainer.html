@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public abstract class <a href="../../../../src-html/org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html#line.47">SkeletalIndependentRegressionSparseTrainer</a>&lt;T&gt;
+<pre>public abstract class <span class="typeNameLabel">SkeletalIndependentRegressionSparseTrainer&lt;T&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/SparseTrainer.html" title="interface in org.tribuo">SparseTrainer</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;</pre>
 <div class="block">Base class for training n independent sparse models, one per dimension. Generates the SparseVectors
@@ -264,7 +264,7 @@ implements <a href="../../../../org/tribuo/SparseTrainer.html" title="interface 
 <ul class="blockListLast">
 <li class="blockList">
 <h4>SkeletalIndependentRegressionSparseTrainer</h4>
-<pre>protected&nbsp;<a href="../../../../src-html/org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html#line.59">SkeletalIndependentRegressionSparseTrainer</a>()</pre>
+<pre>protected&nbsp;SkeletalIndependentRegressionSparseTrainer()</pre>
 <div class="block">for olcut.</div>
 </li>
 </ul>
@@ -282,7 +282,7 @@ implements <a href="../../../../org/tribuo/SparseTrainer.html" title="interface 
 <ul class="blockList">
 <li class="blockList">
 <h4>postConfig</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html#line.62">postConfig</a>()</pre>
+<pre>public&nbsp;void&nbsp;postConfig()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>postConfig</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.config.Configurable</code></dd>
@@ -295,7 +295,7 @@ implements <a href="../../../../org/tribuo/SparseTrainer.html" title="interface 
 <ul class="blockList">
 <li class="blockList">
 <h4>train</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionSparseModel</a>&nbsp;<a href="../../../../src-html/org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html#line.67">train</a>(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;examples)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionSparseModel</a>&nbsp;train(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;examples)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/SparseTrainer.html#train-org.tribuo.Dataset-">SparseTrainer</a></code></span></div>
 <div class="block">Trains a sparse predictive model using the examples in the given data set.</div>
 <dl>
@@ -316,7 +316,7 @@ implements <a href="../../../../org/tribuo/SparseTrainer.html" title="interface 
 <ul class="blockList">
 <li class="blockList">
 <h4>train</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionSparseModel</a>&nbsp;<a href="../../../../src-html/org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html#line.72">train</a>(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;examples,
+<pre>public&nbsp;<a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionSparseModel</a>&nbsp;train(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;examples,
                                                       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,com.oracle.labs.mlrg.olcut.provenance.Provenance&gt;&nbsp;runProvenance)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/SparseTrainer.html#train-org.tribuo.Dataset-java.util.Map-">SparseTrainer</a></code></span></div>
 <div class="block">Trains a sparse predictive model using the examples in the given data set.</div>
@@ -339,7 +339,7 @@ implements <a href="../../../../org/tribuo/SparseTrainer.html" title="interface 
 <ul class="blockList">
 <li class="blockList">
 <h4>getInvocationCount</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html#line.112">getInvocationCount</a>()</pre>
+<pre>public&nbsp;int&nbsp;getInvocationCount()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/Trainer.html#getInvocationCount--">Trainer</a></code></span></div>
 <div class="block">The number of times this trainer instance has had it's train method invoked.
  <p>
@@ -359,7 +359,7 @@ implements <a href="../../../../org/tribuo/SparseTrainer.html" title="interface 
 <ul class="blockList">
 <li class="blockList">
 <h4>createModel</h4>
-<pre>protected abstract&nbsp;<a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionSparseModel</a>&nbsp;<a href="../../../../src-html/org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html#line.124">createModel</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html" title="type parameter in SkeletalIndependentRegressionSparseTrainer">T</a>&gt;&nbsp;models,
+<pre>protected abstract&nbsp;<a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionSparseModel</a>&nbsp;createModel(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html" title="type parameter in SkeletalIndependentRegressionSparseTrainer">T</a>&gt;&nbsp;models,
                                                                         <a href="../../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;provenance,
                                                                         <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureMap,
                                                                         <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;outputInfo)</pre>
@@ -381,7 +381,7 @@ implements <a href="../../../../org/tribuo/SparseTrainer.html" title="interface 
 <ul class="blockList">
 <li class="blockList">
 <h4>trainDimension</h4>
-<pre>protected abstract&nbsp;<a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html" title="type parameter in SkeletalIndependentRegressionSparseTrainer">T</a>&nbsp;<a href="../../../../src-html/org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html#line.134">trainDimension</a>(double[]&nbsp;outputs,
+<pre>protected abstract&nbsp;<a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html" title="type parameter in SkeletalIndependentRegressionSparseTrainer">T</a>&nbsp;trainDimension(double[]&nbsp;outputs,
                                     <a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&nbsp;features,
                                     float[]&nbsp;weights,
                                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/SplittableRandom.html?is-external=true" title="class or interface in java.util">SplittableRandom</a>&nbsp;rng)</pre>
@@ -403,7 +403,7 @@ implements <a href="../../../../org/tribuo/SparseTrainer.html" title="interface 
 <ul class="blockList">
 <li class="blockList">
 <h4>useBias</h4>
-<pre>protected abstract&nbsp;boolean&nbsp;<a href="../../../../src-html/org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html#line.140">useBias</a>()</pre>
+<pre>protected abstract&nbsp;boolean&nbsp;useBias()</pre>
 <div class="block">Returns true if the SparseVector should be constructed with a bias feature.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -417,7 +417,7 @@ implements <a href="../../../../org/tribuo/SparseTrainer.html" title="interface 
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getModelClassName</h4>
-<pre>protected abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html#line.146">getModelClassName</a>()</pre>
+<pre>protected abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getModelClassName()</pre>
 <div class="block">Returns the class name of the model that this class produces.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -493,6 +493,6 @@ implements <a href="../../../../org/tribuo/SparseTrainer.html" title="interface 
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

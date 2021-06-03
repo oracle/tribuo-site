@@ -120,7 +120,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public abstract class <a href="../../src-html/org/tribuo/Model.html#line.41">Model</a>&lt;T extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public abstract class <span class="typeNameLabel">Model&lt;T extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&gt;, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
 <div class="block">A prediction model, which is used to predict outputs for unseen instances.
@@ -367,7 +367,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>ALL_OUTPUTS</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> <a href="../../src-html/org/tribuo/Model.html#line.47">ALL_OUTPUTS</a></pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> ALL_OUTPUTS</pre>
 <div class="block">Used in getTopFeatures when the Model doesn't support per output feature lists.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -381,7 +381,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>BIAS_FEATURE</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> <a href="../../src-html/org/tribuo/Model.html#line.52">BIAS_FEATURE</a></pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> BIAS_FEATURE</pre>
 <div class="block">Used to denote the bias feature in a linear model.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -395,7 +395,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>name</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> <a href="../../src-html/org/tribuo/Model.html#line.57">name</a></pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> name</pre>
 <div class="block">The model's name.</div>
 </li>
 </ul>
@@ -405,7 +405,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>provenance</h4>
-<pre>protected final&nbsp;<a href="../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a> <a href="../../src-html/org/tribuo/Model.html#line.62">provenance</a></pre>
+<pre>protected final&nbsp;<a href="../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a> provenance</pre>
 <div class="block">The model provenance.</div>
 </li>
 </ul>
@@ -415,7 +415,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>provenanceOutput</h4>
-<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> <a href="../../src-html/org/tribuo/Model.html#line.69">provenanceOutput</a></pre>
+<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> provenanceOutput</pre>
 <div class="block">The cached toString of the model provenance.
  <p>
  Mostly cached so it appears in the serialized output and can be read by grepping the binary.</div>
@@ -427,7 +427,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>featureIDMap</h4>
-<pre>protected final&nbsp;<a href="../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a> <a href="../../src-html/org/tribuo/Model.html#line.74">featureIDMap</a></pre>
+<pre>protected final&nbsp;<a href="../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a> featureIDMap</pre>
 <div class="block">The features this model knows about.</div>
 </li>
 </ul>
@@ -437,7 +437,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>outputIDInfo</h4>
-<pre>protected final&nbsp;<a href="../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a> extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&gt; <a href="../../src-html/org/tribuo/Model.html#line.79">outputIDInfo</a></pre>
+<pre>protected final&nbsp;<a href="../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a> extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&gt; outputIDInfo</pre>
 <div class="block">The outputs this model predicts.</div>
 </li>
 </ul>
@@ -447,7 +447,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockListLast">
 <li class="blockList">
 <h4>generatesProbabilities</h4>
-<pre>protected final&nbsp;boolean <a href="../../src-html/org/tribuo/Model.html#line.84">generatesProbabilities</a></pre>
+<pre>protected final&nbsp;boolean generatesProbabilities</pre>
 <div class="block">Does this model generate probability distributions in the output.</div>
 </li>
 </ul>
@@ -465,7 +465,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Model</h4>
-<pre>protected&nbsp;<a href="../../src-html/org/tribuo/Model.html#line.94">Model</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+<pre>protected&nbsp;Model(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                 <a href="../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;provenance,
                 <a href="../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap,
                 <a href="../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&nbsp;outputIDInfo,
@@ -495,7 +495,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>getName</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../src-html/org/tribuo/Model.html#line.107">getName</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getName()</pre>
 <div class="block">Returns the model name.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -509,7 +509,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>setName</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../src-html/org/tribuo/Model.html#line.115">setName</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<pre>public&nbsp;void&nbsp;setName(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
 <div class="block">Sets the model name.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -523,7 +523,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;<a href="../../src-html/org/tribuo/Model.html#line.120">getProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&gt;</code></dd>
@@ -536,7 +536,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>getFeatureIDMap</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;<a href="../../src-html/org/tribuo/Model.html#line.128">getFeatureIDMap</a>()</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;getFeatureIDMap()</pre>
 <div class="block">Gets the feature domain.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -550,7 +550,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>getOutputIDInfo</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&nbsp;<a href="../../src-html/org/tribuo/Model.html#line.136">getOutputIDInfo</a>()</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&nbsp;getOutputIDInfo()</pre>
 <div class="block">Gets the output domain.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -564,7 +564,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>generatesProbabilities</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../src-html/org/tribuo/Model.html#line.144">generatesProbabilities</a>()</pre>
+<pre>public&nbsp;boolean&nbsp;generatesProbabilities()</pre>
 <div class="block">Does this model generate probabilistic predictions.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -578,7 +578,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>validate</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../src-html/org/tribuo/Model.html#line.159">validate</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;?&gt;&gt;&nbsp;clazz)</pre>
+<pre>public&nbsp;boolean&nbsp;validate(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;? extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;?&gt;&gt;&nbsp;clazz)</pre>
 <div class="block">Validates that this Model does in fact support the supplied output type.
  <p>
  As the output type is erased at runtime, deserialising a Model is an unchecked
@@ -600,7 +600,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>predict</h4>
-<pre>public abstract&nbsp;<a href="../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&nbsp;<a href="../../src-html/org/tribuo/Model.html#line.178">predict</a>(<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&nbsp;example)</pre>
+<pre>public abstract&nbsp;<a href="../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&nbsp;predict(<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&nbsp;example)</pre>
 <div class="block">Uses the model to predict the output for a single example.
  <p>
  predict does not mutate the example.
@@ -621,7 +621,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>predict</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&gt;&nbsp;<a href="../../src-html/org/tribuo/Model.html#line.189">predict</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&gt;&nbsp;examples)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&gt;&nbsp;predict(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&gt;&nbsp;examples)</pre>
 <div class="block">Uses the model to predict the output for multiple examples.
  <p>
  Throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang"><code>IllegalArgumentException</code></a> if the examples have no features
@@ -641,7 +641,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>predict</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&gt;&nbsp;<a href="../../src-html/org/tribuo/Model.html#line.203">predict</a>(<a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&nbsp;examples)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&gt;&nbsp;predict(<a href="../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&nbsp;examples)</pre>
 <div class="block">Uses the model to predict the outputs for multiple examples contained in
  a data set.
  <p>
@@ -662,7 +662,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>innerPredict</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&gt;&nbsp;<a href="../../src-html/org/tribuo/Model.html#line.212">innerPredict</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&gt;&nbsp;examples)</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&gt;&nbsp;innerPredict(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&gt;&nbsp;examples)</pre>
 <div class="block">Called by the base implementations of <a href="../../org/tribuo/Model.html#predict-java.lang.Iterable-"><code>predict(Iterable)</code></a> and <a href="../../org/tribuo/Model.html#predict-org.tribuo.Dataset-"><code>predict(Dataset)</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -678,7 +678,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>getTopFeatures</h4>
-<pre>public abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&gt;&gt;&nbsp;<a href="../../src-html/org/tribuo/Model.html#line.234">getTopFeatures</a>(int&nbsp;n)</pre>
+<pre>public abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&gt;&gt;&nbsp;getTopFeatures(int&nbsp;n)</pre>
 <div class="block">Gets the top <code>n</code> features associated with this model.
  <p>
  If the model does not produce per output feature lists, it returns
@@ -703,7 +703,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>getExcuse</h4>
-<pre>public abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../org/tribuo/Excuse.html" title="class in org.tribuo">Excuse</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&gt;&nbsp;<a href="../../src-html/org/tribuo/Model.html#line.247">getExcuse</a>(<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&nbsp;example)</pre>
+<pre>public abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../org/tribuo/Excuse.html" title="class in org.tribuo">Excuse</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&gt;&nbsp;getExcuse(<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&nbsp;example)</pre>
 <div class="block">Generates an excuse for an example.
  <p>
  This attempts to explain a classification result. Generating an excuse may be quite an expensive operation.
@@ -725,7 +725,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>getExcuses</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../org/tribuo/Excuse.html" title="class in org.tribuo">Excuse</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&gt;&gt;&nbsp;<a href="../../src-html/org/tribuo/Model.html#line.260">getExcuses</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&gt;&nbsp;examples)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../org/tribuo/Excuse.html" title="class in org.tribuo">Excuse</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&gt;&gt;&nbsp;getExcuses(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&gt;&nbsp;examples)</pre>
 <div class="block">Generates an excuse for each example.
  <p>
  This may be an expensive operation, and probably should be overridden in subclasses for performance reasons.
@@ -747,7 +747,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&nbsp;<a href="../../src-html/org/tribuo/Model.html#line.277">copy</a>()</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&nbsp;copy()</pre>
 <div class="block">Copies a model, returning a deep copy of any mutable state, and a shallow copy otherwise.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -761,7 +761,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>protected abstract&nbsp;<a href="../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&nbsp;<a href="../../src-html/org/tribuo/Model.html#line.291">copy</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newName,
+<pre>protected abstract&nbsp;<a href="../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;&nbsp;copy(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newName,
                                  <a href="../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;newProvenance)</pre>
 <div class="block">Copies a model, replacing it's provenance and name with the supplied values.
  <p>
@@ -781,7 +781,7 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../src-html/org/tribuo/Model.html#line.294">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -856,6 +856,6 @@ implements com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../..
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

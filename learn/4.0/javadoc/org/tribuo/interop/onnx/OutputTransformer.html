@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <a href="../../../../src-html/org/tribuo/interop/onnx/OutputTransformer.html#line.36">OutputTransformer</a>&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public interface <span class="typeNameLabel">OutputTransformer&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&gt;, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
 <div class="block">Converts an <code>OnnxValue</code> into an <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo"><code>Output</code></a> or a <a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo"><code>Prediction</code></a>.
  <p>
@@ -204,7 +204,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>transformToPrediction</h4>
-<pre><a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/interop/onnx/OutputTransformer.html#line.46">transformToPrediction</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;ai.onnxruntime.OnnxValue&gt;&nbsp;value,
+<pre><a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&nbsp;transformToPrediction(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;ai.onnxruntime.OnnxValue&gt;&nbsp;value,
                                     <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&nbsp;outputIDInfo,
                                     int&nbsp;numValidFeatures,
                                     <a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&nbsp;example)</pre>
@@ -226,7 +226,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>transformToOutput</h4>
-<pre><a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&nbsp;<a href="../../../../src-html/org/tribuo/interop/onnx/OutputTransformer.html#line.54">transformToOutput</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;ai.onnxruntime.OnnxValue&gt;&nbsp;value,
+<pre><a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&nbsp;transformToOutput(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;ai.onnxruntime.OnnxValue&gt;&nbsp;value,
                     <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&nbsp;outputIDInfo)</pre>
 <div class="block">Converts a <code>OnnxValue</code> into the specified output type.</div>
 <dl>
@@ -244,7 +244,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>transformToBatchPrediction</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/interop/onnx/OutputTransformer.html#line.64">transformToBatchPrediction</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;ai.onnxruntime.OnnxValue&gt;&nbsp;value,
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&gt;&nbsp;transformToBatchPrediction(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;ai.onnxruntime.OnnxValue&gt;&nbsp;value,
                                                <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&nbsp;outputIDInfo,
                                                int[]&nbsp;numValidFeatures,
                                                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&gt;&nbsp;examples)</pre>
@@ -266,7 +266,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>transformToBatchOutput</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/interop/onnx/OutputTransformer.html#line.72">transformToBatchOutput</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;ai.onnxruntime.OnnxValue&gt;&nbsp;value,
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&nbsp;transformToBatchOutput(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;ai.onnxruntime.OnnxValue&gt;&nbsp;value,
                                <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&nbsp;outputIDInfo)</pre>
 <div class="block">Converts a <code>OnnxValue</code> containing multiple outputs into a list of <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo"><code>Output</code></a>s.</div>
 <dl>
@@ -284,7 +284,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockListLast">
 <li class="blockList">
 <h4>generatesProbabilities</h4>
-<pre>boolean&nbsp;<a href="../../../../src-html/org/tribuo/interop/onnx/OutputTransformer.html#line.78">generatesProbabilities</a>()</pre>
+<pre>boolean&nbsp;generatesProbabilities()</pre>
 <div class="block">Does this OutputTransformer generate probabilities.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -360,6 +360,6 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

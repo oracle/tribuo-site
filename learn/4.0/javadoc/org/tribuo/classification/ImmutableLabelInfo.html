@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../src-html/org/tribuo/classification/ImmutableLabelInfo.html#line.39">ImmutableLabelInfo</a>
+<pre>public class <span class="typeNameLabel">ImmutableLabelInfo</span>
 extends <a href="../../../org/tribuo/classification/LabelInfo.html" title="class in org.tribuo.classification">LabelInfo</a>
 implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;</pre>
 <div class="block">An ImmutableOutputInfo object for Labels.
@@ -256,7 +256,7 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>getDomain</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/classification/ImmutableLabelInfo.html#line.94">getDomain</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;getDomain()</pre>
 <div class="block">Returns the set of possible <a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification"><code>Label</code></a>s that this LabelInfo has seen.
 
  Each label has the default score of Double.NaN.</div>
@@ -276,7 +276,7 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>getID</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../src-html/org/tribuo/classification/ImmutableLabelInfo.html#line.99">getID</a>(<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&nbsp;output)</pre>
+<pre>public&nbsp;int&nbsp;getID(<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&nbsp;output)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/ImmutableOutputInfo.html#getID-T-">ImmutableOutputInfo</a></code></span></div>
 <div class="block">Return the id number associated with this output, or -1 if the output is unknown.</div>
 <dl>
@@ -295,7 +295,7 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>getOutput</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&nbsp;<a href="../../../src-html/org/tribuo/classification/ImmutableLabelInfo.html#line.104">getOutput</a>(int&nbsp;id)</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&nbsp;getOutput(int&nbsp;id)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/ImmutableOutputInfo.html#getOutput-int-">ImmutableOutputInfo</a></code></span></div>
 <div class="block">Returns the output associated with this id, or null if the id is unknown.</div>
 <dl>
@@ -314,7 +314,7 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>getTotalObservations</h4>
-<pre>public&nbsp;long&nbsp;<a href="../../../src-html/org/tribuo/classification/ImmutableLabelInfo.html#line.115">getTotalObservations</a>()</pre>
+<pre>public&nbsp;long&nbsp;getTotalObservations()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/ImmutableOutputInfo.html#getTotalObservations--">ImmutableOutputInfo</a></code></span></div>
 <div class="block">Returns the total number of observed outputs seen by this ImmutableOutputInfo.</div>
 <dl>
@@ -331,7 +331,7 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>getLabelCount</h4>
-<pre>public&nbsp;long&nbsp;<a href="../../../src-html/org/tribuo/classification/ImmutableLabelInfo.html#line.128">getLabelCount</a>(int&nbsp;id)</pre>
+<pre>public&nbsp;long&nbsp;getLabelCount(int&nbsp;id)</pre>
 <div class="block">Returns the number of times the supplied id was observed before this LabelInfo was frozen.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -347,7 +347,7 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/classification/ImmutableLabelInfo.html" title="class in org.tribuo.classification">ImmutableLabelInfo</a>&nbsp;<a href="../../../src-html/org/tribuo/classification/ImmutableLabelInfo.html#line.139">copy</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/classification/ImmutableLabelInfo.html" title="class in org.tribuo.classification">ImmutableLabelInfo</a>&nbsp;copy()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/OutputInfo.html#copy--">OutputInfo</a></code></span></div>
 <div class="block">Generates a copy of this OutputInfo, including it's mutability.</div>
 <dl>
@@ -366,7 +366,7 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>toReadableString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/classification/ImmutableLabelInfo.html#line.144">toReadableString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toReadableString()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/OutputInfo.html#toReadableString--">OutputInfo</a></code></span></div>
 <div class="block">Generates a String form of this OutputInfo.
  <p>
@@ -385,7 +385,7 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <ul class="blockListLast">
 <li class="blockList">
 <h4>iterator</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>,<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&gt;&nbsp;<a href="../../../src-html/org/tribuo/classification/ImmutableLabelInfo.html#line.162">iterator</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>,<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&gt;&nbsp;iterator()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true#iterator--" title="class or interface in java.lang">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>,<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&gt;</code></dd>
@@ -460,6 +460,6 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

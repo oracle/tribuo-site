@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.26">SGDVector</a>
+<pre>public interface <span class="typeNameLabel">SGDVector</span>
 extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../org/tribuo/math/la/VectorTuple.html" title="class in org.tribuo.math.la">VectorTuple</a>&gt;</pre>
 <div class="block">Interface for 1 dimensional <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a>s.
  <p>
@@ -319,7 +319,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre><a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.32">copy</a>()</pre>
+<pre><a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;copy()</pre>
 <div class="block">Returns a deep copy of this vector.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -333,7 +333,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>size</h4>
-<pre>int&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.38">size</a>()</pre>
+<pre>int&nbsp;size()</pre>
 <div class="block">Returns the dimensionality of this vector.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -347,7 +347,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>numActiveElements</h4>
-<pre>int&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.45">numActiveElements</a>()</pre>
+<pre>int&nbsp;numActiveElements()</pre>
 <div class="block">Returns the number of non-zero elements (on construction, an element
  could be set to zero and it would still remain active).</div>
 <dl>
@@ -362,7 +362,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>scale</h4>
-<pre><a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.52">scale</a>(double&nbsp;coefficient)</pre>
+<pre><a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;scale(double&nbsp;coefficient)</pre>
 <div class="block">Generates a new vector with each element scaled by <code>coefficient</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -378,7 +378,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>add</h4>
-<pre>void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.59">add</a>(int&nbsp;index,
+<pre>void&nbsp;add(int&nbsp;index,
          double&nbsp;value)</pre>
 <div class="block">Adds <code>value</code> to the element at <code>index</code>.</div>
 <dl>
@@ -394,7 +394,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>add</h4>
-<pre><a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.68">add</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
+<pre><a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;add(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
 <div class="block">Adds <code>other</code> to this vector, producing a new <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la"><code>SGDVector</code></a>.
  Adding Dense to Dense/Sparse produces a <a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la"><code>DenseVector</code></a>, adding Sparse to
  Sparse produces a <a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la"><code>SparseVector</code></a>.</div>
@@ -412,7 +412,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>subtract</h4>
-<pre><a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.77">subtract</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
+<pre><a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;subtract(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
 <div class="block">Subtracts <code>other</code> from this vector, producing a new <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la"><code>SGDVector</code></a>.
  Subtracting Dense from Dense/Sparse produces a <a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la"><code>DenseVector</code></a>, subtracting Sparse from
  Sparse produces a <a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la"><code>SparseVector</code></a>.</div>
@@ -430,7 +430,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>dot</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.84">dot</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
+<pre>double&nbsp;dot(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
 <div class="block">Calculates the dot product between this vector and <code>other</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -446,7 +446,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>outer</h4>
-<pre><a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.91">outer</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
+<pre><a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;outer(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
 <div class="block">Generates the matrix representing the outer product between the two vectors.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -462,7 +462,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>sum</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.97">sum</a>()</pre>
+<pre>double&nbsp;sum()</pre>
 <div class="block">Calculates the sum of this vector.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -476,7 +476,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>twoNorm</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.104">twoNorm</a>()</pre>
+<pre>double&nbsp;twoNorm()</pre>
 <div class="block">Calculates the euclidean norm for this vector.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -492,7 +492,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>oneNorm</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.110">oneNorm</a>()</pre>
+<pre>double&nbsp;oneNorm()</pre>
 <div class="block">Calculates the Manhattan norm for this vector.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -506,7 +506,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.117">get</a>(int&nbsp;index)</pre>
+<pre>double&nbsp;get(int&nbsp;index)</pre>
 <div class="block">Gets an element from this vector.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -522,7 +522,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>set</h4>
-<pre>void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.124">set</a>(int&nbsp;index,
+<pre>void&nbsp;set(int&nbsp;index,
          double&nbsp;value)</pre>
 <div class="block">Sets the <code>index</code> to the <code>value</code>.</div>
 <dl>
@@ -538,7 +538,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>indexOfMax</h4>
-<pre>int&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.130">indexOfMax</a>()</pre>
+<pre>int&nbsp;indexOfMax()</pre>
 <div class="block">Returns the index of the maximum value. Requires probing the array.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -552,7 +552,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>maxValue</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.136">maxValue</a>()</pre>
+<pre>double&nbsp;maxValue()</pre>
 <div class="block">Returns the maximum value. Requires probing the array.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -566,7 +566,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>minValue</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.142">minValue</a>()</pre>
+<pre>double&nbsp;minValue()</pre>
 <div class="block">Returns the minimum value. Requires probing the array.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -580,7 +580,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>normalize</h4>
-<pre>void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.148">normalize</a>(<a href="../../../../org/tribuo/math/util/VectorNormalizer.html" title="interface in org.tribuo.math.util">VectorNormalizer</a>&nbsp;normalizer)</pre>
+<pre>void&nbsp;normalize(<a href="../../../../org/tribuo/math/util/VectorNormalizer.html" title="interface in org.tribuo.math.util">VectorNormalizer</a>&nbsp;normalizer)</pre>
 <div class="block">Normalizes the vector using the supplied vector normalizer.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -594,7 +594,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>l2Distance</h4>
-<pre>default&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.155">l2Distance</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
+<pre>default&nbsp;double&nbsp;l2Distance(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
 <div class="block">Synonym for euclideanDistance.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -610,7 +610,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>euclideanDistance</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.164">euclideanDistance</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
+<pre>double&nbsp;euclideanDistance(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
 <div class="block">The l2 or euclidean distance between this vector and the other vector.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -626,7 +626,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>l1Distance</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.171">l1Distance</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
+<pre>double&nbsp;l1Distance(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
 <div class="block">The l1 or Manhattan distance between this vector and the other vector.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -642,7 +642,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>cosineDistance</h4>
-<pre>default&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.179">cosineDistance</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
+<pre>default&nbsp;double&nbsp;cosineDistance(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
 <div class="block">Calculates the cosine distance of two vectors.
  1 - cos(x,y)</div>
 <dl>
@@ -659,7 +659,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>cosineSimilarity</h4>
-<pre>default&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.189">cosineSimilarity</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
+<pre>default&nbsp;double&nbsp;cosineSimilarity(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
 <div class="block">Calculates the cosine similarity of two vectors.
  cos(x,y) = dot(x,y) / (norm(x) * norm(y))</div>
 <dl>
@@ -676,7 +676,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockList">
 <li class="blockList">
 <h4>variance</h4>
-<pre>default&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.202">variance</a>()</pre>
+<pre>default&nbsp;double&nbsp;variance()</pre>
 <div class="block">Calculates the variance of this vector.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -690,7 +690,7 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <ul class="blockListLast">
 <li class="blockList">
 <h4>variance</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SGDVector.html#line.212">variance</a>(double&nbsp;mean)</pre>
+<pre>double&nbsp;variance(double&nbsp;mean)</pre>
 <div class="block">Calculates the variance of this vector based on the supplied mean.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -768,6 +768,6 @@ extends <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

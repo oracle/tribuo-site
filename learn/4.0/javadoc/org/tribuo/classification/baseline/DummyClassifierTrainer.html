@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public final class <a href="../../../../src-html/org/tribuo/classification/baseline/DummyClassifierTrainer.html#line.40">DummyClassifierTrainer</a>
+<pre>public final class <span class="typeNameLabel">DummyClassifierTrainer</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;</pre>
 <div class="block">A trainer for simple baseline classifiers. Use this only for comparison purposes, if you can't beat these
@@ -257,7 +257,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockList">
 <li class="blockList">
 <h4>postConfig</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/classification/baseline/DummyClassifierTrainer.html#line.81">postConfig</a>()</pre>
+<pre>public&nbsp;void&nbsp;postConfig()</pre>
 <div class="block">Used by the OLCUT configuration system, and should not be called by external code.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -271,7 +271,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockList">
 <li class="blockList">
 <h4>train</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/classification/baseline/DummyClassifierTrainer.html#line.88">train</a>(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;examples,
+<pre>public&nbsp;<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;train(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;examples,
                           <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,com.oracle.labs.mlrg.olcut.provenance.Provenance&gt;&nbsp;instanceProvenance)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/Trainer.html#train-org.tribuo.Dataset-java.util.Map-">Trainer</a></code></span></div>
 <div class="block">Trains a predictive model using the examples in the given data set.</div>
@@ -292,7 +292,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockList">
 <li class="blockList">
 <h4>getInvocationCount</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/classification/baseline/DummyClassifierTrainer.html#line.113">getInvocationCount</a>()</pre>
+<pre>public&nbsp;int&nbsp;getInvocationCount()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/Trainer.html#getInvocationCount--">Trainer</a></code></span></div>
 <div class="block">The number of times this trainer instance has had it's train method invoked.
  <p>
@@ -312,7 +312,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/classification/baseline/DummyClassifierTrainer.html#line.118">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -325,7 +325,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockList">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&nbsp;<a href="../../../../src-html/org/tribuo/classification/baseline/DummyClassifierTrainer.html#line.135">getProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&gt;</code></dd>
@@ -338,7 +338,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockList">
 <li class="blockList">
 <h4>createStratifiedTrainer</h4>
-<pre>public static&nbsp;<a href="../../../../org/tribuo/classification/baseline/DummyClassifierTrainer.html" title="class in org.tribuo.classification.baseline">DummyClassifierTrainer</a>&nbsp;<a href="../../../../src-html/org/tribuo/classification/baseline/DummyClassifierTrainer.html#line.144">createStratifiedTrainer</a>(long&nbsp;seed)</pre>
+<pre>public static&nbsp;<a href="../../../../org/tribuo/classification/baseline/DummyClassifierTrainer.html" title="class in org.tribuo.classification.baseline">DummyClassifierTrainer</a>&nbsp;createStratifiedTrainer(long&nbsp;seed)</pre>
 <div class="block">Creates a trainer which creates models which return random labels sampled from the training label distribution.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -354,7 +354,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockList">
 <li class="blockList">
 <h4>createConstantTrainer</h4>
-<pre>public static&nbsp;<a href="../../../../org/tribuo/classification/baseline/DummyClassifierTrainer.html" title="class in org.tribuo.classification.baseline">DummyClassifierTrainer</a>&nbsp;<a href="../../../../src-html/org/tribuo/classification/baseline/DummyClassifierTrainer.html#line.156">createConstantTrainer</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;constantLabel)</pre>
+<pre>public static&nbsp;<a href="../../../../org/tribuo/classification/baseline/DummyClassifierTrainer.html" title="class in org.tribuo.classification.baseline">DummyClassifierTrainer</a>&nbsp;createConstantTrainer(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;constantLabel)</pre>
 <div class="block">Creates a trainer which creates models which return a fixed label.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -370,7 +370,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockList">
 <li class="blockList">
 <h4>createUniformTrainer</h4>
-<pre>public static&nbsp;<a href="../../../../org/tribuo/classification/baseline/DummyClassifierTrainer.html" title="class in org.tribuo.classification.baseline">DummyClassifierTrainer</a>&nbsp;<a href="../../../../src-html/org/tribuo/classification/baseline/DummyClassifierTrainer.html#line.168">createUniformTrainer</a>(long&nbsp;seed)</pre>
+<pre>public static&nbsp;<a href="../../../../org/tribuo/classification/baseline/DummyClassifierTrainer.html" title="class in org.tribuo.classification.baseline">DummyClassifierTrainer</a>&nbsp;createUniformTrainer(long&nbsp;seed)</pre>
 <div class="block">Creates a trainer which creates models which return random labels sampled uniformly from the labels seen at training time.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -386,7 +386,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockListLast">
 <li class="blockList">
 <h4>createMostFrequentTrainer</h4>
-<pre>public static&nbsp;<a href="../../../../org/tribuo/classification/baseline/DummyClassifierTrainer.html" title="class in org.tribuo.classification.baseline">DummyClassifierTrainer</a>&nbsp;<a href="../../../../src-html/org/tribuo/classification/baseline/DummyClassifierTrainer.html#line.179">createMostFrequentTrainer</a>()</pre>
+<pre>public static&nbsp;<a href="../../../../org/tribuo/classification/baseline/DummyClassifierTrainer.html" title="class in org.tribuo.classification.baseline">DummyClassifierTrainer</a>&nbsp;createMostFrequentTrainer()</pre>
 <div class="block">Creates a trainer which creates models which return a fixed label, the one which was most frequent in the training data.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -462,6 +462,6 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

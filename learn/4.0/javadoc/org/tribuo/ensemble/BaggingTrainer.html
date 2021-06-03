@@ -116,7 +116,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../src-html/org/tribuo/ensemble/BaggingTrainer.html#line.52">BaggingTrainer</a>&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public class <span class="typeNameLabel">BaggingTrainer&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;T&gt;</pre>
 <div class="block">A Trainer that wraps another trainer and produces a bagged ensemble.
@@ -302,7 +302,7 @@ implements <a href="../../../org/tribuo/Trainer.html" title="interface in org.tr
 <h4>innerTrainer</h4>
 <pre>@Config(mandatory=true,
         description="The trainer to use for each ensemble member.")
-protected&nbsp;<a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../org/tribuo/ensemble/BaggingTrainer.html" title="type parameter in BaggingTrainer">T</a> extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../org/tribuo/ensemble/BaggingTrainer.html" title="type parameter in BaggingTrainer">T</a>&gt;&gt; <a href="../../../src-html/org/tribuo/ensemble/BaggingTrainer.html#line.57">innerTrainer</a></pre>
+protected&nbsp;<a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../org/tribuo/ensemble/BaggingTrainer.html" title="type parameter in BaggingTrainer">T</a> extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../org/tribuo/ensemble/BaggingTrainer.html" title="type parameter in BaggingTrainer">T</a>&gt;&gt; innerTrainer</pre>
 </li>
 </ul>
 <a name="numMembers">
@@ -313,7 +313,7 @@ protected&nbsp;<a href="../../../org/tribuo/Trainer.html" title="interface in or
 <h4>numMembers</h4>
 <pre>@Config(mandatory=true,
         description="The number of ensemble members to train.")
-protected&nbsp;int <a href="../../../src-html/org/tribuo/ensemble/BaggingTrainer.html#line.60">numMembers</a></pre>
+protected&nbsp;int numMembers</pre>
 </li>
 </ul>
 <a name="seed">
@@ -324,7 +324,7 @@ protected&nbsp;int <a href="../../../src-html/org/tribuo/ensemble/BaggingTrainer
 <h4>seed</h4>
 <pre>@Config(mandatory=true,
         description="The seed for the RNG.")
-protected&nbsp;long <a href="../../../src-html/org/tribuo/ensemble/BaggingTrainer.html#line.63">seed</a></pre>
+protected&nbsp;long seed</pre>
 </li>
 </ul>
 <a name="combiner">
@@ -335,7 +335,7 @@ protected&nbsp;long <a href="../../../src-html/org/tribuo/ensemble/BaggingTraine
 <h4>combiner</h4>
 <pre>@Config(mandatory=true,
         description="The combination function to aggregate each ensemble member\'s outputs.")
-protected&nbsp;<a href="../../../org/tribuo/ensemble/EnsembleCombiner.html" title="interface in org.tribuo.ensemble">EnsembleCombiner</a>&lt;<a href="../../../org/tribuo/ensemble/BaggingTrainer.html" title="type parameter in BaggingTrainer">T</a> extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../org/tribuo/ensemble/BaggingTrainer.html" title="type parameter in BaggingTrainer">T</a>&gt;&gt; <a href="../../../src-html/org/tribuo/ensemble/BaggingTrainer.html#line.66">combiner</a></pre>
+protected&nbsp;<a href="../../../org/tribuo/ensemble/EnsembleCombiner.html" title="interface in org.tribuo.ensemble">EnsembleCombiner</a>&lt;<a href="../../../org/tribuo/ensemble/BaggingTrainer.html" title="type parameter in BaggingTrainer">T</a> extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../org/tribuo/ensemble/BaggingTrainer.html" title="type parameter in BaggingTrainer">T</a>&gt;&gt; combiner</pre>
 </li>
 </ul>
 <a name="rng">
@@ -344,7 +344,7 @@ protected&nbsp;<a href="../../../org/tribuo/ensemble/EnsembleCombiner.html" titl
 <ul class="blockList">
 <li class="blockList">
 <h4>rng</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/SplittableRandom.html?is-external=true" title="class or interface in java.util">SplittableRandom</a> <a href="../../../src-html/org/tribuo/ensemble/BaggingTrainer.html#line.68">rng</a></pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/SplittableRandom.html?is-external=true" title="class or interface in java.util">SplittableRandom</a> rng</pre>
 </li>
 </ul>
 <a name="trainInvocationCounter">
@@ -353,7 +353,7 @@ protected&nbsp;<a href="../../../org/tribuo/ensemble/EnsembleCombiner.html" titl
 <ul class="blockListLast">
 <li class="blockList">
 <h4>trainInvocationCounter</h4>
-<pre>protected&nbsp;int <a href="../../../src-html/org/tribuo/ensemble/BaggingTrainer.html#line.70">trainInvocationCounter</a></pre>
+<pre>protected&nbsp;int trainInvocationCounter</pre>
 </li>
 </ul>
 </li>
@@ -370,7 +370,7 @@ protected&nbsp;<a href="../../../org/tribuo/ensemble/EnsembleCombiner.html" titl
 <ul class="blockList">
 <li class="blockList">
 <h4>BaggingTrainer</h4>
-<pre>protected&nbsp;<a href="../../../src-html/org/tribuo/ensemble/BaggingTrainer.html#line.75">BaggingTrainer</a>()</pre>
+<pre>protected&nbsp;BaggingTrainer()</pre>
 <div class="block">For the configuration system.</div>
 </li>
 </ul>
@@ -380,7 +380,7 @@ protected&nbsp;<a href="../../../org/tribuo/ensemble/EnsembleCombiner.html" titl
 <ul class="blockList">
 <li class="blockList">
 <h4>BaggingTrainer</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/ensemble/BaggingTrainer.html#line.77">BaggingTrainer</a>(<a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../org/tribuo/ensemble/BaggingTrainer.html" title="type parameter in BaggingTrainer">T</a>&gt;&nbsp;trainer,
+<pre>public&nbsp;BaggingTrainer(<a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../org/tribuo/ensemble/BaggingTrainer.html" title="type parameter in BaggingTrainer">T</a>&gt;&nbsp;trainer,
                       <a href="../../../org/tribuo/ensemble/EnsembleCombiner.html" title="interface in org.tribuo.ensemble">EnsembleCombiner</a>&lt;<a href="../../../org/tribuo/ensemble/BaggingTrainer.html" title="type parameter in BaggingTrainer">T</a>&gt;&nbsp;combiner,
                       int&nbsp;numMembers)</pre>
 </li>
@@ -391,7 +391,7 @@ protected&nbsp;<a href="../../../org/tribuo/ensemble/EnsembleCombiner.html" titl
 <ul class="blockListLast">
 <li class="blockList">
 <h4>BaggingTrainer</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/ensemble/BaggingTrainer.html#line.81">BaggingTrainer</a>(<a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../org/tribuo/ensemble/BaggingTrainer.html" title="type parameter in BaggingTrainer">T</a>&gt;&nbsp;trainer,
+<pre>public&nbsp;BaggingTrainer(<a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../org/tribuo/ensemble/BaggingTrainer.html" title="type parameter in BaggingTrainer">T</a>&gt;&nbsp;trainer,
                       <a href="../../../org/tribuo/ensemble/EnsembleCombiner.html" title="interface in org.tribuo.ensemble">EnsembleCombiner</a>&lt;<a href="../../../org/tribuo/ensemble/BaggingTrainer.html" title="type parameter in BaggingTrainer">T</a>&gt;&nbsp;combiner,
                       int&nbsp;numMembers,
                       long&nbsp;seed)</pre>
@@ -411,7 +411,7 @@ protected&nbsp;<a href="../../../org/tribuo/ensemble/EnsembleCombiner.html" titl
 <ul class="blockList">
 <li class="blockList">
 <h4>postConfig</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/ensemble/BaggingTrainer.html#line.90">postConfig</a>()</pre>
+<pre>public&nbsp;void&nbsp;postConfig()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>postConfig</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.config.Configurable</code></dd>
@@ -424,7 +424,7 @@ protected&nbsp;<a href="../../../org/tribuo/ensemble/EnsembleCombiner.html" titl
 <ul class="blockList">
 <li class="blockList">
 <h4>ensembleName</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/ensemble/BaggingTrainer.html#line.94">ensembleName</a>()</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;ensembleName()</pre>
 </li>
 </ul>
 <a name="toString--">
@@ -433,7 +433,7 @@ protected&nbsp;<a href="../../../org/tribuo/ensemble/EnsembleCombiner.html" titl
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/ensemble/BaggingTrainer.html#line.99">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -446,7 +446,7 @@ protected&nbsp;<a href="../../../org/tribuo/ensemble/EnsembleCombiner.html" titl
 <ul class="blockList">
 <li class="blockList">
 <h4>train</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/ensemble/BaggingTrainer.html" title="type parameter in BaggingTrainer">T</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/ensemble/BaggingTrainer.html#line.117">train</a>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/ensemble/BaggingTrainer.html" title="type parameter in BaggingTrainer">T</a>&gt;&nbsp;examples,
+<pre>public&nbsp;<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/ensemble/BaggingTrainer.html" title="type parameter in BaggingTrainer">T</a>&gt;&nbsp;train(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/ensemble/BaggingTrainer.html" title="type parameter in BaggingTrainer">T</a>&gt;&nbsp;examples,
                       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,com.oracle.labs.mlrg.olcut.provenance.Provenance&gt;&nbsp;runProvenance)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/Trainer.html#train-org.tribuo.Dataset-java.util.Map-">Trainer</a></code></span></div>
 <div class="block">Trains a predictive model using the examples in the given data set.</div>
@@ -467,7 +467,7 @@ protected&nbsp;<a href="../../../org/tribuo/ensemble/EnsembleCombiner.html" titl
 <ul class="blockList">
 <li class="blockList">
 <h4>trainSingleModel</h4>
-<pre>protected&nbsp;<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/ensemble/BaggingTrainer.html" title="type parameter in BaggingTrainer">T</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/ensemble/BaggingTrainer.html#line.137">trainSingleModel</a>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/ensemble/BaggingTrainer.html" title="type parameter in BaggingTrainer">T</a>&gt;&nbsp;examples,
+<pre>protected&nbsp;<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/ensemble/BaggingTrainer.html" title="type parameter in BaggingTrainer">T</a>&gt;&nbsp;trainSingleModel(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/ensemble/BaggingTrainer.html" title="type parameter in BaggingTrainer">T</a>&gt;&nbsp;examples,
                                     <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDs,
                                     <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/ensemble/BaggingTrainer.html" title="type parameter in BaggingTrainer">T</a>&gt;&nbsp;labelIDs,
                                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/SplittableRandom.html?is-external=true" title="class or interface in java.util">SplittableRandom</a>&nbsp;localRNG,
@@ -480,7 +480,7 @@ protected&nbsp;<a href="../../../org/tribuo/ensemble/EnsembleCombiner.html" titl
 <ul class="blockList">
 <li class="blockList">
 <h4>getInvocationCount</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../src-html/org/tribuo/ensemble/BaggingTrainer.html#line.144">getInvocationCount</a>()</pre>
+<pre>public&nbsp;int&nbsp;getInvocationCount()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/Trainer.html#getInvocationCount--">Trainer</a></code></span></div>
 <div class="block">The number of times this trainer instance has had it's train method invoked.
  <p>
@@ -500,7 +500,7 @@ protected&nbsp;<a href="../../../org/tribuo/ensemble/EnsembleCombiner.html" titl
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&nbsp;<a href="../../../src-html/org/tribuo/ensemble/BaggingTrainer.html#line.149">getProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&gt;</code></dd>
@@ -575,6 +575,6 @@ protected&nbsp;<a href="../../../org/tribuo/ensemble/EnsembleCombiner.html" titl
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

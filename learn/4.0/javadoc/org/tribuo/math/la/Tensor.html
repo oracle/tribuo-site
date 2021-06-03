@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <a href="../../../../src-html/org/tribuo/math/la/Tensor.html#line.26">Tensor</a>
+<pre>public interface <span class="typeNameLabel">Tensor</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
 <div class="block">An interface for Tensors, currently Vectors and Matrices.</div>
 </li>
@@ -226,7 +226,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <ul class="blockList">
 <li class="blockList">
 <h4>shapeSum</h4>
-<pre>static&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Tensor.html#line.28">shapeSum</a>(int[]&nbsp;shape)</pre>
+<pre>static&nbsp;int&nbsp;shapeSum(int[]&nbsp;shape)</pre>
 </li>
 </ul>
 <a name="shapeCheck-org.tribuo.math.la.Tensor-org.tribuo.math.la.Tensor-">
@@ -235,7 +235,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <ul class="blockList">
 <li class="blockList">
 <h4>shapeCheck</h4>
-<pre>static&nbsp;boolean&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Tensor.html#line.36">shapeCheck</a>(<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;first,
+<pre>static&nbsp;boolean&nbsp;shapeCheck(<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;first,
                           <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;second)</pre>
 </li>
 </ul>
@@ -245,7 +245,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <ul class="blockList">
 <li class="blockList">
 <h4>getShape</h4>
-<pre>int[]&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Tensor.html#line.48">getShape</a>()</pre>
+<pre>int[]&nbsp;getShape()</pre>
 <div class="block">Returns an int array specifying the shape of this <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -259,7 +259,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <ul class="blockList">
 <li class="blockList">
 <h4>reshape</h4>
-<pre><a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Tensor.html#line.55">reshape</a>(int[]&nbsp;shape)</pre>
+<pre><a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;reshape(int[]&nbsp;shape)</pre>
 <div class="block">Reshapes the Tensor to the supplied shape. Throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang"><code>IllegalArgumentException</code></a> if the shape isn't compatible.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -275,7 +275,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <ul class="blockList">
 <li class="blockList">
 <h4>intersectAndAddInPlace</h4>
-<pre>void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Tensor.html#line.67">intersectAndAddInPlace</a>(<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;other,
+<pre>void&nbsp;intersectAndAddInPlace(<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;other,
                             <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function">DoubleUnaryOperator</a>&nbsp;f)</pre>
 <div class="block">Updates this <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a> by adding all the values from the intersection with <code>other</code>.
  <p>
@@ -296,7 +296,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <ul class="blockList">
 <li class="blockList">
 <h4>intersectAndAddInPlace</h4>
-<pre>default&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Tensor.html#line.75">intersectAndAddInPlace</a>(<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;other)</pre>
+<pre>default&nbsp;void&nbsp;intersectAndAddInPlace(<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;other)</pre>
 <div class="block">Same as <a href="../../../../org/tribuo/math/la/Tensor.html#intersectAndAddInPlace-org.tribuo.math.la.Tensor-java.util.function.DoubleUnaryOperator-"><code>intersectAndAddInPlace(org.tribuo.math.la.Tensor, java.util.function.DoubleUnaryOperator)</code></a>, but applies the identity function.
  <p>
  Each value is updated as value += otherValue.</div>
@@ -312,7 +312,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <ul class="blockList">
 <li class="blockList">
 <h4>hadamardProductInPlace</h4>
-<pre>void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Tensor.html#line.89">hadamardProductInPlace</a>(<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;other,
+<pre>void&nbsp;hadamardProductInPlace(<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;other,
                             <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function">DoubleUnaryOperator</a>&nbsp;f)</pre>
 <div class="block">Updates this <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a> with the Hadamard product
  (i.e., a term by term multiply) of this and <code>other</code>.
@@ -333,7 +333,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <ul class="blockList">
 <li class="blockList">
 <h4>hadamardProductInPlace</h4>
-<pre>default&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Tensor.html#line.97">hadamardProductInPlace</a>(<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;other)</pre>
+<pre>default&nbsp;void&nbsp;hadamardProductInPlace(<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;other)</pre>
 <div class="block">Same as <a href="../../../../org/tribuo/math/la/Tensor.html#hadamardProductInPlace-org.tribuo.math.la.Tensor-java.util.function.DoubleUnaryOperator-"><code>hadamardProductInPlace(org.tribuo.math.la.Tensor, java.util.function.DoubleUnaryOperator)</code></a>, but applies the identity function.
  <p>
  Each value is updated as value *= otherValue.</div>
@@ -349,7 +349,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <ul class="blockList">
 <li class="blockList">
 <h4>foreachInPlace</h4>
-<pre>void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Tensor.html#line.105">foreachInPlace</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function">DoubleUnaryOperator</a>&nbsp;f)</pre>
+<pre>void&nbsp;foreachInPlace(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function">DoubleUnaryOperator</a>&nbsp;f)</pre>
 <div class="block">Applies a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function"><code>DoubleUnaryOperator</code></a> elementwise to this <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -363,7 +363,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <ul class="blockList">
 <li class="blockList">
 <h4>scaleInPlace</h4>
-<pre>default&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Tensor.html#line.111">scaleInPlace</a>(double&nbsp;coefficient)</pre>
+<pre>default&nbsp;void&nbsp;scaleInPlace(double&nbsp;coefficient)</pre>
 <div class="block">Scales each element of this <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a> by <code>coefficient</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -377,7 +377,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <ul class="blockList">
 <li class="blockList">
 <h4>scalarAddInPlace</h4>
-<pre>default&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Tensor.html#line.119">scalarAddInPlace</a>(double&nbsp;scalar)</pre>
+<pre>default&nbsp;void&nbsp;scalarAddInPlace(double&nbsp;scalar)</pre>
 <div class="block">Adds <code>scalar</code> to each element of this <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -391,7 +391,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>twoNorm</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/Tensor.html#line.127">twoNorm</a>()</pre>
+<pre>double&nbsp;twoNorm()</pre>
 <div class="block">Calculates the euclidean norm for this vector.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -467,6 +467,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

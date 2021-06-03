@@ -1396,18 +1396,18 @@
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code><a href="../../../org/tribuo/evaluation/Evaluator.html" title="type parameter in Evaluator">E</a></code></td>
+<td class="colLast"><span class="typeNameLabel">Evaluator.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/evaluation/Evaluator.html#evaluate-org.tribuo.Model-org.tribuo.Dataset-">evaluate</a></span>(<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/evaluation/Evaluator.html" title="type parameter in Evaluator">T</a>&gt;&nbsp;model,
+        <a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/evaluation/Evaluator.html" title="type parameter in Evaluator">T</a>&gt;&nbsp;dataset)</code>
+<div class="block">Evaluates the dataset using the supplied model, returning an immutable <a href="../../../org/tribuo/evaluation/Evaluation.html" title="interface in org.tribuo.evaluation"><code>Evaluation</code></a> of the appropriate type.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code><a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">E</a></code></td>
 <td class="colLast"><span class="typeNameLabel">AbstractEvaluator.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/evaluation/AbstractEvaluator.html#evaluate-org.tribuo.Model-org.tribuo.Dataset-">evaluate</a></span>(<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">T</a>&gt;&nbsp;model,
         <a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">T</a>&gt;&nbsp;dataset)</code>
 <div class="block">Produces an evaluation for the supplied model and dataset, by calling <a href="../../../org/tribuo/Model.html#predict-org.tribuo.Example-"><code>Model.predict(org.tribuo.Example&lt;T&gt;)</code></a>
  to create the predictions, then aggregating the appropriate statistics.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../org/tribuo/evaluation/Evaluator.html" title="type parameter in Evaluator">E</a></code></td>
-<td class="colLast"><span class="typeNameLabel">Evaluator.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/evaluation/Evaluator.html#evaluate-org.tribuo.Model-org.tribuo.Dataset-">evaluate</a></span>(<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/evaluation/Evaluator.html" title="type parameter in Evaluator">T</a>&gt;&nbsp;model,
-        <a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/evaluation/Evaluator.html" title="type parameter in Evaluator">T</a>&gt;&nbsp;dataset)</code>
-<div class="block">Evaluates the dataset using the supplied model, returning an immutable <a href="../../../org/tribuo/evaluation/Evaluation.html" title="interface in org.tribuo.evaluation"><code>Evaluation</code></a> of the appropriate type.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -1580,13 +1580,13 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/interop/tensorflow/TensorflowCheckpointTrainer.html" title="type parameter in TensorflowCheckpointTrainer">T</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">TensorflowCheckpointTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/interop/tensorflow/TensorflowCheckpointTrainer.html#train-org.tribuo.Dataset-java.util.Map-">train</a></span>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/interop/tensorflow/TensorflowCheckpointTrainer.html" title="type parameter in TensorflowCheckpointTrainer">T</a>&gt;&nbsp;examples,
+<td class="colFirst"><code><a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/interop/tensorflow/TensorflowTrainer.html" title="type parameter in TensorflowTrainer">T</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">TensorflowTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/interop/tensorflow/TensorflowTrainer.html#train-org.tribuo.Dataset-java.util.Map-">train</a></span>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/interop/tensorflow/TensorflowTrainer.html" title="type parameter in TensorflowTrainer">T</a>&gt;&nbsp;examples,
      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,com.oracle.labs.mlrg.olcut.provenance.Provenance&gt;&nbsp;runProvenance)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/interop/tensorflow/TensorflowTrainer.html" title="type parameter in TensorflowTrainer">T</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">TensorflowTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/interop/tensorflow/TensorflowTrainer.html#train-org.tribuo.Dataset-java.util.Map-">train</a></span>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/interop/tensorflow/TensorflowTrainer.html" title="type parameter in TensorflowTrainer">T</a>&gt;&nbsp;examples,
+<td class="colFirst"><code><a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/interop/tensorflow/TensorflowCheckpointTrainer.html" title="type parameter in TensorflowCheckpointTrainer">T</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">TensorflowCheckpointTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/interop/tensorflow/TensorflowCheckpointTrainer.html#train-org.tribuo.Dataset-java.util.Map-">train</a></span>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/interop/tensorflow/TensorflowCheckpointTrainer.html" title="type parameter in TensorflowCheckpointTrainer">T</a>&gt;&nbsp;examples,
      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,com.oracle.labs.mlrg.olcut.provenance.Provenance&gt;&nbsp;runProvenance)</code>&nbsp;</td>
 </tr>
 </tbody>
@@ -1851,21 +1851,21 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionSparseModel</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SkeletalIndependentRegressionSparseTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html#train-org.tribuo.Dataset-">train</a></span>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;examples)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionModel</a></code></td>
 <td class="colLast"><span class="typeNameLabel">SkeletalIndependentRegressionTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionTrainer.html#train-org.tribuo.Dataset-">train</a></span>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;examples)</code>&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionSparseModel</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SkeletalIndependentRegressionSparseTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html#train-org.tribuo.Dataset-java.util.Map-">train</a></span>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;examples,
+<td class="colLast"><span class="typeNameLabel">SkeletalIndependentRegressionSparseTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html#train-org.tribuo.Dataset-">train</a></span>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;examples)</code>&nbsp;</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionModel</a></code></td>
+<td class="colLast"><span class="typeNameLabel">SkeletalIndependentRegressionTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionTrainer.html#train-org.tribuo.Dataset-java.util.Map-">train</a></span>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;examples,
      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,com.oracle.labs.mlrg.olcut.provenance.Provenance&gt;&nbsp;runProvenance)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionModel</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SkeletalIndependentRegressionTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionTrainer.html#train-org.tribuo.Dataset-java.util.Map-">train</a></span>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;examples,
+<td class="colFirst"><code><a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionSparseModel</a></code></td>
+<td class="colLast"><span class="typeNameLabel">SkeletalIndependentRegressionSparseTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html#train-org.tribuo.Dataset-java.util.Map-">train</a></span>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;examples,
      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,com.oracle.labs.mlrg.olcut.provenance.Provenance&gt;&nbsp;runProvenance)</code>&nbsp;</td>
 </tr>
 </tbody>
@@ -1924,11 +1924,11 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>protected <a href="../../../org/tribuo/common/tree/AbstractTrainingNode.html" title="class in org.tribuo.common.tree">AbstractTrainingNode</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">CARTJointRegressionTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/regression/rtree/CARTJointRegressionTrainer.html#mkTrainingNode-org.tribuo.Dataset-">mkTrainingNode</a></span>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;examples)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">CARTRegressionTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/regression/rtree/CARTRegressionTrainer.html#mkTrainingNode-org.tribuo.Dataset-">mkTrainingNode</a></span>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;examples)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>protected <a href="../../../org/tribuo/common/tree/AbstractTrainingNode.html" title="class in org.tribuo.common.tree">AbstractTrainingNode</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">CARTRegressionTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/regression/rtree/CARTRegressionTrainer.html#mkTrainingNode-org.tribuo.Dataset-">mkTrainingNode</a></span>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;examples)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">CARTJointRegressionTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/regression/rtree/CARTJointRegressionTrainer.html#mkTrainingNode-org.tribuo.Dataset-">mkTrainingNode</a></span>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;examples)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../org/tribuo/common/tree/TreeModel.html" title="class in org.tribuo.common.tree">TreeModel</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;</code></td>
@@ -2004,16 +2004,16 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../org/tribuo/SparseModel.html" title="class in org.tribuo">SparseModel</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">ElasticNetCDTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/regression/slm/ElasticNetCDTrainer.html#train-org.tribuo.Dataset-java.util.Map-">train</a></span>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;examples,
-     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,com.oracle.labs.mlrg.olcut.provenance.Provenance&gt;&nbsp;runProvenance)</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../org/tribuo/regression/slm/SparseLinearModel.html" title="class in org.tribuo.regression.slm">SparseLinearModel</a></code></td>
 <td class="colLast"><span class="typeNameLabel">SLMTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/regression/slm/SLMTrainer.html#train-org.tribuo.Dataset-java.util.Map-">train</a></span>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;examples,
      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,com.oracle.labs.mlrg.olcut.provenance.Provenance&gt;&nbsp;runProvenance)</code>
 <div class="block">Trains a sparse linear model.</div>
 </td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="../../../org/tribuo/SparseModel.html" title="class in org.tribuo">SparseModel</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">ElasticNetCDTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/regression/slm/ElasticNetCDTrainer.html#train-org.tribuo.Dataset-java.util.Map-">train</a></span>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;examples,
+     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,com.oracle.labs.mlrg.olcut.provenance.Provenance&gt;&nbsp;runProvenance)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -2144,6 +2144,6 @@
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

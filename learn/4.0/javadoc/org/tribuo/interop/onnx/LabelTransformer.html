@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/interop/onnx/LabelTransformer.html#line.46">LabelTransformer</a>
+<pre>public class <span class="typeNameLabel">LabelTransformer</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html" title="interface in org.tribuo.interop.onnx">OutputTransformer</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;</pre>
 <div class="block">Can convert an <code>OnnxValue</code> into a <a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo"><code>Prediction</code></a> or a <a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification"><code>Label</code></a>.
@@ -240,7 +240,7 @@ implements <a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html" 
 <ul class="blockListLast">
 <li class="blockList">
 <h4>LabelTransformer</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/interop/onnx/LabelTransformer.html#line.46">LabelTransformer</a>()</pre>
+<pre>public&nbsp;LabelTransformer()</pre>
 </li>
 </ul>
 </li>
@@ -257,7 +257,7 @@ implements <a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html" 
 <ul class="blockList">
 <li class="blockList">
 <h4>transformToPrediction</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/interop/onnx/LabelTransformer.html#line.51">transformToPrediction</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;ai.onnxruntime.OnnxValue&gt;&nbsp;tensor,
+<pre>public&nbsp;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;transformToPrediction(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;ai.onnxruntime.OnnxValue&gt;&nbsp;tensor,
                                                <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;outputIDInfo,
                                                int&nbsp;numValidFeatures,
                                                <a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;example)</pre>
@@ -282,7 +282,7 @@ implements <a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html" 
 <ul class="blockList">
 <li class="blockList">
 <h4>transformToOutput</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&nbsp;<a href="../../../../src-html/org/tribuo/interop/onnx/LabelTransformer.html#line.73">transformToOutput</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;ai.onnxruntime.OnnxValue&gt;&nbsp;tensor,
+<pre>public&nbsp;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&nbsp;transformToOutput(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;ai.onnxruntime.OnnxValue&gt;&nbsp;tensor,
                                <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;outputIDInfo)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html#transformToOutput-java.util.List-org.tribuo.ImmutableOutputInfo-">OutputTransformer</a></code></span></div>
 <div class="block">Converts a <code>OnnxValue</code> into the specified output type.</div>
@@ -303,7 +303,7 @@ implements <a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html" 
 <ul class="blockList">
 <li class="blockList">
 <h4>transformToBatchPrediction</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/interop/onnx/LabelTransformer.html#line.160">transformToBatchPrediction</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;ai.onnxruntime.OnnxValue&gt;&nbsp;tensor,
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&gt;&nbsp;transformToBatchPrediction(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;ai.onnxruntime.OnnxValue&gt;&nbsp;tensor,
                                                           <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;outputIDInfo,
                                                           int[]&nbsp;numValidFeatures,
                                                           <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&gt;&nbsp;examples)</pre>
@@ -328,7 +328,7 @@ implements <a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html" 
 <ul class="blockList">
 <li class="blockList">
 <h4>transformToBatchOutput</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/interop/onnx/LabelTransformer.html#line.176">transformToBatchOutput</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;ai.onnxruntime.OnnxValue&gt;&nbsp;tensor,
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;transformToBatchOutput(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;ai.onnxruntime.OnnxValue&gt;&nbsp;tensor,
                                           <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;outputIDInfo)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html#transformToBatchOutput-java.util.List-org.tribuo.ImmutableOutputInfo-">OutputTransformer</a></code></span></div>
 <div class="block">Converts a <code>OnnxValue</code> containing multiple outputs into a list of <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo"><code>Output</code></a>s.</div>
@@ -349,7 +349,7 @@ implements <a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html" 
 <ul class="blockList">
 <li class="blockList">
 <h4>generatesProbabilities</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../../src-html/org/tribuo/interop/onnx/LabelTransformer.html#line.188">generatesProbabilities</a>()</pre>
+<pre>public&nbsp;boolean&nbsp;generatesProbabilities()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html#generatesProbabilities--">OutputTransformer</a></code></span></div>
 <div class="block">Does this OutputTransformer generate probabilities.</div>
 <dl>
@@ -366,7 +366,7 @@ implements <a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html" 
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/interop/onnx/LabelTransformer.html#line.193">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -379,7 +379,7 @@ implements <a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html" 
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;<a href="../../../../src-html/org/tribuo/interop/onnx/LabelTransformer.html#line.198">getProvenance</a>()</pre>
+<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&gt;</code></dd>
@@ -454,6 +454,6 @@ implements <a href="../../../../org/tribuo/interop/onnx/OutputTransformer.html" 
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>
