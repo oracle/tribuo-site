@@ -120,7 +120,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public abstract class <a href="../../src-html/org/tribuo/Example.html#line.47">Example</a>&lt;T extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public abstract class <span class="typeNameLabel">Example&lt;T extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
 <div class="block">An example used for training and evaluation. Examples have a true output
@@ -422,7 +422,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>DEFAULT_METADATA_SIZE</h4>
-<pre>protected static final&nbsp;int <a href="../../src-html/org/tribuo/Example.html#line.53">DEFAULT_METADATA_SIZE</a></pre>
+<pre>protected static final&nbsp;int DEFAULT_METADATA_SIZE</pre>
 <div class="block">The default initial size of the metadata map.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -436,7 +436,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>DEFAULT_WEIGHT</h4>
-<pre>public static final&nbsp;float <a href="../../src-html/org/tribuo/Example.html#line.58">DEFAULT_WEIGHT</a></pre>
+<pre>public static final&nbsp;float DEFAULT_WEIGHT</pre>
 <div class="block">The default weight.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -450,7 +450,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>NAME</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> <a href="../../src-html/org/tribuo/Example.html#line.65">NAME</a></pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> NAME</pre>
 <div class="block">By convention the example name is stored using this metadata key.
  <p>
  Note: not all examples are named.</div>
@@ -466,7 +466,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>output</h4>
-<pre>protected final&nbsp;<a href="../../org/tribuo/Example.html" title="type parameter in Example">T</a> extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../org/tribuo/Example.html" title="type parameter in Example">T</a>&gt; <a href="../../src-html/org/tribuo/Example.html#line.70">output</a></pre>
+<pre>protected final&nbsp;<a href="../../org/tribuo/Example.html" title="type parameter in Example">T</a> extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../org/tribuo/Example.html" title="type parameter in Example">T</a>&gt; output</pre>
 <div class="block">The output associated with this example.</div>
 </li>
 </ul>
@@ -476,7 +476,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>weight</h4>
-<pre>protected&nbsp;float <a href="../../src-html/org/tribuo/Example.html#line.75">weight</a></pre>
+<pre>protected&nbsp;float weight</pre>
 <div class="block">The weight associated with this example.</div>
 </li>
 </ul>
@@ -486,7 +486,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockListLast">
 <li class="blockList">
 <h4>metadata</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt; <a href="../../src-html/org/tribuo/Example.html#line.80">metadata</a></pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt; metadata</pre>
 <div class="block">The example metadata.</div>
 </li>
 </ul>
@@ -506,7 +506,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>Example</h4>
-<pre>protected&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.88">Example</a>(<a href="../../org/tribuo/Example.html" title="type parameter in Example">T</a>&nbsp;output,
+<pre>protected&nbsp;Example(<a href="../../org/tribuo/Example.html" title="type parameter in Example">T</a>&nbsp;output,
                   float&nbsp;weight,
                   <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;metadata)</pre>
 <div class="block">Construct an empty example using the supplied output, weight and metadata.</div>
@@ -526,7 +526,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>Example</h4>
-<pre>protected&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.103">Example</a>(<a href="../../org/tribuo/Example.html" title="type parameter in Example">T</a>&nbsp;output,
+<pre>protected&nbsp;Example(<a href="../../org/tribuo/Example.html" title="type parameter in Example">T</a>&nbsp;output,
                   float&nbsp;weight)</pre>
 <div class="block">Construct an empty example using the supplied output and weight.</div>
 <dl>
@@ -544,7 +544,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>Example</h4>
-<pre>protected&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.114">Example</a>(<a href="../../org/tribuo/Example.html" title="type parameter in Example">T</a>&nbsp;output,
+<pre>protected&nbsp;Example(<a href="../../org/tribuo/Example.html" title="type parameter in Example">T</a>&nbsp;output,
                   <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;metadata)</pre>
 <div class="block">Construct an empty example using the supplied output, metadata and
  <a href="../../org/tribuo/Example.html#DEFAULT_WEIGHT"><code>DEFAULT_WEIGHT</code></a> as the weight.</div>
@@ -563,7 +563,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>Example</h4>
-<pre>protected&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.128">Example</a>(<a href="../../org/tribuo/Example.html" title="type parameter in Example">T</a>&nbsp;output)</pre>
+<pre>protected&nbsp;Example(<a href="../../org/tribuo/Example.html" title="type parameter in Example">T</a>&nbsp;output)</pre>
 <div class="block">Construct an empty example using the supplied output and
  <a href="../../org/tribuo/Example.html#DEFAULT_WEIGHT"><code>DEFAULT_WEIGHT</code></a> as the weight.</div>
 <dl>
@@ -578,7 +578,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Example</h4>
-<pre>protected&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.136">Example</a>(<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Example.html" title="type parameter in Example">T</a>&gt;&nbsp;other)</pre>
+<pre>protected&nbsp;Example(<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Example.html" title="type parameter in Example">T</a>&gt;&nbsp;other)</pre>
 <div class="block">Copies the output, weight and metadata into this example.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -600,7 +600,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>getOutput</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/Example.html" title="type parameter in Example">T</a>&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.150">getOutput</a>()</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/Example.html" title="type parameter in Example">T</a>&nbsp;getOutput()</pre>
 <div class="block">Gets the example's <a href="../../org/tribuo/Output.html" title="interface in org.tribuo"><code>Output</code></a>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -614,7 +614,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>getWeight</h4>
-<pre>public&nbsp;float&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.158">getWeight</a>()</pre>
+<pre>public&nbsp;float&nbsp;getWeight()</pre>
 <div class="block">Gets the example's weight.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -628,7 +628,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>setWeight</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.166">setWeight</a>(float&nbsp;weight)</pre>
+<pre>public&nbsp;void&nbsp;setWeight(float&nbsp;weight)</pre>
 <div class="block">Sets the example's weight.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -642,7 +642,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>getMetadataValue</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.176">getMetadataValue</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;getMetadataValue(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key)</pre>
 <div class="block">Gets the associated metadata value for this key, if it exists.
  Otherwise return <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true#empty--" title="class or interface in java.util"><code>Optional.empty()</code></a>.</div>
 <dl>
@@ -659,7 +659,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>setMetadataValue</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.192">setMetadataValue</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
+<pre>public&nbsp;void&nbsp;setMetadataValue(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key,
                              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;value)</pre>
 <div class="block">Puts the specified key, value pair into the metadata.
  <p>
@@ -678,7 +678,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>containsMetadata</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.208">containsMetadata</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key)</pre>
+<pre>public&nbsp;boolean&nbsp;containsMetadata(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;key)</pre>
 <div class="block">Test if the metadata contains the supplied key.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -694,7 +694,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>getMetadata</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.220">getMetadata</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;getMetadata()</pre>
 <div class="block">Returns a copy of this example's metadata.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -708,7 +708,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>sort</h4>
-<pre>protected abstract&nbsp;void&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.231">sort</a>()</pre>
+<pre>protected abstract&nbsp;void&nbsp;sort()</pre>
 <div class="block">Sorts the example by the string comparator.</div>
 </li>
 </ul>
@@ -718,7 +718,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>add</h4>
-<pre>public abstract&nbsp;void&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.238">add</a>(<a href="../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&nbsp;feature)</pre>
+<pre>public abstract&nbsp;void&nbsp;add(<a href="../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&nbsp;feature)</pre>
 <div class="block">Adds a feature. This maintains the sorted invariant and has a lg(example.size())
  cost per insertion.</div>
 <dl>
@@ -733,7 +733,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>addAll</h4>
-<pre>public abstract&nbsp;void&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.245">addAll</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;? extends <a href="../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;&nbsp;features)</pre>
+<pre>public abstract&nbsp;void&nbsp;addAll(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;? extends <a href="../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;&nbsp;features)</pre>
 <div class="block">Adds a collection of features. This maintains the sorted invariant but is
  more efficient than adding one at a time due to allocation.</div>
 <dl>
@@ -748,7 +748,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>size</h4>
-<pre>public abstract&nbsp;int&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.251">size</a>()</pre>
+<pre>public abstract&nbsp;int&nbsp;size()</pre>
 <div class="block">Return how many features are in this example.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -762,7 +762,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>removeFeatures</h4>
-<pre>public abstract&nbsp;void&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.257">removeFeatures</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;&nbsp;featureList)</pre>
+<pre>public abstract&nbsp;void&nbsp;removeFeatures(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;&nbsp;featureList)</pre>
 <div class="block">Removes all features in this list from the Example.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -776,7 +776,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>reduceByName</h4>
-<pre>public abstract&nbsp;void&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.264">reduceByName</a>(<a href="../../org/tribuo/util/Merger.html" title="interface in org.tribuo.util">Merger</a>&nbsp;merger)</pre>
+<pre>public abstract&nbsp;void&nbsp;reduceByName(<a href="../../org/tribuo/util/Merger.html" title="interface in org.tribuo.util">Merger</a>&nbsp;merger)</pre>
 <div class="block">Merges features with the same name using the
  supplied <a href="../../org/tribuo/util/Merger.html" title="interface in org.tribuo.util"><code>Merger</code></a>.</div>
 <dl>
@@ -791,7 +791,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>validateExample</h4>
-<pre>public abstract&nbsp;boolean&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.271">validateExample</a>()</pre>
+<pre>public abstract&nbsp;boolean&nbsp;validateExample()</pre>
 <div class="block">Checks the example to see if all the feature names are unique,
  the feature values are not NaN, and there is at least one feature.</div>
 <dl>
@@ -806,7 +806,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>transform</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.279">transform</a>(<a href="../../org/tribuo/transform/TransformerMap.html" title="class in org.tribuo.transform">TransformerMap</a>&nbsp;transformerMap)</pre>
+<pre>public&nbsp;void&nbsp;transform(<a href="../../org/tribuo/transform/TransformerMap.html" title="class in org.tribuo.transform">TransformerMap</a>&nbsp;transformerMap)</pre>
 <div class="block">Transforms this example by applying the transformations from the supplied <a href="../../org/tribuo/transform/TransformerMap.html" title="class in org.tribuo.transform"><code>TransformerMap</code></a>.
  <p>
  Can be overridden for performance reasons.</div>
@@ -822,7 +822,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>densify</h4>
-<pre>protected&nbsp;void&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.296">densify</a>(<a href="../../org/tribuo/FeatureMap.html" title="class in org.tribuo">FeatureMap</a>&nbsp;fMap)</pre>
+<pre>protected&nbsp;void&nbsp;densify(<a href="../../org/tribuo/FeatureMap.html" title="class in org.tribuo">FeatureMap</a>&nbsp;fMap)</pre>
 <div class="block">Converts all implicit zeros into explicit zeros based on the supplied feature map.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -836,7 +836,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>densify</h4>
-<pre>protected abstract&nbsp;void&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.307">densify</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;featureNames)</pre>
+<pre>protected abstract&nbsp;void&nbsp;densify(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;featureNames)</pre>
 <div class="block">Converts all implicit zeros into explicit zeros based on the supplied feature names.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -850,7 +850,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>public abstract&nbsp;<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Example.html" title="type parameter in Example">T</a>&gt;&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.313">copy</a>()</pre>
+<pre>public abstract&nbsp;<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Example.html" title="type parameter in Example">T</a>&gt;&nbsp;copy()</pre>
 <div class="block">Returns a deep copy of this Example.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -864,7 +864,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>lookup</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.320">lookup</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;i)</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&nbsp;lookup(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;i)</pre>
 <div class="block">Returns the Feature in this Example which has the supplied name, if it's present.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -880,7 +880,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockList">
 <li class="blockList">
 <h4>set</h4>
-<pre>public abstract&nbsp;void&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.336">set</a>(<a href="../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&nbsp;feature)</pre>
+<pre>public abstract&nbsp;void&nbsp;set(<a href="../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&nbsp;feature)</pre>
 <div class="block">Overwrites the feature with the matching name.
  <p>
  Throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang"><code>IllegalArgumentException</code></a> if there isn't a feature with that
@@ -897,7 +897,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <ul class="blockListLast">
 <li class="blockList">
 <h4>canonicalize</h4>
-<pre>public abstract&nbsp;void&nbsp;<a href="../../src-html/org/tribuo/Example.html#line.345">canonicalize</a>(<a href="../../org/tribuo/FeatureMap.html" title="class in org.tribuo">FeatureMap</a>&nbsp;featureMap)</pre>
+<pre>public abstract&nbsp;void&nbsp;canonicalize(<a href="../../org/tribuo/FeatureMap.html" title="class in org.tribuo">FeatureMap</a>&nbsp;featureMap)</pre>
 <div class="block">Reassigns feature name Strings in the Example to point to those in the <a href="../../org/tribuo/FeatureMap.html" title="class in org.tribuo"><code>FeatureMap</code></a>.
  This significantly reduces memory allocation. It is called when an Example is added
  to a <a href="../../org/tribuo/MutableDataset.html" title="class in org.tribuo"><code>MutableDataset</code></a>, and should not be called outside of that context as it may interact
@@ -976,6 +976,6 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

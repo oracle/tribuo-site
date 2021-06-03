@@ -116,7 +116,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <a href="../../../src-html/org/tribuo/evaluation/Evaluation.html#line.32">Evaluation</a>&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public interface <span class="typeNameLabel">Evaluation&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../../org/tribuo/provenance/EvaluationProvenance.html" title="class in org.tribuo.provenance">EvaluationProvenance</a>&gt;</pre>
 <div class="block">An immutable evaluation of a specific model and dataset.</div>
 </li>
@@ -183,7 +183,7 @@ extends com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../..
 <ul class="blockList">
 <li class="blockList">
 <h4>asMap</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../org/tribuo/evaluation/metrics/MetricID.html" title="class in org.tribuo.evaluation.metrics">MetricID</a>&lt;<a href="../../../org/tribuo/evaluation/Evaluation.html" title="type parameter in Evaluation">T</a>&gt;,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/evaluation/Evaluation.html#line.40">asMap</a>()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../org/tribuo/evaluation/metrics/MetricID.html" title="class in org.tribuo.evaluation.metrics">MetricID</a>&lt;<a href="../../../org/tribuo/evaluation/Evaluation.html" title="type parameter in Evaluation">T</a>&gt;,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;asMap()</pre>
 <div class="block">Get a map of all the metrics stored in this evaluation. The keys are metric id's and the values are their
  corresponding computed results.</div>
 <dl>
@@ -198,7 +198,7 @@ extends com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../..
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre>default&nbsp;double&nbsp;<a href="../../../src-html/org/tribuo/evaluation/Evaluation.html#line.48">get</a>(<a href="../../../org/tribuo/evaluation/metrics/MetricID.html" title="class in org.tribuo.evaluation.metrics">MetricID</a>&lt;<a href="../../../org/tribuo/evaluation/Evaluation.html" title="type parameter in Evaluation">T</a>&gt;&nbsp;key)</pre>
+<pre>default&nbsp;double&nbsp;get(<a href="../../../org/tribuo/evaluation/metrics/MetricID.html" title="class in org.tribuo.evaluation.metrics">MetricID</a>&lt;<a href="../../../org/tribuo/evaluation/Evaluation.html" title="type parameter in Evaluation">T</a>&gt;&nbsp;key)</pre>
 <div class="block">Gets the value associated with the specific metric. Throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang"><code>IllegalArgumentException</code></a> if
  the metric is unknown.</div>
 <dl>
@@ -215,7 +215,7 @@ extends com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../..
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getPredictions</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../org/tribuo/evaluation/Evaluation.html" title="type parameter in Evaluation">T</a>&gt;&gt;&nbsp;<a href="../../../src-html/org/tribuo/evaluation/Evaluation.html#line.60">getPredictions</a>()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../org/tribuo/evaluation/Evaluation.html" title="type parameter in Evaluation">T</a>&gt;&gt;&nbsp;getPredictions()</pre>
 <div class="block">Gets the predictions stored in this evaluation.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -291,6 +291,6 @@ extends com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../..
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

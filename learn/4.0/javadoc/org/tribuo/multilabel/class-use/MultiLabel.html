@@ -217,13 +217,13 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">ImmutableMultiLabelInfo.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/ImmutableMultiLabelInfo.html#getDomain--">getDomain</a></span>()</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">MultiLabelInfo.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/MultiLabelInfo.html#getDomain--">getDomain</a></span>()</code>
 <div class="block">Returns a set of MultiLabel, where each has a single Label inside it.</div>
 </td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">ImmutableMultiLabelInfo.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/ImmutableMultiLabelInfo.html#getDomain--">getDomain</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../org/tribuo/evaluation/Evaluator.html" title="interface in org.tribuo.evaluation">Evaluator</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>,<a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvaluation.html" title="interface in org.tribuo.multilabel.evaluation">MultiLabelEvaluation</a>&gt;</code></td>
@@ -367,12 +367,12 @@
 <tbody>
 <tr class="altColor">
 <td class="colFirst"><code>double</code></td>
-<td class="colLast"><span class="typeNameLabel">MultiLabelConfusionMatrix.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelConfusionMatrix.html#confusion-org.tribuo.multilabel.MultiLabel-org.tribuo.multilabel.MultiLabel-">confusion</a></span>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;predicted,
+<td class="colLast"><span class="typeNameLabel">MultiLabelEvaluationImpl.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#confusion-org.tribuo.multilabel.MultiLabel-org.tribuo.multilabel.MultiLabel-">confusion</a></span>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;predicted,
          <a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;truth)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>double</code></td>
-<td class="colLast"><span class="typeNameLabel">MultiLabelEvaluationImpl.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#confusion-org.tribuo.multilabel.MultiLabel-org.tribuo.multilabel.MultiLabel-">confusion</a></span>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;predicted,
+<td class="colLast"><span class="typeNameLabel">MultiLabelConfusionMatrix.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelConfusionMatrix.html#confusion-org.tribuo.multilabel.MultiLabel-org.tribuo.multilabel.MultiLabel-">confusion</a></span>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;predicted,
          <a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;truth)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
@@ -381,19 +381,19 @@
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>double</code></td>
-<td class="colLast"><span class="typeNameLabel">MultiLabelConfusionMatrix.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelConfusionMatrix.html#fn-org.tribuo.multilabel.MultiLabel-">fn</a></span>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;cls)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">MultiLabelEvaluationImpl.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#fn-org.tribuo.multilabel.MultiLabel-">fn</a></span>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;label)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>double</code></td>
-<td class="colLast"><span class="typeNameLabel">MultiLabelEvaluationImpl.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#fn-org.tribuo.multilabel.MultiLabel-">fn</a></span>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;label)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">MultiLabelConfusionMatrix.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelConfusionMatrix.html#fn-org.tribuo.multilabel.MultiLabel-">fn</a></span>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;cls)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>double</code></td>
-<td class="colLast"><span class="typeNameLabel">MultiLabelConfusionMatrix.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelConfusionMatrix.html#fp-org.tribuo.multilabel.MultiLabel-">fp</a></span>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;cls)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">MultiLabelEvaluationImpl.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#fp-org.tribuo.multilabel.MultiLabel-">fp</a></span>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;label)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>double</code></td>
-<td class="colLast"><span class="typeNameLabel">MultiLabelEvaluationImpl.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#fp-org.tribuo.multilabel.MultiLabel-">fp</a></span>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;label)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">MultiLabelConfusionMatrix.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelConfusionMatrix.html#fp-org.tribuo.multilabel.MultiLabel-">fp</a></span>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;cls)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>double</code></td>
@@ -409,19 +409,19 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>double</code></td>
-<td class="colLast"><span class="typeNameLabel">MultiLabelConfusionMatrix.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelConfusionMatrix.html#tn-org.tribuo.multilabel.MultiLabel-">tn</a></span>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;cls)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">MultiLabelEvaluationImpl.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#tn-org.tribuo.multilabel.MultiLabel-">tn</a></span>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;label)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>double</code></td>
-<td class="colLast"><span class="typeNameLabel">MultiLabelEvaluationImpl.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#tn-org.tribuo.multilabel.MultiLabel-">tn</a></span>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;label)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">MultiLabelConfusionMatrix.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelConfusionMatrix.html#tn-org.tribuo.multilabel.MultiLabel-">tn</a></span>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;cls)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>double</code></td>
-<td class="colLast"><span class="typeNameLabel">MultiLabelConfusionMatrix.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelConfusionMatrix.html#tp-org.tribuo.multilabel.MultiLabel-">tp</a></span>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;cls)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">MultiLabelEvaluationImpl.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#tp-org.tribuo.multilabel.MultiLabel-">tp</a></span>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;label)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>double</code></td>
-<td class="colLast"><span class="typeNameLabel">MultiLabelEvaluationImpl.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#tp-org.tribuo.multilabel.MultiLabel-">tp</a></span>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;label)</code>&nbsp;</td>
+<td class="colLast"><span class="typeNameLabel">MultiLabelConfusionMatrix.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelConfusionMatrix.html#tp-org.tribuo.multilabel.MultiLabel-">tp</a></span>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;cls)</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -433,23 +433,23 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code>protected org.tribuo.multilabel.evaluation.MultiLabelMetric.Context</code></td>
-<td class="colLast"><span class="typeNameLabel">MultiLabelEvaluator.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvaluator.html#createContext-org.tribuo.Model-java.util.List-">createContext</a></span>(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&nbsp;model,
+<td class="colFirst"><code>org.tribuo.multilabel.evaluation.MultiLabelMetric.Context</code></td>
+<td class="colLast"><span class="typeNameLabel">MultiLabelMetric.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelMetric.html#createContext-org.tribuo.Model-java.util.List-">createContext</a></span>(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&nbsp;model,
              <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&gt;&nbsp;predictions)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected org.tribuo.multilabel.evaluation.MultiLabelMetric.Context</code></td>
-<td class="colLast"><span class="typeNameLabel">MultiLabelEvaluator.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvaluator.html#createContext-org.tribuo.Model-java.util.List-">createContext</a></span>(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&nbsp;model,
+<td class="colFirst"><code>org.tribuo.multilabel.evaluation.MultiLabelMetric.Context</code></td>
+<td class="colLast"><span class="typeNameLabel">MultiLabelMetric.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelMetric.html#createContext-org.tribuo.Model-java.util.List-">createContext</a></span>(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&nbsp;model,
              <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&gt;&nbsp;predictions)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>org.tribuo.multilabel.evaluation.MultiLabelMetric.Context</code></td>
-<td class="colLast"><span class="typeNameLabel">MultiLabelMetric.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelMetric.html#createContext-org.tribuo.Model-java.util.List-">createContext</a></span>(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&nbsp;model,
+<td class="colFirst"><code>protected org.tribuo.multilabel.evaluation.MultiLabelMetric.Context</code></td>
+<td class="colLast"><span class="typeNameLabel">MultiLabelEvaluator.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvaluator.html#createContext-org.tribuo.Model-java.util.List-">createContext</a></span>(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&nbsp;model,
              <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&gt;&nbsp;predictions)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>org.tribuo.multilabel.evaluation.MultiLabelMetric.Context</code></td>
-<td class="colLast"><span class="typeNameLabel">MultiLabelMetric.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelMetric.html#createContext-org.tribuo.Model-java.util.List-">createContext</a></span>(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&nbsp;model,
+<td class="colFirst"><code>protected org.tribuo.multilabel.evaluation.MultiLabelMetric.Context</code></td>
+<td class="colLast"><span class="typeNameLabel">MultiLabelEvaluator.</span><code><span class="memberNameLink"><a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvaluator.html#createContext-org.tribuo.Model-java.util.List-">createContext</a></span>(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&nbsp;model,
              <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&gt;&nbsp;predictions)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
@@ -588,6 +588,6 @@
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../src-html/org/tribuo/clustering/ImmutableClusteringInfo.html#line.36">ImmutableClusteringInfo</a>
+<pre>public class <span class="typeNameLabel">ImmutableClusteringInfo</span>
 extends <a href="../../../org/tribuo/clustering/ClusteringInfo.html" title="class in org.tribuo.clustering">ClusteringInfo</a>
 implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&gt;</pre>
 <div class="block">An <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo"><code>ImmutableOutputInfo</code></a> object for ClusterIDs.
@@ -265,7 +265,7 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>ImmutableClusteringInfo</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/clustering/ImmutableClusteringInfo.html#line.41">ImmutableClusteringInfo</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>,com.oracle.labs.mlrg.olcut.util.MutableLong&gt;&nbsp;counts)</pre>
+<pre>public&nbsp;ImmutableClusteringInfo(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>,com.oracle.labs.mlrg.olcut.util.MutableLong&gt;&nbsp;counts)</pre>
 </li>
 </ul>
 <a name="ImmutableClusteringInfo-org.tribuo.clustering.ClusteringInfo-">
@@ -274,7 +274,7 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ImmutableClusteringInfo</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/clustering/ImmutableClusteringInfo.html#line.52">ImmutableClusteringInfo</a>(<a href="../../../org/tribuo/clustering/ClusteringInfo.html" title="class in org.tribuo.clustering">ClusteringInfo</a>&nbsp;other)</pre>
+<pre>public&nbsp;ImmutableClusteringInfo(<a href="../../../org/tribuo/clustering/ClusteringInfo.html" title="class in org.tribuo.clustering">ClusteringInfo</a>&nbsp;other)</pre>
 </li>
 </ul>
 </li>
@@ -291,7 +291,7 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>getDomain</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/clustering/ImmutableClusteringInfo.html#line.62">getDomain</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&gt;&nbsp;getDomain()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/OutputInfo.html#getDomain--">OutputInfo</a></code></span></div>
 <div class="block">Returns a set of <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo"><code>Output</code></a> which represent the space of possible
  values the <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo"><code>Output</code></a> has taken.
@@ -313,7 +313,7 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>getID</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../src-html/org/tribuo/clustering/ImmutableClusteringInfo.html#line.67">getID</a>(<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&nbsp;output)</pre>
+<pre>public&nbsp;int&nbsp;getID(<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&nbsp;output)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/ImmutableOutputInfo.html#getID-T-">ImmutableOutputInfo</a></code></span></div>
 <div class="block">Return the id number associated with this output, or -1 if the output is unknown.</div>
 <dl>
@@ -332,7 +332,7 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>getOutput</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&nbsp;<a href="../../../src-html/org/tribuo/clustering/ImmutableClusteringInfo.html#line.72">getOutput</a>(int&nbsp;id)</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&nbsp;getOutput(int&nbsp;id)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/ImmutableOutputInfo.html#getOutput-int-">ImmutableOutputInfo</a></code></span></div>
 <div class="block">Returns the output associated with this id, or null if the id is unknown.</div>
 <dl>
@@ -351,7 +351,7 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>getTotalObservations</h4>
-<pre>public&nbsp;long&nbsp;<a href="../../../src-html/org/tribuo/clustering/ImmutableClusteringInfo.html#line.77">getTotalObservations</a>()</pre>
+<pre>public&nbsp;long&nbsp;getTotalObservations()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/ImmutableOutputInfo.html#getTotalObservations--">ImmutableOutputInfo</a></code></span></div>
 <div class="block">Returns the total number of observed outputs seen by this ImmutableOutputInfo.</div>
 <dl>
@@ -368,7 +368,7 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/clustering/ClusteringInfo.html" title="class in org.tribuo.clustering">ClusteringInfo</a>&nbsp;<a href="../../../src-html/org/tribuo/clustering/ImmutableClusteringInfo.html#line.86">copy</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/clustering/ClusteringInfo.html" title="class in org.tribuo.clustering">ClusteringInfo</a>&nbsp;copy()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/OutputInfo.html#copy--">OutputInfo</a></code></span></div>
 <div class="block">Generates a copy of this OutputInfo, including it's mutability.</div>
 <dl>
@@ -387,7 +387,7 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <ul class="blockListLast">
 <li class="blockList">
 <h4>iterator</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>,<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&gt;&gt;&nbsp;<a href="../../../src-html/org/tribuo/clustering/ImmutableClusteringInfo.html#line.91">iterator</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>,<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&gt;&gt;&nbsp;iterator()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true#iterator--" title="class or interface in java.lang">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>,<a href="../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&gt;&gt;</code></dd>
@@ -462,6 +462,6 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

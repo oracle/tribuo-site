@@ -116,7 +116,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public final class <a href="../../../src-html/org/tribuo/hash/HashingTrainer.html#line.41">HashingTrainer</a>&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public final class <span class="typeNameLabel">HashingTrainer&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;T&gt;</pre>
 <div class="block">A <a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo"><code>Trainer</code></a> which hashes the <a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo"><code>Dataset</code></a> before the <a href="../../../org/tribuo/Model.html" title="class in org.tribuo"><code>Model</code></a>
@@ -235,7 +235,7 @@ implements <a href="../../../org/tribuo/Trainer.html" title="interface in org.tr
 <ul class="blockListLast">
 <li class="blockList">
 <h4>HashingTrainer</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/hash/HashingTrainer.html#line.55">HashingTrainer</a>(<a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../org/tribuo/hash/HashingTrainer.html" title="type parameter in HashingTrainer">T</a>&gt;&nbsp;trainer,
+<pre>public&nbsp;HashingTrainer(<a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../org/tribuo/hash/HashingTrainer.html" title="type parameter in HashingTrainer">T</a>&gt;&nbsp;trainer,
                       <a href="../../../org/tribuo/hash/Hasher.html" title="class in org.tribuo.hash">Hasher</a>&nbsp;hasher)</pre>
 </li>
 </ul>
@@ -253,7 +253,7 @@ implements <a href="../../../org/tribuo/Trainer.html" title="interface in org.tr
 <ul class="blockList">
 <li class="blockList">
 <h4>train</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/hash/HashingTrainer.html" title="type parameter in HashingTrainer">T</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/hash/HashingTrainer.html#line.71">train</a>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/hash/HashingTrainer.html" title="type parameter in HashingTrainer">T</a>&gt;&nbsp;dataset,
+<pre>public&nbsp;<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/hash/HashingTrainer.html" title="type parameter in HashingTrainer">T</a>&gt;&nbsp;train(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/hash/HashingTrainer.html" title="type parameter in HashingTrainer">T</a>&gt;&nbsp;dataset,
                       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,com.oracle.labs.mlrg.olcut.provenance.Provenance&gt;&nbsp;instanceProvenance)</pre>
 <div class="block">This clones the <a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo"><code>Dataset</code></a>, hashes each of the examples
  and rewrites their feature ids before passing it to the inner trainer.
@@ -277,7 +277,7 @@ implements <a href="../../../org/tribuo/Trainer.html" title="interface in org.tr
 <ul class="blockList">
 <li class="blockList">
 <h4>getInvocationCount</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../src-html/org/tribuo/hash/HashingTrainer.html#line.86">getInvocationCount</a>()</pre>
+<pre>public&nbsp;int&nbsp;getInvocationCount()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/Trainer.html#getInvocationCount--">Trainer</a></code></span></div>
 <div class="block">The number of times this trainer instance has had it's train method invoked.
  <p>
@@ -297,7 +297,7 @@ implements <a href="../../../org/tribuo/Trainer.html" title="interface in org.tr
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&nbsp;<a href="../../../src-html/org/tribuo/hash/HashingTrainer.html#line.91">getProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&gt;</code></dd>
@@ -372,6 +372,6 @@ implements <a href="../../../org/tribuo/Trainer.html" title="interface in org.tr
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

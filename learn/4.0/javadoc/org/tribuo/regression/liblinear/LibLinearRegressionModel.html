@@ -122,7 +122,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/regression/liblinear/LibLinearRegressionModel.html#line.63">LibLinearRegressionModel</a>
+<pre>public class <span class="typeNameLabel">LibLinearRegressionModel</span>
 extends <a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html" title="class in org.tribuo.common.liblinear">LibLinearModel</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;</pre>
 <div class="block">A <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo"><code>Model</code></a> which wraps a LibLinear-java model.
  <p>
@@ -261,7 +261,7 @@ extends <a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>predict</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/regression/liblinear/LibLinearRegressionModel.html#line.76">predict</a>(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;example)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;predict(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;example)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/Model.html#predict-org.tribuo.Example-">Model</a></code></span></div>
 <div class="block">Uses the model to predict the output for a single example.
  <p>
@@ -285,7 +285,7 @@ extends <a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>getTopFeatures</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/regression/liblinear/LibLinearRegressionModel.html#line.95">getTopFeatures</a>(int&nbsp;n)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&gt;&gt;&nbsp;getTopFeatures(int&nbsp;n)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/Model.html#getTopFeatures-int-">Model</a></code></span></div>
 <div class="block">Gets the top <code>n</code> features associated with this model.
  <p>
@@ -313,7 +313,7 @@ extends <a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>protected&nbsp;<a href="../../../../org/tribuo/regression/liblinear/LibLinearRegressionModel.html" title="class in org.tribuo.regression.liblinear">LibLinearRegressionModel</a>&nbsp;<a href="../../../../src-html/org/tribuo/regression/liblinear/LibLinearRegressionModel.html#line.126">copy</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newName,
+<pre>protected&nbsp;<a href="../../../../org/tribuo/regression/liblinear/LibLinearRegressionModel.html" title="class in org.tribuo.regression.liblinear">LibLinearRegressionModel</a>&nbsp;copy(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newName,
                                         <a href="../../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;newProvenance)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/Model.html#copy-java.lang.String-org.tribuo.provenance.ModelProvenance-">Model</a></code></span></div>
 <div class="block">Copies a model, replacing it's provenance and name with the supplied values.
@@ -336,7 +336,7 @@ extends <a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html" ti
 <ul class="blockList">
 <li class="blockList">
 <h4>getFeatureWeights</h4>
-<pre>protected&nbsp;double[][]&nbsp;<a href="../../../../src-html/org/tribuo/regression/liblinear/LibLinearRegressionModel.html#line.135">getFeatureWeights</a>()</pre>
+<pre>protected&nbsp;double[][]&nbsp;getFeatureWeights()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html#getFeatureWeights--">LibLinearModel</a></code></span></div>
 <div class="block">Extracts the feature weights from the models.
  The first dimension corresponds to the model index.</div>
@@ -354,7 +354,7 @@ extends <a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html" ti
 <ul class="blockListLast">
 <li class="blockList">
 <h4>innerGetExcuse</h4>
-<pre>protected&nbsp;<a href="../../../../org/tribuo/Excuse.html" title="class in org.tribuo">Excuse</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/regression/liblinear/LibLinearRegressionModel.html#line.157">innerGetExcuse</a>(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;e,
+<pre>protected&nbsp;<a href="../../../../org/tribuo/Excuse.html" title="class in org.tribuo">Excuse</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;innerGetExcuse(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;e,
                                            double[][]&nbsp;allFeatureWeights)</pre>
 <div class="block">The call to model.getFeatureWeights in the public methods copies the
  weights array so this inner method exists to save the copy in getExcuses.
@@ -441,6 +441,6 @@ extends <a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html" ti
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

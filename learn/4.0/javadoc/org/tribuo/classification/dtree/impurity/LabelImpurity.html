@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <a href="../../../../../src-html/org/tribuo/classification/dtree/impurity/LabelImpurity.html#line.28">LabelImpurity</a>
+<pre>public interface <span class="typeNameLabel">LabelImpurity</span>
 extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&gt;</pre>
 <div class="block">Calculates a tree impurity score based on label counts, weighted label counts or a probability distribution.</div>
 </li>
@@ -206,7 +206,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>impurityNormed</h4>
-<pre>double&nbsp;<a href="../../../../../src-html/org/tribuo/classification/dtree/impurity/LabelImpurity.html#line.35">impurityNormed</a>(double[]&nbsp;input)</pre>
+<pre>double&nbsp;impurityNormed(double[]&nbsp;input)</pre>
 <div class="block">Calculates the impurity, assuming it's input is a normalized probability distribution.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -222,7 +222,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>impurityWeighted</h4>
-<pre>default&nbsp;double&nbsp;<a href="../../../../../src-html/org/tribuo/classification/dtree/impurity/LabelImpurity.html#line.42">impurityWeighted</a>(double[]&nbsp;input)</pre>
+<pre>default&nbsp;double&nbsp;impurityWeighted(double[]&nbsp;input)</pre>
 <div class="block">Calculates the impurity assuming the inputs are weighted counts normalizing by their sum.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -238,7 +238,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>impurity</h4>
-<pre>default&nbsp;double&nbsp;<a href="../../../../../src-html/org/tribuo/classification/dtree/impurity/LabelImpurity.html#line.62">impurity</a>(double[]&nbsp;input)</pre>
+<pre>default&nbsp;double&nbsp;impurity(double[]&nbsp;input)</pre>
 <div class="block">Calculates the impurity assuming the inputs are counts.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -254,7 +254,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>impurityWeighted</h4>
-<pre>default&nbsp;double&nbsp;<a href="../../../../../src-html/org/tribuo/classification/dtree/impurity/LabelImpurity.html#line.82">impurityWeighted</a>(float[]&nbsp;input)</pre>
+<pre>default&nbsp;double&nbsp;impurityWeighted(float[]&nbsp;input)</pre>
 <div class="block">Calculates the impurity assuming the input are weighted counts, normalizing by their sum.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -270,7 +270,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>impurity</h4>
-<pre>default&nbsp;double&nbsp;<a href="../../../../../src-html/org/tribuo/classification/dtree/impurity/LabelImpurity.html#line.103">impurity</a>(float[]&nbsp;input)</pre>
+<pre>default&nbsp;double&nbsp;impurity(float[]&nbsp;input)</pre>
 <div class="block">Calculates the impurity assuming the input are fractional counts.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -286,7 +286,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>impurity</h4>
-<pre>default&nbsp;double&nbsp;<a href="../../../../../src-html/org/tribuo/classification/dtree/impurity/LabelImpurity.html#line.123">impurity</a>(int[]&nbsp;input)</pre>
+<pre>default&nbsp;double&nbsp;impurity(int[]&nbsp;input)</pre>
 <div class="block">Calculates the impurity assuming the input are counts.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -302,7 +302,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockListLast">
 <li class="blockList">
 <h4>impurity</h4>
-<pre>default&nbsp;double&nbsp;<a href="../../../../../src-html/org/tribuo/classification/dtree/impurity/LabelImpurity.html#line.144">impurity</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;counts)</pre>
+<pre>default&nbsp;double&nbsp;impurity(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;counts)</pre>
 <div class="block">Takes a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util"><code>Map</code></a> for weighted counts. Normalizes into a probability distribution before calling impurityNormed(double[]).</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -380,6 +380,6 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

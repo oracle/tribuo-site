@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../src-html/org/tribuo/Excuse.html#line.28">Excuse</a>&lt;T extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public class <span class="typeNameLabel">Excuse&lt;T extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
 <div class="block">Holds an <a href="../../org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a>, a <a href="../../org/tribuo/Prediction.html" title="class in org.tribuo"><code>Prediction</code></a> and a Map from String to List of Pairs
  that contains the per output explanation.</div>
@@ -207,7 +207,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Excuse</h4>
-<pre>public&nbsp;<a href="../../src-html/org/tribuo/Excuse.html#line.40">Excuse</a>(<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Excuse.html" title="type parameter in Excuse">T</a>&gt;&nbsp;example,
+<pre>public&nbsp;Excuse(<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Excuse.html" title="type parameter in Excuse">T</a>&gt;&nbsp;example,
               <a href="../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../org/tribuo/Excuse.html" title="type parameter in Excuse">T</a>&gt;&nbsp;prediction,
               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&gt;&gt;&nbsp;weights)</pre>
 <div class="block">Constructs an excuse for the prediction of the supplied example, using the feature weights.</div>
@@ -233,7 +233,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>excuse</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&gt;&nbsp;<a href="../../src-html/org/tribuo/Excuse.html#line.51">excuse</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;label)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&gt;&nbsp;excuse(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;label)</pre>
 <div class="block">Returns the features involved in this excuse.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -249,7 +249,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getPrediction</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../org/tribuo/Excuse.html" title="type parameter in Excuse">T</a>&gt;&nbsp;<a href="../../src-html/org/tribuo/Excuse.html#line.59">getPrediction</a>()</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../org/tribuo/Excuse.html" title="type parameter in Excuse">T</a>&gt;&nbsp;getPrediction()</pre>
 <div class="block">Returns the prediction being excused.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -263,7 +263,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getScores</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&gt;&gt;&nbsp;<a href="../../src-html/org/tribuo/Excuse.html#line.67">getScores</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&gt;&gt;&nbsp;getScores()</pre>
 <div class="block">Returns the scores for all outputs and the relevant feature values.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -277,7 +277,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getExample</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Excuse.html" title="type parameter in Excuse">T</a>&gt;&nbsp;<a href="../../src-html/org/tribuo/Excuse.html#line.75">getExample</a>()</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../org/tribuo/Excuse.html" title="type parameter in Excuse">T</a>&gt;&nbsp;getExample()</pre>
 <div class="block">The example being excused.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -353,6 +353,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

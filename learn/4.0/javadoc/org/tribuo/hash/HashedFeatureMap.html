@@ -122,7 +122,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public final class <a href="../../../src-html/org/tribuo/hash/HashedFeatureMap.html#line.34">HashedFeatureMap</a>
+<pre>public final class <span class="typeNameLabel">HashedFeatureMap</span>
 extends <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a></pre>
 <div class="block">A <a href="../../../org/tribuo/FeatureMap.html" title="class in org.tribuo"><code>FeatureMap</code></a> used by the <a href="../../../org/tribuo/hash/HashingTrainer.html" title="class in org.tribuo.hash"><code>HashingTrainer</code></a> to
  provide feature name hashing and guarantee that the <a href="../../../org/tribuo/Model.html" title="class in org.tribuo"><code>Model</code></a>
@@ -248,7 +248,7 @@ extends <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in o
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/VariableIDInfo.html" title="interface in org.tribuo">VariableIDInfo</a>&nbsp;<a href="../../../src-html/org/tribuo/hash/HashedFeatureMap.html#line.45">get</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/VariableIDInfo.html" title="interface in org.tribuo">VariableIDInfo</a>&nbsp;get(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/ImmutableFeatureMap.html#get-java.lang.String-">ImmutableFeatureMap</a></code></span></div>
 <div class="block">Gets the <a href="../../../org/tribuo/VariableIDInfo.html" title="interface in org.tribuo"><code>VariableIDInfo</code></a>
  for this name. Returns null if it's unknown.</div>
@@ -268,7 +268,7 @@ extends <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in o
 <ul class="blockList">
 <li class="blockList">
 <h4>getID</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../src-html/org/tribuo/hash/HashedFeatureMap.html#line.56">getID</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<pre>public&nbsp;int&nbsp;getID(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
 <div class="block">Gets the id number for this feature, returns -1 if it's unknown.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
@@ -286,7 +286,7 @@ extends <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in o
 <ul class="blockList">
 <li class="blockList">
 <h4>setSalt</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/hash/HashedFeatureMap.html#line.72">setSalt</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;salt)</pre>
+<pre>public&nbsp;void&nbsp;setSalt(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;salt)</pre>
 <div class="block">The salt is not serialised with the <a href="../../../org/tribuo/Model.html" title="class in org.tribuo"><code>Model</code></a>.
  It must be set after deserialisation to the same value from training time.
  <p>
@@ -303,7 +303,7 @@ extends <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in o
 <ul class="blockListLast">
 <li class="blockList">
 <h4>generateHashedFeatureMap</h4>
-<pre>public static&nbsp;<a href="../../../org/tribuo/hash/HashedFeatureMap.html" title="class in org.tribuo.hash">HashedFeatureMap</a>&nbsp;<a href="../../../src-html/org/tribuo/hash/HashedFeatureMap.html#line.90">generateHashedFeatureMap</a>(<a href="../../../org/tribuo/FeatureMap.html" title="class in org.tribuo">FeatureMap</a>&nbsp;map,
+<pre>public static&nbsp;<a href="../../../org/tribuo/hash/HashedFeatureMap.html" title="class in org.tribuo.hash">HashedFeatureMap</a>&nbsp;generateHashedFeatureMap(<a href="../../../org/tribuo/FeatureMap.html" title="class in org.tribuo">FeatureMap</a>&nbsp;map,
                                                         <a href="../../../org/tribuo/hash/Hasher.html" title="class in org.tribuo.hash">Hasher</a>&nbsp;hasher)</pre>
 <div class="block">Converts a standard <a href="../../../org/tribuo/FeatureMap.html" title="class in org.tribuo"><code>FeatureMap</code></a> by hashing each entry
  using the supplied hash function <a href="../../../org/tribuo/hash/Hasher.html" title="class in org.tribuo.hash"><code>Hasher</code></a>.
@@ -390,6 +390,6 @@ extends <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in o
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

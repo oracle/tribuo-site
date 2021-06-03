@@ -121,7 +121,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../src-html/org/tribuo/impl/ListExample.html#line.46">ListExample</a>&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public class <span class="typeNameLabel">ListExample&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;T&gt;
 implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
 <div class="block">This class will not be performant until value types are available in Java. Prefer <a href="../../../org/tribuo/impl/ArrayExample.html" title="class in org.tribuo.impl"><code>ArrayExample</code></a>.
@@ -341,7 +341,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>ListExample</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/impl/ListExample.html#line.52">ListExample</a>(<a href="../../../org/tribuo/impl/ListExample.html" title="type parameter in ListExample">T</a>&nbsp;output,
+<pre>public&nbsp;ListExample(<a href="../../../org/tribuo/impl/ListExample.html" title="type parameter in ListExample">T</a>&nbsp;output,
                    float&nbsp;weight)</pre>
 </li>
 </ul>
@@ -353,7 +353,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>ListExample</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/impl/ListExample.html#line.56">ListExample</a>(<a href="../../../org/tribuo/impl/ListExample.html" title="type parameter in ListExample">T</a>&nbsp;output)</pre>
+<pre>public&nbsp;ListExample(<a href="../../../org/tribuo/impl/ListExample.html" title="type parameter in ListExample">T</a>&nbsp;output)</pre>
 </li>
 </ul>
 <a name="ListExample-org.tribuo.Example-">
@@ -362,7 +362,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>ListExample</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/impl/ListExample.html#line.60">ListExample</a>(<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/impl/ListExample.html" title="type parameter in ListExample">T</a>&gt;&nbsp;other)</pre>
+<pre>public&nbsp;ListExample(<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/impl/ListExample.html" title="type parameter in ListExample">T</a>&gt;&nbsp;other)</pre>
 </li>
 </ul>
 <a name="ListExample-org.tribuo.Output-java.util.List-">
@@ -373,7 +373,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>ListExample</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/impl/ListExample.html#line.68">ListExample</a>(<a href="../../../org/tribuo/impl/ListExample.html" title="type parameter in ListExample">T</a>&nbsp;output,
+<pre>public&nbsp;ListExample(<a href="../../../org/tribuo/impl/ListExample.html" title="type parameter in ListExample">T</a>&nbsp;output,
                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;&nbsp;features)</pre>
 </li>
 </ul>
@@ -385,7 +385,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ListExample</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/impl/ListExample.html#line.76">ListExample</a>(<a href="../../../org/tribuo/impl/ListExample.html" title="type parameter in ListExample">T</a>&nbsp;output,
+<pre>public&nbsp;ListExample(<a href="../../../org/tribuo/impl/ListExample.html" title="type parameter in ListExample">T</a>&nbsp;output,
                    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;featureNames,
                    double[]&nbsp;featureValues)</pre>
 </li>
@@ -404,7 +404,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>add</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/impl/ListExample.html#line.96">add</a>(<a href="../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&nbsp;feature)</pre>
+<pre>public&nbsp;void&nbsp;add(<a href="../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&nbsp;feature)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/Example.html#add-org.tribuo.Feature-">Example</a></code></span></div>
 <div class="block">Adds a feature. This maintains the sorted invariant and has a lg(example.size())
  cost per insertion.</div>
@@ -422,7 +422,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>addAll</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/impl/ListExample.html#line.102">addAll</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;? extends <a href="../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;&nbsp;features)</pre>
+<pre>public&nbsp;void&nbsp;addAll(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;? extends <a href="../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;&nbsp;features)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/Example.html#addAll-java.util.Collection-">Example</a></code></span></div>
 <div class="block">Adds a collection of features. This maintains the sorted invariant but is
  more efficient than adding one at a time due to allocation.</div>
@@ -440,7 +440,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>clear</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/impl/ListExample.html#line.107">clear</a>()</pre>
+<pre>public&nbsp;void&nbsp;clear()</pre>
 </li>
 </ul>
 <a name="size--">
@@ -449,7 +449,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>size</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../src-html/org/tribuo/impl/ListExample.html#line.112">size</a>()</pre>
+<pre>public&nbsp;int&nbsp;size()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/Example.html#size--">Example</a></code></span></div>
 <div class="block">Return how many features are in this example.</div>
 <dl>
@@ -466,7 +466,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/impl/ListExample.html" title="class in org.tribuo.impl">ListExample</a>&lt;<a href="../../../org/tribuo/impl/ListExample.html" title="type parameter in ListExample">T</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/impl/ListExample.html#line.117">copy</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/impl/ListExample.html" title="class in org.tribuo.impl">ListExample</a>&lt;<a href="../../../org/tribuo/impl/ListExample.html" title="type parameter in ListExample">T</a>&gt;&nbsp;copy()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/Example.html#copy--">Example</a></code></span></div>
 <div class="block">Returns a deep copy of this Example.</div>
 <dl>
@@ -483,7 +483,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>iterator</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/impl/ListExample.html#line.122">iterator</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;&nbsp;iterator()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true#iterator--" title="class or interface in java.lang">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;</code></dd>
@@ -496,7 +496,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/impl/ListExample.html#line.127">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -509,7 +509,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>sort</h4>
-<pre>protected&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/impl/ListExample.html#line.151">sort</a>()</pre>
+<pre>protected&nbsp;void&nbsp;sort()</pre>
 <div class="block">Sorts the feature list to maintain the lexicographic order invariant.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -523,7 +523,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>removeFeatures</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/impl/ListExample.html#line.156">removeFeatures</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;&nbsp;featureList)</pre>
+<pre>public&nbsp;void&nbsp;removeFeatures(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;&nbsp;featureList)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/Example.html#removeFeatures-java.util.List-">Example</a></code></span></div>
 <div class="block">Removes all features in this list from the Example.</div>
 <dl>
@@ -540,7 +540,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>reduceByName</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/impl/ListExample.html#line.161">reduceByName</a>(<a href="../../../org/tribuo/util/Merger.html" title="interface in org.tribuo.util">Merger</a>&nbsp;merger)</pre>
+<pre>public&nbsp;void&nbsp;reduceByName(<a href="../../../org/tribuo/util/Merger.html" title="interface in org.tribuo.util">Merger</a>&nbsp;merger)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/Example.html#reduceByName-org.tribuo.util.Merger-">Example</a></code></span></div>
 <div class="block">Merges features with the same name using the
  supplied <a href="../../../org/tribuo/util/Merger.html" title="interface in org.tribuo.util"><code>Merger</code></a>.</div>
@@ -558,7 +558,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>lookup</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&nbsp;<a href="../../../src-html/org/tribuo/impl/ListExample.html#line.186">lookup</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;i)</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&nbsp;lookup(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;i)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/Example.html#lookup-java.lang.String-">Example</a></code></span></div>
 <div class="block">Returns the Feature in this Example which has the supplied name, if it's present.</div>
 <dl>
@@ -577,7 +577,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>set</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/impl/ListExample.html#line.196">set</a>(<a href="../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&nbsp;feature)</pre>
+<pre>public&nbsp;void&nbsp;set(<a href="../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&nbsp;feature)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/Example.html#set-org.tribuo.Feature-">Example</a></code></span></div>
 <div class="block">Overwrites the feature with the matching name.
  <p>
@@ -597,7 +597,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>validateExample</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../src-html/org/tribuo/impl/ListExample.html#line.206">validateExample</a>()</pre>
+<pre>public&nbsp;boolean&nbsp;validateExample()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/Example.html#validateExample--">Example</a></code></span></div>
 <div class="block">Checks the example to see if all the feature names are unique,
  the feature values are not NaN, and there is at least one feature.</div>
@@ -615,7 +615,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>transform</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/impl/ListExample.html#line.222">transform</a>(<a href="../../../org/tribuo/transform/TransformerMap.html" title="class in org.tribuo.transform">TransformerMap</a>&nbsp;transformerMap)</pre>
+<pre>public&nbsp;void&nbsp;transform(<a href="../../../org/tribuo/transform/TransformerMap.html" title="class in org.tribuo.transform">TransformerMap</a>&nbsp;transformerMap)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/Example.html#transform-org.tribuo.transform.TransformerMap-">Example</a></code></span></div>
 <div class="block">Transforms this example by applying the transformations from the supplied <a href="../../../org/tribuo/transform/TransformerMap.html" title="class in org.tribuo.transform"><code>TransformerMap</code></a>.
  <p>
@@ -634,7 +634,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>densify</h4>
-<pre>protected&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/impl/ListExample.html#line.236">densify</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;featureList)</pre>
+<pre>protected&nbsp;void&nbsp;densify(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;featureList)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/Example.html#densify-java.util.List-">Example</a></code></span></div>
 <div class="block">Converts all implicit zeros into explicit zeros based on the supplied feature names.</div>
 <dl>
@@ -651,7 +651,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>canonicalize</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/impl/ListExample.html#line.260">canonicalize</a>(<a href="../../../org/tribuo/FeatureMap.html" title="class in org.tribuo">FeatureMap</a>&nbsp;featureMap)</pre>
+<pre>public&nbsp;void&nbsp;canonicalize(<a href="../../../org/tribuo/FeatureMap.html" title="class in org.tribuo">FeatureMap</a>&nbsp;featureMap)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/Example.html#canonicalize-org.tribuo.FeatureMap-">Example</a></code></span></div>
 <div class="block">Reassigns feature name Strings in the Example to point to those in the <a href="../../../org/tribuo/FeatureMap.html" title="class in org.tribuo"><code>FeatureMap</code></a>.
  This significantly reduces memory allocation. It is called when an Example is added
@@ -671,7 +671,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../src-html/org/tribuo/impl/ListExample.html#line.275">equals</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -684,7 +684,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockListLast">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../src-html/org/tribuo/impl/ListExample.html#line.289">hashCode</a>()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -759,6 +759,6 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

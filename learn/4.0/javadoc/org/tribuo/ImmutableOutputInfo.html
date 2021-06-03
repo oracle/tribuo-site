@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <a href="../../src-html/org/tribuo/ImmutableOutputInfo.html#line.26">ImmutableOutputInfo</a>&lt;T extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public interface <span class="typeNameLabel">ImmutableOutputInfo&lt;T extends <a href="../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="../../org/tribuo/OutputInfo.html" title="interface in org.tribuo">OutputInfo</a>&lt;T&gt;, <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>,T&gt;&gt;</pre>
 <div class="block">An <a href="../../org/tribuo/OutputInfo.html" title="interface in org.tribuo"><code>OutputInfo</code></a> that is fixed, and contains an id number for each valid output.
  <p>
@@ -186,7 +186,7 @@ extends <a href="../../org/tribuo/OutputInfo.html" title="interface in org.tribu
 <ul class="blockList">
 <li class="blockList">
 <h4>getID</h4>
-<pre>int&nbsp;<a href="../../src-html/org/tribuo/ImmutableOutputInfo.html#line.33">getID</a>(<a href="../../org/tribuo/ImmutableOutputInfo.html" title="type parameter in ImmutableOutputInfo">T</a>&nbsp;output)</pre>
+<pre>int&nbsp;getID(<a href="../../org/tribuo/ImmutableOutputInfo.html" title="type parameter in ImmutableOutputInfo">T</a>&nbsp;output)</pre>
 <div class="block">Return the id number associated with this output, or -1 if the output is unknown.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -202,7 +202,7 @@ extends <a href="../../org/tribuo/OutputInfo.html" title="interface in org.tribu
 <ul class="blockList">
 <li class="blockList">
 <h4>getOutput</h4>
-<pre><a href="../../org/tribuo/ImmutableOutputInfo.html" title="type parameter in ImmutableOutputInfo">T</a>&nbsp;<a href="../../src-html/org/tribuo/ImmutableOutputInfo.html#line.40">getOutput</a>(int&nbsp;id)</pre>
+<pre><a href="../../org/tribuo/ImmutableOutputInfo.html" title="type parameter in ImmutableOutputInfo">T</a>&nbsp;getOutput(int&nbsp;id)</pre>
 <div class="block">Returns the output associated with this id, or null if the id is unknown.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -218,7 +218,7 @@ extends <a href="../../org/tribuo/OutputInfo.html" title="interface in org.tribu
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getTotalObservations</h4>
-<pre>long&nbsp;<a href="../../src-html/org/tribuo/ImmutableOutputInfo.html#line.46">getTotalObservations</a>()</pre>
+<pre>long&nbsp;getTotalObservations()</pre>
 <div class="block">Returns the total number of observed outputs seen by this ImmutableOutputInfo.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -294,6 +294,6 @@ extends <a href="../../org/tribuo/OutputInfo.html" title="interface in org.tribu
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

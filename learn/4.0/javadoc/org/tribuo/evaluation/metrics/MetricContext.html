@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public abstract class <a href="../../../../src-html/org/tribuo/evaluation/metrics/MetricContext.html#line.31">MetricContext</a>&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public abstract class <span class="typeNameLabel">MetricContext&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
 <div class="block">The context for a metric or set of metrics. At minimum the model used to generate
  the predictions, and the predictions themselves.</div>
@@ -205,7 +205,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>MetricContext</h4>
-<pre>protected&nbsp;<a href="../../../../src-html/org/tribuo/evaluation/metrics/MetricContext.html#line.37">MetricContext</a>(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/MetricContext.html" title="type parameter in MetricContext">T</a>&gt;&nbsp;model,
+<pre>protected&nbsp;MetricContext(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/MetricContext.html" title="type parameter in MetricContext">T</a>&gt;&nbsp;model,
                         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/MetricContext.html" title="type parameter in MetricContext">T</a>&gt;&gt;&nbsp;predictions)</pre>
 </li>
 </ul>
@@ -215,7 +215,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>MetricContext</h4>
-<pre>protected&nbsp;<a href="../../../../src-html/org/tribuo/evaluation/metrics/MetricContext.html#line.43">MetricContext</a>(<a href="../../../../org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence">SequenceModel</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/MetricContext.html" title="type parameter in MetricContext">T</a>&gt;&nbsp;model,
+<pre>protected&nbsp;MetricContext(<a href="../../../../org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence">SequenceModel</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/MetricContext.html" title="type parameter in MetricContext">T</a>&gt;&nbsp;model,
                         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/MetricContext.html" title="type parameter in MetricContext">T</a>&gt;&gt;&nbsp;predictions)</pre>
 </li>
 </ul>
@@ -233,7 +233,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getModel</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/MetricContext.html" title="type parameter in MetricContext">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/evaluation/metrics/MetricContext.html#line.53">getModel</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/MetricContext.html" title="type parameter in MetricContext">T</a>&gt;&nbsp;getModel()</pre>
 <div class="block">Gets the Model used by this context.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -247,7 +247,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getSequenceModel</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence">SequenceModel</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/MetricContext.html" title="type parameter in MetricContext">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/evaluation/metrics/MetricContext.html#line.61">getSequenceModel</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence">SequenceModel</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/MetricContext.html" title="type parameter in MetricContext">T</a>&gt;&nbsp;getSequenceModel()</pre>
 <div class="block">Gets the SequenceModel used by this context.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -261,7 +261,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getPredictions</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/MetricContext.html" title="type parameter in MetricContext">T</a>&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/evaluation/metrics/MetricContext.html#line.69">getPredictions</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/MetricContext.html" title="type parameter in MetricContext">T</a>&gt;&gt;&nbsp;getPredictions()</pre>
 <div class="block">Gets the predictions used by this context.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -337,6 +337,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

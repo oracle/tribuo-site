@@ -104,7 +104,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <a href="../../../../src-html/org/tribuo/classification/evaluation/LabelEvaluation.html#line.28">LabelEvaluation</a>
+<pre>public interface <span class="typeNameLabel">LabelEvaluation</span>
 extends <a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html" title="interface in org.tribuo.classification.evaluation">ClassifierEvaluation</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;</pre>
 <div class="block">Adds multi-class classification specific metrics to <a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html" title="interface in org.tribuo.classification.evaluation"><code>ClassifierEvaluation</code></a>.</div>
 </li>
@@ -225,7 +225,7 @@ extends <a href="../../../../org/tribuo/classification/evaluation/ClassifierEval
 <ul class="blockList">
 <li class="blockList">
 <h4>accuracy</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/LabelEvaluation.html#line.34">accuracy</a>()</pre>
+<pre>double&nbsp;accuracy()</pre>
 <div class="block">The overall accuracy of the evaluation.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -239,7 +239,7 @@ extends <a href="../../../../org/tribuo/classification/evaluation/ClassifierEval
 <ul class="blockList">
 <li class="blockList">
 <h4>accuracy</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/LabelEvaluation.html#line.41">accuracy</a>(<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&nbsp;label)</pre>
+<pre>double&nbsp;accuracy(<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&nbsp;label)</pre>
 <div class="block">The per label accuracy of the evaluation.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -255,7 +255,7 @@ extends <a href="../../../../org/tribuo/classification/evaluation/ClassifierEval
 <ul class="blockList">
 <li class="blockList">
 <h4>AUCROC</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/LabelEvaluation.html#line.52">AUCROC</a>(<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&nbsp;label)</pre>
+<pre>double&nbsp;AUCROC(<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&nbsp;label)</pre>
 <div class="block">Area under the ROC curve.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -274,7 +274,7 @@ extends <a href="../../../../org/tribuo/classification/evaluation/ClassifierEval
 <ul class="blockList">
 <li class="blockList">
 <h4>averageAUCROC</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/LabelEvaluation.html#line.66">averageAUCROC</a>(boolean&nbsp;weighted)</pre>
+<pre>double&nbsp;averageAUCROC(boolean&nbsp;weighted)</pre>
 <div class="block">Area under the ROC curve averaged across labels.
  <p>
  If <code>weighted</code> is false, use a macro average, if true, weight by the evaluation's observed class counts.
@@ -296,7 +296,7 @@ extends <a href="../../../../org/tribuo/classification/evaluation/ClassifierEval
 <ul class="blockList">
 <li class="blockList">
 <h4>averagedPrecision</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/LabelEvaluation.html#line.81">averagedPrecision</a>(<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&nbsp;label)</pre>
+<pre>double&nbsp;averagedPrecision(<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&nbsp;label)</pre>
 <div class="block">Summarises a Precision-Recall Curve by taking the weighted mean of the
  precisions at a given threshold, where the weight is the recall achieved at
  that threshold.</div>
@@ -319,7 +319,7 @@ extends <a href="../../../../org/tribuo/classification/evaluation/ClassifierEval
 <ul class="blockList">
 <li class="blockList">
 <h4>precisionRecallCurve</h4>
-<pre><a href="../../../../org/tribuo/classification/evaluation/LabelEvaluationUtil.PRCurve.html" title="class in org.tribuo.classification.evaluation">LabelEvaluationUtil.PRCurve</a>&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/LabelEvaluation.html#line.94">precisionRecallCurve</a>(<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&nbsp;label)</pre>
+<pre><a href="../../../../org/tribuo/classification/evaluation/LabelEvaluationUtil.PRCurve.html" title="class in org.tribuo.classification.evaluation">LabelEvaluationUtil.PRCurve</a>&nbsp;precisionRecallCurve(<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&nbsp;label)</pre>
 <div class="block">Calculates the Precision Recall curve for a single label.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -340,7 +340,7 @@ extends <a href="../../../../org/tribuo/classification/evaluation/ClassifierEval
 <ul class="blockList">
 <li class="blockList">
 <h4>toHTML</h4>
-<pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/LabelEvaluation.html#line.100">toHTML</a>()</pre>
+<pre>default&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toHTML()</pre>
 <div class="block">Returns a HTML formatted String representing this evaluation.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -354,7 +354,7 @@ extends <a href="../../../../org/tribuo/classification/evaluation/ClassifierEval
 <ul class="blockList">
 <li class="blockList">
 <h4>toFormattedString</h4>
-<pre>static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/LabelEvaluation.html#line.112">toFormattedString</a>(<a href="../../../../org/tribuo/classification/evaluation/LabelEvaluation.html" title="interface in org.tribuo.classification.evaluation">LabelEvaluation</a>&nbsp;evaluation)</pre>
+<pre>static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toFormattedString(<a href="../../../../org/tribuo/classification/evaluation/LabelEvaluation.html" title="interface in org.tribuo.classification.evaluation">LabelEvaluation</a>&nbsp;evaluation)</pre>
 <div class="block">This method produces a nicely formatted String output, with
  appropriate tabs and newlines, suitable for display on a terminal.
  It can be used as an implementation of the <a href="../../../../org/tribuo/evaluation/EvaluationRenderer.html" title="interface in org.tribuo.evaluation"><code>EvaluationRenderer</code></a>
@@ -373,7 +373,7 @@ extends <a href="../../../../org/tribuo/classification/evaluation/ClassifierEval
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toHTML</h4>
-<pre>static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/LabelEvaluation.html#line.178">toHTML</a>(<a href="../../../../org/tribuo/classification/evaluation/LabelEvaluation.html" title="interface in org.tribuo.classification.evaluation">LabelEvaluation</a>&nbsp;evaluation)</pre>
+<pre>static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toHTML(<a href="../../../../org/tribuo/classification/evaluation/LabelEvaluation.html" title="interface in org.tribuo.classification.evaluation">LabelEvaluation</a>&nbsp;evaluation)</pre>
 <div class="block">This method produces a HTML formatted String output, with
  appropriate tabs and newlines, suitable for integation into a webpage.
  It can be used as an implementation of the <a href="../../../../org/tribuo/evaluation/EvaluationRenderer.html" title="interface in org.tribuo.evaluation"><code>EvaluationRenderer</code></a>
@@ -454,6 +454,6 @@ extends <a href="../../../../org/tribuo/classification/evaluation/ClassifierEval
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

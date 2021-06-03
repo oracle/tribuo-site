@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../../src-html/org/tribuo/classification/sgd/kernel/KernelSVMTrainer.html#line.57">KernelSVMTrainer</a>
+<pre>public class <span class="typeNameLabel">KernelSVMTrainer</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;, <a href="../../../../../org/tribuo/WeightedExamples.html" title="interface in org.tribuo">WeightedExamples</a></pre>
 <div class="block">A trainer for a kernelised model using the Pegasos optimiser.
@@ -256,7 +256,7 @@ implements <a href="../../../../../org/tribuo/Trainer.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>KernelSVMTrainer</h4>
-<pre>public&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/kernel/KernelSVMTrainer.html#line.90">KernelSVMTrainer</a>(<a href="../../../../../org/tribuo/math/kernel/Kernel.html" title="interface in org.tribuo.math.kernel">Kernel</a>&nbsp;kernel,
+<pre>public&nbsp;KernelSVMTrainer(<a href="../../../../../org/tribuo/math/kernel/Kernel.html" title="interface in org.tribuo.math.kernel">Kernel</a>&nbsp;kernel,
                         double&nbsp;lambda,
                         int&nbsp;epochs,
                         int&nbsp;loggingInterval,
@@ -278,7 +278,7 @@ implements <a href="../../../../../org/tribuo/Trainer.html" title="interface in 
 <ul class="blockListLast">
 <li class="blockList">
 <h4>KernelSVMTrainer</h4>
-<pre>public&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/kernel/KernelSVMTrainer.html#line.107">KernelSVMTrainer</a>(<a href="../../../../../org/tribuo/math/kernel/Kernel.html" title="interface in org.tribuo.math.kernel">Kernel</a>&nbsp;kernel,
+<pre>public&nbsp;KernelSVMTrainer(<a href="../../../../../org/tribuo/math/kernel/Kernel.html" title="interface in org.tribuo.math.kernel">Kernel</a>&nbsp;kernel,
                         double&nbsp;lambda,
                         int&nbsp;epochs,
                         long&nbsp;seed)</pre>
@@ -307,7 +307,7 @@ implements <a href="../../../../../org/tribuo/Trainer.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>postConfig</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/kernel/KernelSVMTrainer.html#line.117">postConfig</a>()</pre>
+<pre>public&nbsp;void&nbsp;postConfig()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>postConfig</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.config.Configurable</code></dd>
@@ -320,7 +320,7 @@ implements <a href="../../../../../org/tribuo/Trainer.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>setShuffle</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/kernel/KernelSVMTrainer.html#line.128">setShuffle</a>(boolean&nbsp;shuffle)</pre>
+<pre>public&nbsp;void&nbsp;setShuffle(boolean&nbsp;shuffle)</pre>
 <div class="block">Turn on or off shuffling of examples.
  <p>
  This isn't exposed in the constructor as it defaults to on.
@@ -337,7 +337,7 @@ implements <a href="../../../../../org/tribuo/Trainer.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>train</h4>
-<pre>public&nbsp;<a href="../../../../../org/tribuo/classification/sgd/kernel/KernelSVMModel.html" title="class in org.tribuo.classification.sgd.kernel">KernelSVMModel</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/kernel/KernelSVMTrainer.html#line.133">train</a>(<a href="../../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;examples,
+<pre>public&nbsp;<a href="../../../../../org/tribuo/classification/sgd/kernel/KernelSVMModel.html" title="class in org.tribuo.classification.sgd.kernel">KernelSVMModel</a>&nbsp;train(<a href="../../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;examples,
                             <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,com.oracle.labs.mlrg.olcut.provenance.Provenance&gt;&nbsp;runProvenance)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/tribuo/Trainer.html#train-org.tribuo.Dataset-java.util.Map-">Trainer</a></code></span></div>
 <div class="block">Trains a predictive model using the examples in the given data set.</div>
@@ -358,7 +358,7 @@ implements <a href="../../../../../org/tribuo/Trainer.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>getInvocationCount</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/kernel/KernelSVMTrainer.html#line.219">getInvocationCount</a>()</pre>
+<pre>public&nbsp;int&nbsp;getInvocationCount()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/tribuo/Trainer.html#getInvocationCount--">Trainer</a></code></span></div>
 <div class="block">The number of times this trainer instance has had it's train method invoked.
  <p>
@@ -378,7 +378,7 @@ implements <a href="../../../../../org/tribuo/Trainer.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/kernel/KernelSVMTrainer.html#line.224">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -391,7 +391,7 @@ implements <a href="../../../../../org/tribuo/Trainer.html" title="interface in 
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;<a href="../../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/kernel/KernelSVMTrainer.html#line.242">getProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&gt;</code></dd>
@@ -466,6 +466,6 @@ implements <a href="../../../../../org/tribuo/Trainer.html" title="interface in 
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

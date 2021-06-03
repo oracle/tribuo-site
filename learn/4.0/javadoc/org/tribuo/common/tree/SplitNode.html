@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/common/tree/SplitNode.html#line.25">SplitNode</a>&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public class <span class="typeNameLabel">SplitNode&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;T&gt;</pre>
 <div class="block">An immutable <a href="../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree"><code>Node</code></a> with a split and two child nodes.</div>
@@ -241,7 +241,7 @@ implements <a href="../../../../org/tribuo/common/tree/Node.html" title="interfa
 <ul class="blockListLast">
 <li class="blockList">
 <h4>SplitNode</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/SplitNode.html#line.46">SplitNode</a>(double&nbsp;splitValue,
+<pre>public&nbsp;SplitNode(double&nbsp;splitValue,
                  int&nbsp;featureID,
                  double&nbsp;impurity,
                  <a href="../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;<a href="../../../../org/tribuo/common/tree/SplitNode.html" title="type parameter in SplitNode">T</a>&gt;&nbsp;greaterThan,
@@ -271,7 +271,7 @@ implements <a href="../../../../org/tribuo/common/tree/Node.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>getNextNode</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;<a href="../../../../org/tribuo/common/tree/SplitNode.html" title="type parameter in SplitNode">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/SplitNode.html#line.62">getNextNode</a>(<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;e)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;<a href="../../../../org/tribuo/common/tree/SplitNode.html" title="type parameter in SplitNode">T</a>&gt;&nbsp;getNextNode(<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;e)</pre>
 <div class="block">Return the appropriate child node. If the splitFeature is not present in
  the example it's value is treated as zero.</div>
 <dl>
@@ -290,7 +290,7 @@ implements <a href="../../../../org/tribuo/common/tree/Node.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>isLeaf</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/SplitNode.html#line.72">isLeaf</a>()</pre>
+<pre>public&nbsp;boolean&nbsp;isLeaf()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/common/tree/Node.html#isLeaf--">Node</a></code></span></div>
 <div class="block">Is it a leaf node?</div>
 <dl>
@@ -307,7 +307,7 @@ implements <a href="../../../../org/tribuo/common/tree/Node.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>getImpurity</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/SplitNode.html#line.77">getImpurity</a>()</pre>
+<pre>public&nbsp;double&nbsp;getImpurity()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/common/tree/Node.html#getImpurity--">Node</a></code></span></div>
 <div class="block">The impurity score of this node.</div>
 <dl>
@@ -324,7 +324,7 @@ implements <a href="../../../../org/tribuo/common/tree/Node.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;<a href="../../../../org/tribuo/common/tree/SplitNode.html" title="type parameter in SplitNode">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/SplitNode.html#line.82">copy</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;<a href="../../../../org/tribuo/common/tree/SplitNode.html" title="type parameter in SplitNode">T</a>&gt;&nbsp;copy()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/common/tree/Node.html#copy--">Node</a></code></span></div>
 <div class="block">Copies the node and it's children.</div>
 <dl>
@@ -341,7 +341,7 @@ implements <a href="../../../../org/tribuo/common/tree/Node.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>getFeatureID</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/SplitNode.html#line.90">getFeatureID</a>()</pre>
+<pre>public&nbsp;int&nbsp;getFeatureID()</pre>
 <div class="block">Gets the feature ID that this node uses for splitting.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -355,7 +355,7 @@ implements <a href="../../../../org/tribuo/common/tree/Node.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>splitValue</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/SplitNode.html#line.98">splitValue</a>()</pre>
+<pre>public&nbsp;double&nbsp;splitValue()</pre>
 <div class="block">The threshold value.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -369,7 +369,7 @@ implements <a href="../../../../org/tribuo/common/tree/Node.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>getGreaterThan</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;<a href="../../../../org/tribuo/common/tree/SplitNode.html" title="type parameter in SplitNode">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/SplitNode.html#line.106">getGreaterThan</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;<a href="../../../../org/tribuo/common/tree/SplitNode.html" title="type parameter in SplitNode">T</a>&gt;&nbsp;getGreaterThan()</pre>
 <div class="block">The node used if the value is greater than the splitValue.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -383,7 +383,7 @@ implements <a href="../../../../org/tribuo/common/tree/Node.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>getLessThanOrEqual</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;<a href="../../../../org/tribuo/common/tree/SplitNode.html" title="type parameter in SplitNode">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/SplitNode.html#line.114">getLessThanOrEqual</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;<a href="../../../../org/tribuo/common/tree/SplitNode.html" title="type parameter in SplitNode">T</a>&gt;&nbsp;getLessThanOrEqual()</pre>
 <div class="block">The node used if the value is less than or equal to the splitValue.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -397,7 +397,7 @@ implements <a href="../../../../org/tribuo/common/tree/Node.html" title="interfa
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/SplitNode.html#line.119">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -472,6 +472,6 @@ implements <a href="../../../../org/tribuo/common/tree/Node.html" title="interfa
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

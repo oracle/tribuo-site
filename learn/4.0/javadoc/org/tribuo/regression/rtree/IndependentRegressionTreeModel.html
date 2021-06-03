@@ -127,7 +127,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public final class <a href="../../../../src-html/org/tribuo/regression/rtree/IndependentRegressionTreeModel.html#line.53">IndependentRegressionTreeModel</a>
+<pre>public final class <span class="typeNameLabel">IndependentRegressionTreeModel</span>
 extends <a href="../../../../org/tribuo/common/tree/TreeModel.html" title="class in org.tribuo.common.tree">TreeModel</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;</pre>
 <div class="block">A <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo"><code>Model</code></a> wrapped around a list of decision tree root <a href="../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree"><code>Node</code></a>s used
  to generate independent predictions for each dimension in a regression.</div>
@@ -245,7 +245,7 @@ extends <a href="../../../../org/tribuo/common/tree/TreeModel.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>predict</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/regression/rtree/IndependentRegressionTreeModel.html#line.90">predict</a>(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;example)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;predict(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;example)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/Model.html#predict-org.tribuo.Example-">Model</a></code></span></div>
 <div class="block">Uses the model to predict the output for a single example.
  <p>
@@ -269,7 +269,7 @@ extends <a href="../../../../org/tribuo/common/tree/TreeModel.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>getTopFeatures</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/regression/rtree/IndependentRegressionTreeModel.html#line.116">getTopFeatures</a>(int&nbsp;n)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&gt;&gt;&nbsp;getTopFeatures(int&nbsp;n)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/Model.html#getTopFeatures-int-">Model</a></code></span></div>
 <div class="block">Gets the top <code>n</code> features associated with this model.
  <p>
@@ -297,7 +297,7 @@ extends <a href="../../../../org/tribuo/common/tree/TreeModel.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>getExcuse</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../org/tribuo/Excuse.html" title="class in org.tribuo">Excuse</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/regression/rtree/IndependentRegressionTreeModel.html#line.165">getExcuse</a>(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;example)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../org/tribuo/Excuse.html" title="class in org.tribuo">Excuse</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&gt;&nbsp;getExcuse(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;example)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/Model.html#getExcuse-org.tribuo.Example-">Model</a></code></span></div>
 <div class="block">Generates an excuse for an example.
  <p>
@@ -322,7 +322,7 @@ extends <a href="../../../../org/tribuo/common/tree/TreeModel.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>protected&nbsp;<a href="../../../../org/tribuo/regression/rtree/IndependentRegressionTreeModel.html" title="class in org.tribuo.regression.rtree">IndependentRegressionTreeModel</a>&nbsp;<a href="../../../../src-html/org/tribuo/regression/rtree/IndependentRegressionTreeModel.html#line.211">copy</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newName,
+<pre>protected&nbsp;<a href="../../../../org/tribuo/regression/rtree/IndependentRegressionTreeModel.html" title="class in org.tribuo.regression.rtree">IndependentRegressionTreeModel</a>&nbsp;copy(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newName,
                                               <a href="../../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;newProvenance)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/Model.html#copy-java.lang.String-org.tribuo.provenance.ModelProvenance-">Model</a></code></span></div>
 <div class="block">Copies a model, replacing it's provenance and name with the supplied values.
@@ -345,7 +345,7 @@ extends <a href="../../../../org/tribuo/common/tree/TreeModel.html" title="class
 <ul class="blockList">
 <li class="blockList">
 <h4>getFeatures</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/regression/rtree/IndependentRegressionTreeModel.html#line.241">getFeatures</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;getFeatures()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/common/tree/TreeModel.html#getFeatures--">TreeModel</a></code></span></div>
 <div class="block">Returns the set of features which are split on in this tree.</div>
 <dl>
@@ -362,7 +362,7 @@ extends <a href="../../../../org/tribuo/common/tree/TreeModel.html" title="class
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/regression/rtree/IndependentRegressionTreeModel.html#line.264">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../../../org/tribuo/common/tree/TreeModel.html#toString--">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../../../org/tribuo/common/tree/TreeModel.html" title="class in org.tribuo.common.tree">TreeModel</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;</code></dd>
@@ -437,6 +437,6 @@ extends <a href="../../../../org/tribuo/common/tree/TreeModel.html" title="class
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

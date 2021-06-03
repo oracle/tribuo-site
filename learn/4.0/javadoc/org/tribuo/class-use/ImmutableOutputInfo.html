@@ -315,15 +315,15 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code>protected <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/ImmutableDataset.html" title="type parameter in ImmutableDataset">T</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">ImmutableDataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/ImmutableDataset.html#outputIDInfo">outputIDInfo</a></span></code>
-<div class="block">Output information, and id numbers for outputs found in this dataset.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code>protected <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">Model.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/Model.html#outputIDInfo">outputIDInfo</a></span></code>
 <div class="block">The outputs this model predicts.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/ImmutableDataset.html" title="type parameter in ImmutableDataset">T</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">ImmutableDataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/ImmutableDataset.html#outputIDInfo">outputIDInfo</a></span></code>
+<div class="block">Output information, and id numbers for outputs found in this dataset.</div>
 </td>
 </tr>
 </tbody>
@@ -353,19 +353,19 @@
 <td class="colLast"><span class="typeNameLabel">MutableDataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/MutableDataset.html#getOutputIDInfo--">getOutputIDInfo</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code><a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/ImmutableDataset.html" title="type parameter in ImmutableDataset">T</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">ImmutableDataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/ImmutableDataset.html#getOutputIDInfo--">getOutputIDInfo</a></span>()</code>&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>abstract <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">Dataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/Dataset.html#getOutputIDInfo--">getOutputIDInfo</a></span>()</code>
-<div class="block">Returns or generates an <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo"><code>ImmutableOutputInfo</code></a>.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/Model.html" title="type parameter in Model">T</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">Model.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/Model.html#getOutputIDInfo--">getOutputIDInfo</a></span>()</code>
 <div class="block">Gets the output domain.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/ImmutableDataset.html" title="type parameter in ImmutableDataset">T</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">ImmutableDataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/ImmutableDataset.html#getOutputIDInfo--">getOutputIDInfo</a></span>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/Dataset.html" title="type parameter in Dataset">T</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">Dataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/Dataset.html#getOutputIDInfo--">getOutputIDInfo</a></span>()</code>
+<div class="block">Returns or generates an <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo"><code>ImmutableOutputInfo</code></a>.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -595,14 +595,14 @@
 </tr>
 <tbody>
 <tr class="altColor">
+<td class="colFirst"><code><a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">LabelConfusionMatrix.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/classification/evaluation/LabelConfusionMatrix.html#getDomain--">getDomain</a></span>()</code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/classification/evaluation/ConfusionMatrix.html" title="type parameter in ConfusionMatrix">T</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">ConfusionMatrix.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/classification/evaluation/ConfusionMatrix.html#getDomain--">getDomain</a></span>()</code>
 <div class="block">Returns the classification domain that this confusion matrix operates over.</div>
 </td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><code><a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">LabelConfusionMatrix.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/classification/evaluation/LabelConfusionMatrix.html#getDomain--">getDomain</a></span>()</code>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -1597,8 +1597,8 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code>protected abstract <a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionSparseModel</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SkeletalIndependentRegressionSparseTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html#createModel-java.util.Map-org.tribuo.provenance.ModelProvenance-org.tribuo.ImmutableFeatureMap-org.tribuo.ImmutableOutputInfo-">createModel</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html" title="type parameter in SkeletalIndependentRegressionSparseTrainer">T</a>&gt;&nbsp;models,
+<td class="colFirst"><code>protected abstract <a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionModel</a></code></td>
+<td class="colLast"><span class="typeNameLabel">SkeletalIndependentRegressionTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionTrainer.html#createModel-java.util.Map-org.tribuo.provenance.ModelProvenance-org.tribuo.ImmutableFeatureMap-org.tribuo.ImmutableOutputInfo-">createModel</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionTrainer.html" title="type parameter in SkeletalIndependentRegressionTrainer">T</a>&gt;&nbsp;models,
            <a href="../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;provenance,
            <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureMap,
            <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;outputInfo)</code>
@@ -1606,8 +1606,8 @@
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected abstract <a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionModel</a></code></td>
-<td class="colLast"><span class="typeNameLabel">SkeletalIndependentRegressionTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionTrainer.html#createModel-java.util.Map-org.tribuo.provenance.ModelProvenance-org.tribuo.ImmutableFeatureMap-org.tribuo.ImmutableOutputInfo-">createModel</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionTrainer.html" title="type parameter in SkeletalIndependentRegressionTrainer">T</a>&gt;&nbsp;models,
+<td class="colFirst"><code>protected abstract <a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionSparseModel</a></code></td>
+<td class="colLast"><span class="typeNameLabel">SkeletalIndependentRegressionSparseTrainer.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html#createModel-java.util.Map-org.tribuo.provenance.ModelProvenance-org.tribuo.ImmutableFeatureMap-org.tribuo.ImmutableOutputInfo-">createModel</a></span>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseTrainer.html" title="type parameter in SkeletalIndependentRegressionSparseTrainer">T</a>&gt;&nbsp;models,
            <a href="../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;provenance,
            <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureMap,
            <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;outputInfo)</code>
@@ -1779,13 +1779,15 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/sequence/ImmutableSequenceDataset.html" title="type parameter in ImmutableSequenceDataset">T</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">ImmutableSequenceDataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/sequence/ImmutableSequenceDataset.html#getOutputIDInfo--">getOutputIDInfo</a></span>()</code>&nbsp;</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><code><a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/sequence/SequenceModel.html" title="type parameter in SequenceModel">T</a>&gt;</code></td>
 <td class="colLast"><span class="typeNameLabel">SequenceModel.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/sequence/SequenceModel.html#getOutputIDInfo--">getOutputIDInfo</a></span>()</code>
 <div class="block">Gets the output domain.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>abstract <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/sequence/SequenceDataset.html" title="type parameter in SequenceDataset">T</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">SequenceDataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/sequence/SequenceDataset.html#getOutputIDInfo--">getOutputIDInfo</a></span>()</code>
+<div class="block">An immutable view on the output info in this dataset.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -1793,10 +1795,8 @@
 <td class="colLast"><span class="typeNameLabel">MutableSequenceDataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/sequence/MutableSequenceDataset.html#getOutputIDInfo--">getOutputIDInfo</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>abstract <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/sequence/SequenceDataset.html" title="type parameter in SequenceDataset">T</a>&gt;</code></td>
-<td class="colLast"><span class="typeNameLabel">SequenceDataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/sequence/SequenceDataset.html#getOutputIDInfo--">getOutputIDInfo</a></span>()</code>
-<div class="block">An immutable view on the output info in this dataset.</div>
-</td>
+<td class="colFirst"><code><a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/sequence/ImmutableSequenceDataset.html" title="type parameter in ImmutableSequenceDataset">T</a>&gt;</code></td>
+<td class="colLast"><span class="typeNameLabel">ImmutableSequenceDataset.</span><code><span class="memberNameLink"><a href="../../../org/tribuo/sequence/ImmutableSequenceDataset.html#getOutputIDInfo--">getOutputIDInfo</a></span>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/sequence/ImmutableSequenceDataset.html" title="type parameter in ImmutableSequenceDataset">T</a>&gt;</code></td>
@@ -1911,6 +1911,6 @@
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

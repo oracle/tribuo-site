@@ -116,7 +116,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public abstract class <a href="../../../../src-html/org/tribuo/common/libsvm/LibSVMTrainer.html#line.67">LibSVMTrainer</a>&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public abstract class <span class="typeNameLabel">LibSVMTrainer&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;T&gt;</pre>
 <div class="block">A trainer that will train using libsvm's Java implementation.
@@ -319,7 +319,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockList">
 <li class="blockList">
 <h4>parameters</h4>
-<pre>protected&nbsp;libsvm.svm_parameter <a href="../../../../src-html/org/tribuo/common/libsvm/LibSVMTrainer.html#line.74">parameters</a></pre>
+<pre>protected&nbsp;libsvm.svm_parameter parameters</pre>
 <div class="block">The SVM parameters suitable for use by LibSVM.</div>
 </li>
 </ul>
@@ -331,7 +331,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <h4>svmType</h4>
 <pre>@Config(mandatory=true,
         description="Type of SVM algorithm.")
-protected&nbsp;<a href="../../../../org/tribuo/common/libsvm/SVMType.html" title="interface in org.tribuo.common.libsvm">SVMType</a>&lt;<a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title="type parameter in LibSVMTrainer">T</a> extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title="type parameter in LibSVMTrainer">T</a>&gt;&gt; <a href="../../../../src-html/org/tribuo/common/libsvm/LibSVMTrainer.html#line.80">svmType</a></pre>
+protected&nbsp;<a href="../../../../org/tribuo/common/libsvm/SVMType.html" title="interface in org.tribuo.common.libsvm">SVMType</a>&lt;<a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title="type parameter in LibSVMTrainer">T</a> extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title="type parameter in LibSVMTrainer">T</a>&gt;&gt; svmType</pre>
 <div class="block">The type of SVM algorithm.</div>
 </li>
 </ul>
@@ -349,7 +349,7 @@ protected&nbsp;<a href="../../../../org/tribuo/common/libsvm/SVMType.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>LibSVMTrainer</h4>
-<pre>protected&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/LibSVMTrainer.html#line.120">LibSVMTrainer</a>()</pre>
+<pre>protected&nbsp;LibSVMTrainer()</pre>
 <div class="block">For olcut.</div>
 </li>
 </ul>
@@ -359,7 +359,7 @@ protected&nbsp;<a href="../../../../org/tribuo/common/libsvm/SVMType.html" title
 <ul class="blockListLast">
 <li class="blockList">
 <h4>LibSVMTrainer</h4>
-<pre>protected&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/LibSVMTrainer.html#line.126">LibSVMTrainer</a>(<a href="../../../../org/tribuo/common/libsvm/SVMParameters.html" title="class in org.tribuo.common.libsvm">SVMParameters</a>&lt;<a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title="type parameter in LibSVMTrainer">T</a>&gt;&nbsp;parameters)</pre>
+<pre>protected&nbsp;LibSVMTrainer(<a href="../../../../org/tribuo/common/libsvm/SVMParameters.html" title="class in org.tribuo.common.libsvm">SVMParameters</a>&lt;<a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title="type parameter in LibSVMTrainer">T</a>&gt;&nbsp;parameters)</pre>
 <div class="block">Constructs a LibSVMTrainer from the parameters.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -381,7 +381,7 @@ protected&nbsp;<a href="../../../../org/tribuo/common/libsvm/SVMType.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>postConfig</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/LibSVMTrainer.html#line.147">postConfig</a>()</pre>
+<pre>public&nbsp;void&nbsp;postConfig()</pre>
 <div class="block">Used by the OLCUT configuration system, and should not be called by external code.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -395,7 +395,7 @@ protected&nbsp;<a href="../../../../org/tribuo/common/libsvm/SVMType.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/LibSVMTrainer.html#line.164">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -408,7 +408,7 @@ protected&nbsp;<a href="../../../../org/tribuo/common/libsvm/SVMType.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>train</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/common/libsvm/LibSVMModel.html" title="class in org.tribuo.common.libsvm">LibSVMModel</a>&lt;<a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title="type parameter in LibSVMTrainer">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/LibSVMTrainer.html#line.176">train</a>(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title="type parameter in LibSVMTrainer">T</a>&gt;&nbsp;examples)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/common/libsvm/LibSVMModel.html" title="class in org.tribuo.common.libsvm">LibSVMModel</a>&lt;<a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title="type parameter in LibSVMTrainer">T</a>&gt;&nbsp;train(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title="type parameter in LibSVMTrainer">T</a>&gt;&nbsp;examples)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/Trainer.html#train-org.tribuo.Dataset-">Trainer</a></code></span></div>
 <div class="block">Trains a predictive model using the examples in the given data set.</div>
 <dl>
@@ -427,7 +427,7 @@ protected&nbsp;<a href="../../../../org/tribuo/common/libsvm/SVMType.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>train</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/common/libsvm/LibSVMModel.html" title="class in org.tribuo.common.libsvm">LibSVMModel</a>&lt;<a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title="type parameter in LibSVMTrainer">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/LibSVMTrainer.html#line.181">train</a>(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title="type parameter in LibSVMTrainer">T</a>&gt;&nbsp;examples,
+<pre>public&nbsp;<a href="../../../../org/tribuo/common/libsvm/LibSVMModel.html" title="class in org.tribuo.common.libsvm">LibSVMModel</a>&lt;<a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title="type parameter in LibSVMTrainer">T</a>&gt;&nbsp;train(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title="type parameter in LibSVMTrainer">T</a>&gt;&nbsp;examples,
                             <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,com.oracle.labs.mlrg.olcut.provenance.Provenance&gt;&nbsp;runProvenance)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/Trainer.html#train-org.tribuo.Dataset-java.util.Map-">Trainer</a></code></span></div>
 <div class="block">Trains a predictive model using the examples in the given data set.</div>
@@ -448,7 +448,7 @@ protected&nbsp;<a href="../../../../org/tribuo/common/libsvm/SVMType.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>createModel</h4>
-<pre>protected abstract&nbsp;<a href="../../../../org/tribuo/common/libsvm/LibSVMModel.html" title="class in org.tribuo.common.libsvm">LibSVMModel</a>&lt;<a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title="type parameter in LibSVMTrainer">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/LibSVMTrainer.html#line.209">createModel</a>(<a href="../../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;provenance,
+<pre>protected abstract&nbsp;<a href="../../../../org/tribuo/common/libsvm/LibSVMModel.html" title="class in org.tribuo.common.libsvm">LibSVMModel</a>&lt;<a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title="type parameter in LibSVMTrainer">T</a>&gt;&nbsp;createModel(<a href="../../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;provenance,
                                               <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap,
                                               <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title="type parameter in LibSVMTrainer">T</a>&gt;&nbsp;outputIDInfo,
                                               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;libsvm.svm_model&gt;&nbsp;models)</pre>
@@ -470,7 +470,7 @@ protected&nbsp;<a href="../../../../org/tribuo/common/libsvm/SVMType.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>trainModels</h4>
-<pre>protected abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;libsvm.svm_model&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/LibSVMTrainer.html#line.219">trainModels</a>(libsvm.svm_parameter&nbsp;curParams,
+<pre>protected abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;libsvm.svm_model&gt;&nbsp;trainModels(libsvm.svm_parameter&nbsp;curParams,
                                                       int&nbsp;numFeatures,
                                                       libsvm.svm_node[][]&nbsp;features,
                                                       double[][]&nbsp;outputs)</pre>
@@ -492,7 +492,7 @@ protected&nbsp;<a href="../../../../org/tribuo/common/libsvm/SVMType.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>extractData</h4>
-<pre>protected abstract&nbsp;com.oracle.labs.mlrg.olcut.util.Pair&lt;libsvm.svm_node[][],double[][]&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/LibSVMTrainer.html#line.228">extractData</a>(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title="type parameter in LibSVMTrainer">T</a>&gt;&nbsp;data,
+<pre>protected abstract&nbsp;com.oracle.labs.mlrg.olcut.util.Pair&lt;libsvm.svm_node[][],double[][]&gt;&nbsp;extractData(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title="type parameter in LibSVMTrainer">T</a>&gt;&nbsp;data,
                                                                                                     <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title="type parameter in LibSVMTrainer">T</a>&gt;&nbsp;outputInfo,
                                                                                                     <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureMap)</pre>
 <div class="block">Extracts the features and <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo"><code>Output</code></a>s in LibLinear's format.</div>
@@ -512,7 +512,7 @@ protected&nbsp;<a href="../../../../org/tribuo/common/libsvm/SVMType.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>setupParameters</h4>
-<pre>protected&nbsp;libsvm.svm_parameter&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/LibSVMTrainer.html#line.236">setupParameters</a>(<a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title="type parameter in LibSVMTrainer">T</a>&gt;&nbsp;info)</pre>
+<pre>protected&nbsp;libsvm.svm_parameter&nbsp;setupParameters(<a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/common/libsvm/LibSVMTrainer.html" title="type parameter in LibSVMTrainer">T</a>&gt;&nbsp;info)</pre>
 <div class="block">Constructs the svm_parameter. Most of the time this is a no-op, but
  classification overrides it to incorporate label weights if they exist.</div>
 <dl>
@@ -529,7 +529,7 @@ protected&nbsp;<a href="../../../../org/tribuo/common/libsvm/SVMType.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>getInvocationCount</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/LibSVMTrainer.html#line.241">getInvocationCount</a>()</pre>
+<pre>public&nbsp;int&nbsp;getInvocationCount()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/Trainer.html#getInvocationCount--">Trainer</a></code></span></div>
 <div class="block">The number of times this trainer instance has had it's train method invoked.
  <p>
@@ -549,7 +549,7 @@ protected&nbsp;<a href="../../../../org/tribuo/common/libsvm/SVMType.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>exampleToNodes</h4>
-<pre>public static&nbsp;&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;libsvm.svm_node[]&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/LibSVMTrainer.html#line.255">exampleToNodes</a>(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;T&gt;&nbsp;example,
+<pre>public static&nbsp;&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;libsvm.svm_node[]&nbsp;exampleToNodes(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;T&gt;&nbsp;example,
                                                                      <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap,
                                                                      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;libsvm.svm_node&gt;&nbsp;features)</pre>
 <div class="block">Convert the example into an array of svm_node which represents a sparse feature vector.
@@ -573,7 +573,7 @@ protected&nbsp;<a href="../../../../org/tribuo/common/libsvm/SVMType.html" title
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&nbsp;<a href="../../../../src-html/org/tribuo/common/libsvm/LibSVMTrainer.html#line.296">getProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&gt;</code></dd>
@@ -648,6 +648,6 @@ protected&nbsp;<a href="../../../../org/tribuo/common/libsvm/SVMType.html" title
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

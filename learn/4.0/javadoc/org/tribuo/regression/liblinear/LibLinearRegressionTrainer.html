@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/regression/liblinear/LibLinearRegressionTrainer.html#line.58">LibLinearRegressionTrainer</a>
+<pre>public class <span class="typeNameLabel">LibLinearRegressionTrainer</span>
 extends <a href="../../../../org/tribuo/common/liblinear/LibLinearTrainer.html" title="class in org.tribuo.common.liblinear">LibLinearTrainer</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;</pre>
 <div class="block">A <a href="../../../../org/tribuo/Trainer.html" title="interface in org.tribuo"><code>Trainer</code></a> which wraps a liblinear-java regression trainer.
  <p>
@@ -280,7 +280,7 @@ extends <a href="../../../../org/tribuo/common/liblinear/LibLinearTrainer.html" 
 <ul class="blockList">
 <li class="blockList">
 <h4>LibLinearRegressionTrainer</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/regression/liblinear/LibLinearRegressionTrainer.html#line.65">LibLinearRegressionTrainer</a>()</pre>
+<pre>public&nbsp;LibLinearRegressionTrainer()</pre>
 <div class="block">Creates a trainer using the default values (L2R_L2LOSS_SVR, 1, 1000, 0.1, 0.1).</div>
 </li>
 </ul>
@@ -290,7 +290,7 @@ extends <a href="../../../../org/tribuo/common/liblinear/LibLinearTrainer.html" 
 <ul class="blockList">
 <li class="blockList">
 <h4>LibLinearRegressionTrainer</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/regression/liblinear/LibLinearRegressionTrainer.html#line.69">LibLinearRegressionTrainer</a>(<a href="../../../../org/tribuo/regression/liblinear/LinearRegressionType.html" title="class in org.tribuo.regression.liblinear">LinearRegressionType</a>&nbsp;trainerType)</pre>
+<pre>public&nbsp;LibLinearRegressionTrainer(<a href="../../../../org/tribuo/regression/liblinear/LinearRegressionType.html" title="class in org.tribuo.regression.liblinear">LinearRegressionType</a>&nbsp;trainerType)</pre>
 </li>
 </ul>
 <a name="LibLinearRegressionTrainer-org.tribuo.regression.liblinear.LinearRegressionType-double-int-double-double-">
@@ -299,7 +299,7 @@ extends <a href="../../../../org/tribuo/common/liblinear/LibLinearTrainer.html" 
 <ul class="blockListLast">
 <li class="blockList">
 <h4>LibLinearRegressionTrainer</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/regression/liblinear/LibLinearRegressionTrainer.html#line.81">LibLinearRegressionTrainer</a>(<a href="../../../../org/tribuo/regression/liblinear/LinearRegressionType.html" title="class in org.tribuo.regression.liblinear">LinearRegressionType</a>&nbsp;trainerType,
+<pre>public&nbsp;LibLinearRegressionTrainer(<a href="../../../../org/tribuo/regression/liblinear/LinearRegressionType.html" title="class in org.tribuo.regression.liblinear">LinearRegressionType</a>&nbsp;trainerType,
                                   double&nbsp;cost,
                                   int&nbsp;maxIterations,
                                   double&nbsp;terminationCriterion,
@@ -329,7 +329,7 @@ extends <a href="../../../../org/tribuo/common/liblinear/LibLinearTrainer.html" 
 <ul class="blockList">
 <li class="blockList">
 <h4>postConfig</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/regression/liblinear/LibLinearRegressionTrainer.html#line.89">postConfig</a>()</pre>
+<pre>public&nbsp;void&nbsp;postConfig()</pre>
 <div class="block">Used by the OLCUT configuration system, and should not be called by external code.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -345,7 +345,7 @@ extends <a href="../../../../org/tribuo/common/liblinear/LibLinearTrainer.html" 
 <ul class="blockList">
 <li class="blockList">
 <h4>trainModels</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;de.bwaldvogel.liblinear.Model&gt;&nbsp;<a href="../../../../src-html/org/tribuo/regression/liblinear/LibLinearRegressionTrainer.html#line.97">trainModels</a>(de.bwaldvogel.liblinear.Parameter&nbsp;curParams,
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;de.bwaldvogel.liblinear.Model&gt;&nbsp;trainModels(de.bwaldvogel.liblinear.Parameter&nbsp;curParams,
                                                           int&nbsp;numFeatures,
                                                           de.bwaldvogel.liblinear.FeatureNode[][]&nbsp;features,
                                                           double[][]&nbsp;outputs)</pre>
@@ -370,7 +370,7 @@ extends <a href="../../../../org/tribuo/common/liblinear/LibLinearTrainer.html" 
 <ul class="blockList">
 <li class="blockList">
 <h4>createModel</h4>
-<pre>protected&nbsp;<a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html" title="class in org.tribuo.common.liblinear">LibLinearModel</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/regression/liblinear/LibLinearRegressionTrainer.html#line.116">createModel</a>(<a href="../../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;provenance,
+<pre>protected&nbsp;<a href="../../../../org/tribuo/common/liblinear/LibLinearModel.html" title="class in org.tribuo.common.liblinear">LibLinearModel</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;createModel(<a href="../../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;provenance,
                                                 <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap,
                                                 <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;outputIDInfo,
                                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;de.bwaldvogel.liblinear.Model&gt;&nbsp;models)</pre>
@@ -395,7 +395,7 @@ extends <a href="../../../../org/tribuo/common/liblinear/LibLinearTrainer.html" 
 <ul class="blockListLast">
 <li class="blockList">
 <h4>extractData</h4>
-<pre>protected&nbsp;com.oracle.labs.mlrg.olcut.util.Pair&lt;de.bwaldvogel.liblinear.FeatureNode[][],double[][]&gt;&nbsp;<a href="../../../../src-html/org/tribuo/regression/liblinear/LibLinearRegressionTrainer.html#line.124">extractData</a>(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;data,
+<pre>protected&nbsp;com.oracle.labs.mlrg.olcut.util.Pair&lt;de.bwaldvogel.liblinear.FeatureNode[][],double[][]&gt;&nbsp;extractData(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;data,
                                                                                                                <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;outputInfo,
                                                                                                                <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureMap)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/common/liblinear/LibLinearTrainer.html#extractData-org.tribuo.Dataset-org.tribuo.ImmutableOutputInfo-org.tribuo.ImmutableFeatureMap-">LibLinearTrainer</a></code></span></div>
@@ -480,6 +480,6 @@ extends <a href="../../../../org/tribuo/common/liblinear/LibLinearTrainer.html" 
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

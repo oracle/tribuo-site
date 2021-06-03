@@ -127,7 +127,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/regression/slm/SparseLinearModel.html#line.51">SparseLinearModel</a>
+<pre>public class <span class="typeNameLabel">SparseLinearModel</span>
 extends <a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseModel.html" title="class in org.tribuo.regression.impl">SkeletalIndependentRegressionSparseModel</a></pre>
 <div class="block">The inference time version of a sparse linear regression model.
  <p>
@@ -263,7 +263,7 @@ extends <a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegre
 <ul class="blockList">
 <li class="blockList">
 <h4>createFeatures</h4>
-<pre>protected&nbsp;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/regression/slm/SparseLinearModel.html#line.99">createFeatures</a>(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;example)</pre>
+<pre>protected&nbsp;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;createFeatures(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;example)</pre>
 <div class="block">Creates the feature vector. Includes a bias term if the model requires it.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
@@ -281,7 +281,7 @@ extends <a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegre
 <ul class="blockList">
 <li class="blockList">
 <h4>scoreDimension</h4>
-<pre>protected&nbsp;<a href="../../../../org/tribuo/regression/Regressor.DimensionTuple.html" title="class in org.tribuo.regression">Regressor.DimensionTuple</a>&nbsp;<a href="../../../../src-html/org/tribuo/regression/slm/SparseLinearModel.html#line.107">scoreDimension</a>(int&nbsp;dimensionIdx,
+<pre>protected&nbsp;<a href="../../../../org/tribuo/regression/Regressor.DimensionTuple.html" title="class in org.tribuo.regression">Regressor.DimensionTuple</a>&nbsp;scoreDimension(int&nbsp;dimensionIdx,
                                                   <a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;features)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegressionSparseModel.html#scoreDimension-int-org.tribuo.math.la.SparseVector-">SkeletalIndependentRegressionSparseModel</a></code></span></div>
 <div class="block">Makes a prediction for a single dimension.</div>
@@ -302,7 +302,7 @@ extends <a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegre
 <ul class="blockList">
 <li class="blockList">
 <h4>getTopFeatures</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/regression/slm/SparseLinearModel.html#line.115">getTopFeatures</a>(int&nbsp;n)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&gt;&gt;&nbsp;getTopFeatures(int&nbsp;n)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/Model.html#getTopFeatures-int-">Model</a></code></span></div>
 <div class="block">Gets the top <code>n</code> features associated with this model.
  <p>
@@ -330,7 +330,7 @@ extends <a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegre
 <ul class="blockList">
 <li class="blockList">
 <h4>getExcuse</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../org/tribuo/Excuse.html" title="class in org.tribuo">Excuse</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/regression/slm/SparseLinearModel.html#line.153">getExcuse</a>(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;example)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../org/tribuo/Excuse.html" title="class in org.tribuo">Excuse</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&gt;&nbsp;getExcuse(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;example)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/Model.html#getExcuse-org.tribuo.Example-">Model</a></code></span></div>
 <div class="block">Generates an excuse for an example.
  <p>
@@ -355,7 +355,7 @@ extends <a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegre
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>protected&nbsp;<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/regression/slm/SparseLinearModel.html#line.172">copy</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newName,
+<pre>protected&nbsp;<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;copy(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newName,
                                 <a href="../../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;newProvenance)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/Model.html#copy-java.lang.String-org.tribuo.provenance.ModelProvenance-">Model</a></code></span></div>
 <div class="block">Copies a model, replacing it's provenance and name with the supplied values.
@@ -378,7 +378,7 @@ extends <a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegre
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getWeights</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/regression/slm/SparseLinearModel.html#line.194">getWeights</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&gt;&nbsp;getWeights()</pre>
 <div class="block">Gets a copy of the model parameters.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -454,6 +454,6 @@ extends <a href="../../../../org/tribuo/regression/impl/SkeletalIndependentRegre
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public final class <a href="../../../src-html/org/tribuo/anomaly/Event.html#line.31">Event</a>
+<pre>public final class <span class="typeNameLabel">Event</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;</pre>
 <div class="block">An <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo"><code>Output</code></a> representing either an <a href="../../../org/tribuo/anomaly/Event.EventType.html#ANOMALOUS"><code>Event.EventType.ANOMALOUS</code></a> or an
@@ -280,7 +280,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockListLast">
 <li class="blockList">
 <h4>DEFAULT_SCORE</h4>
-<pre>public static final&nbsp;double <a href="../../../src-html/org/tribuo/anomaly/Event.html#line.37">DEFAULT_SCORE</a></pre>
+<pre>public static final&nbsp;double DEFAULT_SCORE</pre>
 <div class="block">The default score of events.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -302,7 +302,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>Event</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/anomaly/Event.html#line.79">Event</a>(<a href="../../../org/tribuo/anomaly/Event.EventType.html" title="enum in org.tribuo.anomaly">Event.EventType</a>&nbsp;type,
+<pre>public&nbsp;Event(<a href="../../../org/tribuo/anomaly/Event.EventType.html" title="enum in org.tribuo.anomaly">Event.EventType</a>&nbsp;type,
              double&nbsp;score)</pre>
 <div class="block">Constructs a new event of the specified type and score.</div>
 <dl>
@@ -318,7 +318,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Event</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/anomaly/Event.html#line.88">Event</a>(<a href="../../../org/tribuo/anomaly/Event.EventType.html" title="enum in org.tribuo.anomaly">Event.EventType</a>&nbsp;type)</pre>
+<pre>public&nbsp;Event(<a href="../../../org/tribuo/anomaly/Event.EventType.html" title="enum in org.tribuo.anomaly">Event.EventType</a>&nbsp;type)</pre>
 <div class="block">Constructs a new event of the specified type with the default score of <a href="../../../org/tribuo/anomaly/Event.html#DEFAULT_SCORE"><code>DEFAULT_SCORE</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -340,7 +340,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>getScore</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../src-html/org/tribuo/anomaly/Event.html#line.98">getScore</a>()</pre>
+<pre>public&nbsp;double&nbsp;getScore()</pre>
 <div class="block">Get a real valued score for this label.
  <p>
  If the score is not set then it returns <a href="../../../org/tribuo/anomaly/Event.html#DEFAULT_SCORE"><code>DEFAULT_SCORE</code></a>.</div>
@@ -356,7 +356,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>getType</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/anomaly/Event.EventType.html" title="enum in org.tribuo.anomaly">Event.EventType</a>&nbsp;<a href="../../../src-html/org/tribuo/anomaly/Event.html#line.106">getType</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/anomaly/Event.EventType.html" title="enum in org.tribuo.anomaly">Event.EventType</a>&nbsp;getType()</pre>
 <div class="block">Gets the event type.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -370,7 +370,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../src-html/org/tribuo/anomaly/Event.html#line.111">equals</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -383,7 +383,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../src-html/org/tribuo/anomaly/Event.html#line.119">hashCode</a>()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -396,7 +396,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>fullEquals</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../src-html/org/tribuo/anomaly/Event.html#line.124">fullEquals</a>(<a href="../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&nbsp;o)</pre>
+<pre>public&nbsp;boolean&nbsp;fullEquals(<a href="../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&nbsp;o)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/Output.html#fullEquals-T-">Output</a></code></span></div>
 <div class="block">Compares other to this output. Uses all score values
  and the strings.</div>
@@ -416,7 +416,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/anomaly/Event.html#line.133">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -429,7 +429,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&nbsp;<a href="../../../src-html/org/tribuo/anomaly/Event.html#line.142">copy</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&nbsp;copy()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/Output.html#copy--">Output</a></code></span></div>
 <div class="block">Deep copy of the output up to it's immutable state.</div>
 <dl>
@@ -446,7 +446,7 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getSerializableForm</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/anomaly/Event.html#line.152">getSerializableForm</a>(boolean&nbsp;includeConfidence)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getSerializableForm(boolean&nbsp;includeConfidence)</pre>
 <div class="block">Returns "EventType" or "EventType,score=eventScore".</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -526,6 +526,6 @@ implements <a href="../../../org/tribuo/Output.html" title="interface in org.tri
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFTrainer.html#line.52">CRFTrainer</a>
+<pre>public class <span class="typeNameLabel">CRFTrainer</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../../org/tribuo/sequence/SequenceTrainer.html" title="interface in org.tribuo.sequence">SequenceTrainer</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;, <a href="../../../../../org/tribuo/WeightedExamples.html" title="interface in org.tribuo">WeightedExamples</a></pre>
 <div class="block">A trainer for CRFs using SGD. Modelled after FACTORIE's trainer for CRFs.
@@ -245,7 +245,7 @@ implements <a href="../../../../../org/tribuo/sequence/SequenceTrainer.html" tit
 <ul class="blockList">
 <li class="blockList">
 <h4>CRFTrainer</h4>
-<pre>public&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFTrainer.html#line.85">CRFTrainer</a>(<a href="../../../../../org/tribuo/math/StochasticGradientOptimiser.html" title="interface in org.tribuo.math">StochasticGradientOptimiser</a>&nbsp;optimiser,
+<pre>public&nbsp;CRFTrainer(<a href="../../../../../org/tribuo/math/StochasticGradientOptimiser.html" title="interface in org.tribuo.math">StochasticGradientOptimiser</a>&nbsp;optimiser,
                   int&nbsp;epochs,
                   int&nbsp;loggingInterval,
                   int&nbsp;minibatchSize,
@@ -267,7 +267,7 @@ implements <a href="../../../../../org/tribuo/sequence/SequenceTrainer.html" tit
 <ul class="blockList">
 <li class="blockList">
 <h4>CRFTrainer</h4>
-<pre>public&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFTrainer.html#line.101">CRFTrainer</a>(<a href="../../../../../org/tribuo/math/StochasticGradientOptimiser.html" title="interface in org.tribuo.math">StochasticGradientOptimiser</a>&nbsp;optimiser,
+<pre>public&nbsp;CRFTrainer(<a href="../../../../../org/tribuo/math/StochasticGradientOptimiser.html" title="interface in org.tribuo.math">StochasticGradientOptimiser</a>&nbsp;optimiser,
                   int&nbsp;epochs,
                   int&nbsp;loggingInterval,
                   long&nbsp;seed)</pre>
@@ -287,7 +287,7 @@ implements <a href="../../../../../org/tribuo/sequence/SequenceTrainer.html" tit
 <ul class="blockListLast">
 <li class="blockList">
 <h4>CRFTrainer</h4>
-<pre>public&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFTrainer.html#line.111">CRFTrainer</a>(<a href="../../../../../org/tribuo/math/StochasticGradientOptimiser.html" title="interface in org.tribuo.math">StochasticGradientOptimiser</a>&nbsp;optimiser,
+<pre>public&nbsp;CRFTrainer(<a href="../../../../../org/tribuo/math/StochasticGradientOptimiser.html" title="interface in org.tribuo.math">StochasticGradientOptimiser</a>&nbsp;optimiser,
                   int&nbsp;epochs,
                   long&nbsp;seed)</pre>
 <div class="block">Sets the minibatch size to 1 and the logging interval to 100.</div>
@@ -313,7 +313,7 @@ implements <a href="../../../../../org/tribuo/sequence/SequenceTrainer.html" tit
 <ul class="blockList">
 <li class="blockList">
 <h4>postConfig</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFTrainer.html#line.121">postConfig</a>()</pre>
+<pre>public&nbsp;void&nbsp;postConfig()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>postConfig</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.config.Configurable</code></dd>
@@ -326,7 +326,7 @@ implements <a href="../../../../../org/tribuo/sequence/SequenceTrainer.html" tit
 <ul class="blockList">
 <li class="blockList">
 <h4>setShuffle</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFTrainer.html#line.132">setShuffle</a>(boolean&nbsp;shuffle)</pre>
+<pre>public&nbsp;void&nbsp;setShuffle(boolean&nbsp;shuffle)</pre>
 <div class="block">Turn on or off shuffling of examples.
  <p>
  This isn't exposed in the constructor as it defaults to on.
@@ -343,7 +343,7 @@ implements <a href="../../../../../org/tribuo/sequence/SequenceTrainer.html" tit
 <ul class="blockList">
 <li class="blockList">
 <h4>train</h4>
-<pre>public&nbsp;<a href="../../../../../org/tribuo/classification/sgd/crf/CRFModel.html" title="class in org.tribuo.classification.sgd.crf">CRFModel</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFTrainer.html#line.137">train</a>(<a href="../../../../../org/tribuo/sequence/SequenceDataset.html" title="class in org.tribuo.sequence">SequenceDataset</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;sequenceExamples,
+<pre>public&nbsp;<a href="../../../../../org/tribuo/classification/sgd/crf/CRFModel.html" title="class in org.tribuo.classification.sgd.crf">CRFModel</a>&nbsp;train(<a href="../../../../../org/tribuo/sequence/SequenceDataset.html" title="class in org.tribuo.sequence">SequenceDataset</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;sequenceExamples,
                       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,com.oracle.labs.mlrg.olcut.provenance.Provenance&gt;&nbsp;runProvenance)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/tribuo/sequence/SequenceTrainer.html#train-org.tribuo.sequence.SequenceDataset-java.util.Map-">SequenceTrainer</a></code></span></div>
 <div class="block">Trains a sequence prediction model using the examples in the given data set.</div>
@@ -364,7 +364,7 @@ implements <a href="../../../../../org/tribuo/sequence/SequenceTrainer.html" tit
 <ul class="blockList">
 <li class="blockList">
 <h4>getInvocationCount</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFTrainer.html#line.239">getInvocationCount</a>()</pre>
+<pre>public&nbsp;int&nbsp;getInvocationCount()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/tribuo/sequence/SequenceTrainer.html#getInvocationCount--">SequenceTrainer</a></code></span></div>
 <div class="block">Returns the number of times the train method has been invoked.</div>
 <dl>
@@ -381,7 +381,7 @@ implements <a href="../../../../../org/tribuo/sequence/SequenceTrainer.html" tit
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFTrainer.html#line.244">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -394,7 +394,7 @@ implements <a href="../../../../../org/tribuo/sequence/SequenceTrainer.html" tit
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;<a href="../../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFTrainer.html#line.249">getProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&gt;</code></dd>
@@ -469,6 +469,6 @@ implements <a href="../../../../../org/tribuo/sequence/SequenceTrainer.html" tit
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

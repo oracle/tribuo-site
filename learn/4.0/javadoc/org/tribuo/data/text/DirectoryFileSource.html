@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/data/text/DirectoryFileSource.html#line.72">DirectoryFileSource</a>&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public class <span class="typeNameLabel">DirectoryFileSource&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/ConfigurableDataSource.html" title="interface in org.tribuo">ConfigurableDataSource</a>&lt;T&gt;</pre>
 <div class="block">A data source for a somewhat-common format for text classification datasets:
@@ -302,7 +302,7 @@ implements <a href="../../../../org/tribuo/ConfigurableDataSource.html" title="i
 <li class="blockList">
 <h4>preprocessors</h4>
 <pre>@Config(description="The preprocessors to apply to the input documents.")
-protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/data/text/DocumentPreprocessor.html" title="interface in org.tribuo.data.text">DocumentPreprocessor</a>&gt; <a href="../../../../src-html/org/tribuo/data/text/DirectoryFileSource.html#line.89">preprocessors</a></pre>
+protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/data/text/DocumentPreprocessor.html" title="interface in org.tribuo.data.text">DocumentPreprocessor</a>&gt; preprocessors</pre>
 <div class="block">Document preprocessors that should be run on the documents that make up
  this data set.</div>
 </li>
@@ -315,7 +315,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List
 <h4>outputFactory</h4>
 <pre>@Config(mandatory=true,
         description="The output factory to use.")
-protected&nbsp;<a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../../org/tribuo/data/text/DirectoryFileSource.html" title="type parameter in DirectoryFileSource">T</a> extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../../org/tribuo/data/text/DirectoryFileSource.html" title="type parameter in DirectoryFileSource">T</a>&gt;&gt; <a href="../../../../src-html/org/tribuo/data/text/DirectoryFileSource.html#line.95">outputFactory</a></pre>
+protected&nbsp;<a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../../org/tribuo/data/text/DirectoryFileSource.html" title="type parameter in DirectoryFileSource">T</a> extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../../org/tribuo/data/text/DirectoryFileSource.html" title="type parameter in DirectoryFileSource">T</a>&gt;&gt; outputFactory</pre>
 <div class="block">The factory that converts a String into an <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo"><code>Output</code></a>.</div>
 </li>
 </ul>
@@ -327,7 +327,7 @@ protected&nbsp;<a href="../../../../org/tribuo/OutputFactory.html" title="interf
 <h4>extractor</h4>
 <pre>@Config(mandatory=true,
         description="The feature extractor that converts text into examples.")
-protected&nbsp;<a href="../../../../org/tribuo/data/text/TextFeatureExtractor.html" title="interface in org.tribuo.data.text">TextFeatureExtractor</a>&lt;<a href="../../../../org/tribuo/data/text/DirectoryFileSource.html" title="type parameter in DirectoryFileSource">T</a> extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../../org/tribuo/data/text/DirectoryFileSource.html" title="type parameter in DirectoryFileSource">T</a>&gt;&gt; <a href="../../../../src-html/org/tribuo/data/text/DirectoryFileSource.html#line.101">extractor</a></pre>
+protected&nbsp;<a href="../../../../org/tribuo/data/text/TextFeatureExtractor.html" title="interface in org.tribuo.data.text">TextFeatureExtractor</a>&lt;<a href="../../../../org/tribuo/data/text/DirectoryFileSource.html" title="type parameter in DirectoryFileSource">T</a> extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../../org/tribuo/data/text/DirectoryFileSource.html" title="type parameter in DirectoryFileSource">T</a>&gt;&gt; extractor</pre>
 <div class="block">The extractor that we'll use to turn text into examples.</div>
 </li>
 </ul>
@@ -345,7 +345,7 @@ protected&nbsp;<a href="../../../../org/tribuo/data/text/TextFeatureExtractor.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>DirectoryFileSource</h4>
-<pre>protected&nbsp;<a href="../../../../src-html/org/tribuo/data/text/DirectoryFileSource.html#line.106">DirectoryFileSource</a>()</pre>
+<pre>protected&nbsp;DirectoryFileSource()</pre>
 <div class="block">for olcut</div>
 </li>
 </ul>
@@ -355,7 +355,7 @@ protected&nbsp;<a href="../../../../org/tribuo/data/text/TextFeatureExtractor.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>DirectoryFileSource</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/data/text/DirectoryFileSource.html#line.119">DirectoryFileSource</a>(<a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../../org/tribuo/data/text/DirectoryFileSource.html" title="type parameter in DirectoryFileSource">T</a>&gt;&nbsp;outputFactory,
+<pre>public&nbsp;DirectoryFileSource(<a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../../org/tribuo/data/text/DirectoryFileSource.html" title="type parameter in DirectoryFileSource">T</a>&gt;&nbsp;outputFactory,
                            <a href="../../../../org/tribuo/data/text/TextFeatureExtractor.html" title="interface in org.tribuo.data.text">TextFeatureExtractor</a>&lt;<a href="../../../../org/tribuo/data/text/DirectoryFileSource.html" title="type parameter in DirectoryFileSource">T</a>&gt;&nbsp;extractor,
                            <a href="../../../../org/tribuo/data/text/DocumentPreprocessor.html" title="interface in org.tribuo.data.text">DocumentPreprocessor</a>...&nbsp;preprocessors)</pre>
 <div class="block">Creates a data source that will use the given feature extractor and
@@ -377,7 +377,7 @@ protected&nbsp;<a href="../../../../org/tribuo/data/text/TextFeatureExtractor.ht
 <ul class="blockListLast">
 <li class="blockList">
 <h4>DirectoryFileSource</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/data/text/DirectoryFileSource.html#line.125">DirectoryFileSource</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html?is-external=true" title="class or interface in java.nio.file">Path</a>&nbsp;newsDir,
+<pre>public&nbsp;DirectoryFileSource(<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html?is-external=true" title="class or interface in java.nio.file">Path</a>&nbsp;newsDir,
                            <a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../../org/tribuo/data/text/DirectoryFileSource.html" title="type parameter in DirectoryFileSource">T</a>&gt;&nbsp;outputFactory,
                            <a href="../../../../org/tribuo/data/text/TextFeatureExtractor.html" title="interface in org.tribuo.data.text">TextFeatureExtractor</a>&lt;<a href="../../../../org/tribuo/data/text/DirectoryFileSource.html" title="type parameter in DirectoryFileSource">T</a>&gt;&nbsp;extractor,
                            <a href="../../../../org/tribuo/data/text/DocumentPreprocessor.html" title="interface in org.tribuo.data.text">DocumentPreprocessor</a>...&nbsp;preprocessors)</pre>
@@ -397,7 +397,7 @@ protected&nbsp;<a href="../../../../org/tribuo/data/text/TextFeatureExtractor.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/data/text/DirectoryFileSource.html#line.133">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -410,7 +410,7 @@ protected&nbsp;<a href="../../../../org/tribuo/data/text/TextFeatureExtractor.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>getOutputFactory</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../../org/tribuo/data/text/DirectoryFileSource.html" title="type parameter in DirectoryFileSource">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/data/text/DirectoryFileSource.html#line.138">getOutputFactory</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../../org/tribuo/data/text/DirectoryFileSource.html" title="type parameter in DirectoryFileSource">T</a>&gt;&nbsp;getOutputFactory()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/DataSource.html#getOutputFactory--">DataSource</a></code></span></div>
 <div class="block">Returns the OutputFactory associated with this Output subclass.</div>
 <dl>
@@ -427,7 +427,7 @@ protected&nbsp;<a href="../../../../org/tribuo/data/text/TextFeatureExtractor.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>iterator</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/data/text/DirectoryFileSource.html" title="type parameter in DirectoryFileSource">T</a>&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/data/text/DirectoryFileSource.html#line.143">iterator</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/data/text/DirectoryFileSource.html" title="type parameter in DirectoryFileSource">T</a>&gt;&gt;&nbsp;iterator()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true#iterator--" title="class or interface in java.lang">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/data/text/DirectoryFileSource.html" title="type parameter in DirectoryFileSource">T</a> extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../../org/tribuo/data/text/DirectoryFileSource.html" title="type parameter in DirectoryFileSource">T</a>&gt;&gt;&gt;</code></dd>
@@ -440,7 +440,7 @@ protected&nbsp;<a href="../../../../org/tribuo/data/text/TextFeatureExtractor.ht
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/provenance/ConfiguredDataSourceProvenance.html" title="interface in org.tribuo.provenance">ConfiguredDataSourceProvenance</a>&nbsp;<a href="../../../../src-html/org/tribuo/data/text/DirectoryFileSource.html#line.252">getProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/provenance/ConfiguredDataSourceProvenance.html" title="interface in org.tribuo.provenance">ConfiguredDataSourceProvenance</a>&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../../../org/tribuo/provenance/DataSourceProvenance.html" title="interface in org.tribuo.provenance">DataSourceProvenance</a>&gt;</code></dd>
@@ -515,6 +515,6 @@ protected&nbsp;<a href="../../../../org/tribuo/data/text/TextFeatureExtractor.ht
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

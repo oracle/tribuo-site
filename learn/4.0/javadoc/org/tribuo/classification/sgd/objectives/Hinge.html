@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../../src-html/org/tribuo/classification/sgd/objectives/Hinge.html#line.35">Hinge</a>
+<pre>public class <span class="typeNameLabel">Hinge</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../../org/tribuo/classification/sgd/LabelObjective.html" title="interface in org.tribuo.classification.sgd">LabelObjective</a></pre>
 <div class="block">Hinge loss, scores the correct value margin and any incorrect predictions -margin.
@@ -223,7 +223,7 @@ implements <a href="../../../../../org/tribuo/classification/sgd/LabelObjective.
 <ul class="blockList">
 <li class="blockList">
 <h4>Hinge</h4>
-<pre>public&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/objectives/Hinge.html#line.44">Hinge</a>(double&nbsp;margin)</pre>
+<pre>public&nbsp;Hinge(double&nbsp;margin)</pre>
 <div class="block">Construct a hinge objective with the supplied margin.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -237,7 +237,7 @@ implements <a href="../../../../../org/tribuo/classification/sgd/LabelObjective.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Hinge</h4>
-<pre>public&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/objectives/Hinge.html#line.51">Hinge</a>()</pre>
+<pre>public&nbsp;Hinge()</pre>
 <div class="block">Construct a hinge objective with a margin of 1.0.</div>
 </li>
 </ul>
@@ -255,7 +255,7 @@ implements <a href="../../../../../org/tribuo/classification/sgd/LabelObjective.
 <ul class="blockList">
 <li class="blockList">
 <h4>valueAndGradient</h4>
-<pre>public&nbsp;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>,<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/objectives/Hinge.html#line.62">valueAndGradient</a>(int&nbsp;truth,
+<pre>public&nbsp;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>,<a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&gt;&nbsp;valueAndGradient(int&nbsp;truth,
                                                                                <a href="../../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;prediction)</pre>
 <div class="block">Returns a <code>Pair</code> of <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang"><code>Double</code></a> and <a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la"><code>SparseVector</code></a>.</div>
 <dl>
@@ -275,7 +275,7 @@ implements <a href="../../../../../org/tribuo/classification/sgd/LabelObjective.
 <ul class="blockList">
 <li class="blockList">
 <h4>getNormalizer</h4>
-<pre>public&nbsp;<a href="../../../../../org/tribuo/math/util/VectorNormalizer.html" title="interface in org.tribuo.math.util">VectorNormalizer</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/objectives/Hinge.html#line.93">getNormalizer</a>()</pre>
+<pre>public&nbsp;<a href="../../../../../org/tribuo/math/util/VectorNormalizer.html" title="interface in org.tribuo.math.util">VectorNormalizer</a>&nbsp;getNormalizer()</pre>
 <div class="block">Returns a new <a href="../../../../../org/tribuo/math/util/NoopNormalizer.html" title="class in org.tribuo.math.util"><code>NoopNormalizer</code></a>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -291,7 +291,7 @@ implements <a href="../../../../../org/tribuo/classification/sgd/LabelObjective.
 <ul class="blockList">
 <li class="blockList">
 <h4>isProbabilistic</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/objectives/Hinge.html#line.102">isProbabilistic</a>()</pre>
+<pre>public&nbsp;boolean&nbsp;isProbabilistic()</pre>
 <div class="block">Returns false.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -307,7 +307,7 @@ implements <a href="../../../../../org/tribuo/classification/sgd/LabelObjective.
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/objectives/Hinge.html#line.107">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -320,7 +320,7 @@ implements <a href="../../../../../org/tribuo/classification/sgd/LabelObjective.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/objectives/Hinge.html#line.112">getProvenance</a>()</pre>
+<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&gt;</code></dd>
@@ -395,6 +395,6 @@ implements <a href="../../../../../org/tribuo/classification/sgd/LabelObjective.
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

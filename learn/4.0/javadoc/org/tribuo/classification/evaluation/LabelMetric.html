@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/classification/evaluation/LabelMetric.html#line.35">LabelMetric</a>
+<pre>public class <span class="typeNameLabel">LabelMetric</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="interface in org.tribuo.evaluation.metrics">EvaluationMetric</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>,<a href="../../../../org/tribuo/classification/evaluation/LabelMetric.Context.html" title="class in org.tribuo.classification.evaluation">LabelMetric.Context</a>&gt;</pre>
 <div class="block">A <a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="interface in org.tribuo.evaluation.metrics"><code>EvaluationMetric</code></a> for <a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification"><code>Label</code></a>s which calculates the value based on a
@@ -257,7 +257,7 @@ implements <a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.h
 <ul class="blockListLast">
 <li class="blockList">
 <h4>LabelMetric</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/LabelMetric.html#line.48">LabelMetric</a>(<a href="../../../../org/tribuo/evaluation/metrics/MetricTarget.html" title="class in org.tribuo.evaluation.metrics">MetricTarget</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;tgt,
+<pre>public&nbsp;LabelMetric(<a href="../../../../org/tribuo/evaluation/metrics/MetricTarget.html" title="class in org.tribuo.evaluation.metrics">MetricTarget</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;tgt,
                    <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/ToDoubleBiFunction.html?is-external=true" title="class or interface in java.util.function">ToDoubleBiFunction</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/MetricTarget.html" title="class in org.tribuo.evaluation.metrics">MetricTarget</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;,<a href="../../../../org/tribuo/classification/evaluation/LabelMetric.Context.html" title="class in org.tribuo.classification.evaluation">LabelMetric.Context</a>&gt;&nbsp;impl)</pre>
 <div class="block">Construct a new <code>LabelMetric</code> for the supplied metric target,
@@ -284,7 +284,7 @@ implements <a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.h
 <ul class="blockList">
 <li class="blockList">
 <h4>compute</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/LabelMetric.html#line.56">compute</a>(<a href="../../../../org/tribuo/classification/evaluation/LabelMetric.Context.html" title="class in org.tribuo.classification.evaluation">LabelMetric.Context</a>&nbsp;context)</pre>
+<pre>public&nbsp;double&nbsp;compute(<a href="../../../../org/tribuo/classification/evaluation/LabelMetric.Context.html" title="class in org.tribuo.classification.evaluation">LabelMetric.Context</a>&nbsp;context)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html#compute-C-">EvaluationMetric</a></code></span></div>
 <div class="block">Compute the result of this metric from the input context.</div>
 <dl>
@@ -303,7 +303,7 @@ implements <a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.h
 <ul class="blockList">
 <li class="blockList">
 <h4>getTarget</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/evaluation/metrics/MetricTarget.html" title="class in org.tribuo.evaluation.metrics">MetricTarget</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/LabelMetric.html#line.61">getTarget</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/evaluation/metrics/MetricTarget.html" title="class in org.tribuo.evaluation.metrics">MetricTarget</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;getTarget()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html#getTarget--">EvaluationMetric</a></code></span></div>
 <div class="block">The target for this metric instance.</div>
 <dl>
@@ -320,7 +320,7 @@ implements <a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.h
 <ul class="blockList">
 <li class="blockList">
 <h4>getName</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/LabelMetric.html#line.66">getName</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getName()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html#getName--">EvaluationMetric</a></code></span></div>
 <div class="block">The name of this metric.</div>
 <dl>
@@ -337,7 +337,7 @@ implements <a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.h
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/LabelMetric.html#line.71">equals</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -350,7 +350,7 @@ implements <a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.h
 <ul class="blockList">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/LabelMetric.html#line.81">hashCode</a>()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -363,7 +363,7 @@ implements <a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.h
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/LabelMetric.html#line.86">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -376,7 +376,7 @@ implements <a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.h
 <ul class="blockListLast">
 <li class="blockList">
 <h4>createContext</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/classification/evaluation/LabelMetric.Context.html" title="class in org.tribuo.classification.evaluation">LabelMetric.Context</a>&nbsp;<a href="../../../../src-html/org/tribuo/classification/evaluation/LabelMetric.html#line.94">createContext</a>(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;model,
+<pre>public&nbsp;<a href="../../../../org/tribuo/classification/evaluation/LabelMetric.Context.html" title="class in org.tribuo.classification.evaluation">LabelMetric.Context</a>&nbsp;createContext(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;model,
                                          <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&gt;&nbsp;predictions)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html#createContext-org.tribuo.Model-java.util.List-">EvaluationMetric</a></code></span></div>
 <div class="block">Creates the context this metric uses to compute it's value.</div>
@@ -459,6 +459,6 @@ implements <a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.h
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

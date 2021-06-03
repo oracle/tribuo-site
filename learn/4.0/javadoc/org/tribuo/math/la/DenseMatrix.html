@@ -116,7 +116,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.29">DenseMatrix</a>
+<pre>public class <span class="typeNameLabel">DenseMatrix</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a></pre>
 <div class="block">A dense matrix, backed by a primitive array.</div>
@@ -436,7 +436,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>values</h4>
-<pre>protected final&nbsp;double[][] <a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.34">values</a></pre>
+<pre>protected final&nbsp;double[][] values</pre>
 </li>
 </ul>
 <a name="dim1">
@@ -445,7 +445,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>dim1</h4>
-<pre>protected final&nbsp;int <a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.35">dim1</a></pre>
+<pre>protected final&nbsp;int dim1</pre>
 </li>
 </ul>
 <a name="dim2">
@@ -454,7 +454,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockListLast">
 <li class="blockList">
 <h4>dim2</h4>
-<pre>protected final&nbsp;int <a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.36">dim2</a></pre>
+<pre>protected final&nbsp;int dim2</pre>
 </li>
 </ul>
 </li>
@@ -471,7 +471,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>DenseMatrix</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.42">DenseMatrix</a>(int&nbsp;dim1,
+<pre>public&nbsp;DenseMatrix(int&nbsp;dim1,
                    int&nbsp;dim2)</pre>
 </li>
 </ul>
@@ -481,7 +481,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>DenseMatrix</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.50">DenseMatrix</a>(<a href="../../../../org/tribuo/math/la/DenseMatrix.html" title="class in org.tribuo.math.la">DenseMatrix</a>&nbsp;other)</pre>
+<pre>public&nbsp;DenseMatrix(<a href="../../../../org/tribuo/math/la/DenseMatrix.html" title="class in org.tribuo.math.la">DenseMatrix</a>&nbsp;other)</pre>
 </li>
 </ul>
 <a name="DenseMatrix-org.tribuo.math.la.Matrix-">
@@ -490,7 +490,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockListLast">
 <li class="blockList">
 <h4>DenseMatrix</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.64">DenseMatrix</a>(<a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;other)</pre>
+<pre>public&nbsp;DenseMatrix(<a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;other)</pre>
 </li>
 </ul>
 </li>
@@ -507,7 +507,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>createDenseMatrix</h4>
-<pre>public static&nbsp;<a href="../../../../org/tribuo/math/la/DenseMatrix.html" title="class in org.tribuo.math.la">DenseMatrix</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.94">createDenseMatrix</a>(double[][]&nbsp;values)</pre>
+<pre>public static&nbsp;<a href="../../../../org/tribuo/math/la/DenseMatrix.html" title="class in org.tribuo.math.la">DenseMatrix</a>&nbsp;createDenseMatrix(double[][]&nbsp;values)</pre>
 <div class="block">Defensively copies the values before construction.
  <p>
  Throws IllegalArgumentException if the supplied values are a ragged array.</div>
@@ -525,7 +525,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>getShape</h4>
-<pre>public&nbsp;int[]&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.110">getShape</a>()</pre>
+<pre>public&nbsp;int[]&nbsp;getShape()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Tensor.html#getShape--">Tensor</a></code></span></div>
 <div class="block">Returns an int array specifying the shape of this <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a>.</div>
 <dl>
@@ -542,7 +542,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>reshape</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.115">reshape</a>(int[]&nbsp;newShape)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;reshape(int[]&nbsp;newShape)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Tensor.html#reshape-int:A-">Tensor</a></code></span></div>
 <div class="block">Reshapes the Tensor to the supplied shape. Throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang"><code>IllegalArgumentException</code></a> if the shape isn't compatible.</div>
 <dl>
@@ -561,7 +561,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseMatrix.html" title="class in org.tribuo.math.la">DenseMatrix</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.152">copy</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseMatrix.html" title="class in org.tribuo.math.la">DenseMatrix</a>&nbsp;copy()</pre>
 <div class="block">Copies the matrix.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -575,7 +575,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.157">get</a>(int&nbsp;i,
+<pre>public&nbsp;double&nbsp;get(int&nbsp;i,
                   int&nbsp;j)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Matrix.html#get-int-int-">Matrix</a></code></span></div>
 <div class="block">Gets an element from this <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la"><code>Matrix</code></a>.</div>
@@ -596,7 +596,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>gatherAcrossDim1</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.161">gatherAcrossDim1</a>(int[]&nbsp;elements)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;gatherAcrossDim1(int[]&nbsp;elements)</pre>
 </li>
 </ul>
 <a name="gatherAcrossDim2-int:A-">
@@ -605,7 +605,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>gatherAcrossDim2</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.174">gatherAcrossDim2</a>(int[]&nbsp;elements)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;gatherAcrossDim2(int[]&nbsp;elements)</pre>
 </li>
 </ul>
 <a name="transpose--">
@@ -614,7 +614,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>transpose</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseMatrix.html" title="class in org.tribuo.math.la">DenseMatrix</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.187">transpose</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseMatrix.html" title="class in org.tribuo.math.la">DenseMatrix</a>&nbsp;transpose()</pre>
 </li>
 </ul>
 <a name="equals-java.lang.Object-">
@@ -623,7 +623,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.200">equals</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -636,7 +636,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.219">hashCode</a>()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -649,7 +649,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>set</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.227">set</a>(int&nbsp;i,
+<pre>public&nbsp;void&nbsp;set(int&nbsp;i,
                 int&nbsp;j,
                 double&nbsp;value)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Matrix.html#set-int-int-double-">Matrix</a></code></span></div>
@@ -670,7 +670,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>getDimension1Size</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.232">getDimension1Size</a>()</pre>
+<pre>public&nbsp;int&nbsp;getDimension1Size()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Matrix.html#getDimension1Size--">Matrix</a></code></span></div>
 <div class="block">The size of the first dimension.</div>
 <dl>
@@ -687,7 +687,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>getDimension2Size</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.237">getDimension2Size</a>()</pre>
+<pre>public&nbsp;int&nbsp;getDimension2Size()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Matrix.html#getDimension2Size--">Matrix</a></code></span></div>
 <div class="block">The size of the second dimension.</div>
 <dl>
@@ -704,7 +704,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>leftMultiply</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.242">leftMultiply</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;input)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;leftMultiply(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;input)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Matrix.html#leftMultiply-org.tribuo.math.la.SGDVector-">Matrix</a></code></span></div>
 <div class="block">Multiplies this Matrix by a <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la"><code>SGDVector</code></a> returning a vector of the appropriate size.
  <p>
@@ -725,7 +725,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>rightMultiply</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.259">rightMultiply</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;input)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;rightMultiply(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;input)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Matrix.html#rightMultiply-org.tribuo.math.la.SGDVector-">Matrix</a></code></span></div>
 <div class="block">Multiplies this Matrix by a <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la"><code>SGDVector</code></a> returning a vector of the appropriate size.
  <p>
@@ -746,7 +746,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>matrixMultiply</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseMatrix.html" title="class in org.tribuo.math.la">DenseMatrix</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.276">matrixMultiply</a>(<a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;other)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseMatrix.html" title="class in org.tribuo.math.la">DenseMatrix</a>&nbsp;matrixMultiply(<a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;other)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Matrix.html#matrixMultiply-org.tribuo.math.la.Matrix-">Matrix</a></code></span></div>
 <div class="block">Multiplies this Matrix by another <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la"><code>Matrix</code></a> returning a matrix of the appropriate size.
  <p>
@@ -767,7 +767,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>matrixMultiply</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseMatrix.html" title="class in org.tribuo.math.la">DenseMatrix</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.310">matrixMultiply</a>(<a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;other,
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseMatrix.html" title="class in org.tribuo.math.la">DenseMatrix</a>&nbsp;matrixMultiply(<a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;other,
                                   boolean&nbsp;transposeThis,
                                   boolean&nbsp;transposeOther)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Matrix.html#matrixMultiply-org.tribuo.math.la.Matrix-boolean-boolean-">Matrix</a></code></span></div>
@@ -792,7 +792,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>rowSum</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.454">rowSum</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;rowSum()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Matrix.html#rowSum--">Matrix</a></code></span></div>
 <div class="block">Generates a <a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la"><code>DenseVector</code></a> representing the sum of each row.</div>
 <dl>
@@ -809,7 +809,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>rowScaleInPlace</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.467">rowScaleInPlace</a>(<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;scalingCoefficients)</pre>
+<pre>public&nbsp;void&nbsp;rowScaleInPlace(<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;scalingCoefficients)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Matrix.html#rowScaleInPlace-org.tribuo.math.la.DenseVector-">Matrix</a></code></span></div>
 <div class="block">Scales each row by the appropriate value in the <a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la"><code>DenseVector</code></a>.</div>
 <dl>
@@ -826,7 +826,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>add</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.477">add</a>(int&nbsp;i,
+<pre>public&nbsp;void&nbsp;add(int&nbsp;i,
                 int&nbsp;j,
                 double&nbsp;value)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Matrix.html#add-int-int-double-">Matrix</a></code></span></div>
@@ -847,7 +847,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>addAcrossDim1</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.481">addAcrossDim1</a>(int[]&nbsp;indices,
+<pre>public&nbsp;void&nbsp;addAcrossDim1(int[]&nbsp;indices,
                           double&nbsp;value)</pre>
 </li>
 </ul>
@@ -857,7 +857,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>addAcrossDim2</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.490">addAcrossDim2</a>(int[]&nbsp;indices,
+<pre>public&nbsp;void&nbsp;addAcrossDim2(int[]&nbsp;indices,
                           double&nbsp;value)</pre>
 </li>
 </ul>
@@ -867,7 +867,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>intersectAndAddInPlace</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.500">intersectAndAddInPlace</a>(<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;other,
+<pre>public&nbsp;void&nbsp;intersectAndAddInPlace(<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;other,
                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function">DoubleUnaryOperator</a>&nbsp;f)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Tensor.html#intersectAndAddInPlace-org.tribuo.math.la.Tensor-java.util.function.DoubleUnaryOperator-">Tensor</a></code></span></div>
 <div class="block">Updates this <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a> by adding all the values from the intersection with <code>other</code>.
@@ -891,7 +891,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>hadamardProductInPlace</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.516">hadamardProductInPlace</a>(<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;other,
+<pre>public&nbsp;void&nbsp;hadamardProductInPlace(<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;other,
                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function">DoubleUnaryOperator</a>&nbsp;f)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Tensor.html#hadamardProductInPlace-org.tribuo.math.la.Tensor-java.util.function.DoubleUnaryOperator-">Tensor</a></code></span></div>
 <div class="block">Updates this <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a> with the Hadamard product
@@ -915,7 +915,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>foreachInPlace</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.532">foreachInPlace</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function">DoubleUnaryOperator</a>&nbsp;f)</pre>
+<pre>public&nbsp;void&nbsp;foreachInPlace(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function">DoubleUnaryOperator</a>&nbsp;f)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Tensor.html#foreachInPlace-java.util.function.DoubleUnaryOperator-">Tensor</a></code></span></div>
 <div class="block">Applies a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function"><code>DoubleUnaryOperator</code></a> elementwise to this <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a>.</div>
 <dl>
@@ -932,7 +932,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>broadcastIntersectAndAddInPlace</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.545">broadcastIntersectAndAddInPlace</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;input,
+<pre>public&nbsp;void&nbsp;broadcastIntersectAndAddInPlace(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;input,
                                             boolean&nbsp;broadcastOverDim1)</pre>
 <div class="block">Broadcasts the input vector and adds it to each row/column of the matrix.</div>
 <dl>
@@ -948,7 +948,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>numActiveElements</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.598">numActiveElements</a>(int&nbsp;row)</pre>
+<pre>public&nbsp;int&nbsp;numActiveElements(int&nbsp;row)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Matrix.html#numActiveElements-int-">Matrix</a></code></span></div>
 <div class="block">The number of non-zero elements in that row.
  <p>
@@ -969,7 +969,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>getRow</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.603">getRow</a>(int&nbsp;i)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;getRow(int&nbsp;i)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Matrix.html#getRow-int-">Matrix</a></code></span></div>
 <div class="block">Extract a row as an <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la"><code>SGDVector</code></a>.
  <p>
@@ -990,7 +990,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>getColumn</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.607">getColumn</a>(int&nbsp;index)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;getColumn(int&nbsp;index)</pre>
 </li>
 </ul>
 <a name="rowSum-int-">
@@ -999,7 +999,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>rowSum</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.615">rowSum</a>(int&nbsp;rowIndex)</pre>
+<pre>public&nbsp;double&nbsp;rowSum(int&nbsp;rowIndex)</pre>
 </li>
 </ul>
 <a name="columnSum-int-">
@@ -1008,7 +1008,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>columnSum</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.624">columnSum</a>(int&nbsp;columnIndex)</pre>
+<pre>public&nbsp;double&nbsp;columnSum(int&nbsp;columnIndex)</pre>
 </li>
 </ul>
 <a name="twoNorm--">
@@ -1017,7 +1017,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>twoNorm</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.633">twoNorm</a>()</pre>
+<pre>public&nbsp;double&nbsp;twoNorm()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Tensor.html#twoNorm--">Tensor</a></code></span></div>
 <div class="block">Calculates the euclidean norm for this vector.</div>
 <dl>
@@ -1034,7 +1034,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.645">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -1047,7 +1047,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>iterator</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/MatrixIterator.html" title="interface in org.tribuo.math.la">MatrixIterator</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.674">iterator</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/MatrixIterator.html" title="interface in org.tribuo.math.la">MatrixIterator</a>&nbsp;iterator()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true#iterator--" title="class or interface in java.lang">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../org/tribuo/math/la/MatrixTuple.html" title="class in org.tribuo.math.la">MatrixTuple</a>&gt;</code></dd>
@@ -1060,7 +1060,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>normalizeRows</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.678">normalizeRows</a>(<a href="../../../../org/tribuo/math/util/VectorNormalizer.html" title="interface in org.tribuo.math.util">VectorNormalizer</a>&nbsp;normalizer)</pre>
+<pre>public&nbsp;void&nbsp;normalizeRows(<a href="../../../../org/tribuo/math/util/VectorNormalizer.html" title="interface in org.tribuo.math.util">VectorNormalizer</a>&nbsp;normalizer)</pre>
 </li>
 </ul>
 <a name="columnSum--">
@@ -1069,7 +1069,7 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <ul class="blockListLast">
 <li class="blockList">
 <h4>columnSum</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/DenseMatrix.html#line.685">columnSum</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;columnSum()</pre>
 </li>
 </ul>
 </li>
@@ -1140,6 +1140,6 @@ implements <a href="../../../../org/tribuo/math/la/Matrix.html" title="interface
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

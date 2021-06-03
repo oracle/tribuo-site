@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/classification/mnb/MultinomialNaiveBayesTrainer.html#line.53">MultinomialNaiveBayesTrainer</a>
+<pre>public class <span class="typeNameLabel">MultinomialNaiveBayesTrainer</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;, <a href="../../../../org/tribuo/WeightedExamples.html" title="interface in org.tribuo">WeightedExamples</a></pre>
 <div class="block">A <a href="../../../../org/tribuo/Trainer.html" title="interface in org.tribuo"><code>Trainer</code></a> which trains a multinomial Naive Bayes model with Laplace smoothing.
@@ -241,7 +241,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockList">
 <li class="blockList">
 <h4>MultinomialNaiveBayesTrainer</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/classification/mnb/MultinomialNaiveBayesTrainer.html#line.60">MultinomialNaiveBayesTrainer</a>()</pre>
+<pre>public&nbsp;MultinomialNaiveBayesTrainer()</pre>
 </li>
 </ul>
 <a name="MultinomialNaiveBayesTrainer-double-">
@@ -250,7 +250,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockListLast">
 <li class="blockList">
 <h4>MultinomialNaiveBayesTrainer</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/classification/mnb/MultinomialNaiveBayesTrainer.html#line.65">MultinomialNaiveBayesTrainer</a>(double&nbsp;alpha)</pre>
+<pre>public&nbsp;MultinomialNaiveBayesTrainer(double&nbsp;alpha)</pre>
 </li>
 </ul>
 </li>
@@ -267,7 +267,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockList">
 <li class="blockList">
 <h4>train</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/classification/mnb/MultinomialNaiveBayesTrainer.html#line.73">train</a>(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;examples,
+<pre>public&nbsp;<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;train(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;examples,
                           <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,com.oracle.labs.mlrg.olcut.provenance.Provenance&gt;&nbsp;runProvenance)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/Trainer.html#train-org.tribuo.Dataset-java.util.Map-">Trainer</a></code></span></div>
 <div class="block">Trains a predictive model using the examples in the given data set.</div>
@@ -288,7 +288,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockList">
 <li class="blockList">
 <h4>getInvocationCount</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/classification/mnb/MultinomialNaiveBayesTrainer.html#line.117">getInvocationCount</a>()</pre>
+<pre>public&nbsp;int&nbsp;getInvocationCount()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/Trainer.html#getInvocationCount--">Trainer</a></code></span></div>
 <div class="block">The number of times this trainer instance has had it's train method invoked.
  <p>
@@ -308,7 +308,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/classification/mnb/MultinomialNaiveBayesTrainer.html#line.122">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -321,7 +321,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&nbsp;<a href="../../../../src-html/org/tribuo/classification/mnb/MultinomialNaiveBayesTrainer.html#line.127">getProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&gt;</code></dd>
@@ -396,6 +396,6 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

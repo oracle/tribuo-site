@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/common/tree/LeafNode.html#line.30">LeafNode</a>&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public class <span class="typeNameLabel">LeafNode&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;T&gt;</pre>
 <div class="block">An immutable leaf <a href="../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree"><code>Node</code></a> that can create a prediction.</div>
@@ -237,7 +237,7 @@ implements <a href="../../../../org/tribuo/common/tree/Node.html" title="interfa
 <ul class="blockListLast">
 <li class="blockList">
 <h4>LeafNode</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/LeafNode.html#line.46">LeafNode</a>(double&nbsp;impurity,
+<pre>public&nbsp;LeafNode(double&nbsp;impurity,
                 <a href="../../../../org/tribuo/common/tree/LeafNode.html" title="type parameter in LeafNode">T</a>&nbsp;output,
                 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/tribuo/common/tree/LeafNode.html" title="type parameter in LeafNode">T</a>&gt;&nbsp;scores,
                 boolean&nbsp;generatesProbabilities)</pre>
@@ -265,7 +265,7 @@ implements <a href="../../../../org/tribuo/common/tree/Node.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>getNextNode</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;<a href="../../../../org/tribuo/common/tree/LeafNode.html" title="type parameter in LeafNode">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/LeafNode.html#line.54">getNextNode</a>(<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;e)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/common/tree/Node.html" title="interface in org.tribuo.common.tree">Node</a>&lt;<a href="../../../../org/tribuo/common/tree/LeafNode.html" title="type parameter in LeafNode">T</a>&gt;&nbsp;getNextNode(<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;e)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/common/tree/Node.html#getNextNode-org.tribuo.math.la.SparseVector-">Node</a></code></span></div>
 <div class="block">Returns the next node in the tree based on the supplied example, or null if it's a leaf.</div>
 <dl>
@@ -284,7 +284,7 @@ implements <a href="../../../../org/tribuo/common/tree/Node.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>isLeaf</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/LeafNode.html#line.59">isLeaf</a>()</pre>
+<pre>public&nbsp;boolean&nbsp;isLeaf()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/common/tree/Node.html#isLeaf--">Node</a></code></span></div>
 <div class="block">Is it a leaf node?</div>
 <dl>
@@ -301,7 +301,7 @@ implements <a href="../../../../org/tribuo/common/tree/Node.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>getImpurity</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/LeafNode.html#line.64">getImpurity</a>()</pre>
+<pre>public&nbsp;double&nbsp;getImpurity()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/common/tree/Node.html#getImpurity--">Node</a></code></span></div>
 <div class="block">The impurity score of this node.</div>
 <dl>
@@ -318,7 +318,7 @@ implements <a href="../../../../org/tribuo/common/tree/Node.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/common/tree/LeafNode.html" title="class in org.tribuo.common.tree">LeafNode</a>&lt;<a href="../../../../org/tribuo/common/tree/LeafNode.html" title="type parameter in LeafNode">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/LeafNode.html#line.69">copy</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/common/tree/LeafNode.html" title="class in org.tribuo.common.tree">LeafNode</a>&lt;<a href="../../../../org/tribuo/common/tree/LeafNode.html" title="type parameter in LeafNode">T</a>&gt;&nbsp;copy()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/common/tree/Node.html#copy--">Node</a></code></span></div>
 <div class="block">Copies the node and it's children.</div>
 <dl>
@@ -335,7 +335,7 @@ implements <a href="../../../../org/tribuo/common/tree/Node.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>getOutput</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/common/tree/LeafNode.html" title="type parameter in LeafNode">T</a>&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/LeafNode.html#line.77">getOutput</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/common/tree/LeafNode.html" title="type parameter in LeafNode">T</a>&nbsp;getOutput()</pre>
 <div class="block">Gets the output in this node.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -349,7 +349,7 @@ implements <a href="../../../../org/tribuo/common/tree/Node.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>getDistribution</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/tribuo/common/tree/LeafNode.html" title="type parameter in LeafNode">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/LeafNode.html#line.85">getDistribution</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/tribuo/common/tree/LeafNode.html" title="type parameter in LeafNode">T</a>&gt;&nbsp;getDistribution()</pre>
 <div class="block">Gets the distribution over scores in this node.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -363,7 +363,7 @@ implements <a href="../../../../org/tribuo/common/tree/Node.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>getPrediction</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/common/tree/LeafNode.html" title="type parameter in LeafNode">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/LeafNode.html#line.95">getPrediction</a>(int&nbsp;numUsed,
+<pre>public&nbsp;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/common/tree/LeafNode.html" title="type parameter in LeafNode">T</a>&gt;&nbsp;getPrediction(int&nbsp;numUsed,
                                    <a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/common/tree/LeafNode.html" title="type parameter in LeafNode">T</a>&gt;&nbsp;example)</pre>
 <div class="block">Constructs a new prediction object based on this node's scores.</div>
 <dl>
@@ -381,7 +381,7 @@ implements <a href="../../../../org/tribuo/common/tree/Node.html" title="interfa
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/common/tree/LeafNode.html#line.100">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -456,6 +456,6 @@ implements <a href="../../../../org/tribuo/common/tree/Node.html" title="interfa
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

@@ -116,7 +116,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public abstract class <a href="../../../src-html/org/tribuo/evaluation/AbstractEvaluator.html#line.41">AbstractEvaluator</a>&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;,C extends <a href="../../../org/tribuo/evaluation/metrics/MetricContext.html" title="class in org.tribuo.evaluation.metrics">MetricContext</a>&lt;T&gt;,E extends <a href="../../../org/tribuo/evaluation/Evaluation.html" title="interface in org.tribuo.evaluation">Evaluation</a>&lt;T&gt;,M extends <a href="../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="interface in org.tribuo.evaluation.metrics">EvaluationMetric</a>&lt;T,C&gt;&gt;
+<pre>public abstract class <span class="typeNameLabel">AbstractEvaluator&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;,C extends <a href="../../../org/tribuo/evaluation/metrics/MetricContext.html" title="class in org.tribuo.evaluation.metrics">MetricContext</a>&lt;T&gt;,E extends <a href="../../../org/tribuo/evaluation/Evaluation.html" title="interface in org.tribuo.evaluation">Evaluation</a>&lt;T&gt;,M extends <a href="../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="interface in org.tribuo.evaluation.metrics">EvaluationMetric</a>&lt;T,C&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../org/tribuo/evaluation/Evaluator.html" title="interface in org.tribuo.evaluation">Evaluator</a>&lt;T,E&gt;</pre>
 <div class="block">Base class for evaluators.</div>
@@ -242,7 +242,7 @@ implements <a href="../../../org/tribuo/evaluation/Evaluator.html" title="interf
 <ul class="blockListLast">
 <li class="blockList">
 <h4>AbstractEvaluator</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/evaluation/AbstractEvaluator.html#line.41">AbstractEvaluator</a>()</pre>
+<pre>public&nbsp;AbstractEvaluator()</pre>
 </li>
 </ul>
 </li>
@@ -259,7 +259,7 @@ implements <a href="../../../org/tribuo/evaluation/Evaluator.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>evaluate</h4>
-<pre>public final&nbsp;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">E</a>&nbsp;<a href="../../../src-html/org/tribuo/evaluation/AbstractEvaluator.html#line.55">evaluate</a>(<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">T</a>&gt;&nbsp;model,
+<pre>public final&nbsp;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">E</a>&nbsp;evaluate(<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">T</a>&gt;&nbsp;model,
                         <a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">T</a>&gt;&nbsp;dataset)</pre>
 <div class="block">Produces an evaluation for the supplied model and dataset, by calling <a href="../../../org/tribuo/Model.html#predict-org.tribuo.Example-"><code>Model.predict(org.tribuo.Example&lt;T&gt;)</code></a>
  to create the predictions, then aggregating the appropriate statistics.</div>
@@ -280,7 +280,7 @@ implements <a href="../../../org/tribuo/evaluation/Evaluator.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>evaluate</h4>
-<pre>public final&nbsp;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">E</a>&nbsp;<a href="../../../src-html/org/tribuo/evaluation/AbstractEvaluator.html#line.78">evaluate</a>(<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">T</a>&gt;&nbsp;model,
+<pre>public final&nbsp;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">E</a>&nbsp;evaluate(<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">T</a>&gt;&nbsp;model,
                         <a href="../../../org/tribuo/DataSource.html" title="interface in org.tribuo">DataSource</a>&lt;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">T</a>&gt;&nbsp;datasource)</pre>
 <div class="block">Produces an evaluation for the supplied model and datasource, by calling <a href="../../../org/tribuo/Model.html#predict-org.tribuo.Example-"><code>Model.predict(org.tribuo.Example&lt;T&gt;)</code></a>
  to create the predictions, then aggregating the appropriate statistics.</div>
@@ -301,7 +301,7 @@ implements <a href="../../../org/tribuo/evaluation/Evaluator.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>evaluate</h4>
-<pre>public final&nbsp;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">E</a>&nbsp;<a href="../../../src-html/org/tribuo/evaluation/AbstractEvaluator.html#line.105">evaluate</a>(<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">T</a>&gt;&nbsp;model,
+<pre>public final&nbsp;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">E</a>&nbsp;evaluate(<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">T</a>&gt;&nbsp;model,
                         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">T</a>&gt;&gt;&nbsp;predictions,
                         <a href="../../../org/tribuo/provenance/DataProvenance.html" title="interface in org.tribuo.provenance">DataProvenance</a>&nbsp;dataProvenance)</pre>
 <div class="block">Produces an evaluation for the supplied model and predictions by aggregating the appropriate statistics.
@@ -327,7 +327,7 @@ implements <a href="../../../org/tribuo/evaluation/Evaluator.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>computeResults</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../org/tribuo/evaluation/metrics/MetricID.html" title="class in org.tribuo.evaluation.metrics">MetricID</a>&lt;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">T</a>&gt;,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/evaluation/AbstractEvaluator.html#line.130">computeResults</a>(<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">C</a>&nbsp;ctx,
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../org/tribuo/evaluation/metrics/MetricID.html" title="class in org.tribuo.evaluation.metrics">MetricID</a>&lt;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">T</a>&gt;,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;computeResults(<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">C</a>&nbsp;ctx,
                                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;? extends <a href="../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="interface in org.tribuo.evaluation.metrics">EvaluationMetric</a>&lt;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">T</a>,<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">C</a>&gt;&gt;&nbsp;metrics)</pre>
 <div class="block">Computes each metric given the context.</div>
 <dl>
@@ -345,7 +345,7 @@ implements <a href="../../../org/tribuo/evaluation/Evaluator.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>createMetrics</h4>
-<pre>protected abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">M</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/evaluation/AbstractEvaluator.html#line.145">createMetrics</a>(<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">T</a>&gt;&nbsp;model)</pre>
+<pre>protected abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">M</a>&gt;&nbsp;createMetrics(<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">T</a>&gt;&nbsp;model)</pre>
 <div class="block">Creates the appropriate set of metrics for this model, by querying for it's <a href="../../../org/tribuo/OutputInfo.html" title="interface in org.tribuo"><code>OutputInfo</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -361,7 +361,7 @@ implements <a href="../../../org/tribuo/evaluation/Evaluator.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>createContext</h4>
-<pre>protected abstract&nbsp;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">C</a>&nbsp;<a href="../../../src-html/org/tribuo/evaluation/AbstractEvaluator.html#line.156">createContext</a>(<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">T</a>&gt;&nbsp;model,
+<pre>protected abstract&nbsp;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">C</a>&nbsp;createContext(<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">T</a>&gt;&nbsp;model,
                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">T</a>&gt;&gt;&nbsp;predictions)</pre>
 <div class="block">Create the context needed for evaluation. The context might store global properties or cache computation.</div>
 <dl>
@@ -381,7 +381,7 @@ implements <a href="../../../org/tribuo/evaluation/Evaluator.html" title="interf
 <ul class="blockListLast">
 <li class="blockList">
 <h4>createEvaluation</h4>
-<pre>protected abstract&nbsp;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">E</a>&nbsp;<a href="../../../src-html/org/tribuo/evaluation/AbstractEvaluator.html#line.165">createEvaluation</a>(<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">C</a>&nbsp;context,
+<pre>protected abstract&nbsp;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">E</a>&nbsp;createEvaluation(<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">C</a>&nbsp;context,
                                       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../org/tribuo/evaluation/metrics/MetricID.html" title="class in org.tribuo.evaluation.metrics">MetricID</a>&lt;<a href="../../../org/tribuo/evaluation/AbstractEvaluator.html" title="type parameter in AbstractEvaluator">T</a>&gt;,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;results,
                                       <a href="../../../org/tribuo/provenance/EvaluationProvenance.html" title="class in org.tribuo.provenance">EvaluationProvenance</a>&nbsp;provenance)</pre>
 <div class="block">Create an evaluation for the given results</div>
@@ -463,6 +463,6 @@ implements <a href="../../../org/tribuo/evaluation/Evaluator.html" title="interf
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

@@ -122,7 +122,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFModel.html#line.57">CRFModel</a>
+<pre>public class <span class="typeNameLabel">CRFModel</span>
 extends <a href="../../../../../org/tribuo/classification/sequence/ConfidencePredictingSequenceModel.html" title="class in org.tribuo.classification.sequence">ConfidencePredictingSequenceModel</a></pre>
 <div class="block">An inference time model for a CRF trained using SGD.
  <p>
@@ -307,7 +307,7 @@ extends <a href="../../../../../org/tribuo/classification/sequence/ConfidencePre
 <ul class="blockList">
 <li class="blockList">
 <h4>setConfidenceType</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFModel.html#line.96">setConfidenceType</a>(<a href="../../../../../org/tribuo/classification/sgd/crf/CRFModel.ConfidenceType.html" title="enum in org.tribuo.classification.sgd.crf">CRFModel.ConfidenceType</a>&nbsp;type)</pre>
+<pre>public&nbsp;void&nbsp;setConfidenceType(<a href="../../../../../org/tribuo/classification/sgd/crf/CRFModel.ConfidenceType.html" title="enum in org.tribuo.classification.sgd.crf">CRFModel.ConfidenceType</a>&nbsp;type)</pre>
 <div class="block">Sets the inference method used for confidence prediction.
  If CONSTRAINED_BP uses the constrained belief propagation algorithm from Culotta and McCallum 2004,
  if MULTIPLY multiplies the maximum marginal for each token, if NONE uses Viterbi.</div>
@@ -323,7 +323,7 @@ extends <a href="../../../../../org/tribuo/classification/sequence/ConfidencePre
 <ul class="blockList">
 <li class="blockList">
 <h4>getFeatureWeights</h4>
-<pre>public&nbsp;<a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFModel.html#line.105">getFeatureWeights</a>(int&nbsp;featureID)</pre>
+<pre>public&nbsp;<a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;getFeatureWeights(int&nbsp;featureID)</pre>
 <div class="block">Get a copy of the weights for feature <code>featureID</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -339,7 +339,7 @@ extends <a href="../../../../../org/tribuo/classification/sequence/ConfidencePre
 <ul class="blockList">
 <li class="blockList">
 <h4>getFeatureWeights</h4>
-<pre>public&nbsp;<a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFModel.html#line.119">getFeatureWeights</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;featureName)</pre>
+<pre>public&nbsp;<a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;getFeatureWeights(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;featureName)</pre>
 <div class="block">Get a copy of the weights for feature named <code>featureName</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -355,7 +355,7 @@ extends <a href="../../../../../org/tribuo/classification/sequence/ConfidencePre
 <ul class="blockList">
 <li class="blockList">
 <h4>predict</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFModel.html#line.130">predict</a>(<a href="../../../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;example)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&gt;&nbsp;predict(<a href="../../../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;example)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../org/tribuo/sequence/SequenceModel.html#predict-org.tribuo.sequence.SequenceExample-">SequenceModel</a></code></span></div>
 <div class="block">Uses the model to predict the output for a single example.</div>
 <dl>
@@ -374,7 +374,7 @@ extends <a href="../../../../../org/tribuo/classification/sequence/ConfidencePre
 <ul class="blockList">
 <li class="blockList">
 <h4>getTopFeatures</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&gt;&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFModel.html#line.163">getTopFeatures</a>(int&nbsp;n)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&gt;&gt;&nbsp;getTopFeatures(int&nbsp;n)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../org/tribuo/sequence/SequenceModel.html#getTopFeatures-int-">SequenceModel</a></code></span></div>
 <div class="block">Gets the top <code>n</code> features associated with this model.
  <p>
@@ -402,7 +402,7 @@ extends <a href="../../../../../org/tribuo/classification/sequence/ConfidencePre
 <ul class="blockList">
 <li class="blockList">
 <h4>scoreSubsequences</h4>
-<pre>public&nbsp;&lt;SUB extends <a href="../../../../../org/tribuo/classification/sequence/ConfidencePredictingSequenceModel.Subsequence.html" title="class in org.tribuo.classification.sequence">ConfidencePredictingSequenceModel.Subsequence</a>&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFModel.html#line.208">scoreSubsequences</a>(<a href="../../../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;example,
+<pre>public&nbsp;&lt;SUB extends <a href="../../../../../org/tribuo/classification/sequence/ConfidencePredictingSequenceModel.Subsequence.html" title="class in org.tribuo.classification.sequence">ConfidencePredictingSequenceModel.Subsequence</a>&gt;&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;scoreSubsequences(<a href="../../../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;example,
                                                                                                   <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&gt;&nbsp;predictions,
                                                                                                   <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;SUB&gt;&nbsp;subsequences)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../org/tribuo/classification/sequence/ConfidencePredictingSequenceModel.html#scoreSubsequences-org.tribuo.sequence.SequenceExample-java.util.List-java.util.List-">ConfidencePredictingSequenceModel</a></code></span></div>
@@ -427,7 +427,7 @@ extends <a href="../../../../../org/tribuo/classification/sequence/ConfidencePre
 <ul class="blockList">
 <li class="blockList">
 <h4>scoreChunks</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFModel.html#line.230">scoreChunks</a>(<a href="../../../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;example,
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;scoreChunks(<a href="../../../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;example,
                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/tribuo/classification/sgd/crf/Chunk.html" title="class in org.tribuo.classification.sgd.crf">Chunk</a>&gt;&nbsp;chunks)</pre>
 <div class="block">Scores the chunks using constrained belief propagation.</div>
 <dl>
@@ -445,7 +445,7 @@ extends <a href="../../../../../org/tribuo/classification/sequence/ConfidencePre
 <ul class="blockList">
 <li class="blockList">
 <h4>generateWeightsString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFModel.html#line.239">generateWeightsString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;generateWeightsString()</pre>
 <div class="block">Generates a human readable string containing all the weights in this model.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -459,7 +459,7 @@ extends <a href="../../../../../org/tribuo/classification/sequence/ConfidencePre
 <ul class="blockList">
 <li class="blockList">
 <h4>convert</h4>
-<pre>public static&nbsp;&lt;T extends <a href="../../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFModel.html#line.266">convert</a>(<a href="../../../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;T&gt;&nbsp;example,
+<pre>public static&nbsp;&lt;T extends <a href="../../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&nbsp;convert(<a href="../../../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;T&gt;&nbsp;example,
                                                            <a href="../../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap)</pre>
 <div class="block">Converts a <a href="../../../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence"><code>SequenceExample</code></a> into an array of <a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la"><code>SparseVector</code></a>s suitable for CRF prediction.</div>
 <dl>
@@ -479,7 +479,7 @@ extends <a href="../../../../../org/tribuo/classification/sequence/ConfidencePre
 <ul class="blockListLast">
 <li class="blockList">
 <h4>convert</h4>
-<pre>public static&nbsp;com.oracle.labs.mlrg.olcut.util.Pair&lt;int[],<a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFModel.html#line.290">convert</a>(<a href="../../../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;example,
+<pre>public static&nbsp;com.oracle.labs.mlrg.olcut.util.Pair&lt;int[],<a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&gt;&nbsp;convert(<a href="../../../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence">SequenceExample</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;example,
                                                                                  <a href="../../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap,
                                                                                  <a href="../../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;labelIDMap)</pre>
 <div class="block">Converts a <a href="../../../../../org/tribuo/sequence/SequenceExample.html" title="class in org.tribuo.sequence"><code>SequenceExample</code></a> into an array of <a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la"><code>SparseVector</code></a>s and labels suitable for CRF prediction.</div>
@@ -561,6 +561,6 @@ extends <a href="../../../../../org/tribuo/classification/sequence/ConfidencePre
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

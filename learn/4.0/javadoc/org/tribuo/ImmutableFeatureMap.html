@@ -121,7 +121,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../src-html/org/tribuo/ImmutableFeatureMap.html#line.35">ImmutableFeatureMap</a>
+<pre>public class <span class="typeNameLabel">ImmutableFeatureMap</span>
 extends <a href="../../org/tribuo/FeatureMap.html" title="class in org.tribuo">FeatureMap</a>
 implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
 <div class="block">ImmutableFeatureMap is used when unknown features should not be added to the FeatureMap.
@@ -303,7 +303,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>idMap</h4>
-<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>,<a href="../../org/tribuo/VariableIDInfo.html" title="interface in org.tribuo">VariableIDInfo</a>&gt; <a href="../../src-html/org/tribuo/ImmutableFeatureMap.html#line.41">idMap</a></pre>
+<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>,<a href="../../org/tribuo/VariableIDInfo.html" title="interface in org.tribuo">VariableIDInfo</a>&gt; idMap</pre>
 <div class="block">The map from id numbers to the feature infos.</div>
 </li>
 </ul>
@@ -313,7 +313,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockListLast">
 <li class="blockList">
 <h4>size</h4>
-<pre>protected&nbsp;int <a href="../../src-html/org/tribuo/ImmutableFeatureMap.html#line.46">size</a></pre>
+<pre>protected&nbsp;int size</pre>
 <div class="block">The number of features.</div>
 </li>
 </ul>
@@ -331,7 +331,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>ImmutableFeatureMap</h4>
-<pre>public&nbsp;<a href="../../src-html/org/tribuo/ImmutableFeatureMap.html#line.54">ImmutableFeatureMap</a>(<a href="../../org/tribuo/FeatureMap.html" title="class in org.tribuo">FeatureMap</a>&nbsp;map)</pre>
+<pre>public&nbsp;ImmutableFeatureMap(<a href="../../org/tribuo/FeatureMap.html" title="class in org.tribuo">FeatureMap</a>&nbsp;map)</pre>
 <div class="block">Constructs a new immutable version which is a deep copy of the supplied feature map, generating new ID numbers.
  <p>
  The new id numbers will be the same as the old ones (if they existed) assuming this is a regular feature map.</div>
@@ -347,7 +347,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>ImmutableFeatureMap</h4>
-<pre>public&nbsp;<a href="../../src-html/org/tribuo/ImmutableFeatureMap.html#line.62">ImmutableFeatureMap</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../org/tribuo/VariableInfo.html" title="interface in org.tribuo">VariableInfo</a>&gt;&nbsp;infoList)</pre>
+<pre>public&nbsp;ImmutableFeatureMap(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../org/tribuo/VariableInfo.html" title="interface in org.tribuo">VariableInfo</a>&gt;&nbsp;infoList)</pre>
 <div class="block">Constructs a new immutable feature map copying the supplied variable infos and generating appropriate ID numbers.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -361,7 +361,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ImmutableFeatureMap</h4>
-<pre>protected&nbsp;<a href="../../src-html/org/tribuo/ImmutableFeatureMap.html#line.81">ImmutableFeatureMap</a>()</pre>
+<pre>protected&nbsp;ImmutableFeatureMap()</pre>
 <div class="block">Constructs a new empty immutable feature map.
  <p>
  Used for mocking feature domains in tests.</div>
@@ -381,7 +381,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/VariableIDInfo.html" title="interface in org.tribuo">VariableIDInfo</a>&nbsp;<a href="../../src-html/org/tribuo/ImmutableFeatureMap.html#line.92">get</a>(int&nbsp;id)</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/VariableIDInfo.html" title="interface in org.tribuo">VariableIDInfo</a>&nbsp;get(int&nbsp;id)</pre>
 <div class="block">Gets the <a href="../../org/tribuo/VariableIDInfo.html" title="interface in org.tribuo"><code>VariableIDInfo</code></a>
  for this id number. Returns null if it's unknown.</div>
 <dl>
@@ -398,7 +398,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre>public&nbsp;<a href="../../org/tribuo/VariableIDInfo.html" title="interface in org.tribuo">VariableIDInfo</a>&nbsp;<a href="../../src-html/org/tribuo/ImmutableFeatureMap.html#line.103">get</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<pre>public&nbsp;<a href="../../org/tribuo/VariableIDInfo.html" title="interface in org.tribuo">VariableIDInfo</a>&nbsp;get(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
 <div class="block">Gets the <a href="../../org/tribuo/VariableIDInfo.html" title="interface in org.tribuo"><code>VariableIDInfo</code></a>
  for this name. Returns null if it's unknown.</div>
 <dl>
@@ -417,7 +417,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>getID</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../src-html/org/tribuo/ImmutableFeatureMap.html#line.112">getID</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
+<pre>public&nbsp;int&nbsp;getID(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name)</pre>
 <div class="block">Gets the id number for this feature, returns -1 if it's unknown.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -433,7 +433,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>size</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../src-html/org/tribuo/ImmutableFeatureMap.html#line.122">size</a>()</pre>
+<pre>public&nbsp;int&nbsp;size()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../org/tribuo/FeatureMap.html#size--">FeatureMap</a></code></span></div>
 <div class="block">Returns the number of features in the domain.</div>
 <dl>
@@ -450,7 +450,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockList">
 <li class="blockList">
 <h4>generateIDs</h4>
-<pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../org/tribuo/VariableIDInfo.html" title="interface in org.tribuo">VariableIDInfo</a>&gt;&nbsp;<a href="../../src-html/org/tribuo/ImmutableFeatureMap.html#line.132">generateIDs</a>(<a href="../../org/tribuo/FeatureMap.html" title="class in org.tribuo">FeatureMap</a>&nbsp;map)</pre>
+<pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../org/tribuo/VariableIDInfo.html" title="interface in org.tribuo">VariableIDInfo</a>&gt;&nbsp;generateIDs(<a href="../../org/tribuo/FeatureMap.html" title="class in org.tribuo">FeatureMap</a>&nbsp;map)</pre>
 <div class="block">Generates the feature ids by sorting the features with the String comparator,
  then sequentially numbering them.</div>
 <dl>
@@ -467,7 +467,7 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <ul class="blockListLast">
 <li class="blockList">
 <h4>generateIDs</h4>
-<pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../org/tribuo/VariableIDInfo.html" title="interface in org.tribuo">VariableIDInfo</a>&gt;&nbsp;<a href="../../src-html/org/tribuo/ImmutableFeatureMap.html#line.143">generateIDs</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="../../org/tribuo/VariableInfo.html" title="interface in org.tribuo">VariableInfo</a>&gt;&nbsp;list)</pre>
+<pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../org/tribuo/VariableIDInfo.html" title="interface in org.tribuo">VariableIDInfo</a>&gt;&nbsp;generateIDs(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;? extends <a href="../../org/tribuo/VariableInfo.html" title="interface in org.tribuo">VariableInfo</a>&gt;&nbsp;list)</pre>
 <div class="block">Generates the feature ids by sorting the features with the String comparator,
  then sequentially numbering them.</div>
 <dl>
@@ -546,6 +546,6 @@ implements <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializab
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

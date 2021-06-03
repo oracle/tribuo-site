@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.67">UniversalTokenizer</a>
+<pre>public class <span class="typeNameLabel">UniversalTokenizer</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title="interface in org.tribuo.util.tokens">Tokenizer</a></pre>
 <div class="block">This class was originally written for the purpose of document indexing in an
@@ -374,7 +374,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockListLast">
 <li class="blockList">
 <h4>maxTokenLength</h4>
-<pre>protected&nbsp;int <a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.72">maxTokenLength</a></pre>
+<pre>protected&nbsp;int maxTokenLength</pre>
 <div class="block">The length of the longest token that we will generate.</div>
 </li>
 </ul>
@@ -392,7 +392,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>UniversalTokenizer</h4>
-<pre>public&nbsp;<a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.155">UniversalTokenizer</a>(boolean&nbsp;sendPunct)</pre>
+<pre>public&nbsp;UniversalTokenizer(boolean&nbsp;sendPunct)</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>sendPunct</code> - if sendPunct is true, then the tokenizer will generate punctuation tokens.</dd>
@@ -405,7 +405,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockListLast">
 <li class="blockList">
 <h4>UniversalTokenizer</h4>
-<pre>public&nbsp;<a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.168">UniversalTokenizer</a>()</pre>
+<pre>public&nbsp;UniversalTokenizer()</pre>
 <div class="block">Constructs a universal tokenizer which doesn't send punctuation.</div>
 </li>
 </ul>
@@ -423,7 +423,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>isLetterOrDigit</h4>
-<pre>public static&nbsp;boolean&nbsp;<a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.181">isLetterOrDigit</a>(char&nbsp;c)</pre>
+<pre>public static&nbsp;boolean&nbsp;isLetterOrDigit(char&nbsp;c)</pre>
 <div class="block">A quick check for whether a character should be kept in a word or should
  be removed from the word if it occurs at one of the ends. An
  approximation of Character.isLetterOrDigit, but is faster and more
@@ -442,7 +442,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>isDigit</h4>
-<pre>public static&nbsp;boolean&nbsp;<a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.214">isDigit</a>(char&nbsp;c)</pre>
+<pre>public static&nbsp;boolean&nbsp;isDigit(char&nbsp;c)</pre>
 <div class="block">A quick check for whether a character is a digit.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -458,7 +458,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>isWhitespace</h4>
-<pre>public static&nbsp;boolean&nbsp;<a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.231">isWhitespace</a>(char&nbsp;c)</pre>
+<pre>public static&nbsp;boolean&nbsp;isWhitespace(char&nbsp;c)</pre>
 <div class="block">A quick check for whether a character is whitespace.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -474,7 +474,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>isNgram</h4>
-<pre>public static&nbsp;boolean&nbsp;<a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.255">isNgram</a>(char&nbsp;c)</pre>
+<pre>public static&nbsp;boolean&nbsp;isNgram(char&nbsp;c)</pre>
 <div class="block">A quick check for a character in a language that may not separate words
  with whitespace (includes Arabic, CJK, and Thai). Uses Unicode Standard
  Version 2.0.</div>
@@ -492,7 +492,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>isGenerateUnigrams</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.282">isGenerateUnigrams</a>()</pre>
+<pre>public&nbsp;boolean&nbsp;isGenerateUnigrams()</pre>
 </li>
 </ul>
 <a name="setGenerateUnigrams-boolean-">
@@ -501,7 +501,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>setGenerateUnigrams</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.286">setGenerateUnigrams</a>(boolean&nbsp;generateUnigrams)</pre>
+<pre>public&nbsp;void&nbsp;setGenerateUnigrams(boolean&nbsp;generateUnigrams)</pre>
 </li>
 </ul>
 <a name="isGenerateNgrams--">
@@ -510,7 +510,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>isGenerateNgrams</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.290">isGenerateNgrams</a>()</pre>
+<pre>public&nbsp;boolean&nbsp;isGenerateNgrams()</pre>
 </li>
 </ul>
 <a name="setGenerateNgrams-boolean-">
@@ -519,7 +519,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>setGenerateNgrams</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.294">setGenerateNgrams</a>(boolean&nbsp;generateNgrams)</pre>
+<pre>public&nbsp;void&nbsp;setGenerateNgrams(boolean&nbsp;generateNgrams)</pre>
 </li>
 </ul>
 <a name="getMaxTokenLength--">
@@ -528,7 +528,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>getMaxTokenLength</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.298">getMaxTokenLength</a>()</pre>
+<pre>public&nbsp;int&nbsp;getMaxTokenLength()</pre>
 </li>
 </ul>
 <a name="setMaxTokenLength-int-">
@@ -537,7 +537,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>setMaxTokenLength</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.302">setMaxTokenLength</a>(int&nbsp;maxTokenLength)</pre>
+<pre>public&nbsp;void&nbsp;setMaxTokenLength(int&nbsp;maxTokenLength)</pre>
 </li>
 </ul>
 <a name="getProvenance--">
@@ -546,7 +546,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;<a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.307">getProvenance</a>()</pre>
+<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&gt;</code></dd>
@@ -559,7 +559,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>advance</h4>
-<pre>public final&nbsp;boolean&nbsp;<a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.312">advance</a>()</pre>
+<pre>public final&nbsp;boolean&nbsp;advance()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/tribuo/util/tokens/Tokenizer.html#advance--">Tokenizer</a></code></span></div>
 <div class="block">Advances the tokenizer to the next token.</div>
 <dl>
@@ -577,7 +577,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>handleChar</h4>
-<pre>protected&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.368">handleChar</a>()</pre>
+<pre>protected&nbsp;void&nbsp;handleChar()</pre>
 <div class="block">Handle a character to add to the token buffer.</div>
 </li>
 </ul>
@@ -587,7 +587,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>addChar</h4>
-<pre>protected&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.502">addChar</a>()</pre>
+<pre>protected&nbsp;void&nbsp;addChar()</pre>
 <div class="block">Add a character to the buffer that we're building for a token.</div>
 </li>
 </ul>
@@ -597,7 +597,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>getStart</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.522">getStart</a>()</pre>
+<pre>public&nbsp;int&nbsp;getStart()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/tribuo/util/tokens/Tokenizer.html#getStart--">Tokenizer</a></code></span></div>
 <div class="block">Gets the starting character offset of the current token in the character
  sequence</div>
@@ -615,7 +615,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>getEnd</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.531">getEnd</a>()</pre>
+<pre>public&nbsp;int&nbsp;getEnd()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/tribuo/util/tokens/Tokenizer.html#getEnd--">Tokenizer</a></code></span></div>
 <div class="block">Gets the ending offset (exclusive) of the current token in the character
  sequence</div>
@@ -633,7 +633,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>getText</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.540">getText</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getText()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/tribuo/util/tokens/Tokenizer.html#getText--">Tokenizer</a></code></span></div>
 <div class="block">Gets the text of the current token, as a string</div>
 <dl>
@@ -650,7 +650,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>getType</h4>
-<pre>public&nbsp;<a href="../../../../../org/tribuo/util/tokens/Token.TokenType.html" title="enum in org.tribuo.util.tokens">Token.TokenType</a>&nbsp;<a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.549">getType</a>()</pre>
+<pre>public&nbsp;<a href="../../../../../org/tribuo/util/tokens/Token.TokenType.html" title="enum in org.tribuo.util.tokens">Token.TokenType</a>&nbsp;getType()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/tribuo/util/tokens/Tokenizer.html#getType--">Tokenizer</a></code></span></div>
 <div class="block">Gets the type of the current token.</div>
 <dl>
@@ -667,7 +667,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>getPos</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.557">getPos</a>()</pre>
+<pre>public&nbsp;int&nbsp;getPos()</pre>
 </li>
 </ul>
 <a name="clone--">
@@ -676,7 +676,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>clone</h4>
-<pre>public&nbsp;<a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title="interface in org.tribuo.util.tokens">Tokenizer</a>&nbsp;<a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.562">clone</a>()</pre>
+<pre>public&nbsp;<a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title="interface in org.tribuo.util.tokens">Tokenizer</a>&nbsp;clone()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/tribuo/util/tokens/Tokenizer.html#clone--">Tokenizer</a></code></span></div>
 <div class="block">Clones a tokenizer with it's configuration. Cloned tokenizers are
  not processing the same text as the original tokenizer and need to be reset
@@ -697,7 +697,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>reset</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.585">reset</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/CharSequence.html?is-external=true" title="class or interface in java.lang">CharSequence</a>&nbsp;cs)</pre>
+<pre>public&nbsp;void&nbsp;reset(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/CharSequence.html?is-external=true" title="class or interface in java.lang">CharSequence</a>&nbsp;cs)</pre>
 <div class="block">Reset state of tokenizer to clean slate.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -713,7 +713,7 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <ul class="blockListLast">
 <li class="blockList">
 <h4>makeTokens</h4>
-<pre>protected&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/util/tokens/universal/UniversalTokenizer.html#line.610">makeTokens</a>()</pre>
+<pre>protected&nbsp;void&nbsp;makeTokens()</pre>
 <div class="block">Make one or more tokens from our current collected characters.</div>
 </li>
 </ul>
@@ -785,6 +785,6 @@ implements <a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title=
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

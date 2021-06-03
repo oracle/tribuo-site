@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.48">SparseVector</a>
+<pre>public class <span class="typeNameLabel">SparseVector</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a></pre>
 <div class="block">A sparse vector. Stored as a sorted array of indices and an array of values.
@@ -485,7 +485,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>indices</h4>
-<pre>protected final&nbsp;int[] <a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.52">indices</a></pre>
+<pre>protected final&nbsp;int[] indices</pre>
 </li>
 </ul>
 <a name="values">
@@ -494,7 +494,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockListLast">
 <li class="blockList">
 <h4>values</h4>
-<pre>protected final&nbsp;double[] <a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.53">values</a></pre>
+<pre>protected final&nbsp;double[] values</pre>
 </li>
 </ul>
 </li>
@@ -511,7 +511,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockListLast">
 <li class="blockList">
 <h4>SparseVector</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.92">SparseVector</a>(int&nbsp;size,
+<pre>public&nbsp;SparseVector(int&nbsp;size,
                     int[]&nbsp;indices,
                     double&nbsp;value)</pre>
 </li>
@@ -530,7 +530,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>createSparseVector</h4>
-<pre>public static&nbsp;&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.112">createSparseVector</a>(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;T&gt;&nbsp;example,
+<pre>public static&nbsp;&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;createSparseVector(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;T&gt;&nbsp;example,
                                                                     <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureInfo,
                                                                     boolean&nbsp;addBias)</pre>
 <div class="block">Builds a <a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la"><code>SparseVector</code></a> from an <a href="../../../../org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a>.
@@ -556,7 +556,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>createSparseVector</h4>
-<pre>public static&nbsp;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.182">createSparseVector</a>(int&nbsp;dimension,
+<pre>public static&nbsp;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;createSparseVector(int&nbsp;dimension,
                                               int[]&nbsp;indices,
                                               double[]&nbsp;values)</pre>
 <div class="block">Defensively copies the input, and checks that the indices are sorted. If not,
@@ -580,7 +580,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>createSparseVector</h4>
-<pre>public static&nbsp;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.214">createSparseVector</a>(int&nbsp;dimension,
+<pre>public static&nbsp;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;createSparseVector(int&nbsp;dimension,
                                               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;indexMap)</pre>
 <div class="block">Builds a SparseVector from a map.
  <p>
@@ -600,7 +600,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.236">copy</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;copy()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#copy--">SGDVector</a></code></span></div>
 <div class="block">Returns a deep copy of this vector.</div>
 <dl>
@@ -617,7 +617,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>getShape</h4>
-<pre>public&nbsp;int[]&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.241">getShape</a>()</pre>
+<pre>public&nbsp;int[]&nbsp;getShape()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Tensor.html#getShape--">Tensor</a></code></span></div>
 <div class="block">Returns an int array specifying the shape of this <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a>.</div>
 <dl>
@@ -634,7 +634,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>reshape</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.246">reshape</a>(int[]&nbsp;newShape)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;reshape(int[]&nbsp;newShape)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Tensor.html#reshape-int:A-">Tensor</a></code></span></div>
 <div class="block">Reshapes the Tensor to the supplied shape. Throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang"><code>IllegalArgumentException</code></a> if the shape isn't compatible.</div>
 <dl>
@@ -653,7 +653,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>size</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.251">size</a>()</pre>
+<pre>public&nbsp;int&nbsp;size()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#size--">SGDVector</a></code></span></div>
 <div class="block">Returns the dimensionality of this vector.</div>
 <dl>
@@ -670,7 +670,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>numActiveElements</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.256">numActiveElements</a>()</pre>
+<pre>public&nbsp;int&nbsp;numActiveElements()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#numActiveElements--">SGDVector</a></code></span></div>
 <div class="block">Returns the number of non-zero elements (on construction, an element
  could be set to zero and it would still remain active).</div>
@@ -688,7 +688,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.267">equals</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;other)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;other)</pre>
 <div class="block">Equals is defined mathematically, that is two SGDVectors are equal iff they have the same indices
  and the same values at those indices.</div>
 <dl>
@@ -707,7 +707,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.290">hashCode</a>()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -720,7 +720,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>add</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.305">add</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;add(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
 <div class="block">Adds <code>other</code> to this vector, producing a new <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la"><code>SGDVector</code></a>.
  If <code>other</code> is a <a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la"><code>SparseVector</code></a> then the returned vector is also
  a <a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la"><code>SparseVector</code></a> otherwise it's a <a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la"><code>DenseVector</code></a>.</div>
@@ -740,7 +740,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>subtract</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.333">subtract</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;subtract(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
 <div class="block">Subtracts <code>other</code> from this vector, producing a new <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la"><code>SGDVector</code></a>.
  If <code>other</code> is a <a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la"><code>SparseVector</code></a> then the returned vector is also
  a <a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la"><code>SparseVector</code></a> otherwise it's a <a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la"><code>DenseVector</code></a>.</div>
@@ -760,7 +760,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>intersectAndAddInPlace</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.358">intersectAndAddInPlace</a>(<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;other,
+<pre>public&nbsp;void&nbsp;intersectAndAddInPlace(<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;other,
                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function">DoubleUnaryOperator</a>&nbsp;f)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Tensor.html#intersectAndAddInPlace-org.tribuo.math.la.Tensor-java.util.function.DoubleUnaryOperator-">Tensor</a></code></span></div>
 <div class="block">Updates this <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a> by adding all the values from the intersection with <code>other</code>.
@@ -784,7 +784,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>hadamardProductInPlace</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.407">hadamardProductInPlace</a>(<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;other,
+<pre>public&nbsp;void&nbsp;hadamardProductInPlace(<a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>&nbsp;other,
                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function">DoubleUnaryOperator</a>&nbsp;f)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Tensor.html#hadamardProductInPlace-org.tribuo.math.la.Tensor-java.util.function.DoubleUnaryOperator-">Tensor</a></code></span></div>
 <div class="block">Updates this <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a> with the Hadamard product
@@ -808,7 +808,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>foreachInPlace</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.456">foreachInPlace</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function">DoubleUnaryOperator</a>&nbsp;f)</pre>
+<pre>public&nbsp;void&nbsp;foreachInPlace(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function">DoubleUnaryOperator</a>&nbsp;f)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/Tensor.html#foreachInPlace-java.util.function.DoubleUnaryOperator-">Tensor</a></code></span></div>
 <div class="block">Applies a <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function"><code>DoubleUnaryOperator</code></a> elementwise to this <a href="../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a>.</div>
 <dl>
@@ -825,7 +825,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>scale</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.463">scale</a>(double&nbsp;coefficient)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;scale(double&nbsp;coefficient)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#scale-double-">SGDVector</a></code></span></div>
 <div class="block">Generates a new vector with each element scaled by <code>coefficient</code>.</div>
 <dl>
@@ -844,7 +844,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>add</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.472">add</a>(int&nbsp;index,
+<pre>public&nbsp;void&nbsp;add(int&nbsp;index,
                 double&nbsp;value)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#add-int-double-">SGDVector</a></code></span></div>
 <div class="block">Adds <code>value</code> to the element at <code>index</code>.</div>
@@ -863,7 +863,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>dot</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.482">dot</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
+<pre>public&nbsp;double&nbsp;dot(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#dot-org.tribuo.math.la.SGDVector-">SGDVector</a></code></span></div>
 <div class="block">Calculates the dot product between this vector and <code>other</code>.</div>
 <dl>
@@ -882,7 +882,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>outer</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.545">outer</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/Matrix.html" title="interface in org.tribuo.math.la">Matrix</a>&nbsp;outer(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
 <div class="block">This generates the outer product when dotted with another <a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la"><code>SparseVector</code></a>.
  <p>
  It throws an <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang"><code>IllegalArgumentException</code></a> if used with a <a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la"><code>DenseVector</code></a>.</div>
@@ -902,7 +902,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>sum</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.573">sum</a>()</pre>
+<pre>public&nbsp;double&nbsp;sum()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#sum--">SGDVector</a></code></span></div>
 <div class="block">Calculates the sum of this vector.</div>
 <dl>
@@ -919,7 +919,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>twoNorm</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.582">twoNorm</a>()</pre>
+<pre>public&nbsp;double&nbsp;twoNorm()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#twoNorm--">SGDVector</a></code></span></div>
 <div class="block">Calculates the euclidean norm for this vector.</div>
 <dl>
@@ -938,7 +938,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>oneNorm</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.591">oneNorm</a>()</pre>
+<pre>public&nbsp;double&nbsp;oneNorm()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#oneNorm--">SGDVector</a></code></span></div>
 <div class="block">Calculates the Manhattan norm for this vector.</div>
 <dl>
@@ -955,7 +955,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.600">get</a>(int&nbsp;index)</pre>
+<pre>public&nbsp;double&nbsp;get(int&nbsp;index)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#get-int-">SGDVector</a></code></span></div>
 <div class="block">Gets an element from this vector.</div>
 <dl>
@@ -974,7 +974,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>set</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.610">set</a>(int&nbsp;index,
+<pre>public&nbsp;void&nbsp;set(int&nbsp;index,
                 double&nbsp;value)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#set-int-double-">SGDVector</a></code></span></div>
 <div class="block">Sets the <code>index</code> to the <code>value</code>.</div>
@@ -993,7 +993,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>indexOfMax</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.620">indexOfMax</a>()</pre>
+<pre>public&nbsp;int&nbsp;indexOfMax()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#indexOfMax--">SGDVector</a></code></span></div>
 <div class="block">Returns the index of the maximum value. Requires probing the array.</div>
 <dl>
@@ -1010,7 +1010,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>maxValue</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.634">maxValue</a>()</pre>
+<pre>public&nbsp;double&nbsp;maxValue()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#maxValue--">SGDVector</a></code></span></div>
 <div class="block">Returns the maximum value. Requires probing the array.</div>
 <dl>
@@ -1027,7 +1027,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>minValue</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.646">minValue</a>()</pre>
+<pre>public&nbsp;double&nbsp;minValue()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#minValue--">SGDVector</a></code></span></div>
 <div class="block">Returns the minimum value. Requires probing the array.</div>
 <dl>
@@ -1044,7 +1044,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>difference</h4>
-<pre>public&nbsp;int[]&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.664">difference</a>(<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;other)</pre>
+<pre>public&nbsp;int[]&nbsp;difference(<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;other)</pre>
 <div class="block">Generates an array of the indices that are active in this vector
  but are not present in <code>other</code>.</div>
 <dl>
@@ -1061,7 +1061,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>intersection</h4>
-<pre>public&nbsp;int[]&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.714">intersection</a>(<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;other)</pre>
+<pre>public&nbsp;int[]&nbsp;intersection(<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;other)</pre>
 <div class="block">Generates an array of the indices that are active in both this
  vector and <code>other</code></div>
 <dl>
@@ -1078,7 +1078,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>normalize</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.755">normalize</a>(<a href="../../../../org/tribuo/math/util/VectorNormalizer.html" title="interface in org.tribuo.math.util">VectorNormalizer</a>&nbsp;normalizer)</pre>
+<pre>public&nbsp;void&nbsp;normalize(<a href="../../../../org/tribuo/math/util/VectorNormalizer.html" title="interface in org.tribuo.math.util">VectorNormalizer</a>&nbsp;normalizer)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#normalize-org.tribuo.math.util.VectorNormalizer-">SGDVector</a></code></span></div>
 <div class="block">Normalizes the vector using the supplied vector normalizer.</div>
 <dl>
@@ -1095,7 +1095,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>euclideanDistance</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.760">euclideanDistance</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
+<pre>public&nbsp;double&nbsp;euclideanDistance(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#euclideanDistance-org.tribuo.math.la.SGDVector-">SGDVector</a></code></span></div>
 <div class="block">The l2 or euclidean distance between this vector and the other vector.</div>
 <dl>
@@ -1114,7 +1114,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>l1Distance</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.765">l1Distance</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
+<pre>public&nbsp;double&nbsp;l1Distance(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#l1Distance-org.tribuo.math.la.SGDVector-">SGDVector</a></code></span></div>
 <div class="block">The l1 or Manhattan distance between this vector and the other vector.</div>
 <dl>
@@ -1133,7 +1133,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>distance</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.769">distance</a>(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other,
+<pre>public&nbsp;double&nbsp;distance(<a href="../../../../org/tribuo/math/la/SGDVector.html" title="interface in org.tribuo.math.la">SGDVector</a>&nbsp;other,
                        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function">DoubleUnaryOperator</a>&nbsp;transformFunc,
                        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/DoubleUnaryOperator.html?is-external=true" title="class or interface in java.util.function">DoubleUnaryOperator</a>&nbsp;normalizeFunc)</pre>
 </li>
@@ -1144,7 +1144,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.835">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -1157,7 +1157,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>toDenseArray</h4>
-<pre>public&nbsp;double[]&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.854">toDenseArray</a>()</pre>
+<pre>public&nbsp;double[]&nbsp;toDenseArray()</pre>
 </li>
 </ul>
 <a name="variance-double-">
@@ -1166,7 +1166,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>variance</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.863">variance</a>(double&nbsp;mean)</pre>
+<pre>public&nbsp;double&nbsp;variance(double&nbsp;mean)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/math/la/SGDVector.html#variance-double-">SGDVector</a></code></span></div>
 <div class="block">Calculates the variance of this vector based on the supplied mean.</div>
 <dl>
@@ -1185,7 +1185,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>iterator</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/VectorIterator.html" title="interface in org.tribuo.math.la">VectorIterator</a>&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.873">iterator</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/math/la/VectorIterator.html" title="interface in org.tribuo.math.la">VectorIterator</a>&nbsp;iterator()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true#iterator--" title="class or interface in java.lang">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../org/tribuo/math/la/VectorTuple.html" title="class in org.tribuo.math.la">VectorTuple</a>&gt;</code></dd>
@@ -1198,7 +1198,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>transpose</h4>
-<pre>public static&nbsp;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.916">transpose</a>(<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&nbsp;input)</pre>
+<pre>public static&nbsp;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&nbsp;transpose(<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&nbsp;input)</pre>
 <div class="block">Transposes an array of sparse vectors from row-major to column-major or
  vice versa.</div>
 <dl>
@@ -1215,7 +1215,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockList">
 <li class="blockList">
 <h4>transpose</h4>
-<pre>public static&nbsp;&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.951">transpose</a>(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;T&gt;&nbsp;dataset)</pre>
+<pre>public static&nbsp;&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&nbsp;transpose(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;T&gt;&nbsp;dataset)</pre>
 <div class="block">Converts a dataset of row-major examples into an array of column-major
  sparse vectors.</div>
 <dl>
@@ -1234,7 +1234,7 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <ul class="blockListLast">
 <li class="blockList">
 <h4>transpose</h4>
-<pre>public static&nbsp;&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&nbsp;<a href="../../../../src-html/org/tribuo/math/la/SparseVector.html#line.964">transpose</a>(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;T&gt;&nbsp;dataset,
+<pre>public static&nbsp;&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&nbsp;transpose(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;T&gt;&nbsp;dataset,
                                                              <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;fMap)</pre>
 <div class="block">Converts a dataset of row-major examples into an array of column-major
  sparse vectors.</div>
@@ -1317,6 +1317,6 @@ implements <a href="../../../../org/tribuo/math/la/SGDVector.html" title="interf
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

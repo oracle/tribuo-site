@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../src-html/org/tribuo/evaluation/TrainTestSplitter.html#line.46">TrainTestSplitter</a>&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public class <span class="typeNameLabel">TrainTestSplitter&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
 <div class="block">Splits data into training and testing sets. Note that this doesn't
  operate on <a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo"><code>Dataset</code></a>, but rather on <a href="../../../org/tribuo/DataSource.html" title="interface in org.tribuo"><code>DataSource</code></a>.</div>
@@ -234,7 +234,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>TrainTestSplitter</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/evaluation/TrainTestSplitter.html#line.64">TrainTestSplitter</a>(<a href="../../../org/tribuo/DataSource.html" title="interface in org.tribuo">DataSource</a>&lt;<a href="../../../org/tribuo/evaluation/TrainTestSplitter.html" title="type parameter in TrainTestSplitter">T</a>&gt;&nbsp;data)</pre>
+<pre>public&nbsp;TrainTestSplitter(<a href="../../../org/tribuo/DataSource.html" title="interface in org.tribuo">DataSource</a>&lt;<a href="../../../org/tribuo/evaluation/TrainTestSplitter.html" title="type parameter in TrainTestSplitter">T</a>&gt;&nbsp;data)</pre>
 <div class="block">Creates a splitter that splits a dataset 70/30 train and test using a default seed.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -248,7 +248,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>TrainTestSplitter</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/evaluation/TrainTestSplitter.html#line.73">TrainTestSplitter</a>(<a href="../../../org/tribuo/DataSource.html" title="interface in org.tribuo">DataSource</a>&lt;<a href="../../../org/tribuo/evaluation/TrainTestSplitter.html" title="type parameter in TrainTestSplitter">T</a>&gt;&nbsp;data,
+<pre>public&nbsp;TrainTestSplitter(<a href="../../../org/tribuo/DataSource.html" title="interface in org.tribuo">DataSource</a>&lt;<a href="../../../org/tribuo/evaluation/TrainTestSplitter.html" title="type parameter in TrainTestSplitter">T</a>&gt;&nbsp;data,
                          long&nbsp;seed)</pre>
 <div class="block">Creates a splitter that splits a dataset 70/30 train and test.</div>
 <dl>
@@ -264,7 +264,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>TrainTestSplitter</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/evaluation/TrainTestSplitter.html#line.89">TrainTestSplitter</a>(<a href="../../../org/tribuo/DataSource.html" title="interface in org.tribuo">DataSource</a>&lt;<a href="../../../org/tribuo/evaluation/TrainTestSplitter.html" title="type parameter in TrainTestSplitter">T</a>&gt;&nbsp;data,
+<pre>public&nbsp;TrainTestSplitter(<a href="../../../org/tribuo/DataSource.html" title="interface in org.tribuo">DataSource</a>&lt;<a href="../../../org/tribuo/evaluation/TrainTestSplitter.html" title="type parameter in TrainTestSplitter">T</a>&gt;&nbsp;data,
                          double&nbsp;trainProportion,
                          long&nbsp;seed)</pre>
 <div class="block">Creates a splitter that will split the given data set into 
@@ -295,7 +295,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>totalSize</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../src-html/org/tribuo/evaluation/TrainTestSplitter.html#line.109">totalSize</a>()</pre>
+<pre>public&nbsp;int&nbsp;totalSize()</pre>
 <div class="block">The total amount of data in train and test combined.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -309,7 +309,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getTrain</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/DataSource.html" title="interface in org.tribuo">DataSource</a>&lt;<a href="../../../org/tribuo/evaluation/TrainTestSplitter.html" title="type parameter in TrainTestSplitter">T</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/evaluation/TrainTestSplitter.html#line.117">getTrain</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/DataSource.html" title="interface in org.tribuo">DataSource</a>&lt;<a href="../../../org/tribuo/evaluation/TrainTestSplitter.html" title="type parameter in TrainTestSplitter">T</a>&gt;&nbsp;getTrain()</pre>
 <div class="block">Gets the training data source.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -323,7 +323,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getTest</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/DataSource.html" title="interface in org.tribuo">DataSource</a>&lt;<a href="../../../org/tribuo/evaluation/TrainTestSplitter.html" title="type parameter in TrainTestSplitter">T</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/evaluation/TrainTestSplitter.html#line.125">getTest</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/DataSource.html" title="interface in org.tribuo">DataSource</a>&lt;<a href="../../../org/tribuo/evaluation/TrainTestSplitter.html" title="type parameter in TrainTestSplitter">T</a>&gt;&nbsp;getTest()</pre>
 <div class="block">Gets the testing datasource.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -399,6 +399,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

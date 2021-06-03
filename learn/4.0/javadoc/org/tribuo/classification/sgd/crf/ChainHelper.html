@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <hr>
 <br>
-<pre>public final class <a href="../../../../../src-html/org/tribuo/classification/sgd/crf/ChainHelper.html#line.27">ChainHelper</a>
+<pre>public final class <span class="typeNameLabel">ChainHelper</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
 <div class="block">A collection of helper methods for performing training and inference in a CRF.</div>
 </li>
@@ -221,7 +221,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>beliefPropagation</h4>
-<pre>public static&nbsp;<a href="../../../../../org/tribuo/classification/sgd/crf/ChainHelper.ChainBPResults.html" title="class in org.tribuo.classification.sgd.crf">ChainHelper.ChainBPResults</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/ChainHelper.html#line.37">beliefPropagation</a>(<a href="../../../../../org/tribuo/classification/sgd/crf/ChainHelper.ChainCliqueValues.html" title="class in org.tribuo.classification.sgd.crf">ChainHelper.ChainCliqueValues</a>&nbsp;scores)</pre>
+<pre>public static&nbsp;<a href="../../../../../org/tribuo/classification/sgd/crf/ChainHelper.ChainBPResults.html" title="class in org.tribuo.classification.sgd.crf">ChainHelper.ChainBPResults</a>&nbsp;beliefPropagation(<a href="../../../../../org/tribuo/classification/sgd/crf/ChainHelper.ChainCliqueValues.html" title="class in org.tribuo.classification.sgd.crf">ChainHelper.ChainCliqueValues</a>&nbsp;scores)</pre>
 <div class="block">Runs belief propagation on a linear chain CRF. Uses the
  linear predictions for each token and the label transition probabilities.</div>
 <dl>
@@ -238,7 +238,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>constrainedBeliefPropagation</h4>
-<pre>public static&nbsp;double&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/ChainHelper.html#line.92">constrainedBeliefPropagation</a>(<a href="../../../../../org/tribuo/classification/sgd/crf/ChainHelper.ChainCliqueValues.html" title="class in org.tribuo.classification.sgd.crf">ChainHelper.ChainCliqueValues</a>&nbsp;scores,
+<pre>public static&nbsp;double&nbsp;constrainedBeliefPropagation(<a href="../../../../../org/tribuo/classification/sgd/crf/ChainHelper.ChainCliqueValues.html" title="class in org.tribuo.classification.sgd.crf">ChainHelper.ChainCliqueValues</a>&nbsp;scores,
                                                   int[]&nbsp;constraints)</pre>
 <div class="block">Runs constrained belief propagation on a linear chain CRF. Uses the
  linear predictions for each token and the label transition probabilities.
@@ -264,7 +264,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>viterbi</h4>
-<pre>public static&nbsp;<a href="../../../../../org/tribuo/classification/sgd/crf/ChainHelper.ChainViterbiResults.html" title="class in org.tribuo.classification.sgd.crf">ChainHelper.ChainViterbiResults</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/ChainHelper.html#line.131">viterbi</a>(<a href="../../../../../org/tribuo/classification/sgd/crf/ChainHelper.ChainCliqueValues.html" title="class in org.tribuo.classification.sgd.crf">ChainHelper.ChainCliqueValues</a>&nbsp;scores)</pre>
+<pre>public static&nbsp;<a href="../../../../../org/tribuo/classification/sgd/crf/ChainHelper.ChainViterbiResults.html" title="class in org.tribuo.classification.sgd.crf">ChainHelper.ChainViterbiResults</a>&nbsp;viterbi(<a href="../../../../../org/tribuo/classification/sgd/crf/ChainHelper.ChainCliqueValues.html" title="class in org.tribuo.classification.sgd.crf">ChainHelper.ChainCliqueValues</a>&nbsp;scores)</pre>
 <div class="block">Runs Viterbi on a linear chain CRF. Uses the
  linear predictions for each token and the label transition probabilities.</div>
 <dl>
@@ -281,7 +281,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>sumLogProbs</h4>
-<pre>public static&nbsp;double&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/ChainHelper.html#line.180">sumLogProbs</a>(<a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;input)</pre>
+<pre>public static&nbsp;double&nbsp;sumLogProbs(<a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;input)</pre>
 <div class="block">Sums the log probabilities. Must be updated in concert with <a href="../../../../../org/tribuo/classification/sgd/crf/ChainHelper.html#sumLogProbs-double:A-"><code>sumLogProbs(double[])</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -297,7 +297,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>sumLogProbs</h4>
-<pre>public static&nbsp;double&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/ChainHelper.html#line.218">sumLogProbs</a>(double[]&nbsp;input)</pre>
+<pre>public static&nbsp;double&nbsp;sumLogProbs(double[]&nbsp;input)</pre>
 <div class="block">Sums the log probabilities. Must be updated in concert with <a href="../../../../../org/tribuo/classification/sgd/crf/ChainHelper.html#sumLogProbs-org.tribuo.math.la.DenseVector-"><code>sumLogProbs(DenseVector)</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -375,6 +375,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

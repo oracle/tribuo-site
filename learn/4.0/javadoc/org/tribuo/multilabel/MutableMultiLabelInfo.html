@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../src-html/org/tribuo/multilabel/MutableMultiLabelInfo.html#line.27">MutableMultiLabelInfo</a>
+<pre>public class <span class="typeNameLabel">MutableMultiLabelInfo</span>
 extends <a href="../../../org/tribuo/multilabel/MultiLabelInfo.html" title="class in org.tribuo.multilabel">MultiLabelInfo</a>
 implements <a href="../../../org/tribuo/MutableOutputInfo.html" title="interface in org.tribuo">MutableOutputInfo</a>&lt;<a href="../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;</pre>
 <div class="block">A MutableOutputInfo for working with multi-label tasks.</div>
@@ -244,7 +244,7 @@ implements <a href="../../../org/tribuo/MutableOutputInfo.html" title="interface
 <ul class="blockListLast">
 <li class="blockList">
 <h4>MutableMultiLabelInfo</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/multilabel/MutableMultiLabelInfo.html#line.42">MutableMultiLabelInfo</a>(<a href="../../../org/tribuo/multilabel/MultiLabelInfo.html" title="class in org.tribuo.multilabel">MultiLabelInfo</a>&nbsp;info)</pre>
+<pre>public&nbsp;MutableMultiLabelInfo(<a href="../../../org/tribuo/multilabel/MultiLabelInfo.html" title="class in org.tribuo.multilabel">MultiLabelInfo</a>&nbsp;info)</pre>
 <div class="block">Construct a MutableMultiLabelInfo with it's state copied from another
  MultiLabelInfo.</div>
 <dl>
@@ -267,7 +267,7 @@ implements <a href="../../../org/tribuo/MutableOutputInfo.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>observe</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/multilabel/MutableMultiLabelInfo.html#line.54">observe</a>(<a href="../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;output)</pre>
+<pre>public&nbsp;void&nbsp;observe(<a href="../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;output)</pre>
 <div class="block">Throws IllegalStateException if the MultiLabel contains a Label which has a "," in it.
  <p>
  Such labels are disallowed. There should be an exception thrown when one is constructed
@@ -286,7 +286,7 @@ implements <a href="../../../org/tribuo/MutableOutputInfo.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>clear</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/multilabel/MutableMultiLabelInfo.html#line.71">clear</a>()</pre>
+<pre>public&nbsp;void&nbsp;clear()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/MutableOutputInfo.html#clear--">MutableOutputInfo</a></code></span></div>
 <div class="block">Clears the OutputInfo, removing all things it's observed.</div>
 <dl>
@@ -301,7 +301,7 @@ implements <a href="../../../org/tribuo/MutableOutputInfo.html" title="interface
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/multilabel/MutableMultiLabelInfo.html" title="class in org.tribuo.multilabel">MutableMultiLabelInfo</a>&nbsp;<a href="../../../src-html/org/tribuo/multilabel/MutableMultiLabelInfo.html#line.77">copy</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/multilabel/MutableMultiLabelInfo.html" title="class in org.tribuo.multilabel">MutableMultiLabelInfo</a>&nbsp;copy()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/OutputInfo.html#copy--">OutputInfo</a></code></span></div>
 <div class="block">Generates a copy of this OutputInfo, including it's mutability.</div>
 <dl>
@@ -320,7 +320,7 @@ implements <a href="../../../org/tribuo/MutableOutputInfo.html" title="interface
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toReadableString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/multilabel/MutableMultiLabelInfo.html#line.82">toReadableString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toReadableString()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/OutputInfo.html#toReadableString--">OutputInfo</a></code></span></div>
 <div class="block">Generates a String form of this OutputInfo.
  <p>
@@ -401,6 +401,6 @@ implements <a href="../../../org/tribuo/MutableOutputInfo.html" title="interface
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

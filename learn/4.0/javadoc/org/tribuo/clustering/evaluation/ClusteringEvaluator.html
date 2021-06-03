@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/clustering/evaluation/ClusteringEvaluator.html#line.40">ClusteringEvaluator</a>
+<pre>public class <span class="typeNameLabel">ClusteringEvaluator</span>
 extends <a href="../../../../org/tribuo/evaluation/AbstractEvaluator.html" title="class in org.tribuo.evaluation">AbstractEvaluator</a>&lt;<a href="../../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>,org.tribuo.clustering.evaluation.ClusteringMetric.Context,<a href="../../../../org/tribuo/clustering/evaluation/ClusteringEvaluation.html" title="interface in org.tribuo.clustering.evaluation">ClusteringEvaluation</a>,<a href="../../../../org/tribuo/clustering/evaluation/ClusteringMetric.html" title="class in org.tribuo.clustering.evaluation">ClusteringMetric</a>&gt;</pre>
 <div class="block">A <a href="../../../../org/tribuo/evaluation/Evaluator.html" title="interface in org.tribuo.evaluation"><code>Evaluator</code></a> for clustering using <a href="../../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering"><code>ClusterID</code></a>s.
  <p>
@@ -221,7 +221,7 @@ extends <a href="../../../../org/tribuo/evaluation/AbstractEvaluator.html" title
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ClusteringEvaluator</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/clustering/evaluation/ClusteringEvaluator.html#line.40">ClusteringEvaluator</a>()</pre>
+<pre>public&nbsp;ClusteringEvaluator()</pre>
 </li>
 </ul>
 </li>
@@ -238,7 +238,7 @@ extends <a href="../../../../org/tribuo/evaluation/AbstractEvaluator.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>createMetrics</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../org/tribuo/clustering/evaluation/ClusteringMetric.html" title="class in org.tribuo.clustering.evaluation">ClusteringMetric</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/clustering/evaluation/ClusteringEvaluator.html#line.43">createMetrics</a>(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&gt;&nbsp;model)</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../org/tribuo/clustering/evaluation/ClusteringMetric.html" title="class in org.tribuo.clustering.evaluation">ClusteringMetric</a>&gt;&nbsp;createMetrics(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&gt;&nbsp;model)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/evaluation/AbstractEvaluator.html#createMetrics-org.tribuo.Model-">AbstractEvaluator</a></code></span></div>
 <div class="block">Creates the appropriate set of metrics for this model, by querying for it's <a href="../../../../org/tribuo/OutputInfo.html" title="interface in org.tribuo"><code>OutputInfo</code></a>.</div>
 <dl>
@@ -257,7 +257,7 @@ extends <a href="../../../../org/tribuo/evaluation/AbstractEvaluator.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>createContext</h4>
-<pre>protected&nbsp;org.tribuo.clustering.evaluation.ClusteringMetric.Context&nbsp;<a href="../../../../src-html/org/tribuo/clustering/evaluation/ClusteringEvaluator.html#line.55">createContext</a>(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&gt;&nbsp;model,
+<pre>protected&nbsp;org.tribuo.clustering.evaluation.ClusteringMetric.Context&nbsp;createContext(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&gt;&nbsp;model,
                                                                                   <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&gt;&gt;&nbsp;predictions)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/evaluation/AbstractEvaluator.html#createContext-org.tribuo.Model-java.util.List-">AbstractEvaluator</a></code></span></div>
 <div class="block">Create the context needed for evaluation. The context might store global properties or cache computation.</div>
@@ -278,7 +278,7 @@ extends <a href="../../../../org/tribuo/evaluation/AbstractEvaluator.html" title
 <ul class="blockListLast">
 <li class="blockList">
 <h4>createEvaluation</h4>
-<pre>protected&nbsp;<a href="../../../../org/tribuo/clustering/evaluation/ClusteringEvaluation.html" title="interface in org.tribuo.clustering.evaluation">ClusteringEvaluation</a>&nbsp;<a href="../../../../src-html/org/tribuo/clustering/evaluation/ClusteringEvaluator.html#line.60">createEvaluation</a>(org.tribuo.clustering.evaluation.ClusteringMetric.Context&nbsp;context,
+<pre>protected&nbsp;<a href="../../../../org/tribuo/clustering/evaluation/ClusteringEvaluation.html" title="interface in org.tribuo.clustering.evaluation">ClusteringEvaluation</a>&nbsp;createEvaluation(org.tribuo.clustering.evaluation.ClusteringMetric.Context&nbsp;context,
                                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/MetricID.html" title="class in org.tribuo.evaluation.metrics">MetricID</a>&lt;<a href="../../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&gt;,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;results,
                                                 <a href="../../../../org/tribuo/provenance/EvaluationProvenance.html" title="class in org.tribuo.provenance">EvaluationProvenance</a>&nbsp;provenance)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/evaluation/AbstractEvaluator.html#createEvaluation-C-java.util.Map-org.tribuo.provenance.EvaluationProvenance-">AbstractEvaluator</a></code></span></div>
@@ -363,6 +363,6 @@ extends <a href="../../../../org/tribuo/evaluation/AbstractEvaluator.html" title
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

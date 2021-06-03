@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../src-html/org/tribuo/sequence/SequenceModelExplorer.html#line.42">SequenceModelExplorer</a>
+<pre>public class <span class="typeNameLabel">SequenceModelExplorer</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <div class="block">A CLI for interacting with a <a href="../../../org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence"><code>SequenceModel</code></a>.</div>
@@ -275,7 +275,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>shell</h4>
-<pre>protected&nbsp;com.oracle.labs.mlrg.olcut.command.CommandInterpreter <a href="../../../src-html/org/tribuo/sequence/SequenceModelExplorer.html#line.45">shell</a></pre>
+<pre>protected&nbsp;com.oracle.labs.mlrg.olcut.command.CommandInterpreter shell</pre>
 </li>
 </ul>
 </li>
@@ -292,7 +292,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>SequenceModelExplorer</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceModelExplorer.html#line.49">SequenceModelExplorer</a>()</pre>
+<pre>public&nbsp;SequenceModelExplorer()</pre>
 </li>
 </ul>
 </li>
@@ -309,7 +309,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getName</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceModelExplorer.html#line.55">getName</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getName()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getName</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.command.CommandGroup</code></dd>
@@ -322,7 +322,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getDescription</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceModelExplorer.html#line.60">getDescription</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getDescription()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getDescription</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.command.CommandGroup</code></dd>
@@ -335,7 +335,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>fileCompleter</h4>
-<pre>public&nbsp;org.jline.reader.Completer[]&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceModelExplorer.html#line.64">fileCompleter</a>()</pre>
+<pre>public&nbsp;org.jline.reader.Completer[]&nbsp;fileCompleter()</pre>
 </li>
 </ul>
 <a name="startShell--">
@@ -344,7 +344,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>startShell</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceModelExplorer.html#line.74">startShell</a>()</pre>
+<pre>public&nbsp;void&nbsp;startShell()</pre>
 <div class="block">Start the command shell</div>
 </li>
 </ul>
@@ -356,7 +356,7 @@ implements com.oracle.labs.mlrg.olcut.command.CommandGroup</pre>
 <h4>loadModel</h4>
 <pre>@Command(usage="&lt;filename&gt; - Load a model from disk.",
          completers="fileCompleter")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceModelExplorer.html#line.80">loadModel</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;loadModel(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
                                                                                                                     <a href="https://docs.oracle.com/javase/8/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;path)</pre>
 </li>
 </ul>
@@ -367,7 +367,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>modelDescription</h4>
 <pre>@Command(usage="Shows the model description")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceModelExplorer.html#line.98">modelDescription</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;modelDescription(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
 </li>
 </ul>
 <a name="featureInfo-com.oracle.labs.mlrg.olcut.command.CommandInterpreter-java.lang.String-">
@@ -377,7 +377,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>featureInfo</h4>
 <pre>@Command(usage="Shows the information on a particular feature")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceModelExplorer.html#line.103">featureInfo</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;featureInfo(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
                                                                                           <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;featureName)</pre>
 </li>
 </ul>
@@ -388,7 +388,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>outputInfo</h4>
 <pre>@Command(usage="Shows the output information.")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceModelExplorer.html#line.113">outputInfo</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;outputInfo(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
 </li>
 </ul>
 <a name="topFeatures-com.oracle.labs.mlrg.olcut.command.CommandInterpreter-int-">
@@ -398,7 +398,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>topFeatures</h4>
 <pre>@Command(usage="&lt;int&gt; - Shows the top N features in the model")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceModelExplorer.html#line.118">topFeatures</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;topFeatures(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
                                                                                           int&nbsp;numFeatures)</pre>
 </li>
 </ul>
@@ -409,7 +409,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>numFeatures</h4>
 <pre>@Command(usage="Shows the number of features in the model")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceModelExplorer.html#line.123">numFeatures</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;numFeatures(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci)</pre>
 </li>
 </ul>
 <a name="minCount-com.oracle.labs.mlrg.olcut.command.CommandInterpreter-int-">
@@ -419,7 +419,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <li class="blockList">
 <h4>minCount</h4>
 <pre>@Command(usage="&lt;min count&gt; - Shows the number of features that occurred more than min count times.")
-public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceModelExplorer.html#line.128">minCount</a>(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
+public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;minCount(com.oracle.labs.mlrg.olcut.command.CommandInterpreter&nbsp;ci,
                                                                                                                              int&nbsp;minCount)</pre>
 </li>
 </ul>
@@ -429,7 +429,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <ul class="blockList">
 <li class="blockList">
 <h4>usage</h4>
-<pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceModelExplorer.html#line.138">usage</a>()</pre>
+<pre>public static&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;usage()</pre>
 </li>
 </ul>
 <a name="main-java.lang.String:A-">
@@ -438,7 +438,7 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>main</h4>
-<pre>public static&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/sequence/SequenceModelExplorer.html#line.154">main</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;args)</pre>
+<pre>public static&nbsp;void&nbsp;main(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;args)</pre>
 </li>
 </ul>
 </li>
@@ -509,6 +509,6 @@ public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

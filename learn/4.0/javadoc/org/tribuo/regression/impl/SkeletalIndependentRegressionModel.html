@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public abstract class <a href="../../../../src-html/org/tribuo/regression/impl/SkeletalIndependentRegressionModel.html#line.35">SkeletalIndependentRegressionModel</a>
+<pre>public abstract class <span class="typeNameLabel">SkeletalIndependentRegressionModel</span>
 extends <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;</pre>
 <div class="block">A <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo"><code>Model</code></a> which wraps n independent regression models, where n is the
  size of the MultipleRegressor domain. Each model independently predicts
@@ -249,7 +249,7 @@ extends <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">
 <ul class="blockListLast">
 <li class="blockList">
 <h4>dimensions</h4>
-<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[] <a href="../../../../src-html/org/tribuo/regression/impl/SkeletalIndependentRegressionModel.html#line.38">dimensions</a></pre>
+<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[] dimensions</pre>
 </li>
 </ul>
 </li>
@@ -266,7 +266,7 @@ extends <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">
 <ul class="blockListLast">
 <li class="blockList">
 <h4>SkeletalIndependentRegressionModel</h4>
-<pre>protected&nbsp;<a href="../../../../src-html/org/tribuo/regression/impl/SkeletalIndependentRegressionModel.html#line.48">SkeletalIndependentRegressionModel</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+<pre>protected&nbsp;SkeletalIndependentRegressionModel(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                                              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>[]&nbsp;dimensions,
                                              <a href="../../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;modelProvenance,
                                              <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureMap,
@@ -296,7 +296,7 @@ extends <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">
 <ul class="blockList">
 <li class="blockList">
 <h4>predict</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/regression/impl/SkeletalIndependentRegressionModel.html#line.54">predict</a>(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;example)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;predict(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;example)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/Model.html#predict-org.tribuo.Example-">Model</a></code></span></div>
 <div class="block">Uses the model to predict the output for a single example.
  <p>
@@ -320,7 +320,7 @@ extends <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">
 <ul class="blockList">
 <li class="blockList">
 <h4>createFeatures</h4>
-<pre>protected&nbsp;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;<a href="../../../../src-html/org/tribuo/regression/impl/SkeletalIndependentRegressionModel.html#line.73">createFeatures</a>(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;example)</pre>
+<pre>protected&nbsp;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;createFeatures(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;example)</pre>
 <div class="block">Creates the feature vector. Does not include a bias term.
  <p>
  Designed to be overridden.</div>
@@ -338,7 +338,7 @@ extends <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">
 <ul class="blockListLast">
 <li class="blockList">
 <h4>scoreDimension</h4>
-<pre>protected abstract&nbsp;<a href="../../../../org/tribuo/regression/Regressor.DimensionTuple.html" title="class in org.tribuo.regression">Regressor.DimensionTuple</a>&nbsp;<a href="../../../../src-html/org/tribuo/regression/impl/SkeletalIndependentRegressionModel.html#line.83">scoreDimension</a>(int&nbsp;dimensionIdx,
+<pre>protected abstract&nbsp;<a href="../../../../org/tribuo/regression/Regressor.DimensionTuple.html" title="class in org.tribuo.regression">Regressor.DimensionTuple</a>&nbsp;scoreDimension(int&nbsp;dimensionIdx,
                                                            <a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;features)</pre>
 <div class="block">Makes a prediction for a single dimension.</div>
 <dl>
@@ -418,6 +418,6 @@ extends <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

@@ -122,7 +122,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public final class <a href="../../../src-html/org/tribuo/ensemble/WeightedEnsembleModel.html#line.41">WeightedEnsembleModel</a>&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public final class <span class="typeNameLabel">WeightedEnsembleModel&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="class in org.tribuo.ensemble">EnsembleModel</a>&lt;T&gt;</pre>
 <div class="block">An ensemble model that uses weights to combine the ensemble member predictions.</div>
 <dl>
@@ -275,7 +275,7 @@ extends <a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="class i
 <ul class="blockList">
 <li class="blockList">
 <h4>weights</h4>
-<pre>protected final&nbsp;float[] <a href="../../../src-html/org/tribuo/ensemble/WeightedEnsembleModel.html#line.44">weights</a></pre>
+<pre>protected final&nbsp;float[] weights</pre>
 </li>
 </ul>
 <a name="combiner">
@@ -284,7 +284,7 @@ extends <a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="class i
 <ul class="blockListLast">
 <li class="blockList">
 <h4>combiner</h4>
-<pre>protected final&nbsp;<a href="../../../org/tribuo/ensemble/EnsembleCombiner.html" title="interface in org.tribuo.ensemble">EnsembleCombiner</a>&lt;<a href="../../../org/tribuo/ensemble/WeightedEnsembleModel.html" title="type parameter in WeightedEnsembleModel">T</a> extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../org/tribuo/ensemble/WeightedEnsembleModel.html" title="type parameter in WeightedEnsembleModel">T</a>&gt;&gt; <a href="../../../src-html/org/tribuo/ensemble/WeightedEnsembleModel.html#line.46">combiner</a></pre>
+<pre>protected final&nbsp;<a href="../../../org/tribuo/ensemble/EnsembleCombiner.html" title="interface in org.tribuo.ensemble">EnsembleCombiner</a>&lt;<a href="../../../org/tribuo/ensemble/WeightedEnsembleModel.html" title="type parameter in WeightedEnsembleModel">T</a> extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../org/tribuo/ensemble/WeightedEnsembleModel.html" title="type parameter in WeightedEnsembleModel">T</a>&gt;&gt; combiner</pre>
 </li>
 </ul>
 </li>
@@ -301,7 +301,7 @@ extends <a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="class i
 <ul class="blockList">
 <li class="blockList">
 <h4>WeightedEnsembleModel</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/ensemble/WeightedEnsembleModel.html#line.48">WeightedEnsembleModel</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+<pre>public&nbsp;WeightedEnsembleModel(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                              <a href="../../../org/tribuo/provenance/EnsembleModelProvenance.html" title="class in org.tribuo.provenance">EnsembleModelProvenance</a>&nbsp;description,
                              <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap,
                              <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/ensemble/WeightedEnsembleModel.html" title="type parameter in WeightedEnsembleModel">T</a>&gt;&nbsp;outputIDInfo,
@@ -315,7 +315,7 @@ extends <a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="class i
 <ul class="blockListLast">
 <li class="blockList">
 <h4>WeightedEnsembleModel</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/ensemble/WeightedEnsembleModel.html#line.54">WeightedEnsembleModel</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+<pre>public&nbsp;WeightedEnsembleModel(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                              <a href="../../../org/tribuo/provenance/EnsembleModelProvenance.html" title="class in org.tribuo.provenance">EnsembleModelProvenance</a>&nbsp;description,
                              <a href="../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap,
                              <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/ensemble/WeightedEnsembleModel.html" title="type parameter in WeightedEnsembleModel">T</a>&gt;&nbsp;outputIDInfo,
@@ -338,7 +338,7 @@ extends <a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="class i
 <ul class="blockList">
 <li class="blockList">
 <h4>predict</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../org/tribuo/ensemble/WeightedEnsembleModel.html" title="type parameter in WeightedEnsembleModel">T</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/ensemble/WeightedEnsembleModel.html#line.63">predict</a>(<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/ensemble/WeightedEnsembleModel.html" title="type parameter in WeightedEnsembleModel">T</a>&gt;&nbsp;example)</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../org/tribuo/ensemble/WeightedEnsembleModel.html" title="type parameter in WeightedEnsembleModel">T</a>&gt;&nbsp;predict(<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/ensemble/WeightedEnsembleModel.html" title="type parameter in WeightedEnsembleModel">T</a>&gt;&nbsp;example)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/Model.html#predict-org.tribuo.Example-">Model</a></code></span></div>
 <div class="block">Uses the model to predict the output for a single example.
  <p>
@@ -362,7 +362,7 @@ extends <a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="class i
 <ul class="blockList">
 <li class="blockList">
 <h4>getExcuse</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../org/tribuo/Excuse.html" title="class in org.tribuo">Excuse</a>&lt;<a href="../../../org/tribuo/ensemble/WeightedEnsembleModel.html" title="type parameter in WeightedEnsembleModel">T</a>&gt;&gt;&nbsp;<a href="../../../src-html/org/tribuo/ensemble/WeightedEnsembleModel.html#line.73">getExcuse</a>(<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/ensemble/WeightedEnsembleModel.html" title="type parameter in WeightedEnsembleModel">T</a>&gt;&nbsp;example)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../org/tribuo/Excuse.html" title="class in org.tribuo">Excuse</a>&lt;<a href="../../../org/tribuo/ensemble/WeightedEnsembleModel.html" title="type parameter in WeightedEnsembleModel">T</a>&gt;&gt;&nbsp;getExcuse(<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/ensemble/WeightedEnsembleModel.html" title="type parameter in WeightedEnsembleModel">T</a>&gt;&nbsp;example)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/Model.html#getExcuse-org.tribuo.Example-">Model</a></code></span></div>
 <div class="block">Generates an excuse for an example.
  <p>
@@ -387,7 +387,7 @@ extends <a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="class i
 <ul class="blockListLast">
 <li class="blockList">
 <h4>copy</h4>
-<pre>protected&nbsp;<a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="class in org.tribuo.ensemble">EnsembleModel</a>&lt;<a href="../../../org/tribuo/ensemble/WeightedEnsembleModel.html" title="type parameter in WeightedEnsembleModel">T</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/ensemble/WeightedEnsembleModel.html#line.112">copy</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+<pre>protected&nbsp;<a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="class in org.tribuo.ensemble">EnsembleModel</a>&lt;<a href="../../../org/tribuo/ensemble/WeightedEnsembleModel.html" title="type parameter in WeightedEnsembleModel">T</a>&gt;&nbsp;copy(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                                 <a href="../../../org/tribuo/provenance/EnsembleModelProvenance.html" title="class in org.tribuo.provenance">EnsembleModelProvenance</a>&nbsp;newProvenance,
                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/ensemble/WeightedEnsembleModel.html" title="type parameter in WeightedEnsembleModel">T</a>&gt;&gt;&nbsp;newModels)</pre>
 <dl>
@@ -464,6 +464,6 @@ extends <a href="../../../org/tribuo/ensemble/EnsembleModel.html" title="class i
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

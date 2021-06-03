@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/multilabel/baseline/IndependentMultiLabelModel.html#line.46">IndependentMultiLabelModel</a>
+<pre>public class <span class="typeNameLabel">IndependentMultiLabelModel</span>
 extends <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;</pre>
 <div class="block">A <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo"><code>Model</code></a> which wraps n binary models, where n is the
  size of the MultiLabel domain. Each model independently predicts
@@ -222,7 +222,7 @@ extends <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">
 <ul class="blockList">
 <li class="blockList">
 <h4>predict</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/baseline/IndependentMultiLabelModel.html#line.67">predict</a>(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&nbsp;example)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&nbsp;predict(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&nbsp;example)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/Model.html#predict-org.tribuo.Example-">Model</a></code></span></div>
 <div class="block">Uses the model to predict the output for a single example.
  <p>
@@ -246,7 +246,7 @@ extends <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">
 <ul class="blockList">
 <li class="blockList">
 <h4>getTopFeatures</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/baseline/IndependentMultiLabelModel.html#line.94">getTopFeatures</a>(int&nbsp;n)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&gt;&gt;&nbsp;getTopFeatures(int&nbsp;n)</pre>
 <div class="block">This aggregates the top features from each of the models.
  <p>
  If the individual models support per label features, then only the features
@@ -269,7 +269,7 @@ extends <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">
 <ul class="blockList">
 <li class="blockList">
 <h4>getExcuse</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../org/tribuo/Excuse.html" title="class in org.tribuo">Excuse</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/baseline/IndependentMultiLabelModel.html#line.112">getExcuse</a>(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&nbsp;example)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../org/tribuo/Excuse.html" title="class in org.tribuo">Excuse</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&gt;&nbsp;getExcuse(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&nbsp;example)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/Model.html#getExcuse-org.tribuo.Example-">Model</a></code></span></div>
 <div class="block">Generates an excuse for an example.
  <p>
@@ -294,7 +294,7 @@ extends <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">
 <ul class="blockListLast">
 <li class="blockList">
 <h4>copy</h4>
-<pre>protected&nbsp;<a href="../../../../org/tribuo/multilabel/baseline/IndependentMultiLabelModel.html" title="class in org.tribuo.multilabel.baseline">IndependentMultiLabelModel</a>&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/baseline/IndependentMultiLabelModel.html#line.118">copy</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newName,
+<pre>protected&nbsp;<a href="../../../../org/tribuo/multilabel/baseline/IndependentMultiLabelModel.html" title="class in org.tribuo.multilabel.baseline">IndependentMultiLabelModel</a>&nbsp;copy(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newName,
                                           <a href="../../../../org/tribuo/provenance/ModelProvenance.html" title="class in org.tribuo.provenance">ModelProvenance</a>&nbsp;newProvenance)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/Model.html#copy-java.lang.String-org.tribuo.provenance.ModelProvenance-">Model</a></code></span></div>
 <div class="block">Copies a model, replacing it's provenance and name with the supplied values.
@@ -379,6 +379,6 @@ extends <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

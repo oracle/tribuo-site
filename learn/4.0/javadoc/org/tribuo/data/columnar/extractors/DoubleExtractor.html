@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../../src-html/org/tribuo/data/columnar/extractors/DoubleExtractor.html#line.30">DoubleExtractor</a>
+<pre>public class <span class="typeNameLabel">DoubleExtractor</span>
 extends <a href="../../../../../org/tribuo/data/columnar/extractors/SimpleFieldExtractor.html" title="class in org.tribuo.data.columnar.extractors">SimpleFieldExtractor</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;</pre>
 <div class="block">Extracts the field value and converts it to a double.
  <p>
@@ -231,7 +231,7 @@ extends <a href="../../../../../org/tribuo/data/columnar/extractors/SimpleFieldE
 <ul class="blockList">
 <li class="blockList">
 <h4>DoubleExtractor</h4>
-<pre>public&nbsp;<a href="../../../../../src-html/org/tribuo/data/columnar/extractors/DoubleExtractor.html#line.38">DoubleExtractor</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</pre>
+<pre>public&nbsp;DoubleExtractor(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</pre>
 <div class="block">Extracts a double value from the supplied field name.
  Writes the metadata out using the field name as the key.</div>
 <dl>
@@ -246,7 +246,7 @@ extends <a href="../../../../../org/tribuo/data/columnar/extractors/SimpleFieldE
 <ul class="blockListLast">
 <li class="blockList">
 <h4>DoubleExtractor</h4>
-<pre>public&nbsp;<a href="../../../../../src-html/org/tribuo/data/columnar/extractors/DoubleExtractor.html#line.48">DoubleExtractor</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
+<pre>public&nbsp;DoubleExtractor(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
                        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;metadataName)</pre>
 <div class="block">Extracts a double value from the supplied field name.
  Writes the metadata out using the metadataName as the key.</div>
@@ -271,7 +271,7 @@ extends <a href="../../../../../org/tribuo/data/columnar/extractors/SimpleFieldE
 <ul class="blockList">
 <li class="blockList">
 <h4>getValueType</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/data/columnar/extractors/DoubleExtractor.html#line.58">getValueType</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;getValueType()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/tribuo/data/columnar/FieldExtractor.html#getValueType--">FieldExtractor</a></code></span></div>
 <div class="block">Gets the class of the value produced by this extractor.</div>
 <dl>
@@ -286,7 +286,7 @@ extends <a href="../../../../../org/tribuo/data/columnar/extractors/SimpleFieldE
 <ul class="blockList">
 <li class="blockList">
 <h4>extractField</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/data/columnar/extractors/DoubleExtractor.html#line.63">extractField</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;extractField(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../org/tribuo/data/columnar/extractors/SimpleFieldExtractor.html#extractField-java.lang.String-">SimpleFieldExtractor</a></code></span></div>
 <div class="block">Extracts the field value, or returns <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true#empty--" title="class or interface in java.util"><code>Optional.empty()</code></a> if it failed to parse.</div>
 <dl>
@@ -305,7 +305,7 @@ extends <a href="../../../../../org/tribuo/data/columnar/extractors/SimpleFieldE
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;<a href="../../../../../src-html/org/tribuo/data/columnar/extractors/DoubleExtractor.html#line.74">getProvenance</a>()</pre>
+<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;getProvenance()</pre>
 </li>
 </ul>
 </li>
@@ -376,6 +376,6 @@ extends <a href="../../../../../org/tribuo/data/columnar/extractors/SimpleFieldE
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

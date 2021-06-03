@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public final class <a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.38">MultiLabelEvaluationImpl</a>
+<pre>public final class <span class="typeNameLabel">MultiLabelEvaluationImpl</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvaluation.html" title="interface in org.tribuo.multilabel.evaluation">MultiLabelEvaluation</a></pre>
 <div class="block">The implementation of a <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvaluation.html" title="interface in org.tribuo.multilabel.evaluation"><code>MultiLabelEvaluation</code></a> using the default metrics.
@@ -338,7 +338,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>getPredictions</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.61">getPredictions</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&gt;&nbsp;getPredictions()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/evaluation/Evaluation.html#getPredictions--">Evaluation</a></code></span></div>
 <div class="block">Gets the predictions stored in this evaluation.</div>
 <dl>
@@ -355,7 +355,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>balancedErrorRate</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.66">balancedErrorRate</a>()</pre>
+<pre>public&nbsp;double&nbsp;balancedErrorRate()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html#balancedErrorRate--">ClassifierEvaluation</a></code></span></div>
 <div class="block">Returns the balanced error rate, i.e., the mean of the per label recalls.</div>
 <dl>
@@ -372,7 +372,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>getConfusionMatrix</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/classification/evaluation/ConfusionMatrix.html" title="interface in org.tribuo.classification.evaluation">ConfusionMatrix</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.74">getConfusionMatrix</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/classification/evaluation/ConfusionMatrix.html" title="interface in org.tribuo.classification.evaluation">ConfusionMatrix</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&nbsp;getConfusionMatrix()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html#getConfusionMatrix--">ClassifierEvaluation</a></code></span></div>
 <div class="block">Returns the underlying confusion matrix.</div>
 <dl>
@@ -389,7 +389,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>confusion</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.79">confusion</a>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;predicted,
+<pre>public&nbsp;double&nbsp;confusion(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;predicted,
                         <a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;truth)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html#confusion-T-T-">ClassifierEvaluation</a></code></span></div>
 <div class="block">Returns the number of times label <code>truth</code> was predicted as label <code>predicted</code>.</div>
@@ -410,7 +410,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>tp</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.84">tp</a>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;label)</pre>
+<pre>public&nbsp;double&nbsp;tp(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;label)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html#tp-T-">ClassifierEvaluation</a></code></span></div>
 <div class="block">Returns the number of true positives, i.e., the number of times the label was correctly predicted.</div>
 <dl>
@@ -429,7 +429,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>tp</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.89">tp</a>()</pre>
+<pre>public&nbsp;double&nbsp;tp()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html#tp--">ClassifierEvaluation</a></code></span></div>
 <div class="block">Returns the micro average of the number of true positives across all the labels, i.e., the total
  number of true positives.</div>
@@ -447,7 +447,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>macroTP</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.94">macroTP</a>()</pre>
+<pre>public&nbsp;double&nbsp;macroTP()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html#macroTP--">ClassifierEvaluation</a></code></span></div>
 <div class="block">Returns the macro averaged number of true positives, averaged across the labels.</div>
 <dl>
@@ -464,7 +464,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>fp</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.99">fp</a>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;label)</pre>
+<pre>public&nbsp;double&nbsp;fp(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;label)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html#fp-T-">ClassifierEvaluation</a></code></span></div>
 <div class="block">Returns the number of false positives, i.e., the number of times this label was predicted but it was not the true label..</div>
 <dl>
@@ -483,7 +483,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>fp</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.104">fp</a>()</pre>
+<pre>public&nbsp;double&nbsp;fp()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html#fp--">ClassifierEvaluation</a></code></span></div>
 <div class="block">Returns the micro average of the number of false positives across all the labels, i.e., the total
  number of false positives.</div>
@@ -501,7 +501,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>macroFP</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.109">macroFP</a>()</pre>
+<pre>public&nbsp;double&nbsp;macroFP()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html#macroFP--">ClassifierEvaluation</a></code></span></div>
 <div class="block">Returns the macro averaged number of false positives, averaged across the labels.</div>
 <dl>
@@ -518,7 +518,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>tn</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.114">tn</a>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;label)</pre>
+<pre>public&nbsp;double&nbsp;tn(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;label)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html#tn-T-">ClassifierEvaluation</a></code></span></div>
 <div class="block">Returns the number of true negatives for that label, i.e., the number of times it wasn't predicted, and was not the true label.</div>
 <dl>
@@ -537,7 +537,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>tn</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.119">tn</a>()</pre>
+<pre>public&nbsp;double&nbsp;tn()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html#tn--">ClassifierEvaluation</a></code></span></div>
 <div class="block">Returns the total number of true negatives. This isn't very useful in multiclass problems.</div>
 <dl>
@@ -554,7 +554,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>macroTN</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.124">macroTN</a>()</pre>
+<pre>public&nbsp;double&nbsp;macroTN()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html#macroTN--">ClassifierEvaluation</a></code></span></div>
 <div class="block">Returns the macro averaged number of true negatives.</div>
 <dl>
@@ -571,7 +571,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>fn</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.129">fn</a>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;label)</pre>
+<pre>public&nbsp;double&nbsp;fn(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;label)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html#fn-T-">ClassifierEvaluation</a></code></span></div>
 <div class="block">Returns the number of false negatives, i.e., the number of times the true label was incorrectly predicted as another label.</div>
 <dl>
@@ -590,7 +590,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>fn</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.134">fn</a>()</pre>
+<pre>public&nbsp;double&nbsp;fn()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html#fn--">ClassifierEvaluation</a></code></span></div>
 <div class="block">Returns the micro averaged number of false negatives.</div>
 <dl>
@@ -607,7 +607,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>macroFN</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.139">macroFN</a>()</pre>
+<pre>public&nbsp;double&nbsp;macroFN()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html#macroFN--">ClassifierEvaluation</a></code></span></div>
 <div class="block">Returns the macro averaged number of false negatives.</div>
 <dl>
@@ -624,7 +624,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>precision</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.144">precision</a>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;label)</pre>
+<pre>public&nbsp;double&nbsp;precision(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;label)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html#precision-T-">ClassifierEvaluation</a></code></span></div>
 <div class="block">Returns the precision of this label, i.e., the number of true positives divided by the number of true positives plus false positives.</div>
 <dl>
@@ -643,7 +643,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>microAveragedPrecision</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.149">microAveragedPrecision</a>()</pre>
+<pre>public&nbsp;double&nbsp;microAveragedPrecision()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html#microAveragedPrecision--">ClassifierEvaluation</a></code></span></div>
 <div class="block">Returns the micro averaged precision.</div>
 <dl>
@@ -660,7 +660,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>macroAveragedPrecision</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.154">macroAveragedPrecision</a>()</pre>
+<pre>public&nbsp;double&nbsp;macroAveragedPrecision()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html#macroAveragedPrecision--">ClassifierEvaluation</a></code></span></div>
 <div class="block">Returns the macro averaged precision.</div>
 <dl>
@@ -677,7 +677,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>recall</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.159">recall</a>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;label)</pre>
+<pre>public&nbsp;double&nbsp;recall(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;label)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html#recall-T-">ClassifierEvaluation</a></code></span></div>
 <div class="block">Returns the recall of this label, i.e., the number of true positives divided by the number of true positives plus false negatives.</div>
 <dl>
@@ -696,7 +696,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>microAveragedRecall</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.164">microAveragedRecall</a>()</pre>
+<pre>public&nbsp;double&nbsp;microAveragedRecall()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html#microAveragedRecall--">ClassifierEvaluation</a></code></span></div>
 <div class="block">Returns the micro averaged recall.</div>
 <dl>
@@ -713,7 +713,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>macroAveragedRecall</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.169">macroAveragedRecall</a>()</pre>
+<pre>public&nbsp;double&nbsp;macroAveragedRecall()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html#macroAveragedRecall--">ClassifierEvaluation</a></code></span></div>
 <div class="block">Returns the macro averaged recall.</div>
 <dl>
@@ -730,7 +730,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>f1</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.174">f1</a>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;label)</pre>
+<pre>public&nbsp;double&nbsp;f1(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;label)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html#f1-T-">ClassifierEvaluation</a></code></span></div>
 <div class="block">Returns the F_1 score, i.e., the harmonic mean of the precision and recall.</div>
 <dl>
@@ -749,7 +749,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>microAveragedF1</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.179">microAveragedF1</a>()</pre>
+<pre>public&nbsp;double&nbsp;microAveragedF1()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html#microAveragedF1--">ClassifierEvaluation</a></code></span></div>
 <div class="block">Returns the micro averaged F_1 across all labels.</div>
 <dl>
@@ -766,7 +766,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>macroAveragedF1</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.184">macroAveragedF1</a>()</pre>
+<pre>public&nbsp;double&nbsp;macroAveragedF1()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ClassifierEvaluation.html#macroAveragedF1--">ClassifierEvaluation</a></code></span></div>
 <div class="block">Returns the macro averaged F_1 across all the labels.</div>
 <dl>
@@ -783,7 +783,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>asMap</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/MetricID.html" title="class in org.tribuo.evaluation.metrics">MetricID</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.189">asMap</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/MetricID.html" title="class in org.tribuo.evaluation.metrics">MetricID</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;asMap()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/evaluation/Evaluation.html#asMap--">Evaluation</a></code></span></div>
 <div class="block">Get a map of all the metrics stored in this evaluation. The keys are metric id's and the values are their
  corresponding computed results.</div>
@@ -801,7 +801,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockList">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/provenance/EvaluationProvenance.html" title="class in org.tribuo.provenance">EvaluationProvenance</a>&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.194">getProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/provenance/EvaluationProvenance.html" title="class in org.tribuo.provenance">EvaluationProvenance</a>&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../../../org/tribuo/provenance/EvaluationProvenance.html" title="class in org.tribuo.provenance">EvaluationProvenance</a>&gt;</code></dd>
@@ -814,7 +814,7 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelEvaluationImpl.html#line.199">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -889,6 +889,6 @@ implements <a href="../../../../org/tribuo/multilabel/evaluation/MultiLabelEvalu
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

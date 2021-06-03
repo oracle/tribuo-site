@@ -116,7 +116,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public abstract class <a href="../../../../src-html/org/tribuo/data/text/TextDataSource.html#line.36">TextDataSource</a>&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public abstract class <span class="typeNameLabel">TextDataSource&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/ConfigurableDataSource.html" title="interface in org.tribuo">ConfigurableDataSource</a>&lt;T&gt;</pre>
 <div class="block">A base class for textual data sets. We assume that all textual data is 
@@ -299,7 +299,7 @@ implements <a href="../../../../org/tribuo/ConfigurableDataSource.html" title="i
 <li class="blockList">
 <h4>preprocessors</h4>
 <pre>@Config(description="The document preprocessors to run on each document in the data source.")
-protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/data/text/DocumentPreprocessor.html" title="interface in org.tribuo.data.text">DocumentPreprocessor</a>&gt; <a href="../../../../src-html/org/tribuo/data/text/TextDataSource.html#line.43">preprocessors</a></pre>
+protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/data/text/DocumentPreprocessor.html" title="interface in org.tribuo.data.text">DocumentPreprocessor</a>&gt; preprocessors</pre>
 <div class="block">Document preprocessors that should be run on the documents that make up
  this data set.</div>
 </li>
@@ -312,7 +312,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List
 <h4>path</h4>
 <pre>@Config(mandatory=true,
         description="The path to read the data from.")
-protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html?is-external=true" title="class or interface in java.nio.file">Path</a> <a href="../../../../src-html/org/tribuo/data/text/TextDataSource.html#line.49">path</a></pre>
+protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html?is-external=true" title="class or interface in java.nio.file">Path</a> path</pre>
 <div class="block">The path that data was read from.</div>
 </li>
 </ul>
@@ -324,7 +324,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/
 <h4>outputFactory</h4>
 <pre>@Config(mandatory=true,
         description="The factory that converts a String into an Output instance.")
-protected&nbsp;<a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../../org/tribuo/data/text/TextDataSource.html" title="type parameter in TextDataSource">T</a> extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../../org/tribuo/data/text/TextDataSource.html" title="type parameter in TextDataSource">T</a>&gt;&gt; <a href="../../../../src-html/org/tribuo/data/text/TextDataSource.html#line.55">outputFactory</a></pre>
+protected&nbsp;<a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../../org/tribuo/data/text/TextDataSource.html" title="type parameter in TextDataSource">T</a> extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../../org/tribuo/data/text/TextDataSource.html" title="type parameter in TextDataSource">T</a>&gt;&gt; outputFactory</pre>
 <div class="block">The factory that converts a String into an <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo"><code>Output</code></a>.</div>
 </li>
 </ul>
@@ -336,7 +336,7 @@ protected&nbsp;<a href="../../../../org/tribuo/OutputFactory.html" title="interf
 <h4>extractor</h4>
 <pre>@Config(mandatory=true,
         description="The feature extractor that generates Features from text.")
-protected&nbsp;<a href="../../../../org/tribuo/data/text/TextFeatureExtractor.html" title="interface in org.tribuo.data.text">TextFeatureExtractor</a>&lt;<a href="../../../../org/tribuo/data/text/TextDataSource.html" title="type parameter in TextDataSource">T</a> extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../../org/tribuo/data/text/TextDataSource.html" title="type parameter in TextDataSource">T</a>&gt;&gt; <a href="../../../../src-html/org/tribuo/data/text/TextDataSource.html#line.61">extractor</a></pre>
+protected&nbsp;<a href="../../../../org/tribuo/data/text/TextFeatureExtractor.html" title="interface in org.tribuo.data.text">TextFeatureExtractor</a>&lt;<a href="../../../../org/tribuo/data/text/TextDataSource.html" title="type parameter in TextDataSource">T</a> extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../../org/tribuo/data/text/TextDataSource.html" title="type parameter in TextDataSource">T</a>&gt;&gt; extractor</pre>
 <div class="block">The extractor that we'll use to turn text into examples.</div>
 </li>
 </ul>
@@ -346,7 +346,7 @@ protected&nbsp;<a href="../../../../org/tribuo/data/text/TextFeatureExtractor.ht
 <ul class="blockListLast">
 <li class="blockList">
 <h4>data</h4>
-<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/data/text/TextDataSource.html" title="type parameter in TextDataSource">T</a> extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../../org/tribuo/data/text/TextDataSource.html" title="type parameter in TextDataSource">T</a>&gt;&gt;&gt; <a href="../../../../src-html/org/tribuo/data/text/TextDataSource.html#line.66">data</a></pre>
+<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/data/text/TextDataSource.html" title="type parameter in TextDataSource">T</a> extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../../org/tribuo/data/text/TextDataSource.html" title="type parameter in TextDataSource">T</a>&gt;&gt;&gt; data</pre>
 <div class="block">The actual data read out of the text file.</div>
 </li>
 </ul>
@@ -364,7 +364,7 @@ protected&nbsp;<a href="../../../../org/tribuo/data/text/TextFeatureExtractor.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>TextDataSource</h4>
-<pre>protected&nbsp;<a href="../../../../src-html/org/tribuo/data/text/TextDataSource.html#line.71">TextDataSource</a>()</pre>
+<pre>protected&nbsp;TextDataSource()</pre>
 <div class="block">for olcut</div>
 </li>
 </ul>
@@ -374,7 +374,7 @@ protected&nbsp;<a href="../../../../org/tribuo/data/text/TextFeatureExtractor.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>TextDataSource</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/data/text/TextDataSource.html#line.81">TextDataSource</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html?is-external=true" title="class or interface in java.nio.file">Path</a>&nbsp;path,
+<pre>public&nbsp;TextDataSource(<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html?is-external=true" title="class or interface in java.nio.file">Path</a>&nbsp;path,
                       <a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../../org/tribuo/data/text/TextDataSource.html" title="type parameter in TextDataSource">T</a>&gt;&nbsp;outputFactory,
                       <a href="../../../../org/tribuo/data/text/TextFeatureExtractor.html" title="interface in org.tribuo.data.text">TextFeatureExtractor</a>&lt;<a href="../../../../org/tribuo/data/text/TextDataSource.html" title="type parameter in TextDataSource">T</a>&gt;&nbsp;extractor,
                       <a href="../../../../org/tribuo/data/text/DocumentPreprocessor.html" title="interface in org.tribuo.data.text">DocumentPreprocessor</a>...&nbsp;preprocessors)</pre>
@@ -395,7 +395,7 @@ protected&nbsp;<a href="../../../../org/tribuo/data/text/TextFeatureExtractor.ht
 <ul class="blockListLast">
 <li class="blockList">
 <h4>TextDataSource</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/data/text/TextDataSource.html#line.88">TextDataSource</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file,
+<pre>public&nbsp;TextDataSource(<a href="https://docs.oracle.com/javase/8/docs/api/java/io/File.html?is-external=true" title="class or interface in java.io">File</a>&nbsp;file,
                       <a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../../org/tribuo/data/text/TextDataSource.html" title="type parameter in TextDataSource">T</a>&gt;&nbsp;outputFactory,
                       <a href="../../../../org/tribuo/data/text/TextFeatureExtractor.html" title="interface in org.tribuo.data.text">TextFeatureExtractor</a>&lt;<a href="../../../../org/tribuo/data/text/TextDataSource.html" title="type parameter in TextDataSource">T</a>&gt;&nbsp;extractor,
                       <a href="../../../../org/tribuo/data/text/DocumentPreprocessor.html" title="interface in org.tribuo.data.text">DocumentPreprocessor</a>...&nbsp;preprocessors)</pre>
@@ -415,7 +415,7 @@ protected&nbsp;<a href="../../../../org/tribuo/data/text/TextFeatureExtractor.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>iterator</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/data/text/TextDataSource.html" title="type parameter in TextDataSource">T</a>&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/data/text/TextDataSource.html#line.93">iterator</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/data/text/TextDataSource.html" title="type parameter in TextDataSource">T</a>&gt;&gt;&nbsp;iterator()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true#iterator--" title="class or interface in java.lang">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/data/text/TextDataSource.html" title="type parameter in TextDataSource">T</a> extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../../org/tribuo/data/text/TextDataSource.html" title="type parameter in TextDataSource">T</a>&gt;&gt;&gt;</code></dd>
@@ -428,7 +428,7 @@ protected&nbsp;<a href="../../../../org/tribuo/data/text/TextFeatureExtractor.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/data/text/TextDataSource.html#line.102">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -441,7 +441,7 @@ protected&nbsp;<a href="../../../../org/tribuo/data/text/TextFeatureExtractor.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>handleDoc</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/data/text/TextDataSource.html#line.124">handleDoc</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;doc)</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;handleDoc(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;doc)</pre>
 <div class="block">A method that can be overridden to do different things to each document
  that we've read. By default iterates the preprocessors and applies them to the document.</div>
 <dl>
@@ -458,7 +458,7 @@ protected&nbsp;<a href="../../../../org/tribuo/data/text/TextFeatureExtractor.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>read</h4>
-<pre>protected abstract&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/data/text/TextDataSource.html#line.136">read</a>()
+<pre>protected abstract&nbsp;void&nbsp;read()
                       throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
 <div class="block">Reads the data from the Path.</div>
 <dl>
@@ -473,7 +473,7 @@ protected&nbsp;<a href="../../../../org/tribuo/data/text/TextFeatureExtractor.ht
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getOutputFactory</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../../org/tribuo/data/text/TextDataSource.html" title="type parameter in TextDataSource">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/data/text/TextDataSource.html#line.144">getOutputFactory</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../../org/tribuo/data/text/TextDataSource.html" title="type parameter in TextDataSource">T</a>&gt;&nbsp;getOutputFactory()</pre>
 <div class="block">Returns the output factory used to convert the text input into an <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo"><code>Output</code></a>.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -551,6 +551,6 @@ protected&nbsp;<a href="../../../../org/tribuo/data/text/TextFeatureExtractor.ht
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

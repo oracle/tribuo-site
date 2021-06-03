@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/data/csv/CSVSaver.html#line.49">CSVSaver</a>
+<pre>public class <span class="typeNameLabel">CSVSaver</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements com.oracle.labs.mlrg.olcut.config.Configurable</pre>
 <div class="block">Saves a Dataset in CSV format suitable for loading by <a href="../../../../org/tribuo/data/csv/CSVLoader.html" title="class in org.tribuo.data.csv"><code>CSVLoader</code></a>.
@@ -231,7 +231,7 @@ implements com.oracle.labs.mlrg.olcut.config.Configurable</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>DEFAULT_RESPONSE</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> <a href="../../../../src-html/org/tribuo/data/csv/CSVSaver.html#line.51">DEFAULT_RESPONSE</a></pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> DEFAULT_RESPONSE</pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../constant-values.html#org.tribuo.data.csv.CSVSaver.DEFAULT_RESPONSE">Constant Field Values</a></dd>
@@ -252,7 +252,7 @@ implements com.oracle.labs.mlrg.olcut.config.Configurable</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>CSVSaver</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/data/csv/CSVSaver.html#line.64">CSVSaver</a>(char&nbsp;separator,
+<pre>public&nbsp;CSVSaver(char&nbsp;separator,
                 char&nbsp;quote)</pre>
 <div class="block">Builds a CSV saver using the supplied separator and quote.</div>
 <dl>
@@ -268,7 +268,7 @@ implements com.oracle.labs.mlrg.olcut.config.Configurable</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>CSVSaver</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/data/csv/CSVSaver.html#line.75">CSVSaver</a>()</pre>
+<pre>public&nbsp;CSVSaver()</pre>
 <div class="block">Builds a CSV saver using the default separator and quote from <a href="../../../../org/tribuo/data/csv/CSVIterator.html" title="class in org.tribuo.data.csv"><code>CSVIterator</code></a>.</div>
 </li>
 </ul>
@@ -286,7 +286,7 @@ implements com.oracle.labs.mlrg.olcut.config.Configurable</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>save</h4>
-<pre>public&nbsp;&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/data/csv/CSVSaver.html#line.87">save</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html?is-external=true" title="class or interface in java.nio.file">Path</a>&nbsp;csvPath,
+<pre>public&nbsp;&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;void&nbsp;save(<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html?is-external=true" title="class or interface in java.nio.file">Path</a>&nbsp;csvPath,
                                        <a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;T&gt;&nbsp;dataset,
                                        <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;responseName)
                                 throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
@@ -309,7 +309,7 @@ implements com.oracle.labs.mlrg.olcut.config.Configurable</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>save</h4>
-<pre>public&nbsp;&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/data/csv/CSVSaver.html#line.99">save</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html?is-external=true" title="class or interface in java.nio.file">Path</a>&nbsp;csvPath,
+<pre>public&nbsp;&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;&nbsp;void&nbsp;save(<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html?is-external=true" title="class or interface in java.nio.file">Path</a>&nbsp;csvPath,
                                        <a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;T&gt;&nbsp;dataset,
                                        <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;responseNames)
                                 throws <a href="https://docs.oracle.com/javase/8/docs/api/java/io/IOException.html?is-external=true" title="class or interface in java.io">IOException</a></pre>
@@ -394,6 +394,6 @@ implements com.oracle.labs.mlrg.olcut.config.Configurable</pre>
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

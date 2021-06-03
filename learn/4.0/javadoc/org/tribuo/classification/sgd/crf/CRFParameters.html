@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFParameters.html#line.38">CRFParameters</a>
+<pre>public class <span class="typeNameLabel">CRFParameters</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../../org/tribuo/math/Parameters.html" title="interface in org.tribuo.math">Parameters</a>, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
 <div class="block">A <a href="../../../../../org/tribuo/math/Parameters.html" title="interface in org.tribuo.math"><code>Parameters</code></a> for training a CRF using SGD.</div>
@@ -250,7 +250,7 @@ implements <a href="../../../../../org/tribuo/math/Parameters.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>getFeatureWeights</h4>
-<pre>public&nbsp;<a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFParameters.html#line.67">getFeatureWeights</a>(int&nbsp;id)</pre>
+<pre>public&nbsp;<a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>&nbsp;getFeatureWeights(int&nbsp;id)</pre>
 </li>
 </ul>
 <a name="getBias-int-">
@@ -259,7 +259,7 @@ implements <a href="../../../../../org/tribuo/math/Parameters.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>getBias</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFParameters.html#line.71">getBias</a>(int&nbsp;id)</pre>
+<pre>public&nbsp;double&nbsp;getBias(int&nbsp;id)</pre>
 </li>
 </ul>
 <a name="getWeight-int-int-">
@@ -268,7 +268,7 @@ implements <a href="../../../../../org/tribuo/math/Parameters.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>getWeight</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFParameters.html#line.75">getWeight</a>(int&nbsp;labelID,
+<pre>public&nbsp;double&nbsp;getWeight(int&nbsp;labelID,
                         int&nbsp;featureID)</pre>
 </li>
 </ul>
@@ -278,7 +278,7 @@ implements <a href="../../../../../org/tribuo/math/Parameters.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>getLocalScores</h4>
-<pre>public&nbsp;<a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>[]&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFParameters.html#line.84">getLocalScores</a>(<a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&nbsp;features)</pre>
+<pre>public&nbsp;<a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>[]&nbsp;getLocalScores(<a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&nbsp;features)</pre>
 <div class="block">Generate the local scores (i.e., the linear classifier for each token).</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -294,7 +294,7 @@ implements <a href="../../../../../org/tribuo/math/Parameters.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>getCliqueValues</h4>
-<pre>public&nbsp;<a href="../../../../../org/tribuo/classification/sgd/crf/ChainHelper.ChainCliqueValues.html" title="class in org.tribuo.classification.sgd.crf">ChainHelper.ChainCliqueValues</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFParameters.html#line.99">getCliqueValues</a>(<a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&nbsp;features)</pre>
+<pre>public&nbsp;<a href="../../../../../org/tribuo/classification/sgd/crf/ChainHelper.ChainCliqueValues.html" title="class in org.tribuo.classification.sgd.crf">ChainHelper.ChainCliqueValues</a>&nbsp;getCliqueValues(<a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&nbsp;features)</pre>
 <div class="block">Generates the local scores and tuples them with the label - label transition weights.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -310,7 +310,7 @@ implements <a href="../../../../../org/tribuo/math/Parameters.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>predict</h4>
-<pre>public&nbsp;int[]&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFParameters.html#line.109">predict</a>(<a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&nbsp;features)</pre>
+<pre>public&nbsp;int[]&nbsp;predict(<a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&nbsp;features)</pre>
 <div class="block">Generate a prediction using Viterbi.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -326,7 +326,7 @@ implements <a href="../../../../../org/tribuo/math/Parameters.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>predictMarginals</h4>
-<pre>public&nbsp;<a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>[]&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFParameters.html#line.119">predictMarginals</a>(<a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&nbsp;features)</pre>
+<pre>public&nbsp;<a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>[]&nbsp;predictMarginals(<a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&nbsp;features)</pre>
 <div class="block">Generate a prediction using Belief Propagation.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -342,7 +342,7 @@ implements <a href="../../../../../org/tribuo/math/Parameters.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>predictConfidenceUsingCBP</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFParameters.html#line.139">predictConfidenceUsingCBP</a>(<a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&nbsp;features,
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;predictConfidenceUsingCBP(<a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&nbsp;features,
                                               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/tribuo/classification/sgd/crf/Chunk.html" title="class in org.tribuo.classification.sgd.crf">Chunk</a>&gt;&nbsp;chunks)</pre>
 <div class="block">This predicts per chunk confidence using the constrained forward backward algorithm from
  Culotta and McCallum 2004.
@@ -364,7 +364,7 @@ implements <a href="../../../../../org/tribuo/math/Parameters.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>valueAndGradient</h4>
-<pre>public&nbsp;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>,<a href="../../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFParameters.html#line.164">valueAndGradient</a>(<a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&nbsp;features,
+<pre>public&nbsp;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>,<a href="../../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&gt;&nbsp;valueAndGradient(<a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&nbsp;features,
                                                                               int[]&nbsp;labels)</pre>
 <div class="block">Generates predictions based on the input features and labels, then scores those predictions to
  produce a loss for the example and a gradient update.</div>
@@ -383,7 +383,7 @@ implements <a href="../../../../../org/tribuo/math/Parameters.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>getEmptyCopy</h4>
-<pre>public&nbsp;<a href="../../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFParameters.html#line.225">getEmptyCopy</a>()</pre>
+<pre>public&nbsp;<a href="../../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;getEmptyCopy()</pre>
 <div class="block">Returns a 3 element <a href="../../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a> array.
 
  The first element is a <a href="../../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la"><code>DenseVector</code></a> of label biases.
@@ -403,7 +403,7 @@ implements <a href="../../../../../org/tribuo/math/Parameters.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre>public&nbsp;<a href="../../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFParameters.html#line.234">get</a>()</pre>
+<pre>public&nbsp;<a href="../../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;get()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/tribuo/math/Parameters.html#get--">Parameters</a></code></span></div>
 <div class="block">Get a reference to the underlying <a href="../../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a> array.</div>
 <dl>
@@ -420,7 +420,7 @@ implements <a href="../../../../../org/tribuo/math/Parameters.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>set</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFParameters.html#line.239">set</a>(<a href="../../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;newWeights)</pre>
+<pre>public&nbsp;void&nbsp;set(<a href="../../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;newWeights)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/tribuo/math/Parameters.html#set-org.tribuo.math.la.Tensor:A-">Parameters</a></code></span></div>
 <div class="block">Set the underlying <a href="../../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a> array to newWeights.</div>
 <dl>
@@ -437,7 +437,7 @@ implements <a href="../../../../../org/tribuo/math/Parameters.html" title="inter
 <ul class="blockList">
 <li class="blockList">
 <h4>update</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFParameters.html#line.249">update</a>(<a href="../../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;gradients)</pre>
+<pre>public&nbsp;void&nbsp;update(<a href="../../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;gradients)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/tribuo/math/Parameters.html#update-org.tribuo.math.la.Tensor:A-">Parameters</a></code></span></div>
 <div class="block">Apply gradients to the parameters. Assumes that gradients is the same length as the parameters,
  and each <a href="../../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a> is the same size as the corresponding one from the parameters.
@@ -457,7 +457,7 @@ implements <a href="../../../../../org/tribuo/math/Parameters.html" title="inter
 <ul class="blockListLast">
 <li class="blockList">
 <h4>merge</h4>
-<pre>public&nbsp;<a href="../../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/crf/CRFParameters.html#line.256">merge</a>(<a href="../../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[][]&nbsp;gradients,
+<pre>public&nbsp;<a href="../../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;merge(<a href="../../../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[][]&nbsp;gradients,
                       int&nbsp;size)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/tribuo/math/Parameters.html#merge-org.tribuo.math.la.Tensor:A:A-int-">Parameters</a></code></span></div>
 <div class="block">Merge together an array of gradient arrays. Assumes the first dimension
@@ -542,6 +542,6 @@ implements <a href="../../../../../org/tribuo/math/Parameters.html" title="inter
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

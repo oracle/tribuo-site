@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public final class <a href="../../../src-html/org/tribuo/anomaly/AnomalyFactory.html#line.34">AnomalyFactory</a>
+<pre>public final class <span class="typeNameLabel">AnomalyFactory</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;</pre>
 <div class="block">A factory for generating events.</div>
@@ -287,7 +287,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>UNKNOWN_EVENT</h4>
-<pre>public static final&nbsp;<a href="../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a> <a href="../../../src-html/org/tribuo/anomaly/AnomalyFactory.html#line.40">UNKNOWN_EVENT</a></pre>
+<pre>public static final&nbsp;<a href="../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a> UNKNOWN_EVENT</pre>
 <div class="block">The unknown event. Used at inference time.</div>
 </li>
 </ul>
@@ -297,7 +297,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>EXPECTED_EVENT</h4>
-<pre>public static final&nbsp;<a href="../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a> <a href="../../../src-html/org/tribuo/anomaly/AnomalyFactory.html#line.45">EXPECTED_EVENT</a></pre>
+<pre>public static final&nbsp;<a href="../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a> EXPECTED_EVENT</pre>
 <div class="block">The expected event. Used for things which are not anomalous.</div>
 </li>
 </ul>
@@ -307,7 +307,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ANOMALOUS_EVENT</h4>
-<pre>public static final&nbsp;<a href="../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a> <a href="../../../src-html/org/tribuo/anomaly/AnomalyFactory.html#line.50">ANOMALOUS_EVENT</a></pre>
+<pre>public static final&nbsp;<a href="../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a> ANOMALOUS_EVENT</pre>
 <div class="block">The anomalous event. It's anomalous.</div>
 </li>
 </ul>
@@ -325,7 +325,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockListLast">
 <li class="blockList">
 <h4>AnomalyFactory</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/anomaly/AnomalyFactory.html#line.34">AnomalyFactory</a>()</pre>
+<pre>public&nbsp;AnomalyFactory()</pre>
 </li>
 </ul>
 </li>
@@ -344,7 +344,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>generateOutput</h4>
-<pre>public&nbsp;&lt;V&gt;&nbsp;<a href="../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&nbsp;<a href="../../../src-html/org/tribuo/anomaly/AnomalyFactory.html#line.55">generateOutput</a>(V&nbsp;label)</pre>
+<pre>public&nbsp;&lt;V&gt;&nbsp;<a href="../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&nbsp;generateOutput(V&nbsp;label)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/OutputFactory.html#generateOutput-V-">OutputFactory</a></code></span></div>
 <div class="block">Parses the <code>V</code> and generates the appropriate <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo"><code>Output</code></a> value.
  <p>
@@ -367,7 +367,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>getUnknownOutput</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&nbsp;<a href="../../../src-html/org/tribuo/anomaly/AnomalyFactory.html#line.64">getUnknownOutput</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&nbsp;getUnknownOutput()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/OutputFactory.html#getUnknownOutput--">OutputFactory</a></code></span></div>
 <div class="block">Returns the singleton unknown output of type T which can be used for prediction time examples.</div>
 <dl>
@@ -384,7 +384,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>generateInfo</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/MutableOutputInfo.html" title="interface in org.tribuo">MutableOutputInfo</a>&lt;<a href="../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/anomaly/AnomalyFactory.html#line.69">generateInfo</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/MutableOutputInfo.html" title="interface in org.tribuo">MutableOutputInfo</a>&lt;<a href="../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;&nbsp;generateInfo()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/OutputFactory.html#generateInfo--">OutputFactory</a></code></span></div>
 <div class="block">Generates the appropriate <a href="../../../org/tribuo/MutableOutputInfo.html" title="interface in org.tribuo"><code>MutableOutputInfo</code></a> so the
  output values can be tracked by a <a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo"><code>Dataset</code></a> or other
@@ -403,7 +403,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>constructInfoForExternalModel</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/anomaly/AnomalyFactory.html#line.74">constructInfoForExternalModel</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;mapping)</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;&nbsp;constructInfoForExternalModel(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;mapping)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/OutputFactory.html#constructInfoForExternalModel-java.util.Map-">OutputFactory</a></code></span></div>
 <div class="block">Creates an <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo"><code>ImmutableOutputInfo</code></a> from the supplied mapping.
  Requires that the mapping is dense in the integers [0,mapping.size()) and
@@ -427,7 +427,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>getEvaluator</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/evaluation/Evaluator.html" title="interface in org.tribuo.evaluation">Evaluator</a>&lt;<a href="../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>,<a href="../../../org/tribuo/anomaly/evaluation/AnomalyEvaluation.html" title="interface in org.tribuo.anomaly.evaluation">AnomalyEvaluation</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/anomaly/AnomalyFactory.html#line.91">getEvaluator</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/evaluation/Evaluator.html" title="interface in org.tribuo.evaluation">Evaluator</a>&lt;<a href="../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>,<a href="../../../org/tribuo/anomaly/evaluation/AnomalyEvaluation.html" title="interface in org.tribuo.anomaly.evaluation">AnomalyEvaluation</a>&gt;&nbsp;getEvaluator()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/OutputFactory.html#getEvaluator--">OutputFactory</a></code></span></div>
 <div class="block">Gets an <a href="../../../org/tribuo/evaluation/Evaluator.html" title="interface in org.tribuo.evaluation"><code>Evaluator</code></a> suitable for measuring performance of predictions for the Output subclass.
  <p>
@@ -448,7 +448,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/provenance/OutputFactoryProvenance.html" title="interface in org.tribuo.provenance">OutputFactoryProvenance</a>&nbsp;<a href="../../../src-html/org/tribuo/anomaly/AnomalyFactory.html#line.96">getProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/provenance/OutputFactoryProvenance.html" title="interface in org.tribuo.provenance">OutputFactoryProvenance</a>&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../../org/tribuo/provenance/OutputFactoryProvenance.html" title="interface in org.tribuo.provenance">OutputFactoryProvenance</a>&gt;</code></dd>
@@ -523,6 +523,6 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

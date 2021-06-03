@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../../../src-html/org/tribuo/data/columnar/processors/field/IdentityProcessor.html#line.31">IdentityProcessor</a>
+<pre>public class <span class="typeNameLabel">IdentityProcessor</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../../../org/tribuo/data/columnar/FieldProcessor.html" title="interface in org.tribuo.data.columnar">FieldProcessor</a></pre>
 <div class="block">A <a href="../../../../../../org/tribuo/data/columnar/FieldProcessor.html" title="interface in org.tribuo.data.columnar"><code>FieldProcessor</code></a> which converts the field name and value into a feature with a value of <a href="../../../../../../org/tribuo/data/columnar/processors/field/IdentityProcessor.html#FEATURE_VALUE"><code>FEATURE_VALUE</code></a>.</div>
@@ -271,7 +271,7 @@ implements <a href="../../../../../../org/tribuo/data/columnar/FieldProcessor.ht
 <ul class="blockListLast">
 <li class="blockList">
 <h4>FEATURE_VALUE</h4>
-<pre>public static final&nbsp;double <a href="../../../../../../src-html/org/tribuo/data/columnar/processors/field/IdentityProcessor.html#line.36">FEATURE_VALUE</a></pre>
+<pre>public static final&nbsp;double FEATURE_VALUE</pre>
 <div class="block">The value of the emitted features.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -293,7 +293,7 @@ implements <a href="../../../../../../org/tribuo/data/columnar/FieldProcessor.ht
 <ul class="blockListLast">
 <li class="blockList">
 <h4>IdentityProcessor</h4>
-<pre>public&nbsp;<a href="../../../../../../src-html/org/tribuo/data/columnar/processors/field/IdentityProcessor.html#line.49">IdentityProcessor</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</pre>
+<pre>public&nbsp;IdentityProcessor(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</pre>
 <div class="block">Constructs a field processor which emits a single feature with a specific value
  and uses the field name and field value as the feature name.</div>
 <dl>
@@ -316,7 +316,7 @@ implements <a href="../../../../../../org/tribuo/data/columnar/FieldProcessor.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>getFieldName</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../../src-html/org/tribuo/data/columnar/processors/field/IdentityProcessor.html#line.59">getFieldName</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getFieldName()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../../org/tribuo/data/columnar/FieldProcessor.html#getFieldName--">FieldProcessor</a></code></span></div>
 <div class="block">Gets the field name this FieldProcessor uses.</div>
 <dl>
@@ -333,7 +333,7 @@ implements <a href="../../../../../../org/tribuo/data/columnar/FieldProcessor.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>process</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../../org/tribuo/data/columnar/ColumnarFeature.html" title="class in org.tribuo.data.columnar">ColumnarFeature</a>&gt;&nbsp;<a href="../../../../../../src-html/org/tribuo/data/columnar/processors/field/IdentityProcessor.html#line.64">process</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../../org/tribuo/data/columnar/ColumnarFeature.html" title="class in org.tribuo.data.columnar">ColumnarFeature</a>&gt;&nbsp;process(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../../org/tribuo/data/columnar/FieldProcessor.html#process-java.lang.String-">FieldProcessor</a></code></span></div>
 <div class="block">Processes the field value and generates a (possibly empty) list of <a href="../../../../../../org/tribuo/data/columnar/ColumnarFeature.html" title="class in org.tribuo.data.columnar"><code>ColumnarFeature</code></a>s.</div>
 <dl>
@@ -352,7 +352,7 @@ implements <a href="../../../../../../org/tribuo/data/columnar/FieldProcessor.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>getFeatureType</h4>
-<pre>public&nbsp;<a href="../../../../../../org/tribuo/data/columnar/FieldProcessor.GeneratedFeatureType.html" title="enum in org.tribuo.data.columnar">FieldProcessor.GeneratedFeatureType</a>&nbsp;<a href="../../../../../../src-html/org/tribuo/data/columnar/processors/field/IdentityProcessor.html#line.69">getFeatureType</a>()</pre>
+<pre>public&nbsp;<a href="../../../../../../org/tribuo/data/columnar/FieldProcessor.GeneratedFeatureType.html" title="enum in org.tribuo.data.columnar">FieldProcessor.GeneratedFeatureType</a>&nbsp;getFeatureType()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../../org/tribuo/data/columnar/FieldProcessor.html#getFeatureType--">FieldProcessor</a></code></span></div>
 <div class="block">Returns the feature type this FieldProcessor generates.</div>
 <dl>
@@ -369,7 +369,7 @@ implements <a href="../../../../../../org/tribuo/data/columnar/FieldProcessor.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>public&nbsp;<a href="../../../../../../org/tribuo/data/columnar/processors/field/IdentityProcessor.html" title="class in org.tribuo.data.columnar.processors.field">IdentityProcessor</a>&nbsp;<a href="../../../../../../src-html/org/tribuo/data/columnar/processors/field/IdentityProcessor.html#line.74">copy</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newFieldName)</pre>
+<pre>public&nbsp;<a href="../../../../../../org/tribuo/data/columnar/processors/field/IdentityProcessor.html" title="class in org.tribuo.data.columnar.processors.field">IdentityProcessor</a>&nbsp;copy(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newFieldName)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../../org/tribuo/data/columnar/FieldProcessor.html#copy-java.lang.String-">FieldProcessor</a></code></span></div>
 <div class="block">Returns a copy of this FieldProcessor bound to the supplied newFieldName.</div>
 <dl>
@@ -388,7 +388,7 @@ implements <a href="../../../../../../org/tribuo/data/columnar/FieldProcessor.ht
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../../src-html/org/tribuo/data/columnar/processors/field/IdentityProcessor.html#line.79">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -401,7 +401,7 @@ implements <a href="../../../../../../org/tribuo/data/columnar/FieldProcessor.ht
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;<a href="../../../../../../src-html/org/tribuo/data/columnar/processors/field/IdentityProcessor.html#line.84">getProvenance</a>()</pre>
+<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&gt;</code></dd>
@@ -476,6 +476,6 @@ implements <a href="../../../../../../org/tribuo/data/columnar/FieldProcessor.ht
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

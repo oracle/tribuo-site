@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/classification/ensemble/AdaBoostTrainer.html#line.62">AdaBoostTrainer</a>
+<pre>public class <span class="typeNameLabel">AdaBoostTrainer</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;</pre>
 <div class="block">Implements Adaboost.SAMME one of the more popular algorithms for multiclass boosting.
@@ -279,7 +279,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <h4>innerTrainer</h4>
 <pre>@Config(mandatory=true,
         description="The trainer to use to build each weak learner.")
-protected&nbsp;<a href="../../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt; <a href="../../../../src-html/org/tribuo/classification/ensemble/AdaBoostTrainer.html#line.67">innerTrainer</a></pre>
+protected&nbsp;<a href="../../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt; innerTrainer</pre>
 </li>
 </ul>
 <a name="numMembers">
@@ -290,7 +290,7 @@ protected&nbsp;<a href="../../../../org/tribuo/Trainer.html" title="interface in
 <h4>numMembers</h4>
 <pre>@Config(mandatory=true,
         description="The number of ensemble members to train.")
-protected&nbsp;int <a href="../../../../src-html/org/tribuo/classification/ensemble/AdaBoostTrainer.html#line.70">numMembers</a></pre>
+protected&nbsp;int numMembers</pre>
 </li>
 </ul>
 <a name="seed">
@@ -301,7 +301,7 @@ protected&nbsp;int <a href="../../../../src-html/org/tribuo/classification/ensem
 <h4>seed</h4>
 <pre>@Config(mandatory=true,
         description="The seed for the RNG.")
-protected&nbsp;long <a href="../../../../src-html/org/tribuo/classification/ensemble/AdaBoostTrainer.html#line.73">seed</a></pre>
+protected&nbsp;long seed</pre>
 </li>
 </ul>
 <a name="rng">
@@ -310,7 +310,7 @@ protected&nbsp;long <a href="../../../../src-html/org/tribuo/classification/ense
 <ul class="blockList">
 <li class="blockList">
 <h4>rng</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/SplittableRandom.html?is-external=true" title="class or interface in java.util">SplittableRandom</a> <a href="../../../../src-html/org/tribuo/classification/ensemble/AdaBoostTrainer.html#line.75">rng</a></pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/SplittableRandom.html?is-external=true" title="class or interface in java.util">SplittableRandom</a> rng</pre>
 </li>
 </ul>
 <a name="trainInvocationCounter">
@@ -319,7 +319,7 @@ protected&nbsp;long <a href="../../../../src-html/org/tribuo/classification/ense
 <ul class="blockListLast">
 <li class="blockList">
 <h4>trainInvocationCounter</h4>
-<pre>protected&nbsp;int <a href="../../../../src-html/org/tribuo/classification/ensemble/AdaBoostTrainer.html#line.77">trainInvocationCounter</a></pre>
+<pre>protected&nbsp;int trainInvocationCounter</pre>
 </li>
 </ul>
 </li>
@@ -336,7 +336,7 @@ protected&nbsp;long <a href="../../../../src-html/org/tribuo/classification/ense
 <ul class="blockList">
 <li class="blockList">
 <h4>AdaBoostTrainer</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/classification/ensemble/AdaBoostTrainer.html#line.90">AdaBoostTrainer</a>(<a href="../../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;trainer,
+<pre>public&nbsp;AdaBoostTrainer(<a href="../../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;trainer,
                        int&nbsp;numMembers)</pre>
 <div class="block">Constructs an adaboost trainer using the supplied weak learner trainer and the specified number of
  boosting rounds. Uses the default seed.</div>
@@ -353,7 +353,7 @@ protected&nbsp;long <a href="../../../../src-html/org/tribuo/classification/ense
 <ul class="blockListLast">
 <li class="blockList">
 <h4>AdaBoostTrainer</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/classification/ensemble/AdaBoostTrainer.html#line.101">AdaBoostTrainer</a>(<a href="../../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;trainer,
+<pre>public&nbsp;AdaBoostTrainer(<a href="../../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;trainer,
                        int&nbsp;numMembers,
                        long&nbsp;seed)</pre>
 <div class="block">Constructs an adaboost trainer using the supplied weak learner trainer, the specified number of
@@ -380,7 +380,7 @@ protected&nbsp;long <a href="../../../../src-html/org/tribuo/classification/ense
 <ul class="blockList">
 <li class="blockList">
 <h4>postConfig</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/classification/ensemble/AdaBoostTrainer.html#line.109">postConfig</a>()</pre>
+<pre>public&nbsp;void&nbsp;postConfig()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>postConfig</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.config.Configurable</code></dd>
@@ -393,7 +393,7 @@ protected&nbsp;long <a href="../../../../src-html/org/tribuo/classification/ense
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/classification/ensemble/AdaBoostTrainer.html#line.114">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -406,7 +406,7 @@ protected&nbsp;long <a href="../../../../src-html/org/tribuo/classification/ense
 <ul class="blockList">
 <li class="blockList">
 <h4>train</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/classification/ensemble/AdaBoostTrainer.html#line.136">train</a>(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;examples,
+<pre>public&nbsp;<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;train(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;examples,
                           <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,com.oracle.labs.mlrg.olcut.provenance.Provenance&gt;&nbsp;runProvenance)</pre>
 <div class="block">If the trainer implements <a href="../../../../org/tribuo/WeightedExamples.html" title="interface in org.tribuo"><code>WeightedExamples</code></a> then do boosting by weighting,
  otherwise do boosting by sampling.</div>
@@ -427,7 +427,7 @@ protected&nbsp;long <a href="../../../../src-html/org/tribuo/classification/ense
 <ul class="blockList">
 <li class="blockList">
 <h4>getInvocationCount</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/classification/ensemble/AdaBoostTrainer.html#line.217">getInvocationCount</a>()</pre>
+<pre>public&nbsp;int&nbsp;getInvocationCount()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/Trainer.html#getInvocationCount--">Trainer</a></code></span></div>
 <div class="block">The number of times this trainer instance has had it's train method invoked.
  <p>
@@ -447,7 +447,7 @@ protected&nbsp;long <a href="../../../../src-html/org/tribuo/classification/ense
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&nbsp;<a href="../../../../src-html/org/tribuo/classification/ensemble/AdaBoostTrainer.html#line.237">getProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&gt;</code></dd>
@@ -522,6 +522,6 @@ protected&nbsp;long <a href="../../../../src-html/org/tribuo/classification/ense
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/regression/xgboost/XGBoostOptions.html#line.27">XGBoostOptions</a>
+<pre>public class <span class="typeNameLabel">XGBoostOptions</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements com.oracle.labs.mlrg.olcut.config.Options</pre>
 <div class="block">CLI options for configuring an XGBoost regression trainer.</div>
@@ -264,7 +264,7 @@ implements com.oracle.labs.mlrg.olcut.config.Options</pre>
 <h4>rType</h4>
 <pre>@Option(longName="xgb-regression-metric",
         usage="Regression type to use. Defaults to LINEAR.")
-public&nbsp;<a href="../../../../org/tribuo/regression/xgboost/XGBoostRegressionTrainer.RegressionType.html" title="enum in org.tribuo.regression.xgboost">XGBoostRegressionTrainer.RegressionType</a> <a href="../../../../src-html/org/tribuo/regression/xgboost/XGBoostOptions.html#line.29">rType</a></pre>
+public&nbsp;<a href="../../../../org/tribuo/regression/xgboost/XGBoostRegressionTrainer.RegressionType.html" title="enum in org.tribuo.regression.xgboost">XGBoostRegressionTrainer.RegressionType</a> rType</pre>
 </li>
 </ul>
 <a name="ensembleSize">
@@ -275,7 +275,7 @@ public&nbsp;<a href="../../../../org/tribuo/regression/xgboost/XGBoostRegression
 <h4>ensembleSize</h4>
 <pre>@Option(longName="xgb-ensemble-size",
         usage="Number of trees in the ensemble.")
-public&nbsp;int <a href="../../../../src-html/org/tribuo/regression/xgboost/XGBoostOptions.html#line.31">ensembleSize</a></pre>
+public&nbsp;int ensembleSize</pre>
 </li>
 </ul>
 <a name="alpha">
@@ -286,7 +286,7 @@ public&nbsp;int <a href="../../../../src-html/org/tribuo/regression/xgboost/XGBo
 <h4>alpha</h4>
 <pre>@Option(longName="xgb-alpha",
         usage="L1 regularization term for weights (default 0).")
-public&nbsp;float <a href="../../../../src-html/org/tribuo/regression/xgboost/XGBoostOptions.html#line.33">alpha</a></pre>
+public&nbsp;float alpha</pre>
 </li>
 </ul>
 <a name="minWeight">
@@ -297,7 +297,7 @@ public&nbsp;float <a href="../../../../src-html/org/tribuo/regression/xgboost/XG
 <h4>minWeight</h4>
 <pre>@Option(longName="xgb-min-weight",
         usage="Minimum sum of instance weights needed in a leaf (default 1, range [0,inf]).")
-public&nbsp;float <a href="../../../../src-html/org/tribuo/regression/xgboost/XGBoostOptions.html#line.35">minWeight</a></pre>
+public&nbsp;float minWeight</pre>
 </li>
 </ul>
 <a name="depth">
@@ -308,7 +308,7 @@ public&nbsp;float <a href="../../../../src-html/org/tribuo/regression/xgboost/XG
 <h4>depth</h4>
 <pre>@Option(longName="xgb-max-depth",
         usage="Max tree depth (default 6, range (0,inf]).")
-public&nbsp;int <a href="../../../../src-html/org/tribuo/regression/xgboost/XGBoostOptions.html#line.37">depth</a></pre>
+public&nbsp;int depth</pre>
 </li>
 </ul>
 <a name="eta">
@@ -319,7 +319,7 @@ public&nbsp;int <a href="../../../../src-html/org/tribuo/regression/xgboost/XGBo
 <h4>eta</h4>
 <pre>@Option(longName="xgb-eta",
         usage="Step size shrinkage parameter (default 0.3, range [0,1]).")
-public&nbsp;float <a href="../../../../src-html/org/tribuo/regression/xgboost/XGBoostOptions.html#line.39">eta</a></pre>
+public&nbsp;float eta</pre>
 </li>
 </ul>
 <a name="subsampleFeatures">
@@ -330,7 +330,7 @@ public&nbsp;float <a href="../../../../src-html/org/tribuo/regression/xgboost/XG
 <h4>subsampleFeatures</h4>
 <pre>@Option(longName="xgb-subsample-features",
         usage="Subsample features for each tree (default 1, range (0,1]).")
-public&nbsp;float <a href="../../../../src-html/org/tribuo/regression/xgboost/XGBoostOptions.html#line.41">subsampleFeatures</a></pre>
+public&nbsp;float subsampleFeatures</pre>
 </li>
 </ul>
 <a name="gamma">
@@ -341,7 +341,7 @@ public&nbsp;float <a href="../../../../src-html/org/tribuo/regression/xgboost/XG
 <h4>gamma</h4>
 <pre>@Option(longName="xgb-gamma",
         usage="Minimum loss reduction to make a split (default 0, range [0,inf]).")
-public&nbsp;float <a href="../../../../src-html/org/tribuo/regression/xgboost/XGBoostOptions.html#line.43">gamma</a></pre>
+public&nbsp;float gamma</pre>
 </li>
 </ul>
 <a name="lambda">
@@ -352,7 +352,7 @@ public&nbsp;float <a href="../../../../src-html/org/tribuo/regression/xgboost/XG
 <h4>lambda</h4>
 <pre>@Option(longName="xgb-lambda",
         usage="L2 regularization term for weights (default 1).")
-public&nbsp;float <a href="../../../../src-html/org/tribuo/regression/xgboost/XGBoostOptions.html#line.45">lambda</a></pre>
+public&nbsp;float lambda</pre>
 </li>
 </ul>
 <a name="quiet">
@@ -363,7 +363,7 @@ public&nbsp;float <a href="../../../../src-html/org/tribuo/regression/xgboost/XG
 <h4>quiet</h4>
 <pre>@Option(longName="xgb-quiet",
         usage="Make the XGBoost training procedure quiet.")
-public&nbsp;boolean <a href="../../../../src-html/org/tribuo/regression/xgboost/XGBoostOptions.html#line.47">quiet</a></pre>
+public&nbsp;boolean quiet</pre>
 </li>
 </ul>
 <a name="subsample">
@@ -374,7 +374,7 @@ public&nbsp;boolean <a href="../../../../src-html/org/tribuo/regression/xgboost/
 <h4>subsample</h4>
 <pre>@Option(longName="xgb-subsample",
         usage="Subsample size for each tree (default 1, range (0,1]).")
-public&nbsp;float <a href="../../../../src-html/org/tribuo/regression/xgboost/XGBoostOptions.html#line.49">subsample</a></pre>
+public&nbsp;float subsample</pre>
 </li>
 </ul>
 <a name="numThreads">
@@ -385,7 +385,7 @@ public&nbsp;float <a href="../../../../src-html/org/tribuo/regression/xgboost/XG
 <h4>numThreads</h4>
 <pre>@Option(longName="xgb-num-threads",
         usage="Number of threads to use (default 4, range (1, num hw threads)).")
-public&nbsp;int <a href="../../../../src-html/org/tribuo/regression/xgboost/XGBoostOptions.html#line.51">numThreads</a></pre>
+public&nbsp;int numThreads</pre>
 </li>
 </ul>
 </li>
@@ -402,7 +402,7 @@ public&nbsp;int <a href="../../../../src-html/org/tribuo/regression/xgboost/XGBo
 <ul class="blockListLast">
 <li class="blockList">
 <h4>XGBoostOptions</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/regression/xgboost/XGBoostOptions.html#line.27">XGBoostOptions</a>()</pre>
+<pre>public&nbsp;XGBoostOptions()</pre>
 </li>
 </ul>
 </li>
@@ -419,7 +419,7 @@ public&nbsp;int <a href="../../../../src-html/org/tribuo/regression/xgboost/XGBo
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getTrainer</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/regression/xgboost/XGBoostRegressionTrainer.html" title="class in org.tribuo.regression.xgboost">XGBoostRegressionTrainer</a>&nbsp;<a href="../../../../src-html/org/tribuo/regression/xgboost/XGBoostOptions.html#line.59">getTrainer</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/regression/xgboost/XGBoostRegressionTrainer.html" title="class in org.tribuo.regression.xgboost">XGBoostRegressionTrainer</a>&nbsp;getTrainer()</pre>
 <div class="block">Gets the configured XGBoostRegressionTrainer.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -495,6 +495,6 @@ public&nbsp;int <a href="../../../../src-html/org/tribuo/regression/xgboost/XGBo
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

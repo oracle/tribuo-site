@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <a href="../../../src-html/org/tribuo/math/StochasticGradientOptimiser.html#line.38">StochasticGradientOptimiser</a>
+<pre>public interface <span class="typeNameLabel">StochasticGradientOptimiser</span>
 extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&gt;</pre>
 <div class="block">Interface for gradient based optimisation methods.
  <p>
@@ -206,7 +206,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>initialise</h4>
-<pre>default&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/math/StochasticGradientOptimiser.html#line.46">initialise</a>(<a href="../../../org/tribuo/math/Parameters.html" title="interface in org.tribuo.math">Parameters</a>&nbsp;parameters)</pre>
+<pre>default&nbsp;void&nbsp;initialise(<a href="../../../org/tribuo/math/Parameters.html" title="interface in org.tribuo.math">Parameters</a>&nbsp;parameters)</pre>
 <div class="block">Initialises the gradient optimiser.
  <p>
  Configures any learning rate parameters.</div>
@@ -222,7 +222,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>step</h4>
-<pre><a href="../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;<a href="../../../src-html/org/tribuo/math/StochasticGradientOptimiser.html#line.57">step</a>(<a href="../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;updates,
+<pre><a href="../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;step(<a href="../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la">Tensor</a>[]&nbsp;updates,
               double&nbsp;weight)</pre>
 <div class="block">Take a <a href="../../../org/tribuo/math/la/Tensor.html" title="interface in org.tribuo.math.la"><code>Tensor</code></a> array of gradients and transform them
  according to the current weight and learning rates.
@@ -243,7 +243,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>finalise</h4>
-<pre>default&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/math/StochasticGradientOptimiser.html#line.63">finalise</a>()</pre>
+<pre>default&nbsp;void&nbsp;finalise()</pre>
 <div class="block">Finalises the gradient optimisation, setting the parameters to their correct values.
  Used for <a href="../../../org/tribuo/math/optimisers/ParameterAveraging.html" title="class in org.tribuo.math.optimisers"><code>ParameterAveraging</code></a> amongst others.</div>
 </li>
@@ -254,7 +254,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>reset</h4>
-<pre>void&nbsp;<a href="../../../src-html/org/tribuo/math/StochasticGradientOptimiser.html#line.68">reset</a>()</pre>
+<pre>void&nbsp;reset()</pre>
 <div class="block">Resets the optimiser so it's ready to optimise a new <a href="../../../org/tribuo/math/Parameters.html" title="interface in org.tribuo.math"><code>Parameters</code></a>.</div>
 </li>
 </ul>
@@ -264,7 +264,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockListLast">
 <li class="blockList">
 <h4>copy</h4>
-<pre><a href="../../../org/tribuo/math/StochasticGradientOptimiser.html" title="interface in org.tribuo.math">StochasticGradientOptimiser</a>&nbsp;<a href="../../../src-html/org/tribuo/math/StochasticGradientOptimiser.html#line.74">copy</a>()</pre>
+<pre><a href="../../../org/tribuo/math/StochasticGradientOptimiser.html" title="interface in org.tribuo.math">StochasticGradientOptimiser</a>&nbsp;copy()</pre>
 <div class="block">Copies a gradient optimiser with it's configuration. Usually calls the copy constructor.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -340,6 +340,6 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <a href="../../../../src-html/org/tribuo/data/columnar/ResponseProcessor.html#line.30">ResponseProcessor</a>&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public interface <span class="typeNameLabel">ResponseProcessor&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&gt;</pre>
 <div class="block">An interface that will take the response field and produce an <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo"><code>Output</code></a>.</div>
 </li>
@@ -191,7 +191,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>getOutputFactory</h4>
-<pre><a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../../org/tribuo/data/columnar/ResponseProcessor.html" title="type parameter in ResponseProcessor">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/ResponseProcessor.html#line.36">getOutputFactory</a>()</pre>
+<pre><a href="../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../../org/tribuo/data/columnar/ResponseProcessor.html" title="type parameter in ResponseProcessor">T</a>&gt;&nbsp;getOutputFactory()</pre>
 <div class="block">Gets the OutputFactory this ResponseProcessor uses.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -205,7 +205,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>getFieldName</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/ResponseProcessor.html#line.42">getFieldName</a>()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getFieldName()</pre>
 <div class="block">Gets the field name this ResponseProcessor uses.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -220,7 +220,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <li class="blockList">
 <h4>setFieldName</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-void&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/ResponseProcessor.html#line.51">setFieldName</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</pre>
+void&nbsp;setFieldName(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName)</pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">Response processors should be immutable; downstream objects assume that they are
  Set the field name this ResponseProcessor uses.</span></div>
 <dl>
@@ -235,7 +235,7 @@ void&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/ResponseProcess
 <ul class="blockListLast">
 <li class="blockList">
 <h4>process</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../org/tribuo/data/columnar/ResponseProcessor.html" title="type parameter in ResponseProcessor">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/ResponseProcessor.html#line.58">process</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../org/tribuo/data/columnar/ResponseProcessor.html" title="type parameter in ResponseProcessor">T</a>&gt;&nbsp;process(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</pre>
 <div class="block">Returns Optional.empty() if it failed to process out a response.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -313,6 +313,6 @@ void&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/ResponseProcess
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/common/nearest/KNNClassifierOptions.html#line.32">KNNClassifierOptions</a>
+<pre>public class <span class="typeNameLabel">KNNClassifierOptions</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/classification/ClassificationOptions.html" title="interface in org.tribuo.classification">ClassificationOptions</a>&lt;<a href="../../../../org/tribuo/common/nearest/KNNTrainer.html" title="class in org.tribuo.common.nearest">KNNTrainer</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&gt;</pre>
 <div class="block">CLI Options for training a k-nearest neighbour predictor.</div>
@@ -261,7 +261,7 @@ implements <a href="../../../../org/tribuo/classification/ClassificationOptions.
 <h4>knnK</h4>
 <pre>@Option(longName="knn-k",
         usage="K nearest neighbours to use. Defaults to 1.")
-public&nbsp;int <a href="../../../../src-html/org/tribuo/common/nearest/KNNClassifierOptions.html#line.40">knnK</a></pre>
+public&nbsp;int knnK</pre>
 </li>
 </ul>
 <a name="knnNumThreads">
@@ -272,7 +272,7 @@ public&nbsp;int <a href="../../../../src-html/org/tribuo/common/nearest/KNNClass
 <h4>knnNumThreads</h4>
 <pre>@Option(longName="knn-num-threads",
         usage="Number of threads to use. Defaults to 1.")
-public&nbsp;int <a href="../../../../src-html/org/tribuo/common/nearest/KNNClassifierOptions.html#line.42">knnNumThreads</a></pre>
+public&nbsp;int knnNumThreads</pre>
 </li>
 </ul>
 <a name="knnDistance">
@@ -283,7 +283,7 @@ public&nbsp;int <a href="../../../../src-html/org/tribuo/common/nearest/KNNClass
 <h4>knnDistance</h4>
 <pre>@Option(longName="knn-distance",
         usage="Distance metric to use. Defaults to L2.")
-public&nbsp;<a href="../../../../org/tribuo/common/nearest/KNNTrainer.Distance.html" title="enum in org.tribuo.common.nearest">KNNTrainer.Distance</a> <a href="../../../../src-html/org/tribuo/common/nearest/KNNClassifierOptions.html#line.44">knnDistance</a></pre>
+public&nbsp;<a href="../../../../org/tribuo/common/nearest/KNNTrainer.Distance.html" title="enum in org.tribuo.common.nearest">KNNTrainer.Distance</a> knnDistance</pre>
 </li>
 </ul>
 <a name="knnBackend">
@@ -294,7 +294,7 @@ public&nbsp;<a href="../../../../org/tribuo/common/nearest/KNNTrainer.Distance.h
 <h4>knnBackend</h4>
 <pre>@Option(longName="knn-backend",
         usage="Parallel backend to use.")
-public&nbsp;<a href="../../../../org/tribuo/common/nearest/KNNModel.Backend.html" title="enum in org.tribuo.common.nearest">KNNModel.Backend</a> <a href="../../../../src-html/org/tribuo/common/nearest/KNNClassifierOptions.html#line.46">knnBackend</a></pre>
+public&nbsp;<a href="../../../../org/tribuo/common/nearest/KNNModel.Backend.html" title="enum in org.tribuo.common.nearest">KNNModel.Backend</a> knnBackend</pre>
 </li>
 </ul>
 <a name="knnEnsembleCombiner">
@@ -305,7 +305,7 @@ public&nbsp;<a href="../../../../org/tribuo/common/nearest/KNNModel.Backend.html
 <h4>knnEnsembleCombiner</h4>
 <pre>@Option(longName="knn-voting",
         usage="Parallel backend to use.")
-public&nbsp;<a href="../../../../org/tribuo/common/nearest/KNNClassifierOptions.EnsembleCombinerType.html" title="enum in org.tribuo.common.nearest">KNNClassifierOptions.EnsembleCombinerType</a> <a href="../../../../src-html/org/tribuo/common/nearest/KNNClassifierOptions.html#line.48">knnEnsembleCombiner</a></pre>
+public&nbsp;<a href="../../../../org/tribuo/common/nearest/KNNClassifierOptions.EnsembleCombinerType.html" title="enum in org.tribuo.common.nearest">KNNClassifierOptions.EnsembleCombinerType</a> knnEnsembleCombiner</pre>
 </li>
 </ul>
 </li>
@@ -322,7 +322,7 @@ public&nbsp;<a href="../../../../org/tribuo/common/nearest/KNNClassifierOptions.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>KNNClassifierOptions</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/common/nearest/KNNClassifierOptions.html#line.32">KNNClassifierOptions</a>()</pre>
+<pre>public&nbsp;KNNClassifierOptions()</pre>
 </li>
 </ul>
 </li>
@@ -339,7 +339,7 @@ public&nbsp;<a href="../../../../org/tribuo/common/nearest/KNNClassifierOptions.
 <ul class="blockList">
 <li class="blockList">
 <h4>getOptionsDescription</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/common/nearest/KNNClassifierOptions.html#line.51">getOptionsDescription</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getOptionsDescription()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getOptionsDescription</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.config.Options</code></dd>
@@ -352,7 +352,7 @@ public&nbsp;<a href="../../../../org/tribuo/common/nearest/KNNClassifierOptions.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getTrainer</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/common/nearest/KNNTrainer.html" title="class in org.tribuo.common.nearest">KNNTrainer</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/common/nearest/KNNClassifierOptions.html#line.67">getTrainer</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/common/nearest/KNNTrainer.html" title="class in org.tribuo.common.nearest">KNNTrainer</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;getTrainer()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/ClassificationOptions.html#getTrainer--">ClassificationOptions</a></code></span></div>
 <div class="block">Constructs the trainer based on the provided arguments.</div>
 <dl>
@@ -431,6 +431,6 @@ public&nbsp;<a href="../../../../org/tribuo/common/nearest/KNNClassifierOptions.
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

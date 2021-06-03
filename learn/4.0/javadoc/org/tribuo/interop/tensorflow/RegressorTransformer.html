@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/interop/tensorflow/RegressorTransformer.html#line.36">RegressorTransformer</a>
+<pre>public class <span class="typeNameLabel">RegressorTransformer</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html" title="interface in org.tribuo.interop.tensorflow">OutputTransformer</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;</pre>
 <div class="block">Can convert a <a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression"><code>Regressor</code></a> to a <code>Tensor</code> containing a 32-bit float and a Tensor into a
@@ -252,7 +252,7 @@ implements <a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>RegressorTransformer</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/RegressorTransformer.html#line.36">RegressorTransformer</a>()</pre>
+<pre>public&nbsp;RegressorTransformer()</pre>
 </li>
 </ul>
 </li>
@@ -269,7 +269,7 @@ implements <a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.
 <ul class="blockList">
 <li class="blockList">
 <h4>transformToPrediction</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/RegressorTransformer.html#line.40">transformToPrediction</a>(org.tensorflow.Tensor&lt;?&gt;&nbsp;tensor,
+<pre>public&nbsp;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;transformToPrediction(org.tensorflow.Tensor&lt;?&gt;&nbsp;tensor,
                                                    <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;outputIDInfo,
                                                    int&nbsp;numValidFeatures,
                                                    <a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;example)</pre>
@@ -294,7 +294,7 @@ implements <a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.
 <ul class="blockList">
 <li class="blockList">
 <h4>transformToOutput</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/RegressorTransformer.html#line.46">transformToOutput</a>(org.tensorflow.Tensor&lt;?&gt;&nbsp;tensor,
+<pre>public&nbsp;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&nbsp;transformToOutput(org.tensorflow.Tensor&lt;?&gt;&nbsp;tensor,
                                    <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;outputIDInfo)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html#transformToOutput-org.tensorflow.Tensor-org.tribuo.ImmutableOutputInfo-">OutputTransformer</a></code></span></div>
 <div class="block">Converts a <code>Tensor</code> into the specified output type.</div>
@@ -315,7 +315,7 @@ implements <a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.
 <ul class="blockList">
 <li class="blockList">
 <h4>transformToBatchPrediction</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/RegressorTransformer.html#line.78">transformToBatchPrediction</a>(org.tensorflow.Tensor&lt;?&gt;&nbsp;tensor,
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&gt;&nbsp;transformToBatchPrediction(org.tensorflow.Tensor&lt;?&gt;&nbsp;tensor,
                                                               <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;outputIDInfo,
                                                               int[]&nbsp;numValidFeatures,
                                                               <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&gt;&nbsp;examples)</pre>
@@ -340,7 +340,7 @@ implements <a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.
 <ul class="blockList">
 <li class="blockList">
 <h4>transformToBatchOutput</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/RegressorTransformer.html#line.94">transformToBatchOutput</a>(org.tensorflow.Tensor&lt;?&gt;&nbsp;tensor,
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;transformToBatchOutput(org.tensorflow.Tensor&lt;?&gt;&nbsp;tensor,
                                               <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;outputIDInfo)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html#transformToBatchOutput-org.tensorflow.Tensor-org.tribuo.ImmutableOutputInfo-">OutputTransformer</a></code></span></div>
 <div class="block">Converts a <code>Tensor</code> containing multiple outputs into a list of <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo"><code>Output</code></a>s.</div>
@@ -361,7 +361,7 @@ implements <a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.
 <ul class="blockList">
 <li class="blockList">
 <h4>transform</h4>
-<pre>public&nbsp;org.tensorflow.Tensor&lt;?&gt;&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/RegressorTransformer.html#line.115">transform</a>(<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&nbsp;example,
+<pre>public&nbsp;org.tensorflow.Tensor&lt;?&gt;&nbsp;transform(<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&nbsp;example,
                                           <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;outputIDInfo)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html#transform-T-org.tribuo.ImmutableOutputInfo-">OutputTransformer</a></code></span></div>
 <div class="block">Converts an <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo"><code>Output</code></a> into a <code>Tensor</code> representing it's output.</div>
@@ -382,7 +382,7 @@ implements <a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.
 <ul class="blockList">
 <li class="blockList">
 <h4>transform</h4>
-<pre>public&nbsp;org.tensorflow.Tensor&lt;?&gt;&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/RegressorTransformer.html#line.125">transform</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&gt;&nbsp;examples,
+<pre>public&nbsp;org.tensorflow.Tensor&lt;?&gt;&nbsp;transform(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&gt;&nbsp;examples,
                                           <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;outputIDInfo)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html#transform-java.util.List-org.tribuo.ImmutableOutputInfo-">OutputTransformer</a></code></span></div>
 <div class="block">Converts a list of <a href="../../../../org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a> into a <code>Tensor</code> representing all the outputs
@@ -404,7 +404,7 @@ implements <a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.
 <ul class="blockList">
 <li class="blockList">
 <h4>generatesProbabilities</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/RegressorTransformer.html#line.139">generatesProbabilities</a>()</pre>
+<pre>public&nbsp;boolean&nbsp;generatesProbabilities()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html#generatesProbabilities--">OutputTransformer</a></code></span></div>
 <div class="block">Does this OutputTransformer generate probabilities.</div>
 <dl>
@@ -421,7 +421,7 @@ implements <a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/RegressorTransformer.html#line.144">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -434,7 +434,7 @@ implements <a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/RegressorTransformer.html#line.149">getProvenance</a>()</pre>
+<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&gt;</code></dd>
@@ -509,6 +509,6 @@ implements <a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

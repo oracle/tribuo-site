@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public final class <a href="../../../src-html/org/tribuo/classification/Label.html#line.29">Label</a>
+<pre>public final class <span class="typeNameLabel">Label</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../org/tribuo/classification/Classifiable.html" title="interface in org.tribuo.classification">Classifiable</a>&lt;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;</pre>
 <div class="block">An immutable multi-class classification label.
@@ -273,7 +273,7 @@ implements <a href="../../../org/tribuo/classification/Classifiable.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>UNKNOWN</h4>
-<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> <a href="../../../src-html/org/tribuo/classification/Label.html#line.35">UNKNOWN</a></pre>
+<pre>public static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> UNKNOWN</pre>
 <div class="block">The name of the unknown label (i.e., an unlabelled output).</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -287,7 +287,7 @@ implements <a href="../../../org/tribuo/classification/Classifiable.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>label</h4>
-<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> <a href="../../../src-html/org/tribuo/classification/Label.html#line.40">label</a></pre>
+<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> label</pre>
 <div class="block">The name of the label.</div>
 </li>
 </ul>
@@ -297,7 +297,7 @@ implements <a href="../../../org/tribuo/classification/Classifiable.html" title=
 <ul class="blockListLast">
 <li class="blockList">
 <h4>score</h4>
-<pre>protected final&nbsp;double <a href="../../../src-html/org/tribuo/classification/Label.html#line.45">score</a></pre>
+<pre>protected final&nbsp;double score</pre>
 <div class="block">The score of the label.</div>
 </li>
 </ul>
@@ -315,7 +315,7 @@ implements <a href="../../../org/tribuo/classification/Classifiable.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>Label</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/classification/Label.html#line.52">Label</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;label,
+<pre>public&nbsp;Label(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;label,
              double&nbsp;score)</pre>
 <div class="block">Builds a label with the supplied string and score.</div>
 <dl>
@@ -331,7 +331,7 @@ implements <a href="../../../org/tribuo/classification/Classifiable.html" title=
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Label</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/classification/Label.html#line.61">Label</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;label)</pre>
+<pre>public&nbsp;Label(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;label)</pre>
 <div class="block">Builds a label with the sentinel score of Double.NaN.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -353,7 +353,7 @@ implements <a href="../../../org/tribuo/classification/Classifiable.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>getScore</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../src-html/org/tribuo/classification/Label.html#line.71">getScore</a>()</pre>
+<pre>public&nbsp;double&nbsp;getScore()</pre>
 <div class="block">Get a real valued score for this label.
  <p>
  If the score is not set then it returns Double.NaN.</div>
@@ -369,7 +369,7 @@ implements <a href="../../../org/tribuo/classification/Classifiable.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>getLabel</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/classification/Label.html#line.79">getLabel</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getLabel()</pre>
 <div class="block">Gets the name of this label.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -383,7 +383,7 @@ implements <a href="../../../org/tribuo/classification/Classifiable.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../src-html/org/tribuo/classification/Label.html#line.84">equals</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;o)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -396,7 +396,7 @@ implements <a href="../../../org/tribuo/classification/Classifiable.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>fullEquals</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../src-html/org/tribuo/classification/Label.html#line.94">fullEquals</a>(<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&nbsp;o)</pre>
+<pre>public&nbsp;boolean&nbsp;fullEquals(<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&nbsp;o)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/Output.html#fullEquals-T-">Output</a></code></span></div>
 <div class="block">Compares other to this output. Uses all score values
  and the strings.</div>
@@ -416,7 +416,7 @@ implements <a href="../../../org/tribuo/classification/Classifiable.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../src-html/org/tribuo/classification/Label.html#line.103">hashCode</a>()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -429,7 +429,7 @@ implements <a href="../../../org/tribuo/classification/Classifiable.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/classification/Label.html#line.110">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -442,7 +442,7 @@ implements <a href="../../../org/tribuo/classification/Classifiable.html" title=
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&nbsp;<a href="../../../src-html/org/tribuo/classification/Label.html#line.119">copy</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&nbsp;copy()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/Output.html#copy--">Output</a></code></span></div>
 <div class="block">Deep copy of the output up to it's immutable state.</div>
 <dl>
@@ -459,7 +459,7 @@ implements <a href="../../../org/tribuo/classification/Classifiable.html" title=
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getSerializableForm</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/classification/Label.html#line.129">getSerializableForm</a>(boolean&nbsp;includeConfidence)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getSerializableForm(boolean&nbsp;includeConfidence)</pre>
 <div class="block">Returns "labelName" or "labelName,score=labelScore".</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -539,6 +539,6 @@ implements <a href="../../../org/tribuo/classification/Classifiable.html" title=
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

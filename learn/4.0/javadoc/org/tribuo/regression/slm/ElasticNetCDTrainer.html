@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/regression/slm/ElasticNetCDTrainer.html#line.60">ElasticNetCDTrainer</a>
+<pre>public class <span class="typeNameLabel">ElasticNetCDTrainer</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/SparseTrainer.html" title="interface in org.tribuo">SparseTrainer</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;</pre>
 <div class="block">An ElasticNet trainer that uses co-ordinate descent. Modelled after scikit-learn's sparse matrix implementation.
@@ -248,7 +248,7 @@ implements <a href="../../../../org/tribuo/SparseTrainer.html" title="interface 
 <ul class="blockList">
 <li class="blockList">
 <h4>ElasticNetCDTrainer</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/regression/slm/ElasticNetCDTrainer.html#line.91">ElasticNetCDTrainer</a>(double&nbsp;alpha,
+<pre>public&nbsp;ElasticNetCDTrainer(double&nbsp;alpha,
                            double&nbsp;l1Ratio)</pre>
 </li>
 </ul>
@@ -258,7 +258,7 @@ implements <a href="../../../../org/tribuo/SparseTrainer.html" title="interface 
 <ul class="blockList">
 <li class="blockList">
 <h4>ElasticNetCDTrainer</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/regression/slm/ElasticNetCDTrainer.html#line.95">ElasticNetCDTrainer</a>(double&nbsp;alpha,
+<pre>public&nbsp;ElasticNetCDTrainer(double&nbsp;alpha,
                            double&nbsp;l1Ratio,
                            long&nbsp;seed)</pre>
 </li>
@@ -269,7 +269,7 @@ implements <a href="../../../../org/tribuo/SparseTrainer.html" title="interface 
 <ul class="blockListLast">
 <li class="blockList">
 <h4>ElasticNetCDTrainer</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/regression/slm/ElasticNetCDTrainer.html#line.99">ElasticNetCDTrainer</a>(double&nbsp;alpha,
+<pre>public&nbsp;ElasticNetCDTrainer(double&nbsp;alpha,
                            double&nbsp;l1Ratio,
                            double&nbsp;tolerance,
                            int&nbsp;maxIterations,
@@ -291,7 +291,7 @@ implements <a href="../../../../org/tribuo/SparseTrainer.html" title="interface 
 <ul class="blockList">
 <li class="blockList">
 <h4>postConfig</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/regression/slm/ElasticNetCDTrainer.html#line.110">postConfig</a>()</pre>
+<pre>public&nbsp;void&nbsp;postConfig()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>postConfig</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.config.Configurable</code></dd>
@@ -304,7 +304,7 @@ implements <a href="../../../../org/tribuo/SparseTrainer.html" title="interface 
 <ul class="blockList">
 <li class="blockList">
 <h4>train</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/SparseModel.html" title="class in org.tribuo">SparseModel</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/regression/slm/ElasticNetCDTrainer.html#line.118">train</a>(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;examples,
+<pre>public&nbsp;<a href="../../../../org/tribuo/SparseModel.html" title="class in org.tribuo">SparseModel</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;train(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;examples,
                                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,com.oracle.labs.mlrg.olcut.provenance.Provenance&gt;&nbsp;runProvenance)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/SparseTrainer.html#train-org.tribuo.Dataset-java.util.Map-">SparseTrainer</a></code></span></div>
 <div class="block">Trains a sparse predictive model using the examples in the given data set.</div>
@@ -327,7 +327,7 @@ implements <a href="../../../../org/tribuo/SparseTrainer.html" title="interface 
 <ul class="blockList">
 <li class="blockList">
 <h4>getInvocationCount</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/regression/slm/ElasticNetCDTrainer.html#line.323">getInvocationCount</a>()</pre>
+<pre>public&nbsp;int&nbsp;getInvocationCount()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/Trainer.html#getInvocationCount--">Trainer</a></code></span></div>
 <div class="block">The number of times this trainer instance has had it's train method invoked.
  <p>
@@ -347,7 +347,7 @@ implements <a href="../../../../org/tribuo/SparseTrainer.html" title="interface 
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/regression/slm/ElasticNetCDTrainer.html#line.328">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -360,7 +360,7 @@ implements <a href="../../../../org/tribuo/SparseTrainer.html" title="interface 
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&nbsp;<a href="../../../../src-html/org/tribuo/regression/slm/ElasticNetCDTrainer.html#line.355">getProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&gt;</code></dd>
@@ -435,6 +435,6 @@ implements <a href="../../../../org/tribuo/SparseTrainer.html" title="interface 
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

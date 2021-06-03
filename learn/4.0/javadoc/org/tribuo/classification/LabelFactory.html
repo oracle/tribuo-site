@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public final class <a href="../../../src-html/org/tribuo/classification/LabelFactory.html#line.37">LabelFactory</a>
+<pre>public final class <span class="typeNameLabel">LabelFactory</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;</pre>
 <div class="block">A factory for making Label related classes.
@@ -288,7 +288,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockListLast">
 <li class="blockList">
 <h4>UNKNOWN_LABEL</h4>
-<pre>public static final&nbsp;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a> <a href="../../../src-html/org/tribuo/classification/LabelFactory.html#line.43">UNKNOWN_LABEL</a></pre>
+<pre>public static final&nbsp;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a> UNKNOWN_LABEL</pre>
 <div class="block">The singleton unknown label, used for unlablled examples.</div>
 </li>
 </ul>
@@ -306,7 +306,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockListLast">
 <li class="blockList">
 <h4>LabelFactory</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/classification/LabelFactory.html#line.52">LabelFactory</a>()</pre>
+<pre>public&nbsp;LabelFactory()</pre>
 <div class="block">Constructs a label factory.</div>
 </li>
 </ul>
@@ -326,7 +326,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>generateOutput</h4>
-<pre>public&nbsp;&lt;V&gt;&nbsp;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&nbsp;<a href="../../../src-html/org/tribuo/classification/LabelFactory.html#line.62">generateOutput</a>(V&nbsp;label)</pre>
+<pre>public&nbsp;&lt;V&gt;&nbsp;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&nbsp;generateOutput(V&nbsp;label)</pre>
 <div class="block">Generates the Label string by calling toString
  on the input.</div>
 <dl>
@@ -347,7 +347,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>getUnknownOutput</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&nbsp;<a href="../../../src-html/org/tribuo/classification/LabelFactory.html#line.67">getUnknownOutput</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&nbsp;getUnknownOutput()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/OutputFactory.html#getUnknownOutput--">OutputFactory</a></code></span></div>
 <div class="block">Returns the singleton unknown output of type T which can be used for prediction time examples.</div>
 <dl>
@@ -364,7 +364,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>generateInfo</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/MutableOutputInfo.html" title="interface in org.tribuo">MutableOutputInfo</a>&lt;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/classification/LabelFactory.html#line.76">generateInfo</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/MutableOutputInfo.html" title="interface in org.tribuo">MutableOutputInfo</a>&lt;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;generateInfo()</pre>
 <div class="block">Generates an empty MutableLabelInfo.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -380,7 +380,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>constructInfoForExternalModel</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/classification/LabelFactory.html#line.81">constructInfoForExternalModel</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;mapping)</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;constructInfoForExternalModel(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&nbsp;mapping)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/OutputFactory.html#constructInfoForExternalModel-java.util.Map-">OutputFactory</a></code></span></div>
 <div class="block">Creates an <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo"><code>ImmutableOutputInfo</code></a> from the supplied mapping.
  Requires that the mapping is dense in the integers [0,mapping.size()) and
@@ -404,7 +404,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>getEvaluator</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/evaluation/Evaluator.html" title="interface in org.tribuo.evaluation">Evaluator</a>&lt;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>,<a href="../../../org/tribuo/classification/evaluation/LabelEvaluation.html" title="interface in org.tribuo.classification.evaluation">LabelEvaluation</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/classification/LabelFactory.html#line.95">getEvaluator</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/evaluation/Evaluator.html" title="interface in org.tribuo.evaluation">Evaluator</a>&lt;<a href="../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>,<a href="../../../org/tribuo/classification/evaluation/LabelEvaluation.html" title="interface in org.tribuo.classification.evaluation">LabelEvaluation</a>&gt;&nbsp;getEvaluator()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/OutputFactory.html#getEvaluator--">OutputFactory</a></code></span></div>
 <div class="block">Gets an <a href="../../../org/tribuo/evaluation/Evaluator.html" title="interface in org.tribuo.evaluation"><code>Evaluator</code></a> suitable for measuring performance of predictions for the Output subclass.
  <p>
@@ -425,7 +425,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>hashCode</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../src-html/org/tribuo/classification/LabelFactory.html#line.100">hashCode</a>()</pre>
+<pre>public&nbsp;int&nbsp;hashCode()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#hashCode--" title="class or interface in java.lang">hashCode</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -438,7 +438,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../src-html/org/tribuo/classification/LabelFactory.html#line.105">equals</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;obj)</pre>
+<pre>public&nbsp;boolean&nbsp;equals(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&nbsp;obj)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#equals-java.lang.Object-" title="class or interface in java.lang">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -451,7 +451,7 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/provenance/OutputFactoryProvenance.html" title="interface in org.tribuo.provenance">OutputFactoryProvenance</a>&nbsp;<a href="../../../src-html/org/tribuo/classification/LabelFactory.html#line.110">getProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/provenance/OutputFactoryProvenance.html" title="interface in org.tribuo.provenance">OutputFactoryProvenance</a>&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../../org/tribuo/provenance/OutputFactoryProvenance.html" title="interface in org.tribuo.provenance">OutputFactoryProvenance</a>&gt;</code></dd>
@@ -526,6 +526,6 @@ implements <a href="../../../org/tribuo/OutputFactory.html" title="interface in 
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

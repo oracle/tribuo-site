@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../../src-html/org/tribuo/classification/sgd/linear/LinearSGDOptions.html#line.33">LinearSGDOptions</a>
+<pre>public class <span class="typeNameLabel">LinearSGDOptions</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../../org/tribuo/classification/ClassificationOptions.html" title="interface in org.tribuo.classification">ClassificationOptions</a>&lt;<a href="../../../../../org/tribuo/classification/sgd/linear/LinearSGDTrainer.html" title="class in org.tribuo.classification.sgd.linear">LinearSGDTrainer</a>&gt;</pre>
 <div class="block">CLI options for training a linear classifier.</div>
@@ -261,7 +261,7 @@ implements <a href="../../../../../org/tribuo/classification/ClassificationOptio
 <ul class="blockList">
 <li class="blockList">
 <h4>sgoOptions</h4>
-<pre>public&nbsp;<a href="../../../../../org/tribuo/math/optimisers/GradientOptimiserOptions.html" title="class in org.tribuo.math.optimisers">GradientOptimiserOptions</a> <a href="../../../../../src-html/org/tribuo/classification/sgd/linear/LinearSGDOptions.html#line.41">sgoOptions</a></pre>
+<pre>public&nbsp;<a href="../../../../../org/tribuo/math/optimisers/GradientOptimiserOptions.html" title="class in org.tribuo.math.optimisers">GradientOptimiserOptions</a> sgoOptions</pre>
 </li>
 </ul>
 <a name="sgdEpochs">
@@ -272,7 +272,7 @@ implements <a href="../../../../../org/tribuo/classification/ClassificationOptio
 <h4>sgdEpochs</h4>
 <pre>@Option(longName="sgd-epochs",
         usage="Number of SGD epochs. Defaults to 5.")
-public&nbsp;int <a href="../../../../../src-html/org/tribuo/classification/sgd/linear/LinearSGDOptions.html#line.44">sgdEpochs</a></pre>
+public&nbsp;int sgdEpochs</pre>
 </li>
 </ul>
 <a name="sgdObjective">
@@ -283,7 +283,7 @@ public&nbsp;int <a href="../../../../../src-html/org/tribuo/classification/sgd/l
 <h4>sgdObjective</h4>
 <pre>@Option(longName="sgd-objective",
         usage="Loss function. Defaults to LOG.")
-public&nbsp;<a href="../../../../../org/tribuo/classification/sgd/linear/LinearSGDOptions.LossEnum.html" title="enum in org.tribuo.classification.sgd.linear">LinearSGDOptions.LossEnum</a> <a href="../../../../../src-html/org/tribuo/classification/sgd/linear/LinearSGDOptions.html#line.46">sgdObjective</a></pre>
+public&nbsp;<a href="../../../../../org/tribuo/classification/sgd/linear/LinearSGDOptions.LossEnum.html" title="enum in org.tribuo.classification.sgd.linear">LinearSGDOptions.LossEnum</a> sgdObjective</pre>
 </li>
 </ul>
 <a name="sgdLoggingInterval">
@@ -294,7 +294,7 @@ public&nbsp;<a href="../../../../../org/tribuo/classification/sgd/linear/LinearS
 <h4>sgdLoggingInterval</h4>
 <pre>@Option(longName="sgd-logging-interval",
         usage="Log the objective after &lt;int&gt; examples. Defaults to 100.")
-public&nbsp;int <a href="../../../../../src-html/org/tribuo/classification/sgd/linear/LinearSGDOptions.html#line.48">sgdLoggingInterval</a></pre>
+public&nbsp;int sgdLoggingInterval</pre>
 </li>
 </ul>
 <a name="sgdMinibatchSize">
@@ -305,7 +305,7 @@ public&nbsp;int <a href="../../../../../src-html/org/tribuo/classification/sgd/l
 <h4>sgdMinibatchSize</h4>
 <pre>@Option(longName="sgd-minibatch-size",
         usage="Minibatch size. Defaults to 1.")
-public&nbsp;int <a href="../../../../../src-html/org/tribuo/classification/sgd/linear/LinearSGDOptions.html#line.50">sgdMinibatchSize</a></pre>
+public&nbsp;int sgdMinibatchSize</pre>
 </li>
 </ul>
 </li>
@@ -322,7 +322,7 @@ public&nbsp;int <a href="../../../../../src-html/org/tribuo/classification/sgd/l
 <ul class="blockListLast">
 <li class="blockList">
 <h4>LinearSGDOptions</h4>
-<pre>public&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/linear/LinearSGDOptions.html#line.33">LinearSGDOptions</a>()</pre>
+<pre>public&nbsp;LinearSGDOptions()</pre>
 </li>
 </ul>
 </li>
@@ -339,7 +339,7 @@ public&nbsp;int <a href="../../../../../src-html/org/tribuo/classification/sgd/l
 <ul class="blockList">
 <li class="blockList">
 <h4>getLoss</h4>
-<pre>public&nbsp;<a href="../../../../../org/tribuo/classification/sgd/LabelObjective.html" title="interface in org.tribuo.classification.sgd">LabelObjective</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/linear/LinearSGDOptions.html#line.58">getLoss</a>()</pre>
+<pre>public&nbsp;<a href="../../../../../org/tribuo/classification/sgd/LabelObjective.html" title="interface in org.tribuo.classification.sgd">LabelObjective</a>&nbsp;getLoss()</pre>
 <div class="block">Returns the loss function specified in the arguments.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -353,7 +353,7 @@ public&nbsp;int <a href="../../../../../src-html/org/tribuo/classification/sgd/l
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getTrainer</h4>
-<pre>public&nbsp;<a href="../../../../../org/tribuo/classification/sgd/linear/LinearSGDTrainer.html" title="class in org.tribuo.classification.sgd.linear">LinearSGDTrainer</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/sgd/linear/LinearSGDOptions.html#line.70">getTrainer</a>()</pre>
+<pre>public&nbsp;<a href="../../../../../org/tribuo/classification/sgd/linear/LinearSGDTrainer.html" title="class in org.tribuo.classification.sgd.linear">LinearSGDTrainer</a>&nbsp;getTrainer()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/tribuo/classification/ClassificationOptions.html#getTrainer--">ClassificationOptions</a></code></span></div>
 <div class="block">Constructs the trainer based on the provided arguments.</div>
 <dl>
@@ -432,6 +432,6 @@ public&nbsp;int <a href="../../../../../src-html/org/tribuo/classification/sgd/l
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

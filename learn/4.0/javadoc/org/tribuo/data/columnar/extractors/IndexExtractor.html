@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../../src-html/org/tribuo/data/columnar/extractors/IndexExtractor.html#line.35">IndexExtractor</a>
+<pre>public class <span class="typeNameLabel">IndexExtractor</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../../org/tribuo/data/columnar/FieldExtractor.html" title="interface in org.tribuo.data.columnar">FieldExtractor</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;</pre>
 <div class="block">An Extractor with special casing for loading the index from a Row.
@@ -219,7 +219,7 @@ implements <a href="../../../../../org/tribuo/data/columnar/FieldExtractor.html"
 <ul class="blockList">
 <li class="blockList">
 <h4>IndexExtractor</h4>
-<pre>public&nbsp;<a href="../../../../../src-html/org/tribuo/data/columnar/extractors/IndexExtractor.html#line.44">IndexExtractor</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;metadataName)</pre>
+<pre>public&nbsp;IndexExtractor(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;metadataName)</pre>
 <div class="block">Extracts the index, writing to the supplied metadata field name.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -233,7 +233,7 @@ implements <a href="../../../../../org/tribuo/data/columnar/FieldExtractor.html"
 <ul class="blockListLast">
 <li class="blockList">
 <h4>IndexExtractor</h4>
-<pre>public&nbsp;<a href="../../../../../src-html/org/tribuo/data/columnar/extractors/IndexExtractor.html#line.51">IndexExtractor</a>()</pre>
+<pre>public&nbsp;IndexExtractor()</pre>
 <div class="block">Extracts the index writing to the default metadata field name <a href="../../../../../org/tribuo/Example.html#NAME"><code>Example.NAME</code></a>.</div>
 </li>
 </ul>
@@ -251,7 +251,7 @@ implements <a href="../../../../../org/tribuo/data/columnar/FieldExtractor.html"
 <ul class="blockList">
 <li class="blockList">
 <h4>getMetadataName</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/data/columnar/extractors/IndexExtractor.html#line.54">getMetadataName</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getMetadataName()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/tribuo/data/columnar/FieldExtractor.html#getMetadataName--">FieldExtractor</a></code></span></div>
 <div class="block">Gets the metadata key name. This is the key into which this value will be written in an <a href="../../../../../org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a>
  if it is given to <a href="../../../../../org/tribuo/data/columnar/RowProcessor.html" title="class in org.tribuo.data.columnar"><code>RowProcessor</code></a>.</div>
@@ -269,7 +269,7 @@ implements <a href="../../../../../org/tribuo/data/columnar/FieldExtractor.html"
 <ul class="blockList">
 <li class="blockList">
 <h4>getValueType</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/data/columnar/extractors/IndexExtractor.html#line.59">getValueType</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;getValueType()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/tribuo/data/columnar/FieldExtractor.html#getValueType--">FieldExtractor</a></code></span></div>
 <div class="block">Gets the class of the value produced by this extractor.</div>
 <dl>
@@ -286,7 +286,7 @@ implements <a href="../../../../../org/tribuo/data/columnar/FieldExtractor.html"
 <ul class="blockList">
 <li class="blockList">
 <h4>extract</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/data/columnar/extractors/IndexExtractor.html#line.64">extract</a>(<a href="../../../../../org/tribuo/data/columnar/ColumnarIterator.Row.html" title="class in org.tribuo.data.columnar">ColumnarIterator.Row</a>&nbsp;row)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html?is-external=true" title="class or interface in java.lang">Long</a>&gt;&nbsp;extract(<a href="../../../../../org/tribuo/data/columnar/ColumnarIterator.Row.html" title="class in org.tribuo.data.columnar">ColumnarIterator.Row</a>&nbsp;row)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/tribuo/data/columnar/FieldExtractor.html#extract-org.tribuo.data.columnar.ColumnarIterator.Row-">FieldExtractor</a></code></span></div>
 <div class="block">Returns Optional which is filled if extraction succeeded.</div>
 <dl>
@@ -305,7 +305,7 @@ implements <a href="../../../../../org/tribuo/data/columnar/FieldExtractor.html"
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;<a href="../../../../../src-html/org/tribuo/data/columnar/extractors/IndexExtractor.html#line.69">getProvenance</a>()</pre>
+<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&gt;</code></dd>
@@ -380,6 +380,6 @@ implements <a href="../../../../../org/tribuo/data/columnar/FieldExtractor.html"
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

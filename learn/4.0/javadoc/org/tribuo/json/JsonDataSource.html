@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../src-html/org/tribuo/json/JsonDataSource.html#line.53">JsonDataSource</a>&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public class <span class="typeNameLabel">JsonDataSource&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="../../../org/tribuo/data/columnar/ColumnarDataSource.html" title="class in org.tribuo.data.columnar">ColumnarDataSource</a>&lt;T&gt;</pre>
 <div class="block">A <a href="../../../org/tribuo/DataSource.html" title="interface in org.tribuo"><code>DataSource</code></a> for loading data from a JSON text file
  and applying <a href="../../../org/tribuo/data/columnar/FieldProcessor.html" title="interface in org.tribuo.data.columnar"><code>FieldProcessor</code></a>s to it.</div>
@@ -266,7 +266,7 @@ extends <a href="../../../org/tribuo/data/columnar/ColumnarDataSource.html" titl
 <ul class="blockList">
 <li class="blockList">
 <h4>JsonDataSource</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/json/JsonDataSource.html#line.75">JsonDataSource</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html?is-external=true" title="class or interface in java.nio.file">Path</a>&nbsp;dataPath,
+<pre>public&nbsp;JsonDataSource(<a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html?is-external=true" title="class or interface in java.nio.file">Path</a>&nbsp;dataPath,
                       <a href="../../../org/tribuo/data/columnar/RowProcessor.html" title="class in org.tribuo.data.columnar">RowProcessor</a>&lt;<a href="../../../org/tribuo/json/JsonDataSource.html" title="type parameter in JsonDataSource">T</a>&gt;&nbsp;rowProcessor,
                       boolean&nbsp;outputRequired)</pre>
 <div class="block">Creates a JsonDataSource using the specified RowProcessor to process the data.</div>
@@ -284,7 +284,7 @@ extends <a href="../../../org/tribuo/data/columnar/ColumnarDataSource.html" titl
 <ul class="blockListLast">
 <li class="blockList">
 <h4>JsonDataSource</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/json/JsonDataSource.html#line.86">JsonDataSource</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/net/URI.html?is-external=true" title="class or interface in java.net">URI</a>&nbsp;dataFile,
+<pre>public&nbsp;JsonDataSource(<a href="https://docs.oracle.com/javase/8/docs/api/java/net/URI.html?is-external=true" title="class or interface in java.net">URI</a>&nbsp;dataFile,
                       <a href="../../../org/tribuo/data/columnar/RowProcessor.html" title="class in org.tribuo.data.columnar">RowProcessor</a>&lt;<a href="../../../org/tribuo/json/JsonDataSource.html" title="type parameter in JsonDataSource">T</a>&gt;&nbsp;rowProcessor,
                       boolean&nbsp;outputRequired)</pre>
 <div class="block">Creates a JsonDataSource using the specified RowProcessor to process the data.</div>
@@ -310,7 +310,7 @@ extends <a href="../../../org/tribuo/data/columnar/ColumnarDataSource.html" titl
 <ul class="blockList">
 <li class="blockList">
 <h4>postConfig</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/json/JsonDataSource.html#line.107">postConfig</a>()</pre>
+<pre>public&nbsp;void&nbsp;postConfig()</pre>
 <div class="block">Used by the OLCUT configuration system, and should not be called by external code.</div>
 </li>
 </ul>
@@ -320,7 +320,7 @@ extends <a href="../../../org/tribuo/data/columnar/ColumnarDataSource.html" titl
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/json/JsonDataSource.html#line.113">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -333,7 +333,7 @@ extends <a href="../../../org/tribuo/data/columnar/ColumnarDataSource.html" titl
 <ul class="blockList">
 <li class="blockList">
 <h4>rowIterator</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/data/columnar/ColumnarIterator.html" title="class in org.tribuo.data.columnar">ColumnarIterator</a>&nbsp;<a href="../../../src-html/org/tribuo/json/JsonDataSource.html#line.118">rowIterator</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/data/columnar/ColumnarIterator.html" title="class in org.tribuo.data.columnar">ColumnarIterator</a>&nbsp;rowIterator()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/data/columnar/ColumnarDataSource.html#rowIterator--">ColumnarDataSource</a></code></span></div>
 <div class="block">The iterator that emits <a href="../../../org/tribuo/data/columnar/ColumnarIterator.Row.html" title="class in org.tribuo.data.columnar"><code>ColumnarIterator.Row</code></a> objects from the
  underlying data source.</div>
@@ -351,7 +351,7 @@ extends <a href="../../../org/tribuo/data/columnar/ColumnarDataSource.html" titl
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/provenance/ConfiguredDataSourceProvenance.html" title="interface in org.tribuo.provenance">ConfiguredDataSourceProvenance</a>&nbsp;<a href="../../../src-html/org/tribuo/json/JsonDataSource.html#line.127">getProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/provenance/ConfiguredDataSourceProvenance.html" title="interface in org.tribuo.provenance">ConfiguredDataSourceProvenance</a>&nbsp;getProvenance()</pre>
 </li>
 </ul>
 </li>
@@ -422,6 +422,6 @@ extends <a href="../../../org/tribuo/data/columnar/ColumnarDataSource.html" titl
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

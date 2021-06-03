@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../src-html/org/tribuo/regression/ImmutableRegressionInfo.html#line.41">ImmutableRegressionInfo</a>
+<pre>public class <span class="typeNameLabel">ImmutableRegressionInfo</span>
 extends <a href="../../../org/tribuo/regression/RegressionInfo.html" title="class in org.tribuo.regression">RegressionInfo</a>
 implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;</pre>
 <div class="block">A <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo"><code>ImmutableOutputInfo</code></a> for <a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression"><code>Regressor</code></a>s.</div>
@@ -251,7 +251,7 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>getDomain</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/regression/ImmutableRegressionInfo.html#line.116">getDomain</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;getDomain()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../org/tribuo/regression/RegressionInfo.html#getDomain--">RegressionInfo</a></code></span></div>
 <div class="block">Returns a set containing a Regressor for each dimension with the minimum value observed.</div>
 <dl>
@@ -270,7 +270,7 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>getID</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../src-html/org/tribuo/regression/ImmutableRegressionInfo.html#line.121">getID</a>(<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&nbsp;output)</pre>
+<pre>public&nbsp;int&nbsp;getID(<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&nbsp;output)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/ImmutableOutputInfo.html#getID-T-">ImmutableOutputInfo</a></code></span></div>
 <div class="block">Return the id number associated with this output, or -1 if the output is unknown.</div>
 <dl>
@@ -289,7 +289,7 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>getOutput</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&nbsp;<a href="../../../src-html/org/tribuo/regression/ImmutableRegressionInfo.html#line.126">getOutput</a>(int&nbsp;id)</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&nbsp;getOutput(int&nbsp;id)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/ImmutableOutputInfo.html#getOutput-int-">ImmutableOutputInfo</a></code></span></div>
 <div class="block">Returns the output associated with this id, or null if the id is unknown.</div>
 <dl>
@@ -308,7 +308,7 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>getTotalObservations</h4>
-<pre>public&nbsp;long&nbsp;<a href="../../../src-html/org/tribuo/regression/ImmutableRegressionInfo.html#line.137">getTotalObservations</a>()</pre>
+<pre>public&nbsp;long&nbsp;getTotalObservations()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/ImmutableOutputInfo.html#getTotalObservations--">ImmutableOutputInfo</a></code></span></div>
 <div class="block">Returns the total number of observed outputs seen by this ImmutableOutputInfo.</div>
 <dl>
@@ -325,7 +325,7 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>copy</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/regression/ImmutableRegressionInfo.html" title="class in org.tribuo.regression">ImmutableRegressionInfo</a>&nbsp;<a href="../../../src-html/org/tribuo/regression/ImmutableRegressionInfo.html#line.142">copy</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/regression/ImmutableRegressionInfo.html" title="class in org.tribuo.regression">ImmutableRegressionInfo</a>&nbsp;copy()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/OutputInfo.html#copy--">OutputInfo</a></code></span></div>
 <div class="block">Generates a copy of this OutputInfo, including it's mutability.</div>
 <dl>
@@ -344,7 +344,7 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/regression/ImmutableRegressionInfo.html#line.147">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -357,7 +357,7 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <ul class="blockList">
 <li class="blockList">
 <h4>toReadableString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../src-html/org/tribuo/regression/ImmutableRegressionInfo.html#line.169">toReadableString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toReadableString()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/OutputInfo.html#toReadableString--">OutputInfo</a></code></span></div>
 <div class="block">Generates a String form of this OutputInfo.
  <p>
@@ -376,7 +376,7 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <ul class="blockListLast">
 <li class="blockList">
 <h4>iterator</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>,<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&gt;&nbsp;<a href="../../../src-html/org/tribuo/regression/ImmutableRegressionInfo.html#line.174">iterator</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html?is-external=true" title="class or interface in java.util">Iterator</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>,<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&gt;&nbsp;iterator()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true#iterator--" title="class or interface in java.lang">iterator</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>,<a href="../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&gt;</code></dd>
@@ -451,6 +451,6 @@ implements <a href="../../../org/tribuo/ImmutableOutputInfo.html" title="interfa
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../../src-html/org/tribuo/data/columnar/extractors/DateExtractor.html#line.35">DateExtractor</a>
+<pre>public class <span class="typeNameLabel">DateExtractor</span>
 extends <a href="../../../../../org/tribuo/data/columnar/extractors/SimpleFieldExtractor.html" title="class in org.tribuo.data.columnar.extractors">SimpleFieldExtractor</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html?is-external=true" title="class or interface in java.time">LocalDate</a>&gt;</pre>
 <div class="block">Extracts the field value and translates it to a <a href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html?is-external=true" title="class or interface in java.time"><code>LocalDate</code></a> based on the specified <a href="https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html?is-external=true" title="class or interface in java.time.format"><code>DateTimeFormatter</code></a>.
  <p>
@@ -244,7 +244,7 @@ extends <a href="../../../../../org/tribuo/data/columnar/extractors/SimpleFieldE
 <ul class="blockList">
 <li class="blockList">
 <h4>DateExtractor</h4>
-<pre>public&nbsp;<a href="../../../../../src-html/org/tribuo/data/columnar/extractors/DateExtractor.html#line.53">DateExtractor</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
+<pre>public&nbsp;DateExtractor(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;metadataName,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;dateFormat)</pre>
 <div class="block">Constructs a date extractor that emits a LocalDate by applying the supplied format to the specified field.</div>
@@ -263,7 +263,7 @@ extends <a href="../../../../../org/tribuo/data/columnar/extractors/SimpleFieldE
 <li class="blockList">
 <h4>DateExtractor</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;<a href="../../../../../src-html/org/tribuo/data/columnar/extractors/DateExtractor.html#line.68">DateExtractor</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
+public&nbsp;DateExtractor(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;fieldName,
                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;metadataName,
                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html?is-external=true" title="class or interface in java.time.format">DateTimeFormatter</a>&nbsp;formatter)</pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;</div>
@@ -292,7 +292,7 @@ public&nbsp;<a href="../../../../../src-html/org/tribuo/data/columnar/extractors
 <ul class="blockList">
 <li class="blockList">
 <h4>postConfig</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/data/columnar/extractors/DateExtractor.html#line.77">postConfig</a>()</pre>
+<pre>public&nbsp;void&nbsp;postConfig()</pre>
 <div class="block">Used by the OLCUT configuration system, and should not be called by external code.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -308,7 +308,7 @@ public&nbsp;<a href="../../../../../src-html/org/tribuo/data/columnar/extractors
 <ul class="blockList">
 <li class="blockList">
 <h4>getValueType</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html?is-external=true" title="class or interface in java.time">LocalDate</a>&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/data/columnar/extractors/DateExtractor.html#line.89">getValueType</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html?is-external=true" title="class or interface in java.time">LocalDate</a>&gt;&nbsp;getValueType()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/tribuo/data/columnar/FieldExtractor.html#getValueType--">FieldExtractor</a></code></span></div>
 <div class="block">Gets the class of the value produced by this extractor.</div>
 <dl>
@@ -323,7 +323,7 @@ public&nbsp;<a href="../../../../../src-html/org/tribuo/data/columnar/extractors
 <ul class="blockList">
 <li class="blockList">
 <h4>extractField</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html?is-external=true" title="class or interface in java.time">LocalDate</a>&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/data/columnar/extractors/DateExtractor.html#line.94">extractField</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html?is-external=true" title="class or interface in java.time">LocalDate</a>&gt;&nbsp;extractField(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;s)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../org/tribuo/data/columnar/extractors/SimpleFieldExtractor.html#extractField-java.lang.String-">SimpleFieldExtractor</a></code></span></div>
 <div class="block">Extracts the field value, or returns <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true#empty--" title="class or interface in java.util"><code>Optional.empty()</code></a> if it failed to parse.</div>
 <dl>
@@ -342,7 +342,7 @@ public&nbsp;<a href="../../../../../src-html/org/tribuo/data/columnar/extractors
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/data/columnar/extractors/DateExtractor.html#line.105">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="../../../../../org/tribuo/data/columnar/extractors/SimpleFieldExtractor.html#toString--">toString</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../org/tribuo/data/columnar/extractors/SimpleFieldExtractor.html" title="class in org.tribuo.data.columnar.extractors">SimpleFieldExtractor</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html?is-external=true" title="class or interface in java.time">LocalDate</a>&gt;</code></dd>
@@ -355,7 +355,7 @@ public&nbsp;<a href="../../../../../src-html/org/tribuo/data/columnar/extractors
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;<a href="../../../../../src-html/org/tribuo/data/columnar/extractors/DateExtractor.html#line.110">getProvenance</a>()</pre>
+<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;getProvenance()</pre>
 </li>
 </ul>
 </li>
@@ -426,6 +426,6 @@ public&nbsp;<a href="../../../../../src-html/org/tribuo/data/columnar/extractors
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

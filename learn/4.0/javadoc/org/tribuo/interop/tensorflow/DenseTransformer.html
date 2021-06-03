@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/interop/tensorflow/DenseTransformer.html#line.35">DenseTransformer</a>&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public class <span class="typeNameLabel">DenseTransformer&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/interop/tensorflow/ExampleTransformer.html" title="interface in org.tribuo.interop.tensorflow">ExampleTransformer</a>&lt;T&gt;</pre>
 <div class="block">Converts a sparse example into a dense float vector, then wraps it in a <code>Tensor</code>.</div>
@@ -252,7 +252,7 @@ implements <a href="../../../../org/tribuo/interop/tensorflow/ExampleTransformer
 <ul class="blockList">
 <li class="blockList">
 <h4>THRESHOLD</h4>
-<pre>public static final&nbsp;int <a href="../../../../src-html/org/tribuo/interop/tensorflow/DenseTransformer.html#line.42">THRESHOLD</a></pre>
+<pre>public static final&nbsp;int THRESHOLD</pre>
 <div class="block">Feature size beyond which a warning is generated (as ONNX requires dense features and large feature spaces are memory hungry).</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -266,7 +266,7 @@ implements <a href="../../../../org/tribuo/interop/tensorflow/ExampleTransformer
 <ul class="blockListLast">
 <li class="blockList">
 <h4>WARNING_THRESHOLD</h4>
-<pre>public static final&nbsp;int <a href="../../../../src-html/org/tribuo/interop/tensorflow/DenseTransformer.html#line.47">WARNING_THRESHOLD</a></pre>
+<pre>public static final&nbsp;int WARNING_THRESHOLD</pre>
 <div class="block">Number of times the feature size warning should be printed.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -288,7 +288,7 @@ implements <a href="../../../../org/tribuo/interop/tensorflow/ExampleTransformer
 <ul class="blockListLast">
 <li class="blockList">
 <h4>DenseTransformer</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/DenseTransformer.html#line.51">DenseTransformer</a>()</pre>
+<pre>public&nbsp;DenseTransformer()</pre>
 </li>
 </ul>
 </li>
@@ -305,7 +305,7 @@ implements <a href="../../../../org/tribuo/interop/tensorflow/ExampleTransformer
 <ul class="blockList">
 <li class="blockList">
 <h4>transform</h4>
-<pre>public&nbsp;org.tensorflow.Tensor&lt;?&gt;&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/DenseTransformer.html#line.85">transform</a>(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/DenseTransformer.html" title="type parameter in DenseTransformer">T</a>&gt;&nbsp;example,
+<pre>public&nbsp;org.tensorflow.Tensor&lt;?&gt;&nbsp;transform(<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/DenseTransformer.html" title="type parameter in DenseTransformer">T</a>&gt;&nbsp;example,
                                           <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/interop/tensorflow/ExampleTransformer.html#transform-org.tribuo.Example-org.tribuo.ImmutableFeatureMap-">ExampleTransformer</a></code></span></div>
 <div class="block">Converts an <a href="../../../../org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a> into a <code>Tensor</code> suitable for supplying as an input to a graph.
@@ -328,7 +328,7 @@ implements <a href="../../../../org/tribuo/interop/tensorflow/ExampleTransformer
 <ul class="blockList">
 <li class="blockList">
 <h4>transform</h4>
-<pre>public&nbsp;org.tensorflow.Tensor&lt;?&gt;&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/DenseTransformer.html#line.92">transform</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/DenseTransformer.html" title="type parameter in DenseTransformer">T</a>&gt;&gt;&nbsp;examples,
+<pre>public&nbsp;org.tensorflow.Tensor&lt;?&gt;&nbsp;transform(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/DenseTransformer.html" title="type parameter in DenseTransformer">T</a>&gt;&gt;&nbsp;examples,
                                           <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureIDMap)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/interop/tensorflow/ExampleTransformer.html#transform-java.util.List-org.tribuo.ImmutableFeatureMap-">ExampleTransformer</a></code></span></div>
 <div class="block">Converts a batch of <a href="../../../../org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a>s into a single <code>Tensor</code> suitable for supplying as
@@ -350,7 +350,7 @@ implements <a href="../../../../org/tribuo/interop/tensorflow/ExampleTransformer
 <ul class="blockList">
 <li class="blockList">
 <h4>transform</h4>
-<pre>public&nbsp;org.tensorflow.Tensor&lt;?&gt;&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/DenseTransformer.html#line.105">transform</a>(<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;vector)</pre>
+<pre>public&nbsp;org.tensorflow.Tensor&lt;?&gt;&nbsp;transform(<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;vector)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/interop/tensorflow/ExampleTransformer.html#transform-org.tribuo.math.la.SparseVector-">ExampleTransformer</a></code></span></div>
 <div class="block">Converts a <a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la"><code>SparseVector</code></a> representing the features into a <code>Tensor</code>.
  <p>
@@ -371,7 +371,7 @@ implements <a href="../../../../org/tribuo/interop/tensorflow/ExampleTransformer
 <ul class="blockList">
 <li class="blockList">
 <h4>transform</h4>
-<pre>public&nbsp;org.tensorflow.Tensor&lt;?&gt;&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/DenseTransformer.html#line.112">transform</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&gt;&nbsp;vectors)</pre>
+<pre>public&nbsp;org.tensorflow.Tensor&lt;?&gt;&nbsp;transform(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&gt;&nbsp;vectors)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/interop/tensorflow/ExampleTransformer.html#transform-java.util.List-">ExampleTransformer</a></code></span></div>
 <div class="block">Converts a list of <a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la"><code>SparseVector</code></a>s representing a batch of features into a <code>Tensor</code>.
  <p></div>
@@ -391,7 +391,7 @@ implements <a href="../../../../org/tribuo/interop/tensorflow/ExampleTransformer
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/DenseTransformer.html#line.125">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -404,7 +404,7 @@ implements <a href="../../../../org/tribuo/interop/tensorflow/ExampleTransformer
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/DenseTransformer.html#line.130">getProvenance</a>()</pre>
+<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&gt;</code></dd>
@@ -479,6 +479,6 @@ implements <a href="../../../../org/tribuo/interop/tensorflow/ExampleTransformer
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

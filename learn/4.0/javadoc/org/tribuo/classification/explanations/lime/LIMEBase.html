@@ -116,7 +116,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEBase.html#line.68">LIMEBase</a>
+<pre>public class <span class="typeNameLabel">LIMEBase</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../../org/tribuo/classification/explanations/TabularExplainer.html" title="interface in org.tribuo.classification.explanations">TabularExplainer</a>&lt;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;</pre>
 <div class="block">LIMEBase merges the lime_base.py and lime_tabular.py implementations, and deals with simple
@@ -301,7 +301,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/Tabula
 <ul class="blockList">
 <li class="blockList">
 <h4>WIDTH_CONSTANT</h4>
-<pre>public static final&nbsp;double <a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEBase.html#line.71">WIDTH_CONSTANT</a></pre>
+<pre>public static final&nbsp;double WIDTH_CONSTANT</pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.tribuo.classification.explanations.lime.LIMEBase.WIDTH_CONSTANT">Constant Field Values</a></dd>
@@ -314,7 +314,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/Tabula
 <ul class="blockList">
 <li class="blockList">
 <h4>DISTANCE_DELTA</h4>
-<pre>public static final&nbsp;double <a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEBase.html#line.72">DISTANCE_DELTA</a></pre>
+<pre>public static final&nbsp;double DISTANCE_DELTA</pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.tribuo.classification.explanations.lime.LIMEBase.DISTANCE_DELTA">Constant Field Values</a></dd>
@@ -327,7 +327,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/Tabula
 <ul class="blockList">
 <li class="blockList">
 <h4>regressionFactory</h4>
-<pre>protected static final&nbsp;<a href="../../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt; <a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEBase.html#line.74">regressionFactory</a></pre>
+<pre>protected static final&nbsp;<a href="../../../../../org/tribuo/OutputFactory.html" title="interface in org.tribuo">OutputFactory</a>&lt;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt; regressionFactory</pre>
 </li>
 </ul>
 <a name="evaluator">
@@ -336,7 +336,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/Tabula
 <ul class="blockList">
 <li class="blockList">
 <h4>evaluator</h4>
-<pre>protected static final&nbsp;<a href="../../../../../org/tribuo/regression/evaluation/RegressionEvaluator.html" title="class in org.tribuo.regression.evaluation">RegressionEvaluator</a> <a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEBase.html#line.75">evaluator</a></pre>
+<pre>protected static final&nbsp;<a href="../../../../../org/tribuo/regression/evaluation/RegressionEvaluator.html" title="class in org.tribuo.regression.evaluation">RegressionEvaluator</a> evaluator</pre>
 </li>
 </ul>
 <a name="rng">
@@ -345,7 +345,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/Tabula
 <ul class="blockList">
 <li class="blockList">
 <h4>rng</h4>
-<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/SplittableRandom.html?is-external=true" title="class or interface in java.util">SplittableRandom</a> <a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEBase.html#line.77">rng</a></pre>
+<pre>protected final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/SplittableRandom.html?is-external=true" title="class or interface in java.util">SplittableRandom</a> rng</pre>
 </li>
 </ul>
 <a name="innerModel">
@@ -354,7 +354,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/Tabula
 <ul class="blockList">
 <li class="blockList">
 <h4>innerModel</h4>
-<pre>protected final&nbsp;<a href="../../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt; <a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEBase.html#line.79">innerModel</a></pre>
+<pre>protected final&nbsp;<a href="../../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt; innerModel</pre>
 </li>
 </ul>
 <a name="explanationTrainer">
@@ -363,7 +363,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/Tabula
 <ul class="blockList">
 <li class="blockList">
 <h4>explanationTrainer</h4>
-<pre>protected final&nbsp;<a href="../../../../../org/tribuo/SparseTrainer.html" title="interface in org.tribuo">SparseTrainer</a>&lt;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt; <a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEBase.html#line.81">explanationTrainer</a></pre>
+<pre>protected final&nbsp;<a href="../../../../../org/tribuo/SparseTrainer.html" title="interface in org.tribuo">SparseTrainer</a>&lt;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt; explanationTrainer</pre>
 </li>
 </ul>
 <a name="numSamples">
@@ -372,7 +372,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/Tabula
 <ul class="blockList">
 <li class="blockList">
 <h4>numSamples</h4>
-<pre>protected final&nbsp;int <a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEBase.html#line.83">numSamples</a></pre>
+<pre>protected final&nbsp;int numSamples</pre>
 </li>
 </ul>
 <a name="numTrainingExamples">
@@ -381,7 +381,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/Tabula
 <ul class="blockList">
 <li class="blockList">
 <h4>numTrainingExamples</h4>
-<pre>protected final&nbsp;long <a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEBase.html#line.85">numTrainingExamples</a></pre>
+<pre>protected final&nbsp;long numTrainingExamples</pre>
 </li>
 </ul>
 <a name="kernelWidth">
@@ -390,7 +390,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/Tabula
 <ul class="blockListLast">
 <li class="blockList">
 <h4>kernelWidth</h4>
-<pre>protected final&nbsp;double <a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEBase.html#line.87">kernelWidth</a></pre>
+<pre>protected final&nbsp;double kernelWidth</pre>
 </li>
 </ul>
 </li>
@@ -407,7 +407,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/Tabula
 <ul class="blockListLast">
 <li class="blockList">
 <h4>LIMEBase</h4>
-<pre>public&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEBase.html#line.98">LIMEBase</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/SplittableRandom.html?is-external=true" title="class or interface in java.util">SplittableRandom</a>&nbsp;rng,
+<pre>public&nbsp;LIMEBase(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/SplittableRandom.html?is-external=true" title="class or interface in java.util">SplittableRandom</a>&nbsp;rng,
                 <a href="../../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;innerModel,
                 <a href="../../../../../org/tribuo/SparseTrainer.html" title="interface in org.tribuo">SparseTrainer</a>&lt;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;explanationTrainer,
                 int&nbsp;numSamples)</pre>
@@ -435,7 +435,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/Tabula
 <ul class="blockList">
 <li class="blockList">
 <h4>explain</h4>
-<pre>public&nbsp;<a href="../../../../../org/tribuo/classification/explanations/lime/LIMEExplanation.html" title="class in org.tribuo.classification.explanations.lime">LIMEExplanation</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEBase.html#line.118">explain</a>(<a href="../../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;example)</pre>
+<pre>public&nbsp;<a href="../../../../../org/tribuo/classification/explanations/lime/LIMEExplanation.html" title="class in org.tribuo.classification.explanations.lime">LIMEExplanation</a>&nbsp;explain(<a href="../../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;example)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/tribuo/classification/explanations/TabularExplainer.html#explain-org.tribuo.Example-">TabularExplainer</a></code></span></div>
 <div class="block">Explain why the supplied <a href="../../../../../org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a> is classified a certain way.</div>
 <dl>
@@ -454,7 +454,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/Tabula
 <ul class="blockList">
 <li class="blockList">
 <h4>explainWithSamples</h4>
-<pre>protected&nbsp;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="../../../../../org/tribuo/classification/explanations/lime/LIMEExplanation.html" title="class in org.tribuo.classification.explanations.lime">LIMEExplanation</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&gt;&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEBase.html#line.122">explainWithSamples</a>(<a href="../../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;example)</pre>
+<pre>protected&nbsp;com.oracle.labs.mlrg.olcut.util.Pair&lt;<a href="../../../../../org/tribuo/classification/explanations/lime/LIMEExplanation.html" title="class in org.tribuo.classification.explanations.lime">LIMEExplanation</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&gt;&gt;&nbsp;explainWithSamples(<a href="../../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;example)</pre>
 </li>
 </ul>
 <a name="samplePoint-java.util.Random-org.tribuo.ImmutableFeatureMap-long-org.tribuo.math.la.SparseVector-">
@@ -463,7 +463,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/Tabula
 <ul class="blockList">
 <li class="blockList">
 <h4>samplePoint</h4>
-<pre>public static&nbsp;<a href="../../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEBase.html#line.190">samplePoint</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Random.html?is-external=true" title="class or interface in java.util">Random</a>&nbsp;rng,
+<pre>public static&nbsp;<a href="../../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;samplePoint(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Random.html?is-external=true" title="class or interface in java.util">Random</a>&nbsp;rng,
                                          <a href="../../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;fMap,
                                          long&nbsp;numTrainingExamples,
                                          <a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;input)</pre>
@@ -485,7 +485,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/Tabula
 <ul class="blockList">
 <li class="blockList">
 <h4>trainExplainer</h4>
-<pre>protected&nbsp;<a href="../../../../../org/tribuo/SparseModel.html" title="class in org.tribuo">SparseModel</a>&lt;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEBase.html#line.238">trainExplainer</a>(<a href="../../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;target,
+<pre>protected&nbsp;<a href="../../../../../org/tribuo/SparseModel.html" title="class in org.tribuo">SparseModel</a>&lt;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;trainExplainer(<a href="../../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;target,
                                                 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&gt;&nbsp;samples)</pre>
 <div class="block">Trains the explanation model using the supplied sampled data and the input example.
  <p>
@@ -505,7 +505,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/Tabula
 <ul class="blockList">
 <li class="blockList">
 <h4>kernelDist</h4>
-<pre>public static&nbsp;double&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEBase.html#line.254">kernelDist</a>(double&nbsp;input,
+<pre>public static&nbsp;double&nbsp;kernelDist(double&nbsp;input,
                                 double&nbsp;width)</pre>
 <div class="block">Calculates an RBF kernel of a specific width.</div>
 <dl>
@@ -523,7 +523,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/Tabula
 <ul class="blockList">
 <li class="blockList">
 <h4>measureDistance</h4>
-<pre>public static&nbsp;double&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEBase.html#line.269">measureDistance</a>(<a href="../../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;fMap,
+<pre>public static&nbsp;double&nbsp;measureDistance(<a href="../../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;fMap,
                                      long&nbsp;numTrainingExamples,
                                      <a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;input,
                                      <a href="../../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>&nbsp;sample)</pre>
@@ -548,7 +548,7 @@ implements <a href="../../../../../org/tribuo/classification/explanations/Tabula
 <ul class="blockListLast">
 <li class="blockList">
 <h4>transformOutput</h4>
-<pre>public static&nbsp;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&nbsp;<a href="../../../../../src-html/org/tribuo/classification/explanations/lime/LIMEBase.html#line.387">transformOutput</a>(<a href="../../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;prediction)</pre>
+<pre>public static&nbsp;<a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&nbsp;transformOutput(<a href="../../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;prediction)</pre>
 <div class="block">Transforms a <a href="../../../../../org/tribuo/Prediction.html" title="class in org.tribuo"><code>Prediction</code></a> for a multiclass problem into a <a href="../../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression"><code>Regressor</code></a>
  output which represents the probability for each class.
  <p>
@@ -629,6 +629,6 @@ implements <a href="../../../../../org/tribuo/classification/explanations/Tabula
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

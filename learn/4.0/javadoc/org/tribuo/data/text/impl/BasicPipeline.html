@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../../src-html/org/tribuo/data/text/impl/BasicPipeline.html#line.37">BasicPipeline</a>
+<pre>public class <span class="typeNameLabel">BasicPipeline</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../../org/tribuo/data/text/TextPipeline.html" title="interface in org.tribuo.data.text">TextPipeline</a></pre>
 <div class="block">An example implementation of <a href="../../../../../org/tribuo/data/text/TextPipeline.html" title="interface in org.tribuo.data.text"><code>TextPipeline</code></a>. Generates unique ngrams.</div>
@@ -201,7 +201,7 @@ implements <a href="../../../../../org/tribuo/data/text/TextPipeline.html" title
 <ul class="blockListLast">
 <li class="blockList">
 <h4>BasicPipeline</h4>
-<pre>public&nbsp;<a href="../../../../../src-html/org/tribuo/data/text/impl/BasicPipeline.html#line.50">BasicPipeline</a>(<a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title="interface in org.tribuo.util.tokens">Tokenizer</a>&nbsp;tokenizer,
+<pre>public&nbsp;BasicPipeline(<a href="../../../../../org/tribuo/util/tokens/Tokenizer.html" title="interface in org.tribuo.util.tokens">Tokenizer</a>&nbsp;tokenizer,
                      int&nbsp;ngram)</pre>
 </li>
 </ul>
@@ -219,7 +219,7 @@ implements <a href="../../../../../org/tribuo/data/text/TextPipeline.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>postConfig</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../../src-html/org/tribuo/data/text/impl/BasicPipeline.html#line.65">postConfig</a>()</pre>
+<pre>public&nbsp;void&nbsp;postConfig()</pre>
 <div class="block">Used by the OLCUT configuration system, and should not be called by external code.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -233,7 +233,7 @@ implements <a href="../../../../../org/tribuo/data/text/TextPipeline.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../../src-html/org/tribuo/data/text/impl/BasicPipeline.html#line.72">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -246,7 +246,7 @@ implements <a href="../../../../../org/tribuo/data/text/TextPipeline.html" title
 <ul class="blockList">
 <li class="blockList">
 <h4>process</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/data/text/impl/BasicPipeline.html#line.77">process</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tag,
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../../org/tribuo/Feature.html" title="class in org.tribuo">Feature</a>&gt;&nbsp;process(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;tag,
                              <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;data)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../org/tribuo/data/text/TextPipeline.html#process-java.lang.String-java.lang.String-">TextPipeline</a></code></span></div>
 <div class="block">Extracts a list of features from the supplied text, using the tag to prepend the feature names.</div>
@@ -267,7 +267,7 @@ implements <a href="../../../../../org/tribuo/data/text/TextPipeline.html" title
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;<a href="../../../../../src-html/org/tribuo/data/text/impl/BasicPipeline.html#line.93">getProvenance</a>()</pre>
+<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&gt;</code></dd>
@@ -342,6 +342,6 @@ implements <a href="../../../../../org/tribuo/data/text/TextPipeline.html" title
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

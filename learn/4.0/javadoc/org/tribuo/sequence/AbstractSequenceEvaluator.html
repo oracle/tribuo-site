@@ -116,7 +116,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public abstract class <a href="../../../src-html/org/tribuo/sequence/AbstractSequenceEvaluator.html#line.35">AbstractSequenceEvaluator</a>&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;,C extends <a href="../../../org/tribuo/evaluation/metrics/MetricContext.html" title="class in org.tribuo.evaluation.metrics">MetricContext</a>&lt;T&gt;,E extends <a href="../../../org/tribuo/sequence/SequenceEvaluation.html" title="interface in org.tribuo.sequence">SequenceEvaluation</a>&lt;T&gt;,M extends <a href="../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="interface in org.tribuo.evaluation.metrics">EvaluationMetric</a>&lt;T,C&gt;&gt;
+<pre>public abstract class <span class="typeNameLabel">AbstractSequenceEvaluator&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;,C extends <a href="../../../org/tribuo/evaluation/metrics/MetricContext.html" title="class in org.tribuo.evaluation.metrics">MetricContext</a>&lt;T&gt;,E extends <a href="../../../org/tribuo/sequence/SequenceEvaluation.html" title="interface in org.tribuo.sequence">SequenceEvaluation</a>&lt;T&gt;,M extends <a href="../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="interface in org.tribuo.evaluation.metrics">EvaluationMetric</a>&lt;T,C&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../org/tribuo/sequence/SequenceEvaluator.html" title="interface in org.tribuo.sequence">SequenceEvaluator</a>&lt;T,E&gt;</pre>
 <div class="block">Base class for sequence evaluators.</div>
@@ -235,7 +235,7 @@ implements <a href="../../../org/tribuo/sequence/SequenceEvaluator.html" title="
 <ul class="blockListLast">
 <li class="blockList">
 <h4>AbstractSequenceEvaluator</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/sequence/AbstractSequenceEvaluator.html#line.35">AbstractSequenceEvaluator</a>()</pre>
+<pre>public&nbsp;AbstractSequenceEvaluator()</pre>
 </li>
 </ul>
 </li>
@@ -252,7 +252,7 @@ implements <a href="../../../org/tribuo/sequence/SequenceEvaluator.html" title="
 <ul class="blockList">
 <li class="blockList">
 <h4>evaluate</h4>
-<pre>public final&nbsp;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">E</a>&nbsp;<a href="../../../src-html/org/tribuo/sequence/AbstractSequenceEvaluator.html#line.49">evaluate</a>(<a href="../../../org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence">SequenceModel</a>&lt;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">T</a>&gt;&nbsp;model,
+<pre>public final&nbsp;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">E</a>&nbsp;evaluate(<a href="../../../org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence">SequenceModel</a>&lt;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">T</a>&gt;&nbsp;model,
                         <a href="../../../org/tribuo/sequence/SequenceDataset.html" title="class in org.tribuo.sequence">SequenceDataset</a>&lt;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">T</a>&gt;&nbsp;dataset)</pre>
 <div class="block">Produces an evaluation for the supplied model and dataset, by calling <a href="../../../org/tribuo/sequence/SequenceModel.html#predict-org.tribuo.sequence.SequenceExample-"><code>SequenceModel.predict(org.tribuo.sequence.SequenceExample&lt;T&gt;)</code></a>
  to create the predictions, then aggregating the appropriate statistics.</div>
@@ -273,7 +273,7 @@ implements <a href="../../../org/tribuo/sequence/SequenceEvaluator.html" title="
 <ul class="blockList">
 <li class="blockList">
 <h4>evaluate</h4>
-<pre>public final&nbsp;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">E</a>&nbsp;<a href="../../../src-html/org/tribuo/sequence/AbstractSequenceEvaluator.html#line.64">evaluate</a>(<a href="../../../org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence">SequenceModel</a>&lt;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">T</a>&gt;&nbsp;model,
+<pre>public final&nbsp;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">E</a>&nbsp;evaluate(<a href="../../../org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence">SequenceModel</a>&lt;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">T</a>&gt;&nbsp;model,
                         <a href="../../../org/tribuo/sequence/SequenceDataSource.html" title="interface in org.tribuo.sequence">SequenceDataSource</a>&lt;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">T</a>&gt;&nbsp;datasource)</pre>
 <div class="block">Produces an evaluation for the supplied model and datasource, by calling <a href="../../../org/tribuo/sequence/SequenceModel.html#predict-org.tribuo.sequence.SequenceExample-"><code>SequenceModel.predict(org.tribuo.sequence.SequenceExample&lt;T&gt;)</code></a>
  to create the predictions, then aggregating the appropriate statistics.</div>
@@ -294,7 +294,7 @@ implements <a href="../../../org/tribuo/sequence/SequenceEvaluator.html" title="
 <ul class="blockList">
 <li class="blockList">
 <h4>evaluate</h4>
-<pre>public final&nbsp;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">E</a>&nbsp;<a href="../../../src-html/org/tribuo/sequence/AbstractSequenceEvaluator.html#line.83">evaluate</a>(<a href="../../../org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence">SequenceModel</a>&lt;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">T</a>&gt;&nbsp;model,
+<pre>public final&nbsp;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">E</a>&nbsp;evaluate(<a href="../../../org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence">SequenceModel</a>&lt;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">T</a>&gt;&nbsp;model,
                         <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">T</a>&gt;&gt;&gt;&nbsp;predictions,
                         <a href="../../../org/tribuo/provenance/DataProvenance.html" title="interface in org.tribuo.provenance">DataProvenance</a>&nbsp;dataProvenance)</pre>
 <div class="block">Produces an evaluation for the supplied model and predictions by aggregating the appropriate statistics.
@@ -320,7 +320,7 @@ implements <a href="../../../org/tribuo/sequence/SequenceEvaluator.html" title="
 <ul class="blockList">
 <li class="blockList">
 <h4>computeResults</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../org/tribuo/evaluation/metrics/MetricID.html" title="class in org.tribuo.evaluation.metrics">MetricID</a>&lt;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">T</a>&gt;,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/sequence/AbstractSequenceEvaluator.html#line.108">computeResults</a>(<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">C</a>&nbsp;ctx,
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../org/tribuo/evaluation/metrics/MetricID.html" title="class in org.tribuo.evaluation.metrics">MetricID</a>&lt;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">T</a>&gt;,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;computeResults(<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">C</a>&nbsp;ctx,
                                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;? extends <a href="../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="interface in org.tribuo.evaluation.metrics">EvaluationMetric</a>&lt;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">T</a>,<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">C</a>&gt;&gt;&nbsp;metrics)</pre>
 <div class="block">Computes each metric given the context.</div>
 <dl>
@@ -338,7 +338,7 @@ implements <a href="../../../org/tribuo/sequence/SequenceEvaluator.html" title="
 <ul class="blockList">
 <li class="blockList">
 <h4>createMetrics</h4>
-<pre>protected abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">M</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/sequence/AbstractSequenceEvaluator.html#line.123">createMetrics</a>(<a href="../../../org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence">SequenceModel</a>&lt;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">T</a>&gt;&nbsp;model)</pre>
+<pre>protected abstract&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">M</a>&gt;&nbsp;createMetrics(<a href="../../../org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence">SequenceModel</a>&lt;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">T</a>&gt;&nbsp;model)</pre>
 <div class="block">Creates the appropriate set of metrics for this model, by querying for it's <a href="../../../org/tribuo/OutputInfo.html" title="interface in org.tribuo"><code>OutputInfo</code></a>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -354,7 +354,7 @@ implements <a href="../../../org/tribuo/sequence/SequenceEvaluator.html" title="
 <ul class="blockList">
 <li class="blockList">
 <h4>createContext</h4>
-<pre>protected abstract&nbsp;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">C</a>&nbsp;<a href="../../../src-html/org/tribuo/sequence/AbstractSequenceEvaluator.html#line.134">createContext</a>(<a href="../../../org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence">SequenceModel</a>&lt;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">T</a>&gt;&nbsp;model,
+<pre>protected abstract&nbsp;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">C</a>&nbsp;createContext(<a href="../../../org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence">SequenceModel</a>&lt;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">T</a>&gt;&nbsp;model,
                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">T</a>&gt;&gt;&gt;&nbsp;predictions)</pre>
 <div class="block">Create the context needed for evaluation. The context might store global properties or cache computation.</div>
 <dl>
@@ -374,7 +374,7 @@ implements <a href="../../../org/tribuo/sequence/SequenceEvaluator.html" title="
 <ul class="blockListLast">
 <li class="blockList">
 <h4>createEvaluation</h4>
-<pre>protected abstract&nbsp;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">E</a>&nbsp;<a href="../../../src-html/org/tribuo/sequence/AbstractSequenceEvaluator.html#line.143">createEvaluation</a>(<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">C</a>&nbsp;context,
+<pre>protected abstract&nbsp;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">E</a>&nbsp;createEvaluation(<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">C</a>&nbsp;context,
                                       <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../org/tribuo/evaluation/metrics/MetricID.html" title="class in org.tribuo.evaluation.metrics">MetricID</a>&lt;<a href="../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="type parameter in AbstractSequenceEvaluator">T</a>&gt;,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;results,
                                       <a href="../../../org/tribuo/provenance/EvaluationProvenance.html" title="class in org.tribuo.provenance">EvaluationProvenance</a>&nbsp;provenance)</pre>
 <div class="block">Create an evaluation for the given results</div>
@@ -456,6 +456,6 @@ implements <a href="../../../org/tribuo/sequence/SequenceEvaluator.html" title="
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

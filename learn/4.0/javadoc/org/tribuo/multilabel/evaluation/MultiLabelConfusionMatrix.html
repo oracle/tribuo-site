@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public final class <a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelConfusionMatrix.html#line.52">MultiLabelConfusionMatrix</a>
+<pre>public final class <span class="typeNameLabel">MultiLabelConfusionMatrix</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/classification/evaluation/ConfusionMatrix.html" title="interface in org.tribuo.classification.evaluation">ConfusionMatrix</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;</pre>
 <div class="block">A <a href="../../../../org/tribuo/classification/evaluation/ConfusionMatrix.html" title="interface in org.tribuo.classification.evaluation"><code>ConfusionMatrix</code></a> which accepts <a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel"><code>MultiLabel</code></a>s.
@@ -257,7 +257,7 @@ implements <a href="../../../../org/tribuo/classification/evaluation/ConfusionMa
 <ul class="blockListLast">
 <li class="blockList">
 <h4>MultiLabelConfusionMatrix</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelConfusionMatrix.html#line.58">MultiLabelConfusionMatrix</a>(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&nbsp;model,
+<pre>public&nbsp;MultiLabelConfusionMatrix(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&nbsp;model,
                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&gt;&nbsp;predictions)</pre>
 </li>
 </ul>
@@ -275,7 +275,7 @@ implements <a href="../../../../org/tribuo/classification/evaluation/ConfusionMa
 <ul class="blockList">
 <li class="blockList">
 <h4>support</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelConfusionMatrix.html#line.70">support</a>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;cls)</pre>
+<pre>public&nbsp;double&nbsp;support(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;cls)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ConfusionMatrix.html#support-T-">ConfusionMatrix</a></code></span></div>
 <div class="block">The number of examples with this true label this confusion matrix has seen.</div>
 <dl>
@@ -294,7 +294,7 @@ implements <a href="../../../../org/tribuo/classification/evaluation/ConfusionMa
 <ul class="blockList">
 <li class="blockList">
 <h4>getDomain</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelConfusionMatrix.html#line.96">getDomain</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&gt;&nbsp;getDomain()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ConfusionMatrix.html#getDomain--">ConfusionMatrix</a></code></span></div>
 <div class="block">Returns the classification domain that this confusion matrix operates over.</div>
 <dl>
@@ -311,7 +311,7 @@ implements <a href="../../../../org/tribuo/classification/evaluation/ConfusionMa
 <ul class="blockList">
 <li class="blockList">
 <h4>support</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelConfusionMatrix.html#line.101">support</a>()</pre>
+<pre>public&nbsp;double&nbsp;support()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ConfusionMatrix.html#support--">ConfusionMatrix</a></code></span></div>
 <div class="block">The number of examples this confusion matrix has seen.</div>
 <dl>
@@ -328,7 +328,7 @@ implements <a href="../../../../org/tribuo/classification/evaluation/ConfusionMa
 <ul class="blockList">
 <li class="blockList">
 <h4>tp</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelConfusionMatrix.html#line.110">tp</a>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;cls)</pre>
+<pre>public&nbsp;double&nbsp;tp(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;cls)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ConfusionMatrix.html#tp-T-">ConfusionMatrix</a></code></span></div>
 <div class="block">The number of true positives for the supplied label.</div>
 <dl>
@@ -347,7 +347,7 @@ implements <a href="../../../../org/tribuo/classification/evaluation/ConfusionMa
 <ul class="blockList">
 <li class="blockList">
 <h4>fp</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelConfusionMatrix.html#line.115">fp</a>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;cls)</pre>
+<pre>public&nbsp;double&nbsp;fp(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;cls)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ConfusionMatrix.html#fp-T-">ConfusionMatrix</a></code></span></div>
 <div class="block">The number of false positives for the supplied label.</div>
 <dl>
@@ -366,7 +366,7 @@ implements <a href="../../../../org/tribuo/classification/evaluation/ConfusionMa
 <ul class="blockList">
 <li class="blockList">
 <h4>fn</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelConfusionMatrix.html#line.120">fn</a>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;cls)</pre>
+<pre>public&nbsp;double&nbsp;fn(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;cls)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ConfusionMatrix.html#fn-T-">ConfusionMatrix</a></code></span></div>
 <div class="block">The number of false negatives for the supplied label.</div>
 <dl>
@@ -385,7 +385,7 @@ implements <a href="../../../../org/tribuo/classification/evaluation/ConfusionMa
 <ul class="blockList">
 <li class="blockList">
 <h4>tn</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelConfusionMatrix.html#line.125">tn</a>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;cls)</pre>
+<pre>public&nbsp;double&nbsp;tn(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;cls)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ConfusionMatrix.html#tn-T-">ConfusionMatrix</a></code></span></div>
 <div class="block">The number of true negatives for the supplied label.</div>
 <dl>
@@ -404,7 +404,7 @@ implements <a href="../../../../org/tribuo/classification/evaluation/ConfusionMa
 <ul class="blockList">
 <li class="blockList">
 <h4>confusion</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelConfusionMatrix.html#line.145">confusion</a>(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;predicted,
+<pre>public&nbsp;double&nbsp;confusion(<a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;predicted,
                         <a href="../../../../org/tribuo/multilabel/MultiLabel.html" title="class in org.tribuo.multilabel">MultiLabel</a>&nbsp;truth)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/evaluation/ConfusionMatrix.html#confusion-T-T-">ConfusionMatrix</a></code></span></div>
 <div class="block">The number of times the supplied predicted label was returned for the supplied true class.</div>
@@ -425,7 +425,7 @@ implements <a href="../../../../org/tribuo/classification/evaluation/ConfusionMa
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/multilabel/evaluation/MultiLabelConfusionMatrix.html#line.160">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -500,6 +500,6 @@ implements <a href="../../../../org/tribuo/classification/evaluation/ConfusionMa
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

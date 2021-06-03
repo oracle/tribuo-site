@@ -114,7 +114,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../../src-html/org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html#line.33">WeightedTripleDistribution</a>&lt;T1,T2,T3&gt;
+<pre>public class <span class="typeNameLabel">WeightedTripleDistribution&lt;T1,T2,T3&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
 <div class="block">Generates the counts for a triplet of vectors. Contains the joint
  count, the three pairwise counts, and the three marginal counts.</div>
@@ -250,7 +250,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>DEFAULT_MAP_SIZE</h4>
-<pre>public static final&nbsp;int <a href="../../../../../src-html/org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html#line.34">DEFAULT_MAP_SIZE</a></pre>
+<pre>public static final&nbsp;int DEFAULT_MAP_SIZE</pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../constant-values.html#org.tribuo.util.infotheory.impl.WeightedTripleDistribution.DEFAULT_MAP_SIZE">Constant Field Values</a></dd>
@@ -263,7 +263,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>count</h4>
-<pre>public final&nbsp;long <a href="../../../../../src-html/org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html#line.36">count</a></pre>
+<pre>public final&nbsp;long count</pre>
 </li>
 </ul>
 </li>
@@ -280,7 +280,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>WeightedTripleDistribution</h4>
-<pre>public&nbsp;<a href="../../../../../src-html/org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html#line.46">WeightedTripleDistribution</a>(long&nbsp;count,
+<pre>public&nbsp;WeightedTripleDistribution(long&nbsp;count,
                                   <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/CachedTriple.html" title="class in org.tribuo.util.infotheory.impl">CachedTriple</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T1</a>,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T2</a>,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T3</a>&gt;,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightCountTuple.html" title="class in org.tribuo.util.infotheory.impl">WeightCountTuple</a>&gt;&nbsp;jointCount,
                                   <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/CachedPair.html" title="class in org.tribuo.util.infotheory.impl">CachedPair</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T1</a>,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T2</a>&gt;,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightCountTuple.html" title="class in org.tribuo.util.infotheory.impl">WeightCountTuple</a>&gt;&nbsp;abCount,
                                   <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/CachedPair.html" title="class in org.tribuo.util.infotheory.impl">CachedPair</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T1</a>,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T3</a>&gt;,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightCountTuple.html" title="class in org.tribuo.util.infotheory.impl">WeightCountTuple</a>&gt;&nbsp;acCount,
@@ -304,7 +304,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getJointCount</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/CachedTriple.html" title="class in org.tribuo.util.infotheory.impl">CachedTriple</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T1</a>,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T2</a>,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T3</a>&gt;,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightCountTuple.html" title="class in org.tribuo.util.infotheory.impl">WeightCountTuple</a>&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html#line.57">getJointCount</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/CachedTriple.html" title="class in org.tribuo.util.infotheory.impl">CachedTriple</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T1</a>,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T2</a>,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T3</a>&gt;,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightCountTuple.html" title="class in org.tribuo.util.infotheory.impl">WeightCountTuple</a>&gt;&nbsp;getJointCount()</pre>
 </li>
 </ul>
 <a name="getABCount--">
@@ -313,7 +313,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getABCount</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/CachedPair.html" title="class in org.tribuo.util.infotheory.impl">CachedPair</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T1</a>,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T2</a>&gt;,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightCountTuple.html" title="class in org.tribuo.util.infotheory.impl">WeightCountTuple</a>&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html#line.61">getABCount</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/CachedPair.html" title="class in org.tribuo.util.infotheory.impl">CachedPair</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T1</a>,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T2</a>&gt;,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightCountTuple.html" title="class in org.tribuo.util.infotheory.impl">WeightCountTuple</a>&gt;&nbsp;getABCount()</pre>
 </li>
 </ul>
 <a name="getACCount--">
@@ -322,7 +322,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getACCount</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/CachedPair.html" title="class in org.tribuo.util.infotheory.impl">CachedPair</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T1</a>,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T3</a>&gt;,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightCountTuple.html" title="class in org.tribuo.util.infotheory.impl">WeightCountTuple</a>&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html#line.65">getACCount</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/CachedPair.html" title="class in org.tribuo.util.infotheory.impl">CachedPair</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T1</a>,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T3</a>&gt;,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightCountTuple.html" title="class in org.tribuo.util.infotheory.impl">WeightCountTuple</a>&gt;&nbsp;getACCount()</pre>
 </li>
 </ul>
 <a name="getBCCount--">
@@ -331,7 +331,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getBCCount</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/CachedPair.html" title="class in org.tribuo.util.infotheory.impl">CachedPair</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T2</a>,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T3</a>&gt;,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightCountTuple.html" title="class in org.tribuo.util.infotheory.impl">WeightCountTuple</a>&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html#line.69">getBCCount</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/CachedPair.html" title="class in org.tribuo.util.infotheory.impl">CachedPair</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T2</a>,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T3</a>&gt;,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightCountTuple.html" title="class in org.tribuo.util.infotheory.impl">WeightCountTuple</a>&gt;&nbsp;getBCCount()</pre>
 </li>
 </ul>
 <a name="getACount--">
@@ -340,7 +340,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getACount</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T1</a>,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightCountTuple.html" title="class in org.tribuo.util.infotheory.impl">WeightCountTuple</a>&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html#line.73">getACount</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T1</a>,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightCountTuple.html" title="class in org.tribuo.util.infotheory.impl">WeightCountTuple</a>&gt;&nbsp;getACount()</pre>
 </li>
 </ul>
 <a name="getBCount--">
@@ -349,7 +349,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getBCount</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T2</a>,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightCountTuple.html" title="class in org.tribuo.util.infotheory.impl">WeightCountTuple</a>&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html#line.77">getBCount</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T2</a>,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightCountTuple.html" title="class in org.tribuo.util.infotheory.impl">WeightCountTuple</a>&gt;&nbsp;getBCount()</pre>
 </li>
 </ul>
 <a name="getCCount--">
@@ -358,7 +358,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>getCCount</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T3</a>,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightCountTuple.html" title="class in org.tribuo.util.infotheory.impl">WeightCountTuple</a>&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html#line.81">getCCount</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="type parameter in WeightedTripleDistribution">T3</a>,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightCountTuple.html" title="class in org.tribuo.util.infotheory.impl">WeightCountTuple</a>&gt;&nbsp;getCCount()</pre>
 </li>
 </ul>
 <a name="constructFromLists-java.util.List-java.util.List-java.util.List-java.util.List-">
@@ -367,7 +367,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>constructFromLists</h4>
-<pre>public static&nbsp;&lt;T1,T2,T3&gt;&nbsp;<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="class in org.tribuo.util.infotheory.impl">WeightedTripleDistribution</a>&lt;T1,T2,T3&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html#line.85">constructFromLists</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;T1&gt;&nbsp;first,
+<pre>public static&nbsp;&lt;T1,T2,T3&gt;&nbsp;<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="class in org.tribuo.util.infotheory.impl">WeightedTripleDistribution</a>&lt;T1,T2,T3&gt;&nbsp;constructFromLists(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;T1&gt;&nbsp;first,
                                                                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;T2&gt;&nbsp;second,
                                                                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;T3&gt;&nbsp;third,
                                                                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;weights)</pre>
@@ -379,7 +379,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>constructFromMap</h4>
-<pre>public static&nbsp;&lt;T1,T2,T3&gt;&nbsp;<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="class in org.tribuo.util.infotheory.impl">WeightedTripleDistribution</a>&lt;T1,T2,T3&gt;&nbsp;<a href="../../../../../src-html/org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html#line.150">constructFromMap</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/CachedTriple.html" title="class in org.tribuo.util.infotheory.impl">CachedTriple</a>&lt;T1,T2,T3&gt;,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightCountTuple.html" title="class in org.tribuo.util.infotheory.impl">WeightCountTuple</a>&gt;&nbsp;jointCount)</pre>
+<pre>public static&nbsp;&lt;T1,T2,T3&gt;&nbsp;<a href="../../../../../org/tribuo/util/infotheory/impl/WeightedTripleDistribution.html" title="class in org.tribuo.util.infotheory.impl">WeightedTripleDistribution</a>&lt;T1,T2,T3&gt;&nbsp;constructFromMap(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../../org/tribuo/util/infotheory/impl/CachedTriple.html" title="class in org.tribuo.util.infotheory.impl">CachedTriple</a>&lt;T1,T2,T3&gt;,<a href="../../../../../org/tribuo/util/infotheory/impl/WeightCountTuple.html" title="class in org.tribuo.util.infotheory.impl">WeightCountTuple</a>&gt;&nbsp;jointCount)</pre>
 </li>
 </ul>
 </li>
@@ -450,6 +450,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

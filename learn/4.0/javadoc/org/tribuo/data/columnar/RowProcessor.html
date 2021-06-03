@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.58">RowProcessor</a>&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public class <span class="typeNameLabel">RowProcessor&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&gt;</pre>
 <div class="block">A processor which takes a Map of String to String and returns an <a href="../../../../org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a>.
@@ -405,7 +405,7 @@ implements com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.
 <li class="blockList">
 <h4>weightExtractor</h4>
 <pre>@Config(description="Extractor for the example weight.")
-protected&nbsp;<a href="../../../../org/tribuo/data/columnar/FieldExtractor.html" title="interface in org.tribuo.data.columnar">FieldExtractor</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Float.html?is-external=true" title="class or interface in java.lang">Float</a>&gt; <a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.70">weightExtractor</a></pre>
+protected&nbsp;<a href="../../../../org/tribuo/data/columnar/FieldExtractor.html" title="interface in org.tribuo.data.columnar">FieldExtractor</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Float.html?is-external=true" title="class or interface in java.lang">Float</a>&gt; weightExtractor</pre>
 </li>
 </ul>
 <a name="responseProcessor">
@@ -416,7 +416,7 @@ protected&nbsp;<a href="../../../../org/tribuo/data/columnar/FieldExtractor.html
 <h4>responseProcessor</h4>
 <pre>@Config(mandatory=true,
         description="Processor which extracts the response.")
-protected&nbsp;<a href="../../../../org/tribuo/data/columnar/ResponseProcessor.html" title="interface in org.tribuo.data.columnar">ResponseProcessor</a>&lt;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="type parameter in RowProcessor">T</a> extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="type parameter in RowProcessor">T</a>&gt;&gt; <a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.73">responseProcessor</a></pre>
+protected&nbsp;<a href="../../../../org/tribuo/data/columnar/ResponseProcessor.html" title="interface in org.tribuo.data.columnar">ResponseProcessor</a>&lt;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="type parameter in RowProcessor">T</a> extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="type parameter in RowProcessor">T</a>&gt;&gt; responseProcessor</pre>
 </li>
 </ul>
 <a name="fieldProcessorMap">
@@ -425,7 +425,7 @@ protected&nbsp;<a href="../../../../org/tribuo/data/columnar/ResponseProcessor.h
 <ul class="blockList">
 <li class="blockList">
 <h4>fieldProcessorMap</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/tribuo/data/columnar/FieldProcessor.html" title="interface in org.tribuo.data.columnar">FieldProcessor</a>&gt; <a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.80">fieldProcessorMap</a></pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/tribuo/data/columnar/FieldProcessor.html" title="interface in org.tribuo.data.columnar">FieldProcessor</a>&gt; fieldProcessorMap</pre>
 </li>
 </ul>
 <a name="regexMappingProcessors">
@@ -435,7 +435,7 @@ protected&nbsp;<a href="../../../../org/tribuo/data/columnar/ResponseProcessor.h
 <li class="blockList">
 <h4>regexMappingProcessors</h4>
 <pre>@Config(description="A map from a regex to field processors to apply to fields matching the regex.")
-protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/tribuo/data/columnar/FieldProcessor.html" title="interface in org.tribuo.data.columnar">FieldProcessor</a>&gt; <a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.86">regexMappingProcessors</a></pre>
+protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/tribuo/data/columnar/FieldProcessor.html" title="interface in org.tribuo.data.columnar">FieldProcessor</a>&gt; regexMappingProcessors</pre>
 </li>
 </ul>
 <a name="configured">
@@ -444,7 +444,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>configured</h4>
-<pre>protected&nbsp;boolean <a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.88">configured</a></pre>
+<pre>protected&nbsp;boolean configured</pre>
 </li>
 </ul>
 </li>
@@ -461,7 +461,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <ul class="blockList">
 <li class="blockList">
 <h4>RowProcessor</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.99">RowProcessor</a>(<a href="../../../../org/tribuo/data/columnar/ResponseProcessor.html" title="interface in org.tribuo.data.columnar">ResponseProcessor</a>&lt;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="type parameter in RowProcessor">T</a>&gt;&nbsp;responseProcessor,
+<pre>public&nbsp;RowProcessor(<a href="../../../../org/tribuo/data/columnar/ResponseProcessor.html" title="interface in org.tribuo.data.columnar">ResponseProcessor</a>&lt;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="type parameter in RowProcessor">T</a>&gt;&nbsp;responseProcessor,
                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/tribuo/data/columnar/FieldProcessor.html" title="interface in org.tribuo.data.columnar">FieldProcessor</a>&gt;&nbsp;fieldProcessorMap)</pre>
 <div class="block">Constructs a RowProcessor using the supplied responseProcessor to extract the response variable,
  and the supplied fieldProcessorMap to control which fields are parsed and how they are parsed.
@@ -481,7 +481,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <ul class="blockList">
 <li class="blockList">
 <h4>RowProcessor</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.117">RowProcessor</a>(<a href="../../../../org/tribuo/data/columnar/ResponseProcessor.html" title="interface in org.tribuo.data.columnar">ResponseProcessor</a>&lt;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="type parameter in RowProcessor">T</a>&gt;&nbsp;responseProcessor,
+<pre>public&nbsp;RowProcessor(<a href="../../../../org/tribuo/data/columnar/ResponseProcessor.html" title="interface in org.tribuo.data.columnar">ResponseProcessor</a>&lt;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="type parameter in RowProcessor">T</a>&gt;&nbsp;responseProcessor,
                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/tribuo/data/columnar/FieldProcessor.html" title="interface in org.tribuo.data.columnar">FieldProcessor</a>&gt;&nbsp;fieldProcessorMap,
                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../org/tribuo/data/columnar/FeatureProcessor.html" title="interface in org.tribuo.data.columnar">FeatureProcessor</a>&gt;&nbsp;featureProcessors)</pre>
 <div class="block">Constructs a RowProcessor using the supplied responseProcessor to extract the response variable,
@@ -507,7 +507,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <ul class="blockList">
 <li class="blockList">
 <h4>RowProcessor</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.139">RowProcessor</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/data/columnar/FieldExtractor.html" title="interface in org.tribuo.data.columnar">FieldExtractor</a>&lt;?&gt;&gt;&nbsp;metadataExtractors,
+<pre>public&nbsp;RowProcessor(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/data/columnar/FieldExtractor.html" title="interface in org.tribuo.data.columnar">FieldExtractor</a>&lt;?&gt;&gt;&nbsp;metadataExtractors,
                     <a href="../../../../org/tribuo/data/columnar/FieldExtractor.html" title="interface in org.tribuo.data.columnar">FieldExtractor</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Float.html?is-external=true" title="class or interface in java.lang">Float</a>&gt;&nbsp;weightExtractor,
                     <a href="../../../../org/tribuo/data/columnar/ResponseProcessor.html" title="interface in org.tribuo.data.columnar">ResponseProcessor</a>&lt;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="type parameter in RowProcessor">T</a>&gt;&nbsp;responseProcessor,
                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/tribuo/data/columnar/FieldProcessor.html" title="interface in org.tribuo.data.columnar">FieldProcessor</a>&gt;&nbsp;fieldProcessorMap,
@@ -539,7 +539,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <ul class="blockList">
 <li class="blockList">
 <h4>RowProcessor</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.168">RowProcessor</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/data/columnar/FieldExtractor.html" title="interface in org.tribuo.data.columnar">FieldExtractor</a>&lt;?&gt;&gt;&nbsp;metadataExtractors,
+<pre>public&nbsp;RowProcessor(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/data/columnar/FieldExtractor.html" title="interface in org.tribuo.data.columnar">FieldExtractor</a>&lt;?&gt;&gt;&nbsp;metadataExtractors,
                     <a href="../../../../org/tribuo/data/columnar/FieldExtractor.html" title="interface in org.tribuo.data.columnar">FieldExtractor</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Float.html?is-external=true" title="class or interface in java.lang">Float</a>&gt;&nbsp;weightExtractor,
                     <a href="../../../../org/tribuo/data/columnar/ResponseProcessor.html" title="interface in org.tribuo.data.columnar">ResponseProcessor</a>&lt;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="type parameter in RowProcessor">T</a>&gt;&nbsp;responseProcessor,
                     <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/tribuo/data/columnar/FieldProcessor.html" title="interface in org.tribuo.data.columnar">FieldProcessor</a>&gt;&nbsp;fieldProcessorMap,
@@ -577,7 +577,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <ul class="blockListLast">
 <li class="blockList">
 <h4>RowProcessor</h4>
-<pre>protected&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.183">RowProcessor</a>()</pre>
+<pre>protected&nbsp;RowProcessor()</pre>
 <div class="block">For olcut.</div>
 </li>
 </ul>
@@ -595,7 +595,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <ul class="blockList">
 <li class="blockList">
 <h4>postConfig</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.189">postConfig</a>()</pre>
+<pre>public&nbsp;void&nbsp;postConfig()</pre>
 <div class="block">Used by the OLCUT configuration system, and should not be called by external code.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
@@ -609,7 +609,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <ul class="blockList">
 <li class="blockList">
 <h4>getResponseProcessor</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/data/columnar/ResponseProcessor.html" title="interface in org.tribuo.data.columnar">ResponseProcessor</a>&lt;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="type parameter in RowProcessor">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.213">getResponseProcessor</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/data/columnar/ResponseProcessor.html" title="interface in org.tribuo.data.columnar">ResponseProcessor</a>&lt;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="type parameter in RowProcessor">T</a>&gt;&nbsp;getResponseProcessor()</pre>
 <div class="block">Returns the response processor this RowProcessor uses.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -623,7 +623,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <ul class="blockList">
 <li class="blockList">
 <h4>getFieldProcessors</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/tribuo/data/columnar/FieldProcessor.html" title="interface in org.tribuo.data.columnar">FieldProcessor</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.221">getFieldProcessors</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="../../../../org/tribuo/data/columnar/FieldProcessor.html" title="interface in org.tribuo.data.columnar">FieldProcessor</a>&gt;&nbsp;getFieldProcessors()</pre>
 <div class="block">Returns the map of <a href="../../../../org/tribuo/data/columnar/FieldProcessor.html" title="interface in org.tribuo.data.columnar"><code>FieldProcessor</code></a>s this RowProcessor uses.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -637,7 +637,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <ul class="blockList">
 <li class="blockList">
 <h4>getFeatureProcessors</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../org/tribuo/data/columnar/FeatureProcessor.html" title="interface in org.tribuo.data.columnar">FeatureProcessor</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.229">getFeatureProcessors</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../org/tribuo/data/columnar/FeatureProcessor.html" title="interface in org.tribuo.data.columnar">FeatureProcessor</a>&gt;&nbsp;getFeatureProcessors()</pre>
 <div class="block">Returns the set of <a href="../../../../org/tribuo/data/columnar/FeatureProcessor.html" title="interface in org.tribuo.data.columnar"><code>FeatureProcessor</code></a>s this RowProcessor uses.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -651,7 +651,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <ul class="blockList">
 <li class="blockList">
 <h4>generateExample</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="type parameter in RowProcessor">T</a>&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.241">generateExample</a>(<a href="../../../../org/tribuo/data/columnar/ColumnarIterator.Row.html" title="class in org.tribuo.data.columnar">ColumnarIterator.Row</a>&nbsp;row,
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="type parameter in RowProcessor">T</a>&gt;&gt;&nbsp;generateExample(<a href="../../../../org/tribuo/data/columnar/ColumnarIterator.Row.html" title="class in org.tribuo.data.columnar">ColumnarIterator.Row</a>&nbsp;row,
                                             boolean&nbsp;outputRequired)</pre>
 <div class="block">Generate an <a href="../../../../org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a> from the supplied row. Returns an empty Optional if
  there are no features, or the response is required but it was not found. The latter case is
@@ -671,7 +671,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <ul class="blockList">
 <li class="blockList">
 <h4>generateExample</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="type parameter in RowProcessor">T</a>&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.280">generateExample</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;row,
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="type parameter in RowProcessor">T</a>&gt;&gt;&nbsp;generateExample(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;row,
                                             boolean&nbsp;outputRequired)</pre>
 <div class="block">Generate an <a href="../../../../org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a> from the supplied row. Returns an empty Optional if
  there are no features, or the response is required but it was not found.
@@ -692,7 +692,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <ul class="blockList">
 <li class="blockList">
 <h4>generateExample</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="type parameter in RowProcessor">T</a>&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.293">generateExample</a>(long&nbsp;idx,
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html?is-external=true" title="class or interface in java.util">Optional</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="type parameter in RowProcessor">T</a>&gt;&gt;&nbsp;generateExample(long&nbsp;idx,
                                             <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;row,
                                             boolean&nbsp;outputRequired)</pre>
 <div class="block">Generate an <a href="../../../../org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a> from the supplied row. Returns an empty Optional if
@@ -714,7 +714,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <ul class="blockList">
 <li class="blockList">
 <h4>generateMetadata</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.302">generateMetadata</a>(<a href="../../../../org/tribuo/data/columnar/ColumnarIterator.Row.html" title="class in org.tribuo.data.columnar">ColumnarIterator.Row</a>&nbsp;row)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>&gt;&nbsp;generateMetadata(<a href="../../../../org/tribuo/data/columnar/ColumnarIterator.Row.html" title="class in org.tribuo.data.columnar">ColumnarIterator.Row</a>&nbsp;row)</pre>
 <div class="block">Generates the example metadata from the supplied row and index.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -730,7 +730,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <ul class="blockList">
 <li class="blockList">
 <h4>generateFeatures</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarFeature.html" title="class in org.tribuo.data.columnar">ColumnarFeature</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.328">generateFeatures</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;row)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarFeature.html" title="class in org.tribuo.data.columnar">ColumnarFeature</a>&gt;&nbsp;generateFeatures(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;row)</pre>
 <div class="block">Generates the features from the supplied row.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -746,7 +746,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <ul class="blockList">
 <li class="blockList">
 <h4>getColumnNames</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.353">getColumnNames</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;getColumnNames()</pre>
 <div class="block">The set of column names this will use for the feature processing.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -760,7 +760,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <ul class="blockList">
 <li class="blockList">
 <h4>getDescription</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.361">getDescription</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getDescription()</pre>
 <div class="block">Returns a description of the row processor and it's fields.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -774,7 +774,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.380">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -787,7 +787,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <ul class="blockList">
 <li class="blockList">
 <h4>getMetadataTypes</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.389">getMetadataTypes</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html?is-external=true" title="class or interface in java.lang">Class</a>&lt;?&gt;&gt;&nbsp;getMetadataTypes()</pre>
 <div class="block">Returns the metadata keys and value types that are extracted
  by this RowProcessor.</div>
 <dl>
@@ -802,7 +802,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <ul class="blockList">
 <li class="blockList">
 <h4>isConfigured</h4>
-<pre>public&nbsp;boolean&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.407">isConfigured</a>()</pre>
+<pre>public&nbsp;boolean&nbsp;isConfigured()</pre>
 <div class="block">Returns true if the regexes have been expanded into field processors.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -816,7 +816,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <ul class="blockList">
 <li class="blockList">
 <h4>expandRegexMapping</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.418">expandRegexMapping</a>(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="type parameter in RowProcessor">T</a>&gt;&nbsp;model)</pre>
+<pre>public&nbsp;void&nbsp;expandRegexMapping(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="type parameter in RowProcessor">T</a>&gt;&nbsp;model)</pre>
 <div class="block">Uses similar logic to <a href="../../../../org/tribuo/transform/TransformationMap.html#validateTransformations-org.tribuo.FeatureMap-"><code>TransformationMap.validateTransformations(org.tribuo.FeatureMap)</code></a> to check the regexes
  against the <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo"><code>ImmutableFeatureMap</code></a> contained in the supplied <a href="../../../../org/tribuo/Model.html" title="class in org.tribuo"><code>Model</code></a>.
  Throws an IllegalArgumentException if any regexes overlap with
@@ -833,7 +833,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <ul class="blockList">
 <li class="blockList">
 <h4>expandRegexMapping</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.428">expandRegexMapping</a>(<a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureMap)</pre>
+<pre>public&nbsp;void&nbsp;expandRegexMapping(<a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureMap)</pre>
 <div class="block">Uses similar logic to <a href="../../../../org/tribuo/transform/TransformationMap.html#validateTransformations-org.tribuo.FeatureMap-"><code>TransformationMap.validateTransformations(org.tribuo.FeatureMap)</code></a> to check the regexes
  against the supplied feature map. Throws an IllegalArgumentException if any regexes overlap with
  themselves, or with the currently defined set of fieldProcessorMap.</div>
@@ -849,7 +849,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <ul class="blockList">
 <li class="blockList">
 <h4>expandRegexMapping</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.447">expandRegexMapping</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;fieldNames)</pre>
+<pre>public&nbsp;void&nbsp;expandRegexMapping(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;fieldNames)</pre>
 <div class="block">Uses similar logic to <a href="../../../../org/tribuo/transform/TransformationMap.html#validateTransformations-org.tribuo.FeatureMap-"><code>TransformationMap.validateTransformations(org.tribuo.FeatureMap)</code></a> to check the regexes
  against the supplied list of field names. Throws an IllegalArgumentException if any regexes overlap with
  themselves, or with the currently defined set of fieldProcessorMap or if there are unmatched regexes after
@@ -866,7 +866,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <ul class="blockList">
 <li class="blockList">
 <h4>partialExpandRegexMapping</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.470">partialExpandRegexMapping</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;fieldNames)</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;partialExpandRegexMapping(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html?is-external=true" title="class or interface in java.util">Collection</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&gt;&nbsp;fieldNames)</pre>
 <div class="block">Caveat Implementor! This method contains the logic of <a href="../../../../org/tribuo/data/columnar/RowProcessor.html#expandRegexMapping-org.tribuo.Model-"><code>expandRegexMapping(org.tribuo.Model&lt;T&gt;)</code></a>
  without any of the checks that ensure the RowProcessor is in a valid state. This can be used in a subclass to expand a regex mapping
  several times for a single instance of RowProcessor. The caller is responsible for ensuring that fieldNames are not duplicated
@@ -886,7 +886,7 @@ protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.
 <li class="blockList">
 <h4>copy</h4>
 <pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
-public&nbsp;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="class in org.tribuo.data.columnar">RowProcessor</a>&lt;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="type parameter in RowProcessor">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.511">copy</a>()</pre>
+public&nbsp;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="class in org.tribuo.data.columnar">RowProcessor</a>&lt;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" title="type parameter in RowProcessor">T</a>&gt;&nbsp;copy()</pre>
 <div class="block"><span class="deprecatedLabel">Deprecated.</span>&nbsp;<span class="deprecationComment">In a future release this API will change, in the meantime this is the correct way to get a row
    processor with clean state.
  <p>
@@ -910,7 +910,7 @@ public&nbsp;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" tit
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/RowProcessor.html#line.516">getProvenance</a>()</pre>
+<pre>public&nbsp;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&gt;</code></dd>
@@ -985,6 +985,6 @@ public&nbsp;<a href="../../../../org/tribuo/data/columnar/RowProcessor.html" tit
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

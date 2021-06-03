@@ -117,7 +117,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/classification/sequence/LabelSequenceEvaluator.html#line.38">LabelSequenceEvaluator</a>
+<pre>public class <span class="typeNameLabel">LabelSequenceEvaluator</span>
 extends <a href="../../../../org/tribuo/sequence/AbstractSequenceEvaluator.html" title="class in org.tribuo.sequence">AbstractSequenceEvaluator</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>,<a href="../../../../org/tribuo/classification/evaluation/LabelMetric.Context.html" title="class in org.tribuo.classification.evaluation">LabelMetric.Context</a>,<a href="../../../../org/tribuo/classification/sequence/LabelSequenceEvaluation.html" title="class in org.tribuo.classification.sequence">LabelSequenceEvaluation</a>,<a href="../../../../org/tribuo/classification/evaluation/LabelMetric.html" title="class in org.tribuo.classification.evaluation">LabelMetric</a>&gt;</pre>
 <div class="block">A sequence evaluator for labels.</div>
 </li>
@@ -211,7 +211,7 @@ extends <a href="../../../../org/tribuo/sequence/AbstractSequenceEvaluator.html"
 <ul class="blockListLast">
 <li class="blockList">
 <h4>LabelSequenceEvaluator</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/classification/sequence/LabelSequenceEvaluator.html#line.38">LabelSequenceEvaluator</a>()</pre>
+<pre>public&nbsp;LabelSequenceEvaluator()</pre>
 </li>
 </ul>
 </li>
@@ -228,7 +228,7 @@ extends <a href="../../../../org/tribuo/sequence/AbstractSequenceEvaluator.html"
 <ul class="blockList">
 <li class="blockList">
 <h4>createMetrics</h4>
-<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../org/tribuo/classification/evaluation/LabelMetric.html" title="class in org.tribuo.classification.evaluation">LabelMetric</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/classification/sequence/LabelSequenceEvaluator.html#line.41">createMetrics</a>(<a href="../../../../org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence">SequenceModel</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;model)</pre>
+<pre>protected&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../../org/tribuo/classification/evaluation/LabelMetric.html" title="class in org.tribuo.classification.evaluation">LabelMetric</a>&gt;&nbsp;createMetrics(<a href="../../../../org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence">SequenceModel</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;model)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/sequence/AbstractSequenceEvaluator.html#createMetrics-org.tribuo.sequence.SequenceModel-">AbstractSequenceEvaluator</a></code></span></div>
 <div class="block">Creates the appropriate set of metrics for this model, by querying for it's <a href="../../../../org/tribuo/OutputInfo.html" title="interface in org.tribuo"><code>OutputInfo</code></a>.</div>
 <dl>
@@ -247,7 +247,7 @@ extends <a href="../../../../org/tribuo/sequence/AbstractSequenceEvaluator.html"
 <ul class="blockList">
 <li class="blockList">
 <h4>createContext</h4>
-<pre>protected&nbsp;<a href="../../../../org/tribuo/classification/evaluation/LabelMetric.Context.html" title="class in org.tribuo.classification.evaluation">LabelMetric.Context</a>&nbsp;<a href="../../../../src-html/org/tribuo/classification/sequence/LabelSequenceEvaluator.html#line.87">createContext</a>(<a href="../../../../org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence">SequenceModel</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;model,
+<pre>protected&nbsp;<a href="../../../../org/tribuo/classification/evaluation/LabelMetric.Context.html" title="class in org.tribuo.classification.evaluation">LabelMetric.Context</a>&nbsp;createContext(<a href="../../../../org/tribuo/sequence/SequenceModel.html" title="class in org.tribuo.sequence">SequenceModel</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&nbsp;model,
                                             <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;&gt;&gt;&nbsp;predictions)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/sequence/AbstractSequenceEvaluator.html#createContext-org.tribuo.sequence.SequenceModel-java.util.List-">AbstractSequenceEvaluator</a></code></span></div>
 <div class="block">Create the context needed for evaluation. The context might store global properties or cache computation.</div>
@@ -268,7 +268,7 @@ extends <a href="../../../../org/tribuo/sequence/AbstractSequenceEvaluator.html"
 <ul class="blockListLast">
 <li class="blockList">
 <h4>createEvaluation</h4>
-<pre>protected&nbsp;<a href="../../../../org/tribuo/classification/sequence/LabelSequenceEvaluation.html" title="class in org.tribuo.classification.sequence">LabelSequenceEvaluation</a>&nbsp;<a href="../../../../src-html/org/tribuo/classification/sequence/LabelSequenceEvaluator.html#line.93">createEvaluation</a>(<a href="../../../../org/tribuo/classification/evaluation/LabelMetric.Context.html" title="class in org.tribuo.classification.evaluation">LabelMetric.Context</a>&nbsp;ctx,
+<pre>protected&nbsp;<a href="../../../../org/tribuo/classification/sequence/LabelSequenceEvaluation.html" title="class in org.tribuo.classification.sequence">LabelSequenceEvaluation</a>&nbsp;createEvaluation(<a href="../../../../org/tribuo/classification/evaluation/LabelMetric.Context.html" title="class in org.tribuo.classification.evaluation">LabelMetric.Context</a>&nbsp;ctx,
                                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/MetricID.html" title="class in org.tribuo.evaluation.metrics">MetricID</a>&lt;<a href="../../../../org/tribuo/classification/Label.html" title="class in org.tribuo.classification">Label</a>&gt;,<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html?is-external=true" title="class or interface in java.lang">Double</a>&gt;&nbsp;results,
                                                    <a href="../../../../org/tribuo/provenance/EvaluationProvenance.html" title="class in org.tribuo.provenance">EvaluationProvenance</a>&nbsp;provenance)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../org/tribuo/sequence/AbstractSequenceEvaluator.html#createEvaluation-C-java.util.Map-org.tribuo.provenance.EvaluationProvenance-">AbstractSequenceEvaluator</a></code></span></div>
@@ -353,6 +353,6 @@ extends <a href="../../../../org/tribuo/sequence/AbstractSequenceEvaluator.html"
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

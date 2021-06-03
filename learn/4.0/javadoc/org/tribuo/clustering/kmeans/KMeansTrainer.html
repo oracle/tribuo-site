@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/clustering/kmeans/KMeansTrainer.html#line.71">KMeansTrainer</a>
+<pre>public class <span class="typeNameLabel">KMeansTrainer</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&gt;</pre>
 <div class="block">A K-Means trainer, which generates a K-means clustering of the supplied
@@ -285,7 +285,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockListLast">
 <li class="blockList">
 <h4>KMeansTrainer</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/clustering/kmeans/KMeansTrainer.html#line.124">KMeansTrainer</a>(int&nbsp;centroids,
+<pre>public&nbsp;KMeansTrainer(int&nbsp;centroids,
                      int&nbsp;iterations,
                      <a href="../../../../org/tribuo/clustering/kmeans/KMeansTrainer.Distance.html" title="enum in org.tribuo.clustering.kmeans">KMeansTrainer.Distance</a>&nbsp;distanceType,
                      int&nbsp;numThreads,
@@ -315,7 +315,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockList">
 <li class="blockList">
 <h4>postConfig</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/clustering/kmeans/KMeansTrainer.html#line.134">postConfig</a>()</pre>
+<pre>public&nbsp;void&nbsp;postConfig()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>postConfig</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.config.Configurable</code></dd>
@@ -328,7 +328,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockList">
 <li class="blockList">
 <h4>train</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/clustering/kmeans/KMeansModel.html" title="class in org.tribuo.clustering.kmeans">KMeansModel</a>&nbsp;<a href="../../../../src-html/org/tribuo/clustering/kmeans/KMeansTrainer.html#line.139">train</a>(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&gt;&nbsp;examples,
+<pre>public&nbsp;<a href="../../../../org/tribuo/clustering/kmeans/KMeansModel.html" title="class in org.tribuo.clustering.kmeans">KMeansModel</a>&nbsp;train(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&gt;&nbsp;examples,
                          <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,com.oracle.labs.mlrg.olcut.provenance.Provenance&gt;&nbsp;runProvenance)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/Trainer.html#train-org.tribuo.Dataset-java.util.Map-">Trainer</a></code></span></div>
 <div class="block">Trains a predictive model using the examples in the given data set.</div>
@@ -349,7 +349,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockList">
 <li class="blockList">
 <h4>train</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/clustering/kmeans/KMeansModel.html" title="class in org.tribuo.clustering.kmeans">KMeansModel</a>&nbsp;<a href="../../../../src-html/org/tribuo/clustering/kmeans/KMeansTrainer.html#line.252">train</a>(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&gt;&nbsp;dataset)</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/clustering/kmeans/KMeansModel.html" title="class in org.tribuo.clustering.kmeans">KMeansModel</a>&nbsp;train(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&gt;&nbsp;dataset)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/Trainer.html#train-org.tribuo.Dataset-">Trainer</a></code></span></div>
 <div class="block">Trains a predictive model using the examples in the given data set.</div>
 <dl>
@@ -368,7 +368,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockList">
 <li class="blockList">
 <h4>getInvocationCount</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/clustering/kmeans/KMeansTrainer.html#line.257">getInvocationCount</a>()</pre>
+<pre>public&nbsp;int&nbsp;getInvocationCount()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/Trainer.html#getInvocationCount--">Trainer</a></code></span></div>
 <div class="block">The number of times this trainer instance has had it's train method invoked.
  <p>
@@ -388,7 +388,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockList">
 <li class="blockList">
 <h4>initialiseCentroids</h4>
-<pre>protected static&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>[]&nbsp;<a href="../../../../src-html/org/tribuo/clustering/kmeans/KMeansTrainer.html#line.272">initialiseCentroids</a>(int&nbsp;centroids,
+<pre>protected static&nbsp;<a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>[]&nbsp;initialiseCentroids(int&nbsp;centroids,
                                                    <a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/clustering/ClusterID.html" title="class in org.tribuo.clustering">ClusterID</a>&gt;&nbsp;examples,
                                                    <a href="../../../../org/tribuo/ImmutableFeatureMap.html" title="class in org.tribuo">ImmutableFeatureMap</a>&nbsp;featureMap,
                                                    <a href="https://docs.oracle.com/javase/8/docs/api/java/util/SplittableRandom.html?is-external=true" title="class or interface in java.util">SplittableRandom</a>&nbsp;rng)</pre>
@@ -412,7 +412,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockList">
 <li class="blockList">
 <h4>mStep</h4>
-<pre>protected&nbsp;void&nbsp;<a href="../../../../src-html/org/tribuo/clustering/kmeans/KMeansTrainer.html#line.287">mStep</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ForkJoinPool.html?is-external=true" title="class or interface in java.util.concurrent">ForkJoinPool</a>&nbsp;fjp,
+<pre>protected&nbsp;void&nbsp;mStep(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ForkJoinPool.html?is-external=true" title="class or interface in java.util.concurrent">ForkJoinPool</a>&nbsp;fjp,
                      <a href="../../../../org/tribuo/math/la/DenseVector.html" title="class in org.tribuo.math.la">DenseVector</a>[]&nbsp;centroidVectors,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>,<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html?is-external=true" title="class or interface in java.lang">Integer</a>&gt;&gt;&nbsp;clusterAssignments,
                      <a href="../../../../org/tribuo/math/la/SparseVector.html" title="class in org.tribuo.math.la">SparseVector</a>[]&nbsp;data,
@@ -425,7 +425,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/clustering/kmeans/KMeansTrainer.html#line.315">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -438,7 +438,7 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&nbsp;<a href="../../../../src-html/org/tribuo/clustering/kmeans/KMeansTrainer.html#line.320">getProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&gt;</code></dd>
@@ -513,6 +513,6 @@ implements <a href="../../../../org/tribuo/Trainer.html" title="interface in org
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

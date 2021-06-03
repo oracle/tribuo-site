@@ -113,7 +113,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public final class <a href="../../../src-html/org/tribuo/evaluation/OnlineEvaluator.html#line.34">OnlineEvaluator</a>&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;,E extends <a href="../../../org/tribuo/evaluation/Evaluation.html" title="interface in org.tribuo.evaluation">Evaluation</a>&lt;T&gt;&gt;
+<pre>public final class <span class="typeNameLabel">OnlineEvaluator&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;,E extends <a href="../../../org/tribuo/evaluation/Evaluation.html" title="interface in org.tribuo.evaluation">Evaluation</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
 <div class="block">An evaluator which aggregates predictions and produces <a href="../../../org/tribuo/evaluation/Evaluation.html" title="interface in org.tribuo.evaluation"><code>Evaluation</code></a>s
  covering all the <a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo"><code>Prediction</code></a>s it has seen or created.</div>
@@ -215,7 +215,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>OnlineEvaluator</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/evaluation/OnlineEvaluator.html#line.48">OnlineEvaluator</a>(<a href="../../../org/tribuo/evaluation/Evaluator.html" title="interface in org.tribuo.evaluation">Evaluator</a>&lt;<a href="../../../org/tribuo/evaluation/OnlineEvaluator.html" title="type parameter in OnlineEvaluator">T</a>,<a href="../../../org/tribuo/evaluation/OnlineEvaluator.html" title="type parameter in OnlineEvaluator">E</a>&gt;&nbsp;evaluator,
+<pre>public&nbsp;OnlineEvaluator(<a href="../../../org/tribuo/evaluation/Evaluator.html" title="interface in org.tribuo.evaluation">Evaluator</a>&lt;<a href="../../../org/tribuo/evaluation/OnlineEvaluator.html" title="type parameter in OnlineEvaluator">T</a>,<a href="../../../org/tribuo/evaluation/OnlineEvaluator.html" title="type parameter in OnlineEvaluator">E</a>&gt;&nbsp;evaluator,
                        <a href="../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../org/tribuo/evaluation/OnlineEvaluator.html" title="type parameter in OnlineEvaluator">T</a>&gt;&nbsp;model,
                        <a href="../../../org/tribuo/provenance/DataProvenance.html" title="interface in org.tribuo.provenance">DataProvenance</a>&nbsp;provenance)</pre>
 <div class="block">Constructs an <code>OnlineEvaluator</code> which accumulates predictions.</div>
@@ -241,7 +241,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>evaluate</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/evaluation/OnlineEvaluator.html" title="type parameter in OnlineEvaluator">E</a>&nbsp;<a href="../../../src-html/org/tribuo/evaluation/OnlineEvaluator.html#line.59">evaluate</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/evaluation/OnlineEvaluator.html" title="type parameter in OnlineEvaluator">E</a>&nbsp;evaluate()</pre>
 <div class="block">Creates an <a href="../../../org/tribuo/evaluation/Evaluation.html" title="interface in org.tribuo.evaluation"><code>Evaluation</code></a> containing all the current
  predictions.</div>
 <dl>
@@ -256,7 +256,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>predictAndObserve</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../org/tribuo/evaluation/OnlineEvaluator.html" title="type parameter in OnlineEvaluator">T</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/evaluation/OnlineEvaluator.html#line.68">predictAndObserve</a>(<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/evaluation/OnlineEvaluator.html" title="type parameter in OnlineEvaluator">T</a>&gt;&nbsp;example)</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../org/tribuo/evaluation/OnlineEvaluator.html" title="type parameter in OnlineEvaluator">T</a>&gt;&nbsp;predictAndObserve(<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/evaluation/OnlineEvaluator.html" title="type parameter in OnlineEvaluator">T</a>&gt;&nbsp;example)</pre>
 <div class="block">Feeds the example to the model, records the prediction and returns it.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -272,7 +272,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>predictAndObserve</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../org/tribuo/evaluation/OnlineEvaluator.html" title="type parameter in OnlineEvaluator">T</a>&gt;&gt;&nbsp;<a href="../../../src-html/org/tribuo/evaluation/OnlineEvaluator.html#line.79">predictAndObserve</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/evaluation/OnlineEvaluator.html" title="type parameter in OnlineEvaluator">T</a>&gt;&gt;&nbsp;examples)</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../org/tribuo/evaluation/OnlineEvaluator.html" title="type parameter in OnlineEvaluator">T</a>&gt;&gt;&nbsp;predictAndObserve(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html?is-external=true" title="class or interface in java.lang">Iterable</a>&lt;<a href="../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../org/tribuo/evaluation/OnlineEvaluator.html" title="type parameter in OnlineEvaluator">T</a>&gt;&gt;&nbsp;examples)</pre>
 <div class="block">Feeds the examples to the model, records the predictions and returns them.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -288,7 +288,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>observe</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/evaluation/OnlineEvaluator.html#line.89">observe</a>(<a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../org/tribuo/evaluation/OnlineEvaluator.html" title="type parameter in OnlineEvaluator">T</a>&gt;&nbsp;newPrediction)</pre>
+<pre>public&nbsp;void&nbsp;observe(<a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../org/tribuo/evaluation/OnlineEvaluator.html" title="type parameter in OnlineEvaluator">T</a>&gt;&nbsp;newPrediction)</pre>
 <div class="block">Records the supplied prediction.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -302,7 +302,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockListLast">
 <li class="blockList">
 <h4>observe</h4>
-<pre>public&nbsp;void&nbsp;<a href="../../../src-html/org/tribuo/evaluation/OnlineEvaluator.html#line.97">observe</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../org/tribuo/evaluation/OnlineEvaluator.html" title="type parameter in OnlineEvaluator">T</a>&gt;&gt;&nbsp;newPredictions)</pre>
+<pre>public&nbsp;void&nbsp;observe(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../org/tribuo/evaluation/OnlineEvaluator.html" title="type parameter in OnlineEvaluator">T</a>&gt;&gt;&nbsp;newPredictions)</pre>
 <div class="block">Records all the supplied predictions.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -378,6 +378,6 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

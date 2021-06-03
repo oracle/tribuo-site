@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/classification/libsvm/LibSVMOptions.html#line.29">LibSVMOptions</a>
+<pre>public class <span class="typeNameLabel">LibSVMOptions</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/classification/ClassificationOptions.html" title="interface in org.tribuo.classification">ClassificationOptions</a>&lt;<a href="../../../../org/tribuo/classification/libsvm/LibSVMClassificationTrainer.html" title="class in org.tribuo.classification.libsvm">LibSVMClassificationTrainer</a>&gt;</pre>
 <div class="block">CLI options for training a LibSVM classification model.</div>
@@ -240,7 +240,7 @@ implements <a href="../../../../org/tribuo/classification/ClassificationOptions.
 <h4>svmCoefficient</h4>
 <pre>@Option(longName="svm-coefficient",
         usage="Intercept in kernel function. Defaults to 0.0.")
-public&nbsp;double <a href="../../../../src-html/org/tribuo/classification/libsvm/LibSVMOptions.html#line.37">svmCoefficient</a></pre>
+public&nbsp;double svmCoefficient</pre>
 </li>
 </ul>
 <a name="svmDegree">
@@ -251,7 +251,7 @@ public&nbsp;double <a href="../../../../src-html/org/tribuo/classification/libsv
 <h4>svmDegree</h4>
 <pre>@Option(longName="svm-degree",
         usage="Degree in polynomial kernel. Defaults to 3.")
-public&nbsp;int <a href="../../../../src-html/org/tribuo/classification/libsvm/LibSVMOptions.html#line.39">svmDegree</a></pre>
+public&nbsp;int svmDegree</pre>
 </li>
 </ul>
 <a name="svmGamma">
@@ -262,7 +262,7 @@ public&nbsp;int <a href="../../../../src-html/org/tribuo/classification/libsvm/L
 <h4>svmGamma</h4>
 <pre>@Option(longName="svm-gamma",
         usage="Gamma value in kernel function. Defaults to 0.0.")
-public&nbsp;double <a href="../../../../src-html/org/tribuo/classification/libsvm/LibSVMOptions.html#line.41">svmGamma</a></pre>
+public&nbsp;double svmGamma</pre>
 </li>
 </ul>
 <a name="svmKernel">
@@ -273,7 +273,7 @@ public&nbsp;double <a href="../../../../src-html/org/tribuo/classification/libsv
 <h4>svmKernel</h4>
 <pre>@Option(longName="svm-kernel",
         usage="Type of SVM kernel. Defaults to LINEAR.")
-public&nbsp;<a href="../../../../org/tribuo/common/libsvm/KernelType.html" title="enum in org.tribuo.common.libsvm">KernelType</a> <a href="../../../../src-html/org/tribuo/classification/libsvm/LibSVMOptions.html#line.43">svmKernel</a></pre>
+public&nbsp;<a href="../../../../org/tribuo/common/libsvm/KernelType.html" title="enum in org.tribuo.common.libsvm">KernelType</a> svmKernel</pre>
 </li>
 </ul>
 <a name="svmType">
@@ -284,7 +284,7 @@ public&nbsp;<a href="../../../../org/tribuo/common/libsvm/KernelType.html" title
 <h4>svmType</h4>
 <pre>@Option(longName="svm-type",
         usage="Type of SVM. Defaults to C_SVC.")
-public&nbsp;<a href="../../../../org/tribuo/classification/libsvm/SVMClassificationType.SVMMode.html" title="enum in org.tribuo.classification.libsvm">SVMClassificationType.SVMMode</a> <a href="../../../../src-html/org/tribuo/classification/libsvm/LibSVMOptions.html#line.45">svmType</a></pre>
+public&nbsp;<a href="../../../../org/tribuo/classification/libsvm/SVMClassificationType.SVMMode.html" title="enum in org.tribuo.classification.libsvm">SVMClassificationType.SVMMode</a> svmType</pre>
 </li>
 </ul>
 </li>
@@ -301,7 +301,7 @@ public&nbsp;<a href="../../../../org/tribuo/classification/libsvm/SVMClassificat
 <ul class="blockListLast">
 <li class="blockList">
 <h4>LibSVMOptions</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/classification/libsvm/LibSVMOptions.html#line.29">LibSVMOptions</a>()</pre>
+<pre>public&nbsp;LibSVMOptions()</pre>
 </li>
 </ul>
 </li>
@@ -318,7 +318,7 @@ public&nbsp;<a href="../../../../org/tribuo/classification/libsvm/SVMClassificat
 <ul class="blockList">
 <li class="blockList">
 <h4>getOptionsDescription</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/classification/libsvm/LibSVMOptions.html#line.32">getOptionsDescription</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getOptionsDescription()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getOptionsDescription</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.config.Options</code></dd>
@@ -331,7 +331,7 @@ public&nbsp;<a href="../../../../org/tribuo/classification/libsvm/SVMClassificat
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getTrainer</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/classification/libsvm/LibSVMClassificationTrainer.html" title="class in org.tribuo.classification.libsvm">LibSVMClassificationTrainer</a>&nbsp;<a href="../../../../src-html/org/tribuo/classification/libsvm/LibSVMOptions.html#line.48">getTrainer</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/classification/libsvm/LibSVMClassificationTrainer.html" title="class in org.tribuo.classification.libsvm">LibSVMClassificationTrainer</a>&nbsp;getTrainer()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/classification/ClassificationOptions.html#getTrainer--">ClassificationOptions</a></code></span></div>
 <div class="block">Constructs the trainer based on the provided arguments.</div>
 <dl>
@@ -410,6 +410,6 @@ public&nbsp;<a href="../../../../org/tribuo/classification/libsvm/SVMClassificat
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

@@ -109,7 +109,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <a href="../../../../src-html/org/tribuo/evaluation/metrics/EvaluationMetric.html#line.31">EvaluationMetric</a>&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;,C extends <a href="../../../../org/tribuo/evaluation/metrics/MetricContext.html" title="class in org.tribuo.evaluation.metrics">MetricContext</a>&lt;T&gt;&gt;</pre>
+<pre>public interface <span class="typeNameLabel">EvaluationMetric&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;,C extends <a href="../../../../org/tribuo/evaluation/metrics/MetricContext.html" title="class in org.tribuo.evaluation.metrics">MetricContext</a>&lt;T&gt;&gt;</span></pre>
 <div class="block">A metric that can be calculated for the specified output type.</div>
 </li>
 </ul>
@@ -213,7 +213,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>compute</h4>
-<pre>double&nbsp;<a href="../../../../src-html/org/tribuo/evaluation/metrics/EvaluationMetric.html#line.38">compute</a>(<a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="type parameter in EvaluationMetric">C</a>&nbsp;context)</pre>
+<pre>double&nbsp;compute(<a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="type parameter in EvaluationMetric">C</a>&nbsp;context)</pre>
 <div class="block">Compute the result of this metric from the input context.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -229,7 +229,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>getTarget</h4>
-<pre><a href="../../../../org/tribuo/evaluation/metrics/MetricTarget.html" title="class in org.tribuo.evaluation.metrics">MetricTarget</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="type parameter in EvaluationMetric">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/evaluation/metrics/EvaluationMetric.html#line.44">getTarget</a>()</pre>
+<pre><a href="../../../../org/tribuo/evaluation/metrics/MetricTarget.html" title="class in org.tribuo.evaluation.metrics">MetricTarget</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="type parameter in EvaluationMetric">T</a>&gt;&nbsp;getTarget()</pre>
 <div class="block">The target for this metric instance.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -243,7 +243,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>getName</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/evaluation/metrics/EvaluationMetric.html#line.50">getName</a>()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getName()</pre>
 <div class="block">The name of this metric.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -257,7 +257,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>getID</h4>
-<pre>default&nbsp;<a href="../../../../org/tribuo/evaluation/metrics/MetricID.html" title="class in org.tribuo.evaluation.metrics">MetricID</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="type parameter in EvaluationMetric">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/evaluation/metrics/EvaluationMetric.html#line.56">getID</a>()</pre>
+<pre>default&nbsp;<a href="../../../../org/tribuo/evaluation/metrics/MetricID.html" title="class in org.tribuo.evaluation.metrics">MetricID</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="type parameter in EvaluationMetric">T</a>&gt;&nbsp;getID()</pre>
 <div class="block">The metric ID, a combination of the metric target and metric name.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -271,7 +271,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>createContext</h4>
-<pre><a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="type parameter in EvaluationMetric">C</a>&nbsp;<a href="../../../../src-html/org/tribuo/evaluation/metrics/EvaluationMetric.html#line.66">createContext</a>(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="type parameter in EvaluationMetric">T</a>&gt;&nbsp;model,
+<pre><a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="type parameter in EvaluationMetric">C</a>&nbsp;createContext(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="type parameter in EvaluationMetric">T</a>&gt;&nbsp;model,
                 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="type parameter in EvaluationMetric">T</a>&gt;&gt;&nbsp;predictions)</pre>
 <div class="block">Creates the context this metric uses to compute it's value.</div>
 <dl>
@@ -289,7 +289,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockListLast">
 <li class="blockList">
 <h4>createContext</h4>
-<pre>default&nbsp;<a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="type parameter in EvaluationMetric">C</a>&nbsp;<a href="../../../../src-html/org/tribuo/evaluation/metrics/EvaluationMetric.html#line.76">createContext</a>(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="type parameter in EvaluationMetric">T</a>&gt;&nbsp;model,
+<pre>default&nbsp;<a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="type parameter in EvaluationMetric">C</a>&nbsp;createContext(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="type parameter in EvaluationMetric">T</a>&gt;&nbsp;model,
                         <a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="type parameter in EvaluationMetric">T</a>&gt;&nbsp;dataset)</pre>
 <div class="block">Creates the metric context used to compute this metric's value,
  generating <a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo"><code>Prediction</code></a>s for each <a href="../../../../org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a> in
@@ -371,6 +371,6 @@ var activeTableTab = "activeTableTab";
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

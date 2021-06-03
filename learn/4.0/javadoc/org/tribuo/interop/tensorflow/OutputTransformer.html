@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <a href="../../../../src-html/org/tribuo/interop/tensorflow/OutputTransformer.html#line.36">OutputTransformer</a>&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public interface <span class="typeNameLabel">OutputTransformer&lt;T extends <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&gt;, <a href="https://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html?is-external=true" title="class or interface in java.io">Serializable</a></pre>
 <div class="block">TensorFlow support is experimental, and may change without a major version bump.
  <p>
@@ -219,7 +219,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>transformToPrediction</h4>
-<pre><a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/OutputTransformer.html#line.46">transformToPrediction</a>(org.tensorflow.Tensor&lt;?&gt;&nbsp;tensor,
+<pre><a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&nbsp;transformToPrediction(org.tensorflow.Tensor&lt;?&gt;&nbsp;tensor,
                                     <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&nbsp;outputIDInfo,
                                     int&nbsp;numValidFeatures,
                                     <a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&nbsp;example)</pre>
@@ -241,7 +241,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>transformToOutput</h4>
-<pre><a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/OutputTransformer.html#line.54">transformToOutput</a>(org.tensorflow.Tensor&lt;?&gt;&nbsp;tensor,
+<pre><a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&nbsp;transformToOutput(org.tensorflow.Tensor&lt;?&gt;&nbsp;tensor,
                     <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&nbsp;outputIDInfo)</pre>
 <div class="block">Converts a <code>Tensor</code> into the specified output type.</div>
 <dl>
@@ -259,7 +259,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>transformToBatchPrediction</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&gt;&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/OutputTransformer.html#line.64">transformToBatchPrediction</a>(org.tensorflow.Tensor&lt;?&gt;&nbsp;tensor,
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&gt;&nbsp;transformToBatchPrediction(org.tensorflow.Tensor&lt;?&gt;&nbsp;tensor,
                                                <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&nbsp;outputIDInfo,
                                                int[]&nbsp;numValidFeatures,
                                                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&gt;&nbsp;examples)</pre>
@@ -281,7 +281,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>transformToBatchOutput</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/OutputTransformer.html#line.72">transformToBatchOutput</a>(org.tensorflow.Tensor&lt;?&gt;&nbsp;tensor,
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&nbsp;transformToBatchOutput(org.tensorflow.Tensor&lt;?&gt;&nbsp;tensor,
                                <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&nbsp;outputIDInfo)</pre>
 <div class="block">Converts a <code>Tensor</code> containing multiple outputs into a list of <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo"><code>Output</code></a>s.</div>
 <dl>
@@ -301,7 +301,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>transform</h4>
-<pre>org.tensorflow.Tensor&lt;?&gt;&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/OutputTransformer.html#line.80">transform</a>(<a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&nbsp;output,
+<pre>org.tensorflow.Tensor&lt;?&gt;&nbsp;transform(<a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&nbsp;output,
                                    <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&nbsp;outputIDInfo)</pre>
 <div class="block">Converts an <a href="../../../../org/tribuo/Output.html" title="interface in org.tribuo"><code>Output</code></a> into a <code>Tensor</code> representing it's output.</div>
 <dl>
@@ -319,7 +319,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>transform</h4>
-<pre>org.tensorflow.Tensor&lt;?&gt;&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/OutputTransformer.html#line.89">transform</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&gt;&nbsp;examples,
+<pre>org.tensorflow.Tensor&lt;?&gt;&nbsp;transform(<a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Example.html" title="class in org.tribuo">Example</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&gt;&nbsp;examples,
                                    <a href="../../../../org/tribuo/ImmutableOutputInfo.html" title="interface in org.tribuo">ImmutableOutputInfo</a>&lt;<a href="../../../../org/tribuo/interop/tensorflow/OutputTransformer.html" title="type parameter in OutputTransformer">T</a>&gt;&nbsp;outputIDInfo)</pre>
 <div class="block">Converts a list of <a href="../../../../org/tribuo/Example.html" title="class in org.tribuo"><code>Example</code></a> into a <code>Tensor</code> representing all the outputs
  in the list. It accepts a list of Example rather than a list of Output for efficiency reasons.</div>
@@ -338,7 +338,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockListLast">
 <li class="blockList">
 <h4>generatesProbabilities</h4>
-<pre>boolean&nbsp;<a href="../../../../src-html/org/tribuo/interop/tensorflow/OutputTransformer.html#line.95">generatesProbabilities</a>()</pre>
+<pre>boolean&nbsp;generatesProbabilities()</pre>
 <div class="block">Does this OutputTransformer generate probabilities.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -414,6 +414,6 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

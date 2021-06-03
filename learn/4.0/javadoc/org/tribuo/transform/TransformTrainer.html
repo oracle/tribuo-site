@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public final class <a href="../../../src-html/org/tribuo/transform/TransformTrainer.html#line.40">TransformTrainer</a>&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;
+<pre>public final class <span class="typeNameLabel">TransformTrainer&lt;T extends <a href="../../../org/tribuo/Output.html" title="interface in org.tribuo">Output</a>&lt;T&gt;&gt;</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;T&gt;</pre>
 <div class="block">A <a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo"><code>Trainer</code></a> which encapsulates another trainer plus a <a href="../../../org/tribuo/transform/TransformationMap.html" title="class in org.tribuo.transform"><code>TransformationMap</code></a> object
@@ -241,7 +241,7 @@ implements <a href="../../../org/tribuo/Trainer.html" title="interface in org.tr
 <ul class="blockList">
 <li class="blockList">
 <h4>TransformTrainer</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/transform/TransformTrainer.html#line.64">TransformTrainer</a>(<a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../org/tribuo/transform/TransformTrainer.html" title="type parameter in TransformTrainer">T</a>&gt;&nbsp;innerTrainer,
+<pre>public&nbsp;TransformTrainer(<a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../org/tribuo/transform/TransformTrainer.html" title="type parameter in TransformTrainer">T</a>&gt;&nbsp;innerTrainer,
                         <a href="../../../org/tribuo/transform/TransformationMap.html" title="class in org.tribuo.transform">TransformationMap</a>&nbsp;transformations)</pre>
 <div class="block">Creates a trainer which transforms the data before training, and stores
  the transformers along with the trained model in a <a href="../../../org/tribuo/transform/TransformedModel.html" title="class in org.tribuo.transform"><code>TransformedModel</code></a>.
@@ -260,7 +260,7 @@ implements <a href="../../../org/tribuo/Trainer.html" title="interface in org.tr
 <ul class="blockListLast">
 <li class="blockList">
 <h4>TransformTrainer</h4>
-<pre>public&nbsp;<a href="../../../src-html/org/tribuo/transform/TransformTrainer.html#line.76">TransformTrainer</a>(<a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../org/tribuo/transform/TransformTrainer.html" title="type parameter in TransformTrainer">T</a>&gt;&nbsp;innerTrainer,
+<pre>public&nbsp;TransformTrainer(<a href="../../../org/tribuo/Trainer.html" title="interface in org.tribuo">Trainer</a>&lt;<a href="../../../org/tribuo/transform/TransformTrainer.html" title="type parameter in TransformTrainer">T</a>&gt;&nbsp;innerTrainer,
                         <a href="../../../org/tribuo/transform/TransformationMap.html" title="class in org.tribuo.transform">TransformationMap</a>&nbsp;transformations,
                         boolean&nbsp;densify)</pre>
 <div class="block">Creates a trainer which transforms the data before training, and stores
@@ -287,7 +287,7 @@ implements <a href="../../../org/tribuo/Trainer.html" title="interface in org.tr
 <ul class="blockList">
 <li class="blockList">
 <h4>train</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/transform/TransformedModel.html" title="class in org.tribuo.transform">TransformedModel</a>&lt;<a href="../../../org/tribuo/transform/TransformTrainer.html" title="type parameter in TransformTrainer">T</a>&gt;&nbsp;<a href="../../../src-html/org/tribuo/transform/TransformTrainer.html#line.83">train</a>(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/transform/TransformTrainer.html" title="type parameter in TransformTrainer">T</a>&gt;&nbsp;examples,
+<pre>public&nbsp;<a href="../../../org/tribuo/transform/TransformedModel.html" title="class in org.tribuo.transform">TransformedModel</a>&lt;<a href="../../../org/tribuo/transform/TransformTrainer.html" title="type parameter in TransformTrainer">T</a>&gt;&nbsp;train(<a href="../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../org/tribuo/transform/TransformTrainer.html" title="type parameter in TransformTrainer">T</a>&gt;&nbsp;examples,
                                  <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,com.oracle.labs.mlrg.olcut.provenance.Provenance&gt;&nbsp;instanceProvenance)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/Trainer.html#train-org.tribuo.Dataset-java.util.Map-">Trainer</a></code></span></div>
 <div class="block">Trains a predictive model using the examples in the given data set.</div>
@@ -308,7 +308,7 @@ implements <a href="../../../org/tribuo/Trainer.html" title="interface in org.tr
 <ul class="blockList">
 <li class="blockList">
 <h4>getInvocationCount</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../src-html/org/tribuo/transform/TransformTrainer.html#line.96">getInvocationCount</a>()</pre>
+<pre>public&nbsp;int&nbsp;getInvocationCount()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../org/tribuo/Trainer.html#getInvocationCount--">Trainer</a></code></span></div>
 <div class="block">The number of times this trainer instance has had it's train method invoked.
  <p>
@@ -328,7 +328,7 @@ implements <a href="../../../org/tribuo/Trainer.html" title="interface in org.tr
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;<a href="../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&nbsp;<a href="../../../src-html/org/tribuo/transform/TransformTrainer.html#line.101">getProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&gt;</code></dd>
@@ -403,6 +403,6 @@ implements <a href="../../../org/tribuo/Trainer.html" title="interface in org.tr
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

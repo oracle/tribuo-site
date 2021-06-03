@@ -108,7 +108,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public interface <a href="../../../../src-html/org/tribuo/data/columnar/FieldProcessor.html#line.28">FieldProcessor</a>
+<pre>public interface <span class="typeNameLabel">FieldProcessor</span>
 extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;com.oracle.labs.mlrg.olcut.provenance.ConfiguredObjectProvenance&gt;</pre>
 <div class="block">An interface for things that process the columns in a data set.</div>
 </li>
@@ -237,7 +237,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockListLast">
 <li class="blockList">
 <h4>NAMESPACE</h4>
-<pre>static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> <a href="../../../../src-html/org/tribuo/data/columnar/FieldProcessor.html#line.33">NAMESPACE</a></pre>
+<pre>static final&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a> NAMESPACE</pre>
 <div class="block">The namespacing separator.</div>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
@@ -259,7 +259,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>getFieldName</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/FieldProcessor.html#line.61">getFieldName</a>()</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getFieldName()</pre>
 <div class="block">Gets the field name this FieldProcessor uses.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -273,7 +273,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>process</h4>
-<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarFeature.html" title="class in org.tribuo.data.columnar">ColumnarFeature</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/FieldProcessor.html#line.68">process</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</pre>
+<pre><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/data/columnar/ColumnarFeature.html" title="class in org.tribuo.data.columnar">ColumnarFeature</a>&gt;&nbsp;process(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;value)</pre>
 <div class="block">Processes the field value and generates a (possibly empty) list of <a href="../../../../org/tribuo/data/columnar/ColumnarFeature.html" title="class in org.tribuo.data.columnar"><code>ColumnarFeature</code></a>s.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -289,7 +289,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>getFeatureType</h4>
-<pre><a href="../../../../org/tribuo/data/columnar/FieldProcessor.GeneratedFeatureType.html" title="enum in org.tribuo.data.columnar">FieldProcessor.GeneratedFeatureType</a>&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/FieldProcessor.html#line.74">getFeatureType</a>()</pre>
+<pre><a href="../../../../org/tribuo/data/columnar/FieldProcessor.GeneratedFeatureType.html" title="enum in org.tribuo.data.columnar">FieldProcessor.GeneratedFeatureType</a>&nbsp;getFeatureType()</pre>
 <div class="block">Returns the feature type this FieldProcessor generates.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -303,7 +303,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockList">
 <li class="blockList">
 <h4>getNumNamespaces</h4>
-<pre>default&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/FieldProcessor.html#line.85">getNumNamespaces</a>()</pre>
+<pre>default&nbsp;int&nbsp;getNumNamespaces()</pre>
 <div class="block">Binarised categoricals can be namespaced, where the field name is appended with "#&lt;non-negative-int&gt;" to denote the
  namespace. This allows one FieldProcessor to emit multiple binarised categoricals from the same field value,
  provided each emitted feature is in a different namespace. Without this guarantee it's impossible to
@@ -322,7 +322,7 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <ul class="blockListLast">
 <li class="blockList">
 <h4>copy</h4>
-<pre><a href="../../../../org/tribuo/data/columnar/FieldProcessor.html" title="interface in org.tribuo.data.columnar">FieldProcessor</a>&nbsp;<a href="../../../../src-html/org/tribuo/data/columnar/FieldProcessor.html#line.94">copy</a>(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newFieldName)</pre>
+<pre><a href="../../../../org/tribuo/data/columnar/FieldProcessor.html" title="interface in org.tribuo.data.columnar">FieldProcessor</a>&nbsp;copy(<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;newFieldName)</pre>
 <div class="block">Returns a copy of this FieldProcessor bound to the supplied newFieldName.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -400,6 +400,6 @@ extends com.oracle.labs.mlrg.olcut.config.Configurable, com.oracle.labs.mlrg.olc
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

@@ -116,7 +116,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/regression/slm/SLMTrainer.html#line.59">SLMTrainer</a>
+<pre>public class <span class="typeNameLabel">SLMTrainer</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/SparseTrainer.html" title="interface in org.tribuo">SparseTrainer</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;, <a href="../../../../org/tribuo/WeightedExamples.html" title="interface in org.tribuo">WeightedExamples</a></pre>
 <div class="block">A trainer for a sparse linear regression model.
@@ -277,7 +277,7 @@ implements <a href="../../../../org/tribuo/SparseTrainer.html" title="interface 
 <li class="blockList">
 <h4>maxNumFeatures</h4>
 <pre>@Config(description="Maximum number of features to use.")
-protected&nbsp;int <a href="../../../../src-html/org/tribuo/regression/slm/SLMTrainer.html#line.63">maxNumFeatures</a></pre>
+protected&nbsp;int maxNumFeatures</pre>
 </li>
 </ul>
 <a name="normalize">
@@ -287,7 +287,7 @@ protected&nbsp;int <a href="../../../../src-html/org/tribuo/regression/slm/SLMTr
 <li class="blockList">
 <h4>normalize</h4>
 <pre>@Config(description="Normalize the data first.")
-protected&nbsp;boolean <a href="../../../../src-html/org/tribuo/regression/slm/SLMTrainer.html#line.66">normalize</a></pre>
+protected&nbsp;boolean normalize</pre>
 </li>
 </ul>
 <a name="trainInvocationCounter">
@@ -296,7 +296,7 @@ protected&nbsp;boolean <a href="../../../../src-html/org/tribuo/regression/slm/S
 <ul class="blockListLast">
 <li class="blockList">
 <h4>trainInvocationCounter</h4>
-<pre>protected&nbsp;int <a href="../../../../src-html/org/tribuo/regression/slm/SLMTrainer.html#line.68">trainInvocationCounter</a></pre>
+<pre>protected&nbsp;int trainInvocationCounter</pre>
 </li>
 </ul>
 </li>
@@ -313,7 +313,7 @@ protected&nbsp;boolean <a href="../../../../src-html/org/tribuo/regression/slm/S
 <ul class="blockList">
 <li class="blockList">
 <h4>SLMTrainer</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/regression/slm/SLMTrainer.html#line.76">SLMTrainer</a>(boolean&nbsp;normalize,
+<pre>public&nbsp;SLMTrainer(boolean&nbsp;normalize,
                   int&nbsp;maxNumFeatures)</pre>
 <div class="block">Constructs a trainer for a sparse linear model using sequential forward selection.</div>
 <dl>
@@ -329,7 +329,7 @@ protected&nbsp;boolean <a href="../../../../src-html/org/tribuo/regression/slm/S
 <ul class="blockList">
 <li class="blockList">
 <h4>SLMTrainer</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/regression/slm/SLMTrainer.html#line.88">SLMTrainer</a>(boolean&nbsp;normalize)</pre>
+<pre>public&nbsp;SLMTrainer(boolean&nbsp;normalize)</pre>
 <div class="block">Constructs a trainer for a sparse linear model using sequential forward selection.
  <p>
  Selects all the features.</div>
@@ -345,7 +345,7 @@ protected&nbsp;boolean <a href="../../../../src-html/org/tribuo/regression/slm/S
 <ul class="blockListLast">
 <li class="blockList">
 <h4>SLMTrainer</h4>
-<pre>protected&nbsp;<a href="../../../../src-html/org/tribuo/regression/slm/SLMTrainer.html#line.95">SLMTrainer</a>()</pre>
+<pre>protected&nbsp;SLMTrainer()</pre>
 <div class="block">For OLCUT.</div>
 </li>
 </ul>
@@ -363,7 +363,7 @@ protected&nbsp;boolean <a href="../../../../src-html/org/tribuo/regression/slm/S
 <ul class="blockList">
 <li class="blockList">
 <h4>newWeights</h4>
-<pre>protected&nbsp;org.apache.commons.math3.linear.RealVector&nbsp;<a href="../../../../src-html/org/tribuo/regression/slm/SLMTrainer.html#line.97">newWeights</a>(org.tribuo.regression.slm.SLMTrainer.SLMState&nbsp;state)</pre>
+<pre>protected&nbsp;org.apache.commons.math3.linear.RealVector&nbsp;newWeights(org.tribuo.regression.slm.SLMTrainer.SLMState&nbsp;state)</pre>
 </li>
 </ul>
 <a name="train-org.tribuo.Dataset-java.util.Map-">
@@ -372,7 +372,7 @@ protected&nbsp;boolean <a href="../../../../src-html/org/tribuo/regression/slm/S
 <ul class="blockList">
 <li class="blockList">
 <h4>train</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/regression/slm/SparseLinearModel.html" title="class in org.tribuo.regression.slm">SparseLinearModel</a>&nbsp;<a href="../../../../src-html/org/tribuo/regression/slm/SLMTrainer.html#line.113">train</a>(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;examples,
+<pre>public&nbsp;<a href="../../../../org/tribuo/regression/slm/SparseLinearModel.html" title="class in org.tribuo.regression.slm">SparseLinearModel</a>&nbsp;train(<a href="../../../../org/tribuo/Dataset.html" title="class in org.tribuo">Dataset</a>&lt;<a href="../../../../org/tribuo/regression/Regressor.html" title="class in org.tribuo.regression">Regressor</a>&gt;&nbsp;examples,
                                <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Map.html?is-external=true" title="class or interface in java.util">Map</a>&lt;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>,com.oracle.labs.mlrg.olcut.provenance.Provenance&gt;&nbsp;runProvenance)</pre>
 <div class="block">Trains a sparse linear model.</div>
 <dl>
@@ -394,7 +394,7 @@ protected&nbsp;boolean <a href="../../../../src-html/org/tribuo/regression/slm/S
 <ul class="blockList">
 <li class="blockList">
 <h4>getInvocationCount</h4>
-<pre>public&nbsp;int&nbsp;<a href="../../../../src-html/org/tribuo/regression/slm/SLMTrainer.html#line.227">getInvocationCount</a>()</pre>
+<pre>public&nbsp;int&nbsp;getInvocationCount()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/Trainer.html#getInvocationCount--">Trainer</a></code></span></div>
 <div class="block">The number of times this trainer instance has had it's train method invoked.
  <p>
@@ -414,7 +414,7 @@ protected&nbsp;boolean <a href="../../../../src-html/org/tribuo/regression/slm/S
 <ul class="blockList">
 <li class="blockList">
 <h4>getProvenance</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&nbsp;<a href="../../../../src-html/org/tribuo/regression/slm/SLMTrainer.html#line.232">getProvenance</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&nbsp;getProvenance()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>getProvenance</code>&nbsp;in interface&nbsp;<code>com.oracle.labs.mlrg.olcut.provenance.Provenancable&lt;<a href="../../../../org/tribuo/provenance/TrainerProvenance.html" title="interface in org.tribuo.provenance">TrainerProvenance</a>&gt;</code></dd>
@@ -427,7 +427,7 @@ protected&nbsp;boolean <a href="../../../../src-html/org/tribuo/regression/slm/S
 <ul class="blockListLast">
 <li class="blockList">
 <h4>toString</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/regression/slm/SLMTrainer.html#line.237">toString</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true#toString--" title="class or interface in java.lang">toString</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></code></dd>
@@ -502,6 +502,6 @@ protected&nbsp;boolean <a href="../../../../src-html/org/tribuo/regression/slm/S
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>

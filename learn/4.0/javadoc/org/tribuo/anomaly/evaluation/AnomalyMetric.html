@@ -112,7 +112,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <a href="../../../../src-html/org/tribuo/anomaly/evaluation/AnomalyMetric.html#line.36">AnomalyMetric</a>
+<pre>public class <span class="typeNameLabel">AnomalyMetric</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a>
 implements <a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html" title="interface in org.tribuo.evaluation.metrics">EvaluationMetric</a>&lt;<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>,org.tribuo.anomaly.evaluation.AnomalyMetric.Context&gt;</pre>
 <div class="block">A metric for evaluating anomaly detection problems. The sufficient statistics
@@ -232,7 +232,7 @@ implements <a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.h
 <ul class="blockListLast">
 <li class="blockList">
 <h4>AnomalyMetric</h4>
-<pre>public&nbsp;<a href="../../../../src-html/org/tribuo/anomaly/evaluation/AnomalyMetric.html#line.49">AnomalyMetric</a>(<a href="../../../../org/tribuo/evaluation/metrics/MetricTarget.html" title="class in org.tribuo.evaluation.metrics">MetricTarget</a>&lt;<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;&nbsp;target,
+<pre>public&nbsp;AnomalyMetric(<a href="../../../../org/tribuo/evaluation/metrics/MetricTarget.html" title="class in org.tribuo.evaluation.metrics">MetricTarget</a>&lt;<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;&nbsp;target,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                      <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/ToDoubleBiFunction.html?is-external=true" title="class or interface in java.util.function">ToDoubleBiFunction</a>&lt;<a href="../../../../org/tribuo/evaluation/metrics/MetricTarget.html" title="class in org.tribuo.evaluation.metrics">MetricTarget</a>&lt;<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;,org.tribuo.anomaly.evaluation.AnomalyMetric.Context&gt;&nbsp;impl)</pre>
 <div class="block">Creates an anomaly detection metric, with a specific name, using the supplied evaluation function.</div>
@@ -258,7 +258,7 @@ implements <a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.h
 <ul class="blockList">
 <li class="blockList">
 <h4>compute</h4>
-<pre>public&nbsp;double&nbsp;<a href="../../../../src-html/org/tribuo/anomaly/evaluation/AnomalyMetric.html#line.56">compute</a>(org.tribuo.anomaly.evaluation.AnomalyMetric.Context&nbsp;context)</pre>
+<pre>public&nbsp;double&nbsp;compute(org.tribuo.anomaly.evaluation.AnomalyMetric.Context&nbsp;context)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html#compute-C-">EvaluationMetric</a></code></span></div>
 <div class="block">Compute the result of this metric from the input context.</div>
 <dl>
@@ -277,7 +277,7 @@ implements <a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.h
 <ul class="blockList">
 <li class="blockList">
 <h4>getTarget</h4>
-<pre>public&nbsp;<a href="../../../../org/tribuo/evaluation/metrics/MetricTarget.html" title="class in org.tribuo.evaluation.metrics">MetricTarget</a>&lt;<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;&nbsp;<a href="../../../../src-html/org/tribuo/anomaly/evaluation/AnomalyMetric.html#line.61">getTarget</a>()</pre>
+<pre>public&nbsp;<a href="../../../../org/tribuo/evaluation/metrics/MetricTarget.html" title="class in org.tribuo.evaluation.metrics">MetricTarget</a>&lt;<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;&nbsp;getTarget()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html#getTarget--">EvaluationMetric</a></code></span></div>
 <div class="block">The target for this metric instance.</div>
 <dl>
@@ -294,7 +294,7 @@ implements <a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.h
 <ul class="blockList">
 <li class="blockList">
 <h4>getName</h4>
-<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;<a href="../../../../src-html/org/tribuo/anomaly/evaluation/AnomalyMetric.html#line.66">getName</a>()</pre>
+<pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;getName()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html#getName--">EvaluationMetric</a></code></span></div>
 <div class="block">The name of this metric.</div>
 <dl>
@@ -311,7 +311,7 @@ implements <a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.h
 <ul class="blockListLast">
 <li class="blockList">
 <h4>createContext</h4>
-<pre>public&nbsp;org.tribuo.anomaly.evaluation.AnomalyMetric.Context&nbsp;<a href="../../../../src-html/org/tribuo/anomaly/evaluation/AnomalyMetric.html#line.71">createContext</a>(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;&nbsp;model,
+<pre>public&nbsp;org.tribuo.anomaly.evaluation.AnomalyMetric.Context&nbsp;createContext(<a href="../../../../org/tribuo/Model.html" title="class in org.tribuo">Model</a>&lt;<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;&nbsp;model,
                                                                          <a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html?is-external=true" title="class or interface in java.util">List</a>&lt;<a href="../../../../org/tribuo/Prediction.html" title="class in org.tribuo">Prediction</a>&lt;<a href="../../../../org/tribuo/anomaly/Event.html" title="class in org.tribuo.anomaly">Event</a>&gt;&gt;&nbsp;predictions)</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.html#createContext-org.tribuo.Model-java.util.List-">EvaluationMetric</a></code></span></div>
 <div class="block">Creates the context this metric uses to compute it's value.</div>
@@ -394,6 +394,6 @@ implements <a href="../../../../org/tribuo/evaluation/metrics/EvaluationMetric.h
 <!--   -->
 </a></div>
 <!-- ======== END OF BOTTOM NAVBAR ======= -->
-<p class="legalCopy"><small>Copyright &#169; 2020. All rights reserved.</small></p>
+<p class="legalCopy"><small>Copyright © 2015–2021 Oracle and/or its affiliates. All rights reserved.</small></p>
 </body>
 </html>
