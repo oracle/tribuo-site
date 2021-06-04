@@ -3,6 +3,7 @@ title: Release Notes
 nav_order: 205
 parent: Docs
 learn_nav: true
+is_release_notes: true
 comment: This file should be updated for dot releases within the minor version.
 ---
 # Tribuo v4.1 Release Notes

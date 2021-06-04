@@ -33,7 +33,13 @@
                         {% comment %}split the url at the version number:{% endcomment %}
                         {% assign pathParts = page.url | split: '/' %}
                         {% assign dividedPath = page.url | split: pathParts[2] %}
-                        <div class="alert alert-danger ml-5 mr-5 mt-3 mb-4">This page describes Tribuo {{ page.version }}. View the <a href="/learn/{{ site.doc_version }}{{ dividedPath[1] }}">documentation for Tribuo {{site.doc_version}}</a> instead.</div>
+                        <div class="alert alert-danger ml-5 mr-5 mt-3 mb-4">
+                            This page describes Tribuo {{ page.version }}. View the <a href="/learn/{{ site.doc_version }}{{ dividedPath[1] }}">documentation for Tribuo {{site.doc_version}}</a> instead.
+                            {% if page.is_release_notes %}
+                            See the <a href="https://github.com/oracle/tribuo/tree/main/docs/release-notes">release notes for all versions of Tribuo</a> on GitHub.
+                            {% endif %}
+
+                        </div>
                     </div>
                 </div>
                 {% if page.is_notebook and page.notebook_url %}
@@ -52,6 +58,14 @@
                 <div class="mt-3">
                     {{ content }}
                 </div>
+                {% if page.is_release_notes %}
+                <div class="row">
+                    <div class="col">
+                        <h1>All Release Notes</h1>
+                        <p>The Tribuo source code repository contains <a href="https://github.com/oracle/tribuo/tree/main/docs/release-notes">release notes for all versions of Tribuo</a>.</p>
+                    </div>
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>
