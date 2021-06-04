@@ -44,6 +44,14 @@
                 <div class="mt-3">
                     {{ content }}
                 </div>
+                {% if page.is_release_notes %}
+                <div class="row">
+                    <div class="col">
+                        <h1>All Release Notes</h1>
+                        <p>The Tribuo source code repository contains <a href="https://github.com/oracle/tribuo/tree/main/docs/release-notes">release notes for all versions of Tribuo</a>.</p>
+                    </div>
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>
