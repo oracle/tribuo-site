@@ -62,6 +62,8 @@ defaults:
       layout: learn-outdated
       version: 4.0
       active: learn
+      sitemap:
+        priority: 0.25
   -
     scope:
       path: "learn/*/tutorials/*"
@@ -73,9 +75,9 @@ defaults:
 # Build settings
 markdown: kramdown
 plugins:
-- jekyll-feed
+#- jekyll-feed
 
-# Theme settings
+# My settings
 search_enabled: true
 
 # Exclude from processing.
