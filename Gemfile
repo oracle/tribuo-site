@@ -11,14 +11,10 @@ source "https://rubygems.org"
 gem "jekyll", "~> 3.9.0"
 gem "bigdecimal"
 
-# Theme: "Just the Docs" https://pmarsceill.github.io/just-the-docs/
-gem "just-the-docs"
-
 gem "kramdown-parser-gfm", "~> 1.1.0"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.15.1"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
