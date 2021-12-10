@@ -97,14 +97,13 @@ code.copy-url  {
     color: rgb(50, 50, 50);
 }
 
-pre code {
+pre code, code.preformat {
     font-weight: normal;
 }
 
 code,code a {
-    /*color: #cd3108;*/
-    /*color: rgb(38, 69, 166);*/
-    color: navy;
+    color: #cd3108; /* deeper red */
+    /*color: navy;*/
     font-weight: 600;
     word-wrap: normal;
 }
