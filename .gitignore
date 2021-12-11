@@ -12,3 +12,6 @@ _site
 
 # Mac
 .DS_Store
+
+# Tribuo link
+tribuo
