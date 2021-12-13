@@ -33,7 +33,7 @@ og-tags:
   - classification
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://tribuo.org"
-tribuo_version: 4.1.1 # Current version of Tribuo library.
+tribuo_version: 4.2.0 # Current version of Tribuo library.
 repository_url: "https://github.com/oracle/tribuo.git"
 javadocs: "https://tribuo.org/learn/4.1/javadoc/index.html" # Path to index.html
 javadoc_root: "https://tribuo.org/learn/4.1/javadoc/" # Path to top of class hierarchy
@@ -42,18 +42,28 @@ javadoc_root: "https://tribuo.org/learn/4.1/javadoc/" # Path to top of class hie
 # This will take care of getting the URLs right
 # without having to make changes everywhere. The current
 # version will be a site-wide variable we can use.
-doc_version: 4.1
-doc_versions: [4.0, 4.1] # a comma-separated list of decimal values
+doc_version: 4.2
+doc_versions: [4.0, 4.1, 4.2] # a comma-separated list of decimal values
 
 defaults:
+  -
+    scope:
+      path: "/learn/4.2/*"
+      type: "pages"
+    values:
+      layout: learn
+      version: 4.2
+      active: learn
   -
     scope:
       path: "/learn/4.1/*"
       type: "pages"
     values:
-      layout: learn
+      layout: learn-outdated
       version: 4.1
       active: learn
+      sitemap:
+        priority: 0.25
   -
     scope:
       path: "/learn/4.0/*"
