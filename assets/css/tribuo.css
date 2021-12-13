@@ -62,6 +62,15 @@ a {
     color: rgb(247, 38, 33);
 }
 
+
+.content a.btn, .content a.nav-link {
+    text-decoration: none;
+}
+
+.content a {
+    text-decoration: underline;
+}
+
 a:hover {
     color: rgb(247, 38, 33);
     text-decoration: underline;
@@ -88,8 +97,14 @@ code.copy-url  {
     color: rgb(50, 50, 50);
 }
 
+pre code, code.preformat {
+    font-weight: normal;
+}
+
 code,code a {
-    color: #cd3108;
+    color: #cd3108; /* deeper red */
+    /*color: navy;*/
+    font-weight: 600;
     word-wrap: normal;
 }
 
@@ -98,8 +113,8 @@ code,code a {
 }
 
 pre {
-    background-color: rgba(255,232,231,1.0);
-    border: 1px solid rgb(70, 70 70);
+    background-color: rgba(255,244,244,1.0);
+    /*border: 1px solid rgb(70, 70, 70);*/
     border-left: 3px solid var(--tribuo-red);
     padding-left: 8px;
     overflow-x: auto;
