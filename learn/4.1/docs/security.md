@@ -25,11 +25,11 @@ algebra library exposes mutable state to reduce copying).
 Tribuo models are stored as Java serialized objects. Due to the inherent issues
 with Java serialization, these object files should only be loaded and saved to
 trusted locations where third parties do not have access. We have provided a
-[JEP 290](https://openjdk.java.net/jeps/290) [allowlist](jep-290-allowlist.txt)
+[JEP 290](https://openjdk.java.net/jeps/290) [filter](jep-290-filter.txt)
 which will allow the deserialization of only the classes found in the Tribuo
-library. This allowlist should be enabled on the code paths which deserialize
+library. This filter should be enabled on the code paths which deserialize
 models or datasets. As Tribuo supports Java 8+, and JEP 290 is an addition to
-the Java 8 API from 8u121, the best way to use the allowlist for the main 
+the Java 8 API from 8u121, the best way to use the filter for the main 
 programs provided with Tribuo is by setting it as a process-wide flag.  
 Additionally, when running with a security manager, Tribuo will need access to
 the relevant filesystem locations to load or save model files. See the section 
@@ -93,4 +93,6 @@ ML systems that can result in model or data leakage.
 | Model replication | If an attacker can repeatedly query the model, where they either know or control the features, and they can observe the full prediction (e.g., the complete predicted probability distribution) for each query, then this can provide sufficient information for them to replicate the model.  If the model is considered an important asset, allowing an attacker to copy it could be detrimental. | The model parameters | Only return a small number of predictions (i.e., the top n) or do not provide the probability distribution. This slows down the attack, but does not completely prevent it. Other mitigations such as employing rate limiting or preventing the attacker from controlling or observing the feature inputs are necessary to fully prevent this attack.|
 | Training metadata leak | The model file contains information about the training data such as the feature names, number of features, and number of examples. This information is potentially sensitive, as in the case of bigrams or trigrams from text. | Training metadata | Firstly, treat model files as confidential if the data itself is confidential. Secondly, use Tribuo's methods for one-way hashing of the feature names. Hashing prevents attackers from trivially discovering the features without needing to complete the process of supplying the input text and testing if the model output changes. Thirdly, other information present in the model file, such as the number of examples, can be redacted by removing the provenance information before the model is deployed. | 
 | Training data leak | If an attacker can repeatedly query the model, it's possible for an attacker to find specific training data points that are part of the training data set. This attack is accomplished by measuring the confidence of the prediction (as training data points usually have a predicted confidence close to 1.0). | Training data | The most important mitigation is to treat model files as confidential if the training data is confidential. Once access to the model has been prevented, the mitigations for model replication apply. This attack is a variant of model replication that usually requires some foreknowledge of the identity of the training corpus. |
+{: .table .table-responsive}
+
 

@@ -104,4 +104,4 @@ fi
 cp $TRIBUO_DOC_DIR/img/tribuo-data-flow.png $DOC_DIR/img
 
 # Finally copy in the jep-290-allowlist that the Security doc references
-cp $TRIBUO_DOC_DIR/jep-290-allowlist.txt $DOC_DIR
+cp $TRIBUO_DOC_DIR/jep-290-filter.txt $DOC_DIR
