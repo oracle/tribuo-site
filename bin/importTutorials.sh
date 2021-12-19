@@ -47,33 +47,46 @@ for tut in $TUTORIALS; do
         Classification*)
             ORDER=301
             ;;
-        *Clustering*)
+        *K-Means*)
             ORDER=302
             ;;
-        *Regression*)
+        *HDBSCAN*)
             ORDER=303
             ;;
-        *Anomaly*)
+        *Regression*)
             ORDER=304
             ;;
-        *Configuration*)
+        *Anomaly*)
             ORDER=305
             ;;
-        *columnar*)
+        *Multi-Label*)
             ORDER=306
+            ;;
+        *Configuration*)
+            ORDER=307
+            ;;
+        *columnar*)
+            ORDER=308
             TITLE="Loading Columnar Data"
             ;;
-        *external*)
-            ORDER=307
+        *Working\ with\ external*)
+            ORDER=309
             TITLE="External Models"
             ;;
+        *Model\ export*)
+            ORDER=310
+            TITLE="ONNX export and OCI deployment"
+            ;;
         *Document*)
-            ORDER=308
+            ORDER=311
             TITLE="Document Classification"
             ;;
         *TensorFlow*)
-            ORDER=309
+            ORDER=312
             TITLE="Deep Learning with TensorFlow"
+            ;;
+        *Reproducibility*)
+            ORDER=313
             ;;
         *)
             ORDER=$UNORDERED
