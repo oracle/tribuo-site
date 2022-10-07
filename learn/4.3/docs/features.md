@@ -81,6 +81,13 @@ Tribuo has implementations or interfaces for:
 Tribuo also has a linear chain CRF for sequence classification tasks. This is also
 trained via SGD using any of Tribuo's gradient optimizers.
 
+Tribuo has a set of information theoretic feature selection algorithms which
+can be applied to classification tasks. Feature inputs are automatically
+discretised into equal width bins. At the moment this includes implementations
+of mutual information maximisation (MIM), Conditional Mutual Information
+Maximisation (CMIM), minimum Redundancy Maximum Relevancy (mRMR) and Joint
+Mutual Information (JMI).
+
 To explain classifier predictions there is an implementation of the LIME algorithm. Tribuo's
 implementation allows the mixing of text and tabular data, along with the use of any sparse model
 as an explainer (e.g., regression trees, lasso etc), however it does not support images.
@@ -148,8 +155,8 @@ discuss how it would fit into Tribuo.
 
 Currently we have interfaces to:
 
-* [LibLinear](https://github.com/bwaldvogel/liblinear-java) - via the LibLinear-java port of the original [LibLinear](https://www.csie.ntu.edu.tw/~cjlin/liblinear/) (v2.43).
+* [LibLinear](https://github.com/bwaldvogel/liblinear-java) - via the LibLinear-java port of the original [LibLinear](https://www.csie.ntu.edu.tw/~cjlin/liblinear/) (v2.44).
 * [LibSVM](https://www.csie.ntu.edu.tw/~cjlin/libsvm/) - using the pure Java transformed version of the C++ implementation (v3.25).
-* [ONNX Runtime](https://onnxruntime.ai) - via the Java API contributed by our group (v1.9.0).
-* [TensorFlow](https://tensorflow.org) - Using [TensorFlow Java](https://github.com/tensorflow/java) v0.4.1 (based on TensorFlow v2.7.1). This allows the training and deployment of TensorFlow models entirely in Java.
-* [XGBoost](https://xgboost.ai) - via the built in XGBoost4J API (v1.5.0).
+* [ONNX Runtime](https://onnxruntime.ai) - via the Java API contributed by our group (v1.12.1).
+* [TensorFlow](https://tensorflow.org) - Using [TensorFlow Java](https://github.com/tensorflow/java) v0.4.2 (based on TensorFlow v2.7.4). This allows the training and deployment of TensorFlow models entirely in Java.
+* [XGBoost](https://xgboost.ai) - via the built in XGBoost4J API (v1.6.2).

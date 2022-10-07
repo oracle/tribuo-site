@@ -39,7 +39,7 @@ for doc in $DOCS; do
             echo "Unrecognized doc, please add a case option for it"
             ;;
     esac
-    CAT << EOF > $DOC_DIR/$LOWERCASE
+    cat << EOF > $DOC_DIR/$LOWERCASE
 ---
 title: $TITLE
 learn_nav: true
@@ -73,7 +73,7 @@ done
 
 #
 # Copy in the FAQ to the right place
-CAT << EOF > $SITE_ROOT/learn/$DOC_VERSION/faq.md
+cat << EOF > $SITE_ROOT/learn/$DOC_VERSION/faq.md
 ---
 title: FAQ
 learn_nav: true
