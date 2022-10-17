@@ -8,7 +8,8 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 3.9.0"
+gem "github-pages", "~> 227", group: :jekyll_plugins
+#gem "jekyll", "~> 3.9.0"
 gem "bigdecimal"
 
 gem "kramdown-parser-gfm", "~> 1.1.0"
@@ -23,3 +24,5 @@ gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Performance-booster for watching directories on Windows
 gem "wdm", "~> 0.1.0" if Gem.win_platform?
 
+
+gem "webrick", "~> 1.7"

@@ -1,0 +1,255 @@
+---
+title: Docs
+og-title: Documentation
+nav_order: 102
+has_children: true
+learn_nav: true
+description: "Learn everything from how to get started to the underlying architecture of Tribuo."
+---
+<div class="row">
+    <div class="col">
+        <h1>Documentation</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <img class="img-fluid ml-md-4" src="{{ "/assets/img/learning.png" | relative_url }}"/>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <div id="TOC" class="mt-4 mb-2"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <h2>Introduction</h2>
+<p>
+Tribuo is a Java library for building and deploying Machine Learning models.
+The core development team is <a href="https://labs.oracle.com">Oracle Labs</a>'
+<a href="https://labs.oracle.com/pls/apex/f?p=94065:12:15409941274815:7">
+Machine Learning Research Group</a>, and the library is available on
+<a href="https://github.com/oracle/tribuo">GitHub</a> under the Apache 2.0 license.
+</p>
+        <p>
+Tribuo has a modern <b>Java-centric</b> API design:
+        </p>
+<ul class="feature-list">
+    <li>The API is <b>strongly typed</b>, with parameterised classes for models, predictions, datasets and examples.</li>
+    <li>The API is <b>high level</b>,
+        <code><a target="tribuoDoc" href="/learn/{{ site.doc_version }}/javadoc/index.html?org/tribuo/Model.html">Model</a></code>s
+        consume <code><a target="tribuoDoc" href="/learn/{{ site.doc_version }}/javadoc/index.html?org/tribuo/Example.html">Example</a></code>s
+        and produce <code><a target="tribuoDoc" href="/learn/{{ site.doc_version }}/javadoc/index.html?org/tribuo/Prediction.html">Prediction</a></code>s,
+        not float arrays.</li>
+    <li>The API is <b>uniform</b>, all our prediction types have the same (well-typed) API,
+        and Tribuo's classes are parameterised by the prediction type (e.g., classification
+        uses <code><a target="tribuoDoc" href="/learn/{{ site.doc_version }}/javadoc/index.html?org/tribuo/classification/Label.html">Label</a></code>,
+        regression uses <code><a target="tribuoDoc" href="/learn/{{ site.doc_version }}/javadoc/index.html?org/tribuo/regression/Regressor.html">Regressor</a></code>).</li>
+    <li>The API is <b>reusable</b>, it's modular and packaged into small chunks so you only deploy what you need.</li>
+</ul>
+<p>Tribuo has a breadth of ML algorithms and features under the same API:</p>
+<ul class="feature-list">
+    <li><b>Classification</b>: linear models, factorization machines, SVMs, trees, ensembles, deep learning</li>
+    <li><b>Regression</b>: linear models, penalised linear regression, factorization machines, SVMs, trees, ensembles, deep learning</li>
+    <li><b>Clustering</b>: HDBSCAN, K-Means</li>
+    <li><b>Anomaly Detection</b>: SVMs</li>
+    <li><b>Multi-Label Classification</b>: linear models, factorization machines, classifier chains</li>
+</ul>
+<p>
+We plan to increase the algorithms available over time, we're happy to accept
+community contributions, and the current
+<a href="https://github.com/oracle/tribuo/blob/main/docs/Roadmap.md">roadmap</a> is on GitHub.
+</p>
+<p>
+Tribuo makes it straightforward to load datasets, train models, and evaluate
+models on test data. For example, this code trains a logistic regression model
+and evaluates it:
+
+{% highlight java %}
+{% raw %}
+var trainSet = new MutableDataset<>(new LibSVMDataSource(Paths.get("train-data"),new LabelFactory()));
+var model    = new LogisticRegressionTrainer().train(trainSet);
+var testSet  = new LibSVMDataSource(Paths.get("test-data"),trainSet.getOutputFactory());
+var eval     = new LabelEvaluator().evaluate(model,testSet);
+{% endraw %}
+{% endhighlight %}
+</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <h2>Getting Started</h2>
+<p>
+    To pull Tribuo into your project use these Maven co-ordinates:
+</p>
+{% highlight xml %}
+{% raw %}
+<dependency>
+    <groupId>org.tribuo</groupId>
+    <artifactId>tribuo-all</artifactId>
+    <version>{% endraw %}{{ site.tribuo_version }}{% raw %}</version>
+    <type>pom</type>
+</dependency>
+{% endraw %}
+{% endhighlight %}
+
+The <code>tribuo-all</code> module pulls in all of Tribuo, you can select the subset for
+your particular usecase later, it's all available as separate maven artifacts.
+</p>
+<p>
+Here's a quick example showing how to build and evaluate a classification system. It has 4 steps:
+
+<ol>
+    <li>Load a <a href="https://archive.ics.uci.edu/ml/datasets/iris">dataset for classifying the species of Irises</a> from a CSV.</li>
+    <li>Split that dataset into training and testing datasets.</li>
+    <li>Train two types models using different trainers.</li>
+    <li>Use a model to make predictions on the test set, and evaluate it's performance on the whole test set.</li>
+</ol>
+
+{% highlight java %}
+{% raw %}
+// Load labelled iris data
+var irisHeaders = new String[]{"sepalLength", "sepalWidth", "petalLength", "petalWidth", "species"};
+DataSource<Label> irisData =
+        new CSVLoader<>(new LabelFactory()).loadDataSource(Paths.get("bezdekIris.data"),
+                                     /* Output column   */ irisHeaders[4],
+                                     /* Column headers  */ irisHeaders);
+
+// Split iris data into training set (70%) and test set (30%)
+var splitIrisData = new TrainTestSplitter<>(irisData,
+                       /* Train fraction */ 0.7,
+                             /* RNG seed */ 1L);
+var trainData = new MutableDataset<>(splitIrisData.getTrain());
+var testData = new MutableDataset<>(splitIrisData.getTest());
+
+// We can train a decision tree
+var cartTrainer = new CARTClassificationTrainer();
+Model<Label> tree = cartTrainer.train(trainData);
+// Or a logistic regression
+var linearTrainer = new LogisticRegressionTrainer();
+Model<Label> linear = linearTrainer.train(trainData);
+
+// Finally we make predictions on unseen data
+// Each prediction is a map from the output names (i.e. the labels) to the scores/probabilities
+Prediction<Label> prediction = linear.predict(testData.getExample(0));
+
+// Or we can evaluate the full test dataset, calculating the accuracy, F1 etc.
+LabelEvaluation evaluation = new LabelEvaluator().evaluate(linear,testData);
+// we can inspect the evaluation manually
+double acc = evaluation.accuracy();
+// which returns 0.978
+// or print a formatted evaluation string
+System.out.println(evaluation.toString());
+{% endraw %}
+{% endhighlight %}
+The formatted evaluation output looks like this:
+</p>
+<pre>
+Class                           n          tp          fn          fp      recall        prec          f1
+Iris-versicolor                16          16           0           1       1.000       0.941       0.970
+Iris-virginica                 15          14           1           0       0.933       1.000       0.966
+Iris-setosa                    14          14           0           0       1.000       1.000       1.000
+Total                          45          44           1           1
+Accuracy                                                                    0.978
+Micro Average                                                               0.978       0.978       0.978
+Macro Average                                                               0.978       0.980       0.978
+Balanced Error Rate                                                         0.022
+</pre>
+</p>
+<p>
+To learn more about this example, take a look at our
+<a href="/learn/{{ site.doc_version }}/tutorials/irises-tribuo-v4.html">
+Classification Tutorial</a> using the same Iris dataset.
+</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+<h2>Documentation Overview</h2>
+<p>
+The <a href="/learn/{{ site.doc_version}}/docs/features.html">Features List</a> gives
+an overview of what you can do with Tribuo and the algorithms that it supports
+both natively and through interfaces to popular third-party libraries.
+
+The best way to understand Tribuo is to read through
+<a href="architecture.html">Tribuo's Architecture document</a>.
+This covers some basic definitions, data flow, the library structure, configuration
+(including options and provenance), data loading, transformations, details about
+examples, and obfuscation features available to help mask your input features.
+
+The <a href="packageoverview.html">Package Structure overview</a>
+describes how the packages in Tribuo are organized around the machine learning
+tasks that each one supports. These packages are grouped into modules so that
+users of Tribuo can depend only on the pieces they need in their implementations.
+
+Be sure to read up on the <a href="security.html">Security Considerations</a> around using
+Tribuo and what the expectations are for its users.
+
+For more odds and ends and general questions, the <a href="../faq.html">FAQ</a> is the place
+to look. For details on all the classes and packages, consult
+<a href="/learn/{{ site.doc_version }}/javadoc/">Tribuo's JavaDoc</a>.
+</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+
+<h2>Tutorials</h2>
+<p>
+We have tutorial notebooks for Classification, Clustering, Regression, Anomaly
+Detection and the configuration system in
+<a href="/learn/{{ site.doc_version }}/tutorials">tutorials</a>. These use the
+<a href="https://github.com/SpencerPark/IJava">IJava</a> Jupyter notebook kernel, and work
+with Java 10+. It should be straight-forward to convert the code in the tutorials
+back to Java 8 code by replacing the <code>var</code> keyword with the appropriate types.
+</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+
+<h2>Configuration and Provenance</h2>
+<p>
+The trainers in Tribuo are fully configurable via the <a
+href="https://github.com/oracle/olcut">OLCUT</a> configuration system. This
+allows a user to define a trainer in an XML (or JSON, protobuf or EDN) file
+once and repeatably build models with exactly the same parameters. There are
+example configurations for each of the supplied Trainers in the
+<code>config</code> folder of each package. Models are serializable using Java
+serialization, as are the datasets themselves, and the configuration used is
+stored with any model.
+
+All models and evaluations include a serializable provenance object which
+records when the model or evaluation was created, what data was used, any
+transformations applied to the data, the hyperparameters of the trainer, and
+for evaluations, what model was used. This information can be extracted out
+into JSON, or can be serialised directly using Java serialisation. For
+production deployments this provenance information can be redacted and replaced
+with a hash to provide model tracking through an external system.  Many Tribuo
+models can be exported in ONNX format for deployment in other languages,
+platforms or cloud services.
+
+Read more about <a href="/learn/{{ site.doc_version }}/docs/architecture.html#configuration-options-and-provenance">Configuration, Options, and Provenance</a>
+</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+
+<h2>Platform Support & Requirements</h2>
+<p>
+Tribuo runs on Java 8+, and we test on LTS versions of Java, along with the
+latest release.  Tribuo itself is a Java library and supported on all Java
+platforms, however some of our interfaces require native code, and those are
+supported only where the native library is. We test on x86_64 architectures on
+Windows 10, macOS, and Linux (RHEL/OL/CentOS 7+), as these are supported
+platforms for the native libraries we interface with. If you're interested in
+another platform and wish to use one of the native library interfaces (ONNX
+Runtime, TensorFlow, and XGBoost) then we recommend reaching out to the
+developers of those libraries. Note the model card and reproducibility packages
+require Java 17, and as such are not part of the `tribuo-all` Maven Central
+deployment.
+
+</p>
+    </div>
+</div>

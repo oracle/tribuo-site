@@ -1,0 +1,70 @@
+---
+title: Tutorials
+has_children: true
+learn_nav: true
+nav_order: 103
+---
+<div class="row">
+    <div class="col">
+        <h1>Tutorials</h1>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col d-flex">
+        <figure>
+            <img class="img-fluid section-graphic" src="{{ "/assets/img/tutorials.svg" | relative_url }}"/>
+        </figure>
+    </div>
+</div>
+<div class="row mt-3 mt-md-5">
+    <div class="col">
+        <h2>Get Started with Notebooks</h2>
+        <p>
+            New to Tribuo? Start out by following the <a  href="irises-tribuo-v4.html">Classification Tutorial</a>
+            to learn the ropes. It introduces the ins and outs of training and testing a model as well as loading
+            and saving the model for future use. To learn more about the basic features of Tribuo, se the menu
+            on the left to navigate through the other tutorials.
+        </p>
+        <p>
+            <div class="ml-4 mb-4 alert alert-note">
+            All the tutorials for Tribuo are available as Jupyter notebooks. While Jupyter does not natively
+            support Java, you can add Java support via the <a href="https://github.com/SpencerPark/IJava">IJava</a>
+            kernel. Our tutorial notebooks make use of Java's <code>var</code> keyword, so you'll need to use at
+            least Java 10 with IJava (and Java 17 or newer for the model card and reproducibility tutorials). 
+            Tribuo itself supports Java 8 and newer.
+            </div>
+        </p>
+        <h2>Adding Tribuo to your Build</h2>
+        <p>
+            Ready to move on beyond notebooks and starting using Tribuo in a project? Tribuo is divided up into
+            many modules that allow you to load only the parts of the library that you need. This is useful both
+            in terms of limiting the size and scope of the jars you use, but it also allows you to, for example,
+            exclude the pieces of Tribuo that rely on native dependencies.
+        </p>
+        <p>
+            While you're still getting familiar with Tribuo though, the easiest way to get started is to use
+            the <code>tribuo-all</code> dependency which references all the pieces of Tribuo and the dependencies
+            on third-party components.
+        </p>
+        <h3>Maven</h3>
+        <p>
+{% highlight xml %}
+<dependency>
+    <groupId>org.tribuo</groupId>
+    <artifactId>tribuo-all</artifactId>
+    <version>{{ site.tribuo_version }}</version>
+    <type>pom</type>
+</dependency>
+{% endhighlight %}
+        </p>
+        <h3>Gradle</h3>
+        <p>
+{% highlight groovy %}
+{% include gradle-coords.txt %}
+{% endhighlight %}
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+    </div>
+</div>

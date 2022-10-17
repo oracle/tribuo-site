@@ -88,6 +88,9 @@ for tut in $TUTORIALS; do
         *Reproducibility*)
             ORDER=313
             ;;
+        *Feature*)
+            ORDER=314
+            ;;
         *)
             ORDER=$UNORDERED
             UNORDERED=$(($UNORDERED + 1))
