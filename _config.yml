@@ -61,9 +61,11 @@ defaults:
       path: "/learn/4.2/*"
       type: "pages"
     values:
-      layout: learn
+      layout: learn-outdated
       version: 4.2
       active: learn
+      sitemap:
+        priority: 0.25
   -
     scope:
       path: "/learn/4.1/*"
