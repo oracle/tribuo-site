@@ -219,8 +219,8 @@ objects from those models.
 
 ## TensorFlow
 
-Tribuo includes experimental support for TensorFlow-Java 0.4.0 (using
-TensorFlow 2.7.0) in the `tribuo-tensorflow` artifact in the
+Tribuo includes experimental support for TensorFlow-Java 0.4.2 (using
+TensorFlow 2.7.4) in the `tribuo-tensorflow` artifact in the
 `org.tribuo.interop.tensorflow` package. Models can be defined using
 TensorFlow-Java's graph construction mechanisms, and Tribuo will manage the
 gradient optimizer output function and loss function. It includes a Java
