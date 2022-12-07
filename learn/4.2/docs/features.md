@@ -151,5 +151,5 @@ Currently we have interfaces to:
 * [LibLinear](https://github.com/bwaldvogel/liblinear-java) - via the LibLinear-java port of the original [LibLinear](https://www.csie.ntu.edu.tw/~cjlin/liblinear/) (v2.43).
 * [LibSVM](https://www.csie.ntu.edu.tw/~cjlin/libsvm/) - using the pure Java transformed version of the C++ implementation (v3.25).
 * [ONNX Runtime](https://onnxruntime.ai) - via the Java API contributed by our group (v1.9.0).
-* [TensorFlow](https://tensorflow.org) - Using [TensorFlow Java](https://github.com/tensorflow/java) v0.4.1 (based on TensorFlow v2.7.1). This allows the training and deployment of TensorFlow models entirely in Java.
+* [TensorFlow](https://tensorflow.org) - Using [TensorFlow Java](https://github.com/tensorflow/java) v0.4.2 (based on TensorFlow v2.7.4). This allows the training and deployment of TensorFlow models entirely in Java.
 * [XGBoost](https://xgboost.ai) - via the built in XGBoost4J API (v1.5.0).
