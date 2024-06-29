@@ -42,3 +42,13 @@ $ bundle exec jekyll serve
 
 Now, open [`localhost:4000`](http://localhost:4000) in your browser.
 
+## Security
+
+Please consult the [security guide](./SECURITY.md) for our responsible security vulnerability disclosure process
+
+## License
+
+Copyright (c) 2024 Oracle and/or its affiliates.
+
+Released under the Universal Permissive License v1.0 as shown at
+<https://oss.oracle.com/licenses/upl/>.
