@@ -42,3 +42,10 @@ $ bundle exec jekyll serve
 
 Now, open [`localhost:4000`](http://localhost:4000) in your browser.
 
+## Contributing
+
+This project welcomes contributions from the community. Before submitting a pull request, please [review our contribution guide](./CONTRIBUTING.md)
+
+## Security
+
+Please consult the [security guide](./SECURITY.md) for our responsible security vulnerability disclosure process
